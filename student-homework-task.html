@@ -1,0 +1,3481 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>My Homework & Notes - London Star Education</title>
+
+    <meta name="robots" content="noindex, follow">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <!-- =====================================================
+         FAVICON
+    ====================================================== -->
+
+    <link rel="shortcut icon"
+          type="image/x-icon"
+          href="assets/images/favicon.png">
+
+
+    <!-- =====================================================
+         BOOTSTRAP
+    ====================================================== -->
+
+    <link rel="stylesheet"
+          href="assets/css/vendor/bootstrap.min.css">
+
+
+    <!-- =====================================================
+         THEME CSS
+    ====================================================== -->
+
+    <link rel="stylesheet"
+          href="assets/css/vendor/slick.css">
+
+    <link rel="stylesheet"
+          href="assets/css/vendor/slick-theme.css">
+
+    <link rel="stylesheet"
+          href="assets/css/plugins/sal.css">
+
+    <link rel="stylesheet"
+          href="assets/css/plugins/feather.css">
+
+    <link rel="stylesheet"
+          href="assets/css/plugins/fontawesome.min.css">
+
+    <link rel="stylesheet"
+          href="assets/css/plugins/euclid-circulara.css">
+
+    <link rel="stylesheet"
+          href="assets/css/plugins/swiper.css">
+
+    <link rel="stylesheet"
+          href="assets/css/plugins/magnify.css">
+
+    <link rel="stylesheet"
+          href="assets/css/plugins/odometer.css">
+
+    <link rel="stylesheet"
+          href="assets/css/plugins/animation.css">
+
+    <link rel="stylesheet"
+          href="assets/css/plugins/bootstrap-select.min.css">
+
+    <link rel="stylesheet"
+          href="assets/css/plugins/jquery-ui.css">
+
+    <link rel="stylesheet"
+          href="assets/css/plugins/magnigy-popup.min.css">
+
+    <link rel="stylesheet"
+          href="assets/css/plugins/plyr.css">
+
+    <link rel="stylesheet"
+          href="assets/css/style.css">
+
+
+<style>
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+.homework-page {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 30px;
+    border: 1px solid #eeeeee;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
+
+/* =========================================================
+   PAGE HEADER
+========================================================= */
+
+.homework-page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.homework-page-header h3 {
+    margin: 0 0 6px;
+    font-size: 26px;
+    font-weight: 700;
+    color: #222222;
+}
+
+.homework-page-header p {
+    margin: 0;
+    color: #777777;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   HOMEWORK GRID
+========================================================= */
+
+.homework-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+
+/* =========================================================
+   HOMEWORK CARD
+========================================================= */
+
+.homework-card {
+    position: relative;
+    background: #ffffff;
+    border: 1px solid #e9e9e9;
+    border-radius: 10px;
+    padding: 22px 20px 20px;
+    min-height: 220px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.04);
+    transition: all 0.25s ease;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.homework-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+
+    background: linear-gradient(
+        90deg,
+        #6c4df6,
+        #9b7cff
+    );
+}
+
+.homework-card:hover {
+    border-color: #dcd5ff;
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 8px 22px
+        rgba(108,77,246,0.12);
+}
+
+.homework-subject {
+    margin: 0 0 7px;
+    color: #222222;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.homework-teacher {
+    margin: 0 0 18px;
+    color: #888888;
+    font-size: 13px;
+}
+
+.homework-task {
+    color: #444444;
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 18px;
+    flex: 1;
+}
+
+
+/* =========================================================
+   EMPTY HOMEWORK
+========================================================= */
+
+.homework-empty {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 50px 20px;
+    color: #888888;
+}
+
+.homework-empty i {
+    display: block;
+    font-size: 35px;
+    margin-bottom: 12px;
+    color: #6c4df6;
+}
+
+.homework-empty p {
+    margin: 0;
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   TUTOR RESOURCES & NOTES
+
+   IMPORTANT:
+   This section is completely separate from homework.
+
+   No outer border.
+   No outer card.
+   No top border.
+========================================================= */
+
+.resources-section {
+    margin-top: 40px;
+    padding: 0;
+
+    background: transparent;
+
+    border: none !important;
+
+    border-radius: 0;
+
+    box-shadow: none !important;
+}
+
+
+/* =========================================================
+   RESOURCE HEADER
+========================================================= */
+
+.resources-header {
+    margin-bottom: 18px;
+    padding: 0;
+    border: none !important;
+}
+
+.resources-header h4 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    margin: 0;
+
+    color: #222222;
+
+    /* font-size: 18px; */
+
+    font-weight: 700;
+}
+
+.resources-header h4 i {
+    color: #6c4df6;
+    font-size: 19px;
+}
+
+
+/* =========================================================
+   SUBJECT GRID
+
+   Every subject gets its own full-width card.
+========================================================= */
+
+.resources-subject-grid {
+    display: flex;
+    flex-direction: column;
+
+    gap: 16px;
+
+    width: 100%;
+}
+
+
+/* =========================================================
+   SUBJECT CARD
+========================================================= */
+
+.resource-subject {
+    width: 100%;
+
+    padding: 18px;
+
+    border-radius: 10px;
+
+    border: 1px solid #e5e5e5;
+
+    box-shadow:
+        0 4px 15px
+        rgba(0,0,0,0.04);
+
+    transition: all 0.25s ease;
+}
+
+
+/* =========================================================
+   ALTERNATIVE SUBJECT COLORS
+========================================================= */
+
+.resource-subject:nth-child(4n + 1) {
+    background: #f8f6ff;
+}
+
+.resource-subject:nth-child(4n + 2) {
+    background: #f4f9ff;
+}
+
+.resource-subject:nth-child(4n + 3) {
+    background: #f5fbf8;
+}
+
+.resource-subject:nth-child(4n + 4) {
+    background: #fff9f2;
+}
+
+
+.resource-subject:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 7px 20px
+        rgba(0,0,0,0.07);
+}
+
+
+/* =========================================================
+   SUBJECT HEADER
+========================================================= */
+
+.resource-subject-title {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 12px;
+
+    padding-bottom: 11px;
+
+    border-bottom: 1px solid
+        rgba(0,0,0,0.08);
+}
+
+.resource-subject-title i {
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #ffffff;
+
+    color: #6c4df6;
+
+    border-radius: 7px;
+
+    font-size: 16px;
+
+    flex-shrink: 0;
+}
+
+.resource-subject-title h5 {
+    margin: 0;
+
+    color: #222222;
+
+    font-size: 15px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   TEACHER + DATE
+========================================================= */
+
+.resource-meta {
+    display: flex;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 14px;
+
+    margin-bottom: 13px;
+}
+
+.resource-teacher,
+.resource-date {
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    color: #777777;
+
+    font-size: 12px;
+}
+
+.resource-teacher i,
+.resource-date i {
+    color: #6c4df6;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   RESOURCE FILE
+========================================================= */
+
+.resource-file {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    width: 100%;
+
+    min-height: 58px;
+
+    padding: 10px 12px;
+
+    background: #ffffff;
+
+    border: 1px solid #e8e8e8;
+
+    border-radius: 7px;
+
+    margin-bottom: 8px;
+
+    transition: all 0.2s ease;
+}
+
+.resource-file:last-child {
+    margin-bottom: 0;
+}
+
+.resource-file:hover {
+    border-color: #d6d0ff;
+
+    box-shadow:
+        0 3px 10px
+        rgba(108,77,246,0.08);
+}
+
+
+/* =========================================================
+   FILE INFORMATION
+========================================================= */
+
+.resource-file-info {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    min-width: 0;
+
+    flex: 1;
+}
+
+
+/* =========================================================
+   FILE ICON
+========================================================= */
+
+.resource-file-icon {
+    width: 36px;
+    height: 36px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    background: #f0edff;
+
+    border-radius: 6px;
+
+    color: #6c4df6;
+}
+
+.resource-file-icon i {
+    font-size: 17px;
+}
+
+
+/* =========================================================
+   FILE DETAILS
+========================================================= */
+
+.resource-file-details {
+    min-width: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+}
+
+.resource-file-name {
+    display: block;
+
+    color: #222222;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    line-height: 1.4;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}
+
+.resource-file-type {
+    display: block;
+
+    margin-top: 3px;
+
+    color: #999999;
+
+    font-size: 10px;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   FILE ACTIONS
+========================================================= */
+
+.resource-actions {
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    flex-shrink: 0;
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.resource-view-btn,
+.resource-download-btn {
+    height: 30px;
+
+    padding: 0 11px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 5px;
+
+    border-radius: 5px;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    text-decoration: none;
+
+    transition: all 0.2s ease;
+}
+
+
+/* =========================================================
+   VIEW BUTTON
+========================================================= */
+
+.resource-view-btn {
+    background: #6c4df6;
+
+    color: #ffffff;
+
+    border: 1px solid #6c4df6;
+}
+
+.resource-view-btn:hover {
+    background: #5839e8;
+
+    border-color: #5839e8;
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   DOWNLOAD BUTTON
+========================================================= */
+
+.resource-download-btn {
+    background: #ffffff;
+
+    color: #333333;
+
+    border: 1px solid #d9d9d9;
+}
+
+.resource-download-btn:hover {
+    background: #f7f7f7;
+
+    border-color: #c8c8c8;
+
+    color: #222222;
+}
+
+
+/* =========================================================
+   NEW RESOURCE BADGE
+========================================================= */
+
+.resource-new-badge {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-left: 7px;
+
+    padding: 3px 7px;
+
+    border-radius: 20px;
+
+    background: #6c4df6;
+
+    color: #ffffff;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    vertical-align: middle;
+}
+
+
+/* =========================================================
+   EMPTY RESOURCES
+========================================================= */
+
+.resources-empty {
+    width: 100%;
+
+    padding: 35px 15px;
+
+    text-align: center;
+
+    background: #fafafa;
+
+    border: 1px solid #eeeeee;
+
+    border-radius: 8px;
+
+    color: #888888;
+
+    font-size: 12px;
+}
+
+.resources-empty i {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #6c4df6;
+
+    font-size: 25px;
+}
+
+
+/* =========================================================
+   RESOURCE VIEWER MODAL
+========================================================= */
+
+.notes-modal {
+    display: none;
+
+    position: fixed;
+
+    z-index: 99999;
+
+    left: 0;
+    top: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0,0,0,0.65);
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 25px;
+}
+
+.notes-modal.active {
+    display: flex;
+}
+
+.notes-modal-content {
+    width: 90%;
+
+    max-width: 1000px;
+
+    height: 90vh;
+
+    background: #ffffff;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 15px 50px
+        rgba(0,0,0,0.25);
+
+    display: flex;
+
+    flex-direction: column;
+}
+
+.notes-modal-header {
+    min-height: 58px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 18px;
+
+    border-bottom: 1px solid #eeeeee;
+
+    background: #ffffff;
+}
+
+.notes-modal-title {
+    font-size: 15px;
+
+    font-weight: 700;
+
+    color: #222222;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}
+
+.notes-modal-close {
+    width: 34px;
+    height: 34px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #f5f5f5;
+
+    color: #333333;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 18px;
+
+    transition: 0.2s ease;
+}
+
+.notes-modal-close:hover {
+    background: #6c4df6;
+
+    color: #ffffff;
+}
+
+.notes-pdf-viewer {
+    width: 100%;
+    height: 100%;
+
+    border: none;
+
+    background: #f5f5f5;
+}
+
+
+/* =========================================================
+   SIDEBAR
+========================================================= */
+
+.rbt-default-sidebar {
+    margin-bottom: 30px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width: 991px) {
+
+    .homework-grid {
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+    }
+
+}
+
+
+@media(max-width: 767px) {
+
+    .homework-page {
+        padding: 20px 15px;
+    }
+
+    .homework-page-header {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 10px;
+    }
+
+    .homework-page-header h3 {
+        font-size: 22px;
+    }
+
+    .homework-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .resource-file {
+        align-items: flex-start;
+
+        gap: 12px;
+    }
+
+    .resource-actions {
+        gap: 5px;
+    }
+
+    .resource-view-btn,
+    .resource-download-btn {
+        height: 29px;
+
+        padding: 0 8px;
+
+        font-size: 10px;
+    }
+
+    .notes-modal {
+        padding: 10px;
+    }
+
+    .notes-modal-content {
+        width: 100%;
+        height: 95vh;
+    }
+
+}
+
+
+@media(max-width: 480px) {
+
+    .resource-file {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+    .resource-actions {
+        width: 100%;
+    }
+
+    .resource-view-btn,
+    .resource-download-btn {
+        flex: 1;
+    }
+
+    .resource-meta {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 6px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
+
+<header class="rbt-header rbt-header-9">
+
+    <div class="rbt-sticky-placeholder"></div>
+
+
+    <div class="rbt-header-middle
+                position-relative
+                rbt-header-mid-1
+                bg-color-white
+                rbt-border-bottom">
+
+        <div class="container">
+
+            <div class="rbt-header-sec
+                        align-items-center">
+
+
+                <!-- LANGUAGE -->
+
+                <div class="rbt-header-sec-col
+                            rbt-header-left">
+
+                    <div class="rbt-header-content">
+
+                        <div class="header-info">
+
+                            <ul class="rbt-dropdown-menu
+                                       switcher-language">
+
+                                <li class="has-child-menu">
+
+                                    <a href="#">
+
+                                        <img class="left-image"
+                                             src="assets/images/icons/en-us.png"
+                                             alt="Language">
+
+                                        <span class="menu-item">
+                                            English
+                                        </span>
+
+                                    </a>
+
+                                </li>
+
+                            </ul>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- SEARCH -->
+
+                <div class="rbt-header-sec-col
+                            rbt-header-center
+                            d-none d-md-block">
+
+                    <div class="rbt-header-content">
+
+                        <div class="header-info">
+
+                            <div class="rbt-search-field">
+
+                                <div class="search-field">
+
+                                    <input type="text"
+                                           placeholder="Search Course">
+
+                                    <button class="rbt-round-btn
+                                                   serach-btn"
+                                            type="submit">
+
+                                        <i class="feather-search"></i>
+
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- LOGIN -->
+
+                <div class="rbt-header-sec-col
+                            rbt-header-right">
+
+                    <div class="rbt-btn-wrapper">
+
+                        <div class="login-dropdown">
+
+                            <button type="button"
+                                    class="rbt-btn
+                                           rbt-switch-btn
+                                           btn-gradient
+                                           btn-sm
+                                           hover-transform-none
+                                           login-dropdown-btn">
+
+                                <span data-text="Login">
+                                    Login
+                                </span>
+
+                                <i class="feather-chevron-down"></i>
+
+                            </button>
+
+
+                            <div class="login-dropdown-menu">
+
+                                <a href="instructor-profile.html">
+
+                                    <i class="feather-user"></i>
+
+                                    <span>
+                                        Tutor Login
+                                    </span>
+
+                                </a>
+
+
+                                <a href="student-profile.html">
+
+                                    <i class="feather-book-open"></i>
+
+                                    <span>
+                                        Student Login
+                                    </span>
+
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         MAIN NAVIGATION
+    ====================================================== -->
+
+    <div class="rbt-header-wrapper
+                header-not-transparent
+                header-sticky">
+
+        <div class="container">
+
+            <div class="mainbar-row
+                        rbt-navigation-end
+                        align-items-center">
+
+
+                <!-- LOGO -->
+
+                <div class="header-left
+                            rbt-header-content">
+
+                    <div class="header-info">
+
+                        <div class="logo">
+
+                            <a href="index.html">
+
+                                <img src="assets/images/logo/logo.png"
+                                     alt="Education Logo">
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- NAVIGATION -->
+
+                <div class="rbt-main-navigation
+                            d-none d-xl-block">
+
+                    <nav class="mainmenu-nav">
+
+                        <ul class="mainmenu">
+
+                            <li>
+                                <a href="index.html">
+                                    Home
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="about-us.html">
+                                    About
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="our-team.html">
+                                    Our Team
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="our-tuition.html">
+                                    Our Tuition
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="holiday-camps.html">
+                                    Holiday Camps
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="plans-and-pricing.html">
+                                    Plans &amp; Pricing
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="book-online.html">
+                                    Book Online
+                                </a>
+                            </li>
+
+                        </ul>
+
+                    </nav>
+
+                </div>
+
+
+                <!-- JOIN -->
+
+                <div class="header-right">
+
+                    <div class="rbt-btn-wrapper
+                                d-none d-xl-block">
+
+                        <a class="rbt-btn
+                                  rbt-switch-btn
+                                  btn-gradient
+                                  btn-sm
+                                  hover-transform-none"
+                           href="login-register.html">
+
+                            <span data-text="Join Now">
+                                Join Now
+                            </span>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+
+<!-- =========================================================
+     BANNER
+========================================================= -->
+
+<div class="slider-area
+            rbt-banner-10
+            height-400
+            bg_image
+            bg_image--11"
+     data-black-overlay="5">
+
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-lg-12">
+
+                <div class="inner text-center">
+
+                    <h1 class="title
+                               display-one
+                               text-white">
+
+                        My Homework &amp; Notes
+
+                    </h1>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     DASHBOARD
+========================================================= -->
+
+<div class="rbt-dashboard-area
+            rbt-section-gap">
+
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-lg-12">
+
+                <div class="row g-5">
+
+
+                    <!-- =================================================
+                         SIDEBAR
+                    ================================================== -->
+
+                    <div class="col-lg-3">
+
+                        <div class="rbt-default-sidebar
+                                    sticky-top
+                                    rbt-shadow-box
+                                    rbt-gradient-border">
+
+                            <div class="inner">
+
+                                <div class="content-item-content">
+
+                                    <div class="rbt-default-sidebar-wrapper">
+
+
+                                        <!-- WELCOME -->
+
+                                        <div class="section-title mb--20">
+
+                                            <h6 class="rbt-title-style-2">
+
+                                                Welcome,
+
+                                                <span id="sidebarStudentName">
+                                                    Shreya
+                                                </span>
+
+                                            </h6>
+
+                                        </div>
+
+
+                                        <!-- PROFILE -->
+
+                                        <nav class="mainmenu-nav">
+
+                                            <ul class="dashboard-mainmenu
+                                                       rbt-default-sidebar-list">
+
+                                                <li>
+
+                                                    <a href="student-profile.html">
+
+                                                        <i class="feather-user"></i>
+
+                                                        <span>
+                                                            My Profile
+                                                        </span>
+
+                                                    </a>
+
+                                                </li>
+
+                                            </ul>
+
+                                        </nav>
+
+
+                                        <!-- COURSES -->
+
+                                        <nav class="mainmenu-nav">
+
+                                            <ul class="dashboard-mainmenu
+                                                       rbt-default-sidebar-list">
+
+                                                <li>
+
+                                                    <a href="student-course.html">
+
+                                                        <i class="feather-monitor"></i>
+
+                                                        <span>
+                                                            My Courses
+                                                        </span>
+
+                                                    </a>
+
+                                                </li>
+
+                                            </ul>
+
+                                        </nav>
+
+
+                                        <!-- ATTENDANCE -->
+
+                                        <nav class="mainmenu-nav">
+
+                                            <ul class="dashboard-mainmenu
+                                                       rbt-default-sidebar-list">
+
+                                                <li>
+
+                                                    <a href="student-profile-attendance.html">
+
+                                                        <i class="feather-calendar"></i>
+
+                                                        <span>
+                                                            Attendance
+                                                        </span>
+
+                                                    </a>
+
+                                                </li>
+
+                                            </ul>
+
+                                        </nav>
+
+
+                                        <!-- HOMEWORK -->
+
+                                        <nav class="mainmenu-nav">
+
+                                            <ul class="dashboard-mainmenu
+                                                       rbt-default-sidebar-list">
+
+                                                <li class="active">
+
+                                                    <a href="student-homework-task.html">
+
+                                                        <i class="feather-book-open"></i>
+
+                                                        <span>
+                                                            My Homework &amp; Notes
+                                                        </span>
+
+                                                    </a>
+
+                                                </li>
+
+                                            </ul>
+
+                                        </nav>
+
+
+                                        <!-- USER -->
+
+                                        <div class="section-title
+                                                    mt--40
+                                                    mb--20">
+
+                                            <h6 class="rbt-title-style-2">
+                                                User
+                                            </h6>
+
+                                        </div>
+
+
+                                        <!-- USER MENU -->
+
+                                        <nav class="mainmenu-nav">
+
+                                            <ul class="dashboard-mainmenu
+                                                       rbt-default-sidebar-list">
+
+                                                <li>
+
+                                                    <a href="student-edit.html">
+
+                                                        <i class="feather-settings"></i>
+
+                                                        <span>
+                                                            Edit Profile
+                                                        </span>
+
+                                                    </a>
+
+                                                </li>
+
+
+                                                <li>
+
+                                                    <a href="index.html">
+
+                                                        <i class="feather-log-out"></i>
+
+                                                        <span>
+                                                            Logout
+                                                        </span>
+
+                                                    </a>
+
+                                                </li>
+
+                                            </ul>
+
+                                        </nav>
+
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- =================================================
+                         MAIN CONTENT
+                    ================================================== -->
+
+                    <div class="col-lg-9">
+
+                        <div class="homework-page">
+
+
+                            <!-- =================================================
+                                 PAGE HEADER
+                            ================================================== -->
+
+                            <div class="homework-page-header">
+
+                                <div>
+
+                                    <h3>
+                                        My Homework &amp; Notes
+                                    </h3>
+
+                                    <p>
+                                        View homework, notes and resources
+                                        shared by your teachers.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- =================================================
+                                 HOMEWORK
+
+                                 SEPARATE FROM RESOURCES
+                            ================================================== -->
+
+                            <div class="homework-grid"
+                                 id="homeworkGrid">
+
+                            </div>
+
+
+                            <!-- =================================================
+                                 TUTOR RESOURCES & NOTES
+
+                                 SEPARATE CARD STRUCTURE
+                            ================================================== -->
+
+                            <div class="resources-section"
+                                 id="resourcesSection">
+
+
+                                <div class="resources-header">
+
+                                    <h4>
+
+                                        <i class="feather-folder"></i>
+
+                                 Resources &amp; Notes
+
+                                    </h4>
+
+                                </div>
+
+
+                                <div class="resources-subject-grid"
+                                     id="resourcesGrid">
+
+                                </div>
+
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     RESOURCE VIEWER MODAL
+========================================================= -->
+
+<div class="notes-modal"
+     id="notesModal">
+
+
+    <div class="notes-modal-content">
+
+
+        <div class="notes-modal-header">
+
+            <div class="notes-modal-title"
+                 id="notesModalTitle">
+
+                Resource
+
+            </div>
+
+
+            <button type="button"
+                    class="notes-modal-close"
+                    id="notesModalClose">
+
+                <i class="feather-x"></i>
+
+            </button>
+
+        </div>
+
+
+        <iframe
+            id="notesPdfViewer"
+            class="notes-pdf-viewer"
+            src=""
+            title="Resource Viewer">
+        </iframe>
+
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<div class="rbt-separator-mid">
+
+    <div class="container">
+
+        <hr class="rbt-separator m-0">
+
+    </div>
+
+</div>
+
+
+<footer class="rbt-footer
+               footer-style-1
+               bg-color-white
+               overflow-hidden">
+
+    <div class="footer-top">
+
+        <div class="container">
+
+            <div class="row g-5">
+
+
+                <!-- COMPANY -->
+
+                <div class="col-lg-4 col-md-6">
+
+                    <div class="footer-widget">
+
+                        <div class="logo">
+
+                            <a href="index.html">
+
+                                <img src="assets/images/logo/logo.png"
+                                     alt="Education">
+
+                            </a>
+
+                        </div>
+
+
+                        <p class="description mt--20">
+
+                            We're always in search for talented
+                            and motivated people.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- QUICK LINKS -->
+
+                <div class="col-lg-2 col-md-6">
+
+                    <div class="footer-widget">
+
+                        <h5 class="ft-title">
+                            Quick Links
+                        </h5>
+
+                        <ul class="ft-link">
+
+                            <li>
+                                <a href="our-team.html">
+                                    Our Team
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="our-tuition.html">
+                                    Our Tuition
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="holiday-camps.html">
+                                    Holiday Camps
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="plans-and-pricing.html">
+                                    Plans &amp; Pricing
+                                </a>
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PROGRAMS -->
+
+                <div class="col-lg-2 col-md-6">
+
+                    <div class="footer-widget">
+
+                        <h5 class="ft-title">
+                            Programs
+                        </h5>
+
+                        <ul class="ft-link">
+
+                            <li>
+                                <a href="our-tuition.html">
+                                    Primary Tuition
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="our-tuition.html">
+                                    Secondary Tuition
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="our-tuition.html">
+                                    GCSE Tuition
+                                </a>
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CONTACT -->
+
+                <div class="col-lg-4 col-md-6">
+
+                    <div class="footer-widget">
+
+                        <h5 class="ft-title">
+                            Get Contact
+                        </h5>
+
+                        <ul class="ft-link">
+
+                            <li>
+
+                                <span>
+                                    Phone:
+                                </span>
+
+                                <a href="#">
+                                    (406) 555-0120
+                                </a>
+
+                            </li>
+
+
+                            <li>
+
+                                <span>
+                                    E-mail:
+                                </span>
+
+                                <a href="mailto:admin@example.com">
+                                    admin@example.com
+                                </a>
+
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="rbt-separator-mid">
+
+        <div class="container">
+
+            <hr class="rbt-separator m-0">
+
+        </div>
+
+    </div>
+
+
+    <div class="copyright-area
+                copyright-style-1
+                ptb--20">
+
+        <div class="container">
+
+            <div class="row align-items-center">
+
+                <div class="col-lg-12">
+
+                    <p class="text-center">
+
+                        Copyright © 2024 by
+
+                        <a href="index.html">
+                            London Star Education Ltd.
+                        </a>
+
+                        All Rights Reserved.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+
+<!-- =========================================================
+     JAVASCRIPT LIBRARIES
+========================================================= -->
+
+<script src="assets/js/vendor/jquery.js"></script>
+
+<script src="assets/js/vendor/bootstrap.min.js"></script>
+
+<script src="assets/js/vendor/backtotop.js"></script>
+
+<script src="assets/js/main.js"></script>
+
+
+
+<script>
+
+/* =========================================================
+   CURRENT STUDENT
+========================================================= */
+
+const currentStudentId = "student001";
+
+
+/* =========================================================
+   STUDENT DATA
+========================================================= */
+
+const studentData = {
+
+    student001: {
+
+        name: "Shreya",
+
+        subjects: [
+
+            "Physics 101",
+            "Calculus II",
+            "Modern History",
+            "Web Development"
+
+        ]
+
+    },
+
+
+    student002: {
+
+        name: "Arun",
+
+        subjects: [
+
+            "Physics 101",
+            "Biology"
+
+        ]
+
+    },
+
+
+    student003: {
+
+        name: "Rahul",
+
+        subjects: [
+
+            "Java",
+            "PHP",
+            "MySQL"
+
+        ]
+
+    }
+
+};
+
+
+const currentStudent =
+    studentData[currentStudentId];
+
+
+/* =========================================================
+   SAMPLE HOMEWORK
+========================================================= */
+
+const homeworkData = [
+
+    {
+        id: 1,
+
+        subject: "Physics 101",
+
+        teacher: "Prof. E. Schrödinger",
+
+        task:
+            "Complete Chapter 5 numerical problems and revise the topics discussed in today's class.",
+
+        studentId: "student001"
+
+    },
+
+
+    {
+        id: 2,
+
+        subject: "Calculus II",
+
+        teacher: "Prof. I. Newton",
+
+        task:
+            "Solve the integration exercises from Chapter 5 and submit the completed work.",
+
+        studentId: "student001"
+
+    },
+
+
+    {
+        id: 3,
+
+        subject: "Modern History",
+
+        teacher: "Prof. H. Zinn",
+
+        task:
+            "Read the assigned chapter and prepare short notes about the major historical events.",
+
+        studentId: "student001"
+
+    },
+
+
+    {
+        id: 4,
+
+        subject: "Web Development",
+
+        teacher: "Prof. T. Berners-Lee",
+
+        task:
+            "Create a responsive HTML and CSS webpage and submit the completed task.",
+
+        studentId: "student001"
+
+    }
+
+];
+
+
+/* =========================================================
+   SAMPLE RESOURCE DATA
+
+   Supports:
+   PDF
+   DOC
+   DOCX
+   XLS
+   XLSX
+   PPT
+   PPTX
+   JPG
+   JPEG
+   PNG
+   GIF
+   WEBP
+   ZIP
+   RAR
+   MP4
+   WEBM
+   MP3
+   WAV
+   TXT
+   CSV
+   and other files.
+========================================================= */
+
+const resourceData = [
+
+    {
+        id: 1,
+
+        studentId: "student001",
+
+        subject: "Physics 101",
+
+        teacher: "Prof. E. Schrödinger",
+
+        date: "2026-08-13",
+
+        files: [
+
+            {
+                name: "Physics_Ch5_Notes.pdf",
+
+                file: "assets/notes/Physics_Ch5_Notes.pdf",
+
+                type: "PDF",
+
+                uploadedAt: "2026-08-13T09:30:00"
+
+            }
+
+        ]
+
+    },
+
+
+    {
+        id: 2,
+
+        studentId: "student001",
+
+        subject: "Calculus II",
+
+        teacher: "Prof. I. Newton",
+
+        date: "2026-08-13",
+
+        files: [
+
+            {
+                name: "Calculus_Ch5_Notes.pdf",
+
+                file: "assets/notes/Calculus_Ch5_Notes.pdf",
+
+                type: "PDF",
+
+                uploadedAt: "2026-08-13T10:00:00"
+
+            }
+
+        ]
+
+    },
+
+
+    {
+        id: 3,
+
+        studentId: "student001",
+
+        subject: "Modern History",
+
+        teacher: "Prof. H. Zinn",
+
+        date: "2026-08-12",
+
+        files: [
+
+            {
+                name: "Modern_History_Chapter5.pdf",
+
+                file: "assets/notes/Modern_History_Chapter5.pdf",
+
+                type: "PDF",
+
+                uploadedAt: "2026-08-12T09:00:00"
+
+            },
+
+            {
+                name: "History_Cheat_Sheet.docx",
+
+                file: "assets/notes/History_Cheat_Sheet.docx",
+
+                type: "DOCX",
+
+                uploadedAt: "2026-08-12T09:10:00"
+
+            }
+
+        ]
+
+    },
+
+
+    {
+        id: 4,
+
+        studentId: "student001",
+
+        subject: "Web Development",
+
+        teacher: "Prof. T. Berners-Lee",
+
+        date: "2026-08-11",
+
+        files: [
+
+            {
+                name: "HTML_CSS_Notes.pdf",
+
+                file: "assets/notes/HTML_CSS_Notes.pdf",
+
+                type: "PDF",
+
+                uploadedAt: "2026-08-11T09:00:00"
+
+            },
+
+            {
+                name: "JavaScript_CheatSheet.pptx",
+
+                file: "assets/notes/JavaScript_CheatSheet.pptx",
+
+                type: "PPTX",
+
+                uploadedAt: "2026-08-11T09:15:00"
+
+            }
+
+        ]
+
+    }
+
+];
+
+
+/* =========================================================
+   GET TEACHER HOMEWORK
+========================================================= */
+
+function getTeacherPosts() {
+
+    const savedPosts =
+        localStorage.getItem(
+            "teacherHomeworkPosts"
+        );
+
+    if (!savedPosts) {
+
+        return [];
+
+    }
+
+    try {
+
+        return JSON.parse(savedPosts);
+
+    }
+
+    catch (error) {
+
+        console.error(
+            "Unable to load teacher posts.",
+            error
+        );
+
+        return [];
+
+    }
+
+}
+
+
+/* =========================================================
+   GET TEACHER RESOURCES
+========================================================= */
+
+function getTeacherResources() {
+
+    const savedResources =
+        localStorage.getItem(
+            "teacherResources"
+        );
+
+    if (!savedResources) {
+
+        return [];
+
+    }
+
+    try {
+
+        return JSON.parse(savedResources);
+
+    }
+
+    catch (error) {
+
+        console.error(
+            "Unable to load teacher resources.",
+            error
+        );
+
+        return [];
+
+    }
+
+}
+
+
+/* =========================================================
+   GET STUDENT HOMEWORK
+========================================================= */
+
+function getStudentHomework() {
+
+    if (!currentStudent) {
+
+        return [];
+
+    }
+
+    const sampleHomework =
+        homeworkData.filter(
+            function(item) {
+
+                return (
+                    item.studentId ===
+                    currentStudentId
+                );
+
+            }
+        );
+
+
+    const teacherPosts =
+        getTeacherPosts();
+
+
+    const studentPosts =
+        teacherPosts.filter(
+            function(item) {
+
+                return (
+                    item.studentId ===
+                    currentStudentId
+                );
+
+            }
+        );
+
+
+    return [
+
+        ...sampleHomework,
+
+        ...studentPosts
+
+    ];
+
+}
+
+
+/* =========================================================
+   RENDER HOMEWORK
+========================================================= */
+
+function renderHomework() {
+
+    const container =
+        document.getElementById(
+            "homeworkGrid"
+        );
+
+
+    if (!container) {
+
+        return;
+
+    }
+
+
+    container.innerHTML = "";
+
+
+    if (!currentStudent) {
+
+        container.innerHTML = `
+
+            <div class="homework-empty">
+
+                <i class="feather-alert-circle"></i>
+
+                <p>
+                    Student information not found.
+                </p>
+
+            </div>
+
+        `;
+
+        return;
+
+    }
+
+
+    const allHomework =
+        getStudentHomework();
+
+
+    const visibleHomework =
+        allHomework.filter(
+            function(item) {
+
+                return currentStudent.subjects.includes(
+                    item.subject
+                );
+
+            }
+        );
+
+
+    if (visibleHomework.length === 0) {
+
+        container.innerHTML = `
+
+            <div class="homework-empty">
+
+                <i class="feather-book-open"></i>
+
+                <p>
+                    No homework has been posted yet.
+                </p>
+
+            </div>
+
+        `;
+
+        return;
+
+    }
+
+
+    visibleHomework.forEach(
+        function(item) {
+
+            const card =
+                document.createElement("div");
+
+
+            card.className =
+                "homework-card";
+
+
+            card.innerHTML = `
+
+                <h5 class="homework-subject">
+
+                    ${escapeHTML(item.subject)}
+
+                </h5>
+
+
+                <p class="homework-teacher">
+
+                    ${escapeHTML(
+                        item.teacher ||
+                        "Teacher"
+                    )}
+
+                </p>
+
+
+                <div class="homework-task">
+
+                    ${escapeHTML(
+                        item.task ||
+                        ""
+                    )}
+
+                </div>
+
+            `;
+
+
+            container.appendChild(card);
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   GET STUDENT RESOURCES
+========================================================= */
+
+function getStudentResources() {
+
+    if (!currentStudent) {
+
+        return [];
+
+    }
+
+
+    const selectedSubjects =
+        currentStudent.subjects;
+
+
+    const sampleResources =
+        resourceData.filter(
+            function(item) {
+
+                return (
+
+                    item.studentId ===
+                    currentStudentId
+
+                    &&
+
+                    selectedSubjects.includes(
+                        item.subject
+                    )
+
+                );
+
+            }
+        );
+
+
+    const teacherResources =
+        getTeacherResources();
+
+
+    const studentTeacherResources =
+        teacherResources.filter(
+            function(item) {
+
+                return (
+
+                    item.studentId ===
+                    currentStudentId
+
+                    &&
+
+                    selectedSubjects.includes(
+                        item.subject
+                    )
+
+                );
+
+            }
+        );
+
+
+    return [
+
+        ...sampleResources,
+
+        ...studentTeacherResources
+
+    ];
+
+}
+
+
+/* =========================================================
+   FILE ICON
+========================================================= */
+
+function getFileIcon(fileName) {
+
+    const extension =
+        fileName
+            .split(".")
+            .pop()
+            .toLowerCase();
+
+
+    if (extension === "pdf") {
+
+        return "feather-file-text";
+
+    }
+
+
+    if (
+        extension === "doc" ||
+        extension === "docx"
+    ) {
+
+        return "feather-file";
+
+    }
+
+
+    if (
+        extension === "xls" ||
+        extension === "xlsx" ||
+        extension === "csv"
+    ) {
+
+        return "feather-grid";
+
+    }
+
+
+    if (
+        extension === "ppt" ||
+        extension === "pptx"
+    ) {
+
+        return "feather-monitor";
+
+    }
+
+
+    if (
+        extension === "jpg" ||
+        extension === "jpeg" ||
+        extension === "png" ||
+        extension === "gif" ||
+        extension === "webp"
+    ) {
+
+        return "feather-image";
+
+    }
+
+
+    if (
+        extension === "zip" ||
+        extension === "rar" ||
+        extension === "7z"
+    ) {
+
+        return "feather-archive";
+
+    }
+
+
+    if (
+        extension === "mp4" ||
+        extension === "webm" ||
+        extension === "avi"
+    ) {
+
+        return "feather-video";
+
+    }
+
+
+    if (
+        extension === "mp3" ||
+        extension === "wav"
+    ) {
+
+        return "feather-music";
+
+    }
+
+
+    if (
+        extension === "txt"
+    ) {
+
+        return "feather-file-text";
+
+    }
+
+
+    return "feather-file";
+
+}
+
+
+/* =========================================================
+   GET FILE TYPE
+========================================================= */
+
+function getFileType(file) {
+
+    if (file.type) {
+
+        return file.type;
+
+    }
+
+
+    const extension =
+        file.name
+            .split(".")
+            .pop()
+            .toUpperCase();
+
+
+    return extension || "FILE";
+
+}
+
+
+/* =========================================================
+   FORMAT DATE
+========================================================= */
+
+function formatResourceDate(dateValue) {
+
+    if (!dateValue) {
+
+        return "";
+
+    }
+
+
+    const date =
+        new Date(dateValue);
+
+
+    if (isNaN(date.getTime())) {
+
+        return "";
+
+    }
+
+
+    return date.toLocaleDateString(
+        "en-GB",
+        {
+            day: "2-digit",
+            month: "short",
+            year: "numeric"
+        }
+    );
+
+}
+
+
+/* =========================================================
+   CHECK WHETHER RESOURCE IS NEW
+
+   New = uploaded within the last 24 hours.
+========================================================= */
+
+function isNewResource(uploadedAt) {
+
+    if (!uploadedAt) {
+
+        return false;
+
+    }
+
+
+    const uploadTime =
+        new Date(uploadedAt).getTime();
+
+
+    const now =
+        new Date().getTime();
+
+
+    const oneDay =
+        24 * 60 * 60 * 1000;
+
+
+    return (
+        now - uploadTime <= oneDay
+        &&
+        now - uploadTime >= 0
+    );
+
+}
+
+
+/* =========================================================
+   RENDER RESOURCES
+========================================================= */
+
+function renderResources() {
+
+    const container =
+        document.getElementById(
+            "resourcesGrid"
+        );
+
+
+    if (!container) {
+
+        return;
+
+    }
+
+
+    container.innerHTML = "";
+
+
+    if (!currentStudent) {
+
+        return;
+
+    }
+
+
+    const resources =
+        getStudentResources();
+
+
+    const groupedResources = {};
+
+
+    /*
+       Group everything by subject.
+
+       This means:
+
+       Physics
+          file 1
+          file 2
+
+       Calculus
+          file 1
+          file 2
+
+       etc.
+    */
+
+    resources.forEach(
+        function(resource) {
+
+            if (
+                !resource.subject ||
+                !resource.files
+            ) {
+
+                return;
+
+            }
+
+
+            if (
+                !groupedResources[
+                    resource.subject
+                ]
+            ) {
+
+                groupedResources[
+                    resource.subject
+                ] = {
+
+                    teacher:
+                        resource.teacher ||
+                        "Teacher",
+
+                    date:
+                        resource.date ||
+                        resource.uploadedAt ||
+                        "",
+
+                    files: []
+
+                };
+
+            }
+
+
+            /*
+               Add every file.
+            */
+
+            resource.files.forEach(
+                function(file) {
+
+                    groupedResources[
+                        resource.subject
+                    ].files.push({
+
+                        ...file,
+
+                        teacher:
+                            file.teacher ||
+                            resource.teacher ||
+                            "Teacher",
+
+                        uploadedAt:
+                            file.uploadedAt ||
+                            resource.date ||
+                            resource.uploadedAt ||
+                            ""
+
+                    });
+
+                }
+            );
+
+        }
+    );
+
+
+    let hasResources =
+        false;
+
+
+    /*
+       Display subjects in the student's
+       subject order.
+    */
+
+    currentStudent.subjects.forEach(
+        function(subject) {
+
+            const resource =
+                groupedResources[subject];
+
+
+            if (
+                !resource ||
+                !resource.files.length
+            ) {
+
+                return;
+
+            }
+
+
+            hasResources =
+                true;
+
+
+            const subjectBox =
+                document.createElement(
+                    "div"
+                );
+
+
+            subjectBox.className =
+                "resource-subject";
+
+
+            /*
+               Sort newest file first.
+            */
+
+            resource.files.sort(
+                function(a,b) {
+
+                    return (
+                        new Date(
+                            b.uploadedAt || 0
+                        )
+                        -
+
+                        new Date(
+                            a.uploadedAt || 0
+                        )
+                    );
+
+                }
+            );
+
+
+            /*
+               Get latest upload.
+            */
+
+            const latestFile =
+                resource.files[0];
+
+
+            const latestTeacher =
+                latestFile.teacher ||
+                resource.teacher ||
+                "Teacher";
+
+
+            const latestDate =
+                latestFile.uploadedAt ||
+                resource.date ||
+                "";
+
+
+            let filesHTML = "";
+
+
+            resource.files.forEach(
+                function(file) {
+
+                    const fileName =
+                        file.name ||
+                        "Resource";
+
+
+                    const filePath =
+                        file.file ||
+                        file.url ||
+                        "";
+
+
+                    const fileType =
+                        getFileType(file);
+
+
+                    const icon =
+                        getFileIcon(
+                            fileName
+                        );
+
+
+                    const newBadge =
+                        isNewResource(
+                            file.uploadedAt
+                        )
+                        ?
+
+                        `<span class="resource-new-badge">
+                            New
+                        </span>`
+
+                        :
+
+                        "";
+
+
+                    /*
+                       Only show View for files
+                       that have a path.
+                    */
+
+                    let viewButton = "";
+
+
+                    if (filePath) {
+
+                        viewButton = `
+
+                            <button
+                                type="button"
+                                class="resource-view-btn"
+                                onclick="viewResource(
+                                    '${encodeURIComponent(filePath)}',
+                                    '${encodeURIComponent(fileName)}'
+                                )">
+
+                                <i class="feather-eye"></i>
+
+                                View
+
+                            </button>
+
+                        `;
+
+                    }
+
+
+                    let downloadButton = "";
+
+
+                    if (filePath) {
+
+                        downloadButton = `
+
+                            <a
+                                href="${escapeAttribute(filePath)}"
+                                class="resource-download-btn"
+                                download>
+
+                                <i class="feather-download"></i>
+
+                                Download
+
+                            </a>
+
+                        `;
+
+                    }
+
+
+                    filesHTML += `
+
+                        <div class="resource-file">
+
+
+                            <div class="resource-file-info">
+
+
+                                <div class="resource-file-icon">
+
+                                    <i class="${icon}"></i>
+
+                                </div>
+
+
+                                <div class="resource-file-details">
+
+                                    <span class="resource-file-name">
+
+                                        ${escapeHTML(fileName)}
+
+                                        ${newBadge}
+
+                                    </span>
+
+
+                                    <span class="resource-file-type">
+
+                                        ${escapeHTML(fileType)}
+
+                                    </span>
+
+                                </div>
+
+
+                            </div>
+
+
+                            <div class="resource-actions">
+
+                                ${viewButton}
+
+                                ${downloadButton}
+
+                            </div>
+
+
+                        </div>
+
+                    `;
+
+                }
+            );
+
+
+            /*
+               Subject card.
+            */
+
+            subjectBox.innerHTML = `
+
+                <div class="resource-subject-title">
+
+                    <i class="feather-book-open"></i>
+
+                    <h5>
+
+                        ${escapeHTML(subject)}
+
+                    </h5>
+
+                </div>
+
+
+                <div class="resource-meta">
+
+
+                    <div class="resource-teacher">
+
+                        <i class="feather-user"></i>
+
+                        <span>
+
+                            ${escapeHTML(
+                                latestTeacher
+                            )}
+
+                        </span>
+
+                    </div>
+
+
+                    ${
+                        latestDate
+                        ?
+
+                        `
+
+                        <div class="resource-date">
+
+                            <i class="feather-calendar"></i>
+
+                            <span>
+
+                                ${escapeHTML(
+                                    formatResourceDate(
+                                        latestDate
+                                    )
+                                )}
+
+                            </span>
+
+                        </div>
+
+                        `
+
+                        :
+
+                        ""
+
+                    }
+
+
+                </div>
+
+
+                ${filesHTML}
+
+            `;
+
+
+            container.appendChild(
+                subjectBox
+            );
+
+        }
+    );
+
+
+    /*
+       No resources.
+    */
+
+    if (!hasResources) {
+
+        container.innerHTML = `
+
+            <div class="resources-empty">
+
+                <i class="feather-folder"></i>
+
+                No notes or resources have been
+                shared by your teachers yet.
+
+            </div>
+
+        `;
+
+    }
+
+}
+
+
+/* =========================================================
+   ESCAPE HTML
+========================================================= */
+
+function escapeHTML(value) {
+
+    return String(value || "")
+        .replace(
+            /&/g,
+            "&amp;"
+        )
+        .replace(
+            /</g,
+            "&lt;"
+        )
+        .replace(
+            />/g,
+            "&gt;"
+        )
+        .replace(
+            /"/g,
+            "&quot;"
+        )
+        .replace(
+            /'/g,
+            "&#039;"
+        );
+
+}
+
+
+/* =========================================================
+   ESCAPE ATTRIBUTE
+========================================================= */
+
+function escapeAttribute(value) {
+
+    return String(value || "")
+        .replace(
+            /"/g,
+            "&quot;"
+        );
+
+}
+
+
+/* =========================================================
+   VIEW RESOURCE
+========================================================= */
+
+function viewResource(file,name) {
+
+    const modal =
+        document.getElementById(
+            "notesModal"
+        );
+
+
+    const viewer =
+        document.getElementById(
+            "notesPdfViewer"
+        );
+
+
+    const title =
+        document.getElementById(
+            "notesModalTitle"
+        );
+
+
+    const decodedFile =
+        decodeURIComponent(file);
+
+
+    const decodedName =
+        decodeURIComponent(name);
+
+
+    title.textContent =
+        decodedName;
+
+
+    /*
+       For PDFs and browser-supported files,
+       iframe can display the file.
+
+       For unsupported file formats,
+       the browser may show its own
+       download/open behaviour.
+    */
+
+    viewer.src =
+        decodedFile;
+
+
+    modal.classList.add(
+        "active"
+    );
+
+
+    document.body.style.overflow =
+        "hidden";
+
+}
+
+
+/* =========================================================
+   CLOSE VIEWER
+========================================================= */
+
+function closeNoteViewer() {
+
+    const modal =
+        document.getElementById(
+            "notesModal"
+        );
+
+
+    const viewer =
+        document.getElementById(
+            "notesPdfViewer"
+        );
+
+
+    viewer.src = "";
+
+
+    modal.classList.remove(
+        "active"
+    );
+
+
+    document.body.style.overflow =
+        "";
+
+}
+
+
+/* =========================================================
+   CLOSE BUTTON
+========================================================= */
+
+document.getElementById(
+    "notesModalClose"
+).addEventListener(
+    "click",
+    closeNoteViewer
+);
+
+
+/* =========================================================
+   OUTSIDE CLICK
+========================================================= */
+
+document.getElementById(
+    "notesModal"
+).addEventListener(
+    "click",
+    function(event) {
+
+        if (
+            event.target === this
+        ) {
+
+            closeNoteViewer();
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   ESC KEY
+========================================================= */
+
+document.addEventListener(
+    "keydown",
+    function(event) {
+
+        if (
+            event.key === "Escape"
+        ) {
+
+            closeNoteViewer();
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   DISPLAY STUDENT NAME
+========================================================= */
+
+function displayStudentName() {
+
+    const element =
+        document.getElementById(
+            "sidebarStudentName"
+        );
+
+
+    if (
+        element &&
+        currentStudent
+    ) {
+
+        element.textContent =
+            currentStudent.name;
+
+    }
+
+}
+
+
+/* =========================================================
+   INITIALIZE PAGE
+========================================================= */
+
+displayStudentName();
+
+renderHomework();
+
+renderResources();
+
+
+/* =========================================================
+   LIVE UPDATE
+
+   If tutor page changes:
+
+   teacherHomeworkPosts
+   teacherResources
+
+   the student page updates automatically.
+========================================================= */
+
+window.addEventListener(
+    "storage",
+    function(event) {
+
+
+        if (
+            event.key ===
+            "teacherHomeworkPosts"
+        ) {
+
+            renderHomework();
+
+        }
+
+
+        if (
+            event.key ===
+            "teacherResources"
+        ) {
+
+            renderResources();
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   AUTO REFRESH
+
+   This is useful while developing
+   the live project.
+
+   Later, when you connect PHP/MySQL,
+   this can be replaced with an API call.
+========================================================= */
+
+setInterval(
+    function() {
+
+        renderHomework();
+
+        renderResources();
+
+    },
+    3000
+);
+
+</script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,3902 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>My Attendance - London Star Education</title>
+
+    <meta name="robots" content="noindex, follow">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.png">
+        <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/vendor/slick.css">
+    <link rel="stylesheet" href="assets/css/vendor/slick-theme.css">
+    <link rel="stylesheet" href="assets/css/plugins/sal.css">
+    <link rel="stylesheet" href="assets/css/plugins/feather.css">
+    <link rel="stylesheet" href="assets/css/plugins/fontawesome.min.css">
+    <link rel="stylesheet" href="assets/css/plugins/euclid-circulara.css">
+    <link rel="stylesheet" href="assets/css/plugins/swiper.css">
+    <link rel="stylesheet" href="assets/css/plugins/magnify.css">
+    <link rel="stylesheet" href="assets/css/plugins/odometer.css">
+    <link rel="stylesheet" href="assets/css/plugins/animation.css">
+    <link rel="stylesheet" href="assets/css/plugins/bootstrap-select.min.css">
+    <link rel="stylesheet" href="assets/css/plugins/jquery-ui.css">
+    <link rel="stylesheet" href="assets/css/plugins/magnigy-popup.min.css">
+    <link rel="stylesheet" href="assets/css/plugins/plyr.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+
+<style>
+
+/* =========================================================
+   STUDENT ATTENDANCE PAGE
+========================================================= */
+
+.student-attendance-page {
+
+    background: #ffffff;
+
+    border-radius: 10px;
+
+    padding: 30px;
+
+    border: 1px solid #eee;
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.05);
+
+    /* SAME FONT AS YOUR THEME */
+    font-family: inherit;
+}
+
+
+/* =========================================================
+   INCREASE ATTENDANCE FONT SIZE
+   KEPT SAME STYLE / COLORS
+========================================================= */
+
+.student-attendance-page h3,
+.student-attendance-page h4,
+.student-attendance-page h5,
+.student-attendance-page h6,
+.student-attendance-page p,
+.student-attendance-page span,
+.student-attendance-page input,
+.student-attendance-page td,
+.student-attendance-page th {
+
+    font-family: inherit;
+}
+
+
+/* =========================================================
+   PAGE HEADER
+========================================================= */
+
+.attendance-page-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 30px;
+}
+
+
+.attendance-page-header h3 {
+
+    margin: 0 0 6px;
+
+    font-size: 26px;
+
+    font-weight: 700;
+
+    color: #222222;
+}
+
+
+.attendance-page-header p {
+
+    margin: 0;
+
+    color: #777777;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+
+.attendance-date {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 10px 15px;
+
+    background: #f8f6ff;
+
+    border: 1px solid #ebe7ff;
+
+    border-radius: 8px;
+
+    color: #6c4df6;
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+
+.attendance-date i {
+
+    color: #6c4df6;
+
+    font-size: 15px;
+}
+
+
+/* =========================================================
+   SECTION
+========================================================= */
+
+.attendance-section {
+
+    margin-bottom: 35px;
+}
+
+
+.section-title-row {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 18px;
+}
+
+
+.section-title-row h4 {
+
+    margin: 0 0 5px;
+
+    font-size: 21px;
+
+    font-weight: 700;
+
+    color: #222222;
+}
+
+
+.section-title-row p {
+
+    margin: 0;
+
+    color: #888888;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   LATEST ATTENDANCE
+========================================================= */
+
+.latest-attendance-list {
+
+    background: #ffffff;
+
+    border: 1px solid #eee;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+}
+
+
+.latest-attendance-item {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 17px 18px;
+
+    border-bottom: 1px solid #f0f0f0;
+
+    transition: 0.25s ease;
+}
+
+
+.latest-attendance-item:last-child {
+
+    border-bottom: none;
+}
+
+
+.latest-attendance-item:hover {
+
+    background: #faf9ff;
+}
+
+
+.latest-left {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+}
+
+
+.latest-icon {
+
+    width: 44px;
+
+    height: 44px;
+
+    min-width: 44px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: rgba(108, 77, 246, 0.10);
+
+    color: #6c4df6;
+
+    font-size: 17px;
+}
+
+
+.latest-info h6 {
+
+    margin: 0 0 5px;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    color: #222222;
+}
+
+
+.latest-info p {
+
+    margin: 0;
+
+    color: #888888;
+
+    font-size: 13px;
+}
+
+
+.latest-right {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-end;
+
+    gap: 7px;
+}
+
+
+.latest-time {
+
+    color: #888888;
+
+    font-size: 13px;
+
+    font-weight: 500;
+}
+
+
+.attendance-status {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-width: 70px;
+
+    padding: 8px 13px;
+
+    border-radius: 30px;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    transition: all 0.25s ease;
+}
+
+
+.attendance-status.present {
+
+    color: #168653;
+
+    background: rgba(76, 211, 153, 0.14);
+
+    border: 1px solid rgba(76, 211, 153, 0.28);
+
+    box-shadow:
+        inset 0 1px 2px rgba(255, 255, 255, 0.8),
+        0 3px 10px rgba(76, 211, 153, 0.08);
+
+    backdrop-filter: blur(8px);
+}
+
+
+.attendance-status.absent {
+
+    color: #c0392b;
+
+    background: rgba(255, 105, 105, 0.13);
+
+    border: 1px solid rgba(255, 105, 105, 0.28);
+
+    box-shadow:
+        inset 0 1px 2px rgba(255, 255, 255, 0.8),
+        0 3px 10px rgba(255, 105, 105, 0.08);
+
+    backdrop-filter: blur(8px);
+}
+
+
+/* =========================================================
+   SUBJECT BREAKDOWN
+========================================================= */
+
+.subject-list {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 13px;
+}
+
+
+.subject-card {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 16px;
+
+    padding: 17px;
+
+    background: #ffffff;
+
+    border: 1px solid #eee;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    transition: all 0.25s ease;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.04);
+}
+
+
+.subject-card:hover {
+
+    border-color: #6c4df6;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 20px rgba(108, 77, 246, 0.12);
+}
+
+
+.subject-icon {
+
+    width: 52px;
+
+    height: 52px;
+
+    min-width: 52px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #6c4df6;
+
+    color: #ffffff;
+
+    border-radius: 10px;
+
+    font-size: 20px;
+}
+
+
+.subject-content {
+
+    flex: 1;
+}
+
+
+.subject-content h5 {
+
+    margin: 0 0 5px;
+
+    color: #222222;
+
+    font-size: 15px;
+
+    font-weight: 700;
+}
+
+
+.subject-content p {
+
+    margin: 0;
+
+    color: #888888;
+
+    font-size: 13px;
+}
+
+
+.subject-arrow {
+
+    width: 34px;
+
+    height: 34px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: rgba(108, 77, 246, 0.08);
+
+    color: #6c4df6;
+
+    border-radius: 50%;
+
+    font-size: 15px;
+
+    transition: 0.25s ease;
+}
+
+
+.subject-card:hover .subject-arrow {
+
+    background: #6c4df6;
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+.empty-attendance {
+
+    padding: 35px 20px;
+
+    text-align: center;
+
+    color: #888888;
+}
+
+
+.empty-attendance i {
+
+    display: block;
+
+    margin-bottom: 10px;
+
+    font-size: 30px;
+}
+
+
+.empty-attendance p {
+
+    margin: 0;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   SUBJECT ATTENDANCE MODAL
+========================================================= */
+
+.view-modal-overlay {
+
+    display: none;
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 99999;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 20px;
+
+    background: rgba(20, 15, 40, 0.45);
+}
+
+
+.view-modal-overlay.active {
+
+    display: flex;
+}
+
+
+.view-modal-box {
+
+    width: 100%;
+
+    max-width: 850px;
+
+    max-height: 85vh;
+
+    overflow-y: auto;
+
+    background: #ffffff;
+
+    border-radius: 12px;
+
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+
+    font-family: inherit;
+}
+
+
+/* =========================================================
+   MODAL HEADER
+========================================================= */
+
+.view-modal-header {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    justify-content: space-between;
+
+    gap: 12px;
+
+    padding: 22px 24px 16px;
+
+    border-bottom: 1px solid #eee;
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 5;
+
+    background: #ffffff;
+
+    border-radius: 12px 12px 0 0;
+}
+
+
+.view-modal-header h5 {
+
+    margin: 0 0 5px;
+
+    color: #222222;
+
+    font-size: 19px;
+
+    font-weight: 700;
+}
+
+
+.view-modal-header p {
+
+    margin: 0;
+
+    color: #888888;
+
+    font-size: 13px;
+}
+
+
+.view-modal-close {
+
+    width: 34px;
+
+    height: 34px;
+
+    min-width: 34px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #f5f3ff;
+
+    color: #6c4df6;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+
+.view-modal-close:hover {
+
+    background: #ebe4ff;
+}
+
+
+/* =========================================================
+   STUDENT / COURSE / TEACHER INFORMATION
+   ABOVE TABLE - NOT TABLE COLUMNS
+========================================================= */
+
+.subject-student-details {
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 12px;
+
+    margin-bottom: 20px;
+
+    padding: 15px;
+
+    background: #faf9ff;
+
+    border: 1px solid #eee9ff;
+
+    border-radius: 10px;
+}
+
+
+.subject-detail-item {
+
+    padding: 4px 8px;
+}
+
+
+.subject-detail-label {
+
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #888888;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.3px;
+}
+
+
+.subject-detail-value {
+
+    display: block;
+
+    color: #222222;
+
+    font-size: 14px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   MODAL BODY
+========================================================= */
+
+.view-modal-body {
+
+    padding: 18px 24px 24px;
+}
+
+
+.view-history-note {
+
+    margin: 0 0 14px;
+
+    color: #888888;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+.view-search-wrapper {
+
+    position: relative;
+
+    margin-bottom: 16px;
+}
+
+
+.view-search-wrapper i {
+
+    position: absolute;
+
+    left: 12px;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    color: #999999;
+
+    font-size: 15px;
+}
+
+
+.view-search-wrapper input {
+
+    width: 100%;
+
+    height: 44px;
+
+    padding:
+        0
+        12px
+        0
+        38px;
+
+    border: 1px solid #ddd;
+
+    border-radius: 6px;
+
+    outline: none;
+
+    background: #ffffff;
+
+    color: #333333;
+
+    font-size: 13px;
+}
+
+
+.view-search-wrapper input:focus {
+
+    border-color: #6c4df6;
+}
+
+
+/* =========================================================
+   MODAL TABLE
+========================================================= */
+
+.view-history-table {
+
+    width: 100%;
+
+    min-width: 500px;
+
+    border-collapse: collapse;
+}
+
+
+.view-history-table th {
+
+    padding: 12px 8px;
+
+    background: #f8f8f8;
+
+    border-bottom: 1px solid #eee;
+
+    color: #555555;
+
+    text-align: left;
+
+    font-size: 12px;
+
+    font-weight: 600;
+}
+
+
+.view-history-table td {
+
+    padding: 13px 8px;
+
+    border-bottom: 1px solid #f0f0f0;
+
+    color: #333333;
+
+    font-size: 13px;
+}
+
+
+.view-history-table tr:last-child td {
+
+    border-bottom: none;
+}
+
+
+.view-history-table tbody tr:hover {
+
+    background: #faf9ff;
+}
+
+
+.attendance-yes {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-width: 70px;
+
+    padding: 8px 13px;
+
+    border-radius: 30px;
+
+    color: #168653;
+
+    background: rgba(76, 211, 153, 0.14);
+
+    border: 1px solid rgba(76, 211, 153, 0.28);
+
+    box-shadow:
+        inset 0 1px 2px rgba(255, 255, 255, 0.8),
+        0 3px 10px rgba(76, 211, 153, 0.08);
+
+    backdrop-filter: blur(8px);
+
+    font-size: 12px;
+
+    font-weight: 700;
+}
+
+
+.attendance-no {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-width: 70px;
+
+    padding: 8px 13px;
+
+    border-radius: 30px;
+
+    color: #c0392b;
+
+    background: rgba(255, 105, 105, 0.13);
+
+    border: 1px solid rgba(255, 105, 105, 0.28);
+
+    box-shadow:
+        inset 0 1px 2px rgba(255, 255, 255, 0.8),
+        0 3px 10px rgba(255, 105, 105, 0.08);
+
+    backdrop-filter: blur(8px);
+
+    font-size: 12px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.student-footer {
+
+    margin-top: 50px;
+
+    padding: 45px 0 20px;
+
+    background: #172f4f;
+
+    color: #ffffff;
+}
+
+
+.student-footer h5 {
+
+    margin-bottom: 14px;
+
+    color: #ffffff;
+
+    font-size: 17px;
+
+    font-weight: 700;
+}
+
+
+.student-footer p {
+
+    margin: 0;
+
+    color: rgba(255,255,255,0.65);
+
+    font-size: 12px;
+
+    line-height: 1.7;
+}
+
+
+.footer-links {
+
+    padding: 0;
+
+    margin: 0;
+
+    list-style: none;
+}
+
+
+.footer-links li {
+
+    margin-bottom: 8px;
+}
+
+
+.footer-links a {
+
+    color: rgba(255,255,255,0.65);
+
+    font-size: 12px;
+
+    text-decoration: none;
+
+    transition: 0.25s ease;
+}
+
+
+.footer-links a:hover {
+
+    color: #ffffff;
+
+    padding-left: 3px;
+}
+
+
+.footer-bottom {
+
+    padding-top: 18px;
+
+    margin-top: 30px;
+
+    border-top: 1px solid rgba(255,255,255,0.12);
+
+    text-align: center;
+}
+
+
+.footer-bottom p {
+
+    color: rgba(255,255,255,0.55);
+
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width: 767px) {
+
+    .student-attendance-page {
+
+        padding: 20px 15px;
+    }
+
+
+    .attendance-page-header {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 12px;
+    }
+
+
+    .attendance-page-header h3 {
+
+        font-size: 22px;
+    }
+
+
+    .latest-attendance-item {
+
+        align-items: flex-start;
+    }
+
+
+    .latest-right {
+
+        align-items: flex-end;
+    }
+
+
+    .subject-card {
+
+        padding: 14px;
+    }
+
+
+    .subject-icon {
+
+        width: 46px;
+
+        height: 46px;
+
+        min-width: 46px;
+
+        font-size: 18px;
+    }
+
+
+    .view-modal-box {
+
+        max-height: 92vh;
+    }
+
+
+    .view-modal-body {
+
+        padding: 16px;
+    }
+
+
+    .view-modal-header {
+
+        padding: 16px;
+    }
+
+
+    .subject-student-details {
+
+        grid-template-columns: 1fr;
+
+        gap: 8px;
+
+        padding: 13px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
+
+<header class="rbt-header rbt-header-9">
+
+    <div class="rbt-sticky-placeholder"></div>
+
+
+    <!-- HEADER TOP -->
+
+    <div class="rbt-header-middle position-relative rbt-header-mid-1 bg-color-white rbt-border-bottom">
+
+        <div class="container">
+
+            <div class="rbt-header-sec align-items-center">
+
+
+                <!-- LEFT -->
+
+                <div class="rbt-header-sec-col rbt-header-left">
+
+                    <div class="rbt-header-content">
+
+
+                        <div class="header-info">
+
+                            <ul class="rbt-dropdown-menu switcher-language">
+
+                                <li class="has-child-menu">
+
+                                    <a href="#">
+
+                                        <img class="left-image"
+                                             src="assets/images/icons/en-us.png"
+                                             alt="Language Images">
+
+                                        <span class="menu-item">
+                                            English
+                                        </span>
+
+                                    </a>
+
+                                </li>
+
+                            </ul>
+
+                        </div>
+
+
+                        <div class="header-info">
+
+                            <ul class="rbt-dropdown-menu currency-menu">
+
+                                <li class="has-child-menu">
+
+                                    <ul class="sub-menu hover-reverse">
+
+                                        <li>
+
+                                            <a href="#">
+                                                <span class="menu-item">
+                                                    EUR
+                                                </span>
+                                            </a>
+
+                                        </li>
+
+                                        <li>
+
+                                            <a href="#">
+                                                <span class="menu-item">
+                                                    GBP
+                                                </span>
+                                            </a>
+
+                                        </li>
+
+                                    </ul>
+
+                                </li>
+
+                            </ul>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+                <!-- CENTER SEARCH -->
+
+                <div class="rbt-header-sec-col rbt-header-center d-none d-md-block">
+
+                    <div class="rbt-header-content">
+
+                        <div class="header-info">
+
+                            <div class="rbt-search-field">
+
+                                <div class="search-field">
+
+                                    <input type="text"
+                                           placeholder="Search Course">
+
+                                    <button class="rbt-round-btn serach-btn"
+                                            type="submit">
+
+                                        <i class="feather-search"></i>
+
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- RIGHT -->
+
+                <div class="rbt-header-sec-col rbt-header-right">
+
+                    <div class="rbt-btn-wrapper">
+
+                        <div class="login-dropdown">
+
+                            <button type="button"
+                                    class="rbt-btn rbt-switch-btn btn-gradient btn-sm hover-transform-none login-dropdown-btn">
+
+                                <span data-text="Login">
+                                    Login
+                                </span>
+
+                                <i class="feather-chevron-down"></i>
+
+                            </button>
+
+
+                            <div class="login-dropdown-menu">
+
+                                <a href="instructor-profile.html">
+
+                                    <i class="feather-user"></i>
+
+                                    <span>
+                                        Tutor Login
+                                    </span>
+
+                                </a>
+
+
+                                <a href="student-profile.html">
+
+                                    <i class="feather-book-open"></i>
+
+                                    <span>
+                                        Student Login
+                                    </span>
+
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="mobile-menu-bar d-block d-xl-none">
+
+                        <div class="hamberger">
+
+                            <button class="hamberger-button rbt-round-btn">
+
+                                <i class="feather-menu"></i>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- MAIN NAVIGATION -->
+
+    <div class="rbt-header-wrapper header-not-transparent header-sticky">
+
+        <div class="container">
+
+            <div class="mainbar-row rbt-navigation-end align-items-center">
+
+
+                <div class="header-left rbt-header-content">
+
+                    <div class="header-info">
+
+                        <div class="logo">
+
+                            <a href="index.html">
+
+                                <img src="assets/images/logo/logo.png"
+                                     alt="Education Logo Images">
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="rbt-main-navigation d-none d-xl-block">
+
+                    <nav class="mainmenu-nav">
+
+                        <ul class="mainmenu">
+
+                            <li>
+                                <a href="index.html">
+                                    Home
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="about-us.html">
+                                    About
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="our-team.html">
+                                    Our Team
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="our-tuition.html">
+                                    Our Tuition
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="holiday-camps.html">
+                                    Holiday Camps
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="plans-and-pricing.html">
+                                    Plans &amp; Pricing
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="book-online.html">
+                                    Book Online
+                                </a>
+                            </li>
+
+                        </ul>
+
+                    </nav>
+
+                </div>
+
+
+                <div class="header-right">
+
+                    <div class="rbt-btn-wrapper d-none d-xl-block">
+
+                        <a class="rbt-btn rbt-switch-btn btn-gradient btn-sm hover-transform-none"
+                           href="login-register.html">
+
+                            <span data-text="Join Now">
+                                Join Now
+                            </span>
+
+                        </a>
+
+                    </div>
+
+
+                    <div class="mobile-menu-bar d-block d-xl-none">
+
+                        <div class="hamberger">
+
+                            <button class="hamberger-button rbt-round-btn">
+
+                                <i class="feather-menu"></i>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- =========================================================
+     BANNER
+========================================================= -->
+
+<div class="slider-area rbt-banner-10 height-400 bg_image bg_image--11"
+     data-black-overlay="5">
+
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-lg-12">
+
+                <div class="inner text-center">
+
+                    <h1 class="title display-one text-white">
+                        My Attendance
+                    </h1>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     DASHBOARD
+========================================================= -->
+
+<div class="rbt-dashboard-area rbt-section-gap">
+
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-lg-12">
+
+                <div class="row g-5">
+
+
+                    <!-- =====================================================
+                         SIDEBAR
+                    ====================================================== -->
+
+                    <div class="col-lg-3">
+
+                        <div class="rbt-default-sidebar
+                                    sticky-top
+                                    rbt-shadow-box
+                                    rbt-gradient-border">
+
+                            <div class="inner">
+
+                                <div class="content-item-content">
+
+                                    <div class="rbt-default-sidebar-wrapper">
+
+
+                                        <div class="section-title mb--20">
+
+                                            <h6 class="rbt-title-style-2">
+
+                                                Welcome,
+                                                <span id="sidebarStudentName">
+                                                    Shreya
+                                                </span>
+
+                                            </h6>
+
+                                        </div>
+
+
+                                        <!-- PROFILE -->
+
+                                        <nav class="mainmenu-nav">
+
+                                            <ul class="dashboard-mainmenu rbt-default-sidebar-list">
+
+                                                <li>
+
+                                                    <a href="student-profile.html">
+
+                                                        <i class="feather-user"></i>
+
+                                                        <span>
+                                                            My Profile
+                                                        </span>
+
+                                                    </a>
+
+                                                </li>
+
+                                            </ul>
+
+                                        </nav>
+
+
+                                        <!-- COURSES -->
+
+                                        <nav class="mainmenu-nav">
+
+                                            <ul class="dashboard-mainmenu rbt-default-sidebar-list">
+
+                                                <li>
+
+                                                    <a href="student-course.html">
+
+                                                        <i class="feather-monitor"></i>
+
+                                                        <span>
+                                                            My Courses
+                                                        </span>
+
+                                                    </a>
+
+                                                </li>
+
+                                            </ul>
+
+                                        </nav>
+
+
+                                        <!-- ATTENDANCE -->
+
+                                        <nav class="mainmenu-nav">
+
+                                            <ul class="dashboard-mainmenu rbt-default-sidebar-list">
+
+                                                <li class="active">
+
+                                                    <a href="student-profile-attendance.html">
+
+                                                        <i class="feather-calendar"></i>
+
+                                                        <span>
+                                                            Attendance
+                                                        </span>
+
+                                                    </a>
+
+                                                </li>
+
+                                            </ul>
+
+                                        </nav>
+
+
+                                        <!-- USER -->
+
+                                        <div class="section-title mt--40 mb--20">
+
+                                            <h6 class="rbt-title-style-2">
+                                                User
+                                            </h6>
+
+                                        </div>
+
+
+                                        <nav class="mainmenu-nav">
+
+                                            <ul class="dashboard-mainmenu rbt-default-sidebar-list">
+
+                                                <li>
+
+                                                    <a href="student-edit.html">
+
+                                                        <i class="feather-settings"></i>
+
+                                                        <span>
+                                                            Edit Profile
+                                                        </span>
+
+                                                    </a>
+
+                                                </li>
+
+
+                                                <li>
+
+                                                    <a href="index.html">
+
+                                                        <i class="feather-log-out"></i>
+
+                                                        <span>
+                                                            Logout
+                                                        </span>
+
+                                                    </a>
+
+                                                </li>
+
+                                            </ul>
+
+                                        </nav>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- =====================================================
+                         MAIN CONTENT
+                    ====================================================== -->
+
+                    <div class="col-lg-9">
+
+                        <div class="student-attendance-page">
+
+
+                            <!-- PAGE HEADER -->
+
+                            <div class="attendance-page-header">
+
+                                <div>
+
+                                    <h3>
+                                        My Attendance
+                                    </h3>
+
+                                    <p>
+                                        View your attendance
+                                        for all enrolled subjects.
+                                    </p>
+
+                                </div>
+
+
+                            
+
+                            </div>
+
+
+                            <!-- =================================================
+                                 LATEST ATTENDANCE
+                            ================================================== -->
+
+                            <div class="attendance-section">
+
+                                <div class="section-title-row">
+
+                                    <div>
+
+                                        <h4>
+                                            Latest Attendance
+                                        </h4>
+
+                                        <p>
+                                            Attendance marked today.
+                                        </p>
+
+                                    </div>
+
+
+                                    <div class="attendance-date">
+
+                                        <i class="feather-calendar"></i>
+
+                                        <span id="latestAttendanceDate">
+                                            Loading...
+                                        </span>
+
+                                    </div>
+
+                                </div>
+
+
+                                <div class="latest-attendance-list"
+                                     id="latestAttendanceList">
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- =================================================
+                                 SUBJECT BREAKDOWN
+                            ================================================== -->
+
+                            <div class="attendance-section">
+
+                                <div class="section-title-row">
+
+                                    <div>
+
+                                        <h4>
+                                            Subject Breakdown
+                                        </h4>
+
+                                        <p>
+                                            Click a subject to view
+                                            its complete attendance.
+                                        </p>
+
+                                    </div>
+
+                                </div>
+
+
+                                <div class="subject-list"
+                                     id="subjectList">
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     SUBJECT ATTENDANCE MODAL
+========================================================= -->
+
+<div class="view-modal-overlay"
+     id="subjectAttendanceModal">
+
+    <div class="view-modal-box">
+
+
+        <!-- MODAL HEADER -->
+
+        <div class="view-modal-header">
+
+            <div>
+
+                <h5 id="subjectModalName">
+                    Subject
+                </h5>
+
+                <p>
+                    Complete attendance history
+                </p>
+
+            </div>
+
+
+            <button type="button"
+                    class="view-modal-close"
+                    onclick="closeSubjectAttendance()">
+
+                <i class="feather-x"></i>
+
+            </button>
+
+        </div>
+
+
+        <!-- MODAL BODY -->
+
+        <div class="view-modal-body">
+
+
+            <!-- =====================================================
+                 STUDENT / COURSE / TEACHER
+                 NOT INSIDE TABLE
+            ====================================================== -->
+
+            <div class="subject-student-details">
+
+
+                <div class="subject-detail-item">
+
+                    <span class="subject-detail-label">
+                        Student Name
+                    </span>
+
+                    <span class="subject-detail-value"
+                          id="modalStudentName">
+                        -
+                    </span>
+
+                </div>
+
+
+                <div class="subject-detail-item">
+
+                    <span class="subject-detail-label">
+                        Course Name
+                    </span>
+
+                    <span class="subject-detail-value"
+                          id="modalCourseName">
+                        -
+                    </span>
+
+                </div>
+
+
+                <div class="subject-detail-item">
+
+                    <span class="subject-detail-label">
+                        Teacher Name
+                    </span>
+
+                    <span class="subject-detail-value"
+                          id="modalTeacherName">
+                        -
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
+            <p class="view-history-note">
+
+                View all attendance records
+                for this subject.
+
+            </p>
+
+
+            <!-- SEARCH -->
+
+            <div class="view-search-wrapper">
+
+                <i class="feather-search"></i>
+
+                <input type="text"
+                       id="subjectSearchInput"
+                       placeholder="Search by date, month, year or status..."
+                       oninput="filterSubjectAttendance()">
+
+            </div>
+
+
+            <!-- TABLE -->
+
+            <div style="overflow-x:auto;">
+
+                <table class="view-history-table">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Date
+                            </th>
+
+                            <th>
+                                Time
+                            </th>
+
+                            <th>
+                                Status
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="subjectHistoryBody">
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<div class="rbt-separator-mid">
+
+    <div class="container">
+
+        <hr class="rbt-separator m-0">
+
+    </div>
+
+</div>
+
+
+<footer class="rbt-footer footer-style-1 bg-color-white overflow-hidden">
+
+
+    <div class="footer-top">
+
+        <div class="container">
+
+            <div class="row g-5">
+
+
+                <!-- FOOTER ABOUT -->
+
+                <div class="col-lg-4 col-md-6">
+
+                    <div class="footer-widget">
+
+                        <div class="logo">
+
+                            <a href="index.html">
+
+                                <img src="assets/images/logo/logo.png"
+                                     alt="Education">
+
+                            </a>
+
+                        </div>
+
+
+                        <p class="description mt--20">
+
+                            We're always in search for talented
+                            and motivated people. Don't be shy
+                            introduce yourself!
+
+                        </p>
+
+
+                        <ul class="social-icon social-default justify-content-start">
+
+                            <li>
+
+                                <a href="#">
+
+                                    <i class="feather-facebook"></i>
+
+                                </a>
+
+                            </li>
+
+
+                            <li>
+
+                                <a href="#">
+
+                                    <i class="feather-instagram"></i>
+
+                                </a>
+
+                            </li>
+
+
+                            <li>
+
+                                <a href="#">
+
+                                    <i class="feather-linkedin"></i>
+
+                                </a>
+
+                            </li>
+
+
+                            <li>
+
+                                <a href="#">
+
+                                    <i class="feather-youtube"></i>
+
+                                </a>
+
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+
+                <!-- QUICK LINKS -->
+
+                <div class="col-lg-2 col-md-6">
+
+                    <div class="footer-widget">
+
+                        <h5 class="ft-title">
+                            Quick Links
+                        </h5>
+
+
+                        <ul class="ft-link">
+
+                            <li>
+                                <a href="our-team.html">
+                                    Our Team
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="our-tuition.html">
+                                    Our Tuition
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="holiday-camps.html">
+                                    Holiday Camps
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="plans-and-pricing.html">
+                                    Plans & Pricing
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="book-online.html">
+                                    Book Online
+                                </a>
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PROGRAMS -->
+
+                <div class="col-lg-2 col-md-6">
+
+                    <div class="footer-widget">
+
+                        <h5 class="ft-title">
+                            Popular Programs
+                        </h5>
+
+
+                        <ul class="ft-link">
+
+                            <li>
+                                <a href="our-tuition.html">
+                                    Primary Tuition
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="our-tuition.html">
+                                    Secondary Tuition
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="our-tuition.html">
+                                    GCSE Tuition
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="our-tuition.html">
+                                    IGCSE Tuition
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="our-tuition.html">
+                                    A-Level Tuition
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="holiday-camps.html">
+                                    Holiday Camps
+                                </a>
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CONTACT -->
+
+                <div class="col-lg-4 col-md-6">
+
+                    <div class="footer-widget">
+
+                        <h5 class="ft-title">
+                            Get Contact
+                        </h5>
+
+
+                        <ul class="ft-link">
+
+                            <li>
+
+                                <span>
+                                    Phone:
+                                </span>
+
+                                <a href="#">
+                                    (406) 555-0120
+                                </a>
+
+                            </li>
+
+
+                            <li>
+
+                                <span>
+                                    E-mail:
+                                </span>
+
+                                <a href="mailto:admin@example.com">
+                                    admin@example.com
+                                </a>
+
+                            </li>
+
+                        </ul>
+
+
+                        <h6 class="w-600 mt--20">
+                            Location
+                        </h6>
+
+
+                        <p class="description">
+
+                            2000+ Our students are subscribed
+                            around the world.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="rbt-separator-mid">
+
+        <div class="container">
+
+            <hr class="rbt-separator m-0">
+
+        </div>
+
+    </div>
+
+
+    <div class="copyright-area copyright-style-1 ptb--20">
+
+        <div class="container">
+
+            <div class="row align-items-center">
+
+
+                <div class="col-lg-7">
+
+                    <p class="rbt-link-hover text-center text-lg-start">
+
+                        Copyright © 2024 by
+
+                        <a href="index.html">
+                            London Star Education Ltd.
+                        </a>
+
+                        All Rights Reserved.
+
+                    </p>
+
+                </div>
+
+
+                <div class="col-lg-5">
+
+                    <ul class="copyright-link rbt-link-hover justify-content-center justify-content-lg-end">
+
+                        <li>
+                            <a href="#">
+                                Terms of service
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="privacy-policy.html">
+                                Privacy policy
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="subscription.html">
+                                Subscription
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- =========================================================
+     JS LIBRARIES
+========================================================= -->
+
+<script src="assets/js/vendor/jquery.js"></script>
+
+<script src="assets/js/vendor/bootstrap.min.js"></script>
+
+<script src="assets/js/vendor/backtotop.js"></script>
+
+<script src="assets/js/main.js"></script>
+
+
+<!-- =========================================================
+     ATTENDANCE JAVASCRIPT
+========================================================= -->
+
+<script>
+
+
+/* =========================================================
+   LOGGED-IN STUDENT
+========================================================= */
+
+const currentStudentId = "student001";
+
+
+/* =========================================================
+   STUDENT DATA
+========================================================= */
+
+const studentAttendance = {
+
+
+    /* =====================================================
+       STUDENT 001
+    ====================================================== */
+
+    student001: {
+
+        name: "Shreya",
+
+        subjects: [
+
+
+            /* =================================================
+               PHYSICS
+            ================================================= */
+
+            {
+
+                id: 1,
+
+                name: "Physics 101",
+
+                teacher: "Prof. E. Schrödinger",
+
+                icon: "feather-activity",
+
+                attendance: [
+
+                    {
+                        date: "2026-08-13",
+                        time: "10:00 AM",
+                        status: "Present"
+                    },
+
+                    {
+                        date: "2026-08-12",
+                        time: "02:30 PM",
+                        status: "Present"
+                    },
+
+                    {
+                        date: "2026-08-10",
+                        time: "09:30 AM",
+                        status: "Absent"
+                    },
+
+                    {
+                        date: "2026-08-08",
+                        time: "11:00 AM",
+                        status: "Present"
+                    },
+
+                    {
+                        date: "2026-08-06",
+                        time: "03:00 PM",
+                        status: "Present"
+                    }
+
+                ]
+
+            },
+
+
+            /* =================================================
+               CALCULUS
+            ================================================= */
+
+            {
+
+                id: 2,
+
+                name: "Calculus II",
+
+                teacher: "Prof. I. Newton",
+
+                icon: "feather-grid",
+
+                attendance: [
+
+                    {
+                        date: "2026-08-13",
+                        time: "02:00 PM",
+                        status: "Present"
+                    },
+
+                    {
+                        date: "2026-08-11",
+                        time: "09:00 AM",
+                        status: "Present"
+                    },
+
+                    {
+                        date: "2026-08-09",
+                        time: "03:30 PM",
+                        status: "Present"
+                    },
+
+                    {
+                        date: "2026-08-07",
+                        time: "11:00 AM",
+                        status: "Absent"
+                    }
+
+                ]
+
+            },
+
+
+            /* =================================================
+               MODERN HISTORY
+            ================================================= */
+
+            {
+
+                id: 3,
+
+                name: "Modern History",
+
+                teacher: "Prof. H. Zinn",
+
+                icon: "feather-book",
+
+                attendance: [
+
+                    {
+                        date: "2026-08-13",
+                        time: "11:30 AM",
+                        status: "Absent"
+                    },
+
+                    {
+                        date: "2026-08-10",
+                        time: "04:00 PM",
+                        status: "Present"
+                    },
+
+                    {
+                        date: "2026-08-07",
+                        time: "09:30 AM",
+                        status: "Present"
+                    },
+
+                    {
+                        date: "2026-08-05",
+                        time: "01:00 PM",
+                        status: "Present"
+                    }
+
+                ]
+
+            },
+
+
+
+        ]
+
+    },
+
+
+    
+    //    STUDENT 002
+    
+    student002: {
+
+        name: "Arun",
+
+        subjects: [
+
+            {
+
+                id: 101,
+
+                name: "Physics 101",
+
+                teacher: "Prof. E. Schrödinger",
+
+                icon: "feather-activity",
+
+                attendance: [
+
+                    {
+                        date: "2026-08-13",
+                        time: "10:00 AM",
+                        status: "Absent"
+                    },
+
+                    {
+                        date: "2026-08-11",
+                        time: "02:00 PM",
+                        status: "Present"
+                    },
+
+                    {
+                        date: "2026-08-08",
+                        time: "09:30 AM",
+                        status: "Present"
+                    }
+
+                ]
+
+            },
+
+
+            {
+
+                id: 102,
+
+                name: "Biology",
+
+                teacher: "Prof. C. Darwin",
+
+                icon: "feather-heart",
+
+                attendance: [
+
+                    {
+                        date: "2026-08-13",
+                        time: "03:00 PM",
+                        status: "Present"
+                    },
+
+                    {
+                        date: "2026-08-10",
+                        time: "11:00 AM",
+                        status: "Present"
+                    },
+
+                    {
+                        date: "2026-08-07",
+                        time: "04:30 PM",
+                        status: "Absent"
+                    }
+
+                ]
+
+            }
+
+        ]
+
+    },
+
+
+    /* =====================================================
+       STUDENT 003
+    ====================================================== */
+
+    student003: {
+
+        name: "Rahul",
+
+        subjects: [
+
+            {
+
+                id: 201,
+
+                name: "Java",
+
+                teacher: "Prof. James",
+
+                icon: "feather-code",
+
+                attendance: [
+
+                    {
+                        date: "2026-08-13",
+                        time: "09:00 AM",
+                        status: "Present"
+                    },
+
+                    {
+                        date: "2026-08-12",
+                        time: "02:00 PM",
+                        status: "Present"
+                    },
+
+                    {
+                        date: "2026-08-10",
+                        time: "11:30 AM",
+                        status: "Absent"
+                    }
+
+                ]
+
+            },
+
+
+            {
+
+                id: 202,
+
+                name: "PHP",
+
+                teacher: "Prof. William",
+
+                icon: "feather-server",
+
+                attendance: [
+
+                    {
+                        date: "2026-08-13",
+                        time: "01:00 PM",
+                        status: "Present"
+                    },
+
+                    {
+                        date: "2026-08-09",
+                        time: "04:00 PM",
+                        status: "Absent"
+                    },
+
+                    {
+                        date: "2026-08-06",
+                        time: "10:30 AM",
+                        status: "Present"
+                    }
+
+                ]
+
+            },
+
+
+            {
+
+                id: 203,
+
+                name: "MySQL",
+
+                teacher: "Prof. David",
+
+                icon: "feather-database",
+
+                attendance: [
+
+                    {
+                        date: "2026-08-12",
+                        time: "05:00 PM",
+                        status: "Present"
+                    },
+
+                    {
+                        date: "2026-08-09",
+                        time: "01:30 PM",
+                        status: "Present"
+                    },
+
+                    {
+                        date: "2026-08-07",
+                        time: "09:00 AM",
+                        status: "Absent"
+                    }
+
+                ]
+
+            }
+
+        ]
+
+    }
+
+};
+
+
+/* =========================================================
+   CURRENT STUDENT
+========================================================= */
+
+const currentStudent =
+    studentAttendance[currentStudentId];
+
+
+if (!currentStudent) {
+
+    console.error(
+        "Student data not found."
+    );
+
+}
+
+
+/* =========================================================
+   DISPLAY STUDENT NAME
+========================================================= */
+
+function displayStudentName() {
+
+    if (!currentStudent) {
+
+        return;
+
+    }
+
+
+    const nameElement =
+        document.getElementById(
+            "sidebarStudentName"
+        );
+
+
+    if (nameElement) {
+
+        nameElement.textContent =
+            currentStudent.name;
+
+    }
+
+}
+
+
+/* =========================================================
+   GET TODAY STRING
+========================================================= */
+
+function getTodayString() {
+
+    const today =
+        new Date();
+
+
+    return (
+
+        today.getFullYear()
+        +
+        "-"
+        +
+        String(
+            today.getMonth() + 1
+        ).padStart(2, "0")
+        +
+        "-"
+        +
+        String(
+            today.getDate()
+        ).padStart(2, "0")
+
+    );
+
+}
+
+
+/* =========================================================
+   DISPLAY CURRENT DATE
+========================================================= */
+
+function displayCurrentDate() {
+
+    const today =
+        new Date();
+
+
+    const formattedDate =
+        today.toLocaleDateString(
+            "en-IN",
+            {
+                day: "2-digit",
+                month: "short",
+                year: "numeric"
+            }
+        );
+
+
+    const currentDate =
+        document.getElementById(
+            "currentDate"
+        );
+
+
+    const latestDate =
+        document.getElementById(
+            "latestAttendanceDate"
+        );
+
+
+    if (currentDate) {
+
+        currentDate.textContent =
+            formattedDate;
+
+    }
+
+
+    if (latestDate) {
+
+        latestDate.textContent =
+            formattedDate;
+
+    }
+
+}
+
+
+/* =========================================================
+   FORMAT DATE
+========================================================= */
+
+function formatDate(dateString) {
+
+    const date =
+        new Date(
+            dateString +
+            "T00:00:00"
+        );
+
+
+    return date.toLocaleDateString(
+        "en-IN",
+        {
+            day: "2-digit",
+            month: "short",
+            year: "numeric"
+        }
+    );
+
+}
+
+
+/* =========================================================
+   GET SEARCHABLE DATE
+========================================================= */
+
+function getDateSearchValues(dateString) {
+
+    const date =
+        new Date(
+            dateString +
+            "T00:00:00"
+        );
+
+
+    const day =
+        String(
+            date.getDate()
+        );
+
+
+    const dayPadded =
+        String(
+            date.getDate()
+        ).padStart(2, "0");
+
+
+    const month =
+        String(
+            date.getMonth() + 1
+        );
+
+
+    const monthPadded =
+        month.padStart(2, "0");
+
+
+    const year =
+        String(
+            date.getFullYear()
+        );
+
+
+    const monthName =
+        date.toLocaleDateString(
+            "en-IN",
+            {
+                month: "long"
+            }
+        ).toLowerCase();
+
+
+    const monthShort =
+        date.toLocaleDateString(
+            "en-IN",
+            {
+                month: "short"
+            }
+        ).toLowerCase();
+
+
+    const formatted =
+        formatDate(
+            dateString
+        ).toLowerCase();
+
+
+    return [
+
+        day,
+
+        dayPadded,
+
+        month,
+
+        monthPadded,
+
+        year,
+
+        monthName,
+
+        monthShort,
+
+        formatted,
+
+        `${day}-${month}-${year}`,
+
+        `${dayPadded}-${monthPadded}-${year}`,
+
+        `${day}/${month}/${year}`,
+
+        `${dayPadded}/${monthPadded}/${year}`,
+
+        `${day} ${monthName}`,
+
+        `${dayPadded} ${monthName}`,
+
+        `${day} ${monthShort}`,
+
+        `${dayPadded} ${monthShort}`
+
+    ];
+
+}
+
+
+/* =========================================================
+   CONVERT TIME TO 24 HOUR
+========================================================= */
+
+function convertTo24Hour(time) {
+
+    if (!time) {
+
+        return "00:00";
+
+    }
+
+
+    const parts =
+        time.trim().split(/\s+/);
+
+
+    const timePart =
+        parts[0];
+
+
+    const ampm =
+        parts[1]
+            ? parts[1].toUpperCase()
+            : "";
+
+
+    let [
+        hour,
+        minute
+    ] =
+        timePart.split(":");
+
+
+    hour =
+        parseInt(
+            hour,
+            10
+        );
+
+
+    minute =
+        minute || "00";
+
+
+    if (
+        ampm === "PM" &&
+        hour !== 12
+    ) {
+
+        hour += 12;
+
+    }
+
+
+    if (
+        ampm === "AM" &&
+        hour === 12
+    ) {
+
+        hour = 0;
+
+    }
+
+
+    return (
+
+        String(hour).padStart(
+            2,
+            "0"
+        )
+        +
+        ":"
+        +
+        minute
+
+    );
+
+}
+
+
+/* =========================================================
+   SORT ATTENDANCE
+========================================================= */
+
+function sortAttendanceRecords(records) {
+
+    return [...records].sort(
+        function(a, b) {
+
+            const dateA =
+                new Date(
+                    `${a.date}T${convertTo24Hour(a.time)}`
+                );
+
+
+            const dateB =
+                new Date(
+                    `${b.date}T${convertTo24Hour(b.time)}`
+                );
+
+
+            return dateB - dateA;
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   GET ALL ATTENDANCE RECORDS
+========================================================= */
+
+function getAllAttendanceRecords() {
+
+    let records = [];
+
+
+    if (!currentStudent) {
+
+        return records;
+
+    }
+
+
+    currentStudent.subjects.forEach(
+        function(subject) {
+
+            subject.attendance.forEach(
+                function(record) {
+
+                    records.push({
+
+                        subject:
+                            subject.name,
+
+                        icon:
+                            subject.icon,
+
+                        date:
+                            record.date,
+
+                        time:
+                            record.time,
+
+                        status:
+                            record.status
+
+                    });
+
+                }
+            );
+
+        }
+    );
+
+
+    return sortAttendanceRecords(
+        records
+    );
+
+}
+
+
+/* =========================================================
+   LATEST ATTENDANCE
+   TODAY ONLY
+========================================================= */
+
+function renderLatestAttendance() {
+
+    const container =
+        document.getElementById(
+            "latestAttendanceList"
+        );
+
+
+    if (!container) {
+
+        return;
+
+    }
+
+
+    container.innerHTML = "";
+
+
+    if (!currentStudent) {
+
+        container.innerHTML = `
+
+            <div class="empty-attendance">
+
+                <i class="feather-alert-circle"></i>
+
+                <p>
+                    Student information not found.
+                </p>
+
+            </div>
+
+        `;
+
+        return;
+
+    }
+
+
+    const todayString =
+        getTodayString();
+
+
+    const allRecords =
+        getAllAttendanceRecords();
+
+
+    const todayRecords =
+        allRecords.filter(
+            function(record) {
+
+                return (
+                    record.date ===
+                    todayString
+                );
+
+            }
+        );
+
+
+    if (
+        todayRecords.length === 0
+    ) {
+
+        container.innerHTML = `
+
+            <div class="empty-attendance">
+
+                <i class="feather-calendar"></i>
+
+                <p>
+                    No attendance has been marked today.
+                </p>
+
+            </div>
+
+        `;
+
+        return;
+
+    }
+
+
+    todayRecords.forEach(
+        function(record) {
+
+            const item =
+                document.createElement(
+                    "div"
+                );
+
+
+            item.className =
+                "latest-attendance-item";
+
+
+            const statusClass =
+                record.status.toLowerCase() ===
+                "present"
+                    ? "present"
+                    : "absent";
+
+
+            item.innerHTML = `
+
+                <div class="latest-left">
+
+                    <div class="latest-icon">
+
+                        <i class="${record.icon}"></i>
+
+                    </div>
+
+
+                    <div class="latest-info">
+
+                        <h6>
+                            ${record.subject}
+                        </h6>
+
+                        <p>
+                            Today's attendance
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="latest-right">
+
+                    <span class="latest-time">
+                        ${record.time}
+                    </span>
+
+                    <span
+                        class="attendance-status ${statusClass}">
+
+                        ${record.status}
+
+                    </span>
+
+                </div>
+
+            `;
+
+
+            container.appendChild(
+                item
+            );
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   RENDER SUBJECTS
+========================================================= */
+
+function renderSubjects() {
+
+    const container =
+        document.getElementById(
+            "subjectList"
+        );
+
+
+    if (!container) {
+
+        return;
+
+    }
+
+
+    container.innerHTML = "";
+
+
+    if (!currentStudent) {
+
+        return;
+
+    }
+
+
+    if (
+        currentStudent.subjects.length === 0
+    ) {
+
+        container.innerHTML = `
+
+            <div class="empty-attendance">
+
+                <i class="feather-book"></i>
+
+                <p>
+                    No subjects enrolled.
+                </p>
+
+            </div>
+
+        `;
+
+        return;
+
+    }
+
+
+    currentStudent.subjects.forEach(
+        function(subject) {
+
+            const card =
+                document.createElement(
+                    "div"
+                );
+
+
+            card.className =
+                "subject-card";
+
+
+            card.onclick =
+                function() {
+
+                    viewSubjectAttendance(
+                        subject.id
+                    );
+
+                };
+
+
+            card.innerHTML = `
+
+                <div class="subject-icon">
+
+                    <i class="${subject.icon}"></i>
+
+                </div>
+
+
+                <div class="subject-content">
+
+                    <h5>
+                        ${subject.name}
+                    </h5>
+
+                    <p>
+                        View attendance history
+                    </p>
+
+                </div>
+
+
+                <div class="subject-arrow">
+
+                    <i class="feather-chevron-right"></i>
+
+                </div>
+
+            `;
+
+
+            container.appendChild(
+                card
+            );
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   CURRENT SUBJECT RECORDS
+========================================================= */
+
+let currentSubjectRecords = [];
+
+
+/* =========================================================
+   OPEN SUBJECT ATTENDANCE
+========================================================= */
+
+function viewSubjectAttendance(subjectId) {
+
+    if (!currentStudent) {
+
+        return;
+
+    }
+
+
+    const subject =
+        currentStudent.subjects.find(
+            function(subject) {
+
+                return (
+                    subject.id ===
+                    subjectId
+                );
+
+            }
+        );
+
+
+    if (!subject) {
+
+        return;
+
+    }
+
+
+    const modalName =
+        document.getElementById(
+            "subjectModalName"
+        );
+
+
+    const searchInput =
+        document.getElementById(
+            "subjectSearchInput"
+        );
+
+
+    const modal =
+        document.getElementById(
+            "subjectAttendanceModal"
+        );
+
+
+    /* =====================================================
+       NEW:
+       STUDENT NAME
+       COURSE NAME
+       TEACHER NAME
+       ABOVE TABLE
+    ====================================================== */
+
+    const modalStudentName =
+        document.getElementById(
+            "modalStudentName"
+        );
+
+
+    const modalCourseName =
+        document.getElementById(
+            "modalCourseName"
+        );
+
+
+    const modalTeacherName =
+        document.getElementById(
+            "modalTeacherName"
+        );
+
+
+    if (
+        !modalName ||
+        !searchInput ||
+        !modal
+    ) {
+
+        return;
+
+    }
+
+
+    /* SUBJECT NAME */
+
+    modalName.textContent =
+        subject.name;
+
+
+    /* STUDENT NAME */
+
+    if (modalStudentName) {
+
+        modalStudentName.textContent =
+            currentStudent.name;
+
+    }
+
+
+    /* COURSE NAME */
+
+    if (modalCourseName) {
+
+        modalCourseName.textContent =
+            subject.name;
+
+    }
+
+
+    /* TEACHER NAME */
+
+    if (modalTeacherName) {
+
+        modalTeacherName.textContent =
+            subject.teacher;
+
+    }
+
+
+    currentSubjectRecords =
+        sortAttendanceRecords(
+            subject.attendance
+        );
+
+
+    searchInput.value = "";
+
+
+    renderSubjectAttendance(
+        currentSubjectRecords
+    );
+
+
+    modal.classList.add(
+        "active"
+    );
+
+
+    document.body.style.overflow =
+        "hidden";
+
+}
+
+
+/* =========================================================
+   RENDER SUBJECT ATTENDANCE
+========================================================= */
+
+function renderSubjectAttendance(records) {
+
+    const body =
+        document.getElementById(
+            "subjectHistoryBody"
+        );
+
+
+    if (!body) {
+
+        return;
+
+    }
+
+
+    body.innerHTML = "";
+
+
+    if (
+        records.length === 0
+    ) {
+
+        body.innerHTML = `
+
+            <tr>
+
+                <td
+                    colspan="3"
+                    style="
+                        text-align:center;
+                        padding:30px;
+                        color:#8993a2;
+                    ">
+
+                    No attendance records found.
+
+                </td>
+
+            </tr>
+
+        `;
+
+        return;
+
+    }
+
+
+    records.forEach(
+        function(record) {
+
+            const row =
+                document.createElement(
+                    "tr"
+                );
+
+
+            const statusClass =
+                record.status.toLowerCase() ===
+                "present"
+                    ? "attendance-yes"
+                    : "attendance-no";
+
+
+            row.innerHTML = `
+
+                <td>
+
+                    ${formatDate(
+                        record.date
+                    )}
+
+                </td>
+
+
+                <td>
+
+                    ${record.time}
+
+                </td>
+
+
+                <td>
+
+                    <span
+                        class="${statusClass}">
+
+                        ${record.status}
+
+                    </span>
+
+                </td>
+
+            `;
+
+
+            body.appendChild(
+                row
+            );
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   SEARCH ATTENDANCE
+========================================================= */
+
+function filterSubjectAttendance() {
+
+    const input =
+        document.getElementById(
+            "subjectSearchInput"
+        );
+
+
+    if (!input) {
+
+        return;
+
+    }
+
+
+    const searchValue =
+        input.value
+            .trim()
+            .toLowerCase();
+
+
+    if (!searchValue) {
+
+        renderSubjectAttendance(
+            currentSubjectRecords
+        );
+
+        return;
+
+    }
+
+
+    const filtered =
+        currentSubjectRecords.filter(
+            function(record) {
+
+                const dateValues =
+                    getDateSearchValues(
+                        record.date
+                    );
+
+
+                const status =
+                    record.status
+                        .toLowerCase();
+
+
+                const time =
+                    record.time
+                        .toLowerCase();
+
+
+                const dateMatch =
+                    dateValues.some(
+                        function(value) {
+
+                            return value
+                                .includes(
+                                    searchValue
+                                );
+
+                        }
+                    );
+
+
+                return (
+
+                    dateMatch
+
+                    ||
+
+                    status.includes(
+                        searchValue
+                    )
+
+                    ||
+
+                    time.includes(
+                        searchValue
+                    )
+
+                );
+
+            }
+        );
+
+
+    renderSubjectAttendance(
+        filtered
+    );
+
+}
+
+
+/* =========================================================
+   CLOSE MODAL
+========================================================= */
+
+function closeSubjectAttendance() {
+
+    const modal =
+        document.getElementById(
+            "subjectAttendanceModal"
+        );
+
+
+    if (!modal) {
+
+        return;
+
+    }
+
+
+    modal.classList.remove(
+        "active"
+    );
+
+
+    document.body.style.overflow =
+        "";
+
+}
+
+
+/* =========================================================
+   CLICK OUTSIDE MODAL
+========================================================= */
+
+const subjectAttendanceModal =
+    document.getElementById(
+        "subjectAttendanceModal"
+    );
+
+
+if (subjectAttendanceModal) {
+
+    subjectAttendanceModal.addEventListener(
+        "click",
+        function(event) {
+
+            if (
+                event.target === this
+            ) {
+
+                closeSubjectAttendance();
+
+            }
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   ESC KEY
+========================================================= */
+
+document.addEventListener(
+    "keydown",
+    function(event) {
+
+        if (
+            event.key ===
+            "Escape"
+        ) {
+
+            closeSubjectAttendance();
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   LOGIN DROPDOWN
+========================================================= */
+
+const loginButton =
+    document.querySelector(
+        ".login-dropdown-btn"
+    );
+
+
+const loginDropdown =
+    document.querySelector(
+        ".login-dropdown"
+    );
+
+
+if (loginButton && loginDropdown) {
+
+    loginButton.addEventListener(
+        "click",
+        function(event) {
+
+            event.stopPropagation();
+
+
+            loginDropdown.classList.toggle(
+                "active"
+            );
+
+        }
+    );
+
+}
+
+
+document.addEventListener(
+    "click",
+    function(event) {
+
+        if (
+            loginDropdown
+            &&
+            !loginDropdown.contains(
+                event.target
+            )
+        ) {
+
+            loginDropdown.classList.remove(
+                "active"
+            );
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   INITIALIZE PAGE
+========================================================= */
+
+displayStudentName();
+
+displayCurrentDate();
+
+renderLatestAttendance();
+
+renderSubjects();
+
+
+</script>
+
+
+</body>
+
+</html>
