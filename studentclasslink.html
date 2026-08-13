@@ -1,0 +1,1356 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>My Classes - London Star Education</title>
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- CSS -->
+
+    <link rel="stylesheet"
+        href="assets/css/vendor/bootstrap.min.css">
+
+    <link rel="stylesheet"
+        href="assets/css/vendor/slick.css">
+
+    <link rel="stylesheet"
+        href="assets/css/vendor/slick-theme.css">
+
+    <link rel="stylesheet"
+        href="assets/css/plugins/sal.css">
+
+    <link rel="stylesheet"
+        href="assets/css/plugins/feather.css">
+
+    <link rel="stylesheet"
+        href="assets/css/plugins/fontawesome.min.css">
+
+    <link rel="stylesheet"
+        href="assets/css/plugins/euclid-circulara.css">
+
+    <link rel="stylesheet"
+        href="assets/css/plugins/swiper.css">
+
+    <link rel="stylesheet"
+        href="assets/css/plugins/magnify.css">
+
+    <link rel="stylesheet"
+        href="assets/css/plugins/odometer.css">
+
+    <link rel="stylesheet"
+        href="assets/css/plugins/animation.css">
+
+    <link rel="stylesheet"
+        href="assets/css/plugins/bootstrap-select.min.css">
+
+    <link rel="stylesheet"
+        href="assets/css/plugins/jquery-ui.css">
+
+    <link rel="stylesheet"
+        href="assets/css/plugins/magnigy-popup.min.css">
+
+    <link rel="stylesheet"
+        href="assets/css/plugins/plyr.css">
+
+    <link rel="stylesheet"
+        href="assets/css/style.css">
+
+
+    <!-- CUSTOM CLASS LINK CSS -->
+
+    <style>
+
+        .class-card {
+            border: 1px solid #e5e7eb;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: 0.3s;
+            background: #ffffff;
+            height: 100%;
+        }
+
+        .class-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .math-card {
+            border-top: 4px solid #1f354d;
+        }
+
+        .literature-card {
+            border-top: 4px solid #1f6b65;
+        }
+
+        .subject {
+            /* font-size: 12px; */
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: #1f6b65;
+            margin-bottom: 8px;
+        }
+
+        
+
+        .class-title {
+            font-size: 22px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 0;
+        }
+
+        .subject-icon {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: #edf2f7;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 20px;
+            color: #1f354d;
+        }
+
+        .literature-icon {
+            color: #1f6b65;
+        }
+
+        .class-details {
+            margin-top: 40px;
+        }
+
+        .class-details p {
+            font-size: 14px;
+            color: #666;
+
+            display: flex;
+            align-items: center;
+
+            gap: 10px;
+
+            margin-bottom: 15px;
+        }
+
+        .join-btn {
+            margin-top: 20px;
+            padding: 12px;
+
+            
+            color: #ffffff !important;
+
+            border-radius: 6px;
+            border: none;
+
+            transition: 0.3s;
+        }
+
+        
+
+        .awaiting-btn {
+            margin-top: 20px;
+            padding: 12px;
+
+            background: #e2e8f0 !important;
+            color: #64748b !important;
+
+            border: none;
+            border-radius: 6px;
+
+            cursor: not-allowed;
+        }
+
+        @media (max-width: 991px) {
+
+            .rbt-default-sidebar {
+                margin-bottom: 30px;
+            }
+
+        }
+
+        .class-card {
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: 0.3s;
+    background: #ffffff;
+    height: 100%;
+}
+
+.class-card:hover {
+    transform: translateY(-5px);
+}
+
+.math-card {
+    border-top: 4px solid #9b64f1;
+}
+
+.literature-card {
+    border-top: 4px solid #9b64f1;
+}
+
+.subject {
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #000000;
+    margin-bottom: 8px;
+    font-size: 22px;
+    line-height: 1.45;
+}
+
+/* BOTH CARD TITLES SAME HEIGHT */
+.class-card-header {
+    min-height: 75px;
+}
+
+/* CARD BODY FLEX */
+.class-card .card-body {
+    display: flex;
+    flex-direction: column;
+}
+
+/* CLASS DETAILS */
+.class-details {
+    margin-top: 20px;
+}
+
+.class-details p {
+    font-size: 14px;
+    color: #666;
+
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 15px;
+}
+
+/* BUTTON COMMON STYLE */
+.join-btn,
+.awaiting-btn {
+    margin-top: auto;
+    padding: 14px 12px;
+
+    font-size: 16px !important;
+    font-weight: 600;
+
+    min-height: 50px;
+
+    border-radius: 6px;
+}
+
+/* JOIN CLASS */
+.join-btn {
+    
+    color: #ffffff !important;
+
+    border: none;
+
+    transition: 0.3s;
+}
+
+
+/* AWAITING LINK */
+.awaiting-btn {
+    background: #e2e8f0 !important;
+    color: #64748b !important;
+
+    border: none;
+
+    cursor: not-allowed;
+
+    opacity: 1 !important;
+}
+
+/* MOBILE */
+@media (max-width: 991px) {
+
+    .rbt-default-sidebar {
+        margin-bottom: 30px;
+    }
+
+    .class-card-header {
+        min-height: auto;
+    }
+}
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ========================= -->
+    <!-- HEADER -->
+    <!-- ========================= -->
+
+    <header class="rbt-header rbt-header-9">
+
+        <div class="rbt-sticky-placeholder"></div>
+
+
+        <!-- HEADER TOP -->
+
+        <div
+            class="rbt-header-middle position-relative rbt-header-mid-1 bg-color-white rbt-border-bottom">
+
+            <div class="container">
+
+                <div class="rbt-header-sec align-items-center">
+
+
+                    <!-- LANGUAGE -->
+
+                    <div class="rbt-header-sec-col rbt-header-left">
+
+                        <div class="rbt-header-content">
+
+                            <div class="header-info">
+
+                                <ul class="rbt-dropdown-menu switcher-language">
+
+                                    <li class="has-child-menu">
+
+                                        <a href="#">
+
+                                            <img
+                                                class="left-image"
+                                                src="assets/images/icons/en-us.png"
+                                                alt="Language Images">
+
+                                            <span class="menu-item">
+                                                English
+                                            </span>
+
+                                        </a>
+
+                                    </li>
+
+                                </ul>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- SEARCH -->
+
+                    <div
+                        class="rbt-header-sec-col rbt-header-center d-none d-md-block">
+
+                        <div class="rbt-header-content">
+
+                            <div class="header-info">
+
+                                <div class="rbt-search-field">
+
+                                    <div class="search-field">
+
+                                        <input
+                                            type="text"
+                                            placeholder="Search Course">
+
+                                        <button
+                                            class="rbt-round-btn serach-btn"
+                                            type="submit">
+
+                                            <i class="feather-search"></i>
+
+                                        </button>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- LOGIN -->
+
+                    <div class="rbt-header-sec-col rbt-header-right">
+
+                        <div class="rbt-btn-wrapper">
+
+                            <div class="login-dropdown">
+
+                                <button
+                                    type="button"
+                                    class="rbt-btn rbt-switch-btn btn-gradient btn-sm hover-transform-none login-dropdown-btn">
+
+                                    <span data-text="Login">
+                                        Login
+                                    </span>
+
+                                    <i class="feather-chevron-down"></i>
+
+                                </button>
+
+
+                                <div class="login-dropdown-menu">
+
+                                    <a href="instructor-profile.html">
+
+                                        <i class="feather-user"></i>
+
+                                        <span>
+                                            Tutor Login
+                                        </span>
+
+                                    </a>
+
+
+                                    <a href="student-profile.html">
+
+                                        <i class="feather-book-open"></i>
+
+                                        <span>
+                                            Student Login
+                                        </span>
+
+                                    </a>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- MAIN NAVBAR -->
+
+        <div
+            class="rbt-header-wrapper header-not-transparent header-sticky">
+
+            <div class="container">
+
+                <div
+                    class="mainbar-row rbt-navigation-end align-items-center">
+
+
+                    <!-- LOGO -->
+
+                    <div class="header-left rbt-header-content">
+
+                        <div class="header-info">
+
+                            <div class="logo">
+
+                                <a href="index.html">
+
+                                    <img
+                                        src="assets/images/logo/logo.png"
+                                        alt="Education Logo">
+
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- NAVIGATION -->
+
+                    <div class="rbt-main-navigation d-none d-xl-block">
+
+                        <nav class="mainmenu-nav">
+
+                            <ul class="mainmenu">
+
+                                <li>
+                                    <a href="index.html">
+                                        Home
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="about-us.html">
+                                        About
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="our-team.html">
+                                        Our Team
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="our-tuition.html">
+                                        Our Tuition
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="holiday-camps.html">
+                                        Holiday Camps
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="plans-and-pricing.html">
+                                        Plans & Pricing
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="book-online.html">
+                                        Book Online
+                                    </a>
+                                </li>
+
+                            </ul>
+
+                        </nav>
+
+                    </div>
+
+
+                    <!-- RIGHT SIDE -->
+
+                    <div class="header-right">
+
+                        <!-- JOIN NOW DESKTOP -->
+
+                        <div
+                            class="rbt-btn-wrapper d-none d-xl-block">
+
+                            <a
+                                class="rbt-btn rbt-switch-btn btn-gradient btn-sm hover-transform-none"
+                                href="login-register.html">
+
+                                <span data-text="Join Now">
+                                    Join Now
+                                </span>
+
+                            </a>
+
+                        </div>
+
+
+                        <!-- MOBILE HAMBURGER -->
+
+                        <div
+                            class="mobile-menu-bar d-block d-xl-none">
+
+                            <div class="hamberger">
+
+                                <button
+                                    class="hamberger-button rbt-round-btn">
+
+                                    <i class="feather-menu"></i>
+
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- ========================= -->
+    <!-- PAGE TITLE -->
+    <!-- ========================= -->
+
+    <div
+        class="slider-area rbt-banner-10 height-400 bg_image bg_image--11"
+        data-black-overlay="5">
+
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-lg-12">
+
+                    <div class="inner text-center">
+
+                        <h1 class="title display-one text-white">
+                            My Classes
+                        </h1>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+ <!-- Start Card Style -->
+    <div class="rbt-dashboard-area rbt-section-gap">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+
+                    <div class="row g-5">
+                        <div class="col-lg-3">
+                            <!-- Start Dashboard Sidebar  -->
+                            <div class="rbt-default-sidebar sticky-top rbt-shadow-box rbt-gradient-border">
+                                <div class="inner">
+                                    <div class="content-item-content">
+
+                                        <div class="rbt-default-sidebar-wrapper">
+                                            <div class="section-title mb--20">
+                                                <h6 class="rbt-title-style-2">Welcome, Jone Due</h6>
+                                            </div>
+                                            <nav class="mainmenu-nav">
+                                                <ul class="dashboard-mainmenu rbt-default-sidebar-list">
+                                                                                            <li><a href="student-profile.html"><i class="feather-user"></i><span>My Profile</span></a></li>
+                                                </ul>
+                                            </nav>
+
+                                           
+<nav class="mainmenu-nav">
+    <ul class="dashboard-mainmenu rbt-default-sidebar-list">
+        <li>
+            <a href="student-course.html">
+                <i class="feather-monitor"></i>
+                <span>My Courses</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+
+<nav class="mainmenu-nav">
+    <ul class="dashboard-mainmenu rbt-default-sidebar-list">
+        <li>
+            <a href="studentclasslink.html">
+                <i class="feather-link"></i>
+                <span>Class Link</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+                                             <nav class="mainmenu-nav">
+    <ul class="dashboard-mainmenu rbt-default-sidebar-list">
+        <li>
+            <a href="student-profile-attendance.html">
+                <i class="feather-calendar"></i>
+                <span>Attendance</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+
+<nav class="mainmenu-nav">
+    <ul class="dashboard-mainmenu rbt-default-sidebar-list">
+        <li>
+            <a href="student-homework-task.html">
+                <i class="feather-check-square"></i>
+                <span>Homework &amp; Task</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+
+                                            <div class="section-title mt--40 mb--20">
+                                                <h6 class="rbt-title-style-2">User</h6>
+                                            </div>
+
+                                            <nav class="mainmenu-nav">
+                                                <ul class="dashboard-mainmenu rbt-default-sidebar-list">
+                                                    <li><a href="student-edit.html"><i class="feather-settings"></i><span>Edit Profile</span></a></li>
+                                                    <li><a href="index.html"><i class="feather-log-out"></i><span>Logout</span></a></li>
+                                                </ul>
+                                            </nav>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Dashboard Sidebar  -->
+                        </div>
+
+                <!-- ========================= -->
+                <!-- RIGHT CLASS CONTENT -->
+                <!-- ========================= -->
+
+                <div class="col-lg-9">
+
+                    <div class="row g-4">
+
+
+                        <!-- MATHEMATICS -->
+
+                        <div class="col-md-6">
+
+                            <div
+                                class="card class-card math-card h-100">
+
+                                <div class="card-body p-4">
+
+                                    <div
+                                        class="d-flex justify-content-between align-items-start class-card-header">
+
+                                        <div>
+
+                                            <h4 class="subject">
+                                                Creative Writing
+                                            </h4>
+
+                                            
+                                        </div>
+
+
+                                        <div class="subject-icon">
+
+                                            <i
+                                                class="feather-book-open">
+                                            </i>
+
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="class-details">
+
+                                        <p>
+
+                                            <i
+                                                class="feather-user">
+                                            </i>
+
+                                            Dr. Sarah Jenkins
+
+                                        </p>
+
+
+                                        <p>
+
+                                            <i
+                                                class="feather-clock">
+                                            </i>
+
+                                            Today, 14:00 - 15:30
+
+                                        </p>
+
+                                    </div>
+
+
+                                    <button
+                                        class="btn join-btn rbt-btn rbt-switch-btn btn-gradient btn-sm hover-transform-none w-100"
+                                        onclick="joinClass('https://meet.google.com/')">
+
+                                        <i
+                                            class="feather-log-in me-2">
+                                        </i>
+
+                                        Join Class
+
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        
+
+                        <div class="col-md-6">
+
+                            <div
+                                class="card class-card literature-card h-100">
+
+                                <div class="card-body p-4">
+
+                                    <div
+                                        class="d-flex justify-content-between align-items-start class-card-header">
+
+                                        <div>
+
+                                            <h4
+                                                class="subject">
+
+                                                Reading & Comprehension
+
+                                        </h4>
+
+
+                                          
+
+                                        </div>
+
+
+                                        <div
+                                            class="subject-icon literature-icon">
+
+                                            <i
+                                                class="feather-book">
+                                            </i>
+
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="class-details">
+
+                                        <p>
+
+                                            <i
+                                                class="feather-user">
+                                            </i>
+
+                                            Prof. David Thorne
+
+                                        </p>
+
+
+                                        <p>
+
+                                            <i
+                                                class="feather-clock">
+                                            </i>
+
+                                            Tomorrow, 10:00 - 11:30
+
+                                        </p>
+
+                                    </div>
+
+
+                                    <button
+                                        class="btn awaiting-btn w-100"
+                                        disabled>
+
+                                        <i
+                                            class="feather-clock me-2">
+                                        </i>
+
+                                        Awaiting Link
+
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ========================= -->
+    <!-- FOOTER -->
+    <!-- ========================= -->
+
+    <footer
+        class="rbt-footer footer-style-1 bg-color-white overflow-hidden">
+
+        <div class="footer-top">
+
+            <div class="container">
+
+                <div class="row g-5">
+
+
+                    <!-- FOOTER LOGO -->
+
+                    <div
+                        class="col-lg-4 col-md-6 col-sm-6 col-12">
+
+                        <div class="footer-widget">
+
+                            <div class="logo">
+
+                                <a href="index.html">
+
+                                    <img
+                                        src="assets/images/logo/logo.png"
+                                        alt="Edu-cause">
+
+                                </a>
+
+                            </div>
+
+
+                            <p class="description mt--20">
+
+                                We’re always in search for talented
+                                and motivated people.
+                                Don’t be shy introduce yourself!
+
+                            </p>
+
+
+                            <ul
+                                class="social-icon social-default justify-content-start">
+
+                                <li>
+
+                                    <a href="https://www.facebook.com/">
+
+                                        <i class="feather-facebook"></i>
+
+                                    </a>
+
+                                </li>
+
+
+                                <li>
+
+                                    <a href="https://www.instagram.com/">
+
+                                        <i class="feather-instagram"></i>
+
+                                    </a>
+
+                                </li>
+
+
+                                <li>
+
+                                    <a href="https://www.linkedin.com/">
+
+                                        <i class="feather-linkedin"></i>
+
+                                    </a>
+
+                                </li>
+
+
+                                <li>
+
+                                    <a href="https://www.twitter.com">
+
+                                        <i class="feather-youtube"></i>
+
+                                    </a>
+
+                                </li>
+
+                            </ul>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- QUICK LINKS -->
+
+                    <div
+                        class="col-lg-2 col-md-6 col-sm-6 col-12">
+
+                        <div class="footer-widget">
+
+                            <h5 class="ft-title">
+                                Quick Links
+                            </h5>
+
+                            <ul class="ft-link">
+
+                                <li>
+                                    <a href="our-team.html">
+                                        Our Team
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="our-tuition.html">
+                                        Our Tuition
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="holiday-camps.html">
+                                        Holiday Camps
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="plans-and-pricing.html">
+                                        Plans & Pricing
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="book-online.html">
+                                        Book Online
+                                    </a>
+                                </li>
+
+                            </ul>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- POPULAR PROGRAMS -->
+
+                    <div
+                        class="col-lg-2 col-md-6 col-sm-6 col-12">
+
+                        <div class="footer-widget">
+
+                            <h5 class="ft-title">
+                                Popular Programs
+                            </h5>
+
+                            <ul class="ft-link">
+
+                                <li>
+                                    <a href="our-tuition.html">
+                                        Primary Tuition
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="our-tuition.html">
+                                        Secondary Tuition
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="our-tuition.html">
+                                        GCSE Tuition
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="our-tuition.html">
+                                        IGCSE Tuition
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="our-tuition.html">
+                                        A-Level Tuition
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="holiday-camps.html">
+                                        Holiday Camps
+                                    </a>
+                                </li>
+
+                            </ul>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- CONTACT -->
+
+                    <div
+                        class="col-lg-4 col-md-6 col-sm-6 col-12">
+
+                        <div class="footer-widget">
+
+                            <h5 class="ft-title">
+                                Get Contact
+                            </h5>
+
+
+                            <ul class="ft-link">
+
+                                <li>
+
+                                    <span>
+                                        Phone:
+                                    </span>
+
+                                    <a href="#">
+                                        (406) 555-0120
+                                    </a>
+
+                                </li>
+
+
+                                <li>
+
+                                    <span>
+                                        E-mail:
+                                    </span>
+
+                                    <a
+                                        href="mailto:hr@example.com">
+
+                                        admin@example.com
+
+                                    </a>
+
+                                </li>
+
+                            </ul>
+
+
+                            <div
+                                class="newsletter-form mt--20">
+
+                                <h6 class="w-600">
+                                    Location
+                                </h6>
+
+                                <p class="description">
+
+                                    2000+ Our students are subscribe
+                                    Around the World.
+
+                                    <br>
+
+                                    Don’t be shy introduce yourself!
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- SEPARATOR -->
+
+        <div class="rbt-separator-mid">
+
+            <div class="container">
+
+                <hr class="rbt-separator m-0">
+
+            </div>
+
+        </div>
+
+
+        <!-- COPYRIGHT -->
+
+        <div
+            class="copyright-area copyright-style-1 ptb--20">
+
+            <div class="container">
+
+                <div class="row align-items-center">
+
+
+                    <div
+                        class="col-xxl-7 col-xl-7 col-lg-7 col-md-12 col-12">
+
+                        <p
+                            class="rbt-link-hover text-center text-lg-start">
+
+                            Copyright © 2024 by
+
+                            <a href="index.html">
+                                London Star Education Ltd.
+                            </a>
+
+                            All Rights Reserved.
+
+                            Designed by
+
+                            <a
+                                href="https://impinfo.in/"
+                                target="_blank">
+
+                                RKI Systems
+
+                            </a>
+
+                        </p>
+
+                    </div>
+
+
+                    <div
+                        class="col-xxl-5 col-xl-5 col-lg-5 col-md-12 col-12">
+
+                        <ul
+                            class="copyright-link rbt-link-hover justify-content-center justify-content-lg-end mt_sm--10 mt_md--10">
+
+                            <li>
+                                <a href="#">
+                                    Terms of service
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="privacy-policy.html">
+                                    Privacy policy
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="subscription.html">
+                                    Subscription
+                                </a>
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- BACK TO TOP -->
+
+    <div class="rbt-progress-parent">
+
+        <svg
+            class="rbt-back-circle svg-inner"
+            width="100%"
+            height="100%"
+            viewBox="-1 -1 102 102">
+
+            <path
+                d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+
+        </svg>
+
+    </div>
+
+
+    <!-- FLOATING CONTACT BUTTONS -->
+
+    <div class="floating-contact">
+
+
+        <!-- CALL -->
+
+        <div class="contact-item call-item">
+
+            <div class="contact-label call-label">
+                Talk To Our Experts
+            </div>
+
+            <a
+                href="tel:+919876543210"
+                class="contact-button call-button"
+                aria-label="Call us">
+
+                <i class="fa fa-phone"></i>
+
+            </a>
+
+        </div>
+
+
+        <!-- WHATSAPP -->
+
+        <div class="contact-item whatsapp-item">
+
+            <div class="contact-label whatsapp-label">
+                Message Us
+            </div>
+
+            <a
+                href="https://wa.me/919876543210"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="contact-button whatsapp-button"
+                aria-label="Chat with us on WhatsApp">
+
+                <i class="fab fa-whatsapp"></i>
+
+            </a>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- JAVASCRIPT -->
+ 
+
+    <script src="assets/js/vendor/jquery.js"></script>
+
+    <script
+        src="assets/js/vendor/bootstrap.min.js">
+    </script>
+
+    <script
+        src="assets/js/vendor/bootstrap-select.min.js">
+    </script>
+
+    <script src="assets/js/main.js"></script>
+
+    <!-- STUDENT CLASS SCRIPT -->
+   
+
+    <script>
+
+        function joinClass(meetingLink) {
+
+            if (meetingLink) {
+
+                window.open(
+                    meetingLink,
+                    "_blank"
+                );
+
+            }
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>
