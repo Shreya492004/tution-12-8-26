@@ -13,8 +13,10 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <!-- =========================================================
+         CSS
+    ========================================================= -->
 
-    <!-- CSS -->
     <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/vendor/slick.css">
     <link rel="stylesheet" href="assets/css/vendor/slick-theme.css">
@@ -36,7 +38,7 @@
 <style>
 
 /* =========================================================
-   PAGE
+   HOMEWORK PAGE
 ========================================================= */
 
 .homework-page {
@@ -77,7 +79,6 @@
     );
 
     color: #ffffff;
-
     font-size: 22px;
 
     box-shadow:
@@ -86,18 +87,14 @@
 
 .homework-page-header h3 {
     margin: 0 0 6px;
-
     font-size: 26px;
     font-weight: 700;
-
     color: #222222;
 }
 
 .homework-page-header p {
     margin: 0;
-
     color: #777777;
-
     font-size: 14px;
     line-height: 1.6;
 }
@@ -109,12 +106,8 @@
 
 .resources-subject-grid {
     display: grid;
-
-    grid-template-columns:
-        repeat(2, minmax(0, 1fr));
-
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 20px;
-
     width: 100%;
 }
 
@@ -125,34 +118,22 @@
 
 .resource-subject {
     position: relative;
-
     width: 100%;
-
     padding: 22px;
-
     background: #ffffff;
-
     border: 1px solid #e8e8e8;
-
     border-radius: 10px;
 
     box-shadow:
         0 4px 15px rgba(0,0,0,0.04);
 
     overflow: hidden;
-
     transition: all 0.25s ease;
 }
-
-
-/* =========================================================
-   TOP BORDER REMOVED
-========================================================= */
 
 .resource-subject::before {
     display: none !important;
 }
-
 
 .resource-subject:hover {
     transform: translateY(-3px);
@@ -168,13 +149,10 @@
 
 .resource-subject-title {
     display: flex;
-
     align-items: center;
-
     gap: 10px;
 
     margin-bottom: 14px;
-
     padding-bottom: 12px;
 
     border-bottom: 1px solid #eeeeee;
@@ -185,67 +163,53 @@
     height: 36px;
 
     display: flex;
-
     align-items: center;
     justify-content: center;
 
     border-radius: 7px;
 
-    background:
-        rgba(108,77,246,0.10);
-
+    background: rgba(108,77,246,0.10);
     color: #6c4df6;
 
-    font-size: 17px;
-
+    font-size: 18px;
     flex-shrink: 0;
 }
 
 .resource-subject-title h5 {
     margin: 0;
-
     color: #222222;
-
-    font-size: 16px;
-
+    font-size: 19px;
     font-weight: 700;
 }
 
 
 /* =========================================================
-   TEACHER / DATE
+   META
 ========================================================= */
 
 .resource-meta {
     display: flex;
-
     align-items: center;
-
     flex-wrap: wrap;
 
     gap: 15px;
-
     margin-bottom: 16px;
 }
 
 .resource-teacher,
 .resource-date {
     display: flex;
-
     align-items: center;
-
     gap: 6px;
 
     color: #777777;
-
-    font-size: 12px;
+    font-size: 14px;
 }
 
 .resource-teacher i,
 .resource-date i {
     color: #6c4df6;
-
-    font-size: 13px;
+    font-size: 14px;
 }
 
 
@@ -259,104 +223,76 @@
 
 .homework-task-label {
     display: flex;
-
     align-items: center;
-
     gap: 6px;
 
     margin-bottom: 8px;
 
     color: #000000 !important;
-
-    font-size: 11px;
-
+    font-size: 13px;
     font-weight: 700;
 
     text-transform: uppercase;
-
     letter-spacing: 0.03em;
 }
 
 .homework-task-label i {
     color: #000000 !important;
-
-    font-size: 13px;
+    font-size: 14px;
 }
-
-
-/* =========================================================
-   TASK TEXT
-   WHITE BACKGROUND
-   NO BORDER
-   ASH GREY FONT
-========================================================= */
 
 .homework-task-text {
     background: #ffffff;
 
     border: none !important;
-
     border-radius: 7px;
 
     padding: 12px 14px;
 
     color: #8a8a8a !important;
 
-    font-size: 13px;
-
+    font-size: 15px;
     line-height: 1.7;
 }
-
-
-/* =========================================================
-   EMPTY TASK
-========================================================= */
 
 .homework-task-empty {
     background: #ffffff;
 
     border: none !important;
-
     border-radius: 7px;
 
     padding: 12px 14px;
 
     color: #999999 !important;
 
-    font-size: 13px;
-
+    font-size: 14px;
     font-style: italic;
 }
 
 
 /* =========================================================
-   NOTES / FILES
+   FILE LABEL
 ========================================================= */
 
 .homework-files-label {
     display: flex;
-
     align-items: center;
-
     gap: 6px;
 
     margin-bottom: 8px;
 
     color: #000000 !important;
 
-    font-size: 11px;
-
+    font-size: 13px;
     font-weight: 700;
 
     text-transform: uppercase;
-
     letter-spacing: 0.03em;
 }
 
 .homework-files-label i {
     color: #000000 !important;
-
-    font-size: 13px;
+    font-size: 14px;
 }
 
 .homework-files-empty {
@@ -370,8 +306,7 @@
 
     color: #000000 !important;
 
-    font-size: 13px;
-
+    font-size: 14px;
     font-style: italic;
 }
 
@@ -382,15 +317,12 @@
 
 .resource-file {
     display: flex;
-
     align-items: center;
-
     justify-content: space-between;
 
     gap: 12px;
 
     width: 100%;
-
     min-height: 58px;
 
     padding: 10px 12px;
@@ -398,7 +330,6 @@
     background: #ffffff;
 
     border: 1px solid #e8e8e8;
-
     border-radius: 7px;
 
     margin-bottom: 8px;
@@ -417,41 +348,27 @@
         0 3px 10px rgba(108,77,246,0.08);
 }
 
-
-/* =========================================================
-   FILE INFORMATION
-========================================================= */
-
 .resource-file-info {
     display: flex;
-
     align-items: center;
 
     gap: 10px;
 
     min-width: 0;
-
     flex: 1;
 }
-
-
-/* =========================================================
-   FILE ICON
-========================================================= */
 
 .resource-file-icon {
     width: 36px;
     height: 36px;
 
     display: flex;
-
     align-items: center;
     justify-content: center;
 
     flex-shrink: 0;
 
-    background:
-        rgba(108,77,246,0.10);
+    background: rgba(108,77,246,0.10);
 
     border-radius: 6px;
 
@@ -459,21 +376,14 @@
 }
 
 .resource-file-icon i {
-    font-size: 17px;
+    font-size: 18px;
 }
-
-
-/* =========================================================
-   FILE DETAILS
-========================================================= */
 
 .resource-file-details {
     min-width: 0;
 
     display: flex;
-
     flex-direction: column;
-
     justify-content: center;
 }
 
@@ -482,16 +392,12 @@
 
     color: #000000 !important;
 
-    font-size: 12px;
-
+    font-size: 14px;
     font-weight: 600;
-
     line-height: 1.4;
 
     white-space: nowrap;
-
     overflow: hidden;
-
     text-overflow: ellipsis;
 }
 
@@ -502,52 +408,38 @@
 
     color: #000000 !important;
 
-    font-size: 10px;
-
+    font-size: 11px;
     text-transform: uppercase;
 }
 
 
 /* =========================================================
-   ACTIONS
+   ACTION BUTTONS
 ========================================================= */
 
 .resource-actions {
     display: flex;
-
     align-items: center;
 
     gap: 7px;
-
     flex-shrink: 0;
 }
 
-
-/* =========================================================
-   VIEW BUTTON
-========================================================= */
-
 .resource-view-btn {
     width: 34px !important;
-
     height: 34px !important;
 
     min-width: 34px !important;
-
     min-height: 34px !important;
 
     padding: 0 !important;
-
     margin: 0 !important;
 
     border: none !important;
-
     border-radius: 6px !important;
 
     display: inline-flex !important;
-
     align-items: center !important;
-
     justify-content: center !important;
 
     background:
@@ -559,8 +451,7 @@
 
     color: #ffffff !important;
 
-    font-size: 14px !important;
-
+    font-size: 15px !important;
     line-height: 1 !important;
 
     cursor: pointer;
@@ -573,9 +464,7 @@
 
 .resource-view-btn i {
     color: #ffffff !important;
-
-    font-size: 14px !important;
-
+    font-size: 15px !important;
     margin: 0 !important;
 }
 
@@ -590,11 +479,6 @@
         0 6px 16px rgba(108,77,246,0.28);
 }
 
-
-/* =========================================================
-   DOWNLOAD BUTTON
-========================================================= */
-
 .resource-download-btn {
     height: 34px;
 
@@ -603,7 +487,6 @@
     display: inline-flex;
 
     align-items: center;
-
     justify-content: center;
 
     gap: 6px;
@@ -616,8 +499,7 @@
 
     border: 1px solid #dddddd;
 
-    font-size: 11px;
-
+    font-size: 12px;
     font-weight: 600;
 
     cursor: pointer;
@@ -635,11 +517,6 @@
     background:
         rgba(108,77,246,0.05);
 }
-
-
-/* =========================================================
-   NEW BADGE REMOVED
-========================================================= */
 
 
 /* =========================================================
@@ -663,7 +540,7 @@
 
     color: #000000;
 
-    font-size: 13px;
+    font-size: 14px;
 }
 
 .resources-empty i {
@@ -675,6 +552,7 @@
 
     font-size: 28px;
 }
+
 
 
 /* =========================================================
@@ -694,11 +572,9 @@
     width: 100%;
     height: 100%;
 
-    background:
-        rgba(0,0,0,0.65);
+    background: rgba(0,0,0,0.65);
 
     align-items: center;
-
     justify-content: center;
 
     padding: 25px;
@@ -851,68 +727,11 @@
 }
 
 @keyframes notesSpin {
+
     to {
         transform: rotate(360deg);
     }
-}
 
-
-/* =========================================================
-   LOGIN DROPDOWN
-========================================================= */
-
-.login-dropdown {
-    position: relative;
-}
-
-.login-dropdown-menu {
-    display: none;
-
-    position: absolute;
-
-    top: calc(100% + 10px);
-
-    right: 0;
-
-    min-width: 190px;
-
-    background: #ffffff;
-
-    border-radius: 8px;
-
-    padding: 8px 0;
-
-    box-shadow:
-        0 10px 30px rgba(0,0,0,0.12);
-
-    z-index: 9999;
-}
-
-.login-dropdown.active
-.login-dropdown-menu {
-    display: block;
-}
-
-.login-dropdown-menu a {
-    display: flex;
-
-    align-items: center;
-
-    gap: 10px;
-
-    padding: 10px 16px;
-
-    color: #333333;
-
-    text-decoration: none;
-
-    font-size: 14px;
-}
-
-.login-dropdown-menu a:hover {
-    background: #f5f3ff;
-
-    color: #6c4df6;
 }
 
 
@@ -927,7 +746,6 @@
     }
 
 }
-
 
 @media (max-width: 767px) {
 
@@ -962,11 +780,9 @@
 
     .resource-view-btn {
         width: 32px !important;
-
         height: 32px !important;
 
         min-width: 32px !important;
-
         min-height: 32px !important;
     }
 
@@ -975,7 +791,7 @@
 
         padding: 0 9px;
 
-        font-size: 10px;
+        font-size: 11px;
     }
 
     .notes-modal {
@@ -984,18 +800,15 @@
 
     .notes-modal-content {
         width: 100%;
-
         height: 95vh;
     }
 
 }
 
-
 @media (max-width: 480px) {
 
     .resource-file {
         flex-direction: column;
-
         align-items: stretch;
     }
 
@@ -1009,15 +822,12 @@
 
     .resource-download-btn {
         flex: 1;
-
         justify-content: center;
     }
 
     .resource-meta {
         flex-direction: column;
-
         align-items: flex-start;
-
         gap: 6px;
     }
 
@@ -1042,8 +852,7 @@
 
     <!-- HEADER TOP -->
 
-    <div class="rbt-header-middle
-                position-relative
+    <div class="rbt-header-middle position-relative
                 rbt-header-mid-1
                 bg-color-white
                 rbt-border-bottom">
@@ -1053,7 +862,7 @@
             <div class="rbt-header-sec align-items-center">
 
 
-                <!-- LANGUAGE -->
+                <!-- LEFT -->
 
                 <div class="rbt-header-sec-col rbt-header-left">
 
@@ -1109,7 +918,7 @@
 
                                     <button
                                         class="rbt-round-btn serach-btn"
-                                        type="submit">
+                                        type="button">
 
                                         <i class="feather-search"></i>
 
@@ -1126,7 +935,7 @@
                 </div>
 
 
-                <!-- LOGIN -->
+                <!-- RIGHT / LOGIN -->
 
                 <div class="rbt-header-sec-col rbt-header-right">
 
@@ -1134,14 +943,8 @@
 
                         <div class="login-dropdown">
 
-                            <button
-                                type="button"
-                                class="rbt-btn
-                                       rbt-switch-btn
-                                       btn-gradient
-                                       btn-sm
-                                       hover-transform-none
-                                       login-dropdown-btn">
+                            <button type="button"
+                                class="rbt-btn rbt-switch-btn btn-gradient btn-sm hover-transform-none login-dropdown-btn">
 
                                 <span data-text="Login">
                                     Login
@@ -1181,8 +984,26 @@
 
                     </div>
 
-                </div>
 
+                    <!-- MOBILE MENU -->
+
+                    <div class="mobile-menu-bar d-block d-xl-none">
+
+                        <div class="hamberger">
+
+                            <button
+                                class="hamberger-button rbt-round-btn"
+                                type="button">
+
+                                <i class="feather-menu"></i>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
 
             </div>
 
@@ -1191,7 +1012,7 @@
     </div>
 
 
-    <!-- MAIN NAVIGATION -->
+    <!-- MAIN NAVBAR -->
 
     <div class="rbt-header-wrapper
                 header-not-transparent
@@ -1284,7 +1105,7 @@
                 </div>
 
 
-                <!-- JOIN -->
+                <!-- JOIN NOW -->
 
                 <div class="header-right">
 
@@ -1306,8 +1127,27 @@
 
                     </div>
 
-                </div>
 
+                    <!-- MOBILE -->
+
+                    <div class="mobile-menu-bar d-block d-xl-none">
+
+                        <div class="hamberger">
+
+                            <button
+                                class="hamberger-button
+                                       rbt-round-btn"
+                                type="button">
+
+                                <i class="feather-menu"></i>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
 
             </div>
 
@@ -1318,17 +1158,17 @@
 </header>
 
 
-
 <!-- =========================================================
      BANNER
 ========================================================= -->
 
-<div class="slider-area
-            rbt-banner-10
-            height-400
-            bg_image
-            bg_image--11"
-     data-black-overlay="5">
+<div
+    class="slider-area
+           rbt-banner-10
+           height-400
+           bg_image
+           bg_image--11"
+    data-black-overlay="5">
 
     <div class="container">
 
@@ -1353,90 +1193,243 @@
 </div>
 
 
- <!-- Start Card Style -->
-    <div class="rbt-dashboard-area rbt-section-gap">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
+<!-- =========================================================
+     DASHBOARD
+========================================================= -->
 
-                    <div class="row g-5">
-                        <div class="col-lg-3">
-                            <!-- Start Dashboard Sidebar  -->
-                            <div class="rbt-default-sidebar sticky-top rbt-shadow-box rbt-gradient-border">
-                                <div class="inner">
-                                    <div class="content-item-content">
+<div class="rbt-dashboard-area rbt-section-gap">
 
-                                        <div class="rbt-default-sidebar-wrapper">
-                                            <div class="section-title mb--20">
-                                                <h6 class="rbt-title-style-2">Welcome, Jone Due</h6>
-                                            </div>
-                                            <nav class="mainmenu-nav">
-                                                <ul class="dashboard-mainmenu rbt-default-sidebar-list">
-                                                                                            <li><a href="student-profile.html"><i class="feather-user"></i><span>My Profile</span></a></li>
-                                                </ul>
-                                            </nav>
+    <div class="container">
 
-                                           
-<nav class="mainmenu-nav">
-    <ul class="dashboard-mainmenu rbt-default-sidebar-list">
-        <li>
-            <a href="student-course.html">
-                <i class="feather-monitor"></i>
-                <span>My Courses</span>
-            </a>
-        </li>
-    </ul>
-</nav>
+        <div class="row">
 
-<nav class="mainmenu-nav">
-    <ul class="dashboard-mainmenu rbt-default-sidebar-list">
-        <li>
-            <a href="studentclasslink.html">
-                <i class="feather-link"></i>
-                <span>Class Link</span>
-            </a>
-        </li>
-    </ul>
-</nav>
-                                             <nav class="mainmenu-nav">
-    <ul class="dashboard-mainmenu rbt-default-sidebar-list">
-        <li>
-            <a href="student-profile-attendance.html">
-                <i class="feather-calendar"></i>
-                <span>Attendance</span>
-            </a>
-        </li>
-    </ul>
-</nav>
+            <div class="col-lg-12">
 
-<nav class="mainmenu-nav">
-    <ul class="dashboard-mainmenu rbt-default-sidebar-list">
-        <li>
-            <a href="student-homework-task.html">
-                <i class="feather-check-square"></i>
-                <span>Homework &amp; Task</span>
-            </a>
-        </li>
-    </ul>
-</nav>
+                <div class="row g-5">
 
-                                            <div class="section-title mt--40 mb--20">
-                                                <h6 class="rbt-title-style-2">User</h6>
-                                            </div>
 
-                                            <nav class="mainmenu-nav">
-                                                <ul class="dashboard-mainmenu rbt-default-sidebar-list">
-                                                    <li><a href="student-edit.html"><i class="feather-settings"></i><span>Edit Profile</span></a></li>
-                                                    <li><a href="index.html"><i class="feather-log-out"></i><span>Logout</span></a></li>
-                                                </ul>
-                                            </nav>
+                    <!-- SIDEBAR -->
+
+                    <div class="col-lg-3">
+
+                        <div class="rbt-default-sidebar
+                                    sticky-top
+                                    rbt-shadow-box
+                                    rbt-gradient-border">
+
+                            <div class="inner">
+
+                                <div class="content-item-content">
+
+                                    <div class="rbt-default-sidebar-wrapper">
+
+
+                                        <div class="section-title mb--20">
+
+                                            <h6 class="rbt-title-style-2">
+
+                                                Welcome,
+
+                                                <span id="sidebarStudentName">
+                                                    Shreya
+                                                </span>
+
+                                            </h6>
+
                                         </div>
 
+
+                                        <!-- PROFILE -->
+
+                                        <nav class="mainmenu-nav">
+
+                                            <ul class="dashboard-mainmenu
+                                                       rbt-default-sidebar-list">
+
+                                                <li>
+
+                                                    <a href="student-profile.html">
+
+                                                        <i class="feather-user"></i>
+
+                                                        <span>
+                                                            My Profile
+                                                        </span>
+
+                                                    </a>
+
+                                                </li>
+
+                                            </ul>
+
+                                        </nav>
+
+
+                                        <!-- COURSES -->
+
+                                        <nav class="mainmenu-nav">
+
+                                            <ul class="dashboard-mainmenu
+                                                       rbt-default-sidebar-list">
+
+                                                <li>
+
+                                                    <a href="student-course.html">
+
+                                                        <i class="feather-monitor"></i>
+
+                                                        <span>
+                                                            My Courses
+                                                        </span>
+
+                                                    </a>
+
+                                                </li>
+
+                                            </ul>
+
+                                        </nav>
+
+
+                                        <!-- CLASS LINK -->
+
+                                        <nav class="mainmenu-nav">
+
+                                            <ul class="dashboard-mainmenu
+                                                       rbt-default-sidebar-list">
+
+                                                <li>
+
+                                                    <a href="studentclasslink.html">
+
+                                                        <i class="feather-link"></i>
+
+                                                        <span>
+                                                            Class Link
+                                                        </span>
+
+                                                    </a>
+
+                                                </li>
+
+                                            </ul>
+
+                                        </nav>
+
+
+                                        <!-- ATTENDANCE -->
+
+                                        <nav class="mainmenu-nav">
+
+                                            <ul class="dashboard-mainmenu
+                                                       rbt-default-sidebar-list">
+
+                                                <li>
+
+                                                    <a href="student-profile-attendance.html ">
+
+                                                        <i class="feather-calendar"></i>
+
+                                                        <span>
+                                                            Attendance
+                                                        </span>
+
+                                                    </a>
+
+                                                </li>
+
+                                            </ul>
+
+                                        </nav>
+
+
+                                        <!-- HOMEWORK -->
+
+                                        <nav class="mainmenu-nav">
+
+                                            <ul class="dashboard-mainmenu
+                                                       rbt-default-sidebar-list">
+
+                                                <li class="active">
+
+                                                    <a class="active" href="student-homework-task.html">
+
+                                                        <i class="feather-book-open"></i>
+
+                                                        <span>
+                                                            My Homework &amp; Notes
+                                                        </span>
+
+                                                    </a>
+
+                                                </li>
+
+                                            </ul>
+
+                                        </nav>
+
+
+                                        <!-- USER -->
+
+                                        <div class="section-title
+                                                    mt--40
+                                                    mb--20">
+
+                                            <h6 class="rbt-title-style-2">
+                                                User
+                                            </h6>
+
+                                        </div>
+
+
+                                        <nav class="mainmenu-nav">
+
+                                            <ul class="dashboard-mainmenu
+                                                       rbt-default-sidebar-list">
+
+                                                <li>
+
+                                                    <a href="student-edit.html">
+
+                                                        <i class="feather-settings"></i>
+
+                                                        <span>
+                                                            Edit Profile
+                                                        </span>
+
+                                                    </a>
+
+                                                </li>
+
+
+                                                <li>
+
+                                                    <a href="index.html">
+
+                                                        <i class="feather-log-out"></i>
+
+                                                        <span>
+                                                            Logout
+                                                        </span>
+
+                                                    </a>
+
+                                                </li>
+
+                                            </ul>
+
+                                        </nav>
+
+
                                     </div>
+
                                 </div>
+
                             </div>
-                            <!-- End Dashboard Sidebar  -->
+
                         </div>
+
+                    </div>
 
 
                     <!-- MAIN CONTENT -->
@@ -1478,14 +1471,12 @@
                             <div
                                 class="resources-subject-grid"
                                 id="homeworkNotesGrid">
-
                             </div>
 
 
                         </div>
 
                     </div>
-
 
                 </div>
 
@@ -1498,7 +1489,6 @@
 </div>
 
 
-
 <!-- =========================================================
      RESOURCE VIEWER MODAL
 ========================================================= -->
@@ -1507,9 +1497,7 @@
     class="notes-modal"
     id="notesModal">
 
-
     <div class="notes-modal-content">
-
 
         <div class="notes-modal-header">
 
@@ -1537,7 +1525,6 @@
 
         <div class="notes-modal-body">
 
-
             <div
                 class="notes-modal-loading hidden"
                 id="notesModalLoading">
@@ -1556,16 +1543,13 @@
                 class="notes-pdf-viewer"
                 src=""
                 title="Resource Viewer">
-
             </iframe>
-
 
         </div>
 
     </div>
 
 </div>
-
 
 
 <!-- =========================================================
@@ -1583,12 +1567,7 @@
 </div>
 
 
-
-<footer class="rbt-footer
-               footer-style-1
-               bg-color-white
-               overflow-hidden">
-
+<footer class="rbt-footer footer-style-1 bg-color-white overflow-hidden">
 
     <div class="footer-top">
 
@@ -1597,9 +1576,9 @@
             <div class="row g-5">
 
 
-                <!-- COMPANY -->
+                <!-- FOOTER ABOUT -->
 
-                <div class="col-lg-4 col-md-6">
+                <div class="col-lg-4 col-md-6 col-sm-6 col-12">
 
                     <div class="footer-widget">
 
@@ -1609,7 +1588,7 @@
 
                                 <img
                                     src="assets/images/logo/logo.png"
-                                    alt="Education">
+                                    alt="Edu-Loop Sign Logo">
 
                             </a>
 
@@ -1618,80 +1597,84 @@
 
                         <p class="description mt--20">
 
-                            We're always in search for talented
-                            and motivated people. Don't be shy
-                            introduce yourself!
+                            We are always seeking talented and motivated
+                            individuals to join our team.
 
                         </p>
 
 
-                        <ul class="social-icon
-                                   social-default
-                                   justify-content-start">
-
+                        <ul class="social-icon social-default justify-content-start">
 
                             <li>
-
-                                <a href="#">
-
+                                <a href="https://www.facebook.com/">
                                     <i class="feather-facebook"></i>
-
                                 </a>
-
                             </li>
 
+                            <li>
+                                <a href="https://www.twitter.com">
+                                    <i class="feather-twitter"></i>
+                                </a>
+                            </li>
 
                             <li>
-
-                                <a href="#">
-
+                                <a href="https://www.instagram.com/">
                                     <i class="feather-instagram"></i>
-
                                 </a>
-
                             </li>
 
-
                             <li>
-
-                                <a href="#">
-
+                                <a href="https://www.linkedin.com/">
                                     <i class="feather-linkedin"></i>
-
                                 </a>
-
                             </li>
-
-
-                            <li>
-
-                                <a href="#">
-
-                                    <i class="feather-youtube"></i>
-
-                                </a>
-
-                            </li>
-
 
                         </ul>
+
+
+                        <div class="contact-btn mt--30">
+
+                            <a
+                                class="rbt-btn
+                                       hover-icon-reverse
+                                       btn-border-gradient
+                                       radius-round"
+                                href="login-register.html">
+
+                                <div class="icon-reverse-wrapper">
+
+                                    <span class="btn-text">
+                                        Contact With Us
+                                    </span>
+
+                                    <span class="btn-icon">
+                                        <i class="feather-arrow-right"></i>
+                                    </span>
+
+                                    <span class="btn-icon">
+                                        <i class="feather-arrow-right"></i>
+                                    </span>
+
+                                </div>
+
+                            </a>
+
+                        </div>
 
                     </div>
 
                 </div>
 
 
+                <!-- USEFUL LINKS -->
 
-                <!-- QUICK LINKS -->
-
-                <div class="col-lg-2 col-md-6">
+                <div class="col-lg-2 col-md-6 col-sm-6 col-12">
 
                     <div class="footer-widget">
 
                         <h5 class="ft-title">
-                            Quick Links
+                            Useful Links
                         </h5>
-
 
                         <ul class="ft-link">
 
@@ -1732,17 +1715,15 @@
                 </div>
 
 
+                <!-- POPULAR PROGRAMS -->
 
-                <!-- PROGRAMS -->
-
-                <div class="col-lg-2 col-md-6">
+                <div class="col-lg-2 col-md-6 col-sm-6 col-12">
 
                     <div class="footer-widget">
 
                         <h5 class="ft-title">
                             Popular Programs
                         </h5>
-
 
                         <ul class="ft-link">
 
@@ -1789,10 +1770,9 @@
                 </div>
 
 
-
                 <!-- CONTACT -->
 
-                <div class="col-lg-4 col-md-6">
+                <div class="col-lg-4 col-md-6 col-sm-6 col-12">
 
                     <div class="footer-widget">
 
@@ -1800,60 +1780,53 @@
                             Get Contact
                         </h5>
 
-
                         <ul class="ft-link">
 
                             <li>
-
-                                <span>
-                                    Phone:
-                                </span>
+                                <span>Phone:</span>
 
                                 <a href="#">
                                     (406) 555-0120
                                 </a>
-
                             </li>
 
-
                             <li>
-
-                                <span>
-                                    E-mail:
-                                </span>
+                                <span>E-mail:</span>
 
                                 <a href="mailto:admin@example.com">
                                     admin@example.com
                                 </a>
-
                             </li>
 
                         </ul>
 
 
-                        <h6 class="w-600 mt--20">
-                            Location
-                        </h6>
+                        <div class="newsletter-form mt--20">
 
+                            <h6 class="w-600">
+                                Location
+                            </h6>
 
-                        <p class="description">
+                            <p class="description">
 
-                            2000+ Our students are subscribed
-                            around the world.
+                                2000+ Our students are subscribe Around
+                                the World.<br>
 
-                        </p>
+                                Don’t be shy introduce yourself!
+
+                            </p>
+
+                        </div>
 
                     </div>
 
                 </div>
-
 
             </div>
 
         </div>
 
     </div>
-
 
 
     <div class="rbt-separator-mid">
@@ -1867,21 +1840,21 @@
     </div>
 
 
+    <!-- COPYRIGHT -->
 
-    <div class="copyright-area
-                copyright-style-1
-                ptb--20">
+    <div class="copyright-area copyright-style-1 ptb--20">
 
         <div class="container">
 
             <div class="row align-items-center">
 
+                <div class="col-xxl-7
+                            col-xl-7
+                            col-lg-7
+                            col-md-12
+                            col-12">
 
-                <div class="col-lg-7">
-
-                    <p class="rbt-link-hover
-                              text-center
-                              text-lg-start">
+                    <p class="rbt-link-hover text-center text-lg-start">
 
                         Copyright © 2024 by
 
@@ -1891,48 +1864,56 @@
 
                         All Rights Reserved.
 
+                        Designed by
+
+                        <a
+                            href="https://impinfo.in/"
+                            target="_blank">
+
+                            RKI Systems
+
+                        </a>
+
                     </p>
 
                 </div>
 
 
-                <div class="col-lg-5">
+                <div class="col-xxl-5
+                            col-xl-5
+                            col-lg-5
+                            col-md-12
+                            col-12">
 
-                    <ul class="copyright-link
+                    <ul
+                        class="copyright-link
                                rbt-link-hover
                                justify-content-center
-                               justify-content-lg-end">
+                               justify-content-lg-end
+                               mt_sm--10
+                               mt_md--10">
 
                         <li>
-
                             <a href="#">
                                 Terms of service
                             </a>
-
                         </li>
 
-
                         <li>
-
                             <a href="privacy-policy.html">
                                 Privacy policy
                             </a>
-
                         </li>
 
-
                         <li>
-
                             <a href="subscription.html">
                                 Subscription
                             </a>
-
                         </li>
 
                     </ul>
 
                 </div>
-
 
             </div>
 
@@ -1940,13 +1921,82 @@
 
     </div>
 
-
 </footer>
 
 
+<!-- =========================================================
+     PROGRESS
+========================================================= -->
+
+<div class="rbt-progress-parent">
+
+    <svg
+        class="rbt-back-circle svg-inner"
+        width="100%"
+        height="100%"
+        viewBox="-1 -1 102 102">
+
+        <path
+            d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+
+    </svg>
+
+</div>
+
 
 <!-- =========================================================
-     JAVASCRIPT
+     FLOATING CONTACT
+========================================================= -->
+
+<div class="floating-contact">
+
+
+    <!-- CALL -->
+
+    <div class="contact-item call-item">
+
+        <div class="contact-label call-label">
+            Talk To Our Experts
+        </div>
+
+        <a
+            href="tel:+919876543210"
+            class="contact-button call-button"
+            aria-label="Call us">
+
+            <i class="fa fa-phone"></i>
+
+        </a>
+
+    </div>
+
+
+    <!-- WHATSAPP -->
+
+    <div class="contact-item whatsapp-item">
+
+        <div class="contact-label whatsapp-label">
+            Message Us
+        </div>
+
+        <a
+            href="https://wa.me/919876543210"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="contact-button whatsapp-button"
+            aria-label="Chat with us on WhatsApp">
+
+            <i class="fab fa-whatsapp"></i>
+
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     JAVASCRIPT LIBRARIES
 ========================================================= -->
 
 <script src="assets/js/vendor/jquery.js"></script>
@@ -1985,7 +2035,6 @@ const studentData = {
 
     },
 
-
     student002: {
 
         name: "Arun",
@@ -1998,7 +2047,6 @@ const studentData = {
         ]
 
     },
-
 
     student003: {
 
@@ -2042,7 +2090,6 @@ const homeworkData = [
 
     },
 
-
     {
 
         id: 2,
@@ -2058,7 +2105,6 @@ const homeworkData = [
 
     },
 
-
     {
 
         id: 3,
@@ -2073,7 +2119,6 @@ const homeworkData = [
         studentId: "student001"
 
     },
-
 
     {
 
@@ -2115,14 +2160,12 @@ const resourceData = [
 
             {
 
-                name:
-                    "Physics_Ch5_Notes.pdf",
+                name: "Physics_Ch5_Notes.pdf",
 
                 file:
                     "assets/notes/Physics_Ch5_Notes.pdf",
 
-                type:
-                    "PDF",
+                type: "PDF",
 
                 uploadedAt:
                     "2026-08-13T09:30:00"
@@ -2132,7 +2175,6 @@ const resourceData = [
         ]
 
     },
-
 
     {
 
@@ -2150,14 +2192,12 @@ const resourceData = [
 
             {
 
-                name:
-                    "Calculus_Ch5_Notes.pdf",
+                name: "Calculus_Ch5_Notes.pdf",
 
                 file:
                     "assets/notes/Calculus_Ch5_Notes.pdf",
 
-                type:
-                    "PDF",
+                type: "PDF",
 
                 uploadedAt:
                     "2026-08-13T10:00:00"
@@ -2167,7 +2207,6 @@ const resourceData = [
         ]
 
     },
-
 
     {
 
@@ -2191,8 +2230,7 @@ const resourceData = [
                 file:
                     "assets/notes/Modern_History_Chapter5.pdf",
 
-                type:
-                    "PDF",
+                type: "PDF",
 
                 uploadedAt:
                     "2026-08-12T09:00:00"
@@ -2202,7 +2240,6 @@ const resourceData = [
         ]
 
     },
-
 
     {
 
@@ -2220,14 +2257,12 @@ const resourceData = [
 
             {
 
-                name:
-                    "HTML_CSS_Notes.pdf",
+                name: "HTML_CSS_Notes.pdf",
 
                 file:
                     "assets/notes/HTML_CSS_Notes.pdf",
 
-                type:
-                    "PDF",
+                type: "PDF",
 
                 uploadedAt:
                     "2026-08-11T09:00:00"
@@ -2253,9 +2288,7 @@ function getTeacherPosts() {
         );
 
     if (!savedPosts) {
-
         return [];
-
     }
 
     try {
@@ -2290,9 +2323,7 @@ function getTeacherResources() {
         );
 
     if (!savedResources) {
-
         return [];
-
     }
 
     try {
@@ -2322,24 +2353,18 @@ function getTeacherResources() {
 function getStudentHomework() {
 
     if (!currentStudent) {
-
         return [];
-
     }
 
     const sampleHomework =
-        homeworkData.filter(
+        homeworkData.filter(function(item) {
 
-            function(item) {
+            return (
+                item.studentId ===
+                currentStudentId
+            );
 
-                return (
-                    item.studentId ===
-                    currentStudentId
-                );
-
-            }
-
-        );
+        });
 
 
     const teacherPosts =
@@ -2347,24 +2372,19 @@ function getStudentHomework() {
 
 
     const studentPosts =
-        teacherPosts.filter(
+        teacherPosts.filter(function(item) {
 
-            function(item) {
+            return (
+                item.studentId ===
+                currentStudentId
+            );
 
-                return (
-                    item.studentId ===
-                    currentStudentId
-                );
-
-            }
-
-        );
+        });
 
 
     return [
 
         ...sampleHomework,
-
         ...studentPosts
 
     ];
@@ -2379,9 +2399,7 @@ function getStudentHomework() {
 function getStudentResources() {
 
     if (!currentStudent) {
-
         return [];
-
     }
 
 
@@ -2390,26 +2408,22 @@ function getStudentResources() {
 
 
     const sampleResources =
-        resourceData.filter(
+        resourceData.filter(function(item) {
 
-            function(item) {
+            return (
 
-                return (
+                item.studentId ===
+                currentStudentId
 
-                    item.studentId ===
-                    currentStudentId
+                &&
 
-                    &&
+                selectedSubjects.includes(
+                    item.subject
+                )
 
-                    selectedSubjects.includes(
-                        item.subject
-                    )
+            );
 
-                );
-
-            }
-
-        );
+        });
 
 
     const teacherResources =
@@ -2417,32 +2431,27 @@ function getStudentResources() {
 
 
     const studentTeacherResources =
-        teacherResources.filter(
+        teacherResources.filter(function(item) {
 
-            function(item) {
+            return (
 
-                return (
+                item.studentId ===
+                currentStudentId
 
-                    item.studentId ===
-                    currentStudentId
+                &&
 
-                    &&
+                selectedSubjects.includes(
+                    item.subject
+                )
 
-                    selectedSubjects.includes(
-                        item.subject
-                    )
+            );
 
-                );
-
-            }
-
-        );
+        });
 
 
     return [
 
         ...sampleResources,
-
         ...studentTeacherResources
 
     ];
@@ -2462,9 +2471,7 @@ function getSubjectIcon(subject) {
 
 
     if (value.includes("physic")) {
-
         return "feather-zap";
-
     }
 
 
@@ -2472,30 +2479,22 @@ function getSubjectIcon(subject) {
         value.includes("calc") ||
         value.includes("math")
     ) {
-
         return "feather-percent";
-
     }
 
 
     if (value.includes("history")) {
-
         return "feather-clock";
-
     }
 
 
     if (value.includes("bio")) {
-
         return "feather-heart";
-
     }
 
 
     if (value.includes("chem")) {
-
         return "feather-droplet";
-
     }
 
 
@@ -2503,9 +2502,7 @@ function getSubjectIcon(subject) {
         value.includes("art") ||
         value.includes("design")
     ) {
-
         return "feather-image";
-
     }
 
 
@@ -2513,9 +2510,7 @@ function getSubjectIcon(subject) {
         value.includes("english") ||
         value.includes("literature")
     ) {
-
         return "feather-book";
-
     }
 
 
@@ -2528,9 +2523,7 @@ function getSubjectIcon(subject) {
         value.includes("code") ||
         value.includes("programming")
     ) {
-
         return "feather-code";
-
     }
 
 
@@ -2553,9 +2546,7 @@ function getFileIcon(fileName) {
 
 
     if (extension === "pdf") {
-
         return "feather-file-text";
-
     }
 
 
@@ -2563,9 +2554,7 @@ function getFileIcon(fileName) {
         extension === "doc" ||
         extension === "docx"
     ) {
-
         return "feather-file";
-
     }
 
 
@@ -2574,9 +2563,7 @@ function getFileIcon(fileName) {
         extension === "xlsx" ||
         extension === "csv"
     ) {
-
         return "feather-grid";
-
     }
 
 
@@ -2584,9 +2571,7 @@ function getFileIcon(fileName) {
         extension === "ppt" ||
         extension === "pptx"
     ) {
-
         return "feather-monitor";
-
     }
 
 
@@ -2597,9 +2582,7 @@ function getFileIcon(fileName) {
         extension === "gif" ||
         extension === "webp"
     ) {
-
         return "feather-image";
-
     }
 
 
@@ -2608,9 +2591,7 @@ function getFileIcon(fileName) {
         extension === "rar" ||
         extension === "7z"
     ) {
-
         return "feather-archive";
-
     }
 
 
@@ -2619,9 +2600,7 @@ function getFileIcon(fileName) {
         extension === "webm" ||
         extension === "avi"
     ) {
-
         return "feather-video";
-
     }
 
 
@@ -2629,16 +2608,12 @@ function getFileIcon(fileName) {
         extension === "mp3" ||
         extension === "wav"
     ) {
-
         return "feather-music";
-
     }
 
 
     if (extension === "txt") {
-
         return "feather-file-text";
-
     }
 
 
@@ -2654,9 +2629,7 @@ function getFileIcon(fileName) {
 function getFileType(file) {
 
     if (file.type) {
-
         return file.type;
-
     }
 
 
@@ -2679,9 +2652,7 @@ function getFileType(file) {
 function formatResourceDate(dateValue) {
 
     if (!dateValue) {
-
         return "";
-
     }
 
 
@@ -2690,9 +2661,7 @@ function formatResourceDate(dateValue) {
 
 
     if (isNaN(date.getTime())) {
-
         return "";
-
     }
 
 
@@ -2703,9 +2672,7 @@ function formatResourceDate(dateValue) {
         {
 
             day: "2-digit",
-
             month: "short",
-
             year: "numeric"
 
         }
@@ -2769,7 +2736,6 @@ function escapeAttribute(value) {
 
 /* =========================================================
    BUILD FILES
-   NEW BADGE REMOVED
 ========================================================= */
 
 function buildFilesHTML(files) {
@@ -2777,131 +2743,127 @@ function buildFilesHTML(files) {
     let filesHTML = "";
 
 
-    files.forEach(
+    files.forEach(function(file) {
 
-        function(file) {
-
-            const fileName =
-                file.name ||
-                "Resource";
+        const fileName =
+            file.name ||
+            "Resource";
 
 
-            const filePath =
-                file.file ||
-                file.url ||
-                "";
+        const filePath =
+            file.file ||
+            file.url ||
+            "";
 
 
-            const fileType =
-                getFileType(file);
+        const fileType =
+            getFileType(file);
 
 
-            const icon =
-                getFileIcon(fileName);
+        const icon =
+            getFileIcon(fileName);
 
 
-            let viewButton = "";
+        let viewButton = "";
 
 
-            if (filePath) {
+        if (filePath) {
 
-                viewButton = `
+            viewButton = `
 
-                    <button
-                        type="button"
-                        class="resource-view-btn"
-                        onclick="viewResource(
-                            '${encodeURIComponent(filePath)}',
-                            '${encodeURIComponent(fileName)}'
-                        )"
-                        aria-label="View ${escapeAttribute(fileName)}"
-                        title="View">
+                <button
+                    type="button"
+                    class="resource-view-btn"
+                    onclick="viewResource(
+                        '${encodeURIComponent(filePath)}',
+                        '${encodeURIComponent(fileName)}'
+                    )"
+                    aria-label="View ${escapeAttribute(fileName)}"
+                    title="View">
 
-                        <i class="feather-eye"></i>
+                    <i class="feather-eye"></i>
 
-                    </button>
+                </button>
 
-                `;
+            `;
 
-            }
-
-
-            let downloadButton = "";
+        }
 
 
-            if (filePath) {
-
-                downloadButton = `
-
-                    <a
-                        href="${escapeAttribute(filePath)}"
-                        class="resource-download-btn"
-                        download
-                        aria-label="Download ${escapeAttribute(fileName)}">
-
-                        <i class="feather-download"></i>
-
-                        Download
-
-                    </a>
-
-                `;
-
-            }
+        let downloadButton = "";
 
 
-            filesHTML += `
+        if (filePath) {
 
-                <div class="resource-file">
+            downloadButton = `
 
+                <a
+                    href="${escapeAttribute(filePath)}"
+                    class="resource-download-btn"
+                    download
+                    aria-label="Download ${escapeAttribute(fileName)}">
 
-                    <div class="resource-file-info">
+                    <i class="feather-download"></i>
 
+                    Download
 
-                        <div class="resource-file-icon">
+                </a>
 
-                            <i class="${icon}"></i>
+            `;
 
-                        </div>
-
-
-                        <div class="resource-file-details">
-
-                            <span class="resource-file-name">
-
-                                ${escapeHTML(fileName)}
-
-                            </span>
+        }
 
 
-                            <span class="resource-file-type">
+        filesHTML += `
 
-                                ${escapeHTML(fileType)}
+            <div class="resource-file">
 
-                            </span>
 
-                        </div>
+                <div class="resource-file-info">
 
+
+                    <div class="resource-file-icon">
+
+                        <i class="${icon}"></i>
 
                     </div>
 
 
-                    <div class="resource-actions">
+                    <div class="resource-file-details">
 
-                        ${viewButton}
+                        <span class="resource-file-name">
 
-                        ${downloadButton}
+                            ${escapeHTML(fileName)}
+
+                        </span>
+
+
+                        <span class="resource-file-type">
+
+                            ${escapeHTML(fileType)}
+
+                        </span>
 
                     </div>
 
 
                 </div>
 
-            `;
 
-        }
+                <div class="resource-actions">
 
-    );
+                    ${viewButton}
+
+                    ${downloadButton}
+
+                </div>
+
+
+            </div>
+
+        `;
+
+    });
 
 
     return filesHTML;
@@ -2922,9 +2884,7 @@ function renderHomeworkWithNotes() {
 
 
     if (!container) {
-
         return;
-
     }
 
 
@@ -2950,205 +2910,171 @@ function renderHomeworkWithNotes() {
     }
 
 
-    /* HOMEWORK BY SUBJECT */
-
     const homeworkBySubject = {};
 
 
-    getStudentHomework().forEach(
+    getStudentHomework().forEach(function(item) {
 
-        function(item) {
-
-            if (!item.subject) {
-
-                return;
-
-            }
-
-
-            homeworkBySubject[
-                item.subject
-            ] = item;
-
+        if (!item.subject) {
+            return;
         }
 
-    );
 
+        homeworkBySubject[
+            item.subject
+        ] = item;
 
-    /* RESOURCES BY SUBJECT */
+    });
+
 
     const resourcesBySubject = {};
 
 
-    getStudentResources().forEach(
+    getStudentResources().forEach(function(resource) {
 
-        function(resource) {
-
-            if (
-                !resource.subject ||
-                !resource.files
-            ) {
-
-                return;
-
-            }
+        if (
+            !resource.subject ||
+            !resource.files
+        ) {
+            return;
+        }
 
 
-            if (
-                !resourcesBySubject[
-                    resource.subject
-                ]
-            ) {
+        if (
+            !resourcesBySubject[
+                resource.subject
+            ]
+        ) {
 
-                resourcesBySubject[
-                    resource.subject
-                ] = {
+            resourcesBySubject[
+                resource.subject
+            ] = {
 
-                    teacher:
-                        resource.teacher ||
-                        "Teacher",
+                teacher:
+                    resource.teacher ||
+                    "Teacher",
 
-                    date:
-                        resource.date ||
-                        resource.uploadedAt ||
-                        "",
+                date:
+                    resource.date ||
+                    resource.uploadedAt ||
+                    "",
 
-                    files: []
+                files: []
 
-                };
-
-            }
-
-
-            resource.files.forEach(
-
-                function(file) {
-
-                    resourcesBySubject[
-                        resource.subject
-                    ].files.push({
-
-                        ...file,
-
-                        teacher:
-                            file.teacher ||
-                            resource.teacher ||
-                            "Teacher",
-
-                        uploadedAt:
-                            file.uploadedAt ||
-                            resource.date ||
-                            resource.uploadedAt ||
-                            ""
-
-                    });
-
-                }
-
-            );
+            };
 
         }
 
-    );
 
+        resource.files.forEach(function(file) {
 
-    /* BUILD SUBJECT LIST */
+            resourcesBySubject[
+                resource.subject
+            ].files.push({
+
+                ...file,
+
+                teacher:
+                    file.teacher ||
+                    resource.teacher ||
+                    "Teacher",
+
+                uploadedAt:
+                    file.uploadedAt ||
+                    resource.date ||
+                    resource.uploadedAt ||
+                    ""
+
+            });
+
+        });
+
+    });
+
 
     const subjectEntries = [];
 
 
-    currentStudent.subjects.forEach(
+    currentStudent.subjects.forEach(function(subject) {
 
-        function(subject) {
-
-            const homework =
-                homeworkBySubject[
-                    subject
-                ];
+        const homework =
+            homeworkBySubject[
+                subject
+            ];
 
 
-            const resourceGroup =
-                resourcesBySubject[
-                    subject
-                ];
+        const resourceGroup =
+            resourcesBySubject[
+                subject
+            ];
 
 
-            const hasTask =
-                !!(
-                    homework &&
-                    homework.task
-                );
+        const hasTask =
+            !!(
+                homework &&
+                homework.task
+            );
 
 
-            const hasFiles =
-                !!(
-                    resourceGroup &&
-                    resourceGroup.files.length
-                );
+        const hasFiles =
+            !!(
+                resourceGroup &&
+                resourceGroup.files.length
+            );
 
 
-            if (
-                !hasTask &&
-                !hasFiles
-            ) {
-
-                return;
-
-            }
+        if (
+            !hasTask &&
+            !hasFiles
+        ) {
+            return;
+        }
 
 
-            if (hasFiles) {
+        if (hasFiles) {
 
-                resourceGroup.files.sort(
+            resourceGroup.files.sort(function(a, b) {
 
-                    function(a, b) {
+                return (
 
-                        return (
+                    new Date(
+                        b.uploadedAt || 0
+                    )
 
-                            new Date(
-                                b.uploadedAt || 0
-                            )
+                    -
 
-                            -
-
-                            new Date(
-                                a.uploadedAt || 0
-                            )
-
-                        );
-
-                    }
+                    new Date(
+                        a.uploadedAt || 0
+                    )
 
                 );
-
-            }
-
-
-            subjectEntries.push({
-
-                subject:
-                    subject,
-
-                homework:
-                    homework,
-
-                resourceGroup:
-                    resourceGroup,
-
-                hasTask:
-                    hasTask,
-
-                hasFiles:
-                    hasFiles
 
             });
 
         }
 
-    );
 
+        subjectEntries.push({
 
-    /* NOTHING SHARED */
+            subject:
+                subject,
+
+            homework:
+                homework,
+
+            resourceGroup:
+                resourceGroup,
+
+            hasTask:
+                hasTask,
+
+            hasFiles:
+                hasFiles
+
+        });
+
+    });
+
 
     if (
         subjectEntries.length === 0
@@ -3172,266 +3098,244 @@ function renderHomeworkWithNotes() {
     }
 
 
-    /* RENDER CARDS */
+    subjectEntries.forEach(function(entry) {
 
-    subjectEntries.forEach(
-
-        function(entry) {
-
-            const subject =
-                entry.subject;
+        const subject =
+            entry.subject;
 
 
-            const homework =
-                entry.homework;
+        const homework =
+            entry.homework;
 
 
-            const resourceGroup =
-                entry.resourceGroup;
+        const resourceGroup =
+            entry.resourceGroup;
 
 
-            const hasTask =
-                entry.hasTask;
+        const hasTask =
+            entry.hasTask;
 
 
-            const hasFiles =
-                entry.hasFiles;
+        const hasFiles =
+            entry.hasFiles;
 
 
-            const teacherName =
+        const teacherName =
 
-                (
-                    homework &&
-                    homework.teacher
-                )
+            (
+                homework &&
+                homework.teacher
+            )
+
+            ||
+
+            (
+                resourceGroup &&
+                resourceGroup.teacher
+            )
+
+            ||
+
+            "Teacher";
+
+
+        const latestDate =
+
+            hasFiles
+
+            ?
+
+            (
+                resourceGroup.files[0]
+                    .uploadedAt
 
                 ||
 
-                (
-                    resourceGroup &&
-                    resourceGroup.teacher
-                )
+                resourceGroup.date
 
                 ||
 
-                "Teacher";
+                ""
+            )
+
+            :
+
+            "";
 
 
-            const latestDate =
+        const taskHTML =
 
-                hasFiles
+            hasTask
 
-                ?
+            ?
 
-                (
-                    resourceGroup.files[0]
-                        .uploadedAt
+            `
 
-                    ||
+                <div class="homework-task-text">
 
-                    resourceGroup.date
-
-                    ||
-
-                    ""
-                )
-
-                :
-
-                "";
-
-
-            /* TASK */
-
-            const taskHTML =
-
-                hasTask
-
-                ?
-
-                `
-
-                    <div class="homework-task-text">
-
-                        ${escapeHTML(
-                            homework.task
-                        )}
-
-                    </div>
-
-                `
-
-                :
-
-                `
-
-                    <div class="homework-task-empty">
-
-                        No homework assigned yet.
-
-                    </div>
-
-                `;
-
-
-            /* FILES */
-
-            const filesHTML =
-
-                hasFiles
-
-                ?
-
-                buildFilesHTML(
-                    resourceGroup.files
-                )
-
-                :
-
-                `
-
-                    <div class="homework-files-empty">
-
-                        No notes shared yet.
-
-                    </div>
-
-                `;
-
-
-            /* CARD */
-
-            const subjectBox =
-                document.createElement(
-                    "div"
-                );
-
-
-            subjectBox.className =
-                "resource-subject";
-
-
-            subjectBox.innerHTML = `
-
-
-                <!-- SUBJECT -->
-
-                <div class="resource-subject-title">
-
-                    <i class="${getSubjectIcon(subject)}"></i>
-
-                    <h5>
-
-                        ${escapeHTML(
-                            subject
-                        )}
-
-                    </h5>
+                    ${escapeHTML(
+                        homework.task
+                    )}
 
                 </div>
 
+            `
 
+            :
 
-                <!-- META -->
+            `
 
-                <div class="resource-meta">
+                <div class="homework-task-empty">
 
-
-                    <div class="resource-teacher">
-
-                        <i class="feather-user"></i>
-
-                        <span>
-
-                            ${escapeHTML(
-                                teacherName
-                            )}
-
-                        </span>
-
-                    </div>
-
-
-                    ${
-                        latestDate
-
-                        ?
-
-                        `
-
-                            <div class="resource-date">
-
-                                <i class="feather-calendar"></i>
-
-                                <span>
-
-                                    ${escapeHTML(
-                                        formatResourceDate(
-                                            latestDate
-                                        )
-                                    )}
-
-                                </span>
-
-                            </div>
-
-                        `
-
-                        :
-
-                        ""
-                    }
-
+                    No homework assigned yet.
 
                 </div>
-
-
-
-                <!-- TASK -->
-
-                <div class="homework-task-block">
-
-                    <div class="homework-task-label">
-
-                        <i class="feather-edit-3"></i>
-
-                        Task
-
-                    </div>
-
-                    ${taskHTML}
-
-                </div>
-
-
-
-                <!-- NOTES & FILES -->
-
-                <div class="homework-files-block">
-
-                    <div class="homework-files-label">
-
-                        <i class="feather-paperclip"></i>
-
-                        Notes &amp; Files
-
-                    </div>
-
-                    ${filesHTML}
-
-                </div>
-
 
             `;
 
 
-            container.appendChild(
-                subjectBox
+        const filesHTML =
+
+            hasFiles
+
+            ?
+
+            buildFilesHTML(
+                resourceGroup.files
+            )
+
+            :
+
+            `
+
+                <div class="homework-files-empty">
+
+                    No notes shared yet.
+
+                </div>
+
+            `;
+
+
+        const subjectBox =
+            document.createElement(
+                "div"
             );
 
-        }
 
-    );
+        subjectBox.className =
+            "resource-subject";
+
+
+        subjectBox.innerHTML = `
+
+
+            <div class="resource-subject-title">
+
+                <i class="${getSubjectIcon(subject)}"></i>
+
+                <h5>
+
+                    ${escapeHTML(subject)}
+
+                </h5>
+
+            </div>
+
+
+
+            <div class="resource-meta">
+
+
+                <div class="resource-teacher">
+
+                    <i class="feather-user"></i>
+
+                    <span>
+
+                        ${escapeHTML(
+                            teacherName
+                        )}
+
+                    </span>
+
+                </div>
+
+
+                ${
+                    latestDate
+
+                    ?
+
+                    `
+
+                        <div class="resource-date">
+
+                            <i class="feather-calendar"></i>
+
+                            <span>
+
+                                ${escapeHTML(
+                                    formatResourceDate(
+                                        latestDate
+                                    )
+                                )}
+
+                            </span>
+
+                        </div>
+
+                    `
+
+                    :
+
+                    ""
+                }
+
+
+            </div>
+
+
+
+            <div class="homework-task-block">
+
+                <div class="homework-task-label">
+
+                    <i class="feather-edit-3"></i>
+
+                    Task
+
+                </div>
+
+                ${taskHTML}
+
+            </div>
+
+
+
+            <div class="homework-files-block">
+
+                <div class="homework-files-label">
+
+                    <i class="feather-paperclip"></i>
+
+                    Notes &amp; Files
+
+                </div>
+
+                ${filesHTML}
+
+            </div>
+
+
+        `;
+
+
+        container.appendChild(
+            subjectBox
+        );
+
+    });
 
 }
 
@@ -3520,23 +3424,17 @@ function viewResource(file, name) {
 
     window.__notesLoadingTimeout =
 
-        setTimeout(
+        setTimeout(function() {
 
-            function() {
+            if (loading) {
 
-                if (loading) {
+                loading.classList.add(
+                    "hidden"
+                );
 
-                    loading.classList.add(
-                        "hidden"
-                    );
+            }
 
-                }
-
-            },
-
-            4000
-
-        );
+        }, 4000);
 
 }
 
@@ -3593,32 +3491,122 @@ function closeNoteViewer() {
 }
 
 
-/* CLOSE BUTTON */
+/* =========================================================
+   LOGIN DROPDOWN
+========================================================= */
 
-document
-    .getElementById(
-        "notesModalClose"
-    )
-    .addEventListener(
-        "click",
-        closeNoteViewer
-    );
+document.addEventListener("DOMContentLoaded", function () {
+
+    const dropdown =
+        document.querySelector(".login-dropdown");
+
+    const button =
+        document.querySelector(".login-dropdown-btn");
 
 
-/* OUTSIDE CLICK */
+    if (!dropdown || !button) {
+        return;
+    }
 
-document
-    .getElementById(
-        "notesModal"
-    )
-    .addEventListener(
 
-        "click",
+    button.addEventListener("click", function (event) {
 
-        function(event) {
+        event.stopPropagation();
+
+        dropdown.classList.toggle("active");
+
+    });
+
+
+    document.addEventListener("click", function (event) {
+
+        if (!dropdown.contains(event.target)) {
+
+            dropdown.classList.remove("active");
+
+        }
+
+    });
+
+});
+
+
+/* =========================================================
+   MODAL EVENTS
+========================================================= */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function() {
+
+        const closeButton =
+            document.getElementById(
+                "notesModalClose"
+            );
+
+
+        const modal =
+            document.getElementById(
+                "notesModal"
+            );
+
+
+        if (closeButton) {
+
+            closeButton.addEventListener(
+                "click",
+                closeNoteViewer
+            );
+
+        }
+
+
+        if (modal) {
+
+            modal.addEventListener(
+                "click",
+                function(event) {
+
+                    if (
+                        event.target === this
+                    ) {
+
+                        closeNoteViewer();
+
+                    }
+
+                }
+            );
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   ESC KEY FOR MODAL
+========================================================= */
+
+document.addEventListener(
+    "keydown",
+    function(event) {
+
+        if (
+            event.key === "Escape"
+        ) {
+
+            const modal =
+                document.getElementById(
+                    "notesModal"
+                );
+
 
             if (
-                event.target === this
+                modal &&
+                modal.classList.contains(
+                    "active"
+                )
             ) {
 
                 closeNoteViewer();
@@ -3627,27 +3615,7 @@ document
 
         }
 
-    );
-
-
-/* ESC */
-
-document.addEventListener(
-
-    "keydown",
-
-    function(event) {
-
-        if (
-            event.key === "Escape"
-        ) {
-
-            closeNoteViewer();
-
-        }
-
     }
-
 );
 
 
@@ -3677,69 +3645,6 @@ function displayStudentName() {
 
 
 /* =========================================================
-   LOGIN DROPDOWN
-========================================================= */
-
-const loginButton =
-    document.querySelector(
-        ".login-dropdown-btn"
-    );
-
-
-const loginDropdown =
-    document.querySelector(
-        ".login-dropdown"
-    );
-
-
-if (
-    loginButton &&
-    loginDropdown
-) {
-
-    loginButton.addEventListener(
-
-        "click",
-
-        function(event) {
-
-            event.stopPropagation();
-
-            loginDropdown.classList.toggle(
-                "active"
-            );
-
-        }
-
-    );
-
-
-    document.addEventListener(
-
-        "click",
-
-        function(event) {
-
-            if (
-                !loginDropdown.contains(
-                    event.target
-                )
-            ) {
-
-                loginDropdown.classList.remove(
-                    "active"
-                );
-
-            }
-
-        }
-
-    );
-
-}
-
-
-/* =========================================================
    INITIALIZE
 ========================================================= */
 
@@ -3753,9 +3658,7 @@ renderHomeworkWithNotes();
 ========================================================= */
 
 window.addEventListener(
-
     "storage",
-
     function(event) {
 
         if (
@@ -3775,7 +3678,6 @@ window.addEventListener(
         }
 
     }
-
 );
 
 
@@ -3784,19 +3686,135 @@ window.addEventListener(
 ========================================================= */
 
 setInterval(
-
     function() {
 
         renderHomeworkWithNotes();
 
     },
-
     3000
-
 );
 
 </script>
 
+
+<!-- =========================================================
+     CONTACT BUTTON SCRIPT
+========================================================= -->
+
+<script>
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function() {
+
+        const contactItems =
+            document.querySelectorAll(
+                ".contact-item"
+            );
+
+
+        contactItems.forEach(
+            function(item) {
+
+                const button =
+                    item.querySelector(
+                        ".contact-button"
+                    );
+
+
+                if (!button) {
+                    return;
+                }
+
+
+                button.addEventListener(
+                    "click",
+                    function() {
+
+                        if (
+                            window.innerWidth <= 767
+                        ) {
+
+                            contactItems.forEach(
+                                function(otherItem) {
+
+                                    if (
+                                        otherItem !== item
+                                    ) {
+
+                                        otherItem.classList.remove(
+                                            "show-label"
+                                        );
+
+                                    }
+
+                                }
+                            );
+
+
+                            item.classList.toggle(
+                                "show-label"
+                            );
+
+                        }
+
+                    }
+                );
+
+            }
+        );
+
+
+        document.addEventListener(
+            "click",
+            function(event) {
+
+                if (
+                    !event.target.closest(
+                        ".floating-contact"
+                    )
+                ) {
+
+                    contactItems.forEach(
+                        function(item) {
+
+                            item.classList.remove(
+                                "show-label"
+                            );
+
+                        }
+                    );
+
+                }
+
+            }
+        );
+
+    }
+);
+
+</script>
+
+
+<!-- Login Dropdown Script -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const dropdown = document.querySelector(".login-dropdown");
+    const button = document.querySelector(".login-dropdown-btn");
+    if (!dropdown || !button) return;
+
+    button.addEventListener("click", function (event) {
+        event.stopPropagation();
+        dropdown.classList.toggle("active");
+    });
+
+    document.addEventListener("click", function (event) {
+        if (!dropdown.contains(event.target)) {
+            dropdown.classList.remove("active");
+        }
+    });
+});
+</script>
 
 </body>
 

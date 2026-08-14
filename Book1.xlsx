@@ -373,94 +373,180 @@
     </div>
 
 
-   
-    <!-- Start Card Style -->
+    <!-- DASHBOARD  -->
+
     <div class="rbt-dashboard-area rbt-section-gap">
+
         <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                   
 
-                    <div class="row g-5">
-                        <div class="col-lg-3">
-                            <!-- Start Dashboard Sidebar  -->
-                            <div class="rbt-default-sidebar sticky-top rbt-shadow-box rbt-gradient-border">
-                                <div class="inner">
-                                    <div class="content-item-content">
+            <div class="row g-5">
 
-                                        <div class="rbt-default-sidebar-wrapper">
-                                            <div class="section-title mb--20">
-                                                <h6 class="rbt-title-style-2">Welcome, Jone Due</h6>
-                                            </div>
-                                            <nav class="mainmenu-nav">
-                                                <ul class="dashboard-mainmenu rbt-default-sidebar-list">
-                                                                                            <li><a href="instructor-profile.html"><i class="feather-user"></i><span>My Profile</span></a></li>
-                                                </ul>
-                                            </nav>
 
-                                           
+                <!--  LEFT SIDEBAR-->
 
-                                           <nav class="mainmenu-nav">
-    <ul class="dashboard-mainmenu rbt-default-sidebar-list">
-        <li>
-            <a href="students-list.html">
-                <i class="feather-users"></i>
-                <span>Students List</span>
-            </a>
-        </li>
-    </ul>
-</nav>
+                <div class="col-lg-3">
 
-<nav class="mainmenu-nav">
-    <ul class="dashboard-mainmenu rbt-default-sidebar-list">
-        <li class="active">
-            <a class="active" href="classlink.html">
-                <i class="feather-link"></i>
-                <span>Class Link</span>
-            </a>
-        </li>
-    </ul>
-</nav>
+                    <div class="rbt-default-sidebar sticky-top rbt-shadow-box rbt-gradient-border">
 
-<nav class="mainmenu-nav">
-    <ul class="dashboard-mainmenu rbt-default-sidebar-list">
-        <li>
-            <a href="tutor-attendance.html">
-                <i class="feather-calendar"></i>
-                <span>Attendance</span>
-            </a>
-        </li>
-    </ul>
-</nav>
+                        <div class="inner">
 
-<nav class="mainmenu-nav">
-    <ul class="dashboard-mainmenu rbt-default-sidebar-list">
-        <li>
-            <a href="tutor-homework.html">
-                <i class="feather-file-text"></i>
-                <span>Homework &amp; Notes</span>
-            </a>
-        </li>
-    </ul>
-</nav>
+                            <div class="content-item-content">
 
-                                            <div class="section-title mt--40 mb--20">
-                                                <h6 class="rbt-title-style-2">User</h6>
-                                            </div>
+                                <div class="rbt-default-sidebar-wrapper">
 
-                                            <nav class="mainmenu-nav">
-                                                <ul class="dashboard-mainmenu rbt-default-sidebar-list">
-                                                    <li><a href="tuitor-edit.html"><i class="feather-settings"></i><span>Edit Profile</span></a></li>
-                                                    <li><a href="index.html"><i class="feather-log-out"></i><span>Logout</span></a></li>
-                                                </ul>
-                                            </nav>
-                                        </div>
+
+                                    <!-- Welcome -->
+
+                                    <div class="section-title mb--20">
+
+                                        <h6 class="rbt-title-style-2">
+                                            Welcome, Jone Due
+                                        </h6>
 
                                     </div>
+
+
+                                    <!-- My Profile -->
+
+                                    <nav class="mainmenu-nav">
+
+                                        <ul class="dashboard-mainmenu rbt-default-sidebar-list">
+
+                                            <li>
+
+                                                <a href="instructor-profile.html">
+
+                                                    <i class="feather-user"></i>
+
+                                                    <span>My Profile</span>
+
+                                                </a>
+
+                                            </li>
+
+                                        </ul>
+
+                                    </nav>
+
+
+                                    <!-- Students List -->
+
+                                    <nav class="mainmenu-nav">
+
+                                        <ul class="dashboard-mainmenu rbt-default-sidebar-list">
+
+                                            <li>
+
+                                                <a href="students-list.html">
+
+                                                    <i class="feather-monitor"></i>
+
+                                                    <span>Students List</span>
+
+                                                </a>
+
+                                            </li>
+
+                                        </ul>
+
+                                    </nav>
+
+
+                                    <!-- Class Link -->
+
+                                    <nav class="mainmenu-nav">
+
+                                        <ul class="dashboard-mainmenu rbt-default-sidebar-list">
+
+                                            <li class="active">
+
+                                                <a href="studentclasslink.html">
+
+                                                    <i class="feather-link"></i>
+
+                                                    <span>Class Link</span>
+
+                                                </a>
+
+                                            </li>
+
+                                        </ul>
+
+                                    </nav>
+
+
+
+
+                                    <nav class="mainmenu-nav">
+                                        <ul class="dashboard-mainmenu rbt-default-sidebar-list">
+                                            <li class="active">
+                                                <a href="tutor-homework.html">
+                                                    <i class="feather-link"></i>
+                                                    <span>Homework & Notes</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+
+
+                                    <!-- User -->
+
+                                    <div class="section-title mt--40 mb--20">
+
+                                        <h6 class="rbt-title-style-2">
+                                            User
+                                        </h6>
+
+                                    </div>
+
+
+                                    <nav class="mainmenu-nav">
+
+                                        <ul class="dashboard-mainmenu rbt-default-sidebar-list">
+
+                                            <!-- Edit Profile -->
+
+                                            <li>
+
+                                                <a href="tuitor-edit.html">
+
+                                                    <i class="feather-settings"></i>
+
+                                                    <span>Edit Profile</span>
+
+                                                </a>
+
+                                            </li>
+
+
+                                            <!-- Logout -->
+
+                                            <li>
+
+                                                <a href="index.html">
+
+                                                    <i class="feather-log-out"></i>
+
+                                                    <span>Logout</span>
+
+                                                </a>
+
+                                            </li>
+
+                                        </ul>
+
+                                    </nav>
+
+
                                 </div>
+
                             </div>
-                            <!-- End Dashboard Sidebar  -->
+
                         </div>
+
+                    </div>
+
+                </div>
 
 
            
@@ -520,10 +606,6 @@
                                 </div>
 
                             </div>
-
-
-                            
-                                     
 
 
                             <!-- Meeting Link -->

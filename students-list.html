@@ -4,16 +4,17 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Courses - London Star Education Online Courses & Education</title>
-    <meta name="robots" content="noindex, follow" />
-    <meta name="description" content="">
+
+    <title>Student List - London Star Education</title>
+
+    <meta name="robots" content="noindex, follow">
+    <meta name="description" content="Tutor Student Roster Management for London Star Education">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.png">
 
-    <!-- CSS
-	============================================ -->
+    <!-- CSS -->
     <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/vendor/slick.css">
     <link rel="stylesheet" href="assets/css/vendor/slick-theme.css">
@@ -30,92 +31,624 @@
     <link rel="stylesheet" href="assets/css/plugins/magnigy-popup.min.css">
     <link rel="stylesheet" href="assets/css/plugins/plyr.css">
     <link rel="stylesheet" href="assets/css/style.css">
+
+    <style>
+        /* =========================================
+           ROSTER HEADER
+        ========================================= */
+        .roster-header-container {
+            margin-bottom: 25px;
+        }
+
+        .roster-title-group h4 {
+            margin-bottom: 4px;
+            font-weight: 700;
+            color: #1f354d;
+        }
+
+        .roster-title-group p {
+            margin: 0;
+            color: #6c757d;
+            font-size: 14px;
+        }
+
+        /* =========================================
+           SUBJECT CARDS
+        ========================================= */
+        .subject-cards-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #1f354d;
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .subject-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 22px;
+            margin-bottom: 30px;
+        }
+
+        .subject-card {
+            background: #ffffff;
+            border-radius: 14px;
+            padding: 20px;
+            border: 2px solid #e2e8f0;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .subject-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, #1f354d 0%, #6c4df6 100%);
+            opacity: 0.4;
+            transition: opacity 0.3s ease;
+        }
+
+        .subject-card:hover {
+            transform: translateY(-4px);
+            border-color: #6c4df6;
+            box-shadow: 0 10px 25px rgba(108, 77, 246, 0.12);
+        }
+
+        .subject-card:hover::before {
+            opacity: 1;
+        }
+
+        .subject-card.active-subject {
+            border-color: #6c4df6;
+            box-shadow: 0 12px 30px rgba(108, 77, 246, 0.18);
+            transform: translateY(-4px);
+            background: #ffffff;
+        }
+
+        .subject-card.active-subject::before {
+            opacity: 1;
+            height: 6px;
+        }
+
+        .subject-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 12px;
+        }
+
+        .subject-icon-box {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            background: rgba(108, 77, 246, 0.08);
+            color: #6c4df6;
+        }
+
+        .subject-badge {
+            padding: 5px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            background: rgba(108, 77, 246, 0.1);
+            color: #6c4df6;
+        }
+
+        .subject-card-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #1f354d;
+            margin-bottom: 6px;
+        }
+
+        .subject-card-sub {
+            font-size: 13px;
+            color: #6c757d;
+            margin-bottom: 16px;
+        }
+
+        .subject-card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 12px;
+            color: #64748b;
+            padding-top: 12px;
+            border-top: 1px dashed #e2e8f0;
+        }
+
+        .active-indicator {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            font-weight: 700;
+            color: #6c4df6;
+            font-size: 13px;
+        }
+
+        /* =========================================
+           ROSTER SECTION
+        ========================================= */
+        #roster-section-container {
+            display: none;
+            animation: fadeInRoster 0.35s ease-in-out forwards;
+        }
+
+        @keyframes fadeInRoster {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* =========================================
+           ROSTER TOOLBAR
+        ========================================= */
+        .roster-toolbar {
+            background: #ffffff;
+            border-radius: 14px;
+            padding: 20px 24px;
+            border: 1px solid #e9ecef;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+            margin-bottom: 22px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .toolbar-left {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .selected-subject-tag {
+            font-size: 18px;
+            font-weight: 700;
+            color: #1f354d;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .total-counter-pill {
+            background: linear-gradient(135deg, #1f354d 0%, #6c4df6 100%);
+            color: #ffffff;
+            padding: 5px 16px;
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .toolbar-right {
+            display: flex;
+            align-items: center;
+            gap: 22px;
+            flex-wrap: wrap;
+        }
+
+        /* =========================================
+           SEARCH
+        ========================================= */
+        .roster-search-input {
+            position: relative;
+            width: 240px;
+        }
+
+        .roster-search-input input {
+            height: 40px;
+            border-radius: 8px;
+            border: 1px solid #ced4da;
+            padding: 0 14px 0 38px;
+            font-size: 13px;
+            width: 100%;
+            outline: none;
+            transition: border-color 0.2s ease;
+        }
+
+        .roster-search-input input:focus {
+            border-color: #6c4df6;
+        }
+
+        .roster-search-input i {
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #94a3b8;
+            font-size: 15px;
+        }
+
+        /* =========================================
+           SORT BUTTON
+        ========================================= */
+        .sort-toggle-btn {
+            height: 40px;
+            padding: 0 16px;
+            border-radius: 8px;
+            border: 1px solid #6c4df6;
+            background: #ffffff;
+            color: #6c4df6;
+            font-weight: 600;
+            font-size: 13px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .sort-toggle-btn:hover {
+            background: #6c4df6;
+            color: #ffffff;
+        }
+
+        /* =========================================
+           NEW STUDENT BUTTON
+        ========================================= */
+        .new-student-filter-btn {
+            height: 40px !important;
+            padding: 0 18px !important;
+            font-size: 13px !important;
+            border-radius: 8px !important;
+            line-height: 40px !important;
+            min-height: auto !important;
+        }
+
+        .new-student-filter-btn.active-filter {
+            box-shadow: 0 0 0 3px rgba(108, 77, 246, 0.3) !important;
+        }
+
+        /* =========================================
+           STUDENT TABLE
+        ========================================= */
+        .student-table-card {
+            background: #ffffff;
+            border-radius: 14px;
+            border: 1px solid #e9ecef;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+            overflow: hidden;
+        }
+
+        .student-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0;
+        }
+
+        .student-table th {
+            background: #f8fafc;
+            padding: 12px 16px;
+            font-size: 12px;
+            font-weight: 700;
+            color: #475569;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+        .student-table td {
+            padding: 10px 16px;
+            vertical-align: middle;
+            border-bottom: 1px solid #f1f5f9;
+            font-size: 14px;
+            color: #1e293b;
+        }
+
+        .student-table tbody tr:nth-child(even) {
+            background: rgba(248, 250, 252, 0.7);
+        }
+
+        .student-table tbody tr:nth-child(odd) {
+            background: #ffffff;
+        }
+
+        .student-table tbody tr:hover {
+            background: rgba(108, 77, 246, 0.04) !important;
+        }
+
+        .sno-badge {
+            font-weight: 700;
+            color: #64748b;
+            font-size: 12px;
+            background: #f1f5f9;
+            padding: 3px 8px;
+            border-radius: 6px;
+            display: inline-block;
+        }
+
+        .student-name-text {
+            font-weight: 700;
+            color: #1f354d;
+            margin: 0;
+            font-size: 14px;
+        }
+
+        .new-badge-tag {
+            background: rgba(108, 77, 246, 0.12);
+            color: #6c4df6;
+            font-size: 10px;
+            font-weight: 700;
+            padding: 2px 7px;
+            border-radius: 12px;
+            margin-left: 6px;
+            vertical-align: middle;
+            text-transform: uppercase;
+        }
+
+        /* =========================================
+           VIEW BUTTON
+        ========================================= */
+        .action-view-btn {
+            height: 32px !important;
+            padding: 0 14px !important;
+            font-size: 12px !important;
+            border-radius: 6px !important;
+            line-height: 32px !important;
+            min-height: auto !important;
+            display: inline-flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+        }
+
+        /* =========================================
+           MODAL
+        ========================================= */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(4px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 99999;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+            padding: 20px;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-card-box {
+            background: #ffffff;
+            border-radius: 16px;
+            width: 100%;
+            max-width: 620px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+            overflow: hidden;
+            transform: translateY(20px);
+            transition: transform 0.3s ease;
+        }
+
+        .modal-overlay.active .modal-card-box {
+            transform: translateY(0);
+        }
+
+        .modal-header-bg {
+            background: linear-gradient(135deg, #1f354d 0%, #6c4df6 100%);
+            padding: 20px 24px;
+            color: #ffffff;
+            position: relative;
+        }
+
+        .modal-close-btn {
+            position: absolute;
+            top: 18px;
+            right: 18px;
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: #ffffff;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .modal-close-btn:hover {
+            background: rgba(255, 255, 255, 0.4);
+        }
+
+        .student-modal-body {
+            padding: 22px 24px;
+        }
+
+        .detail-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 14px;
+            margin-bottom: 20px;
+        }
+
+        .detail-item {
+            background: rgba(248, 250, 252, 0.9);
+            padding: 12px 16px;
+            border-radius: 10px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .detail-item label {
+            font-size: 11px;
+            text-transform: uppercase;
+            font-weight: 700;
+            color: #64748b;
+            display: block;
+            margin-bottom: 3px;
+        }
+
+        .detail-item p {
+            margin: 0;
+            font-size: 14px;
+            font-weight: 600;
+            color: #1f354d;
+        }
+
+        .attendance-highlight {
+            color: #6c4df6 !important;
+            font-weight: 700 !important;
+        }
+
+        /* =========================================
+           RESPONSIVE
+        ========================================= */
+        @media (max-width: 768px) {
+
+            .detail-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .roster-toolbar {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .toolbar-right {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 14px;
+            }
+
+            .roster-search-input {
+                width: 100%;
+            }
+        }
+    </style>
 </head>
 
-<body>
 
-    <!-- Start Header Area -->
+<body class="rbt-header-sticky">
+
+    <!-- =========================================
+         HEADER
+    ========================================= -->
     <header class="rbt-header rbt-header-9">
-        <div class="rbt-sticky-placeholder"></div>
-        
-        <!-- Start Header Top -->
-        <div class="rbt-header-middle position-relative rbt-header-mid-1  bg-color-white rbt-border-bottom">
-            <div class="container">
-                <div class="rbt-header-sec align-items-center ">
 
+        <div class="rbt-sticky-placeholder"></div>
+
+        <!-- Header Top -->
+        <div class="rbt-header-middle position-relative rbt-header-mid-1 bg-color-white rbt-border-bottom">
+
+            <div class="container">
+
+                <div class="rbt-header-sec align-items-center">
+
+                    <!-- Left -->
                     <div class="rbt-header-sec-col rbt-header-left">
+
                         <div class="rbt-header-content">
-                            <!-- Start Header Information List  -->
+
                             <div class="header-info">
                                 <ul class="rbt-dropdown-menu switcher-language">
                                     <li class="has-child-menu">
                                         <a href="#">
-                                            <img class="left-image" src="assets/images/icons/en-us.png"
-                                                alt="Language Images">
+                                            <img class="left-image"
+                                                 src="assets/images/icons/en-us.png"
+                                                 alt="Language Images">
+
                                             <span class="menu-item">English</span>
                                         </a>
-                                        <!-- <ul class="sub-menu">
-                                            <li>
-                                                <a href="#">
-                                                    <img class="left-image" src="assets/images/icons/fr.png"
-                                                        alt="Language Images">
-                                                    <span class="menu-item">Français</span>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    <img class="left-image" src="assets/images/icons/de.png"
-                                                        alt="Language Images">
-                                                    <span class="menu-item">Deutsch</span>
-                                                </a>
-                                            </li>
-                                        </ul> -->
                                     </li>
                                 </ul>
                             </div>
-                            <!-- End Header Information List  -->
 
-                            <!-- Start Header Information List  -->
                             <div class="header-info">
+
                                 <ul class="rbt-dropdown-menu currency-menu">
+
                                     <li class="has-child-menu">
-                                        <!-- <a href="#">
-                                            <span class="menu-item">USD</span>
-                                            <i class="right-icon feather-chevron-down"></i>
-                                        </a> -->
+
                                         <ul class="sub-menu hover-reverse">
+
                                             <li>
                                                 <a href="#">
                                                     <span class="menu-item">EUR</span>
                                                 </a>
                                             </li>
+
                                             <li>
                                                 <a href="#">
                                                     <span class="menu-item">GBP</span>
                                                 </a>
                                             </li>
+
                                         </ul>
+
                                     </li>
+
                                 </ul>
+
                             </div>
-                            <!-- End Header Information List  -->
+
                         </div>
+
                     </div>
 
+
+                    <!-- Center Search -->
                     <div class="rbt-header-sec-col rbt-header-center d-none d-md-block">
+
                         <div class="rbt-header-content">
+
                             <div class="header-info">
+
                                 <div class="rbt-search-field">
+
                                     <div class="search-field">
-                                        <input type="text" placeholder="Search Course">
-                                        <button class="rbt-round-btn serach-btn" type="submit"><i
-                                                class="feather-search"></i></button>
+
+                                        <input type="text"
+                                               placeholder="Search Course">
+
+                                        <button class="rbt-round-btn serach-btn"
+                                                type="submit">
+
+                                            <i class="feather-search"></i>
+
+                                        </button>
+
                                     </div>
+
                                 </div>
+
                             </div>
+
                         </div>
+
                     </div>
 
+
+                    <!-- Right -->
                     <div class="rbt-header-sec-col rbt-header-right">
 
                         <div class="rbt-btn-wrapper">
@@ -123,9 +656,10 @@
                             <div class="login-dropdown">
 
                                 <button type="button"
-                                    class="rbt-btn rbt-switch-btn btn-gradient btn-sm hover-transform-none login-dropdown-btn">
+                                        class="rbt-btn rbt-switch-btn btn-gradient btn-sm hover-transform-none login-dropdown-btn">
 
                                     <span data-text="Login">Login</span>
+
                                     <i class="feather-chevron-down"></i>
 
                                 </button>
@@ -149,47 +683,61 @@
                         </div>
 
 
-                        <!-- Start Mobile-Menu-Bar -->
-
                         <div class="mobile-menu-bar d-block d-xl-none">
 
                             <div class="hamberger">
 
                                 <button class="hamberger-button rbt-round-btn">
-
                                     <i class="feather-menu"></i>
-
                                 </button>
 
                             </div>
 
                         </div>
 
-                        <!-- End Mobile-Menu-Bar -->
-
                     </div>
 
                 </div>
+
             </div>
+
         </div>
         <!-- End Header Top -->
 
-        <div class="rbt-header-wrapper  header-not-transparent header-sticky">
+
+        <!-- Main Header -->
+        <div class="rbt-header-wrapper header-not-transparent header-sticky">
+
             <div class="container">
+
                 <div class="mainbar-row rbt-navigation-end align-items-center">
+
+                    <!-- Logo -->
                     <div class="header-left rbt-header-content">
+
                         <div class="header-info">
+
                             <div class="logo">
+
                                 <a href="index.html">
-                                    <img src="assets/images/logo/logo.png" alt="Education Logo Images">
+
+                                    <img src="assets/images/logo/logo.png"
+                                         alt="Education Logo Images">
+
                                 </a>
+
                             </div>
+
                         </div>
 
                     </div>
 
+
+                    <!-- Navigation -->
                     <div class="rbt-main-navigation d-none d-xl-block">
+
                         <nav class="mainmenu-nav">
+
                             <ul class="mainmenu">
 
                                 <li>
@@ -213,7 +761,9 @@
                                 </li>
 
                                 <li>
-                                    <a href="plans-and-pricing.html">Plans &amp; Pricing</a>
+                                    <a href="plans-and-pricing.html">
+                                        Plans &amp; Pricing
+                                    </a>
                                 </li>
 
                                 <li>
@@ -221,1547 +771,2173 @@
                                 </li>
 
                             </ul>
+
                         </nav>
+
                     </div>
+
+
+                    <!-- Join -->
                     <div class="header-right">
+
                         <div class="rbt-btn-wrapper d-none d-xl-block">
-                            <a class="rbt-btn rbt-switch-btn btn-gradient btn-sm hover-transform-none" href="login-register.html">
+
+                            <a class="rbt-btn rbt-switch-btn btn-gradient btn-sm hover-transform-none"
+                               href="login-register.html">
+
                                 <span data-text="Join Now">Join Now</span>
+
                             </a>
+
                         </div>
-                        <!-- Start Mobile-Menu-Bar -->
+
+
                         <div class="mobile-menu-bar d-block d-xl-none">
+
                             <div class="hamberger">
+
                                 <button class="hamberger-button rbt-round-btn">
                                     <i class="feather-menu"></i>
                                 </button>
-                            </div>
-                        </div>
-                        <!-- Start Mobile-Menu-Bar -->
-                    </div>
-                </div>
-            </div>
-        </div>
 
-        <!-- Start Side Vav -->
-        <div class="rbt-offcanvas-side-menu rbt-category-sidemenu">
-            <div class="inner-wrapper">
-                <div class="inner-top">
-                    <div class="inner-title">
-                        <h4 class="title">Course Category</h4>
-                    </div>
-                    <div class="rbt-btn-close">
-                        <button class="rbt-close-offcanvas rbt-round-btn"><i class="feather-x"></i></button>
-                    </div>
-                </div>
-                <nav class="side-nav w-100">
-                    <ul class="rbt-vertical-nav-list-wrapper vertical-nav-menu">
-                        <li class="vertical-nav-item">
-                            <a href="#">Course School</a>
-                            <div class="vartical-nav-content-menu-wrapper">
-                                <div class="vartical-nav-content-menu">
-                                    <h3 class="rbt-short-title">Course Title</h3>
-                                    <ul class="rbt-vertical-nav-list-wrapper">
-                                        <li><a href="#">Web Design</a></li>
-                                        <li><a href="#">Art</a></li>
-                                        <li><a href="#">Figma</a></li>
-                                        <li><a href="#">Adobe</a></li>
-                                    </ul>
-                                </div>
-                                <div class="vartical-nav-content-menu">
-                                    <h3 class="rbt-short-title">Course Title</h3>
-                                    <ul class="rbt-vertical-nav-list-wrapper">
-                                        <li><a href="#">Photo</a></li>
-                                        <li><a href="#">English</a></li>
-                                        <li><a href="#">Math</a></li>
-                                        <li><a href="#">Read</a></li>
-                                    </ul>
-                                </div>
                             </div>
-                        </li>
-                        <li class="vertical-nav-item">
-                            <a href="#">Online School</a>
-                            <div class="vartical-nav-content-menu-wrapper">
-                                <div class="vartical-nav-content-menu">
-                                    <h3 class="rbt-short-title">Course Title</h3>
-                                    <ul class="rbt-vertical-nav-list-wrapper">
-                                        <li><a href="#">Photo</a></li>
-                                        <li><a href="#">English</a></li>
-                                        <li><a href="#">Math</a></li>
-                                        <li><a href="#">Read</a></li>
-                                    </ul>
-                                </div>
-                                <div class="vartical-nav-content-menu">
-                                    <h3 class="rbt-short-title">Course Title</h3>
-                                    <ul class="rbt-vertical-nav-list-wrapper">
-                                        <li><a href="#">Web Design</a></li>
-                                        <li><a href="#">Art</a></li>
-                                        <li><a href="#">Figma</a></li>
-                                        <li><a href="#">Adobe</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="vertical-nav-item">
-                            <a href="#">kindergarten</a>
-                            <div class="vartical-nav-content-menu-wrapper">
-                                <div class="vartical-nav-content-menu">
-                                    <h3 class="rbt-short-title">Course Title</h3>
-                                    <ul class="rbt-vertical-nav-list-wrapper">
-                                        <li><a href="#">Photo</a></li>
-                                        <li><a href="#">English</a></li>
-                                        <li><a href="#">Math</a></li>
-                                        <li><a href="#">Read</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="vertical-nav-item">
-                            <a href="#">Classic LMS</a>
-                            <div class="vartical-nav-content-menu-wrapper">
-                                <div class="vartical-nav-content-menu">
-                                    <h3 class="rbt-short-title">Course Title</h3>
-                                    <ul class="rbt-vertical-nav-list-wrapper">
-                                        <li><a href="#">Web Design</a></li>
-                                        <li><a href="#">Art</a></li>
-                                        <li><a href="#">Figma</a></li>
-                                        <li><a href="#">Adobe</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                    <div class="read-more-btn">
-                        <div class="rbt-btn-wrapper mt--20">
-                            <a class="rbt-btn btn-border-gradient radius-round btn-sm hover-transform-none w-100 justify-content-center text-center"
-                                href="#">
-                                <span>Learn More</span>
-                            </a>
+
                         </div>
+
                     </div>
-                </nav>
-                <div class="rbt-offcanvas-footer">
 
                 </div>
+
             </div>
+
         </div>
-        <!-- End Side Vav -->
-        <a class="rbt-close_side_menu" href="javascript:void(0);"></a>
+
     </header>
-    <!-- Mobile Menu Section -->
-    <div class="popup-mobile-menu">
-        <div class="inner-wrapper">
-            <div class="inner-top">
-                <div class="content">
-                    <div class="logo">
-                        <a href="index.html">
-                            <img src="assets/images/logo/logo.png" alt="Education Logo Images">
-                        </a>
-                    </div>
-                    <div class="rbt-btn-close">
-                        <button class="close-button rbt-round-btn"><i class="feather-x"></i></button>
-                    </div>
-                </div>
-                <p class="description">Histudy is a education website template. You can customize all.</p>
-                <ul class="navbar-top-left rbt-information-list justify-content-start">
-                    <li>
-                        <a href="mailto:hello@example.com"><i class="feather-mail"></i>example@gmail.com</a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="feather-phone"></i>(302) 555-0107</a>
-                    </li>
-                </ul>
-            </div>
 
-            <nav class="mainmenu-nav">
-                <ul class="mainmenu">
-                    <li class="with-megamenu has-menu-child-item position-static">
-                        <a href="#">Home <i class="feather-chevron-down"></i></a>
-                        <!-- Start Mega Menu  -->
-                        <div class="rbt-megamenu menu-skin-dark">
-                            <div class="wrapper">
-                                <div class="row row--15 home-plesentation-wrapper single-dropdown-menu-presentation">
 
-                                    <!-- Start Single Demo  -->
-                                    <div
-                                        class="col-lg-12 col-xl-2 col-xxl-2 col-md-12 col-sm-12 col-12 single-mega-item">
-                                        <div class="demo-single">
-                                            <div class="inner">
-                                                <div class="thumbnail">
-                                                    <a href="01-main-demo.html"><img
-                                                            src="assets/images/splash/demo/h1.jpg"
-                                                            alt="Demo Images"></a>
-                                                </div>
-                                                <div class="content">
-                                                    <h4 class="title"><a href="01-main-demo.html">Home Demo <span
-                                                                class="btn-icon"><i
-                                                                    class="feather-arrow-right"></i></span></a></h4>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- End Single Demo  -->
+    <!-- =========================================
+         BANNER
+    ========================================= -->
+    <div class="slider-area rbt-banner-10 height-400 bg_image bg_image--11"
+         data-black-overlay="5">
 
-                                    <!-- Start Single Demo  -->
-                                    <div
-                                        class="col-lg-12 col-xl-2 col-xxl-2 col-md-12 col-sm-12 col-12 single-mega-item">
-                                        <div class="demo-single">
-                                            <div class="inner">
-                                                <div class="thumbnail">
-                                                    <a href="12-marketplace.html"><img
-                                                            src="assets/images/splash/demo/h12.jpg"
-                                                            alt="Demo Images"></a>
-                                                </div>
-                                                <div class="content">
-                                                    <h4 class="title"><a href="12-marketplace.html">Marketplace <span
-                                                                class="btn-icon"><i
-                                                                    class="feather-arrow-right"></i></span></a></h4>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- End Single Demo  -->
-                                    <!-- Start Single Demo  -->
-                                    <div
-                                        class="col-lg-12 col-xl-2 col-xxl-2 col-md-12 col-sm-12 col-12 single-mega-item">
-                                        <div class="demo-single">
-                                            <div class="inner">
-                                                <div class="thumbnail">
-                                                    <a href="04-kindergarten.html"><img
-                                                            src="assets/images/splash/demo/h4.jpg"
-                                                            alt="Demo Images"></a>
-                                                </div>
-                                                <div class="content">
-                                                    <h4 class="title"><a href="04-kindergarten.html">kindergarten <span
-                                                                class="btn-icon"><i
-                                                                    class="feather-arrow-right"></i></span></a></h4>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- End Single Demo  -->
-                                    <!-- Start Single Demo  -->
-                                    <div
-                                        class="col-lg-12 col-xl-2 col-xxl-2 col-md-12 col-sm-12 col-12 single-mega-item">
-                                        <div class="demo-single">
-                                            <div class="inner">
-                                                <div class="thumbnail">
-                                                    <a href="13-university-classic.html"><img
-                                                            src="assets/images/splash/demo/h13.jpg"
-                                                            alt="Demo Images"></a>
-                                                </div>
-                                                <div class="content">
-                                                    <h4 class="title"><a href="13-university-classic.html">University
-                                                            Classic <span class="btn-icon"><i
-                                                                    class="feather-arrow-right"></i></span></a></h4>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- End Single Demo  -->
-
-                                    <!-- Start Single Demo  -->
-                                    <div
-                                        class="col-lg-12 col-xl-2 col-xxl-2 col-md-12 col-sm-12 col-12 single-mega-item">
-                                        <div class="demo-single">
-                                            <div class="inner">
-                                                <div class="thumbnail">
-                                                    <a href="14-home-elegant.html"><img
-                                                            src="assets/images/splash/demo/h14.jpg"
-                                                            alt="Demo Images"></a>
-                                                </div>
-                                                <div class="content">
-                                                    <h4 class="title"><a href="14-home-elegant.html">Home Elegant <span
-                                                                class="btn-icon"><i
-                                                                    class="feather-arrow-right"></i></span></a></h4>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- End Single Demo  -->
-
-                                    <!-- Start Single Demo  -->
-                                    <div
-                                        class="col-lg-12 col-xl-2 col-xxl-2 col-md-12 col-sm-12 col-12 single-mega-item">
-                                        <div class="demo-single">
-                                            <div class="inner">
-                                                <div class="thumbnail">
-                                                    <a href="09-gym-coaching.html"><img
-                                                            src="assets/images/splash/demo/h9.jpg"
-                                                            alt="Demo Images"></a>
-                                                </div>
-                                                <div class="content">
-                                                    <h4 class="title"><a href="09-gym-coaching.html">Gym Coaching <span
-                                                                class="btn-icon"><i
-                                                                    class="feather-arrow-right"></i></span></a></h4>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- End Single Demo  -->
-
-                                    <!-- Start Single Demo  -->
-                                    <div
-                                        class="col-lg-12 col-xl-2 col-xxl-2 col-md-12 col-sm-12 col-12 single-mega-item">
-                                        <div class="demo-single">
-                                            <div class="inner">
-                                                <div class="thumbnail">
-                                                    <a href="03-online-school.html"><img
-                                                            src="assets/images/splash/demo/h3.jpg"
-                                                            alt="Demo Images"></a>
-                                                </div>
-                                                <div class="content">
-                                                    <h4 class="title"><a href="03-online-school.html">Online School
-                                                            <span class="btn-icon"><i
-                                                                    class="feather-arrow-right"></i></span></a></h4>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- End Single Demo  -->
-
-                                    <!-- Start Single Demo  -->
-                                    <div
-                                        class="col-lg-12 col-xl-2 col-xxl-2 col-md-12 col-sm-12 col-12 single-mega-item">
-                                        <div class="demo-single">
-                                            <div class="inner">
-                                                <div class="thumbnail">
-                                                    <a href="06-university-status.html"><img
-                                                            src="assets/images/splash/demo/h6.jpg"
-                                                            alt="Demo Images"></a>
-                                                </div>
-                                                <div class="content">
-                                                    <h4 class="title"><a href="06-university-status.html">University
-                                                            Status <span class="btn-icon"><i
-                                                                    class="feather-arrow-right"></i></span></a></h4>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- End Single Demo  -->
-
-                                    <!-- Start Single Demo  -->
-                                    <div
-                                        class="col-lg-12 col-xl-2 col-xxl-2 col-md-12 col-sm-12 col-12 single-mega-item">
-                                        <div class="demo-single">
-                                            <div class="inner">
-                                                <div class="thumbnail">
-                                                    <a href="15-home-technology.html"><img
-                                                            src="assets/images/splash/demo/h15.jpg"
-                                                            alt="Demo Images"></a>
-                                                </div>
-                                                <div class="content">
-                                                    <h4 class="title"><a href="15-home-technology.html">Home Technology
-                                                            <span class="btn-icon"><i
-                                                                    class="feather-arrow-right"></i></span></a></h4>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- End Single Demo  -->
-
-                                    <!-- Start Single Demo  -->
-                                    <div
-                                        class="col-lg-12 col-xl-2 col-xxl-2 col-md-12 col-sm-12 col-12 single-mega-item">
-                                        <div class="demo-single">
-                                            <div class="inner">
-                                                <div class="thumbnail">
-                                                    <a href="07-instructor-portfolio.html"><img
-                                                            src="assets/images/splash/demo/h7.jpg"
-                                                            alt="Demo Images"></a>
-                                                </div>
-                                                <div class="content">
-                                                    <h4 class="title"><a href="07-instructor-portfolio.html">Instructor
-                                                            Portfolio <span class="btn-icon"><i
-                                                                    class="feather-arrow-right"></i></span></a></h4>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- End Single Demo  -->
-
-                                    <!-- Start Single Demo  -->
-                                    <div
-                                        class="col-lg-12 col-xl-2 col-xxl-2 col-md-12 col-sm-12 col-12 single-mega-item">
-                                        <div class="demo-single">
-                                            <div class="inner">
-                                                <div class="thumbnail">
-                                                    <a href="08-language-academy.html"><img
-                                                            src="assets/images/splash/demo/h8.jpg"
-                                                            alt="Demo Images"></a>
-                                                </div>
-                                                <div class="content">
-                                                    <h4 class="title"><a href="08-language-academy.html">Language
-                                                            Academy <span class="btn-icon"><i
-                                                                    class="feather-arrow-right"></i></span></a></h4>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- End Single Demo  -->
-
-                                    <!-- Start Single Demo  -->
-                                    <div
-                                        class="col-lg-12 col-xl-2 col-xxl-2 col-md-12 col-sm-12 col-12 single-mega-item">
-                                        <div class="demo-single">
-                                            <div class="inner">
-                                                <div class="thumbnail">
-                                                    <a href="11-single-course.html"><img
-                                                            src="assets/images/splash/demo/h11.jpg"
-                                                            alt="Demo Images"></a>
-                                                </div>
-                                                <div class="content">
-                                                    <h4 class="title"><a href="11-single-course.html">Single Course
-                                                            <span class="btn-icon"><i
-                                                                    class="feather-arrow-right"></i></span></a></h4>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- End Single Demo  -->
-
-                                    <!-- Start Single Demo  -->
-                                    <div
-                                        class="col-lg-12 col-xl-2 col-xxl-2 col-md-12 col-sm-12 col-12 single-mega-item">
-                                        <div class="demo-single">
-                                            <div class="inner">
-                                                <div class="thumbnail">
-                                                    <a href="10-online-course.html"><img
-                                                            src="assets/images/splash/demo/h10.jpg"
-                                                            alt="Demo Images"></a>
-                                                </div>
-                                                <div class="content">
-                                                    <h4 class="title"><a href="10-online-course.html">Online Course
-                                                            <span class="btn-icon"><i
-                                                                    class="feather-arrow-right"></i></span></a></h4>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- End Single Demo  -->
-
-                                    <!-- Start Single Demo  -->
-                                    <div
-                                        class="col-lg-12 col-xl-2 col-xxl-2 col-md-12 col-sm-12 col-12 single-mega-item">
-                                        <div class="demo-single">
-                                            <div class="inner">
-                                                <div class="thumbnail">
-                                                    <a href="05-classic-lms.html"><img
-                                                            src="assets/images/splash/demo/h5.jpg"
-                                                            alt="Demo Images"></a>
-                                                </div>
-                                                <div class="content">
-                                                    <h4 class="title"><a href="05-classic-lms.html">Classic Lms <span
-                                                                class="btn-icon"><i
-                                                                    class="feather-arrow-right"></i></span></a></h4>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- End Single Demo  -->
-
-                                    <!-- Start Single Demo  -->
-                                    <div
-                                        class="col-lg-12 col-xl-2 col-xxl-2 col-md-12 col-sm-12 col-12 single-mega-item">
-                                        <div class="demo-single">
-                                            <div class="inner">
-                                                <div class="thumbnail">
-                                                    <a href="02-course-school.html"><img
-                                                            src="assets/images/splash/demo/h2.jpg"
-                                                            alt="Demo Images"></a>
-                                                </div>
-                                                <div class="content">
-                                                    <h4 class="title"><a href="02-course-school.html">Course School
-                                                            <span class="btn-icon"><i
-                                                                    class="feather-arrow-right"></i></span></a></h4>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- End Single Demo  -->
-
-                                    <!-- Start Single Demo  -->
-                                    <div
-                                        class="col-lg-12 col-xl-2 col-xxl-2 col-md-12 col-sm-12 col-12 single-mega-item coming-soon">
-                                        <div class="demo-single">
-                                            <div class="inner">
-                                                <div class="thumbnail">
-                                                    <a href="#"><img src="assets/images/splash/demo/coming-soon-1.png"
-                                                            alt="Demo Images"></a>
-                                                </div>
-                                                <div class="content">
-                                                    <h4 class="title"><a href="#">Coming Soon <span class="btn-icon"><i
-                                                                    class="feather-arrow-right"></i></span></a></h4>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- End Single Demo  -->
-
-                                    <!-- Start Single Demo  -->
-                                    <div
-                                        class="col-lg-12 col-xl-2 col-xxl-2 col-md-12 col-sm-12 col-12 single-mega-item coming-soon">
-                                        <div class="demo-single">
-                                            <div class="inner">
-                                                <div class="thumbnail">
-                                                    <a href="#"><img src="assets/images/splash/demo/coming-soon-2.png"
-                                                            alt="Demo Images"></a>
-                                                </div>
-                                                <div class="content">
-                                                    <h4 class="title"><a href="#">Coming Soon 2 <span
-                                                                class="btn-icon"><i
-                                                                    class="feather-arrow-right"></i></span></a></h4>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- End Single Demo  -->
-
-                                    <!-- Start Single Demo  -->
-                                    <div
-                                        class="col-lg-12 col-xl-2 col-xxl-2 col-md-12 col-sm-12 col-12 single-mega-item coming-soon">
-                                        <div class="demo-single">
-                                            <div class="inner">
-                                                <div class="thumbnail">
-                                                    <a href="#"><img src="assets/images/splash/demo/coming-soon-3.png"
-                                                            alt="Demo Images"></a>
-                                                </div>
-                                                <div class="content">
-                                                    <h4 class="title"><a href="#">Coming Soon 3 <span
-                                                                class="btn-icon"><i
-                                                                    class="feather-arrow-right"></i></span></a></h4>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- End Single Demo  -->
-                                </div>
-
-                                <div class="load-demo-btn text-center">
-                                    <a class="rbt-btn-link color-white" href="#">Scroll to view more <svg
-                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                            fill="currentColor" class="bi bi-arrow-down-up" viewBox="0 0 16 16">
-                                            <path fill-rule="evenodd"
-                                                d="M11.5 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L11 2.707V14.5a.5.5 0 0 0 .5.5zm-7-14a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L4 13.293V1.5a.5.5 0 0 1 .5-.5z" />
-                                        </svg></a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End Mega Menu  -->
-                    </li>
-
-                    <li class="with-megamenu has-menu-child-item">
-                        <a href="#">Courses <i class="feather-chevron-down"></i></a>
-                        <!-- Start Mega Menu  -->
-                        <div class="rbt-megamenu grid-item-2">
-                            <div class="wrapper">
-                                <div class="row">
-                                    <div class="col-lg-12">
-                                        <div class="mega-top-banner">
-                                            <div class="content">
-                                                <h4 class="title">Developer hub</h4>
-                                                <p class="description">Start building fast, with code samples, key
-                                                    resources and more.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row row--15">
-                                    <div class="col-lg-12 col-xl-6 col-xxl-6 single-mega-item">
-                                        <h3 class="rbt-short-title">Course Layout</h3>
-                                        <ul class="mega-menu-item">
-                                            <li><a href="course-filter-one-toggle.html">Filter One Toggle</a></li>
-                                            <li><a href="course-filter-one-open.html">Filter One Open</a></li>
-                                            <li><a href="course-filter-two-toggle.html">Filter Two Toggle</a></li>
-                                            <li><a href="course-filter-two-open.html">Filter Two Open</a></li>
-                                            <li><a href="course-with-tab.html">Course With Tab</a></li>
-                                            <li><a href="course-with-tab-two.html">Course With Tab Two</a></li>
-                                            <li><a href="course-card-2.html">Course Card Two</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-lg-12 col-xl-6 col-xxl-6 single-mega-item">
-                                        <h3 class="rbt-short-title">Course Layout</h3>
-                                        <ul class="mega-menu-item">
-                                            <li><a href="course-card-3.html">Course Card Three</a></li>
-                                            <li><a href="course-masonry.html">Course Masonry</a></li>
-                                            <li><a href="course-with-sidebar.html">Course With Sidebar</a></li>
-                                            <li><a href="course-details.html">Course Details</a></li>
-                                            <li><a href="course-details-2.html">Course Details Two</a></li>
-                                            <li><a href="lesson.html">Course Lesson <span
-                                                        class="rbt-badge-card">New</span></a></li>
-                                            <li><a href="create-course.html">Create Course <span
-                                                        class="rbt-badge-card">New</span></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-lg-12">
-                                        <ul class="nav-quick-access">
-                                            <li><a href="#"><i class="feather-folder-minus"></i> Quick Start Guide</a>
-                                            </li>
-                                            <li><a href="#"><i class="feather-folder-minus"></i> For Open Source</a>
-                                            </li>
-                                            <li><a href="#"><i class="feather-folder-minus"></i> API Status</a></li>
-                                            <li><a href="#"><i class="feather-folder-minus"></i> Support</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End Mega Menu  -->
-                    </li>
-
-                    <li class="has-dropdown has-menu-child-item">
-                        <a href="#">Dashboard
-                            <i class="feather-chevron-down"></i>
-                        </a>
-                        <ul class="submenu">
-                            <li class="has-dropdown"><a href="#">Instructor Dashboard</a>
-                                <ul class="submenu">
-                                    <li><a href="instructor-dashboard.html">Dashboard</a></li>
-                                    <li><a href="instructor-profile.html">Profile</a></li>
-                                    <li><a href="instructor-enrolled-courses.html">Enrolled Courses</a></li>
-                                    <li><a href="instructor-wishlist.html">Wishlist</a></li>
-                                    <li><a href="instructor-reviews.html">Reviews</a></li>
-                                    <li><a href="instructor-my-quiz-attempts.html">My Quiz Attempts</a></li>
-                                    <li><a href="instructor-order-history.html">Order History</a></li>
-                                    <li><a href="instructor-course.html">My Course</a></li>
-                                    <li><a href="instructor-announcements.html">Announcements</a></li>
-                                    <li><a href="instructor-quiz-attempts.html">Quiz Attempts</a></li>
-                                    <li><a href="instructor-assignments.html">Assignments</a></li>
-                                    <li><a href="instructor-settings.html">Settings</a></li>
-                                </ul>
-                            </li>
-                            <li class="has-dropdown"><a href="#">Student Dashboard</a>
-                                <ul class="submenu">
-                                    <li><a href="student-dashboard.html">Dashboard</a></li>
-                                    <li><a href="student-profile.html">Profile</a></li>
-                                    <li><a href="student-enrolled-courses.html">Enrolled Courses</a></li>
-                                    <li><a href="student-wishlist.html">Wishlist</a></li>
-                                    <li><a href="student-reviews.html">Reviews</a></li>
-                                    <li><a href="student-my-quiz-attempts.html">My Quiz Attempts</a></li>
-                                    <li><a href="student-order-history.html">Order History</a></li>
-                                    <li><a href="student-settings.html">Settings</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-
-                    <li class="with-megamenu has-menu-child-item position-static">
-                        <a href="#">Pages <i class="feather-chevron-down"></i></a>
-                        <!-- Start Mega Menu  -->
-                        <div class="rbt-megamenu grid-item-4">
-                            <div class="wrapper">
-                                <div class="row row--15">
-                                    <div class="col-lg-12 col-xl-3 col-xxl-3 single-mega-item">
-                                        <h3 class="rbt-short-title">Get Started</h3>
-                                        <ul class="mega-menu-item">
-                                            <li><a href="about-us-01.html">About Us</a></li>
-                                            <li><a href="about-us-02.html">About Us 02</a></li>
-                                            <li><a href="event-grid.html">Event Grid</a></li>
-                                            <li><a href="event-list.html">Event List</a></li>
-                                            <li><a href="event-sidebar.html">Event Sidebar</a></li>
-                                            <li><a href="event-details.html">Event Details</a></li>
-                                            <li><a href="academy-gallery.html">Academy Gallery</a></li>
-                                            <li><a href="admission-guide.html">Admission Guide</a></li>
-                                        </ul>
-                                    </div>
-
-                                    <div class="col-lg-12 col-xl-3 col-xxl-3 single-mega-item">
-                                        <h3 class="rbt-short-title">Get Started</h3>
-                                        <ul class="mega-menu-item">
-                                            <li><a href="profile.html">Profile</a></li>
-                                            <li><a href="contact.html">Contact Us</a></li>
-                                            <li><a href="become-a-teacher.html">Become a Teacher</a></li>
-                                            <li><a href="instructor.html">Instructor</a></li>
-                                            <li><a href="faqs.html">FAQS</a></li>
-                                            <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                                            <li><a href="404.html">404 Page</a></li>
-                                            <li><a href="maintenance.html">Maintenance</a></li>
-                                        </ul>
-                                    </div>
-
-                                    <div class="col-lg-12 col-xl-3 col-xxl-3 single-mega-item">
-                                        <h3 class="rbt-short-title">Shop Pages</h3>
-                                        <ul class="mega-menu-item">
-                                            <li><a href="shop.html">Shop <span class="rbt-badge-card">Sale
-                                                        Anything</span></a></li>
-                                            <li><a href="single-product.html">Single Product</a></li>
-                                            <li><a href="cart.html">Cart Page</a></li>
-                                            <li><a href="checkout.html">Checkout</a></li>
-                                            <li><a href="wishlist.html">Wishlist Page</a></li>
-                                            <li><a href="my-account.html">My Acount</a></li>
-                                            <li><a href="login.html">Login & Register</a></li>
-                                            <li><a href="subscription.html">Subscription</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-lg-12 col-xl-3 col-xxl-3 single-mega-item">
-                                        <div class="mega-category-item">
-                                            <!-- Start Single Category  -->
-                                            <div class="nav-category-item">
-                                                <div class="thumbnail">
-                                                    <div class="image"><img src="assets/images/course/category-2.png"
-                                                            alt="Course images"></div>
-                                                    <a href="course-filter-one-toggle.html">
-                                                        <span>Online Education</span>
-                                                        <i class="feather-chevron-right"></i>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <!-- End Single Category  -->
-
-                                            <!-- Start Single Category  -->
-                                            <div class="nav-category-item">
-                                                <div class="thumbnail">
-                                                    <div class="image"><img src="assets/images/course/category-1.png"
-                                                            alt="Course images"></div>
-                                                    <a href="course-filter-one-toggle.html">
-                                                        <span>Language Club</span>
-                                                        <i class="feather-chevron-right"></i>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <!-- End Single Category  -->
-
-                                            <!-- Start Single Category  -->
-                                            <div class="nav-category-item">
-                                                <div class="thumbnail">
-                                                    <div class="image"><img src="assets/images/course/category-4.png"
-                                                            alt="Course images"></div>
-                                                    <a href="course-filter-one-toggle.html">
-                                                        <span>University Status</span>
-                                                        <i class="feather-chevron-right"></i>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <!-- End Single Category  -->
-
-                                            <!-- Start Single Category  -->
-                                            <div class="nav-category-item">
-                                                <div class="thumbnail">
-                                                    <a href="course-filter-one-toggle.html">
-                                                        <span>Course School</span>
-                                                        <i class="feather-chevron-right"></i>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <!-- End Single Category  -->
-
-                                            <!-- Start Single Category  -->
-                                            <div class="nav-category-item">
-                                                <div class="thumbnail">
-                                                    <div class="image"><img src="assets/images/course/category-9.png"
-                                                            alt="Course images"></div>
-                                                    <a href="course-filter-one-toggle.html">
-                                                        <span>Academy</span>
-                                                        <i class="feather-chevron-right"></i>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <!-- End Single Category  -->
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End Mega Menu  -->
-                    </li>
-
-                    <li class="with-megamenu has-menu-child-item position-static">
-                        <a href="#">Elements <i class="feather-chevron-down"></i></a>
-                        <!-- Start Mega Menu  -->
-                        <div class="rbt-megamenu grid-item-3">
-                            <div class="wrapper">
-                                <div class="row row--15 single-dropdown-menu-presentation">
-                                    <div class="col-lg-4 col-xxl-4 single-mega-item">
-                                        <ul class="mega-menu-item">
-                                            <li><a href="style-guide.html">Style Guide <span
-                                                        class="rbt-badge-card">Hot</span></a></li>
-                                            <li><a href="accordion.html">Accordion</a></li>
-                                            <li><a href="advancetab.html">Advance Tab</a></li>
-                                            <li><a href="brand.html">Brand</a></li>
-                                            <li><a href="button.html">Button</a></li>
-                                            <li><a href="badge.html">Badge</a></li>
-                                            <li><a href="card.html">Card</a></li>
-                                            <li><a href="call-to-action.html">Call To Action</a></li>
-                                        </ul>
-                                    </div>
-
-                                    <div class="col-lg-4 col-xxl-4 single-mega-item">
-                                        <ul class="mega-menu-item">
-                                            <li><a href="counterup.html">Counter</a></li>
-                                            <li><a href="category.html">Categories</a></li>
-                                            <li><a href="header.html">Header Style</a></li>
-                                            <li><a href="newsletter.html">Newsletter</a></li>
-                                            <li><a href="team.html">Team</a></li>
-                                            <li><a href="social.html">Social</a></li>
-                                            <li><a href="list-style.html">List Style</a></li>
-                                            <li><a href="gallery.html">Gallery</a></li>
-                                        </ul>
-                                    </div>
-
-                                    <div class="col-lg-4 col-xxl-4 single-mega-item">
-                                        <ul class="mega-menu-item">
-                                            <li><a href="pricing.html">Pricing</a></li>
-                                            <li><a href="progressbar.html">Progressbar</a></li>
-                                            <li><a href="testimonial.html">Testimonial</a></li>
-                                            <li><a href="service.html">Service</a></li>
-                                            <li><a href="split.html">Split Area</a></li>
-                                            <li><a href="search.html">Search Style</a></li>
-                                            <li><a href="instagram.html">Instagram Style</a></li>
-                                            <li><a href="#">& More Coming</a></li>
-
-                                        </ul>
-                                    </div>
-
-                                </div>
-                                <div class="row">
-                                    <div class="col-lg-12">
-                                        <div class="btn-wrapper">
-                                            <a class="rbt-btn btn-gradient hover-icon-reverse square btn-xl w-100 text-center mt--30 hover-transform-none"
-                                                href="#">
-                                                <span class="icon-reverse-wrapper">
-                                                    <span class="btn-text">Visit Histudy Template</span>
-                                                    <span class="btn-icon"><i class="feather-arrow-right"></i></span>
-                                                    <span class="btn-icon"><i class="feather-arrow-right"></i></span>
-                                                </span>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End Mega Menu  -->
-                    </li>
-
-                    <li class="with-megamenu has-menu-child-item position-static">
-                        <a href="#">Blog <i class="feather-chevron-down"></i></a>
-                        <!-- Start Mega Menu  -->
-                        <div class="rbt-megamenu grid-item-3">
-                            <div class="wrapper">
-                                <div class="row row--15">
-                                    <div class="col-lg-12 col-xl-4 col-xxl-4 single-mega-item">
-                                        <h3 class="rbt-short-title">Blog Styles</h3>
-                                        <ul class="mega-menu-item">
-                                            <li><a href="blog-list.html">Blog List</a></li>
-                                            <li><a href="blog.html">Blog Grid</a></li>
-                                            <li><a href="blog-grid-minimal.html">Blog Grid Minimal</a></li>
-                                            <li><a href="blog-with-sidebar.html">Blog With Sidebar</a></li>
-                                            <li><a href="blog-details.html">Blog Details</a></li>
-                                            <li><a href="post-format-standard.html">Post Format Standard</a></li>
-                                            <li><a href="post-format-gallery.html">Post Format Gallery</a></li>
-                                        </ul>
-                                    </div>
-
-                                    <div class="col-lg-12 col-xl-4 col-xxl-4 single-mega-item">
-                                        <h3 class="rbt-short-title">Get Started</h3>
-                                        <ul class="mega-menu-item">
-                                            <li><a href="post-format-quote.html">Post Format Quote</a></li>
-                                            <li><a href="post-format-audio.html">Post Format Audio</a></li>
-                                            <li><a href="post-format-video.html">Post Format Video</a></li>
-                                            <li><a href="#">Media Under Title <span
-                                                        class="rbt-badge-card">Coming</span></a></li>
-                                            <li><a href="#">Sticky Sidebar <span
-                                                        class="rbt-badge-card">Coming</span></a></li>
-                                            <li><a href="#">Auto Masonry <span class="rbt-badge-card">Coming</span></a>
-                                            </li>
-                                            <li><a href="#">Meta Overlaid <span class="rbt-badge-card">Coming</span></a>
-                                            </li>
-                                        </ul>
-                                    </div>
-
-                                    <div class="col-lg-12 col-xl-4 col-xxl-4 single-mega-item">
-                                        <div class="rbt-ads-wrapper">
-                                            <a class="d-block" href="#"><img src="assets/images/service/mobile-cat.jpg"
-                                                    alt="Education Images"></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End Mega Menu  -->
-                    </li>
-                </ul>
-            </nav>
-
-            <div class="mobile-menu-bottom">
-                <div class="rbt-btn-wrapper mb--20">
-                    <a class="rbt-btn btn-border-gradient radius-round btn-sm hover-transform-none w-100 justify-content-center text-center"
-                        href="#">
-                        <span>Enroll Now</span>
-                    </a>
-                </div>
-
-                <div class="social-share-wrapper">
-                    <span class="rbt-short-title d-block">Find With Us</span>
-                    <ul class="social-icon social-default transparent-with-border justify-content-start mt--20">
-                        <li><a href="https://www.facebook.com/">
-                                <i class="feather-facebook"></i>
-                            </a>
-                        </li>
-                        <li><a href="https://www.twitter.com">
-                                <i class="feather-twitter"></i>
-                            </a>
-                        </li>
-                        <li><a href="https://www.instagram.com/">
-                                <i class="feather-instagram"></i>
-                            </a>
-                        </li>
-                        <li><a href="https://www.linkdin.com/">
-                                <i class="feather-linkedin"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-        </div>
-    </div>
-    <!-- Start Side Vav -->
-    <div class="rbt-cart-side-menu">
-        <div class="inner-wrapper">
-            <div class="inner-top">
-                <div class="content">
-                    <div class="title">
-                        <h4 class="title mb--0">Your shopping cart</h4>
-                    </div>
-                    <div class="rbt-btn-close" id="btn_sideNavClose">
-                        <button class="minicart-close-button rbt-round-btn"><i class="feather-x"></i></button>
-                    </div>
-                </div>
-            </div>
-            <nav class="side-nav w-100">
-                <ul class="rbt-minicart-wrapper">
-                    <li class="minicart-item">
-                        <div class="thumbnail">
-                            <a href="#">
-                                <img src="assets/images/product/1.jpg" alt="Product Images">
-                            </a>
-                        </div>
-                        <div class="product-content">
-                            <h6 class="title"><a href="single-product.html">Miracle Morning</a></h6>
-
-                            <span class="quantity">1 * <span class="price">$22</span></span>
-                        </div>
-                        <div class="close-btn">
-                            <button class="rbt-round-btn"><i class="feather-x"></i></button>
-                        </div>
-                    </li>
-
-                    <li class="minicart-item">
-                        <div class="thumbnail">
-                            <a href="#">
-                                <img src="assets/images/product/7.jpg" alt="Product Images">
-                            </a>
-                        </div>
-                        <div class="product-content">
-                            <h6 class="title"><a href="single-product.html">Happy Strong</a></h6>
-
-                            <span class="quantity">1 * <span class="price">$30</span></span>
-                        </div>
-                        <div class="close-btn">
-                            <button class="rbt-round-btn"><i class="feather-x"></i></button>
-                        </div>
-                    </li>
-
-                    <li class="minicart-item">
-                        <div class="thumbnail">
-                            <a href="#">
-                                <img src="assets/images/product/3.jpg" alt="Product Images">
-                            </a>
-                        </div>
-                        <div class="product-content">
-                            <h6 class="title"><a href="single-product.html">Rich Dad Poor Dad</a></h6>
-
-                            <span class="quantity">1 * <span class="price">$50</span></span>
-                        </div>
-                        <div class="close-btn">
-                            <button class="rbt-round-btn"><i class="feather-x"></i></button>
-                        </div>
-                    </li>
-
-                    <li class="minicart-item">
-                        <div class="thumbnail">
-                            <a href="#">
-                                <img src="assets/images/product/4.jpg" alt="Product Images">
-                            </a>
-                        </div>
-                        <div class="product-content">
-                            <h6 class="title"><a href="single-product.html">Momentum Theorem</a></h6>
-
-                            <span class="quantity">1 * <span class="price">$50</span></span>
-                        </div>
-                        <div class="close-btn">
-                            <button class="rbt-round-btn"><i class="feather-x"></i></button>
-                        </div>
-                    </li>
-                </ul>
-            </nav>
-
-            <div class="rbt-minicart-footer">
-                <hr class="mb--0">
-                <div class="rbt-cart-subttotal">
-                    <p class="subtotal"><strong>Subtotal:</strong></p>
-                    <p class="price">$121</p>
-                </div>
-                <hr class="mb--0">
-                <div class="rbt-minicart-bottom mt--20">
-                    <div class="view-cart-btn">
-                        <a class="rbt-btn btn-border icon-hover w-100 text-center" href="#">
-                            <span class="btn-text">View Cart</span>
-                            <span class="btn-icon"><i class="feather-arrow-right"></i></span>
-                        </a>
-                    </div>
-                    <div class="checkout-btn mt--20">
-                        <a class="rbt-btn btn-gradient icon-hover w-100 text-center" href="#">
-                            <span class="btn-text">Checkout</span>
-                            <span class="btn-icon"><i class="feather-arrow-right"></i></span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-    <!-- End Side Vav -->
-    <a class="close_side_menu" href="javascript:void(0);"></a>
-<div class="slider-area rbt-banner-10 height-400 bg_image bg_image--11" data-black-overlay="5">
         <div class="container">
+
             <div class="row">
+
                 <div class="col-lg-12">
+
                     <div class="inner text-center">
 
-                        <h1 class="title display-one text-white">My Profile</h1>
+                        <h1 class="title display-one text-white">
+                            Student List
+                        </h1>
+
+                        <p class="description text-white opacity-80">
+                            Select an assigned teaching subject to view its student roster and details.
+                        </p>
 
                     </div>
+
                 </div>
+
             </div>
+
         </div>
+
     </div>
-    <!-- Start Card Style -->
+
+
+    <!-- =========================================
+         DASHBOARD
+    ========================================= -->
     <div class="rbt-dashboard-area rbt-section-gap">
+
         <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                   
 
-                    <div class="row g-5">
-                        <div class="col-lg-3">
-                            <!-- Start Dashboard Sidebar  -->
-                            <div class="rbt-default-sidebar sticky-top rbt-shadow-box rbt-gradient-border">
-                                <div class="inner">
-                                    <div class="content-item-content">
+            <div class="row g-5">
 
-                                        <div class="rbt-default-sidebar-wrapper">
-                                            <div class="section-title mb--20">
-                                                <h6 class="rbt-title-style-2">Welcome, Jone Due</h6>
-                                            </div>
-                                            <nav class="mainmenu-nav">
-                                                <ul class="dashboard-mainmenu rbt-default-sidebar-list">
-                                                                                            <li><a href="instructor-profile.html"><i class="feather-user"></i><span>My Profile</span></a></li>
-                                                </ul>
-                                            </nav>
 
-                                           
+                <!-- =====================================
+                     LEFT SIDEBAR
+                ====================================== -->
+                <div class="col-lg-3">
 
-                                           <nav class="mainmenu-nav">
-    <ul class="dashboard-mainmenu rbt-default-sidebar-list">
-        <li>
-            <a href="students-list.html">
-                <i class="feather-users"></i>
-                <span>Students List</span>
-            </a>
-        </li>
-    </ul>
-</nav>
+                    <div class="rbt-default-sidebar sticky-top rbt-shadow-box rbt-gradient-border">
 
-<nav class="mainmenu-nav">
-    <ul class="dashboard-mainmenu rbt-default-sidebar-list">
-        <li>
-            <a href="classlink.html">
-                <i class="feather-link"></i>
-                <span>Class Link</span>
-            </a>
-        </li>
-    </ul>
-</nav>
+                        <div class="inner">
 
-<nav class="mainmenu-nav">
-    <ul class="dashboard-mainmenu rbt-default-sidebar-list">
-        <li>
-            <a href="tutor-attendance.html">
-                <i class="feather-calendar"></i>
-                <span>Attendance</span>
-            </a>
-        </li>
-    </ul>
-</nav>
+                            <div class="content-item-content">
 
-<nav class="mainmenu-nav">
-    <ul class="dashboard-mainmenu rbt-default-sidebar-list">
-        <li>
-            <a href="tutor-homework.html">
-                <i class="feather-file-text"></i>
-                <span>Homework &amp; Notes</span>
-            </a>
-        </li>
-    </ul>
-</nav>
+                                <div class="rbt-default-sidebar-wrapper">
 
-                                            <div class="section-title mt--40 mb--20">
-                                                <h6 class="rbt-title-style-2">User</h6>
-                                            </div>
 
-                                            <nav class="mainmenu-nav">
-                                                <ul class="dashboard-mainmenu rbt-default-sidebar-list">
-                                                    <li><a href="tuitor-edit.html"><i class="feather-settings"></i><span>Edit Profile</span></a></li>
-                                                    <li><a href="index.html"><i class="feather-log-out"></i><span>Logout</span></a></li>
-                                                </ul>
-                                            </nav>
+                                    <div class="section-title mb--20">
+
+                                        <h6 class="rbt-title-style-2">
+                                            Welcome, Jone Due
+                                        </h6>
+
+                                    </div>
+
+
+                                    <nav class="mainmenu-nav">
+
+                                        <ul class="dashboard-mainmenu rbt-default-sidebar-list">
+
+                                            <li>
+                                                <a href="instructor-profile.html">
+
+                                                    <i class="feather-user"></i>
+
+                                                    <span>
+                                                        My Profile
+                                                    </span>
+
+                                                </a>
+                                            </li>
+
+                                        </ul>
+
+                                    </nav>
+
+
+                                    <nav class="mainmenu-nav">
+
+                                        <ul class="dashboard-mainmenu rbt-default-sidebar-list">
+
+                                            <li class="active">
+
+                                                <a class="active" href="students-list.html">
+
+                                                    <i class="feather-users"></i>
+
+                                                    <span>
+                                                        Students List
+                                                    </span>
+
+                                                </a>
+
+                                            </li>
+
+                                        </ul>
+
+                                    </nav>
+
+
+                                    <nav class="mainmenu-nav">
+
+                                        <ul class="dashboard-mainmenu rbt-default-sidebar-list">
+
+                                            <li>
+
+                                                <a href="classlink.html">
+
+                                                    <i class="feather-link"></i>
+
+                                                    <span>
+                                                        Class Link
+                                                    </span>
+
+                                                </a>
+
+                                            </li>
+
+                                        </ul>
+
+                                    </nav>
+
+
+                                    <nav class="mainmenu-nav">
+
+                                        <ul class="dashboard-mainmenu rbt-default-sidebar-list">
+
+                                            <li>
+
+                                                <a href="tutor-attendance.html">
+
+                                                    <i class="feather-calendar"></i>
+
+                                                    <span>
+                                                        Attendance
+                                                    </span>
+
+                                                </a>
+
+                                            </li>
+
+                                        </ul>
+
+                                    </nav>
+
+
+                                    <nav class="mainmenu-nav">
+
+                                        <ul class="dashboard-mainmenu rbt-default-sidebar-list">
+
+                                            <li>
+
+                                                <a href="tutor-homework.html">
+
+                                                    <i class="feather-file-text"></i>
+
+                                                    <span>
+                                                        Homework &amp; Notes
+                                                    </span>
+
+                                                </a>
+
+                                            </li>
+
+                                        </ul>
+
+                                    </nav>
+
+
+                                    <div class="section-title mt--40 mb--20">
+
+                                        <h6 class="rbt-title-style-2">
+                                            User
+                                        </h6>
+
+                                    </div>
+
+
+                                    <nav class="mainmenu-nav">
+
+                                        <ul class="dashboard-mainmenu rbt-default-sidebar-list">
+
+                                            <li>
+
+                                                <a href="tuitor-edit.html">
+
+                                                    <i class="feather-settings"></i>
+
+                                                    <span>
+                                                        Edit Profile
+                                                    </span>
+
+                                                </a>
+
+                                            </li>
+
+
+                                            <li>
+
+                                                <a href="index.html">
+
+                                                    <i class="feather-log-out"></i>
+
+                                                    <span>
+                                                        Logout
+                                                    </span>
+
+                                                </a>
+
+                                            </li>
+
+                                        </ul>
+
+                                    </nav>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =====================================
+                     RIGHT MAIN CONTENT
+                ====================================== -->
+                <div class="col-lg-9">
+
+                    <div class="rbt-dashboard-content bg-color-white rbt-shadow-box">
+
+                        <div class="content">
+
+
+                            <!-- Header -->
+                            <div class="roster-header-container">
+
+                                <div class="roster-title-group">
+
+                                    <h4 class="rbt-title-style-3">
+                                        Student List
+                                    </h4>
+
+                                    <p>
+                                        Click an assigned subject card to view its student roster.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- Subject Title -->
+                            <div class="subject-cards-title">
+
+                                <i class="feather-grid"
+                                   style="color:#6c4df6;">
+                                </i>
+
+                                Assigned Teaching Subjects
+
+                            </div>
+
+
+                            <!-- =====================================
+                                 SUBJECT CARDS
+                            ====================================== -->
+                            <div class="subject-grid">
+
+
+                                <!-- English -->
+                                <div class="subject-card"
+                                     onclick="toggleSubject('english')"
+                                     id="card-subject-english">
+
+                                    <div class="subject-card-header">
+
+                                        <div class="subject-icon-box">
+
+                                            <i class="feather-book"></i>
+
+                                        </div>
+
+                                        <span class="subject-badge"
+                                              id="badge-count-english">
+                                            6 Students
+                                        </span>
+
+                                    </div>
+
+
+                                    <h5 class="subject-card-title">
+                                        English Language
+                                    </h5>
+
+
+                                    <p class="subject-card-sub">
+                                        GCSE &amp; Secondary Level • Mon &amp; Wed
+                                    </p>
+
+
+                                    <div class="subject-card-footer">
+
+                                        <span>
+                                            Schedule: 4:00 PM
+                                        </span>
+
+
+                                        <span class="active-indicator"
+                                              id="indicator-english"
+                                              style="display:none;">
+
+                                            <i class="feather-check-circle"></i>
+
+                                            Viewing Roster
+
+                                        </span>
+
+                                    </div>
+
+                                </div>
+
+
+                                <!-- Tamil -->
+                                <div class="subject-card"
+                                     onclick="toggleSubject('tamil')"
+                                     id="card-subject-tamil">
+
+                                    <div class="subject-card-header">
+
+                                        <div class="subject-icon-box">
+
+                                            <i class="feather-feather"></i>
+
+                                        </div>
+
+
+                                        <span class="subject-badge"
+                                              id="badge-count-tamil">
+                                            4 Students
+                                        </span>
+
+                                    </div>
+
+
+                                    <h5 class="subject-card-title">
+                                        Tamil Literature
+                                    </h5>
+
+
+                                    <p class="subject-card-sub">
+                                        Primary &amp; Secondary • Tue &amp; Thu
+                                    </p>
+
+
+                                    <div class="subject-card-footer">
+
+                                        <span>
+                                            Schedule: 5:30 PM
+                                        </span>
+
+
+                                        <span class="active-indicator"
+                                              id="indicator-tamil"
+                                              style="display:none;">
+
+                                            <i class="feather-check-circle"></i>
+
+                                            Viewing Roster
+
+                                        </span>
+
+                                    </div>
+
+                                </div>
+
+
+                                <!-- Creative Writing -->
+                                <div class="subject-card"
+                                     onclick="toggleSubject('creative')"
+                                     id="card-subject-creative">
+
+                                    <div class="subject-card-header">
+
+                                        <div class="subject-icon-box">
+
+                                            <i class="feather-edit-3"></i>
+
+                                        </div>
+
+
+                                        <span class="subject-badge"
+                                              id="badge-count-creative">
+                                            4 Students
+                                        </span>
+
+                                    </div>
+
+
+                                    <h5 class="subject-card-title">
+                                        Creative Writing
+                                    </h5>
+
+
+                                    <p class="subject-card-sub">
+                                        LAMDA &amp; Essay Prep • Saturday
+                                    </p>
+
+
+                                    <div class="subject-card-footer">
+
+                                        <span>
+                                            Schedule: 10:00 AM
+                                        </span>
+
+
+                                        <span class="active-indicator"
+                                              id="indicator-creative"
+                                              style="display:none;">
+
+                                            <i class="feather-check-circle"></i>
+
+                                            Viewing Roster
+
+                                        </span>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- =====================================
+                                 STUDENT ROSTER
+                                 NO SELECT SUBJECT PROMPT
+                            ====================================== -->
+                            <div id="roster-section-container">
+
+
+                                <!-- Toolbar -->
+                                <div class="roster-toolbar">
+
+
+                                    <div class="toolbar-left">
+
+                                        <div class="selected-subject-tag">
+
+                                            <span id="active-subject-title">
+                                                English Language
+                                            </span>
+
+                                            Roster
+
+                                        </div>
+
+
+                                        <div class="total-counter-pill">
+
+                                            <i class="feather-users"></i>
+
+                                            Total:
+
+                                            <span id="total-student-count">
+                                                6
+                                            </span>
+
+                                            Students
+
                                         </div>
 
                                     </div>
-                                </div>
-                            </div>
-                            <!-- End Dashboard Sidebar  -->
-                        </div>
-                        <div class="col-lg-9">
-                            <!-- Start Enrole Course  -->
-                            <div class="rbt-dashboard-content bg-color-white rbt-shadow-box">
-                                <div class="content">
-                                    <div class="section-title">
-                                        <h4 class="rbt-title-style-3">My Students</h4>
-                                    </div>
 
-                                    <div class="rbt-dashboard-table table-responsive mobile-table-750">
-                                        <table class="rbt-table table table-borderless">
-    <thead>
-        <tr>
-            <th>Student Name</th>
-            <th>Course</th>
-            <th>Class Date</th>
-            <th>Class Time</th>
-            <th>Status</th>
-        </tr>
-    </thead>
 
-    <tbody>
+                                    <div class="toolbar-right">
 
-        <tr>
-            <td>Emily Johnson</td>
-            <td>Reading &amp; Comprehension</td>
-            <td>12 Aug 2026</td>
-            <td>4:00 PM - 5:00 PM</td>
-            <td><span class="rbt-badge-5 bg-color-success-opacity color-success">Confirmed</span></td>
-        </tr>
 
-        <tr>
-            <td>Daniel Smith</td>
-            <td>Creative Writing</td>
-            <td>12 Aug 2026</td>
-            <td>5:30 PM - 6:30 PM</td>
-            <td><span class="rbt-badge-5 bg-color-success-opacity color-success">Confirmed</span></td>
-        </tr>
+                                        <!-- Search -->
+                                        <div class="roster-search-input">
 
-        <tr>
-            <td>Sophia Williams</td>
-            <td>English Language</td>
-            <td>13 Aug 2026</td>
-            <td>4:30 PM - 5:30 PM</td>
-            <td><span class="rbt-badge-5 bg-color-success-opacity color-success">Confirmed</span></td>
-        </tr>
+                                            <i class="feather-search"></i>
 
-        <tr>
-            <td>Oliver Brown</td>
-            <td>LAMDA &amp; Public Speaking</td>
-            <td>13 Aug 2026</td>
-            <td>6:00 PM - 7:00 PM</td>
-            <td><span class="rbt-badge-5 bg-color-success-opacity color-success">Confirmed</span></td>
-        </tr>
+                                            <input type="text"
+                                                   id="student-search-input"
+                                                   placeholder="Search student name or ID..."
+                                                   onkeyup="filterStudents()">
 
-        <tr>
-            <td>Amelia Davis</td>
-            <td>Mock Exams &amp; Intensive Revision</td>
-            <td>14 Aug 2026</td>
-            <td>10:00 AM - 12:00 PM</td>
-            <td><span class="rbt-badge-5 bg-color-success-opacity color-success">Confirmed</span></td>
-        </tr>
+                                        </div>
 
-        <tr>
-            <td>James Wilson</td>
-            <td>Spelling &amp; Grammar</td>
-            <td>14 Aug 2026</td>
-            <td>3:00 PM - 4:00 PM</td>
-            <td><span class="rbt-badge-5 bg-color-success-opacity color-success">Confirmed</span></td>
-        </tr>
 
-        <tr>
-            <td>Charlotte Taylor</td>
-            <td>Reading &amp; Comprehension</td>
-            <td>15 Aug 2026</td>
-            <td>9:00 AM - 10:00 AM</td>
-            <td><span class="rbt-badge-5 bg-color-success-opacity color-success">Confirmed</span></td>
-        </tr>
+                                        <!-- Sort -->
+                                        <button class="sort-toggle-btn"
+                                                id="sort-toggle-btn"
+                                                onclick="toggleSortOrder()">
 
-        <tr>
-            <td>Benjamin Anderson</td>
-            <td>Creative Writing</td>
-            <td>15 Aug 2026</td>
-            <td>11:00 AM - 12:00 PM</td>
-            <td><span class="rbt-badge-5 bg-color-success-opacity color-success">Confirmed</span></td>
-        </tr>
+                                            <i class="feather-arrow-up"
+                                               id="sort-icon">
+                                            </i>
 
-        <tr>
-            <td>Grace Thomas</td>
-            <td>English Language</td>
-            <td>16 Aug 2026</td>
-            <td>5:00 PM - 6:00 PM</td>
-            <td><span class="rbt-badge-5 bg-color-success-opacity color-success">Confirmed</span></td>
-        </tr>
+                                            Name:
 
-        <tr>
-            <td>Charlotte Taylor</td>
-            <td>Reading &amp; Comprehension</td>
-            <td>15 Aug 2026</td>
-            <td>9:00 AM - 10:00 AM</td>
-            <td><span class="rbt-badge-5 bg-primary-opacity">Pending</span></td>
-        </tr>
+                                            <span id="sort-label">
+                                                A-Z
+                                            </span>
 
-        <tr>
-            <td>Benjamin Anderson</td>
-            <td>Creative Writing</td>
-            <td>15 Aug 2026</td>
-            <td>11:00 AM - 12:00 PM</td>
-            <td><span class="rbt-badge-5 bg-color-danger-opacity color-danger">Cancelled</span></td>
-        </tr>
+                                        </button>
 
-    </tbody>
-</table>
+
+                                        <!-- New -->
+                                        <button type="button"
+                                                class="rbt-btn rbt-switch-btn btn-gradient new-student-filter-btn hover-transform-none"
+                                                id="new-students-btn"
+                                                onclick="toggleNewStudentsFilter()">
+
+                                            <span data-text="New Students">
+                                                New Students
+                                            </span>
+
+                                        </button>
+
                                     </div>
 
                                 </div>
+
+
+                                <!-- =====================================
+                                     STUDENT TABLE
+                                ====================================== -->
+                                <div class="student-table-card">
+
+                                    <div class="table-responsive">
+
+                                        <table class="student-table">
+
+                                            <thead>
+
+                                                <tr>
+
+                                                    <th style="width:10%;">
+                                                        S.No
+                                                    </th>
+
+                                                    <th style="width:22%;">
+                                                        Student ID
+                                                    </th>
+
+                                                    <th style="width:38%;">
+                                                        Student Name
+                                                    </th>
+
+                                                    <th style="width:18%;">
+                                                        Joint Date
+                                                    </th>
+
+                                                    <th style="width:12%; text-align:center;">
+                                                        Action
+                                                    </th>
+
+                                                </tr>
+
+                                            </thead>
+
+
+                                            <tbody id="student-table-body">
+
+                                            </tbody>
+
+                                        </table>
+
+                                    </div>
+
+                                </div>
+
                             </div>
-                            <!-- End Enrole Course  -->
+
                         </div>
+
                     </div>
 
                 </div>
+
             </div>
+
         </div>
+
     </div>
-    <!-- End Card Style -->
 
 
+    <!-- =========================================
+         STUDENT DETAIL MODAL
+    ========================================= -->
+    <div class="modal-overlay"
+         id="detail-modal">
+
+        <div class="modal-card-box">
 
 
-    <div class="rbt-separator-mid">
-        <div class="container">
-            <hr class="rbt-separator m-0">
+            <!-- Modal Header -->
+            <div class="modal-header-bg">
+
+                <button class="modal-close-btn"
+                        onclick="closeModal('detail-modal')">
+
+                    <i class="feather-x"></i>
+
+                </button>
+
+
+                <div style="display:flex; align-items:center; gap:14px;">
+
+                    <i class="feather-user"
+                       style="font-size:26px;">
+                    </i>
+
+
+                    <div>
+
+                        <h4 id="modal-student-name"
+                            style="margin:0; color:#fff; font-weight:700;">
+
+                            Student Name
+
+                        </h4>
+
+
+                        <span id="modal-student-id"
+                              style="font-size:13px; opacity:0.9;">
+
+                            STD-2024-101
+
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Modal Body -->
+            <div class="student-modal-body">
+
+
+                <div class="detail-grid">
+
+
+                    <div class="detail-item">
+
+                        <label>
+                            Student ID
+                        </label>
+
+                        <p id="modal-student-id-display">
+                            STD-2024-101
+                        </p>
+
+                    </div>
+
+
+                    <div class="detail-item">
+
+                        <label>
+                            Student Full Name
+                        </label>
+
+                        <p id="modal-student-full-name">
+                            Alexander Wright
+                        </p>
+
+                    </div>
+
+
+                    <div class="detail-item">
+
+                        <label>
+                            Date of Birth (DOB)
+                        </label>
+
+                        <p id="modal-student-dob">
+                            14 March 2010
+                        </p>
+
+                    </div>
+
+
+                    <div class="detail-item">
+
+                        <label>
+                            Gender
+                        </label>
+
+                        <p id="modal-student-gender">
+                            Male
+                        </p>
+
+                    </div>
+
+
+                    <div class="detail-item">
+
+                        <label>
+                            Email Address
+                        </label>
+
+                        <p id="modal-student-email">
+                            student@gmail.com
+                        </p>
+
+                    </div>
+
+
+                    <div class="detail-item">
+
+                        <label>
+                            Candidate Phone No.
+                        </label>
+
+                        <p id="modal-student-phone">
+                            +44 7700 900101
+                        </p>
+
+                    </div>
+
+
+                    <div class="detail-item">
+
+                        <label>
+                            Assigned Date (Start Date)
+                        </label>
+
+                        <p id="modal-student-joindate">
+                            12 Jan 2024
+                        </p>
+
+                    </div>
+
+
+                    <div class="detail-item">
+
+                        <label>
+                            Parent Contact No.
+                        </label>
+
+                        <p id="modal-student-parent-phone">
+                            +44 7900 123456
+                        </p>
+
+                    </div>
+
+
+                    <div class="detail-item">
+
+                        <label>
+                            Classes Attended
+                        </label>
+
+                        <p id="modal-student-attended"
+                           class="attendance-highlight">
+
+                            24 Classes
+
+                        </p>
+
+                    </div>
+
+
+                    <div class="detail-item">
+
+                        <label>
+                            Classes Missed
+                        </label>
+
+                        <p id="modal-student-missed"
+                           style="color:#ef4444; font-weight:700;">
+
+                            1 Class
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div style="text-align:right;">
+
+                    <button class="rbt-btn rbt-switch-btn btn-gradient btn-sm hover-transform-none"
+                            onclick="closeModal('detail-modal')">
+
+                        <span data-text="Close Profile">
+                            Close Profile
+                        </span>
+
+                    </button>
+
+                </div>
+
+            </div>
+
         </div>
+
     </div>
-    <!-- Start Footer aera -->
+
+
+    <!-- =========================================
+         FOOTER
+    ========================================= -->
     <footer class="rbt-footer footer-style-1 bg-color-white overflow-hidden">
+
         <div class="footer-top">
+
             <div class="container">
+
                 <div class="row g-5">
+
+
+                    <!-- Footer About -->
                     <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+
                         <div class="footer-widget">
+
                             <div class="logo">
+
                                 <a href="index.html">
-                                    <img src="assets/images/logo/logo.png" alt="Edu-cause">
+
+                                    <img src="assets/images/logo/logo.png"
+                                         alt="Edu-Loop Sign Logo">
+
                                 </a>
+
                             </div>
 
-                            <p class="description mt--20">We’re always in search for talented
-                                and motivated people. Don’t be shy introduce yourself!
+
+                            <p class="description mt--20">
+
+                                We are always seeking talented and motivated
+                                individuals to join our team.
+
                             </p>
 
+
                             <ul class="social-icon social-default justify-content-start">
-                                <li><a href="https://www.facebook.com/">
+
+                                <li>
+                                    <a href="https://www.facebook.com/">
                                         <i class="feather-facebook"></i>
                                     </a>
                                 </li>
 
-                                <li><a href="https://www.instagram.com/">
+                                <li>
+                                    <a href="https://www.twitter.com">
+                                        <i class="feather-twitter"></i>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="https://www.instagram.com/">
                                         <i class="feather-instagram"></i>
                                     </a>
                                 </li>
-                                <li><a href="https://www.linkdin.com/">
+
+                                <li>
+                                    <a href="https://www.linkdin.com/">
                                         <i class="feather-linkedin"></i>
                                     </a>
                                 </li>
-                                <li><a href="https://www.twitter.com">
-                                        <i class="feather-youtube"></i>
+
+                            </ul>
+
+
+                            <div class="contact-btn mt--30">
+
+                                <a class="rbt-btn hover-icon-reverse btn-border-gradient radius-round"
+                                   href="login-register.html">
+
+                                    <div class="icon-reverse-wrapper">
+
+                                        <span class="btn-text">
+                                            Contact With Us
+                                        </span>
+
+                                        <span class="btn-icon">
+                                            <i class="feather-arrow-right"></i>
+                                        </span>
+
+                                        <span class="btn-icon">
+                                            <i class="feather-arrow-right"></i>
+                                        </span>
+
+                                    </div>
+
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Useful Links -->
+                    <div class="col-lg-2 col-md-6 col-sm-6 col-12">
+
+                        <div class="footer-widget">
+
+                            <h5 class="ft-title">
+                                Useful Links
+                            </h5>
+
+                            <ul class="ft-link">
+
+                                <li>
+                                    <a href="our-team.html">
+                                        Our Team
                                     </a>
                                 </li>
+
+                                <li>
+                                    <a href="our-tuition.html">
+                                        Our Tuition
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="holiday-camps.html">
+                                        Holiday Camps
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="plans-and-pricing.html">
+                                        Plans &amp; Pricing
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="book-online.html">
+                                        Book Online
+                                    </a>
+                                </li>
+
                             </ul>
 
-                           <!-- <div class="contact-btn mt--30">
-                                <a class="rbt-btn hover-icon-reverse btn-border-gradient radius-round" href="#">
-                                    <div class="icon-reverse-wrapper">
-                                        <span class="btn-text">Contact With Us</span>
-                                        <span class="btn-icon"><i class="feather-arrow-right"></i></span>
-                                        <span class="btn-icon"><i class="feather-arrow-right"></i></span>
-                                    </div>
-                                </a>
-                            </div> -->
                         </div>
+
                     </div>
 
+
+                    <!-- Programs -->
                     <div class="col-lg-2 col-md-6 col-sm-6 col-12">
+
                         <div class="footer-widget">
-                            <h5 class="ft-title">Quick Links</h5>
+
+                            <h5 class="ft-title">
+                                Popular Programs
+                            </h5>
+
                             <ul class="ft-link">
 
-                                
                                 <li>
-                                    <a href="our-team.html">Our Team</a>
+                                    <a href="our-tuition.html">
+                                        Primary Tuition
+                                    </a>
                                 </li>
+
                                 <li>
-                                    <a href="our-tuition.html">Our Tuition</a>
+                                    <a href="our-tuition.html">
+                                        Secondary Tuition
+                                    </a>
                                 </li>
+
                                 <li>
-                                    <a href="holiday-camps.html">Holiday Camps</a>
+                                    <a href="our-tuition.html">
+                                        GCSE Tuition
+                                    </a>
                                 </li>
+
                                 <li>
-                                    <a href="plans-pricing.html">Plans & Pricing</a>
+                                    <a href="our-tuition.html">
+                                        IGCSE Tuition
+                                    </a>
                                 </li>
+
                                 <li>
-                                    <a href="book-online.html">Book Online</a>
+                                    <a href="our-tuition.html">
+                                        A-Level Tuition
+                                    </a>
                                 </li>
+
+                                <li>
+                                    <a href="holiday-camps.html">
+                                        Holiday Camps
+                                    </a>
+                                </li>
+
                             </ul>
+
                         </div>
+
                     </div>
 
-                    <div class="col-lg-2 col-md-6 col-sm-6 col-12">
-                        <div class="footer-widget">
-                            <h5 class="ft-title">Popular Programs</h5>
-                            <ul class="ft-link">
-                                <li>
-                                    <a href="our-tuition.html">Primary Tuition</a>
-                                </li>
-                                <li>
-                                    <a href="our-tuition.html">Secondary Tuition</a>
-                                </li>
-                                <li>
-                                    <a href="our-tuition.html">GCSE Tuition</a>
-                                </li>
-                                <li>
-                                    <a href="our-tuition.html">IGCSE Tuition</a>
-                                </li>
-                                <li>
-                                    <a href="our-tuition.html">A-Level Tuition</a>
-                                </li>
-                                <li>
-                                    <a href="holiday-camps.html">Holiday Camps</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
 
+                    <!-- Contact -->
                     <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+
                         <div class="footer-widget">
-                            <h5 class="ft-title">Get Contact</h5>
+
+                            <h5 class="ft-title">
+                                Get Contact
+                            </h5>
+
                             <ul class="ft-link">
-                                <li><span>Phone:</span> <a href="#">(406) 555-0120</a></li>
-                                <li><span>E-mail:</span> <a href="mailto:hr@example.com">admin@example.com</a></li>
+
+                                <li>
+                                    <span>Phone:</span>
+                                    <a href="#">
+                                        (406) 555-0120
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <span>E-mail:</span>
+                                    <a href="mailto:hr@example.com">
+                                        admin@example.com
+                                    </a>
+                                </li>
+
                             </ul>
 
-                            <form class="newsletter-form mt--20" action="#">
-                                <h6 class="w-600">Location</h6>
-                                <p class="description">2000+ Our students are subscribe Around the World.<br> Don’t be
-                                    shy introduce yourself!</p>
 
+                            <div class="newsletter-form mt--20">
 
+                                <h6 class="w-600">
+                                    Location
+                                </h6>
 
-                            </form>
+                                <p class="description">
+
+                                    2000+ Our students are subscribe Around
+                                    the World.<br>
+
+                                    Don’t be shy introduce yourself!
+
+                                </p>
+
+                            </div>
+
                         </div>
+
                     </div>
+
                 </div>
+
             </div>
+
         </div>
+
+
         <div class="rbt-separator-mid">
+
             <div class="container">
+
                 <hr class="rbt-separator m-0">
+
             </div>
+
         </div>
-        <!-- Start Copyright Area  -->
+
+
         <div class="copyright-area copyright-style-1 ptb--20">
+
             <div class="container">
+
                 <div class="row align-items-center">
+
+
                     <div class="col-xxl-7 col-xl-7 col-lg-7 col-md-12 col-12">
+
                         <p class="rbt-link-hover text-center text-lg-start">
+
                             Copyright © 2024 by
-                            <a href="index.html">London Star Education Ltd.</a>
-                            All Rights Reserved. Designed by
-                            <a href="https://impinfo.in/" target="_blank">RKI Systems</a>
+
+                            <a href="index.html">
+                                London Star Education Ltd.
+                            </a>
+
+                            All Rights Reserved.
+
+                            Designed by
+
+                            <a href="https://impinfo.in/"
+                               target="_blank">
+
+                                RKI Systems
+
+                            </a>
+
                         </p>
+
                     </div>
+
+
                     <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-12 col-12">
-                        <ul
-                            class="copyright-link rbt-link-hover justify-content-center justify-content-lg-end mt_sm--10 mt_md--10">
-                            <li><a href="#">Terms of service</a></li>
-                            <li><a href="privacy-policy.html">Privacy policy</a></li>
-                            <li><a href="subscription.html">Subscription</a></li>
+
+                        <ul class="copyright-link rbt-link-hover justify-content-center justify-content-lg-end mt_sm--10 mt_md--10">
+
+                            <li>
+                                <a href="#">
+                                    Terms of service
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="privacy-policy.html">
+                                    Privacy policy
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="subscription.html">
+                                    Subscription
+                                </a>
+                            </li>
+
                         </ul>
+
                     </div>
+
                 </div>
+
             </div>
+
         </div>
-        <!-- End Copyright Area  -->
+
     </footer>
-    <!-- End Footer aera -->
+
+
+    <!-- Progress -->
     <div class="rbt-progress-parent">
-        <svg class="rbt-back-circle svg-inner" width="100%" height="100%" viewBox="-1 -1 102 102">
-            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+
+        <svg class="rbt-back-circle svg-inner"
+             width="100%"
+             height="100%"
+             viewBox="-1 -1 102 102">
+
+            <path d="M50,1 a49,49 0,1,0 0,98 a49,49 0,1,0 0,-98" />
+
         </svg>
+
     </div>
 
-    <!-- Floating Contact Buttons -->
+
+    <!-- =========================================
+         FLOATING CONTACT BUTTONS
+    ========================================= -->
     <div class="floating-contact">
 
-        <!-- Call -->
+
         <div class="contact-item call-item">
 
             <div class="contact-label call-label">
                 Talk To Our Experts
             </div>
 
-            <a href="tel:+919876543210" class="contact-button call-button" aria-label="Call us">
+            <a href="tel:+919876543210"
+               class="contact-button call-button"
+               aria-label="Call us">
+
                 <i class="fa fa-phone"></i>
+
             </a>
 
         </div>
 
 
-        <!-- WhatsApp -->
         <div class="contact-item whatsapp-item">
 
             <div class="contact-label whatsapp-label">
                 Message Us
             </div>
 
-            <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer"
-                class="contact-button whatsapp-button" aria-label="Chat with us on WhatsApp">
+            <a href="https://wa.me/919876543210"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="contact-button whatsapp-button"
+               aria-label="Chat with us on WhatsApp">
+
                 <i class="fab fa-whatsapp"></i>
+
             </a>
 
         </div>
 
     </div>
 
-    <!-- JS
-============================================ -->
-    <!-- Modernizer JS -->
-    <script src="assets/js/vendor/modernizr.min.js"></script>
-    <!-- jQuery JS -->
-    <script src="assets/js/vendor/jquery.js"></script>
-    <!-- Bootstrap JS -->
-    <script src="assets/js/vendor/bootstrap.min.js"></script>
-    <!-- sal.js -->
-    <script src="assets/js/vendor/sal.js"></script>
-    <script src="assets/js/vendor/swiper.js"></script>
-    <script src="assets/js/vendor/magnify.min.js"></script>
-    <script src="assets/js/vendor/jquery-appear.js"></script>
-    <script src="assets/js/vendor/odometer.js"></script>
-    <script src="assets/js/vendor/backtotop.js"></script>
-    <script src="assets/js/vendor/isotop.js"></script>
-    <script src="assets/js/vendor/imageloaded.js"></script>
 
-    <script src="assets/js/vendor/wow.js"></script>
-    <script src="assets/js/vendor/waypoint.min.js"></script>
-    <script src="assets/js/vendor/easypie.js"></script>
-    <script src="assets/js/vendor/text-type.js"></script>
-    <script src="assets/js/vendor/jquery-one-page-nav.js"></script>
-    <script src="assets/js/vendor/bootstrap-select.min.js"></script>
-    <script src="assets/js/vendor/jquery-ui.js"></script>
-    <script src="assets/js/vendor/magnify-popup.min.js"></script>
-    <script src="assets/js/vendor/paralax-scroll.js"></script>
-    <script src="assets/js/vendor/paralax.min.js"></script>
-    <script src="assets/js/vendor/countdown.js"></script>
-    <script src="assets/js/vendor/plyr.js"></script>
-    <!-- Main JS -->
+    <!-- =========================================
+         JAVASCRIPT FILES
+    ========================================= -->
+    <script src="assets/js/vendor/modernizr.min.js"></script>
+    <script src="assets/js/vendor/jquery.js"></script>
+    <script src="assets/js/vendor/bootstrap.min.js"></script>
     <script src="assets/js/main.js"></script>
 
+
+    <!-- =========================================
+         STUDENT ROSTER JAVASCRIPT
+    ========================================= -->
     <script>
+
+        /* =========================================
+           STUDENT DATA
+        ========================================= */
+
+        const studentDatasets = {
+
+            english: [
+
+                {
+                    id: "STD-2024-101",
+                    name: "Alexander Wright",
+                    dob: "14 Mar 2010",
+                    gender: "Male",
+                    email: "alex.wright@gmail.com",
+                    phone: "+44 7700 900101",
+                    joinDate: "2024-03-28",
+                    parentPhone: "+44 7900 111222",
+                    attended: "26 Classes",
+                    missed: "1 Class",
+                    isNew: true
+                },
+
+                {
+                    id: "STD-2024-102",
+                    name: "Beatrice Smith",
+                    dob: "22 Aug 2011",
+                    gender: "Female",
+                    email: "beatrice.smith@gmail.com",
+                    phone: "+44 7700 900102",
+                    joinDate: "2024-03-25",
+                    parentPhone: "+44 7900 111223",
+                    attended: "24 Classes",
+                    missed: "2 Classes",
+                    isNew: true
+                },
+
+                {
+                    id: "STD-2024-103",
+                    name: "Charles Miller",
+                    dob: "05 Nov 2009",
+                    gender: "Male",
+                    email: "charles.miller@gmail.com",
+                    phone: "+44 7700 900103",
+                    joinDate: "2024-01-20",
+                    parentPhone: "+44 7900 111224",
+                    attended: "25 Classes",
+                    missed: "0 Classes",
+                    isNew: false
+                },
+
+                {
+                    id: "STD-2024-104",
+                    name: "Diana Prince",
+                    dob: "18 Jun 2010",
+                    gender: "Female",
+                    email: "diana.prince@gmail.com",
+                    phone: "+44 7700 900104",
+                    joinDate: "2024-02-01",
+                    parentPhone: "+44 7900 111225",
+                    attended: "22 Classes",
+                    missed: "0 Classes",
+                    isNew: false
+                },
+
+                {
+                    id: "STD-2024-105",
+                    name: "Ethan Hunt",
+                    dob: "11 Dec 2010",
+                    gender: "Male",
+                    email: "ethan.hunt@gmail.com",
+                    phone: "+44 7700 900105",
+                    joinDate: "2024-02-05",
+                    parentPhone: "+44 7900 111226",
+                    attended: "20 Classes",
+                    missed: "3 Classes",
+                    isNew: false
+                },
+
+                {
+                    id: "STD-2024-106",
+                    name: "Fiona Gallagher",
+                    dob: "03 Feb 2011",
+                    gender: "Female",
+                    email: "fiona.g@gmail.com",
+                    phone: "+44 7700 900106",
+                    joinDate: "2024-03-30",
+                    parentPhone: "+44 7900 111227",
+                    attended: "21 Classes",
+                    missed: "1 Class",
+                    isNew: true
+                }
+
+            ],
+
+
+            tamil: [
+
+                {
+                    id: "STD-2024-201",
+                    name: "Aarav Kanth",
+                    dob: "09 Jul 2011",
+                    gender: "Male",
+                    email: "aarav.k@gmail.com",
+                    phone: "+44 7800 800201",
+                    joinDate: "2024-03-24",
+                    parentPhone: "+44 7900 222333",
+                    attended: "28 Classes",
+                    missed: "0 Classes",
+                    isNew: true
+                },
+
+                {
+                    id: "STD-2024-202",
+                    name: "Bhavana Raman",
+                    dob: "17 Apr 2012",
+                    gender: "Female",
+                    email: "bhavana.r@gmail.com",
+                    phone: "+44 7800 800202",
+                    joinDate: "2024-01-14",
+                    parentPhone: "+44 7900 222334",
+                    attended: "26 Classes",
+                    missed: "1 Class",
+                    isNew: false
+                },
+
+                {
+                    id: "STD-2024-203",
+                    name: "Chandran Selvam",
+                    dob: "30 Sep 2010",
+                    gender: "Male",
+                    email: "chandran.s@gmail.com",
+                    phone: "+44 7800 800203",
+                    joinDate: "2024-01-18",
+                    parentPhone: "+44 7900 222335",
+                    attended: "25 Classes",
+                    missed: "2 Classes",
+                    isNew: false
+                },
+
+                {
+                    id: "STD-2024-204",
+                    name: "Deepika Raj",
+                    dob: "12 May 2011",
+                    gender: "Female",
+                    email: "deepika.r@gmail.com",
+                    phone: "+44 7800 800204",
+                    joinDate: "2024-03-29",
+                    parentPhone: "+44 7900 222336",
+                    attended: "23 Classes",
+                    missed: "0 Classes",
+                    isNew: true
+                }
+
+            ],
+
+
+            creative: [
+
+                {
+                    id: "STD-2024-301",
+                    name: "Amelia Watson",
+                    dob: "25 Jan 2011",
+                    gender: "Female",
+                    email: "amelia.w@gmail.com",
+                    phone: "+44 7900 700301",
+                    joinDate: "2024-03-26",
+                    parentPhone: "+44 7900 333444",
+                    attended: "18 Classes",
+                    missed: "0 Classes",
+                    isNew: true
+                },
+
+                {
+                    id: "STD-2024-302",
+                    name: "Benjamin Franklin",
+                    dob: "17 Jan 2010",
+                    gender: "Male",
+                    email: "ben.f@gmail.com",
+                    phone: "+44 7900 700302",
+                    joinDate: "2024-01-16",
+                    parentPhone: "+44 7900 333445",
+                    attended: "16 Classes",
+                    missed: "2 Classes",
+                    isNew: false
+                },
+
+                {
+                    id: "STD-2024-303",
+                    name: "Clara Oswald",
+                    dob: "23 Nov 2011",
+                    gender: "Female",
+                    email: "clara.o@gmail.com",
+                    phone: "+44 7900 700303",
+                    joinDate: "2024-01-22",
+                    parentPhone: "+44 7900 333446",
+                    attended: "17 Classes",
+                    missed: "1 Class",
+                    isNew: false
+                },
+
+                {
+                    id: "STD-2024-304",
+                    name: "Daniel Craig",
+                    dob: "02 Mar 2009",
+                    gender: "Male",
+                    email: "daniel.c@gmail.com",
+                    phone: "+44 7900 700304",
+                    joinDate: "2024-03-31",
+                    parentPhone: "+44 7900 333447",
+                    attended: "15 Classes",
+                    missed: "0 Classes",
+                    isNew: true
+                }
+
+            ]
+
+        };
+
+
+        /* =========================================
+           VARIABLES
+        ========================================= */
+
+        let currentSubjectKey = null;
+
+        let isAscending = true;
+
+        let showOnlyNewStudents = false;
+
+
+        const subjectNames = {
+
+            english: "English Language",
+
+            tamil: "Tamil Literature",
+
+            creative: "Creative Writing"
+
+        };
+
+
+        /* =========================================
+           PAGE LOAD
+        ========================================= */
+
         document.addEventListener("DOMContentLoaded", function () {
 
-            const contactItems = document.querySelectorAll(".contact-item");
+            updateOverallStats();
 
-            contactItems.forEach(function (item) {
-
-                const button = item.querySelector(".contact-button");
-
-                button.addEventListener("click", function () {
-
-                    // On mobile, briefly show the label
-                    if (window.innerWidth <= 767) {
-
-                        contactItems.forEach(function (otherItem) {
-
-                            if (otherItem !== item) {
-                                otherItem.classList.remove("show-label");
-                            }
-
-                        });
-
-                        item.classList.toggle("show-label");
-
-                    }
-
-                });
-
-            });
+        });
 
 
-            // Close labels when clicking outside
-            document.addEventListener("click", function (event) {
+        /* =========================================
+           UPDATE SUBJECT COUNTS
+        ========================================= */
 
-                if (!event.target.closest(".floating-contact")) {
+        function updateOverallStats() {
 
-                    contactItems.forEach(function (item) {
+            for (let key in studentDatasets) {
 
-                        item.classList.remove("show-label");
+                const badge =
+                    document.getElementById(`badge-count-${key}`);
 
-                    });
+                if (badge) {
+
+                    badge.innerText =
+                        `${studentDatasets[key].length} Students`;
 
                 }
 
-            });
-
-        });
-    </script>
-
-    <script>
-document.addEventListener("DOMContentLoaded", function () {
-
-    const dropdown = document.querySelector(".login-dropdown");
-    const button = document.querySelector(".login-dropdown-btn");
-
-    if (!dropdown || !button) return;
-
-    button.addEventListener("click", function (event) {
-
-        event.stopPropagation();
-
-        dropdown.classList.toggle("active");
-
-    });
-
-
-    document.addEventListener("click", function (event) {
-
-        if (!dropdown.contains(event.target)) {
-
-            dropdown.classList.remove("active");
+            }
 
         }
 
-    });
 
-});
-</script>
+        /* =========================================
+           SUBJECT CARD CLICK
+           
+           Click subject:
+           - Student list appears immediately
+           
+           Click same subject again:
+           - Student list hides
+        ========================================= */
+
+        function toggleSubject(key) {
+
+            /* If same subject is clicked again,
+               hide the student list */
+
+            if (currentSubjectKey === key) {
+
+                currentSubjectKey = null;
+
+                document.getElementById(
+                    "roster-section-container"
+                ).style.display = "none";
+
+
+                document
+                    .querySelectorAll(".subject-card")
+                    .forEach(function (card) {
+
+                        card.classList.remove(
+                            "active-subject"
+                        );
+
+                    });
+
+
+                document
+                    .querySelectorAll(".active-indicator")
+                    .forEach(function (indicator) {
+
+                        indicator.style.display = "none";
+
+                    });
+
+
+                return;
+            }
+
+
+            /* Select new subject */
+
+            currentSubjectKey = key;
+
+
+            /* Show student list immediately */
+
+            document.getElementById(
+                "roster-section-container"
+            ).style.display = "block";
+
+
+            /* Remove active state from all cards */
+
+            document
+                .querySelectorAll(".subject-card")
+                .forEach(function (card) {
+
+                    card.classList.remove(
+                        "active-subject"
+                    );
+
+                });
+
+
+            /* Hide all indicators */
+
+            document
+                .querySelectorAll(".active-indicator")
+                .forEach(function (indicator) {
+
+                    indicator.style.display = "none";
+
+                });
+
+
+            /* Activate selected card */
+
+            document.getElementById(
+                `card-subject-${key}`
+            ).classList.add("active-subject");
+
+
+            /* Show selected indicator */
+
+            document.getElementById(
+                `indicator-${key}`
+            ).style.display = "inline-flex";
+
+
+            /* Update title */
+
+            document.getElementById(
+                "active-subject-title"
+            ).innerText = subjectNames[key];
+
+
+            /* Reset search when changing subject */
+
+            document.getElementById(
+                "student-search-input"
+            ).value = "";
+
+
+            /* Reset new student filter */
+
+            showOnlyNewStudents = false;
+
+            document
+                .getElementById("new-students-btn")
+                .classList.remove("active-filter");
+
+
+            /* Render students */
+
+            renderRoster();
+
+        }
+
+
+        /* =========================================
+           RENDER STUDENT ROSTER
+        ========================================= */
+
+        function renderRoster() {
+
+            if (!currentSubjectKey) {
+                return;
+            }
+
+
+            const tableBody =
+                document.getElementById(
+                    "student-table-body"
+                );
+
+
+            const searchVal =
+                document
+                    .getElementById(
+                        "student-search-input"
+                    )
+                    .value
+                    .toLowerCase()
+                    .trim();
+
+
+            let list =
+                [...studentDatasets[currentSubjectKey]];
+
+
+            /* New student filter */
+
+            if (showOnlyNewStudents) {
+
+                list =
+                    list.filter(function (item) {
+
+                        return item.isNew;
+
+                    });
+
+            }
+
+
+            /* Search filter */
+
+            if (searchVal !== "") {
+
+                list =
+                    list.filter(function (item) {
+
+                        return (
+                            item.name
+                                .toLowerCase()
+                                .includes(searchVal)
+
+                            ||
+
+                            item.id
+                                .toLowerCase()
+                                .includes(searchVal)
+                        );
+
+                    });
+
+            }
+
+
+            /* Sort */
+
+            list.sort(function (a, b) {
+
+                return isAscending
+
+                    ? a.name.localeCompare(b.name)
+
+                    : b.name.localeCompare(a.name);
+
+            });
+
+
+            /* Update total */
+
+            document.getElementById(
+                "total-student-count"
+            ).innerText = list.length;
+
+
+            /* Clear table */
+
+            tableBody.innerHTML = "";
+
+
+            /* No results */
+
+            if (list.length === 0) {
+
+                tableBody.innerHTML = `
+
+                    <tr>
+
+                        <td colspan="5"
+                            class="text-center py-5 text-muted">
+
+                            <i class="feather-user-x fs-2 d-block mb-2"></i>
+
+                            No students found in this class view.
+
+                        </td>
+
+                    </tr>
+
+                `;
+
+                return;
+            }
+
+
+            /* Create rows */
+
+            list.forEach(function (student, index) {
+
+                const snoDisplay =
+                    (index + 1) < 10
+                        ? `0${index + 1}`
+                        : `${index + 1}`;
+
+
+                const newTag =
+                    student.isNew
+
+                        ? `<span class="new-badge-tag">New</span>`
+
+                        : ``;
+
+
+                const tr =
+                    document.createElement("tr");
+
+
+                tr.innerHTML = `
+
+                    <td>
+
+                        <span class="sno-badge">
+
+                            ${snoDisplay}
+
+                        </span>
+
+                    </td>
+
+
+                    <td style="color:#1f354d; font-weight:700;">
+
+                        ${student.id}
+
+                    </td>
+
+
+                    <td>
+
+                        <p class="student-name-text">
+
+                            ${student.name}
+
+                            ${newTag}
+
+                        </p>
+
+                    </td>
+
+
+                    <td>
+
+                        ${formatDate(student.joinDate)}
+
+                    </td>
+
+
+                    <td class="text-center">
+
+                        <button type="button"
+
+                                class="rbt-btn rbt-switch-btn btn-gradient action-view-btn hover-transform-none"
+
+                                onclick="openDetailModal('${student.id}')">
+
+                            <span data-text="View">
+
+                                View
+
+                            </span>
+
+                        </button>
+
+                    </td>
+
+                `;
+
+
+                tableBody.appendChild(tr);
+
+            });
+
+        }
+
+
+        /* =========================================
+           DATE FORMAT
+        ========================================= */
+
+        function formatDate(dateStr) {
+
+            if (!dateStr) {
+                return "-";
+            }
+
+
+            const date =
+                new Date(dateStr);
+
+
+            return date.toLocaleDateString(
+                "en-GB",
+                {
+                    day: "2-digit",
+                    month: "short",
+                    year: "numeric"
+                }
+            );
+
+        }
+
+
+        /* =========================================
+           SORT A-Z / Z-A
+        ========================================= */
+
+        function toggleSortOrder() {
+
+            isAscending = !isAscending;
+
+
+            const sortLabel =
+                document.getElementById(
+                    "sort-label"
+                );
+
+
+            const sortIcon =
+                document.getElementById(
+                    "sort-icon"
+                );
+
+
+            if (isAscending) {
+
+                sortLabel.innerText = "A-Z";
+
+                sortIcon.className =
+                    "feather-arrow-up";
+
+            } else {
+
+                sortLabel.innerText = "Z-A";
+
+                sortIcon.className =
+                    "feather-arrow-down";
+
+            }
+
+
+            renderRoster();
+
+        }
+
+
+        /* =========================================
+           NEW STUDENT FILTER
+        ========================================= */
+
+        function toggleNewStudentsFilter() {
+
+            showOnlyNewStudents =
+                !showOnlyNewStudents;
+
+
+            const btn =
+                document.getElementById(
+                    "new-students-btn"
+                );
+
+
+            if (showOnlyNewStudents) {
+
+                btn.classList.add(
+                    "active-filter"
+                );
+
+            } else {
+
+                btn.classList.remove(
+                    "active-filter"
+                );
+
+            }
+
+
+            renderRoster();
+
+        }
+
+
+        /* =========================================
+           SEARCH
+        ========================================= */
+
+        function filterStudents() {
+
+            renderRoster();
+
+        }
+
+
+        /* =========================================
+           OPEN STUDENT MODAL
+        ========================================= */
+
+        function openDetailModal(studentId) {
+
+            if (!currentSubjectKey) {
+                return;
+            }
+
+
+            const list =
+                studentDatasets[
+                    currentSubjectKey
+                ];
+
+
+            const student =
+                list.find(function (s) {
+
+                    return s.id === studentId;
+
+                });
+
+
+            if (!student) {
+                return;
+            }
+
+
+            document.getElementById(
+                "modal-student-name"
+            ).innerText = student.name;
+
+
+            document.getElementById(
+                "modal-student-id"
+            ).innerText = student.id;
+
+
+            document.getElementById(
+                "modal-student-id-display"
+            ).innerText = student.id;
+
+
+            document.getElementById(
+                "modal-student-full-name"
+            ).innerText = student.name;
+
+
+            document.getElementById(
+                "modal-student-dob"
+            ).innerText =
+                student.dob || "14 March 2010";
+
+
+            document.getElementById(
+                "modal-student-gender"
+            ).innerText =
+                student.gender || "Female";
+
+
+            document.getElementById(
+                "modal-student-email"
+            ).innerText =
+                student.email || "student@gmail.com";
+
+
+            document.getElementById(
+                "modal-student-phone"
+            ).innerText =
+                student.phone || "+44 7700 900100";
+
+
+            document.getElementById(
+                "modal-student-joindate"
+            ).innerText =
+                formatDate(student.joinDate);
+
+
+            document.getElementById(
+                "modal-student-parent-phone"
+            ).innerText =
+                student.parentPhone ||
+                "+44 7900 123456";
+
+
+            document.getElementById(
+                "modal-student-attended"
+            ).innerText =
+                student.attended ||
+                "24 Classes";
+
+
+            document.getElementById(
+                "modal-student-missed"
+            ).innerText =
+                student.missed ||
+                "0 Classes";
+
+
+            document.getElementById(
+                "detail-modal"
+            ).classList.add("active");
+
+        }
+
+
+        /* =========================================
+           CLOSE MODAL
+        ========================================= */
+
+        function closeModal(modalId) {
+
+            document
+                .getElementById(modalId)
+                .classList.remove("active");
+
+        }
+
+
+        /* =========================================
+           CLOSE MODAL WHEN CLICKING OUTSIDE
+        ========================================= */
+
+        document.addEventListener(
+            "click",
+            function (event) {
+
+                const modal =
+                    document.getElementById(
+                        "detail-modal"
+                    );
+
+
+                if (
+                    event.target === modal
+                ) {
+
+                    closeModal(
+                        "detail-modal"
+                    );
+
+                }
+
+            }
+        );
+
+
+        /* =========================================
+           ESC KEY CLOSE MODAL
+        ========================================= */
+
+        document.addEventListener(
+            "keydown",
+            function (event) {
+
+                if (
+                    event.key === "Escape"
+                ) {
+
+                    closeModal(
+                        "detail-modal"
+                    );
+
+                }
+
+            }
+        );
+
+    </script>
+
 </body>
 
 </html>

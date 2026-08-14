@@ -58,6 +58,24 @@
             eduJs.unloadImage();
             eduJs.searchValue();
             eduJs.lessonToggle();
+            eduJs.loginDropdown();
+        },
+
+        loginDropdown: function () {
+            const dropdown = document.querySelector(".login-dropdown");
+            const button = document.querySelector(".login-dropdown-btn");
+            if (!dropdown || !button) return;
+
+            button.addEventListener("click", function (event) {
+                event.stopPropagation();
+                dropdown.classList.toggle("active");
+            });
+
+            document.addEventListener("click", function (event) {
+                if (!dropdown.contains(event.target)) {
+                    dropdown.classList.remove("active");
+                }
+            });
         },
 
         autoslidertab: function (params) {
