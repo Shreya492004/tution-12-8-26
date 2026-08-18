@@ -29,6 +29,210 @@
     <link rel="stylesheet" href="assets/css/plugins/magnigy-popup.min.css">
     <link rel="stylesheet" href="assets/css/plugins/plyr.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        /* Icon Font Protection - Ensure feather and fontawesome icons always render */
+        i[class^="feather-"],
+        i[class*=" feather-"],
+        span[class^="feather-"],
+        span[class*=" feather-"],
+        .feather,
+        [class^="feather-"],
+        [class*=" feather-"] {
+            font-family: 'feather', 'Feather' !important;
+            speak: none;
+            font-style: normal !important;
+            font-weight: normal !important;
+            font-variant: normal !important;
+            text-transform: none !important;
+            line-height: 1 !important;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            display: inline-block !important;
+        }
+
+        i[class^="fa-"],
+        i[class*=" fa-"],
+        [class^="fa-"],
+        [class*=" fa-"],
+        .fa, .fas, .far, .fal, .fad, .fab {
+            font-family: "Font Awesome 5 Pro", "Font Awesome 5 Free", "FontAwesome" !important;
+            font-style: normal !important;
+            font-weight: normal !important;
+            display: inline-block !important;
+        }
+
+        /* Header Navigation (Increased Size, Clean Medium Weight, 100% Zoom Safe) */
+        .rbt-header .mainbar-row {
+            display: flex !important;
+            flex-wrap: nowrap !important;
+            align-items: center !important;
+            justify-content: space-between !important;
+        }
+
+        .rbt-header .rbt-main-navigation {
+            display: block !important;
+            flex: 1 1 auto !important;
+            min-width: 0 !important;
+        }
+
+        .rbt-header .rbt-main-navigation .mainmenu-nav {
+            display: flex !important;
+            justify-content: center !important;
+            width: auto !important;
+        }
+
+        .rbt-header .rbt-main-navigation .mainmenu {
+            display: flex !important;
+            flex-wrap: nowrap !important;
+            align-items: center !important;
+            justify-content: center !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            list-style: none !important;
+        }
+
+        .rbt-header .rbt-main-navigation .mainmenu > li {
+            flex-shrink: 0 !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            position: relative !important;
+        }
+
+        .rbt-header .rbt-main-navigation .mainmenu > li > a,
+        .rbt-header .rbt-main-navigation a {
+            font-size: 17.5px !important;
+            font-weight: 500 !important;
+            color: #192335 !important;
+            white-space: nowrap !important;
+            padding: 0 11px !important;
+            display: flex !important;
+            align-items: center !important;
+            height: 80px !important;
+            line-height: 80px !important;
+            transition: all 0.3s ease !important;
+            text-decoration: none !important;
+        }
+
+        .rbt-header .rbt-main-navigation .mainmenu > li > a:hover,
+        .rbt-header .rbt-main-navigation a:hover {
+            color: #2f57ef !important;
+        }
+
+        @media only screen and (min-width: 1200px) and (max-width: 1440px) {
+            .rbt-header .rbt-main-navigation .mainmenu > li > a,
+            .rbt-header .rbt-main-navigation a {
+                font-size: 16.5px !important;
+                padding: 0 8px !important;
+            }
+        }
+
+        /* Dashboard Sidebar Navigation - Restored Original Clean & Beautiful Styling */
+        .rbt-default-sidebar-wrapper,
+        .rbt-dashboard-sidebar {
+            position: relative !important;
+        }
+
+        .rbt-default-sidebar-wrapper .mainmenu-nav,
+        .rbt-dashboard-sidebar .mainmenu-nav {
+            display: block !important;
+            width: 100% !important;
+        }
+
+        .dashboard-mainmenu,
+        .rbt-default-sidebar-list {
+            margin: 0 !important;
+            padding: 0 !important;
+            list-style: none !important;
+            display: block !important;
+            width: 100% !important;
+        }
+
+        .dashboard-mainmenu li,
+        .rbt-default-sidebar-list li {
+            margin-bottom: 4px !important;
+            display: block !important;
+            width: 100% !important;
+        }
+
+        .dashboard-mainmenu li a,
+        .rbt-default-sidebar-list li a,
+        .rbt-default-sidebar-wrapper .dashboard-mainmenu li a,
+        .rbt-default-sidebar-wrapper .rbt-default-sidebar-list li a {
+            display: flex !important;
+            align-items: center !important;
+            justify-content: flex-start !important;
+            font-size: 15px !important;
+            font-weight: 500 !important;
+            font-family: var(--font-primary) !important;
+            line-height: 20px !important;
+            color: #2b354f !important;
+            padding: 10px 14px !important;
+            border-radius: 8px !important;
+            transition: all 0.2s ease !important;
+            text-decoration: none !important;
+            width: 100% !important;
+            height: auto !important;
+            background: transparent !important;
+        }
+
+        .dashboard-mainmenu li a span,
+        .rbt-default-sidebar-list li a span,
+        .rbt-default-sidebar-wrapper .dashboard-mainmenu li a span,
+        .rbt-default-sidebar-wrapper .rbt-default-sidebar-list li a span {
+            font-size: 15px !important;
+            font-weight: 500 !important;
+            font-family: var(--font-primary) !important;
+            color: inherit !important;
+            white-space: normal !important;
+        }
+
+        .dashboard-mainmenu li a i,
+        .rbt-default-sidebar-list li a i,
+        .rbt-default-sidebar-wrapper .dashboard-mainmenu li a i,
+        .rbt-default-sidebar-wrapper .rbt-default-sidebar-list li a i {
+            font-size: 17px !important;
+            margin-right: 12px !important;
+            color: #7e879b !important;
+            transition: all 0.2s ease !important;
+            width: 20px !important;
+            text-align: center !important;
+            flex-shrink: 0 !important;
+        }
+
+        .dashboard-mainmenu li.active a,
+        .dashboard-mainmenu li a.active,
+        .rbt-default-sidebar-list li.active a,
+        .rbt-default-sidebar-list li a.active {
+            background: #f0edff !important;
+            color: var(--color-primary, #2f57ef) !important;
+        }
+
+        .dashboard-mainmenu li.active a span,
+        .dashboard-mainmenu li a.active span,
+        .rbt-default-sidebar-list li.active a span,
+        .rbt-default-sidebar-list li a.active span {
+            font-weight: 600 !important;
+            color: var(--color-primary, #2f57ef) !important;
+        }
+
+        .dashboard-mainmenu li.active a i,
+        .dashboard-mainmenu li a.active i,
+        .rbt-default-sidebar-list li.active a i,
+        .rbt-default-sidebar-list li a.active i {
+            color: var(--color-primary, #2f57ef) !important;
+        }
+
+        .dashboard-mainmenu li a:hover,
+        .rbt-default-sidebar-list li a:hover {
+            background: #f6f7fb !important;
+            color: var(--color-primary, #2f57ef) !important;
+        }
+
+        .dashboard-mainmenu li a:hover i,
+        .rbt-default-sidebar-list li a:hover i {
+            color: var(--color-primary, #2f57ef) !important;
+        }
+    </style>
 </head>
 
 <body class="rbt-header-sticky">
