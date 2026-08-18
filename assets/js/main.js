@@ -62,18 +62,28 @@
         },
 
         loginDropdown: function () {
-            const dropdown = document.querySelector(".login-dropdown");
-            const button = document.querySelector(".login-dropdown-btn");
-            if (!dropdown || !button) return;
-
-            button.addEventListener("click", function (event) {
-                event.stopPropagation();
-                dropdown.classList.toggle("active");
-            });
-
             document.addEventListener("click", function (event) {
-                if (!dropdown.contains(event.target)) {
-                    dropdown.classList.remove("active");
+                const btn = event.target.closest(".login-dropdown-btn");
+                if (btn) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                    const dropdown = btn.closest(".login-dropdown");
+                    if (dropdown) {
+                        const isCurrentlyActive = dropdown.classList.contains("active");
+                        document.querySelectorAll(".login-dropdown.active").forEach(function(d) {
+                            d.classList.remove("active");
+                        });
+                        if (!isCurrentlyActive) {
+                            dropdown.classList.add("active");
+                        }
+                    }
+                    return;
+                }
+
+                if (!event.target.closest(".login-dropdown")) {
+                    document.querySelectorAll(".login-dropdown.active").forEach(function(d) {
+                        d.classList.remove("active");
+                    });
                 }
             });
         },

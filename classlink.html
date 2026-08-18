@@ -2,8 +2,10 @@
 <html lang="en">
 
 <head>
+
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
+
     <title>Class Link - London Star Education</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -25,91 +27,564 @@
     <link rel="stylesheet" href="assets/css/plugins/magnigy-popup.min.css">
     <link rel="stylesheet" href="assets/css/plugins/plyr.css">
     <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- CLASS LINK CUSTOM STYLE -->
+    <style>
+
+        /* =========================================
+           MAIN CLASS LINK CONTENT (SYNCHRONIZED FONTS)
+        ========================================= */
+
+        .class-link-page,
+        .class-link-page * {
+            box-sizing: border-box;
+            font-family: var(--font-primary, "Euclid Circular A", "Plus Jakarta Sans", "Inter", sans-serif) !important;
+        }
+
+        .class-link-page .section-title h4 {
+            font-size: 26px !important;
+            line-height: 1.3 !important;
+            font-weight: 700 !important;
+            color: #192335 !important;
+            margin-bottom: 8px;
+        }
+
+        .class-link-page .section-title p {
+            font-size: 18px !important;
+            line-height: 1.6 !important;
+            color: #374151 !important;
+            margin-bottom: 0;
+        }
+
+        .class-link-page label {
+            font-size: 18px !important;
+            font-weight: 600 !important;
+            line-height: 1.4 !important;
+            color: #192335 !important;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        /* =========================================
+           DROPDOWN STYLES
+        ========================================= */
+
+        .class-link-page select.form-control {
+            display: block !important;
+            width: 100% !important;
+            font-size: 18px !important;
+            font-weight: 500 !important;
+            height: 56px !important;
+            line-height: 1.5 !important;
+            color: #192335 !important;
+            background-color: #ffffff !important;
+            border: 1px solid #dcdfe6 !important;
+            border-radius: 10px !important;
+            padding: 0 45px 0 18px !important;
+            cursor: pointer !important;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%23192335' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E") !important;
+            background-repeat: no-repeat !important;
+            background-position: right 18px center !important;
+            background-size: 18px !important;
+            -webkit-appearance: none !important;
+            -moz-appearance: none !important;
+            appearance: none !important;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
+        }
+
+        .class-link-page select.form-control:focus {
+            outline: none !important;
+            border-color: #6c4df6 !important;
+            box-shadow: 0 0 0 3px rgba(108, 77, 246, 0.15) !important;
+        }
+
+        .class-link-page select.form-control option {
+            font-size: 18px !important;
+            font-weight: 400 !important;
+            color: #192335 !important;
+            background: #ffffff !important;
+            padding: 12px !important;
+        }
+
+        /* BOOTSTRAP SELECT STYLING */
+        .class-link-page .bootstrap-select {
+            display: block !important;
+            width: 100% !important;
+            background: transparent !important;
+            border: none !important;
+            padding: 0 !important;
+        }
+
+        .class-link-page .bootstrap-select > button.dropdown-toggle {
+            display: flex !important;
+            align-items: center !important;
+            justify-content: space-between !important;
+            width: 100% !important;
+            font-size: 18px !important;
+            font-weight: 500 !important;
+            height: 56px !important;
+            color: #192335 !important;
+            background-color: #ffffff !important;
+            border: 1px solid #dcdfe6 !important;
+            border-radius: 10px !important;
+            padding: 0 18px !important;
+            box-shadow: none !important;
+        }
+
+        .class-link-page .bootstrap-select > button.dropdown-toggle:focus {
+            border-color: #6c4df6 !important;
+            box-shadow: 0 0 0 3px rgba(108, 77, 246, 0.15) !important;
+        }
+
+        .class-link-page .bootstrap-select .dropdown-menu {
+            border-radius: 10px !important;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.12) !important;
+            border: 1px solid #e5e7eb !important;
+            padding: 8px !important;
+        }
+
+        .class-link-page .bootstrap-select .dropdown-menu li a {
+            font-size: 17px !important;
+            font-weight: 500 !important;
+            color: #192335 !important;
+            padding: 10px 14px !important;
+            border-radius: 6px !important;
+        }
+
+        .class-link-page .bootstrap-select .dropdown-menu li a:hover,
+        .class-link-page .bootstrap-select .dropdown-menu li.selected a {
+            background: #f5f3ff !important;
+            color: #6c4df6 !important;
+        }
+
+        .class-link-page .bootstrap-select select.form-control {
+            display: none !important;
+        }
+
+        .class-link-page .btn-text {
+            font-size: 18px !important;
+            font-weight: 600 !important;
+        }
+
+        .class-link-page .form-check-label {
+            font-size: 17px !important;
+            font-weight: 500 !important;
+            color: #192335 !important;
+            margin-bottom: 0;
+        }
+
+        .sidebar-icon-svg {
+            margin-right: 12px;
+            vertical-align: -3px;
+        }
+
+        /* =========================================
+           LOGIN DROPDOWN
+        ========================================= */
+
+        .login-dropdown {
+            position: relative;
+        }
+
+        .login-dropdown-menu {
+            position: absolute;
+            top: calc(100% + 10px);
+            right: 0;
+            min-width: 180px;
+            background: #ffffff;
+            border-radius: 5px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+            padding: 8px 0;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(8px);
+            transition: all 0.25s ease;
+            z-index: 999;
+        }
+
+        .login-dropdown.active .login-dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .login-dropdown-menu a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 16px;
+            font-size: 16px !important;
+            color: #222;
+            transition: all 0.2s ease;
+        }
+
+        .login-dropdown-menu a:hover {
+            background: #f5f5f5;
+            color: #2f57ef;
+        }
+
+        /* =========================================
+           CAPACITY NOTE
+        ========================================= */
+
+        .class-link-page .capacity-note {
+            font-size: 16px !important;
+            line-height: 1.6 !important;
+            color: #7a5c00;
+            background: #fff8e6;
+            border: 1px solid #ffe6a8;
+            padding: 14px 18px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+        }
+
+        /* =========================================
+           SHARED LINK POOL PANEL
+        ========================================= */
+
+        .class-link-page .link-pool-panel {
+            margin-bottom: 30px;
+            padding: 24px;
+            background: #f8f9fe;
+            border-radius: 12px;
+        }
+
+        .class-link-page .link-pool-title {
+            font-size: 20px !important;
+            font-weight: 700 !important;
+            color: #192335 !important;
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .class-link-page .link-pool-title span:last-child {
+            font-size: 16px !important;
+            font-weight: 500 !important;
+            color: #64748b !important;
+        }
+
+        .class-link-page .link-pool-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+        }
+
+        .class-link-page .link-badge {
+            padding: 12px 14px;
+            border-radius: 8px;
+            font-size: 17px !important;
+            font-weight: 600 !important;
+            text-align: center;
+            border: 1px solid #e5e5e5;
+            background: #fff;
+            color: #222;
+        }
+
+        .class-link-page .link-badge.available {
+            border-color: #2fb51c;
+            color: #2fb51c;
+            background: #f0fbee;
+            cursor: pointer;
+            transition: box-shadow 0.15s ease, transform 0.15s ease;
+        }
+
+        .class-link-page .link-badge.available:hover {
+            box-shadow: 0 0 0 2px rgba(47, 181, 28, 0.3);
+            transform: translateY(-1px);
+        }
+
+        .class-link-page .link-badge.in-use-others {
+            border-color: #e5e5e5;
+            color: #999;
+            background: #f5f5f5;
+            cursor: not-allowed;
+        }
+
+        .class-link-page .link-badge.in-use-mine {
+            border-color: #2f57ef;
+            color: #2f57ef;
+            background: #eef1fe;
+            font-weight: 600 !important;
+            cursor: pointer;
+            transition: box-shadow 0.15s ease, transform 0.15s ease;
+        }
+
+        .class-link-page .link-badge.in-use-mine:hover {
+            box-shadow: 0 0 0 2px rgba(47, 87, 239, 0.3);
+            transform: translateY(-1px);
+        }
+
+        .class-link-page .link-badge small {
+            display: block;
+            font-size: 14px !important;
+            font-weight: 400 !important;
+            margin-top: 4px;
+        }
+
+        .class-link-page .pool-legend {
+            display: flex;
+            gap: 20px;
+            font-size: 15px !important;
+            font-weight: 500 !important;
+            color: #374151;
+            margin-top: 16px;
+            flex-wrap: wrap;
+        }
+
+        .class-link-page .pool-legend span {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .class-link-page .pool-legend i {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        /* =========================================
+           CLASS SESSION SLOT CARDS
+        ========================================= */
+
+        .class-link-page .class-slot-card {
+            border: 1px solid #e5e5e5;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+
+        .class-link-page .class-slot-title {
+            font-size: 22px !important;
+            font-weight: 700 !important;
+            color: #192335 !important;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .class-link-page .class-slot-title .slot-number {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: #2f57ef;
+            color: #fff;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px !important;
+            font-weight: 700 !important;
+            flex-shrink: 0;
+        }
+
+        .class-link-page .current-link-box {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 18px;
+            background: #f5f7ff;
+            border-radius: 8px;
+            margin-top: 6px;
+            font-size: 17px !important;
+            color: #192335;
+            word-break: break-all;
+        }
+
+        .class-link-page .current-link-box.no-link {
+            color: #64748b;
+            background: #f8fafc;
+        }
+
+        .class-link-page .copy-link-btn {
+            border: none;
+            background: #2f57ef;
+            color: #fff;
+            border-radius: 6px;
+            padding: 8px 16px;
+            font-size: 16px !important;
+            font-weight: 600 !important;
+            cursor: pointer;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        /* =========================================
+           MOBILE
+        ========================================= */
+
+        @media (max-width: 767px) {
+            .class-link-page .section-title h4 {
+                font-size: 22px !important;
+            }
+
+            .class-link-page .section-title p {
+                font-size: 16px !important;
+            }
+
+            .class-link-page label {
+                font-size: 16px !important;
+            }
+
+            .class-link-page select.form-control {
+                font-size: 16px !important;
+                height: 48px !important;
+            }
+
+            .class-link-page .link-pool-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+            }
+
+            .class-link-page .class-slot-title {
+                font-size: 20px !important;
+            }
+        }
+
+    </style>
+
 </head>
+
 
 <body>
 
-    <!--HEADER-->
-       <header class="rbt-header rbt-header-9">
+    <!-- ================================
+         HEADER
+    ================================= -->
+
+    <header class="rbt-header rbt-header-9">
+
         <div class="rbt-sticky-placeholder"></div>
-        
-        <!-- Start Header Top -->
-        <div class="rbt-header-middle position-relative rbt-header-mid-1  bg-color-white rbt-border-bottom">
+
+        <div class="rbt-header-middle position-relative rbt-header-mid-1 bg-color-white rbt-border-bottom">
+
             <div class="container">
-                <div class="rbt-header-sec align-items-center ">
+
+                <div class="rbt-header-sec align-items-center">
 
                     <div class="rbt-header-sec-col rbt-header-left">
-                        <div class="rbt-header-content">
-                            <!-- Start Header Information List  -->
-                            <div class="header-info">
-                                <ul class="rbt-dropdown-menu switcher-language">
-                                    <li class="has-child-menu">
-                                        <a href="#">
-                                            <img class="left-image" src="assets/images/icons/en-us.png"
-                                                alt="Language Images">
-                                            <span class="menu-item">English</span>
-                                        </a>
-                                        <!-- <ul class="sub-menu">
-                                            <li>
-                                                <a href="#">
-                                                    <img class="left-image" src="assets/images/icons/fr.png"
-                                                        alt="Language Images">
-                                                    <span class="menu-item">Français</span>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    <img class="left-image" src="assets/images/icons/de.png"
-                                                        alt="Language Images">
-                                                    <span class="menu-item">Deutsch</span>
-                                                </a>
-                                            </li>
-                                        </ul> -->
-                                    </li>
-                                </ul>
-                            </div>
-                            <!-- End Header Information List  -->
 
-                            <!-- Start Header Information List  -->
+                        <div class="rbt-header-content">
+
                             <div class="header-info">
-                                <ul class="rbt-dropdown-menu currency-menu">
+
+                                <ul class="rbt-dropdown-menu switcher-language">
+
                                     <li class="has-child-menu">
-                                        <!-- <a href="#">
-                                            <span class="menu-item">USD</span>
-                                            <i class="right-icon feather-chevron-down"></i>
-                                        </a> -->
+
+                                        <a href="#">
+
+                                            <img
+                                                class="left-image"
+                                                src="assets/images/icons/en-us.png"
+                                                alt="Language Images">
+
+                                            <span class="menu-item">
+                                                English
+                                            </span>
+
+                                        </a>
+
+                                    </li>
+
+                                </ul>
+
+                            </div>
+
+
+                            <div class="header-info">
+
+                                <ul class="rbt-dropdown-menu currency-menu">
+
+                                    <li class="has-child-menu">
+
                                         <ul class="sub-menu hover-reverse">
+
                                             <li>
                                                 <a href="#">
                                                     <span class="menu-item">EUR</span>
                                                 </a>
                                             </li>
+
                                             <li>
                                                 <a href="#">
                                                     <span class="menu-item">GBP</span>
                                                 </a>
                                             </li>
+
                                         </ul>
+
                                     </li>
+
                                 </ul>
+
                             </div>
-                            <!-- End Header Information List  -->
+
                         </div>
+
                     </div>
 
+
                     <div class="rbt-header-sec-col rbt-header-center d-none d-md-block">
+
                         <div class="rbt-header-content">
+
                             <div class="header-info">
+
                                 <div class="rbt-search-field">
+
                                     <div class="search-field">
-                                        <input type="text" placeholder="Search Course">
-                                        <button class="rbt-round-btn serach-btn" type="submit"><i
-                                                class="feather-search"></i></button>
+
+                                        <input
+                                            type="text"
+                                            placeholder="Search Course">
+
+                                        <button
+                                            class="rbt-round-btn serach-btn"
+                                            type="submit">
+
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="16"
+                                                height="16"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round">
+
+                                                <circle
+                                                    cx="11"
+                                                    cy="11"
+                                                    r="8">
+                                                </circle>
+
+                                                <line
+                                                    x1="21"
+                                                    y1="21"
+                                                    x2="16.65"
+                                                    y2="16.65">
+                                                </line>
+
+                                            </svg>
+
+                                        </button>
+
                                     </div>
+
                                 </div>
+
                             </div>
+
                         </div>
+
                     </div>
+
 
                     <div class="rbt-header-sec-col rbt-header-right">
 
@@ -117,24 +592,90 @@
 
                             <div class="login-dropdown">
 
-                                <button type="button"
+                                <button
+                                    type="button"
                                     class="rbt-btn rbt-switch-btn btn-gradient btn-sm hover-transform-none login-dropdown-btn">
 
-                                    <span data-text="Login">Login</span>
-                                    <i class="feather-chevron-down"></i>
+                                    <span data-text="Login">
+                                        Login
+                                    </span>
+
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="14"
+                                        height="14"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        style="margin-left: 5px;">
+
+                                        <polyline points="6 9 12 15 18 9"></polyline>
+
+                                    </svg>
 
                                 </button>
+
 
                                 <div class="login-dropdown-menu">
 
                                     <a href="instructor-profile.html">
-                                        <i class="feather-user"></i>
-                                        <span>Tutor Login</span>
+
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="15"
+                                            height="15"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            stroke-width="2"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            style="margin-right: 8px;">
+
+                                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+
+                                            <circle
+                                                cx="12"
+                                                cy="7"
+                                                r="4">
+                                            </circle>
+
+                                        </svg>
+
+                                        <span>
+                                            Tutor Login
+                                        </span>
+
                                     </a>
 
+
                                     <a href="student-profile.html">
-                                        <i class="feather-book-open"></i>
-                                        <span>Student Login</span>
+
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="15"
+                                            height="15"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            stroke-width="2"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            style="margin-right: 8px;">
+
+                                            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+
+                                            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+
+                                        </svg>
+
+                                        <span>
+                                            Student Login
+                                        </span>
+
                                     </a>
 
                                 </div>
@@ -144,15 +685,45 @@
                         </div>
 
 
-                        <!-- Start Mobile-Menu-Bar -->
-
                         <div class="mobile-menu-bar d-block d-xl-none">
 
                             <div class="hamberger">
 
                                 <button class="hamberger-button rbt-round-btn">
 
-                                    <i class="feather-menu"></i>
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="18"
+                                        height="18"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round">
+
+                                        <line
+                                            x1="3"
+                                            y1="12"
+                                            x2="21"
+                                            y2="12">
+                                        </line>
+
+                                        <line
+                                            x1="3"
+                                            y1="6"
+                                            x2="21"
+                                            y2="6">
+                                        </line>
+
+                                        <line
+                                            x1="3"
+                                            y1="18"
+                                            x2="21"
+                                            y2="18">
+                                        </line>
+
+                                    </svg>
 
                                 </button>
 
@@ -160,199 +731,164 @@
 
                         </div>
 
-                        <!-- End Mobile-Menu-Bar -->
-
                     </div>
 
                 </div>
-            </div>
-        </div>
-        <!-- End Header Top -->
 
-        <div class="rbt-header-wrapper  header-not-transparent header-sticky">
+            </div>
+
+        </div>
+
+
+        <div class="rbt-header-wrapper header-not-transparent header-sticky">
+
             <div class="container">
+
                 <div class="mainbar-row rbt-navigation-end align-items-center">
+
                     <div class="header-left rbt-header-content">
+
                         <div class="header-info">
+
                             <div class="logo">
+
                                 <a href="index.html">
-                                    <img src="assets/images/logo/logo.png" alt="Education Logo Images">
+
+                                    <img
+                                        src="assets/images/logo/logo.png"
+                                        alt="Education Logo Images">
+
                                 </a>
+
                             </div>
+
                         </div>
 
                     </div>
 
+
                     <div class="rbt-main-navigation d-none d-xl-block">
+
                         <nav class="mainmenu-nav">
+
                             <ul class="mainmenu">
 
                                 <li>
-                                    <a href="index.html">Home</a>
+                                    <a href="index.html">
+                                        Home
+                                    </a>
                                 </li>
 
                                 <li>
-                                    <a href="about-us.html">About</a>
+                                    <a href="about-us.html">
+                                        About
+                                    </a>
                                 </li>
 
                                 <li>
-                                    <a href="our-team.html">Our Team</a>
+                                    <a href="our-team.html">
+                                        Our Team
+                                    </a>
                                 </li>
 
                                 <li>
-                                    <a href="our-tuition.html">Our Tuition</a>
+                                    <a href="our-tuition.html">
+                                        Our Tuition
+                                    </a>
                                 </li>
 
                                 <li>
-                                    <a href="holiday-camps.html">Holiday Camps</a>
+                                    <a href="holiday-camps.html">
+                                        Holiday Camps
+                                    </a>
                                 </li>
 
                                 <li>
-                                    <a href="plans-and-pricing.html">Plans &amp; Pricing</a>
+                                    <a href="plans-and-pricing.html">
+                                        Plans &amp; Pricing
+                                    </a>
                                 </li>
 
                                 <li>
-                                    <a href="book-online.html">Book Online</a>
+                                    <a href="book-online.html">
+                                        Book Online
+                                    </a>
                                 </li>
 
                             </ul>
+
                         </nav>
+
                     </div>
+
+
                     <div class="header-right">
+
                         <div class="rbt-btn-wrapper d-none d-xl-block">
-                            <a class="rbt-btn rbt-switch-btn btn-gradient btn-sm hover-transform-none" href="login-register.html">
-                                <span data-text="Join Now">Join Now</span>
+
+                            <a
+                                class="rbt-btn rbt-switch-btn btn-gradient btn-sm hover-transform-none"
+                                href="login-register.html">
+
+                                <span data-text="Join Now">
+                                    Join Now
+                                </span>
+
                             </a>
+
                         </div>
-                        <!-- Start Mobile-Menu-Bar -->
+
+
                         <div class="mobile-menu-bar d-block d-xl-none">
+
                             <div class="hamberger">
+
                                 <button class="hamberger-button rbt-round-btn">
-                                    <i class="feather-menu"></i>
+
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="18"
+                                        height="18"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round">
+
+                                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                                        <line x1="3" y1="18" x2="21" y2="18"></line>
+
+                                    </svg>
+
                                 </button>
-                            </div>
-                        </div>
-                        <!-- Start Mobile-Menu-Bar -->
-                    </div>
-                </div>
-            </div>
-        </div>
 
-        <!-- Start Side Vav -->
-        <div class="rbt-offcanvas-side-menu rbt-category-sidemenu">
-            <div class="inner-wrapper">
-                <div class="inner-top">
-                    <div class="inner-title">
-                        <h4 class="title">Course Category</h4>
-                    </div>
-                    <div class="rbt-btn-close">
-                        <button class="rbt-close-offcanvas rbt-round-btn"><i class="feather-x"></i></button>
-                    </div>
-                </div>
-                <nav class="side-nav w-100">
-                    <ul class="rbt-vertical-nav-list-wrapper vertical-nav-menu">
-                        <li class="vertical-nav-item">
-                            <a href="#">Course School</a>
-                            <div class="vartical-nav-content-menu-wrapper">
-                                <div class="vartical-nav-content-menu">
-                                    <h3 class="rbt-short-title">Course Title</h3>
-                                    <ul class="rbt-vertical-nav-list-wrapper">
-                                        <li><a href="#">Web Design</a></li>
-                                        <li><a href="#">Art</a></li>
-                                        <li><a href="#">Figma</a></li>
-                                        <li><a href="#">Adobe</a></li>
-                                    </ul>
-                                </div>
-                                <div class="vartical-nav-content-menu">
-                                    <h3 class="rbt-short-title">Course Title</h3>
-                                    <ul class="rbt-vertical-nav-list-wrapper">
-                                        <li><a href="#">Photo</a></li>
-                                        <li><a href="#">English</a></li>
-                                        <li><a href="#">Math</a></li>
-                                        <li><a href="#">Read</a></li>
-                                    </ul>
-                                </div>
                             </div>
-                        </li>
-                        <li class="vertical-nav-item">
-                            <a href="#">Online School</a>
-                            <div class="vartical-nav-content-menu-wrapper">
-                                <div class="vartical-nav-content-menu">
-                                    <h3 class="rbt-short-title">Course Title</h3>
-                                    <ul class="rbt-vertical-nav-list-wrapper">
-                                        <li><a href="#">Photo</a></li>
-                                        <li><a href="#">English</a></li>
-                                        <li><a href="#">Math</a></li>
-                                        <li><a href="#">Read</a></li>
-                                    </ul>
-                                </div>
-                                <div class="vartical-nav-content-menu">
-                                    <h3 class="rbt-short-title">Course Title</h3>
-                                    <ul class="rbt-vertical-nav-list-wrapper">
-                                        <li><a href="#">Web Design</a></li>
-                                        <li><a href="#">Art</a></li>
-                                        <li><a href="#">Figma</a></li>
-                                        <li><a href="#">Adobe</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="vertical-nav-item">
-                            <a href="#">kindergarten</a>
-                            <div class="vartical-nav-content-menu-wrapper">
-                                <div class="vartical-nav-content-menu">
-                                    <h3 class="rbt-short-title">Course Title</h3>
-                                    <ul class="rbt-vertical-nav-list-wrapper">
-                                        <li><a href="#">Photo</a></li>
-                                        <li><a href="#">English</a></li>
-                                        <li><a href="#">Math</a></li>
-                                        <li><a href="#">Read</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="vertical-nav-item">
-                            <a href="#">Classic LMS</a>
-                            <div class="vartical-nav-content-menu-wrapper">
-                                <div class="vartical-nav-content-menu">
-                                    <h3 class="rbt-short-title">Course Title</h3>
-                                    <ul class="rbt-vertical-nav-list-wrapper">
-                                        <li><a href="#">Web Design</a></li>
-                                        <li><a href="#">Art</a></li>
-                                        <li><a href="#">Figma</a></li>
-                                        <li><a href="#">Adobe</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                    <div class="read-more-btn">
-                        <div class="rbt-btn-wrapper mt--20">
-                            <a class="rbt-btn btn-border-gradient radius-round btn-sm hover-transform-none w-100 justify-content-center text-center"
-                                href="#">
-                                <span>Learn More</span>
-                            </a>
+
                         </div>
+
                     </div>
-                </nav>
-                <div class="rbt-offcanvas-footer">
 
                 </div>
+
             </div>
+
         </div>
-        <!-- End Side Vav -->
-        <a class="rbt-close_side_menu" href="javascript:void(0);"></a>
+
     </header>
 
-  
 
+    <!-- ================================
+         PAGE TITLE
+    ================================= -->
 
-    <!-- Page Title -->
-
-    <div class="slider-area rbt-banner-10 height-400 bg_image bg_image--11"
+    <div
+        class="slider-area rbt-banner-10 height-400 bg_image bg_image--11"
         data-black-overlay="5">
 
         <div class="container">
+
             <div class="row">
 
                 <div class="col-lg-12">
@@ -368,446 +904,1256 @@
                 </div>
 
             </div>
+
         </div>
 
     </div>
 
 
-   
-    <!-- Start Card Style -->
+    <!-- ================================
+         DASHBOARD
+    ================================= -->
+
     <div class="rbt-dashboard-area rbt-section-gap">
+
         <div class="container">
+
             <div class="row">
+
                 <div class="col-lg-12">
-                   
 
                     <div class="row g-5">
+
+
+                        <!-- SIDEBAR -->
+
                         <div class="col-lg-3">
-                            <!-- Start Dashboard Sidebar  -->
+
                             <div class="rbt-default-sidebar sticky-top rbt-shadow-box rbt-gradient-border">
+
                                 <div class="inner">
+
                                     <div class="content-item-content">
 
                                         <div class="rbt-default-sidebar-wrapper">
+
                                             <div class="section-title mb--20">
-                                                <h6 class="rbt-title-style-2">Welcome, Jone Due</h6>
+
+                                                <h6 class="rbt-title-style-2">
+                                                    Welcome, Ruben
+                                                </h6>
+
                                             </div>
+
+
                                             <nav class="mainmenu-nav">
+
                                                 <ul class="dashboard-mainmenu rbt-default-sidebar-list">
-                                                                                            <li><a href="instructor-profile.html"><i class="feather-user"></i><span>My Profile</span></a></li>
+
+                                                    <li>
+
+                                                        <a href="instructor-profile.html">
+
+                                                            <svg
+                                                                class="sidebar-icon-svg"
+                                                                xmlns="http://www.w3.org/2000/svg"
+                                                                width="16"
+                                                                height="16"
+                                                                viewBox="0 0 24 24"
+                                                                fill="none"
+                                                                stroke="currentColor"
+                                                                stroke-width="2"
+                                                                stroke-linecap="round"
+                                                                stroke-linejoin="round">
+
+                                                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+
+                                                                <circle
+                                                                    cx="12"
+                                                                    cy="7"
+                                                                    r="4">
+                                                                </circle>
+
+                                                            </svg>
+
+                                                            <span>
+                                                                My Profile
+                                                            </span>
+
+                                                        </a>
+
+                                                    </li>
+
                                                 </ul>
+
                                             </nav>
 
-                                           
 
-                                           <nav class="mainmenu-nav">
-    <ul class="dashboard-mainmenu rbt-default-sidebar-list">
-        <li>
-            <a href="students-list.html">
-                <i class="feather-users"></i>
-                <span>Students List</span>
-            </a>
-        </li>
-    </ul>
-</nav>
+                                            <nav class="mainmenu-nav">
 
-<nav class="mainmenu-nav">
-    <ul class="dashboard-mainmenu rbt-default-sidebar-list">
-        <li class="active">
-            <a class="active" href="classlink.html">
-                <i class="feather-link"></i>
-                <span>Class Link</span>
-            </a>
-        </li>
-    </ul>
-</nav>
+                                                <ul class="dashboard-mainmenu rbt-default-sidebar-list">
 
-<nav class="mainmenu-nav">
-    <ul class="dashboard-mainmenu rbt-default-sidebar-list">
-        <li>
-            <a href="tutor-attendance.html">
-                <i class="feather-calendar"></i>
-                <span>Attendance</span>
-            </a>
-        </li>
-    </ul>
-</nav>
+                                                    <li>
 
-<nav class="mainmenu-nav">
-    <ul class="dashboard-mainmenu rbt-default-sidebar-list">
-        <li>
-            <a href="tutor-homework.html">
-                <i class="feather-file-text"></i>
-                <span>Homework &amp; Notes</span>
-            </a>
-        </li>
-    </ul>
-</nav>
+                                                        <a href="students-list.html">
+
+                                                            <svg
+                                                                class="sidebar-icon-svg"
+                                                                xmlns="http://www.w3.org/2000/svg"
+                                                                width="16"
+                                                                height="16"
+                                                                viewBox="0 0 24 24"
+                                                                fill="none"
+                                                                stroke="currentColor"
+                                                                stroke-width="2"
+                                                                stroke-linecap="round"
+                                                                stroke-linejoin="round">
+
+                                                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+
+                                                                <circle
+                                                                    cx="9"
+                                                                    cy="7"
+                                                                    r="4">
+                                                                </circle>
+
+                                                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+
+                                                                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+
+                                                            </svg>
+
+                                                            <span>
+                                                                Students List
+                                                            </span>
+
+                                                        </a>
+
+                                                    </li>
+
+                                                </ul>
+
+                                            </nav>
+
+
+                                            <nav class="mainmenu-nav">
+
+                                                <ul class="dashboard-mainmenu rbt-default-sidebar-list">
+
+                                                    <li class="active">
+
+                                                        <a
+                                                            class="active"
+                                                            href="classlink.html">
+
+                                                            <svg
+                                                                class="sidebar-icon-svg"
+                                                                xmlns="http://www.w3.org/2000/svg"
+                                                                width="16"
+                                                                height="16"
+                                                                viewBox="0 0 24 24"
+                                                                fill="none"
+                                                                stroke="currentColor"
+                                                                stroke-width="2"
+                                                                stroke-linecap="round"
+                                                                stroke-linejoin="round">
+
+                                                                <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+
+                                                                <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+
+                                                            </svg>
+
+                                                            <span>
+                                                                Class Link
+                                                            </span>
+
+                                                        </a>
+
+                                                    </li>
+
+                                                </ul>
+
+                                            </nav>
+
+
+                                            <nav class="mainmenu-nav">
+
+                                                <ul class="dashboard-mainmenu rbt-default-sidebar-list">
+
+                                                    <li>
+
+                                                        <a href="tutor-attendance.html">
+
+                                                            <svg
+                                                                class="sidebar-icon-svg"
+                                                                xmlns="http://www.w3.org/2000/svg"
+                                                                width="16"
+                                                                height="16"
+                                                                viewBox="0 0 24 24"
+                                                                fill="none"
+                                                                stroke="currentColor"
+                                                                stroke-width="2"
+                                                                stroke-linecap="round"
+                                                                stroke-linejoin="round">
+
+                                                                <rect
+                                                                    x="3"
+                                                                    y="4"
+                                                                    width="18"
+                                                                    height="18"
+                                                                    rx="2"
+                                                                    ry="2">
+                                                                </rect>
+
+                                                                <line x1="16" y1="2" x2="16" y2="6"></line>
+                                                                <line x1="8" y1="2" x2="8" y2="6"></line>
+                                                                <line x1="3" y1="10" x2="21" y2="10"></line>
+
+                                                            </svg>
+
+                                                            <span>
+                                                                Attendance
+                                                            </span>
+
+                                                        </a>
+
+                                                    </li>
+
+                                                </ul>
+
+                                            </nav>
+
+
+                                            <nav class="mainmenu-nav">
+
+                                                <ul class="dashboard-mainmenu rbt-default-sidebar-list">
+
+                                                    <li>
+
+                                                        <a href="tutor-homework.html">
+
+                                                            <svg
+                                                                class="sidebar-icon-svg"
+                                                                xmlns="http://www.w3.org/2000/svg"
+                                                                width="16"
+                                                                height="16"
+                                                                viewBox="0 0 24 24"
+                                                                fill="none"
+                                                                stroke="currentColor"
+                                                                stroke-width="2"
+                                                                stroke-linecap="round"
+                                                                stroke-linejoin="round">
+
+                                                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+
+                                                                <polyline points="14 2 14 8 20 8"></polyline>
+
+                                                                <line x1="16" y1="13" x2="8" y2="13"></line>
+                                                                <line x1="16" y1="17" x2="8" y2="17"></line>
+
+                                                                <polyline points="10 9 9 9 8 9"></polyline>
+
+                                                            </svg>
+
+                                                            <span>
+                                                                Homework &amp; Notes
+                                                            </span>
+
+                                                        </a>
+
+                                                    </li>
+
+                                                </ul>
+
+                                            </nav>
+
 
                                             <div class="section-title mt--40 mb--20">
-                                                <h6 class="rbt-title-style-2">User</h6>
+
+                                                <h6 class="rbt-title-style-2">
+                                                    User
+                                                </h6>
+
                                             </div>
 
+
                                             <nav class="mainmenu-nav">
+
                                                 <ul class="dashboard-mainmenu rbt-default-sidebar-list">
-                                                    <li><a href="tuitor-edit.html"><i class="feather-settings"></i><span>Edit Profile</span></a></li>
-                                                    <li><a href="index.html"><i class="feather-log-out"></i><span>Logout</span></a></li>
+
+                                                    <li>
+
+                                                        <a href="tuitor-edit.html">
+
+                                                            <svg
+                                                                class="sidebar-icon-svg"
+                                                                xmlns="http://www.w3.org/2000/svg"
+                                                                width="16"
+                                                                height="16"
+                                                                viewBox="0 0 24 24"
+                                                                fill="none"
+                                                                stroke="currentColor"
+                                                                stroke-width="2"
+                                                                stroke-linecap="round"
+                                                                stroke-linejoin="round">
+
+                                                                <circle
+                                                                    cx="12"
+                                                                    cy="12"
+                                                                    r="3">
+                                                                </circle>
+
+                                                                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+
+                                                            </svg>
+
+                                                            <span>
+                                                                Edit Profile
+                                                            </span>
+
+                                                        </a>
+
+                                                    </li>
+
+
+                                                    <li>
+
+                                                        <a href="index.html">
+
+                                                            <svg
+                                                                class="sidebar-icon-svg"
+                                                                xmlns="http://www.w3.org/2000/svg"
+                                                                width="16"
+                                                                height="16"
+                                                                viewBox="0 0 24 24"
+                                                                fill="none"
+                                                                stroke="currentColor"
+                                                                stroke-width="2"
+                                                                stroke-linecap="round"
+                                                                stroke-linejoin="round">
+
+                                                                <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+
+                                                                <polyline points="16 17 21 12 16 7"></polyline>
+
+                                                                <line
+                                                                    x1="21"
+                                                                    y1="12"
+                                                                    x2="9"
+                                                                    y2="12">
+                                                                </line>
+
+                                                            </svg>
+
+                                                            <span>
+                                                                Logout
+                                                            </span>
+
+                                                        </a>
+
+                                                    </li>
+
                                                 </ul>
+
                                             </nav>
+
                                         </div>
 
                                     </div>
+
                                 </div>
+
                             </div>
-                            <!-- End Dashboard Sidebar  -->
+
                         </div>
 
 
-           
+                        <!-- MAIN CONTENT -->
 
-                <div class="col-lg-9">
+                        <div class="col-lg-9">
 
-                    <div class="rbt-dashboard-content bg-color-white rbt-shadow-box class-link-page">
+                            <div class="rbt-dashboard-content bg-color-white rbt-shadow-box class-link-page">
 
-                        <div class="content">
+                                <div class="content">
 
 
-                            <!-- Title -->
+                                    <!-- TITLE -->
 
-                            <div class="section-title mb--30">
+                                    <div class="section-title mb--30">
 
-                                <h4 class="rbt-title-style-3">
-                                    Update Class Link
-                                </h4>
+                                        <h4 class="rbt-title-style-3">
+                                            Update Class Link
+                                        </h4>
 
-                                <p>
-                                    Add or update your online class meeting link.
+                                        <p>
+                                            Assign meeting links to your active classes.
+                                        </p>
+
+                                    </div>
+
+
+                                    <!-- SHARED LINK POOL STATUS -->
+
+                                    <div class="link-pool-panel">
+
+                                        <div class="link-pool-title">
+
+                                            <span>
+                                                Shared Zoom Link Pool
+                                            </span>
+
+                                            <span id="poolCountText">
+                                                &nbsp;
+                                            </span>
+
+                                        </div>
+
+
+                                        <div
+                                            class="link-pool-grid"
+                                            id="linkPoolGrid">
+                                        </div>
+
+
+                                        <div class="pool-legend">
+
+                                            <span>
+                                                <i style="background:#2fb51c"></i>
+                                                Available
+                                            </span>
+
+                                            <span>
+                                                <i style="background:#2f57ef"></i>
+                                                Assigned to you
+                                            </span>
+
+                                            <span>
+                                                <i style="background:#bbb"></i>
+                                                In use by another tutor
+                                            </span>
+
+                                        </div>
+
+
+                                        <p
+                                            class="capacity-note"
+                                            style="margin-top:14px; margin-bottom:0;">
+
+                                            Tap an available link above to assign it.
+                                            Tap it again to unassign it and pick a different one.
+
+                                        </p>
+
+                                    </div>
+
+
+                                    <!-- =================================
+                                         CLASS SESSION 1
+                                    ================================= -->
+
+                                    <div
+                                        class="class-slot-card"
+                                        data-slot="1">
+
+                                        <div class="class-slot-title">
+
+                                            <span class="slot-number">
+                                                1
+                                            </span>
+
+                                            Class Session 1
+
+                                        </div>
+
+
+                                        <div class="row">
+
+                                            <!-- 1. COURSE NAME DROPDOWN -->
+                                            <div class="col-lg-6 mb--20">
+
+                                                <label>
+                                                    Course Name
+                                                </label>
+
+                                                <select
+                                                    class="form-control slot-course"
+                                                    required>
+
+                                                    <option
+                                                        value=""
+                                                        selected
+                                                        disabled>
+                                                        Select Course
+                                                    </option>
+
+                                                    <option value="reading">
+                                                        Reading &amp; Comprehension
+                                                    </option>
+
+                                                    <option value="creative">
+                                                        Creative Writing
+                                                    </option>
+
+                                                    <option value="english">
+                                                        English Language
+                                                    </option>
+
+                                                    <option value="lamda">
+                                                        LAMDA &amp; Public Speaking
+                                                    </option>
+
+                                                </select>
+
+                                            </div>
+
+
+                                            <!-- 2. CLASS TIME DROPDOWN -->
+                                            <div class="col-lg-6 mb--20">
+
+                                                <label>
+                                                    Class Time
+                                                </label>
+
+                                                <select
+                                                    class="form-control slot-type"
+                                                    required>
+
+                                                    <option
+                                                        value=""
+                                                        selected
+                                                        disabled>
+                                                        Select Class Time
+                                                    </option>
+
+                                                    <option value="one-to-one">
+                                                        One to One
+                                                    </option>
+
+                                                    <option value="one-to-many">
+                                                        One to Many (Group)
+                                                    </option>
+
+                                                </select>
+
+                                            </div>
+
+                                        </div>
+
+
+                                        <input type="hidden" class="slot-link" value="">
+
+
+                                        <div class="current-link-box no-link slot-current-link">
+                                            No link assigned yet
+                                        </div>
+
+
+                                        <div class="d-flex justify-content-between align-items-center mt--20">
+
+                                            <div class="rbt-btn-wrapper">
+
+                                                <button
+                                                    type="button"
+                                                    class="rbt-btn btn-gradient hover-icon-reverse slot-update-btn">
+
+                                                    <span class="icon-reverse-wrapper">
+
+                                                        <span class="btn-text">
+                                                            Update Class Link
+                                                        </span>
+
+                                                        <span class="btn-icon">
+                                                            <i class="feather-arrow-right"></i>
+                                                        </span>
+
+                                                        <span class="btn-icon">
+                                                            <i class="feather-arrow-right"></i>
+                                                        </span>
+
+                                                    </span>
+
+                                                </button>
+
+                                            </div>
+
+
+                                            <div class="form-check form-switch mb--0">
+
+                                                <input
+                                                    class="form-check-input slot-status-toggle"
+                                                    type="checkbox"
+                                                    id="slotStatus1">
+
+                                                <label
+                                                    class="form-check-label"
+                                                    for="slotStatus1"
+                                                    id="slotStatusText1">
+
+                                                    Disable
+
+                                                </label>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+
+                                    <!-- =================================
+                                         CLASS SESSION 2
+                                    ================================= -->
+
+                                    <div
+                                        class="class-slot-card"
+                                        data-slot="2">
+
+                                        <div class="class-slot-title">
+
+                                            <span class="slot-number">
+                                                2
+                                            </span>
+
+                                            Class Session 2
+
+                                        </div>
+
+
+                                        <div class="row">
+
+                                            <!-- 1. COURSE NAME DROPDOWN -->
+                                            <div class="col-lg-6 mb--20">
+
+                                                <label>
+                                                    Course Name
+                                                </label>
+
+                                                <select
+                                                    class="form-control slot-course"
+                                                    required>
+
+                                                    <option
+                                                        value=""
+                                                        selected
+                                                        disabled>
+                                                        Select Course
+                                                    </option>
+
+                                                    <option value="reading">
+                                                        Reading &amp; Comprehension
+                                                    </option>
+
+                                                    <option value="creative">
+                                                        Creative Writing
+                                                    </option>
+
+                                                    <option value="english">
+                                                        English Language
+                                                    </option>
+
+                                                    <option value="lamda">
+                                                        LAMDA &amp; Public Speaking
+                                                    </option>
+
+                                                </select>
+
+                                            </div>
+
+
+                                            <!-- 2. CLASS TIME DROPDOWN -->
+                                            <div class="col-lg-6 mb--20">
+
+                                                <label>
+                                                    Class Time
+                                                </label>
+
+                                                <select
+                                                    class="form-control slot-type"
+                                                    required>
+
+                                                    <option
+                                                        value=""
+                                                        selected
+                                                        disabled>
+                                                        Select Class Time
+                                                    </option>
+
+                                                    <option value="one-to-one">
+                                                        One to One
+                                                    </option>
+
+                                                    <option value="one-to-many">
+                                                        One to Many (Group)
+                                                    </option>
+
+                                                </select>
+
+                                            </div>
+
+                                        </div>
+
+
+                                        <input type="hidden" class="slot-link" value="">
+
+
+                                        <div class="current-link-box no-link slot-current-link">
+                                            No link assigned yet
+                                        </div>
+
+
+                                        <div class="d-flex justify-content-between align-items-center mt--20">
+
+                                            <div class="rbt-btn-wrapper">
+
+                                                <button
+                                                    type="button"
+                                                    class="rbt-btn btn-gradient hover-icon-reverse slot-update-btn">
+
+                                                    <span class="icon-reverse-wrapper">
+
+                                                        <span class="btn-text">
+                                                            Update Class Link
+                                                        </span>
+
+                                                        <span class="btn-icon">
+                                                            <i class="feather-arrow-right"></i>
+                                                        </span>
+
+                                                        <span class="btn-icon">
+                                                            <i class="feather-arrow-right"></i>
+                                                        </span>
+
+                                                    </span>
+
+                                                </button>
+
+                                            </div>
+
+
+                                            <div class="form-check form-switch mb--0">
+
+                                                <input
+                                                    class="form-check-input slot-status-toggle"
+                                                    type="checkbox"
+                                                    id="slotStatus2">
+
+                                                <label
+                                                    class="form-check-label"
+                                                    for="slotStatus2"
+                                                    id="slotStatusText2">
+
+                                                    Disable
+
+                                                </label>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================================
+         FOOTER
+    ================================= -->
+
+    <footer class="rbt-footer footer-style-1 bg-color-white overflow-hidden">
+
+        <div class="footer-top">
+
+            <div class="container">
+
+                <div class="row g-5">
+
+
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+
+                        <div class="footer-widget">
+
+                            <div class="logo">
+
+                                <a href="index.html">
+
+                                    <img
+                                        src="assets/images/logo/logo.png"
+                                        alt="Edu-Loop Sign Logo">
+
+                                </a>
+
+                            </div>
+
+
+                            <p class="description mt--20">
+
+                                We are always seeking talented and motivated
+                                individuals to join our team.
+
+                            </p>
+
+
+                            <ul class="social-icon social-default justify-content-start">
+
+                                <li>
+
+                                    <a href="https://www.facebook.com/">
+
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="15"
+                                            height="15"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            stroke-width="2"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round">
+
+                                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+
+                                        </svg>
+
+                                    </a>
+
+                                </li>
+
+
+                                <li>
+
+                                    <a
+                                        href="https://www.twitter.com"
+                                        aria-label="X (Twitter)">
+
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="15"
+                                            height="15"
+                                            fill="currentColor"
+                                            viewBox="0 0 24 24"
+                                            class="social-icon-x"
+                                            style="vertical-align: -2px;">
+
+                                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+
+                                        </svg>
+
+                                    </a>
+
+                                </li>
+
+
+                                <li>
+
+                                    <a href="https://www.instagram.com/">
+
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="15"
+                                            height="15"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            stroke-width="2"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round">
+
+                                            <rect
+                                                x="2"
+                                                y="2"
+                                                width="20"
+                                                height="20"
+                                                rx="5">
+                                            </rect>
+
+                                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+
+                                            <line
+                                                x1="17.5"
+                                                y1="6.5"
+                                                x2="17.51"
+                                                y2="6.5">
+                                            </line>
+
+                                        </svg>
+
+                                    </a>
+
+                                </li>
+
+
+                                <li>
+
+                                    <a href="https://www.linkedin.com/">
+
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="15"
+                                            height="15"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            stroke-width="2"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round">
+
+                                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+
+                                            <rect
+                                                x="2"
+                                                y="9"
+                                                width="4"
+                                                height="12">
+                                            </rect>
+
+                                            <circle
+                                                cx="4"
+                                                cy="4"
+                                                r="2">
+                                            </circle>
+
+                                        </svg>
+
+                                    </a>
+
+                                </li>
+
+                            </ul>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="col-lg-2 col-md-6 col-sm-6 col-12">
+
+                        <div class="footer-widget">
+
+                            <h5 class="ft-title">
+                                Useful Links
+                            </h5>
+
+                            <ul class="ft-link">
+
+                                <li>
+                                    <a href="our-team.html">
+                                        Our Team
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="our-tuition.html">
+                                        Our Tuition
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="holiday-camps.html">
+                                        Holiday Camps
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="plans-and-pricing.html">
+                                        Plans &amp; Pricing
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="book-online.html">
+                                        Book Online
+                                    </a>
+                                </li>
+
+                            </ul>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="col-lg-2 col-md-6 col-sm-6 col-12">
+
+                        <div class="footer-widget">
+
+                            <h5 class="ft-title">
+                                Popular Programs
+                            </h5>
+
+                            <ul class="ft-link">
+
+                                <li>
+                                    <a href="our-tuition.html">
+                                        Primary Tuition
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="our-tuition.html">
+                                        Secondary Tuition
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="our-tuition.html">
+                                        GCSE Tuition
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="our-tuition.html">
+                                        IGCSE Tuition
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="our-tuition.html">
+                                        A-Level Tuition
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="holiday-camps.html">
+                                        Holiday Camps
+                                    </a>
+                                </li>
+
+                            </ul>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+
+                        <div class="footer-widget">
+
+                            <h5 class="ft-title">
+                                Get Contact
+                            </h5>
+
+                            <ul class="ft-link">
+
+                                <li>
+                                    <span>Phone:</span>
+                                    <a href="#">
+                                        (406) 555-0120
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <span>E-mail:</span>
+                                    <a href="mailto:info@londonstaredu.com">
+                                        info@londonstaredu.com
+                                    </a>
+                                </li>
+
+                            </ul>
+
+
+                            <div class="newsletter-form mt--20">
+
+                                <h6 class="w-600">
+                                    Location
+                                </h6>
+
+                                <p class="description">
+
+                                    2000+ Our students are subscribe Around
+                                    the World.<br>
+                                    Don’t be shy introduce yourself!
+
                                 </p>
 
                             </div>
 
-
-                            <!-- Course -->
-
-                            <div class="row mb--20">
-
-                                <div class="col-lg-12">
-
-                                    <label>
-                                        Course Name
-                                    </label>
-
-                                    <select class="form-control" placeholder="Select Course">
-
-                                        <option>
-                                            Reading & Comprehension
-                                        </option>
-
-                                        <option>
-                                            Creative Writing
-                                        </option>
-
-                                        <option>
-                                            English Language
-                                        </option>
-
-                                        <option>
-                                            LAMDA & Public Speaking
-                                        </option>
-
-                                    </select>
-
-                                </div>
-
-                            </div>
-
-
-                            
-                                     
-
-
-                            <!-- Meeting Link -->
-
-                            <div class="row mb--30">
-
-                                <div class="col-lg-12">
-
-                                    <label>
-                                        Meeting Link
-                                    </label>
-
-                                    <input
-                                        type="url"
-                                        class="form-control"
-                                        placeholder="Paste Google Meet or Zoom link here">
-
-                                </div>
-
-                            </div>
-
-
-                           <div class="d-flex justify-content-between align-items-center">
-
-    <!-- Update Class Link Button -->
-    <div class="rbt-btn-wrapper">
-
-        <button
-            type="button"
-            class="rbt-btn btn-gradient hover-icon-reverse">
-
-            <span class="icon-reverse-wrapper">
-
-                <span class="btn-text">
-                    Update Class Link
-                </span>
-
-                <span class="btn-icon">
-                    <i class="feather-arrow-right"></i>
-                </span>
-
-                <span class="btn-icon">
-                    <i class="feather-arrow-right"></i>
-                </span>
-
-            </span>
-
-        </button>
-
-    </div>
-
-
-    <!-- Enable / Disable Toggle -->
-    <div class="form-check form-switch mb--0">
-
-        <input
-            class="form-check-input"
-            type="checkbox"
-            id="classLinkStatus">
-
-        <label
-            class="form-check-label"
-            for="classLinkStatus"
-            id="statusText">
-
-            Disable
-
-        </label>
-
-    </div>
-
-</div>
-
-
                         </div>
 
                     </div>
 
                 </div>
 
-
             </div>
 
         </div>
 
-    </div>
 
-
-    <!--
-         FOOTER
-         -->
-
-        <!-- Start Footer aera -->
-    <footer class="rbt-footer footer-style-1 bg-color-white overflow-hidden">
-        <div class="footer-top">
-            <div class="container">
-                <div class="row g-5">
-                    <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-                        <div class="footer-widget">
-                            <div class="logo">
-                                <a href="index.html">
-                                    <img src="assets/images/logo/logo.png" alt="Edu-cause">
-                                </a>
-                            </div>
-
-                            <p class="description mt--20">We’re always in search for talented
-                                and motivated people. Don’t be shy introduce yourself!
-                            </p>
-
-                            <ul class="social-icon social-default justify-content-start">
-                                <li><a href="https://www.facebook.com/">
-                                        <i class="feather-facebook"></i>
-                                    </a>
-                                </li>
-
-                                <li><a href="https://www.instagram.com/">
-                                        <i class="feather-instagram"></i>
-                                    </a>
-                                </li>
-                                <li><a href="https://www.linkdin.com/">
-                                        <i class="feather-linkedin"></i>
-                                    </a>
-                                </li>
-                                <li><a href="https://www.twitter.com">
-                                        <i class="feather-youtube"></i>
-                                    </a>
-                                </li>
-                            </ul>
-
-                           <!-- <div class="contact-btn mt--30">
-                                <a class="rbt-btn hover-icon-reverse btn-border-gradient radius-round" href="#">
-                                    <div class="icon-reverse-wrapper">
-                                        <span class="btn-text">Contact With Us</span>
-                                        <span class="btn-icon"><i class="feather-arrow-right"></i></span>
-                                        <span class="btn-icon"><i class="feather-arrow-right"></i></span>
-                                    </div>
-                                </a>
-                            </div> -->
-                        </div>
-                    </div>
-
-                    <div class="col-lg-2 col-md-6 col-sm-6 col-12">
-                        <div class="footer-widget">
-                            <h5 class="ft-title">Quick Links</h5>
-                            <ul class="ft-link">
-
-                                
-                                <li>
-                                    <a href="our-team.html">Our Team</a>
-                                </li>
-                                <li>
-                                    <a href="our-tuition.html">Our Tuition</a>
-                                </li>
-                                <li>
-                                    <a href="holiday-camps.html">Holiday Camps</a>
-                                </li>
-                                <li>
-                                    <a href="plans-pricing.html">Plans & Pricing</a>
-                                </li>
-                                <li>
-                                    <a href="book-online.html">Book Online</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-2 col-md-6 col-sm-6 col-12">
-                        <div class="footer-widget">
-                            <h5 class="ft-title">Popular Programs</h5>
-                            <ul class="ft-link">
-                                <li>
-                                    <a href="our-tuition.html">Primary Tuition</a>
-                                </li>
-                                <li>
-                                    <a href="our-tuition.html">Secondary Tuition</a>
-                                </li>
-                                <li>
-                                    <a href="our-tuition.html">GCSE Tuition</a>
-                                </li>
-                                <li>
-                                    <a href="our-tuition.html">IGCSE Tuition</a>
-                                </li>
-                                <li>
-                                    <a href="our-tuition.html">A-Level Tuition</a>
-                                </li>
-                                <li>
-                                    <a href="holiday-camps.html">Holiday Camps</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-                        <div class="footer-widget">
-                            <h5 class="ft-title">Get Contact</h5>
-                            <ul class="ft-link">
-                                <li><span>Phone:</span> <a href="#">(406) 555-0120</a></li>
-                                <li><span>E-mail:</span> <a href="mailto:hr@example.com">admin@example.com</a></li>
-                            </ul>
-
-                            <form class="newsletter-form mt--20" action="#">
-                                <h6 class="w-600">Location</h6>
-                                <p class="description">2000+ Our students are subscribe Around the World.<br> Don’t be
-                                    shy introduce yourself!</p>
-
-
-
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="rbt-separator-mid">
-            <div class="container">
-                <hr class="rbt-separator m-0">
-            </div>
-        </div>
-        <!-- Start Copyright Area  -->
         <div class="copyright-area copyright-style-1 ptb--20">
+
             <div class="container">
+
                 <div class="row align-items-center">
+
                     <div class="col-xxl-7 col-xl-7 col-lg-7 col-md-12 col-12">
+
                         <p class="rbt-link-hover text-center text-lg-start">
-                            Copyright © 2024 by
-                            <a href="index.html">London Star Education Ltd.</a>
-                            All Rights Reserved. Designed by
-                            <a href="https://impinfo.in/" target="_blank">RKI Systems</a>
+
+                            Copyright © 2026 by
+                            <a href="index.html">
+                                London Star Education Ltd.
+                            </a>
+
+                            All Rights Reserved.
+
+                            Designed by
+
+                            <a
+                                href="https://rkisystems.co.uk/"
+                                target="_blank">
+
+                                RKI Systems
+
+                            </a>
+
                         </p>
+
                     </div>
+
+
                     <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-12 col-12">
-                        <ul
-                            class="copyright-link rbt-link-hover justify-content-center justify-content-lg-end mt_sm--10 mt_md--10">
-                            <li><a href="#">Terms of service</a></li>
-                            <li><a href="privacy-policy.html">Privacy policy</a></li>
-                            <li><a href="subscription.html">Subscription</a></li>
+
+                        <ul class="copyright-link rbt-link-hover justify-content-center justify-content-lg-end mt_sm--10 mt_md--10">
+
+                            <li>
+                                <a href="#">
+                                    Terms of service
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="privacy-policy.html">
+                                    Privacy policy
+                                </a>
+                            </li>
+
                         </ul>
+
                     </div>
+
                 </div>
+
             </div>
+
         </div>
-        <!-- End Copyright Area  -->
+
     </footer>
-    <!-- End Footer aera -->
+
+
+    <!-- ================================
+         PROGRESS / BACK TO TOP
+    ================================= -->
+
     <div class="rbt-progress-parent">
-        <svg class="rbt-back-circle svg-inner" width="100%" height="100%" viewBox="-1 -1 102 102">
-            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+
+        <svg
+            class="rbt-back-circle svg-inner"
+            width="100%"
+            height="100%"
+            viewBox="-1 -1 102 102">
+
+            <path
+                d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+
         </svg>
+
     </div>
 
-    <!-- Floating Contact Buttons -->
+
+    <!-- ================================
+         FLOATING CONTACT (PHONE & WHATSAPP)
+    ================================= -->
+
     <div class="floating-contact">
 
-        <!-- Call -->
+
+        <!-- CALL -->
+
         <div class="contact-item call-item">
 
             <div class="contact-label call-label">
                 Talk To Our Experts
             </div>
 
-            <a href="tel:+919876543210" class="contact-button call-button" aria-label="Call us">
-                <i class="fa fa-phone"></i>
+
+            <a
+                href="tel:+919876543210"
+                class="contact-button call-button"
+                aria-label="Call us">
+
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round">
+
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+
+                </svg>
+
             </a>
 
         </div>
 
 
-        <!-- WhatsApp -->
+        <!-- WHATSAPP -->
+
         <div class="contact-item whatsapp-item">
 
             <div class="contact-label whatsapp-label">
                 Message Us
             </div>
 
-            <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer"
-                class="contact-button whatsapp-button" aria-label="Chat with us on WhatsApp">
-                <i class="fab fa-whatsapp"></i>
+
+            <a
+                href="https://wa.me/919876543210"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="contact-button whatsapp-button"
+                aria-label="Chat with us on WhatsApp">
+
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="22"
+                    height="22"
+                    fill="currentColor"
+                    viewBox="0 0 24 24">
+
+                    <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+
+                </svg>
+
             </a>
 
         </div>
 
     </div>
 
-    <!-- JS -->
+
+    <!-- ================================
+         JAVASCRIPT
+    ================================= -->
 
     <script src="assets/js/vendor/modernizr.min.js"></script>
     <script src="assets/js/vendor/jquery.js"></script>
@@ -835,20 +2181,399 @@
 
     <script src="assets/js/main.js"></script>
 
+
+    <!-- LOGIN DROPDOWN -->
+
     <script>
-    const classLinkStatus = document.getElementById("classLinkStatus");
-    const statusText = document.getElementById("statusText");
 
-    classLinkStatus.addEventListener("change", function () {
+        document.addEventListener("DOMContentLoaded", function () {
 
-        if (this.checked) {
-            statusText.textContent = "Enable";
-        } else {
-            statusText.textContent = "Disable";
-        }
+            const dropdown =
+                document.querySelector(".login-dropdown");
 
-    });
-</script>
+            const button =
+                document.querySelector(".login-dropdown-btn");
+
+            if (!dropdown || !button) return;
+
+            button.addEventListener("click", function (event) {
+
+                event.stopPropagation();
+
+                dropdown.classList.toggle("active");
+
+            });
+
+
+            document.addEventListener("click", function (event) {
+
+                if (!dropdown.contains(event.target)) {
+
+                    dropdown.classList.remove("active");
+
+                }
+
+            });
+
+        });
+
+    </script>
+
+
+    <!-- FLOATING CONTACT -->
+
+    <script>
+
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const contactItems =
+                document.querySelectorAll(".contact-item");
+
+
+            contactItems.forEach(function (item) {
+
+                const button =
+                    item.querySelector(".contact-button");
+
+                if (!button) return;
+
+
+                button.addEventListener("click", function () {
+
+                    if (window.innerWidth <= 767) {
+
+                        contactItems.forEach(function (otherItem) {
+
+                            if (otherItem !== item) {
+
+                                otherItem.classList.remove("show-label");
+
+                            }
+
+                        });
+
+                        item.classList.toggle("show-label");
+
+                    }
+
+                });
+
+            });
+
+
+            document.addEventListener("click", function (event) {
+
+                if (!event.target.closest(".floating-contact")) {
+
+                    contactItems.forEach(function (item) {
+
+                        item.classList.remove("show-label");
+
+                    });
+
+                }
+
+            });
+
+        });
+
+    </script>
+
+
+    <!-- =========================================
+         CLASS LINK POOL MANAGER
+    ========================================= -->
+
+    <script>
+
+        document.addEventListener("DOMContentLoaded", function () {
+
+            var POOL_KEY = "lse_class_link_pool";
+            var CURRENT_TUTOR = "Ruben";
+
+            /* Destroy bootstrap-select completely to avoid multi-border overlay */
+            function cleanupBootstrapSelect() {
+                if (window.jQuery && typeof jQuery.fn.selectpicker === "function") {
+                    jQuery('.class-link-page select').each(function () {
+                        try {
+                            if (jQuery(this).parent().hasClass('bootstrap-select')) {
+                                jQuery(this).selectpicker('destroy');
+                            }
+                        } catch (e) {}
+                    });
+                }
+                document.querySelectorAll('.class-link-page select').forEach(function (el) {
+                    el.classList.remove('selectpicker');
+                    el.style.display = 'block';
+                    el.style.visibility = 'visible';
+                    el.style.opacity = '1';
+                });
+            }
+
+            cleanupBootstrapSelect();
+            setTimeout(cleanupBootstrapSelect, 200);
+
+            function defaultPool() {
+                return [
+                    { id: 1, label: "Link 1", url: "https://zoom.us/j/91000000001", status: "in-use", tutor: "Sarah Khan", course: "english", type: "one-to-one" },
+                    { id: 2, label: "Link 2", url: "https://zoom.us/j/91000000002", status: "in-use", tutor: "Sarah Khan", course: "creative", type: "one-to-many" },
+                    { id: 3, label: "Link 3", url: "https://zoom.us/j/91000000003", status: "available", tutor: null, course: null, type: null },
+                    { id: 4, label: "Link 4", url: "https://zoom.us/j/91000000004", status: "in-use", tutor: "Mark Wilson", course: "reading", type: "one-to-one" },
+                    { id: 5, label: "Link 5", url: "https://zoom.us/j/91000000005", status: "available", tutor: null, course: null, type: null },
+                    { id: 6, label: "Link 6", url: "https://zoom.us/j/91000000006", status: "available", tutor: null, course: null, type: null },
+                    { id: 7, label: "Link 7", url: "https://zoom.us/j/91000000007", status: "in-use", tutor: "Mark Wilson", course: "lamda", type: "one-to-many" },
+                    { id: 8, label: "Link 8", url: "https://zoom.us/j/91000000008", status: "available", tutor: null, course: null, type: null }
+                ];
+            }
+
+            function getPool() {
+                try {
+                    var raw = localStorage.getItem(POOL_KEY);
+                    if (!raw) {
+                        var pool = defaultPool();
+                        localStorage.setItem(POOL_KEY, JSON.stringify(pool));
+                        return pool;
+                    }
+                    return JSON.parse(raw);
+                } catch (e) {
+                    return defaultPool();
+                }
+            }
+
+            function savePool(pool) {
+                localStorage.setItem(POOL_KEY, JSON.stringify(pool));
+            }
+
+            function renderPool() {
+                var pool = getPool();
+                var grid = document.getElementById("linkPoolGrid");
+                var countText = document.getElementById("poolCountText");
+                if (!grid) return;
+
+                var availableCount = pool.filter(function (l) { return l.status === "available"; }).length;
+                if (countText) {
+                    countText.textContent = availableCount + " of " + pool.length + " links available";
+                }
+
+                grid.innerHTML = "";
+                pool.forEach(function (link) {
+                    var div = document.createElement("div");
+                    var cls = "link-badge ";
+                    var sub = "";
+
+                    if (link.status === "available") {
+                        cls += "available";
+                        sub = "Available";
+                    } else if (link.tutor === CURRENT_TUTOR) {
+                        cls += "in-use-mine";
+                        sub = "Your class";
+                    } else {
+                        cls += "in-use-others";
+                        sub = "In use";
+                    }
+
+                    div.className = cls;
+                    div.setAttribute("data-link-id", link.id);
+                    div.innerHTML = link.label + "<small>" + sub + "</small>";
+                    grid.appendChild(div);
+                });
+            }
+
+            function getSlotCard(slotNumber) {
+                return document.querySelector('.class-slot-card[data-slot="' + slotNumber + '"]');
+            }
+
+            function renderSlotCurrentLink(slotNumber) {
+                var card = getSlotCard(slotNumber);
+                if (!card) return;
+                var box = card.querySelector(".slot-current-link");
+                var linkId = card.getAttribute("data-assigned-link");
+
+                if (!linkId) {
+                    box.classList.add("no-link");
+                    box.innerHTML = "No link assigned yet";
+                    return;
+                }
+
+                var pool = getPool();
+                var link = pool.find(function (l) { return l.id === parseInt(linkId, 10); });
+
+                if (!link) {
+                    box.classList.add("no-link");
+                    box.innerHTML = "No link assigned yet";
+                    return;
+                }
+
+                box.classList.remove("no-link");
+                box.innerHTML = '<span style="flex:1;">' + link.url + '</span>' +
+                    '<button type="button" class="copy-link-btn" data-copy="' + link.url + '">Copy</button>';
+            }
+
+            function releaseLink(linkId) {
+                if (!linkId) return;
+                var pool = getPool();
+                pool.forEach(function (link) {
+                    if (link.id === parseInt(linkId, 10)) {
+                        link.status = "available";
+                        link.tutor = null;
+                        link.course = null;
+                        link.type = null;
+                    }
+                });
+                savePool(pool);
+            }
+
+            function assignLink(linkId, course, type) {
+                var pool = getPool();
+                pool.forEach(function (link) {
+                    if (link.id === parseInt(linkId, 10)) {
+                        link.status = "in-use";
+                        link.tutor = CURRENT_TUTOR;
+                        link.course = course;
+                        link.type = type;
+                    }
+                });
+                savePool(pool);
+            }
+
+            function commitLinkAssignment(slotNumber, linkId) {
+                var card = getSlotCard(slotNumber);
+                if (!card || !linkId) return;
+
+                var courseSelect = card.querySelector(".slot-course");
+                var typeSelect = card.querySelector(".slot-type");
+                var toggle = card.querySelector(".slot-status-toggle");
+                var toggleLabel = card.querySelector("#slotStatusText" + slotNumber);
+                var previousLinkId = card.getAttribute("data-assigned-link");
+
+                if (previousLinkId && previousLinkId !== String(linkId)) {
+                    releaseLink(previousLinkId);
+                }
+
+                assignLink(linkId, courseSelect ? courseSelect.value : "", typeSelect ? typeSelect.value : "");
+                card.setAttribute("data-assigned-link", linkId);
+
+                if (toggle) toggle.checked = true;
+                if (toggleLabel) toggleLabel.textContent = "Enable";
+
+                renderPool();
+                renderSlotCurrentLink(slotNumber);
+            }
+
+            function setupSlot(slotNumber) {
+                var card = getSlotCard(slotNumber);
+                if (!card) return;
+
+                var updateBtn = card.querySelector(".slot-update-btn");
+                var toggle = card.querySelector(".slot-status-toggle");
+                var toggleLabel = card.querySelector("#slotStatusText" + slotNumber);
+                var courseSelect = card.querySelector(".slot-course");
+                var typeSelect = card.querySelector(".slot-type");
+
+                updateBtn.addEventListener("click", function () {
+                    var course = courseSelect.value;
+                    var type = typeSelect.value;
+                    var assigned = card.getAttribute("data-assigned-link");
+
+                    if (!course || !type) {
+                        alert("Please select both a Course Name and Class Time.");
+                        return;
+                    }
+
+                    if (!assigned) {
+                        alert("Please click an available link from the pool above first.");
+                        return;
+                    }
+
+                    commitLinkAssignment(slotNumber, assigned);
+                });
+
+                toggle.addEventListener("change", function () {
+                    var assignedLinkId = card.getAttribute("data-assigned-link");
+                    if (this.checked) {
+                        toggleLabel.textContent = "Enable";
+                        if (assignedLinkId && courseSelect.value && typeSelect.value) {
+                            assignLink(assignedLinkId, courseSelect.value, typeSelect.value);
+                        }
+                    } else {
+                        toggleLabel.textContent = "Disable";
+                        if (assignedLinkId) {
+                            releaseLink(assignedLinkId);
+                            card.removeAttribute("data-assigned-link");
+                        }
+                    }
+                    renderPool();
+                    renderSlotCurrentLink(slotNumber);
+                });
+
+                card.addEventListener("click", function (event) {
+                    var btn = event.target.closest(".copy-link-btn");
+                    if (!btn) return;
+                    var url = btn.getAttribute("data-copy");
+                    if (navigator.clipboard) {
+                        navigator.clipboard.writeText(url);
+                    }
+                    var original = btn.textContent;
+                    btn.textContent = "Copied!";
+                    setTimeout(function () { btn.textContent = original; }, 1500);
+                });
+            }
+
+            function setupPoolGridClicks() {
+                var grid = document.getElementById("linkPoolGrid");
+                if (!grid) return;
+
+                grid.addEventListener("click", function (event) {
+                    var badge = event.target.closest(".link-badge");
+                    if (!badge) return;
+                    var linkId = badge.getAttribute("data-link-id");
+                    if (!linkId) return;
+
+                    if (badge.classList.contains("in-use-mine")) {
+                        var ownerSlot = [1, 2].find(function (slotNumber) {
+                            var card = getSlotCard(slotNumber);
+                            return card && card.getAttribute("data-assigned-link") === linkId;
+                        });
+                        if (ownerSlot) {
+                            var card = getSlotCard(ownerSlot);
+                            releaseLink(linkId);
+                            card.removeAttribute("data-assigned-link");
+                            var toggle = card.querySelector(".slot-status-toggle");
+                            var toggleLabel = card.querySelector("#slotStatusText" + ownerSlot);
+                            if (toggle) toggle.checked = false;
+                            if (toggleLabel) toggleLabel.textContent = "Disable";
+                            renderPool();
+                            renderSlotCurrentLink(ownerSlot);
+                        }
+                        return;
+                    }
+
+                    if (!badge.classList.contains("available")) return;
+
+                    var targetSlot = [1, 2].find(function (slotNumber) {
+                        var card = getSlotCard(slotNumber);
+                        return card && !card.getAttribute("data-assigned-link");
+                    });
+
+                    if (!targetSlot) {
+                        alert("Both class sessions already have links assigned. Please disable or unassign one first.");
+                        return;
+                    }
+
+                    commitLinkAssignment(targetSlot, linkId);
+                });
+            }
+
+            renderPool();
+            setupSlot(1);
+            setupSlot(2);
+            setupPoolGridClicks();
+            renderSlotCurrentLink(1);
+            renderSlotCurrentLink(2);
+
+        });
+
+    </script>
 
 </body>
 

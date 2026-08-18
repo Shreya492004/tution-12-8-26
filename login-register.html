@@ -212,7 +212,7 @@
                 <p class="description">Histudy is a education website template. You can customize all.</p>
                 <ul class="navbar-top-left rbt-information-list justify-content-start">
                     <li>
-                        <a href="mailto:hello@example.com"><i class="feather-mail"></i>example@gmail.com</a>
+                        <a href="mailto:info@londonstaredu.com"><i class="feather-mail"></i>info@londonstaredu.com</a>
                     </li>
                     <li>
                         <a href="#"><i class="feather-phone"></i>(302) 555-0107</a>
@@ -947,10 +947,10 @@
                                 <i class="feather-facebook"></i>
                             </a>
                         </li>
-                        <li><a href="https://www.twitter.com">
-                                <i class="feather-twitter"></i>
-                            </a>
-                        </li>
+                        <li><a href="https://www.twitter.com" aria-label="X (Twitter)">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" viewBox="0 0 24 24" class="social-icon-x" style="vertical-align: -2px;"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                                    </a>
+                                </li>
                         <li><a href="https://www.instagram.com/">
                                 <i class="feather-instagram"></i>
                             </a>
@@ -1099,14 +1099,12 @@
                         <h3 class="title">Login</h3>
                         <form class="max-width-auto">
                             <div class="form-group">
-                                <input name="con_name" type="text" />
-                                <label>Username or email *</label>
-                                <span class="focus-border"></span>
+                                <label for="login_user">Username or email *</label>
+                                <input id="login_user" name="con_name" type="text" placeholder="Enter your username or email" />
                             </div>
                             <div class="form-group">
-                                <input name="con_email" type="email">
-                                <label>Password *</label>
-                                <span class="focus-border"></span>
+                                <label for="login_pass">Password *</label>
+                                <input id="login_pass" name="con_email" type="password" placeholder="Enter your password" />
                             </div>
 
                             <div class="row mb--30">
@@ -1141,27 +1139,23 @@
                         <h3 class="title">Register</h3>
                         <form class="max-width-auto">
                             <div class="form-group">
-                                <input name="register-email" type="text" />
-                                <label>Email address *</label>
-                                <span class="focus-border"></span>
+                                <label for="reg_email">Email address *</label>
+                                <input id="reg_email" name="register-email" type="email" placeholder="Enter your email address" />
                             </div>
 
                             <div class="form-group">
-                                <input name="register_user" type="text">
-                                <label>Username *</label>
-                                <span class="focus-border"></span>
+                                <label for="reg_user">Username *</label>
+                                <input id="reg_user" name="register_user" type="text" placeholder="Choose a username" />
                             </div>
 
                             <div class="form-group">
-                                <input name="register_password" type="password">
-                                <label>Password *</label>
-                                <span class="focus-border"></span>
+                                <label for="reg_pass">Password *</label>
+                                <input id="reg_pass" name="register_password" type="password" placeholder="Create a password" />
                             </div>
 
                             <div class="form-group">
-                                <input name="register_conpassword" type="password">
-                                <label>Confirm Password *</label>
-                                <span class="focus-border"></span>
+                                <label for="reg_cpass">Confirm Password *</label>
+                                <input id="reg_cpass" name="register_con_password" type="password" placeholder="Confirm your password" />
                             </div>
 
                             <div class="form-submit-group">
@@ -1173,7 +1167,6 @@
                                     </span>
                                 </button>
                             </div>
-
                         </form>
                     </div>
                 </div>
@@ -1245,7 +1238,7 @@
         </div>
     </div>
 
-    <!-- Start Footer aera -->    <!-- Start Footer Area -->
+                            <!-- Start Footer Area -->
     <footer class="rbt-footer footer-style-1 bg-color-white overflow-hidden">
         <div class="footer-top">
             <div class="container">
@@ -1258,15 +1251,16 @@
                                 </a>
                             </div>
 
-                            <p class="description mt--20">We are always seeking talented and motivated individuals to join our team.</p>
+                            <p class="description mt--20">We are always seeking talented and motivated individuals to
+                                join our team.</p>
 
                             <ul class="social-icon social-default justify-content-start">
                                 <li><a href="https://www.facebook.com/">
                                         <i class="feather-facebook"></i>
                                     </a>
                                 </li>
-                                <li><a href="https://www.twitter.com">
-                                        <i class="feather-twitter"></i>
+                                <li><a href="https://www.twitter.com" aria-label="X (Twitter)">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" viewBox="0 0 24 24" class="social-icon-x" style="vertical-align: -2px;"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
                                     </a>
                                 </li>
                                 <li><a href="https://www.instagram.com/">
@@ -1278,16 +1272,6 @@
                                     </a>
                                 </li>
                             </ul>
-
-                            <div class="contact-btn mt--30">
-                                <a class="rbt-btn hover-icon-reverse btn-border-gradient radius-round" href="login-register.html">
-                                    <div class="icon-reverse-wrapper">
-                                        <span class="btn-text">Contact With Us</span>
-                                        <span class="btn-icon"><i class="feather-arrow-right"></i></span>
-                                        <span class="btn-icon"><i class="feather-arrow-right"></i></span>
-                                    </div>
-                                </a>
-                            </div>
                         </div>
                     </div>
 
@@ -1305,7 +1289,7 @@
                                     <a href="holiday-camps.html">Holiday Camps</a>
                                 </li>
                                 <li>
-                                    <a href="plans-and-pricing.html">Plans & Pricing</a>
+                                    <a href="plans-and-pricing.html">Plans &amp; Pricing</a>
                                 </li>
                                 <li>
                                     <a href="book-online.html">Book Online</a>
@@ -1345,7 +1329,7 @@
                             <h5 class="ft-title">Get Contact</h5>
                             <ul class="ft-link">
                                 <li><span>Phone:</span> <a href="#">(406) 555-0120</a></li>
-                                <li><span>E-mail:</span> <a href="mailto:hr@example.com">admin@example.com</a></li>
+                                <li><span>E-mail:</span> <a href="mailto:info@londonstaredu.com">info@londonstaredu.com</a></li>
                             </ul>
 
                             <div class="newsletter-form mt--20">
@@ -1369,17 +1353,16 @@
                 <div class="row align-items-center">
                     <div class="col-xxl-7 col-xl-7 col-lg-7 col-md-12 col-12">
                         <p class="rbt-link-hover text-center text-lg-start">
-                            Copyright © 2024 by
+                            Copyright © 2026 by
                             <a href="index.html">London Star Education Ltd.</a>
                             All Rights Reserved. Designed by
-                            <a href="https://impinfo.in/" target="_blank">RKI Systems</a>
+                            <a href="https://rkisystems.co.uk/" target="_blank">RKI Systems</a>
                         </p>
                     </div>
                     <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-12 col-12">
                         <ul class="copyright-link rbt-link-hover justify-content-center justify-content-lg-end mt_sm--10 mt_md--10">
                             <li><a href="#">Terms of service</a></li>
                             <li><a href="privacy-policy.html">Privacy policy</a></li>
-                            <li><a href="subscription.html">Subscription</a></li>
                         </ul>
                     </div>
                 </div>

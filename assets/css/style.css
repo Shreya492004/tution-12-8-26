@@ -29332,8 +29332,7 @@ Course Sidebar
 
 /* Open Dropdown */
 
-.login-dropdown.active .login-dropdown-menu,
-.login-dropdown:hover .login-dropdown-menu {
+.login-dropdown.active .login-dropdown-menu {
     opacity: 1;
 
     visibility: visible;
@@ -29341,8 +29340,7 @@ Course Sidebar
     transform: translateY(0);
 }
 
-.login-dropdown.active .login-dropdown-btn i,
-.login-dropdown:hover .login-dropdown-btn i {
+.login-dropdown.active .login-dropdown-btn i {
     transform: rotate(180deg);
 }
 
@@ -29370,7 +29368,7 @@ Course Sidebar
     position: fixed;
 
     right: 25px;
-    bottom: 30px;
+    bottom: 95px;
 
     display: flex;
     flex-direction: column;
@@ -29578,7 +29576,7 @@ Course Sidebar
 
         right: 15px;
 
-        bottom: 20px;
+        bottom: 85px;
 
         gap: 12px;
 
@@ -30038,71 +30036,835 @@ Course Sidebar
 
 }
 
-.class-link-page .bootstrap-select .dropdown-toggle {
-    height: 60px !important;
+/* ==========================================================================
+   TWITTER TO X (BRAND UPDATE)
+   ========================================================================== */
+.feather-twitter::before {
+    content: "𝕏" !important;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+    font-weight: 800 !important;
+    font-size: 15px !important;
+    font-style: normal !important;
+    display: inline-block !important;
+    line-height: 1 !important;
+    vertical-align: middle !important;
+}
+
+.social-icon-x {
+    display: inline-block;
+    vertical-align: middle;
+    width: 15px;
+    height: 15px;
+    fill: currentColor;
+}
+
+/* ==========================================================================
+   LOGIN DROPDOWN UNIFORMITY
+   ========================================================================== */
+.login-dropdown {
+    position: relative !important;
+    display: inline-block !important;
+}
+
+.login-dropdown-btn {
+    font-size: 16px !important;
+    font-weight: 500 !important;
+    font-family: var(--font-primary) !important;
+    cursor: pointer !important;
+}
+
+.login-dropdown-menu {
+    position: absolute !important;
+    top: calc(100% + 8px) !important;
+    right: 0 !important;
+    min-width: 210px !important;
+    background: #ffffff !important;
+    border-radius: 8px !important;
+    padding: 8px !important;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.15) !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transform: translateY(10px) !important;
+    transition: opacity 0.25s ease, visibility 0.25s ease, transform 0.25s ease !important;
+    z-index: 99999 !important;
+}
+
+.login-dropdown:hover .login-dropdown-menu,
+.login-dropdown.active .login-dropdown-menu {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) !important;
+    pointer-events: auto !important;
+}
+
+.login-dropdown:hover .login-dropdown-btn i,
+.login-dropdown.active .login-dropdown-btn i {
+    transform: rotate(180deg) !important;
+}
+
+.login-dropdown-menu a {
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+    padding: 12px 14px !important;
+    color: #192335 !important;
+    font-size: 16px !important;
+    font-weight: 500 !important;
+    font-family: var(--font-primary) !important;
+    border-radius: 6px !important;
+    text-decoration: none !important;
+    transition: all 0.2s ease !important;
+}
+
+.login-dropdown-menu a i {
     font-size: 18px !important;
-    padding: 0 20px !important;
-
-    display: flex !important;
-    align-items: center !important;
+    color: var(--color-primary, #2f57ef) !important;
 }
 
-/* Selected Text */
-.class-link-page .bootstrap-select .filter-option {
-    display: flex !important;
-    align-items: center !important;
+.login-dropdown-menu a:hover {
+    background: #f3f4ff !important;
+    color: var(--color-primary, #2f57ef) !important;
 }
 
-.class-link-page .bootstrap-select .filter-option-inner,
-.class-link-page .bootstrap-select .filter-option-inner-inner {
-    font-size: 18px !important;
-    display: flex !important;
-    align-items: center !important;
+/* ==========================================================================
+   PORTAL DASHBOARD SIDEBAR & NAVIGATION UNIFORMITY (TUTOR & STUDENT)
+   ========================================================================== */
+.rbt-default-sidebar {
+    padding: 20px 16px !important;
 }
 
-/* Dropdown Options */
-.class-link-page .bootstrap-select .dropdown-menu li a {
-    font-size: 17px !important;
-    padding: 12px 20px !important;
+.rbt-default-sidebar .inner {
+    padding: 0 !important;
 }
 
-/* =========================================================
-   DASHBOARD SIDEBAR HOVER & ACTIVE STYLES (STUDENT & TUTOR)
-========================================================= */
+.rbt-default-sidebar-wrapper .section-title {
+    margin-top: 20px !important;
+    margin-bottom: 10px !important;
+}
+
+.rbt-default-sidebar-wrapper .section-title h6,
+.rbt-default-sidebar-wrapper .rbt-title-style-2 {
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.6px !important;
+    color: #8c94a6 !important;
+    font-family: var(--font-primary) !important;
+    margin-bottom: 8px !important;
+}
+
+.dashboard-mainmenu,
+.rbt-default-sidebar-list {
+    margin: 0 !important;
+    padding: 0 !important;
+    list-style: none !important;
+}
+
+.dashboard-mainmenu li,
+.rbt-default-sidebar-list li {
+    margin-bottom: 3px !important;
+}
+
+.dashboard-mainmenu li a,
+.rbt-default-sidebar-list li a,
 .rbt-default-sidebar-wrapper .dashboard-mainmenu li a,
 .rbt-default-sidebar-wrapper .rbt-default-sidebar-list li a {
-    color: #6b7385;
-    transition: all 0.25s ease;
-    display: flex;
-    align-items: center;
+    display: flex !important;
+    align-items: center !important;
+    font-size: 15px !important;
+    font-weight: 500 !important;
+    font-family: var(--font-primary) !important;
+    line-height: 20px !important;
+    color: #2b354f !important;
+    padding: 8px 12px !important;
+    border-radius: 6px !important;
+    transition: all 0.2s ease !important;
+    text-decoration: none !important;
 }
 
+.dashboard-mainmenu li a span,
+.rbt-default-sidebar-list li a span,
+.rbt-default-sidebar-wrapper .dashboard-mainmenu li a span,
+.rbt-default-sidebar-wrapper .rbt-default-sidebar-list li a span {
+    font-size: 15px !important;
+    font-weight: 500 !important;
+    font-family: var(--font-primary) !important;
+    color: inherit !important;
+}
+
+.dashboard-mainmenu li a i,
+.rbt-default-sidebar-list li a i,
 .rbt-default-sidebar-wrapper .dashboard-mainmenu li a i,
 .rbt-default-sidebar-wrapper .rbt-default-sidebar-list li a i {
-    color: #6b7385;
-    transition: all 0.25s ease;
+    font-size: 17px !important;
+    margin-right: 10px !important;
+    color: #7e879b !important;
+    transition: all 0.2s ease !important;
+    width: 18px !important;
+    text-align: center !important;
 }
 
-.rbt-default-sidebar-wrapper .dashboard-mainmenu li a:hover,
-.rbt-default-sidebar-wrapper .dashboard-mainmenu li a:hover span,
-.rbt-default-sidebar-wrapper .dashboard-mainmenu li a:hover i,
-.rbt-default-sidebar-wrapper .rbt-default-sidebar-list li a:hover,
-.rbt-default-sidebar-wrapper .rbt-default-sidebar-list li a:hover span,
-.rbt-default-sidebar-wrapper .rbt-default-sidebar-list li a:hover i {
+.dashboard-mainmenu li.active a,
+.dashboard-mainmenu li a.active,
+.rbt-default-sidebar-list li.active a,
+.rbt-default-sidebar-list li a.active {
+    background: #f0edff !important;
+    color: var(--color-primary, #2f57ef) !important;
+}
+
+.dashboard-mainmenu li.active a span,
+.dashboard-mainmenu li a.active span,
+.rbt-default-sidebar-list li.active a span,
+.rbt-default-sidebar-list li a.active span {
+    font-weight: 600 !important;
+    color: var(--color-primary, #2f57ef) !important;
+}
+
+.dashboard-mainmenu li.active a i,
+.dashboard-mainmenu li a.active i,
+.rbt-default-sidebar-list li.active a i,
+.rbt-default-sidebar-list li a.active i {
+    color: var(--color-primary, #2f57ef) !important;
+}
+
+.dashboard-mainmenu li a:hover,
+.rbt-default-sidebar-list li a:hover {
+    background: #f6f7fb !important;
+    color: var(--color-primary, #2f57ef) !important;
+}
+
+.dashboard-mainmenu li a:hover i,
+.rbt-default-sidebar-list li a:hover i {
+    color: var(--color-primary, #2f57ef) !important;
+}
+
+/* ==========================================================================
+   GLOBAL MODERN TYPOGRAPHY SYSTEM (DARK GREY BODY & OPTIMIZED READABILITY)
+   ========================================================================== */
+
+/* 1. Global Font Family */
+:root {
+    --font-primary: "Euclid Circular A", "Euclid Circular", "Plus Jakarta Sans", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+    --font-secondary: "Euclid Circular A", "Euclid Circular", "Plus Jakarta Sans", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+}
+
+body, html, input, button, select, textarea, p, span, a, li, h1, h2, h3, h4, h5, h6,
+.description, .rbt-btn, .header, .footer, .login-dropdown, .dashboard, .form-control {
+    font-family: var(--font-primary) !important;
+}
+
+/* 2. Global Base Body Scaling - Rich Dark Grey (#374151) */
+body {
+    font-size: 19px !important;
+    line-height: 1.8 !important;
+    color: #374151 !important;
+    font-weight: 400 !important;
+    background-color: #ffffff;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+@media only screen and (max-width: 767px) {
+    body {
+        font-size: 18px !important;
+        line-height: 1.7 !important;
+    }
+}
+
+/* 3. Headings: Bold, Dark Navy/Black (#192335) & Impactful */
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6,
+.title,
+.rbt-title-style-1,
+.rbt-title-style-2,
+.rbt-title-style-3,
+.section-title h4,
+.section-title h3,
+.section-title h2,
+.section-title h1,
+.ft-title,
+.rbt-card-title,
+.rbt-card-title a,
+.course-title,
+.course-title a {
+    font-family: var(--font-primary) !important;
+    font-weight: 700 !important;
+    color: #192335 !important;
+}
+
+/* Heading Sizes */
+h1, .h1 { font-size: 52px !important; line-height: 1.25 !important; }
+h2, .h2 { font-size: 40px !important; line-height: 1.3 !important; }
+h3, .h3 { font-size: 30px !important; line-height: 1.35 !important; }
+h4, .h4 { font-size: 26px !important; line-height: 1.4 !important; }
+h5, .h5 { font-size: 22px !important; line-height: 1.4 !important; }
+h6, .h6 { font-size: 19px !important; line-height: 1.4 !important; }
+
+.section-title .title {
+    font-size: 40px !important;
+    line-height: 1.3 !important;
+    font-weight: 700 !important;
+}
+
+.ft-title {
+    font-size: 22px !important;
+    font-weight: 700 !important;
+    color: #192335 !important;
+    margin-bottom: 20px !important;
+}
+
+.rbt-card-title,
+.rbt-card-title a,
+.course-title,
+.course-title a {
+    font-size: 22px !important;
+    font-weight: 700 !important;
+    line-height: 1.4 !important;
+}
+
+/* 4. Body Content, Paragraphs & Column Lists: Dark Grey Color (#374151) & Normal Weight */
+p,
+.description,
+.subtitle,
+.card-text,
+.rbt-card-body p,
+.rbt-card-text {
+    font-size: 19px !important;
+    line-height: 1.8 !important;
+    color: #374151 !important;
+    font-weight: 400 !important;
+}
+
+@media only screen and (max-width: 767px) {
+    p,
+    .description,
+    .subtitle,
+    .card-text {
+        font-size: 18px !important;
+        line-height: 1.7 !important;
+    }
+}
+
+/* Column Lists & Widget Lists - Dark Grey */
+ul.ft-link,
+ul.mega-menu-item,
+ul.mainmenu,
+.rbt-list-style-1,
+.rbt-list-style-2,
+.plan-feature-list,
+.course-feature-list,
+.feature-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+ul.ft-link li,
+ul.ft-link li a,
+ul.ft-link li span,
+ul.mega-menu-item li,
+ul.mega-menu-item li a,
+.rbt-list-style-1 li,
+.rbt-list-style-2 li,
+.plan-feature-list li,
+.feature-list li {
+    font-size: 18px !important;
+    font-weight: 400 !important;
+    color: #374151 !important;
+    line-height: 1.8 !important;
+}
+
+ul.ft-link li a:hover,
+ul.mega-menu-item li a:hover {
     color: #2f57ef !important;
 }
 
-.rbt-default-sidebar-wrapper .dashboard-mainmenu li.active a,
-.rbt-default-sidebar-wrapper .dashboard-mainmenu li.active a span,
-.rbt-default-sidebar-wrapper .dashboard-mainmenu li.active a i,
-.rbt-default-sidebar-wrapper .dashboard-mainmenu li a.active,
-.rbt-default-sidebar-wrapper .dashboard-mainmenu li a.active span,
-.rbt-default-sidebar-wrapper .dashboard-mainmenu li a.active i,
-.rbt-default-sidebar-wrapper .rbt-default-sidebar-list li.active a,
-.rbt-default-sidebar-wrapper .rbt-default-sidebar-list li.active a span,
-.rbt-default-sidebar-wrapper .rbt-default-sidebar-list li.active a i,
-.rbt-default-sidebar-wrapper .rbt-default-sidebar-list li a.active,
-.rbt-default-sidebar-wrapper .rbt-default-sidebar-list li a.active span,
-.rbt-default-sidebar-wrapper .rbt-default-sidebar-list li a.active i {
+/* 5. Navigation & Header Links */
+.mainmenu > li > a,
+.nav-link,
+.rbt-main-navigation a {
+    font-size: 19px !important;
+    font-weight: 600 !important;
+    color: #192335 !important;
+}
+
+.mainmenu > li > a:hover,
+.nav-link:hover {
     color: #2f57ef !important;
+}
+
+/* Dropdown Menus & Submenus - Dark Grey */
+.submenu li a,
+.rbt-dropdown-menu li a,
+.login-dropdown-menu a,
+.mega-menu-item li a {
+    font-size: 18px !important;
+    font-weight: 400 !important;
+    color: #374151 !important;
+}
+
+.submenu li a:hover,
+.rbt-dropdown-menu li a:hover,
+.login-dropdown-menu a:hover {
+    color: #2f57ef !important;
+    background: #f3f4ff !important;
+}
+
+/* 6. Form Inputs, Dropdowns & Logins (Dark Grey Text & Grey Placeholders) */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+input[type="url"],
+input[type="number"],
+input[type="date"],
+select,
+textarea,
+.form-control,
+.rbt-default-form input,
+.rbt-default-form textarea,
+.rbt-default-form select,
+.bootstrap-select .dropdown-toggle,
+.bootstrap-select .filter-option,
+.bootstrap-select .filter-option-inner-inner {
+    font-size: 18px !important;
+    font-weight: 400 !important;
+    color: #374151 !important;
+    font-family: var(--font-primary) !important;
+    border: 1px solid #dcdfe6 !important;
+    border-radius: 8px !important;
+    min-height: 56px !important;
+    padding: 12px 18px !important;
+    background-color: #ffffff !important;
+    transition: all 0.2s ease !important;
+}
+
+input::placeholder,
+textarea::placeholder,
+.form-control::placeholder {
+    color: #64748b !important;
+    font-size: 17px !important;
+    font-weight: 400 !important;
+    opacity: 1 !important;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+.form-control:focus {
+    border-color: #6c4df6 !important;
+    box-shadow: 0 0 0 3px rgba(108, 77, 246, 0.15) !important;
+    outline: none !important;
+}
+
+/* Form Labels: Bold/Medium & Dark */
+label,
+.form-label,
+.rbt-form-group label,
+.rbt-default-form label {
+    font-size: 18px !important;
+    font-weight: 600 !important;
+    color: #192335 !important;
+    margin-bottom: 8px !important;
+    display: block !important;
+    font-family: var(--font-primary) !important;
+}
+
+/* 7. Tables (Headers Bold/Dark, Rows Dark Grey #374151) */
+table th,
+.table thead th,
+.student-table thead th,
+.subject-table thead th {
+    font-size: 18px !important;
+    font-weight: 600 !important;
+    color: #192335 !important;
+    font-family: var(--font-primary) !important;
+    padding: 14px 18px !important;
+}
+
+table td,
+.table tbody td,
+.student-table tbody td,
+.subject-table tbody td {
+    font-size: 17px !important;
+    font-weight: 400 !important;
+    color: #374151 !important;
+    font-family: var(--font-primary) !important;
+    padding: 14px 18px !important;
+    line-height: 1.6 !important;
+}
+
+/* 8. Dashboard Sidebar Navigation - Standardized & Dark Grey */
+.dashboard-mainmenu li a,
+.rbt-default-sidebar-list li a {
+    font-size: 18px !important;
+    font-weight: 500 !important;
+    color: #374151 !important;
+    transition: all 0.25s ease !important;
+}
+
+.dashboard-mainmenu li.active a,
+.dashboard-mainmenu li a.active,
+.rbt-default-sidebar-list li.active a,
+.rbt-default-sidebar-list li a.active {
+    color: #2f57ef !important;
+    font-weight: 600 !important;
+}
+
+.dashboard-mainmenu li a:hover,
+.rbt-default-sidebar-list li a:hover {
+    color: #2f57ef !important;
+}
+
+/* 9. Footer & Copyright Area with Blue Hover on Links */
+.rbt-footer {
+    font-family: var(--font-primary) !important;
+}
+
+.rbt-footer p.description,
+.rbt-footer .description {
+    font-size: 18px !important;
+    line-height: 1.8 !important;
+    color: #374151 !important;
+    font-weight: 400 !important;
+}
+
+.rbt-footer .ft-link li,
+.rbt-footer .ft-link li a,
+.rbt-footer .ft-link li span {
+    font-size: 18px !important;
+    font-weight: 400 !important;
+    color: #374151 !important;
+    line-height: 1.8 !important;
+}
+
+.rbt-footer .ft-link li a:hover {
+    color: #2f57ef !important;
+}
+
+.copyright-area p,
+.copyright-area p a,
+.copyright-link li a {
+    font-size: 16px !important;
+    font-weight: 500 !important;
+    color: #4b5563 !important;
+    line-height: 1.6 !important;
+    transition: color 0.25s ease, text-decoration 0.25s ease !important;
+}
+
+/* Copyright Links Turn Blue on Hover */
+.copyright-area p a:hover,
+.copyright-area a:hover,
+.copyright-link li a:hover {
+    color: #2f57ef !important;
+    text-decoration: underline !important;
+}
+
+/* 10. Buttons */
+.rbt-btn {
+    font-family: var(--font-primary) !important;
+    font-size: 18px !important;
+    font-weight: 600 !important;
+}
+
+.rbt-btn-sm {
+    font-size: 16px !important;
+}
+
+/* ==========================================================================
+   PAGE BANNER & HERO TITLE (WHITE TEXT, INCREASED SIZE & HIGH IMPACT)
+   ========================================================================== */
+
+/* Banner Titles On Background Images */
+.slider-area,
+.rbt-banner-10,
+.slider-area.bg_image,
+.rbt-banner-10.bg_image,
+.bg_image {
+    position: relative;
+}
+
+.slider-area .title,
+.rbt-banner-10 .title,
+.slider-area h1,
+.rbt-banner-10 h1,
+.slider-area .display-one,
+.rbt-banner-10 .display-one,
+.slider-area .title.text-white,
+.rbt-banner-10 .title.text-white,
+.bg_image .title,
+.bg_image h1,
+.breadcrumb-title,
+.rbt-breadcrumb-area .title {
+    color: #ffffff !important;
+    font-size: 60px !important;
+    font-weight: 800 !important;
+    line-height: 1.2 !important;
+    font-family: var(--font-primary) !important;
+    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.45) !important;
+    letter-spacing: -0.5px !important;
+    margin-bottom: 0 !important;
+}
+
+@media only screen and (max-width: 991px) {
+    .slider-area .title,
+    .rbt-banner-10 .title,
+    .slider-area h1,
+    .rbt-banner-10 h1,
+    .slider-area .display-one,
+    .rbt-banner-10 .display-one,
+    .bg_image .title,
+    .bg_image h1 {
+        font-size: 46px !important;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .slider-area .title,
+    .rbt-banner-10 .title,
+    .slider-area h1,
+    .rbt-banner-10 h1,
+    .slider-area .display-one,
+    .rbt-banner-10 .display-one,
+    .bg_image .title,
+    .bg_image h1 {
+        font-size: 36px !important;
+    }
+}
+
+/* Page Indicator / Subtitle / Breadcrumbs on Banner Images */
+.slider-area p,
+.slider-area .subtitle,
+.slider-area .page-list,
+.slider-area .page-list li,
+.slider-area .page-list li a,
+.rbt-banner-10 p,
+.rbt-banner-10 .subtitle,
+.rbt-banner-10 .page-list,
+.rbt-banner-10 .page-list li,
+.rbt-banner-10 .page-list li a,
+.bg_image p,
+.bg_image .subtitle,
+.bg_image span.text-white,
+.rbt-breadcrumb-list li,
+.rbt-breadcrumb-list li a {
+    color: #ffffff !important;
+    font-size: 20px !important;
+    font-weight: 500 !important;
+    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* Generic White Text Overrides */
+.text-white,
+.text-white *,
+.color-white,
+.color-white *,
+.bg-color-primary .title,
+.bg-color-primary h1,
+.bg-color-primary h2,
+.bg-color-primary h3,
+.bg-color-primary p {
+    color: #ffffff !important;
+}
+
+/* ==========================================================================
+   CLEAN FORM SYSTEM & INPUT BORDER / LABEL ALIGNMENT FIX
+   ========================================================================== */
+
+.form-group,
+.rbt-contact-form .form-group,
+.contact-form-style-1 .form-group {
+    position: relative !important;
+    margin-bottom: 22px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+}
+
+.form-group label,
+.rbt-contact-form label,
+.contact-form-style-1 label,
+.rbt-default-form label,
+.form-label {
+    position: static !important;
+    order: 1 !important;
+    margin-bottom: 8px !important;
+    font-size: 18px !important;
+    font-weight: 600 !important;
+    color: #192335 !important;
+    letter-spacing: 0 !important;
+    line-height: 1.4 !important;
+    z-index: 1 !important;
+    pointer-events: auto !important;
+    transform: none !important;
+    transition: none !important;
+    display: block !important;
+    width: 100% !important;
+    text-align: left !important;
+}
+
+.form-group input,
+.form-group textarea,
+.rbt-contact-form input,
+.rbt-contact-form textarea,
+.contact-form-style-1 input,
+.contact-form-style-1 textarea,
+.form-control {
+    order: 2 !important;
+    width: 100% !important;
+    height: 56px !important;
+    min-height: 56px !important;
+    border: 1px solid #dcdfe6 !important;
+    border-radius: 8px !important;
+    background-color: #ffffff !important;
+    padding: 12px 18px !important;
+    font-size: 18px !important;
+    font-weight: 400 !important;
+    color: #374151 !important;
+    line-height: 1.5 !important;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+.form-group textarea,
+.rbt-contact-form textarea,
+.contact-form-style-1 textarea {
+    height: auto !important;
+    min-height: 140px !important;
+    resize: vertical !important;
+    padding-top: 14px !important;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.rbt-contact-form input:focus,
+.rbt-contact-form textarea:focus,
+.contact-form-style-1 input:focus,
+.contact-form-style-1 textarea:focus,
+.form-control:focus {
+    border-color: #6c4df6 !important;
+    box-shadow: 0 0 0 3px rgba(108, 77, 246, 0.15) !important;
+    outline: none !important;
+    background-color: #ffffff !important;
+}
+
+/* Hide legacy floating underline artifacts */
+.form-group span.focus-border,
+.focus-border,
+span.focus-border {
+    display: none !important;
+}
+
+/* Reset legacy floating label transitions that cause border glitches */
+.form-group.focused label,
+.form-group:focus-within label {
+    position: static !important;
+    top: auto !important;
+    font-size: 18px !important;
+    color: #192335 !important;
+    transform: none !important;
+}
+
+.rbt-contact-form.contact-form-style-1 {
+    padding: 40px !important;
+}
+
+/* ==========================================================================
+   TUITION CTA SECTION (PURE WHITE TEXT OVER PURPLE GRADIENT)
+   ========================================================================== */
+
+.tuition-cta-section,
+.tuition-cta-container,
+.tuition-cta-section *,
+.tuition-cta-container * {
+    box-sizing: border-box;
+}
+
+.tuition-cta-container {
+    color: #ffffff !important;
+}
+
+.tuition-cta-title,
+.tuition-cta-section .tuition-cta-title,
+.tuition-cta-container .tuition-cta-title,
+.tuition-cta-container h2 {
+    color: #ffffff !important;
+    font-family: var(--font-primary) !important;
+    font-size: 40px !important;
+    line-height: 1.2 !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.5px !important;
+    margin: 0 0 14px 0 !important;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.25) !important;
+}
+
+.tuition-cta-subtitle,
+.tuition-cta-section .tuition-cta-subtitle,
+.tuition-cta-container .tuition-cta-subtitle,
+.tuition-cta-container p {
+    color: #ffffff !important;
+    font-family: var(--font-primary) !important;
+    font-size: 20px !important;
+    line-height: 1.6 !important;
+    font-weight: 400 !important;
+    margin: 10px 0 24px !important;
+    opacity: 0.95 !important;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.2) !important;
+}
+
+.tuition-cta-notice,
+.tuition-cta-section .tuition-cta-notice,
+.tuition-cta-container .tuition-cta-notice {
+    color: #ffffff !important;
+    font-family: var(--font-primary) !important;
+    font-size: 16px !important;
+    line-height: 1.5 !important;
+    font-weight: 600 !important;
+    background: rgba(255, 255, 255, 0.14) !important;
+    border: 1px solid rgba(255, 255, 255, 0.35) !important;
+    border-radius: 11px !important;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.2) !important;
+}
+
+.tuition-cta-footer,
+.tuition-cta-section .tuition-cta-footer,
+.tuition-cta-container .tuition-cta-footer {
+    color: #ffffff !important;
+    font-family: var(--font-primary) !important;
+    font-size: 16px !important;
+    line-height: 1.6 !important;
+    font-weight: 500 !important;
+    opacity: 0.95 !important;
+    margin: 24px 0 0 !important;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.2) !important;
+}
+
+.tuition-cta-divider {
+    background: rgba(255, 255, 255, 0.3) !important;
+}
+
+@media (max-width: 767px) {
+    .tuition-cta-title,
+    .tuition-cta-section .tuition-cta-title,
+    .tuition-cta-container .tuition-cta-title {
+        font-size: 30px !important;
+        line-height: 1.25 !important;
+    }
+
+    .tuition-cta-subtitle,
+    .tuition-cta-section .tuition-cta-subtitle,
+    .tuition-cta-container .tuition-cta-subtitle {
+        font-size: 17px !important;
+    }
+
+    .tuition-cta-notice {
+        font-size: 14px !important;
+    }
+
+    .tuition-cta-footer {
+        font-size: 14px !important;
+    }
 }

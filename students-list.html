@@ -33,8 +33,18 @@
     <link rel="stylesheet" href="assets/css/style.css">
 
     <style>
+        .roster-header-container,
+        .roster-header-container *,
+        .subject-grid,
+        .subject-grid *,
+        .roster-toolbar,
+        .roster-toolbar *,
+        .modal-overlay,
+        .modal-overlay * {
+            font-family: var(--font-primary, "Euclid Circular A", "Plus Jakarta Sans", "Inter", sans-serif) !important;
+        }
         /* =========================================
-           ROSTER HEADER
+            ROSTER HEADER
         ========================================= */
         .roster-header-container {
             margin-bottom: 25px;
@@ -49,11 +59,11 @@
         .roster-title-group p {
             margin: 0;
             color: #6c757d;
-            font-size: 14px;
+            font-size: 16px;
         }
 
         /* =========================================
-           SUBJECT CARDS
+            SUBJECT CARDS
         ========================================= */
         .subject-cards-title {
             font-size: 18px;
@@ -139,21 +149,22 @@
         .subject-badge {
             padding: 5px 14px;
             border-radius: 20px;
-            font-size: 12px;
+            font-size: 16px;
             font-weight: 700;
             background: rgba(108, 77, 246, 0.1);
             color: #6c4df6;
         }
 
         .subject-card-title {
-            font-size: 18px;
-            font-weight: 700;
-            color: #1f354d;
-            margin-bottom: 6px;
+            font-size: 20px !important;
+            font-weight: 600 !important;
+            color: #192335 !important;
+            margin-bottom: 6px !important;
+            font-family: var(--font-primary) !important;
         }
 
         .subject-card-sub {
-            font-size: 13px;
+            font-size: 17px;
             color: #6c757d;
             margin-bottom: 16px;
         }
@@ -162,7 +173,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-size: 12px;
+            font-size: 16px;
             color: #64748b;
             padding-top: 12px;
             border-top: 1px dashed #e2e8f0;
@@ -174,11 +185,11 @@
             gap: 5px;
             font-weight: 700;
             color: #6c4df6;
-            font-size: 13px;
+            font-size: 17px;
         }
 
         /* =========================================
-           ROSTER SECTION
+            ROSTER SECTION
         ========================================= */
         #roster-section-container {
             display: none;
@@ -198,7 +209,7 @@
         }
 
         /* =========================================
-           ROSTER TOOLBAR
+            ROSTER TOOLBAR
         ========================================= */
         .roster-toolbar {
             background: #ffffff;
@@ -235,7 +246,7 @@
             color: #ffffff;
             padding: 5px 16px;
             border-radius: 30px;
-            font-size: 13px;
+            font-size: 17px;
             font-weight: 600;
             display: inline-flex;
             align-items: center;
@@ -250,7 +261,7 @@
         }
 
         /* =========================================
-           SEARCH
+            SEARCH
         ========================================= */
         .roster-search-input {
             position: relative;
@@ -262,7 +273,7 @@
             border-radius: 8px;
             border: 1px solid #ced4da;
             padding: 0 14px 0 38px;
-            font-size: 13px;
+            font-size: 17px;
             width: 100%;
             outline: none;
             transition: border-color 0.2s ease;
@@ -278,11 +289,11 @@
             top: 50%;
             transform: translateY(-50%);
             color: #94a3b8;
-            font-size: 15px;
+            font-size: 17px;
         }
 
         /* =========================================
-           SORT BUTTON
+            SORT BUTTON
         ========================================= */
         .sort-toggle-btn {
             height: 40px;
@@ -292,12 +303,18 @@
             background: #ffffff;
             color: #6c4df6;
             font-weight: 600;
-            font-size: 13px;
+            font-size: 15px;
             display: inline-flex;
             align-items: center;
             gap: 8px;
             cursor: pointer;
             transition: all 0.2s ease;
+        }
+
+        .sort-toggle-btn i {
+            font-size: 16px;
+            line-height: 1;
+            display: inline-block;
         }
 
         .sort-toggle-btn:hover {
@@ -306,12 +323,12 @@
         }
 
         /* =========================================
-           NEW STUDENT BUTTON
+            NEW STUDENT BUTTON
         ========================================= */
         .new-student-filter-btn {
             height: 40px !important;
             padding: 0 18px !important;
-            font-size: 13px !important;
+            font-size: 17px !important;
             border-radius: 8px !important;
             line-height: 40px !important;
             min-height: auto !important;
@@ -322,7 +339,7 @@
         }
 
         /* =========================================
-           STUDENT TABLE
+            STUDENT TABLE
         ========================================= */
         .student-table-card {
             background: #ffffff;
@@ -341,7 +358,7 @@
         .student-table th {
             background: #f8fafc;
             padding: 12px 16px;
-            font-size: 12px;
+            font-size: 16px;
             font-weight: 700;
             color: #475569;
             text-transform: uppercase;
@@ -353,7 +370,7 @@
             padding: 10px 16px;
             vertical-align: middle;
             border-bottom: 1px solid #f1f5f9;
-            font-size: 14px;
+            font-size: 16px;
             color: #1e293b;
         }
 
@@ -370,9 +387,9 @@
         }
 
         .sno-badge {
-            font-weight: 700;
+            font-weight: 500;
             color: #64748b;
-            font-size: 12px;
+            font-size: 17px;
             background: #f1f5f9;
             padding: 3px 8px;
             border-radius: 6px;
@@ -380,17 +397,17 @@
         }
 
         .student-name-text {
-            font-weight: 700;
-            color: #1f354d;
+            font-weight: 500;
+            color: #192335;
             margin: 0;
-            font-size: 14px;
+            font-size: 17px;
         }
 
         .new-badge-tag {
             background: rgba(108, 77, 246, 0.12);
             color: #6c4df6;
-            font-size: 10px;
-            font-weight: 700;
+            font-size: 11px;
+            font-weight: 500;
             padding: 2px 7px;
             border-radius: 12px;
             margin-left: 6px;
@@ -399,12 +416,12 @@
         }
 
         /* =========================================
-           VIEW BUTTON
+            VIEW BUTTON
         ========================================= */
         .action-view-btn {
             height: 32px !important;
             padding: 0 14px !important;
-            font-size: 12px !important;
+            font-size: 16px !important;
             border-radius: 6px !important;
             line-height: 32px !important;
             min-height: auto !important;
@@ -414,7 +431,7 @@
         }
 
         /* =========================================
-           MODAL
+            COMPACT MODAL (CUSTOM FONT & SMALLER SIZE)
         ========================================= */
         .modal-overlay {
             position: fixed;
@@ -422,7 +439,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(15, 23, 42, 0.6);
+            background: rgba(15, 23, 42, 0.55);
             backdrop-filter: blur(4px);
             display: flex;
             align-items: center;
@@ -430,8 +447,8 @@
             z-index: 99999;
             opacity: 0;
             visibility: hidden;
-            transition: opacity 0.3s ease, visibility 0.3s ease;
-            padding: 20px;
+            transition: opacity 0.2s ease, visibility 0.2s ease;
+            padding: 10px;
         }
 
         .modal-overlay.active {
@@ -441,92 +458,236 @@
 
         .modal-card-box {
             background: #ffffff;
-            border-radius: 16px;
+            border-radius: 14px;
             width: 100%;
-            max-width: 620px;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+            max-width: 460px;
+            max-height: calc(100vh - 20px);
+            box-shadow: 0 18px 40px rgba(15, 23, 42, 0.25);
             overflow: hidden;
-            transform: translateY(20px);
-            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            transform: translateY(10px);
+            transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .modal-overlay.active .modal-card-box {
             transform: translateY(0);
         }
 
+        /* Modal Header */
         .modal-header-bg {
-            background: linear-gradient(135deg, #1f354d 0%, #6c4df6 100%);
-            padding: 20px 24px;
+            background: linear-gradient(95deg, #1f2c69 0%, #4f34c2 42%, #7b3fe4 100%);
+            padding: 10px 16px;
             color: #ffffff;
             position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-shrink: 0;
+        }
+
+        .modal-header-content {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .modal-user-icon {
+            font-size: 18px;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-title-area h4 {
+            margin: 0;
+            color: #ffffff !important;
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .modal-title-area span {
+            font-size: 11px;
+            color: rgba(255, 255, 255, 0.85);
+            font-weight: 500;
         }
 
         .modal-close-btn {
-            position: absolute;
-            top: 18px;
-            right: 18px;
             background: rgba(255, 255, 255, 0.2);
             border: none;
             color: #ffffff;
-            width: 30px;
-            height: 30px;
+            width: 26px;
+            height: 26px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
+            font-size: 12px;
+            transition: background 0.2s ease;
         }
 
         .modal-close-btn:hover {
-            background: rgba(255, 255, 255, 0.4);
+            background: rgba(255, 255, 255, 0.35);
         }
 
+        /* Modal Body */
         .student-modal-body {
-            padding: 22px 24px;
+            padding: 10px 14px 12px;
+            background: #ffffff;
+            overflow-y: auto;
         }
 
         .detail-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 14px;
-            margin-bottom: 20px;
+            gap: 6px 8px;
+            margin-bottom: 10px;
         }
 
         .detail-item {
-            background: rgba(248, 250, 252, 0.9);
-            padding: 12px 16px;
-            border-radius: 10px;
-            border: 1px solid #e2e8f0;
+            background: #ffffff;
+            padding: 5px 10px;
+            border-radius: 8px;
+            border: 1px solid #e8ecf4;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         .detail-item label {
-            font-size: 11px;
+            font-size: 9px;
             text-transform: uppercase;
             font-weight: 700;
             color: #64748b;
             display: block;
-            margin-bottom: 3px;
+            margin-bottom: 1px;
+            letter-spacing: 0.3px;
         }
 
         .detail-item p {
             margin: 0;
-            font-size: 14px;
-            font-weight: 600;
-            color: #1f354d;
+            font-size: 11.5px;
+            font-weight: 700;
+            color: #1e293b;
+            line-height: 1.25;
+            word-break: break-word;
         }
 
         .attendance-highlight {
             color: #6c4df6 !important;
-            font-weight: 700 !important;
+        }
+
+        .missed-highlight {
+            color: #ef4444 !important;
+        }
+
+        .modal-close-profile-btn {
+            background: linear-gradient(90deg, #2b4be9 0%, #683bf0 50%, #9e43f5 100%);
+            border: none;
+            color: #ffffff;
+            font-size: 12px;
+            font-weight: 600;
+            padding: 6px 14px;
+            border-radius: 7px;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(104, 59, 240, 0.28);
+            transition: all 0.2s ease;
+            display: inline-block;
+        }
+
+        .modal-close-profile-btn:hover {
+            box-shadow: 0 4px 12px rgba(104, 59, 240, 0.4);
+            transform: translateY(-1px);
+            color: #ffffff;
         }
 
         /* =========================================
-           RESPONSIVE
+            UPPER ARROW (SCROLL TO TOP BUTTON)
+        ========================================= */
+        .rbt-progress-parent {
+            position: fixed;
+            right: 30px;
+            bottom: 30px;
+            height: 46px;
+            width: 46px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            box-shadow: 0 4px 15px rgba(108, 77, 246, 0.25);
+            z-index: 10000;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(15px);
+            transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+            background: #ffffff;
+        }
+
+        .rbt-progress-parent.rbt-backto-top-active {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .rbt-progress-parent:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(108, 77, 246, 0.35);
+        }
+
+        .rbt-progress-parent svg.rbt-back-circle {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .rbt-progress-parent svg.rbt-back-circle path {
+            fill: none;
+            stroke: #6c4df6;
+            stroke-width: 4;
+            box-sizing: border-box;
+            transition: stroke-dashoffset 10ms linear;
+        }
+
+        /* Centered Inner Arrow Icon */
+        .rbt-progress-parent .up-arrow-icon {
+            position: relative;
+            z-index: 2;
+            font-size: 20px;
+            color: #6c4df6;
+            line-height: 1;
+            transition: color 0.2s ease, transform 0.2s ease;
+        }
+
+        .rbt-progress-parent:hover .up-arrow-icon {
+            color: #1f354d;
+            transform: translateY(-2px);
+        }
+
+        /* Floating Contact Buttons (Positioned directly above Upper Arrow) */
+        .floating-contact {
+            position: fixed;
+            right: 30px;
+            bottom: 90px;
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        /* =========================================
+            RESPONSIVE
         ========================================= */
         @media (max-width: 768px) {
-
             .detail-grid {
                 grid-template-columns: 1fr;
+                gap: 5px;
             }
 
             .roster-toolbar {
@@ -543,10 +704,19 @@
             .roster-search-input {
                 width: 100%;
             }
+
+            .floating-contact {
+                right: 20px;
+                bottom: 80px;
+            }
+
+            .rbt-progress-parent {
+                right: 20px;
+                bottom: 20px;
+            }
         }
     </style>
 </head>
-
 
 <body class="rbt-header-sticky">
 
@@ -1262,7 +1432,6 @@
 
                             <!-- =====================================
                                  STUDENT ROSTER
-                                 NO SELECT SUBJECT PROMPT
                             ====================================== -->
                             <div id="roster-section-container">
 
@@ -1306,8 +1475,6 @@
 
                                         <!-- Search -->
                                         <div class="roster-search-input">
-
-                                            <i class="feather-search"></i>
 
                                             <input type="text"
                                                    id="student-search-input"
@@ -1418,50 +1585,29 @@
     <!-- =========================================
          STUDENT DETAIL MODAL
     ========================================= -->
-    <div class="modal-overlay"
-         id="detail-modal">
+    <div class="modal-overlay" id="detail-modal">
 
         <div class="modal-card-box">
-
 
             <!-- Modal Header -->
             <div class="modal-header-bg">
 
-                <button class="modal-close-btn"
-                        onclick="closeModal('detail-modal')">
-
-                    <i class="feather-x"></i>
-
-                </button>
-
-
-                <div style="display:flex; align-items:center; gap:14px;">
-
-                    <i class="feather-user"
-                       style="font-size:26px;">
-                    </i>
-
-
-                    <div>
-
-                        <h4 id="modal-student-name"
-                            style="margin:0; color:#fff; font-weight:700;">
-
-                            Student Name
-
-                        </h4>
-
-
-                        <span id="modal-student-id"
-                              style="font-size:13px; opacity:0.9;">
-
-                            STD-2024-101
-
-                        </span>
-
+                <div class="modal-header-content">
+                    <div class="modal-user-icon">
+                        <i class="feather-user"></i>
                     </div>
 
+                    <div class="modal-title-area">
+                        <h4 id="modal-student-name">Alexander Wright</h4>
+                        <span id="modal-student-id">STD-2024-101</span>
+                    </div>
                 </div>
+
+                <button class="modal-close-btn"
+                        onclick="closeModal('detail-modal')"
+                        aria-label="Close modal">
+                    <i class="feather-x"></i>
+                </button>
 
             </div>
 
@@ -1469,159 +1615,66 @@
             <!-- Modal Body -->
             <div class="student-modal-body">
 
-
                 <div class="detail-grid">
 
-
                     <div class="detail-item">
-
-                        <label>
-                            Student ID
-                        </label>
-
-                        <p id="modal-student-id-display">
-                            STD-2024-101
-                        </p>
-
+                        <label>Student ID</label>
+                        <p id="modal-student-id-display">STD-2024-101</p>
                     </div>
 
-
                     <div class="detail-item">
-
-                        <label>
-                            Student Full Name
-                        </label>
-
-                        <p id="modal-student-full-name">
-                            Alexander Wright
-                        </p>
-
+                        <label>Student Full Name</label>
+                        <p id="modal-student-full-name">Alexander Wright</p>
                     </div>
 
-
                     <div class="detail-item">
-
-                        <label>
-                            Date of Birth (DOB)
-                        </label>
-
-                        <p id="modal-student-dob">
-                            14 March 2010
-                        </p>
-
+                        <label>Date of Birth (DOB)</label>
+                        <p id="modal-student-dob">14 Mar 2010</p>
                     </div>
 
-
                     <div class="detail-item">
-
-                        <label>
-                            Gender
-                        </label>
-
-                        <p id="modal-student-gender">
-                            Male
-                        </p>
-
+                        <label>Gender</label>
+                        <p id="modal-student-gender">Male</p>
                     </div>
 
-
                     <div class="detail-item">
-
-                        <label>
-                            Email Address
-                        </label>
-
-                        <p id="modal-student-email">
-                            student@gmail.com
-                        </p>
-
+                        <label>Email Address</label>
+                        <p id="modal-student-email">alex.wright@gmail.com</p>
                     </div>
 
-
                     <div class="detail-item">
-
-                        <label>
-                            Candidate Phone No.
-                        </label>
-
-                        <p id="modal-student-phone">
-                            +44 7700 900101
-                        </p>
-
+                        <label>Candidate Phone No.</label>
+                        <p id="modal-student-phone">+44 7700 900101</p>
                     </div>
 
-
                     <div class="detail-item">
-
-                        <label>
-                            Assigned Date (Start Date)
-                        </label>
-
-                        <p id="modal-student-joindate">
-                            12 Jan 2024
-                        </p>
-
+                        <label>Assigned Date (Start Date)</label>
+                        <p id="modal-student-joindate">28 Mar 2024</p>
                     </div>
 
-
                     <div class="detail-item">
-
-                        <label>
-                            Parent Contact No.
-                        </label>
-
-                        <p id="modal-student-parent-phone">
-                            +44 7900 123456
-                        </p>
-
+                        <label>Parent Contact No.</label>
+                        <p id="modal-student-parent-phone">+44 7900 111222</p>
                     </div>
 
-
                     <div class="detail-item">
-
-                        <label>
-                            Classes Attended
-                        </label>
-
-                        <p id="modal-student-attended"
-                           class="attendance-highlight">
-
-                            24 Classes
-
-                        </p>
-
+                        <label>Classes Attended</label>
+                        <p id="modal-student-attended" class="attendance-highlight">26 Classes</p>
                     </div>
 
-
                     <div class="detail-item">
-
-                        <label>
-                            Classes Missed
-                        </label>
-
-                        <p id="modal-student-missed"
-                           style="color:#ef4444; font-weight:700;">
-
-                            1 Class
-
-                        </p>
-
+                        <label>Classes Missed</label>
+                        <p id="modal-student-missed" class="missed-highlight">1 Class</p>
                     </div>
 
                 </div>
 
-
                 <div style="text-align:right;">
-
-                    <button class="rbt-btn rbt-switch-btn btn-gradient btn-sm hover-transform-none"
+                    <button type="button"
+                            class="modal-close-profile-btn"
                             onclick="closeModal('detail-modal')">
-
-                        <span data-text="Close Profile">
-                            Close Profile
-                        </span>
-
+                        Close Profile
                     </button>
-
                 </div>
 
             </div>
@@ -1634,348 +1687,151 @@
     <!-- =========================================
          FOOTER
     ========================================= -->
+    <!-- Start Footer Area -->
     <footer class="rbt-footer footer-style-1 bg-color-white overflow-hidden">
-
         <div class="footer-top">
-
             <div class="container">
-
                 <div class="row g-5">
-
-
-                    <!-- Footer About -->
                     <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-
                         <div class="footer-widget">
-
                             <div class="logo">
-
                                 <a href="index.html">
-
-                                    <img src="assets/images/logo/logo.png"
-                                         alt="Edu-Loop Sign Logo">
-
+                                    <img src="assets/images/logo/logo.png" alt="Edu-Loop Sign Logo">
                                 </a>
-
                             </div>
 
-
-                            <p class="description mt--20">
-
-                                We are always seeking talented and motivated
-                                individuals to join our team.
-
-                            </p>
-
+                            <p class="description mt--20">We are always seeking talented and motivated individuals to
+                                join our team.</p>
 
                             <ul class="social-icon social-default justify-content-start">
-
-                                <li>
-                                    <a href="https://www.facebook.com/">
+                                <li><a href="https://www.facebook.com/">
                                         <i class="feather-facebook"></i>
                                     </a>
                                 </li>
-
-                                <li>
-                                    <a href="https://www.twitter.com">
-                                        <i class="feather-twitter"></i>
+                                <li><a href="https://www.twitter.com" aria-label="X (Twitter)">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" viewBox="0 0 24 24" class="social-icon-x" style="vertical-align: -2px;"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
                                     </a>
                                 </li>
-
-                                <li>
-                                    <a href="https://www.instagram.com/">
+                                <li><a href="https://www.instagram.com/">
                                         <i class="feather-instagram"></i>
                                     </a>
                                 </li>
-
-                                <li>
-                                    <a href="https://www.linkdin.com/">
+                                <li><a href="https://www.linkdin.com/">
                                         <i class="feather-linkedin"></i>
                                     </a>
                                 </li>
-
                             </ul>
-
-
-                            <div class="contact-btn mt--30">
-
-                                <a class="rbt-btn hover-icon-reverse btn-border-gradient radius-round"
-                                   href="login-register.html">
-
-                                    <div class="icon-reverse-wrapper">
-
-                                        <span class="btn-text">
-                                            Contact With Us
-                                        </span>
-
-                                        <span class="btn-icon">
-                                            <i class="feather-arrow-right"></i>
-                                        </span>
-
-                                        <span class="btn-icon">
-                                            <i class="feather-arrow-right"></i>
-                                        </span>
-
-                                    </div>
-
-                                </a>
-
-                            </div>
-
                         </div>
-
                     </div>
 
-
-                    <!-- Useful Links -->
                     <div class="col-lg-2 col-md-6 col-sm-6 col-12">
-
                         <div class="footer-widget">
-
-                            <h5 class="ft-title">
-                                Useful Links
-                            </h5>
-
+                            <h5 class="ft-title">Useful Links</h5>
                             <ul class="ft-link">
-
                                 <li>
-                                    <a href="our-team.html">
-                                        Our Team
-                                    </a>
+                                    <a href="our-team.html">Our Team</a>
                                 </li>
-
                                 <li>
-                                    <a href="our-tuition.html">
-                                        Our Tuition
-                                    </a>
+                                    <a href="our-tuition.html">Our Tuition</a>
                                 </li>
-
                                 <li>
-                                    <a href="holiday-camps.html">
-                                        Holiday Camps
-                                    </a>
+                                    <a href="holiday-camps.html">Holiday Camps</a>
                                 </li>
-
                                 <li>
-                                    <a href="plans-and-pricing.html">
-                                        Plans &amp; Pricing
-                                    </a>
+                                    <a href="plans-and-pricing.html">Plans &amp; Pricing</a>
                                 </li>
-
                                 <li>
-                                    <a href="book-online.html">
-                                        Book Online
-                                    </a>
+                                    <a href="book-online.html">Book Online</a>
                                 </li>
-
                             </ul>
-
                         </div>
-
                     </div>
 
-
-                    <!-- Programs -->
                     <div class="col-lg-2 col-md-6 col-sm-6 col-12">
-
                         <div class="footer-widget">
-
-                            <h5 class="ft-title">
-                                Popular Programs
-                            </h5>
-
+                            <h5 class="ft-title">Popular Programs</h5>
                             <ul class="ft-link">
-
                                 <li>
-                                    <a href="our-tuition.html">
-                                        Primary Tuition
-                                    </a>
+                                    <a href="our-tuition.html">Primary Tuition</a>
                                 </li>
-
                                 <li>
-                                    <a href="our-tuition.html">
-                                        Secondary Tuition
-                                    </a>
+                                    <a href="our-tuition.html">Secondary Tuition</a>
                                 </li>
-
                                 <li>
-                                    <a href="our-tuition.html">
-                                        GCSE Tuition
-                                    </a>
+                                    <a href="our-tuition.html">GCSE Tuition</a>
                                 </li>
-
                                 <li>
-                                    <a href="our-tuition.html">
-                                        IGCSE Tuition
-                                    </a>
+                                    <a href="our-tuition.html">IGCSE Tuition</a>
                                 </li>
-
                                 <li>
-                                    <a href="our-tuition.html">
-                                        A-Level Tuition
-                                    </a>
+                                    <a href="our-tuition.html">A-Level Tuition</a>
                                 </li>
-
                                 <li>
-                                    <a href="holiday-camps.html">
-                                        Holiday Camps
-                                    </a>
+                                    <a href="holiday-camps.html">Holiday Camps</a>
                                 </li>
-
                             </ul>
-
                         </div>
-
                     </div>
 
-
-                    <!-- Contact -->
                     <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-
                         <div class="footer-widget">
-
-                            <h5 class="ft-title">
-                                Get Contact
-                            </h5>
-
+                            <h5 class="ft-title">Get Contact</h5>
                             <ul class="ft-link">
-
-                                <li>
-                                    <span>Phone:</span>
-                                    <a href="#">
-                                        (406) 555-0120
-                                    </a>
-                                </li>
-
-                                <li>
-                                    <span>E-mail:</span>
-                                    <a href="mailto:hr@example.com">
-                                        admin@example.com
-                                    </a>
-                                </li>
-
+                                <li><span>Phone:</span> <a href="#">(406) 555-0120</a></li>
+                                <li><span>E-mail:</span> <a href="mailto:info@londonstaredu.com">info@londonstaredu.com</a></li>
                             </ul>
-
 
                             <div class="newsletter-form mt--20">
-
-                                <h6 class="w-600">
-                                    Location
-                                </h6>
-
-                                <p class="description">
-
-                                    2000+ Our students are subscribe Around
-                                    the World.<br>
-
-                                    Don’t be shy introduce yourself!
-
-                                </p>
-
+                                <h6 class="w-600">Location</h6>
+                                <p class="description">2000+ Our students are subscribe Around the World.<br> Don’t be
+                                    shy introduce yourself!</p>
                             </div>
-
                         </div>
-
                     </div>
-
                 </div>
-
             </div>
-
         </div>
-
-
         <div class="rbt-separator-mid">
-
             <div class="container">
-
                 <hr class="rbt-separator m-0">
-
             </div>
-
         </div>
-
-
+        <!-- Start Copyright Area -->
         <div class="copyright-area copyright-style-1 ptb--20">
-
             <div class="container">
-
                 <div class="row align-items-center">
-
-
                     <div class="col-xxl-7 col-xl-7 col-lg-7 col-md-12 col-12">
-
                         <p class="rbt-link-hover text-center text-lg-start">
-
-                            Copyright © 2024 by
-
-                            <a href="index.html">
-                                London Star Education Ltd.
-                            </a>
-
-                            All Rights Reserved.
-
-                            Designed by
-
-                            <a href="https://impinfo.in/"
-                               target="_blank">
-
-                                RKI Systems
-
-                            </a>
-
+                            Copyright © 2026 by
+                            <a href="index.html">London Star Education Ltd.</a>
+                            All Rights Reserved. Designed by
+                            <a href="https://rkisystems.co.uk/" target="_blank">RKI Systems</a>
                         </p>
-
                     </div>
-
-
                     <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-12 col-12">
-
                         <ul class="copyright-link rbt-link-hover justify-content-center justify-content-lg-end mt_sm--10 mt_md--10">
-
-                            <li>
-                                <a href="#">
-                                    Terms of service
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href="privacy-policy.html">
-                                    Privacy policy
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href="subscription.html">
-                                    Subscription
-                                </a>
-                            </li>
-
+                            <li><a href="#">Terms of service</a></li>
+                            <li><a href="privacy-policy.html">Privacy policy</a></li>
                         </ul>
-
                     </div>
-
                 </div>
-
             </div>
-
         </div>
-
+        <!-- End Copyright Area -->
     </footer>
+    <!-- End Footer Area -->
 
-
-    <!-- Progress -->
-    <div class="rbt-progress-parent">
-
+    <!-- =========================================
+         UPPER ARROW (SCROLL TO TOP PROGRESS BUTTON)
+    ========================================= -->
+    <div class="rbt-progress-parent" id="back-to-top">
         <svg class="rbt-back-circle svg-inner"
              width="100%"
              height="100%"
              viewBox="-1 -1 102 102">
-
             <path d="M50,1 a49,49 0,1,0 0,98 a49,49 0,1,0 0,-98" />
-
         </svg>
-
+        <i class="feather-arrow-up up-arrow-icon"></i>
     </div>
 
 
@@ -1984,40 +1840,28 @@
     ========================================= -->
     <div class="floating-contact">
 
-
         <div class="contact-item call-item">
-
             <div class="contact-label call-label">
                 Talk To Our Experts
             </div>
-
             <a href="tel:+919876543210"
                class="contact-button call-button"
                aria-label="Call us">
-
                 <i class="fa fa-phone"></i>
-
             </a>
-
         </div>
 
-
         <div class="contact-item whatsapp-item">
-
             <div class="contact-label whatsapp-label">
                 Message Us
             </div>
-
             <a href="https://wa.me/919876543210"
                target="_blank"
                rel="noopener noreferrer"
                class="contact-button whatsapp-button"
                aria-label="Chat with us on WhatsApp">
-
                 <i class="fab fa-whatsapp"></i>
-
             </a>
-
         </div>
 
     </div>
@@ -2033,12 +1877,12 @@
 
 
     <!-- =========================================
-         STUDENT ROSTER JAVASCRIPT
+         STUDENT ROSTER & INTERACTIVITY JS
     ========================================= -->
     <script>
 
         /* =========================================
-           STUDENT DATA
+            STUDENT DATA
         ========================================= */
 
         const studentDatasets = {
@@ -2257,684 +2101,354 @@
 
 
         /* =========================================
-           VARIABLES
+            VARIABLES
         ========================================= */
 
         let currentSubjectKey = null;
-
         let isAscending = true;
-
         let showOnlyNewStudents = false;
 
-
         const subjectNames = {
-
             english: "English Language",
-
             tamil: "Tamil Literature",
-
             creative: "Creative Writing"
-
         };
 
 
         /* =========================================
-           PAGE LOAD
+            PAGE LOAD
         ========================================= */
 
         document.addEventListener("DOMContentLoaded", function () {
-
             updateOverallStats();
-
+            initScrollProgress();
+            initLoginDropdown();
         });
 
 
         /* =========================================
-           UPDATE SUBJECT COUNTS
+            UPPER ARROW SCROLL & SMOOTH CLICK
+        ========================================= */
+
+        function initScrollProgress() {
+            const progressParent = document.getElementById("back-to-top");
+            const progressPath = document.querySelector(".rbt-progress-parent svg path");
+
+            if (!progressParent || !progressPath) return;
+
+            const pathLength = progressPath.getTotalLength();
+            progressPath.style.transition = progressPath.style.WebkitTransition = "none";
+            progressPath.style.strokeDasharray = `${pathLength} ${pathLength}`;
+            progressPath.style.strokeDashoffset = pathLength;
+            progressPath.getBoundingClientRect();
+            progressPath.style.transition = progressPath.style.WebkitTransition = "stroke-dashoffset 10ms linear";
+
+            const updateProgress = function () {
+                const scroll = window.pageYOffset || document.documentElement.scrollTop;
+                const height = document.documentElement.scrollHeight - window.innerHeight;
+                const progress = pathLength - (scroll * pathLength) / (height || 1);
+                progressPath.style.strokeDashoffset = progress;
+
+                if (scroll > 50) {
+                    progressParent.classList.add("rbt-backto-top-active");
+                } else {
+                    progressParent.classList.remove("rbt-backto-top-active");
+                }
+            };
+
+            updateProgress();
+            window.addEventListener("scroll", updateProgress);
+
+            progressParent.addEventListener("click", function (e) {
+                e.preventDefault();
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
+            });
+        }
+
+
+        /* =========================================
+            LOGIN DROPDOWN TOGGLE
+        ========================================= */
+
+        function initLoginDropdown() {
+            const dropdown = document.querySelector(".login-dropdown");
+            const button = document.querySelector(".login-dropdown-btn");
+            if (!dropdown || !button) return;
+
+            button.addEventListener("click", function (event) {
+                event.stopPropagation();
+                dropdown.classList.toggle("active");
+            });
+
+            document.addEventListener("click", function (event) {
+                if (!dropdown.contains(event.target)) {
+                    dropdown.classList.remove("active");
+                }
+            });
+        }
+
+
+        /* =========================================
+            UPDATE SUBJECT COUNTS
         ========================================= */
 
         function updateOverallStats() {
-
             for (let key in studentDatasets) {
-
-                const badge =
-                    document.getElementById(`badge-count-${key}`);
-
+                const badge = document.getElementById(`badge-count-${key}`);
                 if (badge) {
-
-                    badge.innerText =
-                        `${studentDatasets[key].length} Students`;
-
+                    badge.innerText = `${studentDatasets[key].length} Students`;
                 }
-
             }
-
         }
 
 
         /* =========================================
-           SUBJECT CARD CLICK
-           
-           Click subject:
-           - Student list appears immediately
-           
-           Click same subject again:
-           - Student list hides
+            SUBJECT CARD CLICK
         ========================================= */
 
         function toggleSubject(key) {
-
-            /* If same subject is clicked again,
-               hide the student list */
-
             if (currentSubjectKey === key) {
-
                 currentSubjectKey = null;
+                document.getElementById("roster-section-container").style.display = "none";
 
-                document.getElementById(
-                    "roster-section-container"
-                ).style.display = "none";
+                document.querySelectorAll(".subject-card").forEach(function (card) {
+                    card.classList.remove("active-subject");
+                });
 
-
-                document
-                    .querySelectorAll(".subject-card")
-                    .forEach(function (card) {
-
-                        card.classList.remove(
-                            "active-subject"
-                        );
-
-                    });
-
-
-                document
-                    .querySelectorAll(".active-indicator")
-                    .forEach(function (indicator) {
-
-                        indicator.style.display = "none";
-
-                    });
-
-
+                document.querySelectorAll(".active-indicator").forEach(function (indicator) {
+                    indicator.style.display = "none";
+                });
                 return;
             }
 
-
-            /* Select new subject */
-
             currentSubjectKey = key;
+            document.getElementById("roster-section-container").style.display = "block";
 
+            document.querySelectorAll(".subject-card").forEach(function (card) {
+                card.classList.remove("active-subject");
+            });
 
-            /* Show student list immediately */
+            document.querySelectorAll(".active-indicator").forEach(function (indicator) {
+                indicator.style.display = "none";
+            });
 
-            document.getElementById(
-                "roster-section-container"
-            ).style.display = "block";
-
-
-            /* Remove active state from all cards */
-
-            document
-                .querySelectorAll(".subject-card")
-                .forEach(function (card) {
-
-                    card.classList.remove(
-                        "active-subject"
-                    );
-
-                });
-
-
-            /* Hide all indicators */
-
-            document
-                .querySelectorAll(".active-indicator")
-                .forEach(function (indicator) {
-
-                    indicator.style.display = "none";
-
-                });
-
-
-            /* Activate selected card */
-
-            document.getElementById(
-                `card-subject-${key}`
-            ).classList.add("active-subject");
-
-
-            /* Show selected indicator */
-
-            document.getElementById(
-                `indicator-${key}`
-            ).style.display = "inline-flex";
-
-
-            /* Update title */
-
-            document.getElementById(
-                "active-subject-title"
-            ).innerText = subjectNames[key];
-
-
-            /* Reset search when changing subject */
-
-            document.getElementById(
-                "student-search-input"
-            ).value = "";
-
-
-            /* Reset new student filter */
+            document.getElementById(`card-subject-${key}`).classList.add("active-subject");
+            document.getElementById(`indicator-${key}`).style.display = "inline-flex";
+            document.getElementById("active-subject-title").innerText = subjectNames[key];
+            document.getElementById("student-search-input").value = "";
 
             showOnlyNewStudents = false;
-
-            document
-                .getElementById("new-students-btn")
-                .classList.remove("active-filter");
-
-
-            /* Render students */
+            document.getElementById("new-students-btn").classList.remove("active-filter");
 
             renderRoster();
-
         }
 
 
         /* =========================================
-           RENDER STUDENT ROSTER
+            RENDER STUDENT ROSTER
         ========================================= */
 
         function renderRoster() {
+            if (!currentSubjectKey) return;
 
-            if (!currentSubjectKey) {
-                return;
-            }
+            const tableBody = document.getElementById("student-table-body");
+            const searchVal = document.getElementById("student-search-input").value.toLowerCase().trim();
 
-
-            const tableBody =
-                document.getElementById(
-                    "student-table-body"
-                );
-
-
-            const searchVal =
-                document
-                    .getElementById(
-                        "student-search-input"
-                    )
-                    .value
-                    .toLowerCase()
-                    .trim();
-
-
-            let list =
-                [...studentDatasets[currentSubjectKey]];
-
-
-            /* New student filter */
+            let list = [...studentDatasets[currentSubjectKey]];
 
             if (showOnlyNewStudents) {
-
-                list =
-                    list.filter(function (item) {
-
-                        return item.isNew;
-
-                    });
-
+                list = list.filter(function (item) {
+                    return item.isNew;
+                });
             }
-
-
-            /* Search filter */
 
             if (searchVal !== "") {
-
-                list =
-                    list.filter(function (item) {
-
-                        return (
-                            item.name
-                                .toLowerCase()
-                                .includes(searchVal)
-
-                            ||
-
-                            item.id
-                                .toLowerCase()
-                                .includes(searchVal)
-                        );
-
-                    });
-
+                list = list.filter(function (item) {
+                    return (
+                        item.name.toLowerCase().includes(searchVal) ||
+                        item.id.toLowerCase().includes(searchVal)
+                    );
+                });
             }
 
-
-            /* Sort */
-
             list.sort(function (a, b) {
-
                 return isAscending
-
                     ? a.name.localeCompare(b.name)
-
                     : b.name.localeCompare(a.name);
-
             });
 
-
-            /* Update total */
-
-            document.getElementById(
-                "total-student-count"
-            ).innerText = list.length;
-
-
-            /* Clear table */
-
+            document.getElementById("total-student-count").innerText = list.length;
             tableBody.innerHTML = "";
 
-
-            /* No results */
-
             if (list.length === 0) {
-
                 tableBody.innerHTML = `
-
                     <tr>
-
-                        <td colspan="5"
-                            class="text-center py-5 text-muted">
-
+                        <td colspan="5" class="text-center py-5 text-muted">
                             <i class="feather-user-x fs-2 d-block mb-2"></i>
-
                             No students found in this class view.
-
                         </td>
-
                     </tr>
-
                 `;
-
                 return;
             }
 
-
-            /* Create rows */
-
             list.forEach(function (student, index) {
-
-                const snoDisplay =
-                    (index + 1) < 10
-                        ? `0${index + 1}`
-                        : `${index + 1}`;
-
-
-                const newTag =
-                    student.isNew
-
-                        ? `<span class="new-badge-tag">New</span>`
-
-                        : ``;
-
-
-                const tr =
-                    document.createElement("tr");
-
+                const snoDisplay = (index + 1) < 10 ? `0${index + 1}` : `${index + 1}`;
+                const newTag = student.isNew ? `<span class="new-badge-tag">New</span>` : ``;
+                const tr = document.createElement("tr");
 
                 tr.innerHTML = `
-
                     <td>
-
-                        <span class="sno-badge">
-
-                            ${snoDisplay}
-
-                        </span>
-
+                        <span class="sno-badge">${snoDisplay}</span>
                     </td>
-
-
-                    <td style="color:#1f354d; font-weight:700;">
-
+                    <td style="color:#2b354f; font-weight:500;">
                         ${student.id}
-
                     </td>
-
-
                     <td>
-
                         <p class="student-name-text">
-
                             ${student.name}
-
                             ${newTag}
-
                         </p>
-
                     </td>
-
-
                     <td>
-
                         ${formatDate(student.joinDate)}
-
                     </td>
-
-
                     <td class="text-center">
-
                         <button type="button"
-
                                 class="rbt-btn rbt-switch-btn btn-gradient action-view-btn hover-transform-none"
-
                                 onclick="openDetailModal('${student.id}')">
-
-                            <span data-text="View">
-
-                                View
-
-                            </span>
-
+                            <span data-text="View">View</span>
                         </button>
-
                     </td>
-
                 `;
 
-
                 tableBody.appendChild(tr);
-
             });
-
         }
 
 
         /* =========================================
-           DATE FORMAT
+            DATE FORMAT
         ========================================= */
 
         function formatDate(dateStr) {
-
-            if (!dateStr) {
-                return "-";
-            }
-
-
-            const date =
-                new Date(dateStr);
-
-
-            return date.toLocaleDateString(
-                "en-GB",
-                {
-                    day: "2-digit",
-                    month: "short",
-                    year: "numeric"
-                }
-            );
-
+            if (!dateStr) return "-";
+            const date = new Date(dateStr);
+            return date.toLocaleDateString("en-GB", {
+                day: "2-digit",
+                month: "short",
+                year: "numeric"
+            });
         }
 
 
         /* =========================================
-           SORT A-Z / Z-A
+            SORT A-Z / Z-A
         ========================================= */
 
         function toggleSortOrder() {
-
             isAscending = !isAscending;
-
-
-            const sortLabel =
-                document.getElementById(
-                    "sort-label"
-                );
-
-
-            const sortIcon =
-                document.getElementById(
-                    "sort-icon"
-                );
-
+            const sortLabel = document.getElementById("sort-label");
+            const sortIcon = document.getElementById("sort-icon");
 
             if (isAscending) {
-
                 sortLabel.innerText = "A-Z";
-
-                sortIcon.className =
-                    "feather-arrow-up";
-
+                sortIcon.className = "feather-arrow-up";
             } else {
-
                 sortLabel.innerText = "Z-A";
-
-                sortIcon.className =
-                    "feather-arrow-down";
-
+                sortIcon.className = "feather-arrow-down";
             }
 
-
             renderRoster();
-
         }
 
 
         /* =========================================
-           NEW STUDENT FILTER
+            NEW STUDENT FILTER
         ========================================= */
 
         function toggleNewStudentsFilter() {
-
-            showOnlyNewStudents =
-                !showOnlyNewStudents;
-
-
-            const btn =
-                document.getElementById(
-                    "new-students-btn"
-                );
-
+            showOnlyNewStudents = !showOnlyNewStudents;
+            const btn = document.getElementById("new-students-btn");
 
             if (showOnlyNewStudents) {
-
-                btn.classList.add(
-                    "active-filter"
-                );
-
+                btn.classList.add("active-filter");
             } else {
-
-                btn.classList.remove(
-                    "active-filter"
-                );
-
+                btn.classList.remove("active-filter");
             }
 
-
             renderRoster();
-
         }
 
 
         /* =========================================
-           SEARCH
+            SEARCH
         ========================================= */
 
         function filterStudents() {
-
             renderRoster();
-
         }
 
 
         /* =========================================
-           OPEN STUDENT MODAL
+            OPEN STUDENT MODAL
         ========================================= */
 
         function openDetailModal(studentId) {
+            if (!currentSubjectKey) return;
 
-            if (!currentSubjectKey) {
-                return;
-            }
+            const list = studentDatasets[currentSubjectKey];
+            const student = list.find(function (s) {
+                return s.id === studentId;
+            });
 
+            if (!student) return;
 
-            const list =
-                studentDatasets[
-                    currentSubjectKey
-                ];
+            document.getElementById("modal-student-name").innerText = student.name;
+            document.getElementById("modal-student-id").innerText = student.id;
+            document.getElementById("modal-student-id-display").innerText = student.id;
+            document.getElementById("modal-student-full-name").innerText = student.name;
+            document.getElementById("modal-student-dob").innerText = student.dob || "14 Mar 2010";
+            document.getElementById("modal-student-gender").innerText = student.gender || "Female";
+            document.getElementById("modal-student-email").innerText = student.email || "student@gmail.com";
+            document.getElementById("modal-student-phone").innerText = student.phone || "+44 7700 900101";
+            document.getElementById("modal-student-joindate").innerText = formatDate(student.joinDate);
+            document.getElementById("modal-student-parent-phone").innerText = student.parentPhone || "+44 7900 111222";
+            document.getElementById("modal-student-attended").innerText = student.attended || "26 Classes";
+            document.getElementById("modal-student-missed").innerText = student.missed || "1 Class";
 
-
-            const student =
-                list.find(function (s) {
-
-                    return s.id === studentId;
-
-                });
-
-
-            if (!student) {
-                return;
-            }
-
-
-            document.getElementById(
-                "modal-student-name"
-            ).innerText = student.name;
-
-
-            document.getElementById(
-                "modal-student-id"
-            ).innerText = student.id;
-
-
-            document.getElementById(
-                "modal-student-id-display"
-            ).innerText = student.id;
-
-
-            document.getElementById(
-                "modal-student-full-name"
-            ).innerText = student.name;
-
-
-            document.getElementById(
-                "modal-student-dob"
-            ).innerText =
-                student.dob || "14 March 2010";
-
-
-            document.getElementById(
-                "modal-student-gender"
-            ).innerText =
-                student.gender || "Female";
-
-
-            document.getElementById(
-                "modal-student-email"
-            ).innerText =
-                student.email || "student@gmail.com";
-
-
-            document.getElementById(
-                "modal-student-phone"
-            ).innerText =
-                student.phone || "+44 7700 900100";
-
-
-            document.getElementById(
-                "modal-student-joindate"
-            ).innerText =
-                formatDate(student.joinDate);
-
-
-            document.getElementById(
-                "modal-student-parent-phone"
-            ).innerText =
-                student.parentPhone ||
-                "+44 7900 123456";
-
-
-            document.getElementById(
-                "modal-student-attended"
-            ).innerText =
-                student.attended ||
-                "24 Classes";
-
-
-            document.getElementById(
-                "modal-student-missed"
-            ).innerText =
-                student.missed ||
-                "0 Classes";
-
-
-            document.getElementById(
-                "detail-modal"
-            ).classList.add("active");
-
+            document.getElementById("detail-modal").classList.add("active");
         }
 
 
         /* =========================================
-           CLOSE MODAL
+            CLOSE MODAL
         ========================================= */
 
         function closeModal(modalId) {
-
-            document
-                .getElementById(modalId)
-                .classList.remove("active");
-
+            document.getElementById(modalId).classList.remove("active");
         }
 
 
         /* =========================================
-           CLOSE MODAL WHEN CLICKING OUTSIDE
+            MODAL EVENT LISTENERS
         ========================================= */
 
-        document.addEventListener(
-            "click",
-            function (event) {
-
-                const modal =
-                    document.getElementById(
-                        "detail-modal"
-                    );
-
-
-                if (
-                    event.target === modal
-                ) {
-
-                    closeModal(
-                        "detail-modal"
-                    );
-
-                }
-
+        document.addEventListener("click", function (event) {
+            const modal = document.getElementById("detail-modal");
+            if (event.target === modal) {
+                closeModal("detail-modal");
             }
-        );
+        });
 
-
-        /* =========================================
-           ESC KEY CLOSE MODAL
-        ========================================= */
-
-        document.addEventListener(
-            "keydown",
-            function (event) {
-
-                if (
-                    event.key === "Escape"
-                ) {
-
-                    closeModal(
-                        "detail-modal"
-                    );
-
-                }
-
+        document.addEventListener("keydown", function (event) {
+            if (event.key === "Escape") {
+                closeModal("detail-modal");
             }
-        );
+        });
 
     </script>
 

@@ -19,8 +19,8 @@ html {
 }
 
 body {
-    font-size: 18px;
-    line-height: 1.5;
+    font-size: 19px;
+    line-height: 1.6;
 	font-family: var(--font-primary);
 	color: var(--color-body);
 	font-weight: 400;
@@ -29,8 +29,8 @@ body {
 	overflow-y: scroll;
 	scrollbar-width: thin;
 	@media #{$sm-layout} {
-		font-size: 16px;
-		line-height: 1.5;
+		font-size: 17px;
+		line-height: 1.55;
 	}
 }
 

@@ -65,14 +65,20 @@
     <!-- CUSTOM CSS -->
 
     <style>
+        .class-link-page,
+        .class-link-page *,
+        .class-card,
+        .class-card * {
+            font-family: var(--font-primary, "Euclid Circular A", "Plus Jakarta Sans", "Inter", sans-serif) !important;
+        }
 
         /* =========================================
-           CLASS CARDS
+           CLASS CARDS (SYNCHRONIZED FONTS)
         ========================================= */
 
         .class-card {
             border: 1px solid #e5e7eb;
-            border-radius: 10px;
+            border-radius: 12px;
             overflow: hidden;
             transition: 0.3s;
             background: #ffffff;
@@ -81,23 +87,24 @@
 
         .class-card:hover {
             transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
         }
 
         .math-card {
-            border-top: 4px solid #9b64f1;
+            border-top: 4px solid #6c4df6;
         }
 
         .literature-card {
-            border-top: 4px solid #9b64f1;
+            border-top: 4px solid #6c4df6;
         }
 
         .subject {
-            font-weight: 700;
-            letter-spacing: 1px;
-            color: #000000;
+            font-weight: 700 !important;
+            letter-spacing: 0.5px;
+            color: #192335 !important;
             margin-bottom: 8px;
-            font-size: 22px;
-            line-height: 1.45;
+            font-size: 22px !important;
+            line-height: 1.4;
         }
 
         .class-card-header {
@@ -107,41 +114,44 @@
         .class-card .card-body {
             display: flex;
             flex-direction: column;
+            padding: 24px !important;
         }
 
         .subject-icon {
-            width: 45px;
-            height: 45px;
-            min-width: 45px;
+            width: 48px;
+            height: 48px;
+            min-width: 48px;
             border-radius: 50%;
             background: #edf2f7;
-
             display: flex;
             align-items: center;
             justify-content: center;
-
-            font-size: 20px;
-            color: #9b64f1;
+            font-size: 22px;
+            color: #6c4df6;
         }
 
         .literature-icon {
-            color: #9b64f1;
+            color: #6c4df6;
         }
 
         .class-details {
             margin-top: 20px;
+            margin-bottom: 24px;
         }
 
         .class-details p {
-            font-size: 14px;
-            color: #666;
-
+            font-size: 18px !important;
+            font-weight: 400 !important;
+            color: #374151 !important;
             display: flex;
             align-items: center;
+            gap: 12px;
+            margin-bottom: 14px;
+        }
 
-            gap: 10px;
-
-            margin-bottom: 15px;
+        .class-details p i {
+            font-size: 20px !important;
+            color: #6c4df6;
         }
 
         /* =========================================
@@ -151,30 +161,33 @@
         .join-btn,
         .awaiting-btn {
             margin-top: auto;
-            padding: 14px 12px;
-
-            font-size: 16px !important;
-            font-weight: 600;
-
-            min-height: 50px;
-
-            border-radius: 6px;
+            padding: 14px 20px;
+            font-size: 18px !important;
+            font-weight: 600 !important;
+            min-height: 54px;
+            border-radius: 8px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .join-btn {
             color: #ffffff !important;
+            background: linear-gradient(90deg, #6c4df6 0%, #a855f7 100%) !important;
             border: none;
             transition: 0.3s;
+        }
+
+        .join-btn:hover {
+            opacity: 0.95;
+            transform: translateY(-1px);
         }
 
         .awaiting-btn {
             background: #e2e8f0 !important;
             color: #64748b !important;
-
             border: none;
-
             cursor: not-allowed;
-
             opacity: 1 !important;
         }
 
@@ -205,7 +218,6 @@
         ========================================= */
 
         @media (max-width: 991px) {
-
             .rbt-default-sidebar {
                 margin-bottom: 30px;
             }
@@ -222,9 +234,7 @@
             .attendance-dashboard-row {
                 display: block;
             }
-
         }
-
     </style>
 
 </head>
@@ -563,9 +573,7 @@
 
                 <div class="inner text-center">
 
-                    <h1 class="title display-one text-white">
-                        My Attendance
-                    </h1>
+                    <h1 class="title display-one text-white">Class Link</h1>
 
                 </div>
 
@@ -964,336 +972,139 @@
      FOOTER
 ========================================================= -->
 
-<footer class="rbt-footer footer-style-1 bg-color-white overflow-hidden">
+    <!-- Start Footer Area -->
+    <footer class="rbt-footer footer-style-1 bg-color-white overflow-hidden">
+        <div class="footer-top">
+            <div class="container">
+                <div class="row g-5">
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+                        <div class="footer-widget">
+                            <div class="logo">
+                                <a href="index.html">
+                                    <img src="assets/images/logo/logo.png" alt="Edu-Loop Sign Logo">
+                                </a>
+                            </div>
 
-    <div class="footer-top">
+                            <p class="description mt--20">We are always seeking talented and motivated individuals to
+                                join our team.</p>
 
-        <div class="container">
-
-            <div class="row g-5">
-
-
-                <!-- FOOTER LOGO -->
-
-                <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-
-                    <div class="footer-widget">
-
-                        <div class="logo">
-
-                            <a href="index.html">
-
-                                <img
-                                    src="assets/images/logo/logo.png"
-                                    alt="Edu-cause">
-
-                            </a>
-
+                            <ul class="social-icon social-default justify-content-start">
+                                <li><a href="https://www.facebook.com/">
+                                        <i class="feather-facebook"></i>
+                                    </a>
+                                </li>
+                                <li><a href="https://www.twitter.com" aria-label="X (Twitter)">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" viewBox="0 0 24 24" class="social-icon-x" style="vertical-align: -2px;"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                                    </a>
+                                </li>
+                                <li><a href="https://www.instagram.com/">
+                                        <i class="feather-instagram"></i>
+                                    </a>
+                                </li>
+                                <li><a href="https://www.linkdin.com/">
+                                        <i class="feather-linkedin"></i>
+                                    </a>
+                                </li>
+                            </ul>
                         </div>
+                    </div>
 
+                    <div class="col-lg-2 col-md-6 col-sm-6 col-12">
+                        <div class="footer-widget">
+                            <h5 class="ft-title">Useful Links</h5>
+                            <ul class="ft-link">
+                                <li>
+                                    <a href="our-team.html">Our Team</a>
+                                </li>
+                                <li>
+                                    <a href="our-tuition.html">Our Tuition</a>
+                                </li>
+                                <li>
+                                    <a href="holiday-camps.html">Holiday Camps</a>
+                                </li>
+                                <li>
+                                    <a href="plans-and-pricing.html">Plans &amp; Pricing</a>
+                                </li>
+                                <li>
+                                    <a href="book-online.html">Book Online</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
 
-                        <p class="description mt--20">
+                    <div class="col-lg-2 col-md-6 col-sm-6 col-12">
+                        <div class="footer-widget">
+                            <h5 class="ft-title">Popular Programs</h5>
+                            <ul class="ft-link">
+                                <li>
+                                    <a href="our-tuition.html">Primary Tuition</a>
+                                </li>
+                                <li>
+                                    <a href="our-tuition.html">Secondary Tuition</a>
+                                </li>
+                                <li>
+                                    <a href="our-tuition.html">GCSE Tuition</a>
+                                </li>
+                                <li>
+                                    <a href="our-tuition.html">IGCSE Tuition</a>
+                                </li>
+                                <li>
+                                    <a href="our-tuition.html">A-Level Tuition</a>
+                                </li>
+                                <li>
+                                    <a href="holiday-camps.html">Holiday Camps</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
 
-                            We’re always in search for talented
-                            and motivated people.
-                            Don’t be shy introduce yourself!
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+                        <div class="footer-widget">
+                            <h5 class="ft-title">Get Contact</h5>
+                            <ul class="ft-link">
+                                <li><span>Phone:</span> <a href="#">(406) 555-0120</a></li>
+                                <li><span>E-mail:</span> <a href="mailto:info@londonstaredu.com">info@londonstaredu.com</a></li>
+                            </ul>
 
+                            <div class="newsletter-form mt--20">
+                                <h6 class="w-600">Location</h6>
+                                <p class="description">2000+ Our students are subscribe Around the World.<br> Don’t be
+                                    shy introduce yourself!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="rbt-separator-mid">
+            <div class="container">
+                <hr class="rbt-separator m-0">
+            </div>
+        </div>
+        <!-- Start Copyright Area -->
+        <div class="copyright-area copyright-style-1 ptb--20">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-xxl-7 col-xl-7 col-lg-7 col-md-12 col-12">
+                        <p class="rbt-link-hover text-center text-lg-start">
+                            Copyright © 2026 by
+                            <a href="index.html">London Star Education Ltd.</a>
+                            All Rights Reserved. Designed by
+                            <a href="https://rkisystems.co.uk/" target="_blank">RKI Systems</a>
                         </p>
-
-
-                        <ul class="social-icon social-default justify-content-start">
-
-                            <li>
-                                <a href="https://www.facebook.com/">
-                                    <i class="feather-facebook"></i>
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href="https://www.instagram.com/">
-                                    <i class="feather-instagram"></i>
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href="https://www.linkedin.com/">
-                                    <i class="feather-linkedin"></i>
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href="https://www.twitter.com">
-                                    <i class="feather-youtube"></i>
-                                </a>
-                            </li>
-
-                        </ul>
-
                     </div>
-
-                </div>
-
-
-                <!-- QUICK LINKS -->
-
-                <div class="col-lg-2 col-md-6 col-sm-6 col-12">
-
-                    <div class="footer-widget">
-
-                        <h5 class="ft-title">
-                            Quick Links
-                        </h5>
-
-                        <ul class="ft-link">
-
-                            <li>
-                                <a href="our-team.html">
-                                    Our Team
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href="our-tuition.html">
-                                    Our Tuition
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href="holiday-camps.html">
-                                    Holiday Camps
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href="plans-and-pricing.html">
-                                    Plans &amp; Pricing
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href="book-online.html">
-                                    Book Online
-                                </a>
-                            </li>
-
+                    <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-12 col-12">
+                        <ul class="copyright-link rbt-link-hover justify-content-center justify-content-lg-end mt_sm--10 mt_md--10">
+                            <li><a href="#">Terms of service</a></li>
+                            <li><a href="privacy-policy.html">Privacy policy</a></li>
                         </ul>
-
                     </div>
-
                 </div>
-
-
-                <!-- POPULAR PROGRAMS -->
-
-                <div class="col-lg-2 col-md-6 col-sm-6 col-12">
-
-                    <div class="footer-widget">
-
-                        <h5 class="ft-title">
-                            Popular Programs
-                        </h5>
-
-                        <ul class="ft-link">
-
-                            <li>
-                                <a href="our-tuition.html">
-                                    Primary Tuition
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href="our-tuition.html">
-                                    Secondary Tuition
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href="our-tuition.html">
-                                    GCSE Tuition
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href="our-tuition.html">
-                                    IGCSE Tuition
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href="our-tuition.html">
-                                    A-Level Tuition
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href="holiday-camps.html">
-                                    Holiday Camps
-                                </a>
-                            </li>
-
-                        </ul>
-
-                    </div>
-
-                </div>
-
-
-                <!-- CONTACT -->
-
-                <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-
-                    <div class="footer-widget">
-
-                        <h5 class="ft-title">
-                            Get Contact
-                        </h5>
-
-                        <ul class="ft-link">
-
-                            <li>
-
-                                <span>
-                                    Phone:
-                                </span>
-
-                                <a href="#">
-                                    (406) 555-0120
-                                </a>
-
-                            </li>
-
-
-                            <li>
-
-                                <span>
-                                    E-mail:
-                                </span>
-
-                                <a href="mailto:hr@example.com">
-                                    admin@example.com
-                                </a>
-
-                            </li>
-
-                        </ul>
-
-
-                        <div class="newsletter-form mt--20">
-
-                            <h6 class="w-600">
-                                Location
-                            </h6>
-
-                            <p class="description">
-
-                                2000+ Our students are subscribe
-                                Around the World.
-
-                                <br>
-
-                                Don’t be shy introduce yourself!
-
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-
             </div>
-
         </div>
-
-    </div>
-
-
-    <!-- SEPARATOR -->
-
-    <div class="rbt-separator-mid">
-
-        <div class="container">
-
-            <hr class="rbt-separator m-0">
-
-        </div>
-
-    </div>
-
-
-    <!-- COPYRIGHT -->
-
-    <div class="copyright-area copyright-style-1 ptb--20">
-
-        <div class="container">
-
-            <div class="row align-items-center">
-
-
-                <div class="col-xxl-7 col-xl-7 col-lg-7 col-md-12 col-12">
-
-                    <p class="rbt-link-hover text-center text-lg-start">
-
-                        Copyright © 2024 by
-
-                        <a href="index.html">
-                            London Star Education Ltd.
-                        </a>
-
-                        All Rights Reserved.
-
-                        Designed by
-
-                        <a
-                            href="https://impinfo.in/"
-                            target="_blank">
-
-                            RKI Systems
-
-                        </a>
-
-                    </p>
-
-                </div>
-
-
-                <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-12 col-12">
-
-                    <ul class="copyright-link rbt-link-hover justify-content-center justify-content-lg-end mt_sm--10 mt_md--10">
-
-                        <li>
-                            <a href="#">
-                                Terms of service
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="privacy-policy.html">
-                                Privacy policy
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="subscription.html">
-                                Subscription
-                            </a>
-                        </li>
-
-                    </ul>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</footer>
-
-
-<!-- =========================================================
+        <!-- End Copyright Area -->
+    </footer>
+    <!-- End Footer Area --><!-- =========================================================
      BACK TO TOP
 ========================================================= -->
 
