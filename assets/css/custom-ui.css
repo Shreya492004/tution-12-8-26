@@ -1,0 +1,762 @@
+/* ==========================================================================
+   London Star Education - Master Custom UI & Typography Enhancements
+   Target: Clean UI, Responsiveness, Typography, Header Alignment & Layout
+   Font Family: Plus Jakarta Sans (Google Fonts)
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+/* --------------------------------------------------------------------------
+   1. GLOBAL TYPOGRAPHY & FONT SYSTEM
+   -------------------------------------------------------------------------- */
+:root {
+    --font-primary: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+    --font-secondary: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+    --font-alt: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+}
+
+html {
+    font-size: 16px !important;
+    -webkit-text-size-adjust: 100%;
+}
+
+body,
+button,
+input,
+select,
+textarea,
+table,
+th,
+td,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+a,
+label,
+div,
+nav,
+li,
+header,
+footer,
+optgroup,
+legend,
+figcaption {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+}
+
+/* --------------------------------------------------------------------------
+   2. ICON FONT PROTECTION & UNIVERSAL VERTICAL ALIGNMENT (ISSUE #3)
+   -------------------------------------------------------------------------- */
+i[class^="feather-"],
+i[class*=" feather-"],
+span[class^="feather-"],
+span[class*=" feather-"],
+.feather,
+[class^="feather-"],
+[class*=" feather-"] {
+    font-family: 'feather', 'Feather' !important;
+    speak: none;
+    font-style: normal !important;
+    font-weight: normal !important;
+    font-variant: normal !important;
+    text-transform: none !important;
+    line-height: 1 !important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    vertical-align: middle !important;
+}
+
+i[class^="fa-"],
+i[class*=" fa-"],
+[class^="fa-"],
+[class*=" fa-"],
+.fa, .fas, .far, .fal, .fad, .fab {
+    font-family: "Font Awesome 5 Pro", "Font Awesome 5 Free", "FontAwesome" !important;
+    font-style: normal !important;
+    font-weight: normal !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    vertical-align: middle !important;
+    line-height: 1 !important;
+}
+
+i[class^="bi-"],
+i[class*=" bi-"],
+.bi {
+    font-family: "bootstrap-icons" !important;
+    font-style: normal !important;
+    font-weight: normal !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    vertical-align: middle !important;
+    line-height: 1 !important;
+}
+
+/* Universal Icon-to-Text Alignment across all elements */
+.rbt-btn i,
+.btn i,
+.rbt-badge i,
+.rbt-badge-sub i,
+.icon-box i,
+.contact-item i,
+.feature-sin i,
+.rbt-meta li i,
+.teacher-details-title-left i,
+.profile-info-icon i,
+.summary-points li i,
+.rbt-user-tab a i,
+.dashboard-mainmenu li a i,
+.rbt-default-sidebar-list li a i {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    vertical-align: middle !important;
+    line-height: 1 !important;
+}
+
+/* --------------------------------------------------------------------------
+   3. ENHANCED READABILITY & TYPOGRAPHY HIERARCHY
+   -------------------------------------------------------------------------- */
+body {
+    font-size: 1.03125rem !important; /* ~16.5px */
+    line-height: 1.625 !important;
+    color: #273041 !important;
+    background-color: #ffffff;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    letter-spacing: -0.01em;
+}
+
+p {
+    font-size: 1rem !important; /* 16px */
+    line-height: 1.65 !important;
+    color: #475569 !important;
+    margin-bottom: 1.25rem !important;
+}
+
+h1, .h1, .title-h1 {
+    font-size: clamp(2.25rem, 4.5vw, 3.25rem) !important;
+    font-weight: 700 !important;
+    line-height: 1.22 !important;
+    letter-spacing: -0.025em !important;
+    color: #192335 !important;
+    margin-bottom: 1.25rem !important;
+}
+
+h2, .h2, .section-title .title {
+    font-size: clamp(1.75rem, 3.5vw, 2.375rem) !important;
+    font-weight: 700 !important;
+    line-height: 1.25 !important;
+    letter-spacing: -0.02em !important;
+    color: #192335 !important;
+    margin-bottom: 1rem !important;
+}
+
+h3, .h3 {
+    font-size: clamp(1.375rem, 2.5vw, 1.75rem) !important;
+    font-weight: 600 !important;
+    line-height: 1.3 !important;
+    letter-spacing: -0.015em !important;
+    color: #192335 !important;
+    margin-bottom: 0.875rem !important;
+}
+
+h4, .h4 {
+    font-size: clamp(1.15rem, 2vw, 1.375rem) !important;
+    font-weight: 600 !important;
+    line-height: 1.35 !important;
+    color: #192335 !important;
+    margin-bottom: 0.75rem !important;
+}
+
+h5, .h5 {
+    font-size: clamp(1.05rem, 1.5vw, 1.1875rem) !important;
+    font-weight: 600 !important;
+    line-height: 1.4 !important;
+    color: #192335 !important;
+    margin-bottom: 0.5rem !important;
+}
+
+h6, .h6 {
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    line-height: 1.4 !important;
+    color: #192335 !important;
+    margin-bottom: 0.5rem !important;
+}
+
+/* Subtitles & Badges */
+.subtitle,
+.rbt-badge-sub,
+.section-title .subtitle {
+    font-size: 0.9375rem !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.05em !important;
+    text-transform: uppercase !important;
+}
+
+/* --------------------------------------------------------------------------
+   4. HEADER & NAVIGATION ENHANCEMENTS (ISSUE #2 FIX)
+   -------------------------------------------------------------------------- */
+.rbt-header .mainbar-row {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 15px !important;
+}
+
+.rbt-header .header-left {
+    flex-shrink: 0 !important;
+}
+
+.rbt-header .rbt-main-navigation {
+    display: block !important;
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
+}
+
+.rbt-header .header-right {
+    flex-shrink: 0 !important;
+}
+
+.rbt-header .rbt-main-navigation .mainmenu-nav {
+    display: flex !important;
+    justify-content: center !important;
+    width: auto !important;
+}
+
+.rbt-header .rbt-main-navigation .mainmenu {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    list-style: none !important;
+    gap: 2px !important;
+}
+
+.rbt-header .rbt-main-navigation .mainmenu > li {
+    flex-shrink: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    position: relative !important;
+}
+
+.rbt-header .rbt-main-navigation .mainmenu > li > a,
+.rbt-header .rbt-main-navigation a {
+    font-size: 16.5px !important;
+    font-weight: 500 !important; /* Clean, professional weight - NOT overly bold */
+    color: #192335 !important;
+    white-space: nowrap !important;
+    padding: 0 12px !important;
+    display: flex !important;
+    align-items: center !important;
+    height: 80px !important;
+    line-height: 80px !important;
+    transition: all 0.25s ease !important;
+    text-decoration: none !important;
+    letter-spacing: -0.01em !important;
+}
+
+.rbt-header .rbt-main-navigation .mainmenu > li > a:hover,
+.rbt-header .rbt-main-navigation a:hover,
+.rbt-header .rbt-main-navigation .mainmenu > li.active > a {
+    color: #2f57ef !important;
+    font-weight: 600 !important;
+}
+
+/* Laptop Navigation Adjustments (1024px to 1400px) */
+@media only screen and (min-width: 1200px) and (max-width: 1400px) {
+    .rbt-header .rbt-main-navigation .mainmenu > li > a,
+    .rbt-header .rbt-main-navigation a {
+        font-size: 15.5px !important;
+        padding: 0 8px !important;
+    }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+    .rbt-header .rbt-main-navigation .mainmenu > li > a,
+    .rbt-header .rbt-main-navigation a {
+        font-size: 14.5px !important;
+        padding: 0 6px !important;
+    }
+}
+
+/* Mobile & Tablet Drawer Menu Refinement */
+.popup-mobile-menu {
+    z-index: 99999 !important;
+}
+
+.popup-mobile-menu .inner-wrapper {
+    padding: 24px !important;
+    background: #ffffff !important;
+}
+
+.popup-mobile-menu .mainmenu {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 20px 0 !important;
+}
+
+.popup-mobile-menu .mainmenu > li {
+    border-bottom: 1px solid #f1f5f9 !important;
+    margin: 0 !important;
+}
+
+.popup-mobile-menu .mainmenu > li > a {
+    font-size: 16.5px !important;
+    font-weight: 500 !important;
+    color: #192335 !important;
+    padding: 14px 8px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    text-decoration: none !important;
+}
+
+.popup-mobile-menu .mainmenu > li > a:hover {
+    color: #2f57ef !important;
+}
+
+/* --------------------------------------------------------------------------
+   5. SIDEBAR NAVIGATION SYSTEM (ISSUE #1 FIX)
+   Covers: "Welcome, Ruben", "My Profile", "Students List", "Class Link",
+   "Attendance", "Homework & Notes", "User", "Edit Profile", "Logout"
+   -------------------------------------------------------------------------- */
+.rbt-default-sidebar-wrapper,
+.rbt-dashboard-sidebar,
+.dashboard-mainmenu-wrapper {
+    position: relative !important;
+}
+
+.dashboard-mainmenu,
+.rbt-default-sidebar-list {
+    margin: 0 !important;
+    padding: 0 !important;
+    list-style: none !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 5px !important;
+    width: 100% !important;
+}
+
+.dashboard-mainmenu li,
+.rbt-default-sidebar-list li {
+    margin: 0 !important;
+    padding: 0 !important;
+    display: block !important;
+    width: 100% !important;
+}
+
+/* Sidebar navigation items - bigger, crisp & readable */
+.dashboard-mainmenu li a,
+.rbt-default-sidebar-list li a,
+.rbt-default-sidebar-wrapper .dashboard-mainmenu li a,
+.rbt-default-sidebar-wrapper .rbt-default-sidebar-list li a,
+.rbt-user-tab a,
+.rbt-dashboard-sidebar .mainmenu-nav ul li a {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    font-size: 17px !important; /* Clearly bigger & easier to read */
+    font-weight: 500 !important; /* Professional medium weight */
+    color: #192335 !important;
+    padding: 12px 18px !important;
+    border-radius: 10px !important;
+    transition: all 0.25s ease !important;
+    text-decoration: none !important;
+    width: 100% !important;
+    height: auto !important;
+    line-height: 1.4 !important;
+    gap: 12px !important;
+}
+
+.dashboard-mainmenu li a span,
+.rbt-default-sidebar-list li a span,
+.rbt-default-sidebar-wrapper .dashboard-mainmenu li a span,
+.rbt-default-sidebar-wrapper .rbt-default-sidebar-list li a span,
+.rbt-user-tab a span {
+    font-size: 17px !important;
+    font-weight: 500 !important;
+    color: inherit !important;
+    white-space: nowrap !important;
+    line-height: 1.4 !important;
+}
+
+.dashboard-mainmenu li a i,
+.rbt-default-sidebar-list li a i,
+.rbt-default-sidebar-wrapper .dashboard-mainmenu li a i,
+.rbt-default-sidebar-wrapper .rbt-default-sidebar-list li a i,
+.rbt-user-tab a i {
+    font-size: 19px !important;
+    margin-right: 0 !important;
+    color: #64748b !important;
+    transition: all 0.25s ease !important;
+    width: 22px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    flex-shrink: 0 !important;
+    vertical-align: middle !important;
+}
+
+/* Active Sidebar Navigation Item */
+.dashboard-mainmenu li.active a,
+.dashboard-mainmenu li a.active,
+.rbt-default-sidebar-list li.active a,
+.rbt-default-sidebar-list li a.active,
+.rbt-user-tab a.active {
+    background: #f0edff !important;
+    color: #2f57ef !important;
+}
+
+.dashboard-mainmenu li.active a span,
+.dashboard-mainmenu li a.active span,
+.rbt-default-sidebar-list li.active a span,
+.rbt-default-sidebar-list li a.active span,
+.rbt-user-tab a.active span {
+    font-weight: 600 !important;
+    color: #2f57ef !important;
+}
+
+.dashboard-mainmenu li.active a i,
+.dashboard-mainmenu li a.active i,
+.rbt-default-sidebar-list li.active a i,
+.rbt-default-sidebar-list li a.active i,
+.rbt-user-tab a.active i {
+    color: #2f57ef !important;
+}
+
+.dashboard-mainmenu li a:hover,
+.rbt-default-sidebar-list li a:hover,
+.rbt-user-tab a:hover {
+    background: #f8fafc !important;
+    color: #2f57ef !important;
+}
+
+.dashboard-mainmenu li a:hover i,
+.rbt-default-sidebar-list li a:hover i,
+.rbt-user-tab a:hover i {
+    color: #2f57ef !important;
+}
+
+/* User Welcome Heading in Sidebar */
+.rbt-user-welcome,
+.rbt-avatar-info .title,
+.rbt-sidebar-widget .title {
+    font-size: 19px !important;
+    font-weight: 700 !important;
+    color: #192335 !important;
+}
+
+/* --------------------------------------------------------------------------
+   6. BUTTONS & "JOIN NOW" SINGLE-LINE ALIGNMENT (ISSUE #5 FIX)
+   -------------------------------------------------------------------------- */
+.rbt-btn,
+.btn,
+button.rbt-btn,
+a.rbt-btn {
+    font-size: 15.5px !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.01em !important;
+    padding: 12px 24px !important;
+    border-radius: 10px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    white-space: nowrap !important;
+    word-break: keep-all !important;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.rbt-btn *,
+.rbt-btn span,
+.rbt-switch-btn span,
+.rbt-switch-btn span::after {
+    white-space: nowrap !important;
+    word-break: keep-all !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+/* Strict single-line rule for "Join Now" header CTA button */
+a[href="login-register.html"].rbt-btn,
+.rbt-btn-wrapper a.rbt-btn,
+.login-dropdown-btn {
+    white-space: nowrap !important;
+    word-break: keep-all !important;
+    flex-wrap: nowrap !important;
+}
+
+.rbt-btn.btn-sm {
+    font-size: 14.5px !important;
+    padding: 9px 18px !important;
+    border-radius: 8px !important;
+}
+
+.rbt-btn.btn-lg {
+    font-size: 17px !important;
+    padding: 15px 32px !important;
+    border-radius: 12px !important;
+}
+
+/* --------------------------------------------------------------------------
+   7. FOOTER LINK HOVER SINGLE-LINE UNDERLINE (ISSUE #4 FIX)
+   -------------------------------------------------------------------------- */
+.copyright-area p,
+.copyright-area a,
+.copyright-link a,
+.rbt-link-hover a,
+.footer-style-1 .copyright-area a {
+    white-space: nowrap !important;
+    word-break: keep-all !important;
+    display: inline-block !important;
+    position: relative !important;
+    vertical-align: baseline !important;
+}
+
+.copyright-area .col-xxl-7,
+.copyright-area .col-xl-7,
+.copyright-area .col-lg-7 {
+    line-height: 1.8 !important;
+}
+
+.rbt-link-hover a::after {
+    content: "" !important;
+    position: absolute !important;
+    width: 100% !important;
+    height: 2px !important;
+    bottom: -2px !important;
+    left: 0 !important;
+    background-color: currentColor !important;
+    transform: scaleX(0) !important;
+    transform-origin: bottom right !important;
+    transition: transform 0.3s ease !important;
+}
+
+.rbt-link-hover a:hover::after {
+    transform-origin: bottom left !important;
+    transform: scaleX(1) !important;
+}
+
+/* --------------------------------------------------------------------------
+   8. BOOK-ONLINE GAP FIX BETWEEN IMAGE AND PARAGRAPH (ISSUE #6 FIX)
+   -------------------------------------------------------------------------- */
+.book-online-left {
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+.book-online-media {
+    margin-bottom: 16px !important; /* Reduced unnecessary gap */
+}
+
+.book-online-media img {
+    margin-bottom: 0 !important;
+    display: block !important;
+    border-radius: 14px !important;
+    width: 100% !important;
+    object-fit: cover !important;
+}
+
+.book-online-summary {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+.book-online-summary .summary-title {
+    margin-top: 0 !important;
+    margin-bottom: 10px !important; /* Tight, visually balanced spacing */
+    font-size: 24px !important;
+    font-weight: 700 !important;
+}
+
+.book-online-summary .summary-text {
+    margin-top: 0 !important;
+    margin-bottom: 16px !important; /* Tight, visually balanced spacing */
+    line-height: 1.6 !important;
+}
+
+/* --------------------------------------------------------------------------
+   9. FORM CONTROLS & INPUTS
+   -------------------------------------------------------------------------- */
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="number"],
+input[type="tel"],
+input[type="url"],
+input[type="date"],
+select,
+textarea,
+.form-control,
+.rbt-search-field {
+    font-size: 16px !important; /* 16px prevents iOS Safari auto-zoom */
+    font-weight: 400 !important;
+    color: #192335 !important;
+    background-color: #ffffff !important;
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 10px !important;
+    padding: 12px 16px !important;
+    min-height: 48px !important;
+    line-height: 1.5 !important;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+textarea,
+textarea.form-control {
+    min-height: 120px !important;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+.form-control:focus {
+    outline: none !important;
+    border-color: #2f57ef !important;
+    box-shadow: 0 0 0 3px rgba(47, 87, 239, 0.14) !important;
+}
+
+label,
+.form-label {
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    color: #192335 !important;
+    margin-bottom: 6px !important;
+    display: inline-block !important;
+}
+
+/* --------------------------------------------------------------------------
+   10. CARDS, CONTAINERS & DASHBOARD LAYOUT
+   -------------------------------------------------------------------------- */
+.rbt-card,
+.rbt-cat-box,
+.rbt-dashboard-card,
+.rbt-course-grid,
+.single-card {
+    border-radius: 16px !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05) !important;
+    border: 1px solid rgba(226, 232, 240, 0.8) !important;
+    background: #ffffff !important;
+    transition: transform 0.25s ease, box-shadow 0.25s ease !important;
+}
+
+.rbt-card:hover,
+.rbt-cat-box:hover,
+.rbt-dashboard-card:hover {
+    box-shadow: 0 10px 30px rgba(47, 87, 239, 0.1) !important;
+}
+
+/* --------------------------------------------------------------------------
+   11. RESPONSIVE TABLES & DATA DISPLAY
+   -------------------------------------------------------------------------- */
+table,
+.rbt-table,
+.table {
+    width: 100% !important;
+    margin-bottom: 1rem !important;
+    border-collapse: separate !important;
+    border-spacing: 0 !important;
+}
+
+.table-responsive,
+.rbt-table-responsive {
+    display: block !important;
+    width: 100% !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    border-radius: 12px !important;
+    border: 1px solid #e2e8f0 !important;
+}
+
+table th,
+.table th,
+.rbt-table th {
+    background-color: #f8fafc !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    color: #475569 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.04em !important;
+    padding: 14px 18px !important;
+    border-bottom: 2px solid #e2e8f0 !important;
+    white-space: nowrap !important;
+}
+
+table td,
+.table td,
+.rbt-table td {
+    font-size: 15px !important;
+    color: #334155 !important;
+    padding: 14px 18px !important;
+    vertical-align: middle !important;
+    border-bottom: 1px solid #f1f5f9 !important;
+}
+
+/* --------------------------------------------------------------------------
+   12. RESPONSIVE BREAKPOINTS & CLEAN SPACING
+   -------------------------------------------------------------------------- */
+@media only screen and (max-width: 767px) {
+    body {
+        font-size: 16px !important;
+    }
+
+    .container,
+    .container-fluid {
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+    }
+
+    .rbt-card,
+    .rbt-cat-box,
+    .rbt-dashboard-card {
+        padding: 18px !important;
+        margin-bottom: 16px !important;
+    }
+
+    .rbt-section-gap,
+    .rbt-section-gapTop,
+    .rbt-section-gapBottom {
+        padding-top: 40px !important;
+        padding-bottom: 40px !important;
+    }
+
+    .btn,
+    .rbt-btn {
+        width: 100% !important;
+        margin-bottom: 8px !important;
+    }
+
+    .header-right .rbt-btn-wrapper {
+        display: none !important;
+    }
+
+    .copyright-area p,
+    .copyright-area a {
+        white-space: normal !important;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .rbt-section-gap,
+    .rbt-section-gapTop,
+    .rbt-section-gapBottom {
+        padding-top: 60px !important;
+        padding-bottom: 60px !important;
+    }
+}

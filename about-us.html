@@ -29,6 +29,7 @@
     <link rel="stylesheet" href="assets/css/plugins/magnigy-popup.min.css">
     <link rel="stylesheet" href="assets/css/plugins/plyr.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/custom-ui.css">
     <style>
         /* Icon Font Protection - Ensure feather and fontawesome icons always render */
         i[class^="feather-"],
@@ -241,101 +242,7 @@
     <header class="rbt-header rbt-header-9">
         <div class="rbt-sticky-placeholder"></div>
 
-        <!-- Start Header Top -->
-        <div class="rbt-header-middle position-relative rbt-header-mid-1 bg-color-white rbt-border-bottom">
-            <div class="container">
-                <div class="rbt-header-sec align-items-center">
-
-                    <div class="rbt-header-sec-col rbt-header-left">
-                        <div class="rbt-header-content">
-                            <!-- Start Header Information List -->
-                            <div class="header-info">
-                                <ul class="rbt-dropdown-menu switcher-language">
-                                    <li class="has-child-menu">
-                                        <a href="#">
-                                            <img class="left-image" src="assets/images/icons/en-us.png"
-                                                alt="Language Images">
-                                            <span class="menu-item">English</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <!-- End Header Information List -->
-
-                            <!-- Start Header Information List -->
-                            <div class="header-info">
-                                <ul class="rbt-dropdown-menu currency-menu">
-                                    <li class="has-child-menu">
-                                        <ul class="sub-menu hover-reverse">
-                                            <li>
-                                                <a href="#">
-                                                    <span class="menu-item">EUR</span>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    <span class="menu-item">GBP</span>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </div>
-                            <!-- End Header Information List -->
-                        </div>
-                    </div>
-
-                    <div class="rbt-header-sec-col rbt-header-center d-none d-md-block">
-                        <div class="rbt-header-content">
-                            <div class="header-info">
-                                <div class="rbt-search-field">
-                                    <div class="search-field">
-                                        <input type="text" placeholder="Search Course">
-                                        <button class="rbt-round-btn serach-btn" type="submit"><i
-                                                class="feather-search"></i></button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="rbt-header-sec-col rbt-header-right">
-                        <div class="rbt-btn-wrapper">
-                            <div class="login-dropdown">
-                                <button type="button"
-                                    class="rbt-btn rbt-switch-btn btn-gradient btn-sm hover-transform-none login-dropdown-btn">
-                                    <span data-text="Login">Login</span>
-                                    <i class="feather-chevron-down"></i>
-                                </button>
-                                <div class="login-dropdown-menu">
-                                    <a href="instructor-profile.html">
-                                        <i class="feather-user"></i>
-                                        <span>Tutor Login</span>
-                                    </a>
-                                    <a href="student-profile.html">
-                                        <i class="feather-book-open"></i>
-                                        <span>Student Login</span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Start Mobile-Menu-Bar -->
-                        <div class="mobile-menu-bar d-block d-xl-none">
-                            <div class="hamberger">
-                                <button class="hamberger-button rbt-round-btn">
-                                    <i class="feather-menu"></i>
-                                </button>
-                            </div>
-                        </div>
-                        <!-- End Mobile-Menu-Bar -->
-                    </div>
-
-                </div>
-            </div>
-        </div>
-        <!-- End Header Top -->
-
+        
         <div class="rbt-header-wrapper header-not-transparent header-sticky">
             <div class="container">
                 <div class="mainbar-row rbt-navigation-end align-items-center">
@@ -378,7 +285,24 @@
                     </div>
 
                     <div class="header-right">
-                        <div class="rbt-btn-wrapper d-none d-xl-block">
+                        <div class="rbt-btn-wrapper d-none d-xl-flex align-items-center gap-3">
+                            <div class="login-dropdown">
+                                <button type="button"
+                                    class="rbt-btn rbt-switch-btn btn-gradient btn-sm hover-transform-none login-dropdown-btn">
+                                    <span data-text="Login">Login</span>
+                                    <i class="feather-chevron-down"></i>
+                                </button>
+                                <div class="login-dropdown-menu">
+                                    <a href="instructor-profile.html">
+                                        <i class="feather-user"></i>
+                                        <span>Tutor Login</span>
+                                    </a>
+                                    <a href="student-profile.html">
+                                        <i class="feather-book-open"></i>
+                                        <span>Student Login</span>
+                                    </a>
+                                </div>
+                            </div>
                             <a class="rbt-btn rbt-switch-btn btn-gradient btn-sm hover-transform-none"
                                 href="login-register.html">
                                 <span data-text="Join Now">Join Now</span>
@@ -2041,7 +1965,7 @@
         </div>
     </div>
 
-    <!-- Start Footer aera -->            <!-- Start Footer Area -->
+    <!-- Start Footer aera -->                <!-- Start Footer Area -->
     <footer class="rbt-footer footer-style-1 bg-color-white overflow-hidden">
         <div class="footer-top">
             <div class="container">
@@ -2175,7 +2099,7 @@
     </footer>
     <!-- End Footer Area -->
 
-    <div class="rbt-progress-parent">
+        <div class="rbt-progress-parent">
         <svg class="rbt-back-circle svg-inner" width="100%" height="100%" viewBox="-1 -1 102 102">
             <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
         </svg>

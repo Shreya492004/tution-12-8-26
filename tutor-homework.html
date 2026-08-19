@@ -31,6 +31,7 @@
     <link rel="stylesheet" href="assets/css/plugins/magnigy-popup.min.css">
     <link rel="stylesheet" href="assets/css/plugins/plyr.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/custom-ui.css">
 
     <style>
         /* Icon Font Protection - Ensure feather and fontawesome icons always render */
@@ -42,7 +43,7 @@
         [class^="feather-"],
         [class*=" feather-"] {
             font-family: 'feather', 'Feather' !important;
-            speak: none;
+            
             font-style: normal !important;
             font-weight: normal !important;
             font-variant: normal !important;
@@ -703,102 +704,7 @@
     <header class="rbt-header rbt-header-9">
         <div class="rbt-sticky-placeholder"></div>
 
-        <!-- Start Header Top -->
-        <div class="rbt-header-middle position-relative rbt-header-mid-1 bg-color-white rbt-border-bottom">
-            <div class="container">
-                <div class="rbt-header-sec align-items-center">
-
-                    <div class="rbt-header-sec-col rbt-header-left">
-                        <div class="rbt-header-content">
-                            <!-- Start Header Information List -->
-                            <div class="header-info">
-                                <ul class="rbt-dropdown-menu switcher-language">
-                                    <li class="has-child-menu">
-                                        <a href="#">
-                                            <img class="left-image" src="assets/images/icons/en-us.png"
-                                                alt="Language Images">
-                                            <span class="menu-item">English</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <!-- End Header Information List -->
-
-                            <!-- Start Header Information List -->
-                            <div class="header-info">
-                                <ul class="rbt-dropdown-menu currency-menu">
-                                    <li class="has-child-menu">
-                                        <ul class="sub-menu hover-reverse">
-                                            <li>
-                                                <a href="#">
-                                                    <span class="menu-item">EUR</span>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    <span class="menu-item">GBP</span>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </div>
-                            <!-- End Header Information List -->
-                        </div>
-                    </div>
-
-                    <div class="rbt-header-sec-col rbt-header-center d-none d-md-block">
-                        <div class="rbt-header-content">
-                            <div class="header-info">
-                                <div class="rbt-search-field">
-                                    <div class="search-field">
-                                        <input type="text" placeholder="Search Course">
-                                        <button class="rbt-round-btn serach-btn" type="submit"><i
-                                                class="feather-search"></i></button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="rbt-header-sec-col rbt-header-right">
-                        <div class="rbt-btn-wrapper">
-                            <div class="login-dropdown">
-                                <button type="button"
-                                    class="rbt-btn rbt-switch-btn btn-gradient btn-sm hover-transform-none login-dropdown-btn">
-                                    <span data-text="Login">Login</span>
-                                    <i class="feather-chevron-down"></i>
-                                </button>
-                                <div class="login-dropdown-menu">
-                                    <a href="instructor-profile.html">
-                                        <i class="feather-user"></i>
-                                        <span>Tutor Login</span>
-                                    </a>
-                                    <a href="student-profile.html">
-                                        <i class="feather-book-open"></i>
-                                        <span>Student Login</span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Start Mobile-Menu-Bar -->
-                        <div class="mobile-menu-bar d-block d-xl-none">
-                            <div class="hamberger">
-                                <button class="hamberger-button rbt-round-btn">
-                                    <i class="feather-menu"></i>
-                                </button>
-                            </div>
-                        </div>
-                        <!-- End Mobile-Menu-Bar -->
-
-                    </div>
-
-                </div>
-            </div>
-        </div>
-        <!-- End Header Top -->
-
+        
         <div class="rbt-header-wrapper header-not-transparent header-sticky">
             <div class="container">
                 <div class="mainbar-row rbt-navigation-end align-items-center">
@@ -827,8 +733,26 @@
                     </div>
 
                     <div class="header-right">
-                        <div class="rbt-btn-wrapper d-none d-xl-block">
-                            <a class="rbt-btn rbt-switch-btn btn-gradient btn-sm hover-transform-none" href="login-register.html">
+                        <div class="rbt-btn-wrapper d-none d-xl-flex align-items-center gap-3">
+                            <div class="login-dropdown">
+                                <button type="button"
+                                    class="rbt-btn rbt-switch-btn btn-gradient btn-sm hover-transform-none login-dropdown-btn">
+                                    <span data-text="Login">Login</span>
+                                    <i class="feather-chevron-down"></i>
+                                </button>
+                                <div class="login-dropdown-menu">
+                                    <a href="instructor-profile.html">
+                                        <i class="feather-user"></i>
+                                        <span>Tutor Login</span>
+                                    </a>
+                                    <a href="student-profile.html">
+                                        <i class="feather-book-open"></i>
+                                        <span>Student Login</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <a class="rbt-btn rbt-switch-btn btn-gradient btn-sm hover-transform-none"
+                                href="login-register.html">
                                 <span data-text="Join Now">Join Now</span>
                             </a>
                         </div>
@@ -1032,54 +956,8 @@
                                         </div>
                                     </div>
 
-                                    <!-- =====================================
-                                         NOTES & LEARNING MATERIALS SECTION
-                                    ====================================== -->
-                                    <div id="notesSection">
-                                        <div class="hw-block">
-                                            <label class="hw-label">Learning Material / Notes (Optional)</label>
-
-                                            <div class="hw-attachment-menu">
-                                                <div class="hw-upload-box" id="notesUploadBox">
-                                                    <div class="hw-upload-icon"><i class="bi bi-paperclip"></i></div>
-                                                    <h6>Attach Note, Image or Document</h6>
-                                                    <p>Click to choose file, gallery image, or take photo</p>
-                                                </div>
-
-                                                <div class="hw-attachment-popup" id="attachmentPopup">
-                                                    <button type="button" class="hw-attachment-item" id="fileOption">
-                                                        <span class="hw-attachment-icon hw-file-icon-bg"><i class="bi bi-file-earmark"></i></span>
-                                                        <span>Add File</span>
-                                                    </button>
-
-                                                    <button type="button" class="hw-attachment-item" id="galleryOption">
-                                                        <span class="hw-attachment-icon hw-gallery-icon-bg"><i class="bi bi-image"></i></span>
-                                                        <span>Gallery</span>
-                                                    </button>
-
-                                                    <button type="button" class="hw-attachment-item" id="cameraOption">
-                                                        <span class="hw-attachment-icon hw-camera-icon-bg"><i class="bi bi-camera"></i></span>
-                                                        <span>Camera</span>
-                                                    </button>
-                                                </div>
-                                            </div>
-
-                                            <input type="file" id="fileInput" class="d-none">
-                                            <input type="file" id="galleryInput" class="d-none" accept="image/*">
-                                            <input type="file" id="cameraInput" class="d-none" accept="image/*" capture="environment">
-
-                                            <div class="hw-selected-file" id="selectedUpload">
-                                                <div class="hw-file-info">
-                                                    <i class="bi bi-paperclip"></i>
-                                                    <span id="selectedFileName"></span>
-                                                </div>
-                                                <button type="button" class="hw-remove-btn" id="removeFile">
-                                                    <i class="bi bi-x-circle"></i>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-
+                                 
+                               
                                     <!-- =====================================
                                          SEND BUTTON
                                     ====================================== -->
@@ -1101,7 +979,7 @@
         </div>
     </div>
 
-    <!-- Start Footer Area -->
+        <!-- Start Footer Area -->
     <footer class="rbt-footer footer-style-1 bg-color-white overflow-hidden">
         <div class="footer-top">
             <div class="container">
@@ -1114,17 +992,26 @@
                                 </a>
                             </div>
 
-                            <p class="description mt--20">We are always seeking talented and motivated individuals to join our team.</p>
+                            <p class="description mt--20">We are always seeking talented and motivated individuals to
+                                join our team.</p>
 
                             <ul class="social-icon social-default justify-content-start">
-                                <li><a href="https://www.facebook.com/"><i class="feather-facebook"></i></a></li>
-                                <li>
-                                    <a href="https://www.twitter.com" aria-label="X (Twitter)">
+                                <li><a href="https://www.facebook.com/">
+                                        <i class="feather-facebook"></i>
+                                    </a>
+                                </li>
+                                <li><a href="https://www.twitter.com" aria-label="X (Twitter)">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" viewBox="0 0 24 24" class="social-icon-x" style="vertical-align: -2px;"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
                                     </a>
                                 </li>
-                                <li><a href="https://www.instagram.com/"><i class="feather-instagram"></i></a></li>
-                                <li><a href="https://www.linkedin.com/"><i class="feather-linkedin"></i></a></li>
+                                <li><a href="https://www.instagram.com/">
+                                        <i class="feather-instagram"></i>
+                                    </a>
+                                </li>
+                                <li><a href="https://www.linkdin.com/">
+                                        <i class="feather-linkedin"></i>
+                                    </a>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -1133,11 +1020,21 @@
                         <div class="footer-widget">
                             <h5 class="ft-title">Useful Links</h5>
                             <ul class="ft-link">
-                                <li><a href="our-team.html">Our Team</a></li>
-                                <li><a href="our-tuition.html">Our Tuition</a></li>
-                                <li><a href="holiday-camps.html">Holiday Camps</a></li>
-                                <li><a href="plans-and-pricing.html">Plans &amp; Pricing</a></li>
-                                <li><a href="book-online.html">Book Online</a></li>
+                                <li>
+                                    <a href="our-team.html">Our Team</a>
+                                </li>
+                                <li>
+                                    <a href="our-tuition.html">Our Tuition</a>
+                                </li>
+                                <li>
+                                    <a href="holiday-camps.html">Holiday Camps</a>
+                                </li>
+                                <li>
+                                    <a href="plans-and-pricing.html">Plans &amp; Pricing</a>
+                                </li>
+                                <li>
+                                    <a href="book-online.html">Book Online</a>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -1146,12 +1043,24 @@
                         <div class="footer-widget">
                             <h5 class="ft-title">Popular Programs</h5>
                             <ul class="ft-link">
-                                <li><a href="our-tuition.html">Primary Tuition</a></li>
-                                <li><a href="our-tuition.html">Secondary Tuition</a></li>
-                                <li><a href="our-tuition.html">GCSE Tuition</a></li>
-                                <li><a href="our-tuition.html">IGCSE Tuition</a></li>
-                                <li><a href="our-tuition.html">A-Level Tuition</a></li>
-                                <li><a href="holiday-camps.html">Holiday Camps</a></li>
+                                <li>
+                                    <a href="our-tuition.html">Primary Tuition</a>
+                                </li>
+                                <li>
+                                    <a href="our-tuition.html">Secondary Tuition</a>
+                                </li>
+                                <li>
+                                    <a href="our-tuition.html">GCSE Tuition</a>
+                                </li>
+                                <li>
+                                    <a href="our-tuition.html">IGCSE Tuition</a>
+                                </li>
+                                <li>
+                                    <a href="our-tuition.html">A-Level Tuition</a>
+                                </li>
+                                <li>
+                                    <a href="holiday-camps.html">Holiday Camps</a>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -1166,20 +1075,20 @@
 
                             <div class="newsletter-form mt--20">
                                 <h6 class="w-600">Location</h6>
-                                <p class="description">2000+ Our students subscribe around the world.</p>
+                                <p class="description">2000+ Our students are subscribe Around the World.<br> Don’t be
+                                    shy introduce yourself!</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
         <div class="rbt-separator-mid">
             <div class="container">
                 <hr class="rbt-separator m-0">
             </div>
         </div>
-
+        <!-- Start Copyright Area -->
         <div class="copyright-area copyright-style-1 ptb--20">
             <div class="container">
                 <div class="row align-items-center">
@@ -1200,31 +1109,38 @@
                 </div>
             </div>
         </div>
+        <!-- End Copyright Area -->
     </footer>
+    <!-- End Footer Area -->
+
+        <div class="rbt-progress-parent">
+        <svg class="rbt-back-circle svg-inner" width="100%" height="100%" viewBox="-1 -1 102 102">
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+        </svg>
+    </div>
 
     <!-- Floating Contact Buttons -->
     <div class="floating-contact">
+        <!-- Call -->
         <div class="contact-item call-item">
-            <div class="contact-label call-label">Talk To Our Experts</div>
+            <div class="contact-label call-label">
+                Talk To Our Experts
+            </div>
             <a href="tel:+919876543210" class="contact-button call-button" aria-label="Call us">
                 <i class="fa fa-phone"></i>
             </a>
         </div>
 
+        <!-- WhatsApp -->
         <div class="contact-item whatsapp-item">
-            <div class="contact-label whatsapp-label">Message Us</div>
-            <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer" 
-                class="contact-button whatsapp-button" aria-label="Chat with us on WhatsApp"> 
-                <i class="fab fa-whatsapp"></i> 
-            </a> 
-        </div> 
-    </div> 
-
-        <!-- Start Back to Top -->
-    <div class="rbt-progress-parent">
-        <svg class="rbt-back-circle svg-inner" width="100%" height="100%" viewBox="-1 -1 102 102">
-            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
-        </svg>
+            <div class="contact-label whatsapp-label">
+                Message Us
+            </div>
+            <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer"
+                class="contact-button whatsapp-button" aria-label="Chat with us on WhatsApp">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+        </div>
     </div>
     <!-- End Back to Top -->
 

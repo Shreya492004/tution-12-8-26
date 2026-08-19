@@ -30,6 +30,7 @@
     <link rel="stylesheet" href="assets/css/plugins/magnigy-popup.min.css">
     <link rel="stylesheet" href="assets/css/plugins/plyr.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/custom-ui.css">
 
     <!-- Teacher Profile Professional Styles -->
     <style>
@@ -63,8 +64,42 @@
             font-weight: normal !important;
             display: inline-block !important;
         }
+/* Centered Section Title Icons */
+.teacher-details-title-left {
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+}
 
-        /* Header Navigation (Increased Size, Clean Medium Weight, 100% Zoom Safe) */
+.teacher-details-title-left .icon-box,
+.teacher-details-title-left i {
+    width: 38px !important;
+    height: 38px !important;
+    min-width: 38px !important;
+    border-radius: 8px !important;
+    background: #f3f0ff !important;
+    color: #6c4df6 !important;
+    font-size: 18px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    line-height: 1 !important;
+    text-align: center !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.teacher-details-title-left h5 {
+    margin: 0 !important;
+    font-size: 20px !important;
+    font-weight: 700 !important;
+    font-family: var(--font-primary) !important;
+    color: #192335 !important;
+    line-height: 1.2 !important;
+    display: flex !important;
+    align-items: center !important;
+}
+        /* Header Navigation (Matched to Index Page Typography) */
         .rbt-header .mainbar-row {
             display: flex !important;
             flex-wrap: nowrap !important;
@@ -101,128 +136,65 @@
             position: relative !important;
         }
 
-        .rbt-header .rbt-main-navigation .mainmenu > li > a,
-        .rbt-header .rbt-main-navigation a {
-            font-size: 17.5px !important;
+        .rbt-header .rbt-main-navigation .mainmenu > li > a {
+            padding: 0 12px !important;
+            font-size: 16.5px !important;
             font-weight: 500 !important;
+            font-family: var(--font-primary), "Euclid Circular A", "Euclid Circular", sans-serif !important;
             color: #192335 !important;
-            white-space: nowrap !important;
-            padding: 0 11px !important;
-            display: flex !important;
+            display: inline-flex !important;
             align-items: center !important;
             height: 80px !important;
             line-height: 80px !important;
-            transition: all 0.3s ease !important;
-            text-decoration: none !important;
+            white-space: nowrap !important;
+            text-transform: none !important;
+            letter-spacing: 0 !important;
+            transition: color 0.3s ease !important;
         }
 
         .rbt-header .rbt-main-navigation .mainmenu > li > a:hover,
-        .rbt-header .rbt-main-navigation a:hover {
-            color: #2f57ef !important;
+        .rbt-header .rbt-main-navigation .mainmenu > li > a.active {
+            color: var(--color-primary, #2f57ef) !important;
         }
 
-        @media only screen and (min-width: 1200px) and (max-width: 1440px) {
-            .rbt-header .rbt-main-navigation .mainmenu > li > a,
-            .rbt-header .rbt-main-navigation a {
-                font-size: 16.5px !important;
-                padding: 0 8px !important;
-            }
-        }
-
-        /* Dashboard Sidebar Navigation - Restored Original Clean & Beautiful Styling */
-        .rbt-default-sidebar-wrapper,
-        .rbt-dashboard-sidebar {
-            position: relative !important;
-        }
-
-        .rbt-default-sidebar-wrapper .mainmenu-nav,
-        .rbt-dashboard-sidebar .mainmenu-nav {
-            display: block !important;
-            width: 100% !important;
-        }
-
-        .dashboard-mainmenu,
-        .rbt-default-sidebar-list {
-            margin: 0 !important;
-            padding: 0 !important;
-            list-style: none !important;
-            display: block !important;
-            width: 100% !important;
-        }
-
-        .dashboard-mainmenu li,
-        .rbt-default-sidebar-list li {
-            margin-bottom: 4px !important;
-            display: block !important;
-            width: 100% !important;
-        }
-
+        /* Sidebar menu - larger font and perfectly aligned icons */
         .dashboard-mainmenu li a,
-        .rbt-default-sidebar-list li a,
-        .rbt-default-sidebar-wrapper .dashboard-mainmenu li a,
-        .rbt-default-sidebar-wrapper .rbt-default-sidebar-list li a {
+        .rbt-default-sidebar-list li a {
+            font-family: var(--font-primary), "Euclid Circular A", "Euclid Circular", sans-serif !important;
+            font-size: 17px !important;
+            font-weight: 500 !important;
+            color: #192335 !important;
             display: flex !important;
             align-items: center !important;
-            justify-content: flex-start !important;
-            font-size: 15px !important;
-            font-weight: 500 !important;
-            font-family: var(--font-primary) !important;
-            line-height: 20px !important;
-            color: #2b354f !important;
-            padding: 10px 14px !important;
-            border-radius: 8px !important;
-            transition: all 0.2s ease !important;
-            text-decoration: none !important;
-            width: 100% !important;
-            height: auto !important;
-            background: transparent !important;
+            gap: 12px !important;
+            line-height: 1.4 !important;
         }
 
         .dashboard-mainmenu li a span,
-        .rbt-default-sidebar-list li a span,
-        .rbt-default-sidebar-wrapper .dashboard-mainmenu li a span,
-        .rbt-default-sidebar-wrapper .rbt-default-sidebar-list li a span {
-            font-size: 15px !important;
-            font-weight: 500 !important;
-            font-family: var(--font-primary) !important;
-            color: inherit !important;
-            white-space: normal !important;
+        .rbt-default-sidebar-list li a span {
+            display: block !important;
+            line-height: 1.4 !important;
         }
 
+        .teacher-badge-id i,
+        .student-badge-id i,
         .dashboard-mainmenu li a i,
         .rbt-default-sidebar-list li a i,
-        .rbt-default-sidebar-wrapper .dashboard-mainmenu li a i,
-        .rbt-default-sidebar-wrapper .rbt-default-sidebar-list li a i {
-            font-size: 17px !important;
-            margin-right: 12px !important;
-            color: #7e879b !important;
-            transition: all 0.2s ease !important;
-            width: 20px !important;
-            text-align: center !important;
-            flex-shrink: 0 !important;
-        }
-
-        .dashboard-mainmenu li.active a,
-        .dashboard-mainmenu li a.active,
-        .rbt-default-sidebar-list li.active a,
-        .rbt-default-sidebar-list li a.active {
-            background: #f0edff !important;
-            color: var(--color-primary, #2f57ef) !important;
-        }
-
-        .dashboard-mainmenu li.active a span,
-        .dashboard-mainmenu li a.active span,
-        .rbt-default-sidebar-list li.active a span,
-        .rbt-default-sidebar-list li a.active span {
-            font-weight: 600 !important;
-            color: var(--color-primary, #2f57ef) !important;
-        }
-
-        .dashboard-mainmenu li.active a i,
-        .dashboard-mainmenu li a.active i,
-        .rbt-default-sidebar-list li.active a i,
-        .rbt-default-sidebar-list li a.active i {
-            color: var(--color-primary, #2f57ef) !important;
+        .profile-info-icon i,
+        .teacher-details-title-left i,
+        .student-details-title-left i,
+        .subject-badge-icon i,
+        .subject-time i,
+        .student-count-badge i {
+            font-family: 'feather', 'Feather' !important;
+            font-style: normal !important;
+            font-weight: normal !important;
+            font-variant: normal !important;
+            text-transform: none !important;
+            line-height: 1 !important;
+            display: inline-block !important;
+            -webkit-font-smoothing: antialiased !important;
+            -moz-osx-font-smoothing: grayscale !important;
         }
 
         .dashboard-mainmenu li a:hover,
@@ -237,7 +209,7 @@
         }
 
         /* =========================================================
-           TEACHER PROFILE STYLING (EXACTLY MATCHING STUDENT PROFILE)
+           TEACHER PROFILE STYLING (MATCHED TO INDEX TYPOGRAPHY)
         ========================================================= */
         .teacher-profile-hero,
         .teacher-details-card,
@@ -248,37 +220,38 @@
         }
 
         .teacher-profile-hero {
-            background: linear-gradient(135deg, #f8faff 0%, #f3f0ff 100%);
-            border: 1px solid #e8e4ff;
-            border-radius: 14px;
-            padding: 24px 28px;
+            background: linear-gradient(135deg, #f8f9ff 0%, #f1edff 100%);
+            border: 1px solid #e5e0ff;
+            border-radius: 12px;
+            padding: 24px 26px;
+            margin-bottom: 24px;
             display: flex;
             align-items: center;
             justify-content: space-between;
             flex-wrap: wrap;
             gap: 20px;
-            margin-bottom: 24px;
-            box-shadow: 0 4px 18px rgba(108, 77, 246, 0.05);
         }
 
         .teacher-profile-user {
             display: flex;
             align-items: center;
-            gap: 20px;
+            gap: 18px;
+            flex: 1 1 auto;
+            min-width: 0;
         }
 
         .teacher-avatar-badge {
-            width: 70px;
-            height: 70px;
-            border-radius: 16px;
-            background: linear-gradient(135deg, #2f57ef, #6c4df6);
+            width: 68px;
+            height: 68px;
+            border-radius: 14px;
+            background: linear-gradient(135deg, #6c4df6, #9b7cff);
             color: #ffffff;
-            font-size: 24px !important;
-            font-weight: 700 !important;
+            font-size: 24px;
+            font-weight: 700;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 8px 20px rgba(47, 87, 239, 0.25);
+            box-shadow: 0 8px 20px rgba(108, 77, 246, 0.25);
             flex-shrink: 0;
             position: relative;
         }
@@ -287,21 +260,27 @@
             position: absolute;
             bottom: -2px;
             right: -2px;
-            width: 16px;
-            height: 16px;
+            width: 15px;
+            height: 15px;
             border-radius: 50%;
             background: #16c763;
             border: 2.5px solid #ffffff;
+        }
+
+        .teacher-user-info {
+            min-width: 0;
+            flex: 1 1 auto;
         }
 
         .teacher-user-info h3 {
             margin: 0 0 6px;
             font-size: 26px !important;
             font-weight: 700 !important;
+            font-family: var(--font-primary) !important;
             color: #192335 !important;
-            line-height: 1.3 !important;
         }
 
+        /* Single line without scrolling */
         .teacher-meta-badges {
             display: flex;
             align-items: center;
@@ -315,11 +294,19 @@
             gap: 6px;
             background: #ffffff;
             border: 1px solid #e0dbff;
-            color: #2f57ef;
-            font-size: 16px !important;
+            color: #6c4df6;
+            font-size: 17px !important;
             font-weight: 500 !important;
-            padding: 5px 12px;
+            font-family: var(--font-primary) !important;
+            padding: 4px 10px;
             border-radius: 6px;
+            white-space: nowrap !important;
+            flex-shrink: 0;
+        }
+
+        .teacher-badge-id i {
+            color: #6c4df6;
+            font-size: 13.5px;
         }
 
         .teacher-badge-status {
@@ -328,82 +315,91 @@
             gap: 6px;
             background: #e8fbf1;
             color: #16c763;
-            font-size: 16px !important;
+            font-size: 17px !important;
             font-weight: 500 !important;
-            padding: 5px 12px;
+            font-family: var(--font-primary) !important;
+            padding: 4px 10px;
             border-radius: 6px;
+            white-space: nowrap !important;
+            flex-shrink: 0;
         }
 
         .teacher-hero-stats {
             display: flex;
             align-items: center;
-            gap: 14px;
+            gap: 12px;
+            flex-shrink: 0;
         }
 
         .hero-stat-box {
             background: #ffffff;
             border: 1px solid #e8e8e8;
             border-radius: 10px;
-            padding: 12px 18px;
+            padding: 10px 16px;
             text-align: center;
-            min-width: 105px;
+            min-width: 95px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
         }
 
         .hero-stat-value {
             font-size: 22px !important;
             font-weight: 700 !important;
-            color: #2f57ef;
+            font-family: var(--font-primary) !important;
+            color: #6c4df6;
             line-height: 1.2;
         }
 
         .hero-stat-label {
-            font-size: 16px !important;
-            color: #374151 !important;
+            font-size: 17px !important;
+            color: #475569 !important;
             font-weight: 500 !important;
+            font-family: var(--font-primary) !important;
             margin-top: 2px;
+            white-space: nowrap;
         }
 
         /* PROFILE CARDS */
         .teacher-details-card {
             margin-top: 24px;
-            padding: 26px 28px;
+            padding: 24px 26px;
             border-radius: 12px;
             background: #ffffff;
             border: 1px solid #e8e8e8;
-            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.04);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
         }
 
         .teacher-details-title {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            margin-bottom: 22px;
-            padding-bottom: 16px;
+            margin-bottom: 20px;
+            padding-bottom: 14px;
             border-bottom: 1px solid #eeeeee;
         }
 
         .teacher-details-title-left {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
         }
 
         .teacher-details-title-left i {
-            width: 38px;
-            height: 38px;
+            width: 36px;
+            height: 36px;
             display: flex;
             align-items: center;
             justify-content: center;
-            border-radius: 10px;
+            border-radius: 8px;
             background: #f3f0ff;
-            color: #2f57ef;
+            color: #6c4df6;
+            font-size: 16px;
         }
 
         .teacher-details-title-left h5 {
             margin: 0;
             font-size: 20px !important;
             font-weight: 700 !important;
+            font-family: var(--font-primary) !important;
             color: #192335 !important;
         }
 
@@ -411,35 +407,36 @@
         .profile-info-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 16px;
+            gap: 14px;
         }
 
         .profile-info-item {
             background: #fbfbfe;
             border: 1px solid #f0edf8;
-            border-radius: 9px;
-            padding: 14px 18px;
+            border-radius: 8px;
+            padding: 12px 16px;
             display: flex;
             align-items: flex-start;
-            gap: 14px;
+            gap: 12px;
             transition: all 0.2s ease;
         }
 
         .profile-info-item:hover {
             background: #ffffff;
             border-color: #d6d0ff;
-            box-shadow: 0 4px 14px rgba(47, 87, 239, 0.06);
+            box-shadow: 0 4px 14px rgba(108, 77, 246, 0.06);
         }
 
         .profile-info-icon {
-            width: 40px;
-            height: 40px;
-            border-radius: 10px;
+            width: 34px;
+            height: 34px;
+            border-radius: 8px;
             background: #f3f0ff;
-            color: #2f57ef;
+            color: #6c4df6;
             display: flex;
             align-items: center;
             justify-content: center;
+            font-size: 15px;
             flex-shrink: 0;
         }
 
@@ -449,27 +446,27 @@
         }
 
         .profile-info-label {
-            font-size: 15px !important;
+            font-size: 16px !important;
             font-weight: 600 !important;
             text-transform: uppercase !important;
             letter-spacing: 0.05em !important;
-            color: #374151 !important;
-            margin-bottom: 4px;
+            color: #64748b !important;
+            margin-bottom: 2px;
         }
 
         .profile-info-val {
-            font-size: 18px !important;
-            font-weight: 400 !important;
+            font-size: 17px !important;
+            font-weight: 500 !important;
             color: #192335 !important;
             word-break: break-word;
-            line-height: 1.6 !important;
+            line-height: 1.5 !important;
         }
 
         .profile-info-val p {
             font-size: 18px !important;
             font-weight: 400 !important;
             color: #475569 !important;
-            line-height: 1.7 !important;
+            line-height: 1.65 !important;
             margin-bottom: 12px;
         }
 
@@ -489,27 +486,27 @@
             border-spacing: 0;
             overflow: hidden;
             border: 1px solid #e6e6e6;
-            border-radius: 10px;
+            border-radius: 8px;
         }
 
         .subject-table thead th {
-            padding: 16px 20px;
-            background: #f6f7fb;
+            padding: 13px 18px;
+            background: #f8fafc;
             color: #192335 !important;
-            font-size: 18px !important;
+            font-size: 16px !important;
             font-weight: 600 !important;
-            letter-spacing: 0.01em;
+            letter-spacing: 0.02em;
             text-align: left;
             border-bottom: 1px solid #e6e6e6;
             white-space: nowrap;
         }
 
         .subject-table tbody td {
-            padding: 16px 20px;
-            color: #4b5563 !important;
-            font-size: 18px !important;
+            padding: 13px 18px;
+            color: #475569 !important;
+            font-size: 17px !important;
             font-weight: 400 !important;
-            border-bottom: 1px solid #eeeeee;
+            border-bottom: 1px solid #f1f5f9;
             vertical-align: middle;
         }
 
@@ -524,41 +521,42 @@
         .subject-badge-icon {
             display: inline-flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
         }
 
         .subject-icon-box {
-            width: 38px;
-            height: 38px;
+            width: 34px;
+            height: 34px;
             border-radius: 8px;
             background: #f3f0ff;
-            color: #2f57ef;
+            color: #6c4df6;
             display: flex;
             align-items: center;
             justify-content: center;
             flex-shrink: 0;
+            font-size: 15px;
         }
 
         .subject-name {
             font-weight: 600 !important;
             color: #192335 !important;
-            font-size: 18px !important;
+            font-size: 17px !important;
         }
 
         .subject-time {
             display: inline-flex;
             align-items: center;
-            gap: 8px;
-            padding: 6px 14px;
+            gap: 6px;
+            padding: 5px 12px;
             border-radius: 6px;
             background: #f5f5f7;
-            color: #444444 !important;
+            color: #475569 !important;
             font-weight: 500 !important;
             font-size: 16px !important;
         }
 
-        .subject-time svg {
-            color: #2f57ef;
+        .subject-time i {
+            color: #6c4df6;
         }
 
         .student-count-badge {
@@ -571,18 +569,31 @@
             color: #16c763 !important;
             font-weight: 600 !important;
             font-size: 16px !important;
+            border: 1px solid #c3f5db;
         }
 
+        /* Sidebar SVG icon alignment */
         .sidebar-icon-svg {
-            margin-right: 12px;
-            vertical-align: -3px;
+            width: 20px !important;
+            height: 20px !important;
+            min-width: 20px !important;
+            margin: 0 !important;
+            vertical-align: middle !important;
+            flex: 0 0 20px !important;
+            display: block !important;
+        }
+
+        /* Increase sidebar section headings */
+        .rbt-default-sidebar .section-title .rbt-title-style-2 {
+            font-size: 17px !important;
+            line-height: 1.4 !important;
         }
 
         @media (max-width: 767px) {
             .teacher-profile-hero {
                 flex-direction: column;
                 align-items: flex-start;
-                padding: 20px 16px;
+                padding: 18px 16px;
             }
 
             .teacher-hero-stats {
@@ -592,12 +603,12 @@
 
             .hero-stat-box {
                 flex: 1;
-                padding: 10px 8px;
+                padding: 8px 6px;
                 min-width: unset;
             }
 
             .teacher-details-card {
-                padding: 20px 16px;
+                padding: 18px 16px;
             }
 
             .profile-info-grid {
@@ -608,6 +619,273 @@
                 grid-column: span 1;
             }
         }
+
+
+        /* Readability improvements */
+        .teacher-details-card,
+        .teacher-profile-hero {
+            font-size: 17px !important;
+        }
+
+        .teacher-details-card p {
+            font-size: 18px !important;
+        }
+
+        /* =========================================================
+           STUDENT LIST MODAL STYLES WITH FILTER BUTTONS
+        ========================================================= */
+        .student-modal-btn {
+            border: none;
+            outline: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .student-modal-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(22, 199, 99, 0.25);
+            background: #d3f7e3 !important;
+        }
+
+        .student-modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(15, 23, 42, 0.65);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            z-index: 999999;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.25s ease, visibility 0.25s ease;
+        }
+
+        .student-modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .student-modal-dialog {
+            background: #ffffff;
+            border-radius: 14px;
+            width: 100%;
+            max-width: 740px;
+            max-height: 88vh;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 20px 50px rgba(15, 23, 42, 0.22);
+            border: 1px solid #e2e8f0;
+            overflow: hidden;
+            transform: scale(0.95) translateY(12px);
+            transition: transform 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .student-modal-overlay.active .student-modal-dialog {
+            transform: scale(1) translateY(0);
+        }
+
+        .student-modal-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 18px 22px;
+            border-bottom: 1px solid #e2e8f0;
+            background: linear-gradient(135deg, #f8f9ff 0%, #f3f0ff 100%);
+        }
+
+        .student-modal-header-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .student-modal-icon {
+            width: 42px;
+            height: 42px;
+            border-radius: 10px;
+            background: #ffffff;
+            color: #6c4df6;
+            border: 1px solid #e0dbff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 10px rgba(108, 77, 246, 0.1);
+            flex-shrink: 0;
+            font-size: 18px;
+        }
+
+        .student-modal-close {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            border: 1px solid #e2e8f0;
+            background: #ffffff;
+            color: #64748b;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .student-modal-close:hover {
+            background: #fee2e2;
+            color: #ef4444;
+            border-color: #fca5a5;
+            transform: rotate(90deg);
+        }
+
+        /* Filter Toolbar */
+        .student-modal-filter-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 22px;
+            background: #fbfbfe;
+            border-bottom: 1px solid #f0edf8;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .modal-filter-label {
+            font-size: 13px !important;
+            font-weight: 600 !important;
+            color: #64748b !important;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+
+        .student-modal-filter-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .modal-filter-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 17px !important;
+            font-weight: 500 !important;
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            color: #475569;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            user-select: none;
+        }
+
+        .modal-filter-btn:hover {
+            background: #f1edff;
+            border-color: #d6d0ff;
+            color: #6c4df6;
+        }
+
+        .modal-filter-btn.active {
+            background: #6c4df6 !important;
+            border-color: #6c4df6 !important;
+            color: #ffffff !important;
+            font-weight: 600 !important;
+            box-shadow: 0 4px 12px rgba(108, 77, 246, 0.25);
+        }
+
+        .modal-filter-btn .btn-badge {
+            background: rgba(0, 0, 0, 0.08);
+            padding: 1px 7px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .modal-filter-btn.active .btn-badge {
+            background: rgba(255, 255, 255, 0.25);
+            color: #ffffff;
+        }
+
+        .student-modal-body {
+            padding: 18px 22px;
+            overflow-y: auto;
+            max-height: calc(88vh - 200px);
+        }
+
+        .student-modal-table-wrap {
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .student-modal-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0;
+        }
+
+        .student-modal-table thead th {
+            background: #f8fafc;
+            color: #1e293b !important;
+            font-size: 17px !important;
+            font-weight: 600 !important;
+            padding: 12px 16px;
+            border-bottom: 1px solid #e2e8f0;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+
+        .student-modal-table tbody td {
+            padding: 12px 16px;
+            font-size: 16px !important;
+            color: #334155 !important;
+            border-bottom: 1px solid #f1f5f9;
+            vertical-align: middle;
+        }
+
+        .student-modal-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        .student-modal-table tbody tr:hover {
+            background: #f8faff;
+        }
+
+        .type-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            padding: 3px 10px;
+            border-radius: 16px;
+            font-size: 13px !important;
+            font-weight: 600 !important;
+        }
+
+        .type-one-to-one {
+            background: #ede9fe;
+            color: #6d28d9 !important;
+            border: 1px solid #ddd6fe;
+        }
+
+        .type-one-to-many {
+            background: #e0f2fe;
+            color: #0369a1 !important;
+            border: 1px solid #bae6fd;
+        }
+
+        .student-modal-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 22px;
+            border-top: 1px solid #e2e8f0;
+            background: #ffffff;
+        }
     </style>
 </head>
 
@@ -616,96 +894,6 @@
     <!-- Start Header Area -->
     <header class="rbt-header rbt-header-9">
         <div class="rbt-sticky-placeholder"></div>
-        
-        <!-- Start Header Top -->
-        <div class="rbt-header-middle position-relative rbt-header-mid-1 bg-color-white rbt-border-bottom">
-            <div class="container">
-                <div class="rbt-header-sec align-items-center ">
-
-                    <div class="rbt-header-sec-col rbt-header-left">
-                        <div class="rbt-header-content">
-                            <div class="header-info">
-                                <ul class="rbt-dropdown-menu switcher-language">
-                                    <li class="has-child-menu">
-                                        <a href="#">
-                                            <img class="left-image" src="assets/images/icons/en-us.png" alt="Language Images">
-                                            <span class="menu-item">English</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-
-                            <div class="header-info">
-                                <ul class="rbt-dropdown-menu currency-menu">
-                                    <li class="has-child-menu">
-                                        <ul class="sub-menu hover-reverse">
-                                            <li>
-                                                <a href="#">
-                                                    <span class="menu-item">EUR</span>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    <span class="menu-item">GBP</span>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="rbt-header-sec-col rbt-header-center d-none d-md-block">
-                        <div class="rbt-header-content">
-                            <div class="header-info">
-                                <div class="rbt-search-field">
-                                    <div class="search-field">
-                                        <input type="text" placeholder="Search Course">
-                                        <button class="rbt-round-btn serach-btn" type="submit">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="rbt-header-sec-col rbt-header-right">
-                        <div class="rbt-btn-wrapper">
-                            <div class="login-dropdown">
-                                <button type="button" class="rbt-btn rbt-switch-btn btn-gradient btn-sm hover-transform-none login-dropdown-btn">
-                                    <span data-text="Login">Login</span>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 5px;"><polyline points="6 9 12 15 18 9"></polyline></svg>
-                                </button>
-                                <div class="login-dropdown-menu">
-                                    <a href="instructor-profile.html">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px;"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-                                        <span>Tutor Login</span>
-                                    </a>
-                                    <a href="student-profile.html">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px;"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
-                                        <span>Student Login</span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Start Mobile-Menu-Bar -->
-                        <div class="mobile-menu-bar d-block d-xl-none">
-                            <div class="hamberger">
-                                <button class="hamberger-button rbt-round-btn">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
-                                </button>
-                            </div>
-                        </div>
-                        <!-- End Mobile-Menu-Bar -->
-                    </div>
-
-                </div>
-            </div>
-        </div>
-        <!-- End Header Top -->
 
         <div class="rbt-header-wrapper header-not-transparent header-sticky">
             <div class="container">
@@ -735,8 +923,26 @@
                     </div>
 
                     <div class="header-right">
-                        <div class="rbt-btn-wrapper d-none d-xl-block">
-                            <a class="rbt-btn rbt-switch-btn btn-gradient btn-sm hover-transform-none" href="login-register.html">
+                        <div class="rbt-btn-wrapper d-none d-xl-flex align-items-center gap-3">
+                            <div class="login-dropdown">
+                                <button type="button"
+                                    class="rbt-btn rbt-switch-btn btn-gradient btn-sm hover-transform-none login-dropdown-btn">
+                                    <span data-text="Login">Login</span>
+                                    <i class="feather-chevron-down"></i>
+                                </button>
+                                <div class="login-dropdown-menu">
+                                    <a href="instructor-profile.html">
+                                        <i class="feather-user"></i>
+                                        <span>Tutor Login</span>
+                                    </a>
+                                    <a href="student-profile.html">
+                                        <i class="feather-book-open"></i>
+                                        <span>Student Login</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <a class="rbt-btn rbt-switch-btn btn-gradient btn-sm hover-transform-none"
+                                href="login-register.html">
                                 <span data-text="Join Now">Join Now</span>
                             </a>
                         </div>
@@ -881,16 +1087,13 @@
                                                 <h3>Ruben</h3>
                                                 <div class="teacher-meta-badges">
                                                     <span class="teacher-badge-id">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="9" x2="20" y2="9"></line><line x1="4" y1="15" x2="20" y2="15"></line><line x1="10" y1="3" x2="8" y2="21"></line><line x1="16" y1="3" x2="14" y2="21"></line></svg>
-                                                        LSE-TUT-2001-008
+                                                        <i class="feather-hash"></i> LSE-TUT-2001-008
                                                     </span>
                                                     <span class="teacher-badge-id">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
-                                                        Computer Systems Engineer
+                                                        <i class="feather-award"></i> Computer Systems Engineer
                                                     </span>
                                                     <span class="teacher-badge-id">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-                                                        Tutoring Since 2001 (20+ Years Exp)
+                                                        <i class="feather-calendar"></i> Tutoring Since 2001 (20+ Years Exp)
                                                     </span>
                                                 </div>
                                             </div>
@@ -908,110 +1111,15 @@
                                         </div>
                                     </div>
 
-                                    <!-- Personal & Professional Details Card -->
+                                    <!-- 1. SUBJECTS HANDLED / ASSIGNED STUDENTS (FIRST SECTION) -->
                                     <div class="teacher-details-card mt-0">
                                         <div class="teacher-details-title">
                                             <div class="teacher-details-title-left">
-                                                <i>
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-                                                </i>
-                                                <h5>Personal &amp; Professional Details</h5>
-                                            </div>
-                                            <a href="tuitor-edit.html" class="rbt-btn btn-xs btn-border-gradient radius-round">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 4px; vertical-align: -1px;"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
-                                                Edit Profile
-                                            </a>
-                                        </div>
-
-                                        <div class="profile-info-grid">
-                                            <div class="profile-info-item">
-                                                <div class="profile-info-icon">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-                                                </div>
-                                                <div class="profile-info-content">
-                                                    <div class="profile-info-label">First Name</div>
-                                                    <div class="profile-info-val">Ruben</div>
-                                                </div>
-                                            </div>
-
-                                            <div class="profile-info-item">
-                                                <div class="profile-info-icon">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="8.5" cy="7" r="4"></circle><polyline points="17 11 19 13 23 9"></polyline></svg>
-                                                </div>
-                                                <div class="profile-info-content">
-                                                    <div class="profile-info-label">Profession / Background</div>
-                                                    <div class="profile-info-val">Computer Systems Engineer</div>
-                                                </div>
-                                            </div>
-
-                                            <div class="profile-info-item">
-                                                <div class="profile-info-icon">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-                                                </div>
-                                                <div class="profile-info-content">
-                                                    <div class="profile-info-label">Email Address</div>
-                                                    <div class="profile-info-val">ruben@londonstaredu.com</div>
-                                                </div>
-                                            </div>
-
-                                            <div class="profile-info-item">
-                                                <div class="profile-info-icon">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-                                                </div>
-                                                <div class="profile-info-content">
-                                                    <div class="profile-info-label">Phone Number</div>
-                                                    <div class="profile-info-val">+44 7900 889900</div>
-                                                </div>
-                                            </div>
-
-                                            <div class="profile-info-item">
-                                                <div class="profile-info-icon">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
-                                                </div>
-                                                <div class="profile-info-content">
-                                                    <div class="profile-info-label">Role &amp; Specialization</div>
-                                                    <div class="profile-info-val">Senior STEM Educator &amp; Computer Systems Engineer</div>
-                                                </div>
-                                            </div>
-
-                                            <div class="profile-info-item">
-                                                <div class="profile-info-icon">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-                                                </div>
-                                                <div class="profile-info-content">
-                                                    <div class="profile-info-label">Location / Center</div>
-                                                    <div class="profile-info-val">London, United Kingdom</div>
-                                                </div>
-                                            </div>
-
-                                            <div class="profile-info-item profile-info-full">
-                                                <div class="profile-info-icon">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-                                                </div>
-                                                <div class="profile-info-content">
-                                                    <div class="profile-info-label">Biography &amp; Teaching Philosophy</div>
-                                                    <div class="profile-info-val" style="line-height: 1.7;">
-                                                        <p style="margin-bottom: 12px; font-weight: 400; color: #2b354f;">With over two decades of dedicated experience in education and a robust professional background in engineering, I offer a unique and comprehensive tutoring experience. Since 2001, I have been committed to helping students excel across a wide range of academic levels, from Year 7 through to A-Levels, specialising in Mathematics, Physics, Chemistry, Biology, and Computer Science. My long standing tenure in tutoring has allowed me to refine my teaching methods, ensuring that complex concepts are broken down into manageable and engaging lessons tailored to each student’s individual learning style.</p>
-                                                        <p style="margin-bottom: 12px; font-weight: 400; color: #2b354f;">By profession, I am a Computer Systems Engineer, which provides me with a practical, real-world perspective on the subjects I teach. I don’t just teach theory, I demonstrate how these principles are applied in the modern technology and engineering sectors, helping students understand the “why” behind their studies and inspiring them toward future career paths in STEM. My goal is to build confidence and foster a deep understanding of the subject matter, whether a student is looking to bridge foundational gaps or aiming for top marks in their A-Levels.</p>
-                                                        <p style="margin-bottom: 12px; font-weight: 400; color: #2b354f;">Throughout my career, I have developed a particular expertise and passion for working with students with special educational needs. I understand that every learner processes information differently, and I take pride in my ability to adapt my communication and teaching strategies to provide a supportive, patient, and inclusive environment. By building strong rapport and utilizing tailored pedagogical approaches, I have successfully helped many students with diverse learning requirements overcome academic hurdles and build the confidence necessary for long-term success.</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- SUBJECT HANDLING / ASSIGNED SUBJECTS -->
-                                    <div class="teacher-details-card">
-                                        <div class="teacher-details-title">
-                                            <div class="teacher-details-title-left">
-                                                <i>
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
-                                                </i>
+                                                <i class="feather-book-open"></i>
                                                 <h5>Subjects Handled</h5>
                                             </div>
                                             <span class="teacher-badge-status">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
-                                                5 Active Subjects
+                                                <i class="feather-check-circle"></i> 5 Active Subjects
                                             </span>
                                         </div>
 
@@ -1019,9 +1127,9 @@
                                             <table class="subject-table">
                                                 <thead>
                                                     <tr>
-                                                        <th>Subject</th>
-                                                        <th>Assigned Students</th>
-                                                        <th>Class Schedule</th>
+                                                        <th style="width: 32%;">Subject</th>
+                                                        <th style="width: 28%;">Assigned Students</th>
+                                                        <th style="width: 40%;">Class Schedule</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
@@ -1029,20 +1137,21 @@
                                                         <td>
                                                             <div class="subject-badge-icon">
                                                                 <div class="subject-icon-box">
-                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="6" r="2"></circle><line x1="5" y1="12" x2="19" y2="12"></line><circle cx="12" cy="18" r="2"></circle></svg>
+                                                                    <i class="feather-book"></i>
                                                                 </div>
                                                                 <span class="subject-name">Mathematics</span>
                                                             </div>
                                                         </td>
                                                         <td>
-                                                            <span class="student-count-badge">
-                                                                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
-                                                                16 Students
-                                                            </span>
+                                                            <button type="button" class="student-count-badge student-modal-btn" onclick="openStudentModal('mathematics')" title="Click to view enrolled students">
+                                                                <i class="feather-users"></i>
+                                                                <span>16 Students</span>
+                                                                <i class="feather-external-link" style="font-size: 13px; margin-left: 4px; opacity: 0.85;"></i>
+                                                            </button>
                                                         </td>
                                                         <td>
                                                             <span class="subject-time">
-                                                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                                                <i class="feather-clock"></i>
                                                                 Mon &amp; Wed | 10:00 AM - 11:30 AM
                                                             </span>
                                                         </td>
@@ -1052,20 +1161,21 @@
                                                         <td>
                                                             <div class="subject-badge-icon">
                                                                 <div class="subject-icon-box">
-                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                                                                    <i class="feather-zap"></i>
                                                                 </div>
                                                                 <span class="subject-name">Physics</span>
                                                             </div>
                                                         </td>
                                                         <td>
-                                                            <span class="student-count-badge">
-                                                                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
-                                                                14 Students
-                                                            </span>
+                                                            <button type="button" class="student-count-badge student-modal-btn" onclick="openStudentModal('physics')" title="Click to view enrolled students">
+                                                                <i class="feather-users"></i>
+                                                                <span>14 Students</span>
+                                                                <i class="feather-external-link" style="font-size: 13px; margin-left: 4px; opacity: 0.85;"></i>
+                                                            </button>
                                                         </td>
                                                         <td>
                                                             <span class="subject-time">
-                                                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                                                <i class="feather-clock"></i>
                                                                 Tue &amp; Thu | 02:00 PM - 03:30 PM
                                                             </span>
                                                         </td>
@@ -1075,20 +1185,21 @@
                                                         <td>
                                                             <div class="subject-badge-icon">
                                                                 <div class="subject-icon-box">
-                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+                                                                    <i class="feather-activity"></i>
                                                                 </div>
                                                                 <span class="subject-name">Chemistry</span>
                                                             </div>
                                                         </td>
                                                         <td>
-                                                            <span class="student-count-badge">
-                                                                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
-                                                                12 Students
-                                                            </span>
+                                                            <button type="button" class="student-count-badge student-modal-btn" onclick="openStudentModal('chemistry')" title="Click to view enrolled students">
+                                                                <i class="feather-users"></i>
+                                                                <span>12 Students</span>
+                                                                <i class="feather-external-link" style="font-size: 13px; margin-left: 4px; opacity: 0.85;"></i>
+                                                            </button>
                                                         </td>
                                                         <td>
                                                             <span class="subject-time">
-                                                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                                                <i class="feather-clock"></i>
                                                                 Fri | 04:00 PM - 05:30 PM
                                                             </span>
                                                         </td>
@@ -1098,20 +1209,21 @@
                                                         <td>
                                                             <div class="subject-badge-icon">
                                                                 <div class="subject-icon-box">
-                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="3"></circle></svg>
+                                                                    <i class="feather-sun"></i>
                                                                 </div>
                                                                 <span class="subject-name">Biology</span>
                                                             </div>
                                                         </td>
                                                         <td>
-                                                            <span class="student-count-badge">
-                                                                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
-                                                                10 Students
-                                                            </span>
+                                                            <button type="button" class="student-count-badge student-modal-btn" onclick="openStudentModal('biology')" title="Click to view enrolled students">
+                                                                <i class="feather-users"></i>
+                                                                <span>10 Students</span>
+                                                                <i class="feather-external-link" style="font-size: 13px; margin-left: 4px; opacity: 0.85;"></i>
+                                                            </button>
                                                         </td>
                                                         <td>
                                                             <span class="subject-time">
-                                                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                                                <i class="feather-clock"></i>
                                                                 Sat | 10:00 AM - 11:30 AM
                                                             </span>
                                                         </td>
@@ -1121,20 +1233,21 @@
                                                         <td>
                                                             <div class="subject-badge-icon">
                                                                 <div class="subject-icon-box">
-                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect><rect x="9" y="9" width="6" height="6"></rect><line x1="9" y1="1" x2="9" y2="4"></line><line x1="15" y1="1" x2="15" y2="4"></line><line x1="9" y1="20" x2="9" y2="23"></line><line x1="15" y1="20" x2="15" y2="23"></line><line x1="20" y1="9" x2="23" y2="9"></line><line x1="20" y1="14" x2="23" y2="14"></line><line x1="1" y1="9" x2="4" y2="9"></line><line x1="1" y1="14" x2="4" y2="14"></line></svg>
+                                                                    <i class="feather-code"></i>
                                                                 </div>
                                                                 <span class="subject-name">Computer Science</span>
                                                             </div>
                                                         </td>
                                                         <td>
-                                                            <span class="student-count-badge">
-                                                                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
-                                                                15 Students
-                                                            </span>
+                                                            <button type="button" class="student-count-badge student-modal-btn" onclick="openStudentModal('computer-science')" title="Click to view enrolled students">
+                                                                <i class="feather-users"></i>
+                                                                <span>15 Students</span>
+                                                                <i class="feather-external-link" style="font-size: 13px; margin-left: 4px; opacity: 0.85;"></i>
+                                                            </button>
                                                         </td>
                                                         <td>
                                                             <span class="subject-time">
-                                                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                                                <i class="feather-clock"></i>
                                                                 Sat | 01:00 PM - 02:30 PM
                                                             </span>
                                                         </td>
@@ -1144,6 +1257,110 @@
                                         </div>
                                     </div>
                                     <!-- End Subject Handling -->
+
+                                  
+
+                                    <!-- 3. TUTOR DETAILS (UNDER BIOGRAPHY) -->
+                                    <div class="teacher-details-card">
+                                        <div class="teacher-details-title">
+                                            <div class="teacher-details-title-left">
+                                                <i class="feather-user"></i>
+                                                <h5>Personal &amp; Professional Details</h5>
+                                            </div>
+                                            <a href="tuitor-edit.html" class="rbt-btn btn-xs btn-border-gradient radius-round">
+                                                <i class="feather-edit-2 me-1"></i> Edit Profile
+                                            </a>
+                                        </div>
+
+                                        <div class="profile-info-grid">
+                                            <div class="profile-info-item">
+                                                <div class="profile-info-icon">
+                                                    <i class="feather-user"></i>
+                                                </div>
+                                                <div class="profile-info-content">
+                                                    <div class="profile-info-label">First Name</div>
+                                                    <div class="profile-info-val">Ruben</div>
+                                                </div>
+                                            </div>
+
+                                            <div class="profile-info-item">
+                                                <div class="profile-info-icon">
+                                                    <i class="feather-award"></i>
+                                                </div>
+                                                <div class="profile-info-content">
+                                                    <div class="profile-info-label">Profession / Background</div>
+                                                    <div class="profile-info-val">Computer Systems Engineer</div>
+                                                </div>
+                                            </div>
+
+                                            <div class="profile-info-item">
+                                                <div class="profile-info-icon">
+                                                    <i class="feather-mail"></i>
+                                                </div>
+                                                <div class="profile-info-content">
+                                                    <div class="profile-info-label">Email Address</div>
+                                                    <div class="profile-info-val">ruben@londonstaredu.com</div>
+                                                </div>
+                                            </div>
+
+                                            <div class="profile-info-item">
+                                                <div class="profile-info-icon">
+                                                    <i class="feather-phone"></i>
+                                                </div>
+                                                <div class="profile-info-content">
+                                                    <div class="profile-info-label">Phone Number</div>
+                                                    <div class="profile-info-val">+44 7900 889900</div>
+                                                </div>
+                                            </div>
+
+                                            <div class="profile-info-item">
+                                                <div class="profile-info-icon">
+                                                    <i class="feather-briefcase"></i>
+                                                </div>
+                                                <div class="profile-info-content">
+                                                    <div class="profile-info-label">Role &amp; Specialization</div>
+                                                    <div class="profile-info-val">Senior STEM Educator &amp; Computer Systems Engineer</div>
+                                                </div>
+                                            </div>
+
+                                            <div class="profile-info-item">
+                                                <div class="profile-info-icon">
+                                                    <i class="feather-map-pin"></i>
+                                                </div>
+                                                <div class="profile-info-content">
+                                                    <div class="profile-info-label">Location / Center</div>
+                                                    <div class="profile-info-val">London, United Kingdom</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                      <!-- 2. BIOGRAPHY & TEACHING PHILOSOPHY (SECOND SECTION) -->
+                                    <div class="teacher-details-card">
+                                        <div class="teacher-details-title">
+                                            <div class="teacher-details-title-left">
+                                                <i class="feather-file-text"></i>
+                                                <h5>Biography &amp; Teaching Philosophy</h5>
+                                            </div>
+                                        </div>
+
+                                        <div class="profile-info-val" style="line-height: 1.8;">
+                                            <p style="margin-bottom: 14px; font-weight: 400; color: #374151; font-size: 18px;">With over two decades of dedicated experience in education and a robust professional background in engineering, I offer a unique and comprehensive tutoring experience. Since 2001, I have been committed to helping students excel across a wide range of academic levels, from Year 7 through to A-Levels, specialising in Mathematics, Physics, Chemistry, Biology, and Computer Science. My long standing tenure in tutoring has allowed me to refine my teaching methods, ensuring that complex concepts are broken down into manageable and engaging lessons tailored to each student’s individual learning style.</p>
+                                            <p style="margin-bottom: 14px; font-weight: 400; color: #374151; font-size: 18px;">By profession, I am a Computer Systems Engineer, which provides me with a practical, real-world perspective on the subjects I teach. I don’t just teach theory, I demonstrate how these principles are applied in the modern technology and engineering sectors, helping students understand the “why” behind their studies and inspiring them toward future career paths in STEM. My goal is to build confidence and foster a deep understanding of the subject matter, whether a student is looking to bridge foundational gaps or aiming for top marks in their A-Levels.</p>
+                                            <p style="margin-bottom: 0; font-weight: 400; color: #374151; font-size: 18px;">Throughout my career, I have developed a particular expertise and passion for working with students with special educational needs. I understand that every learner processes information differently, and I take pride in my ability to adapt my communication and teaching strategies to provide a supportive, patient, and inclusive environment. By building strong rapport and utilizing tailored pedagogical approaches, I have successfully helped many students with diverse learning requirements overcome academic hurdles and build the confidence necessary for long-term success.</p>
+                                        </div>
+                                    </div>
+                                            </div>
+
+                                            
+
+                                          
+
+                                            
+                                            
+
+
+                                        </div>
+                                    </div>
 
                                 </div>
                             </div>
@@ -1249,26 +1466,32 @@
     </footer>
 
     <!-- Back to Top -->
-    <div class="rbt-progress-parent">
+        <div class="rbt-progress-parent">
         <svg class="rbt-back-circle svg-inner" width="100%" height="100%" viewBox="-1 -1 102 102">
-            <path d="M50,1 a49,49 0,0,1 0,98 a49,49 0,0,1 0,-98" />
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
         </svg>
     </div>
 
     <!-- Floating Contact Buttons -->
     <div class="floating-contact">
+        <!-- Call -->
         <div class="contact-item call-item">
-            <div class="contact-label call-label">Talk To Our Experts</div>
+            <div class="contact-label call-label">
+                Talk To Our Experts
+            </div>
             <a href="tel:+919876543210" class="contact-button call-button" aria-label="Call us">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                <i class="fa fa-phone"></i>
             </a>
         </div>
+
+        <!-- WhatsApp -->
         <div class="contact-item whatsapp-item">
-            <div class="contact-label whatsapp-label">Message Us</div>
-            <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer" class="contact-button whatsapp-button" aria-label="Chat with us on WhatsApp">
-                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
-                </svg>
+            <div class="contact-label whatsapp-label">
+                Message Us
+            </div>
+            <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer"
+                class="contact-button whatsapp-button" aria-label="Chat with us on WhatsApp">
+                <i class="fab fa-whatsapp"></i>
             </a>
         </div>
     </div>
@@ -1344,5 +1567,290 @@
             }
         });
     </script>
+
+    <!-- Enrolled Students Modal Popup -->
+    <div id="student-list-modal" class="student-modal-overlay" onclick="handleModalBackdropClick(event)">
+        <div class="student-modal-dialog">
+            <div class="student-modal-header">
+                <div class="student-modal-header-left">
+                    <div class="student-modal-icon" id="modal-subject-icon">
+                        <i class="feather-book"></i>
+                    </div>
+                    <div>
+                        <h4 id="modal-subject-title" style="margin: 0; font-size: 20px; font-weight: 700; color: #192335;">Mathematics</h4>
+                        <p id="modal-subject-subtitle" style="margin: 2px 0 0; font-size: 14px; color: #64748b;">16 Enrolled Students &bull; Mon &amp; Wed (10:00 AM - 11:30 AM)</p>
+                    </div>
+                </div>
+                <button type="button" class="student-modal-close" onclick="closeStudentModal()" aria-label="Close modal">
+                    <i class="feather-x"></i>
+                </button>
+            </div>
+
+            <!-- Filter Toolbar -->
+            <div class="student-modal-filter-bar">
+                <span class="modal-filter-label">Filter By Tuition Type:</span>
+                <div class="student-modal-filter-group">
+                    <button type="button" class="modal-filter-btn" id="filter-btn-one-to-one" onclick="toggleStudentFilter('One-to-One')">
+                        <i class="feather-user"></i> One-to-One <span class="btn-badge" id="badge-count-one-to-one">0</span>
+                    </button>
+                    <button type="button" class="modal-filter-btn" id="filter-btn-one-to-many" onclick="toggleStudentFilter('One-to-Many')">
+                        <i class="feather-users"></i> One-to-Many <span class="btn-badge" id="badge-count-one-to-many">0</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="student-modal-body">
+                <div class="student-modal-table-wrap">
+                    <table class="student-modal-table">
+                        <thead>
+                            <tr>
+                                <th style="width: 12%; text-align: center;">S.No</th>
+                                <th style="width: 28%;">Student ID</th>
+                                <th style="width: 38%;">Student Name</th>
+                                <th style="width: 22%; text-align: center;">Tuition Type</th>
+                            </tr>
+                        </thead>
+                        <tbody id="student-modal-tbody">
+                            <!-- Populated dynamically -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="student-modal-footer">
+                <span id="modal-summary-text" style="font-size: 14px; color: #64748b; font-weight: 500;">Showing all enrolled students</span>
+                <button type="button" class="rbt-btn btn-sm btn-border radius-round" onclick="closeStudentModal()">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Student Modal Data and Interactive Functions -->
+    <script>
+        const subjectStudentsData = {
+            'mathematics': {
+                name: 'Mathematics',
+                subtitle: '16 Enrolled Students • Mon & Wed (10:00 AM - 11:30 AM)',
+                icon: '<i class="feather-book"></i>',
+                students: [
+                    { id: 'LSE-STD-2024-001', name: 'Oliver Smith', type: 'One-to-One' },
+                    { id: 'LSE-STD-2024-004', name: 'Amelia Jones', type: 'One-to-Many' },
+                    { id: 'LSE-STD-2024-007', name: 'Harry Wilson', type: 'One-to-One' },
+                    { id: 'LSE-STD-2024-012', name: 'Sophia Brown', type: 'One-to-Many' },
+                    { id: 'LSE-STD-2024-015', name: 'George Taylor', type: 'One-to-Many' },
+                    { id: 'LSE-STD-2024-018', name: 'Isabella Davies', type: 'One-to-One' },
+                    { id: 'LSE-STD-2024-022', name: 'Noah Evans', type: 'One-to-Many' },
+                    { id: 'LSE-STD-2024-025', name: 'Mia Thomas', type: 'One-to-Many' },
+                    { id: 'LSE-STD-2024-029', name: 'Leo Roberts', type: 'One-to-One' },
+                    { id: 'LSE-STD-2024-033', name: 'Ava Johnson', type: 'One-to-Many' },
+                    { id: 'LSE-STD-2024-038', name: 'Lucas Walker', type: 'One-to-Many' },
+                    { id: 'LSE-STD-2024-042', name: 'Grace Robinson', type: 'One-to-One' },
+                    { id: 'LSE-STD-2024-047', name: 'Arthur Wright', type: 'One-to-Many' },
+                    { id: 'LSE-STD-2024-051', name: 'Freya Scott', type: 'One-to-Many' },
+                    { id: 'LSE-STD-2024-056', name: 'Henry Green', type: 'One-to-One' },
+                    { id: 'LSE-STD-2024-060', name: 'Ella Hall', type: 'One-to-Many' }
+                ]
+            },
+            'physics': {
+                name: 'Physics',
+                subtitle: '14 Enrolled Students • Tue & Thu (02:00 PM - 03:30 PM)',
+                icon: '<i class="feather-zap"></i>',
+                students: [
+                    { id: 'LSE-STD-2024-002', name: 'Jack Williams', type: 'One-to-One' },
+                    { id: 'LSE-STD-2024-005', name: 'Charlotte Taylor', type: 'One-to-Many' },
+                    { id: 'LSE-STD-2024-009', name: 'Ethan Clarke', type: 'One-to-Many' },
+                    { id: 'LSE-STD-2024-014', name: 'Harper White', type: 'One-to-One' },
+                    { id: 'LSE-STD-2024-019', name: 'Freddie Hughes', type: 'One-to-Many' },
+                    { id: 'LSE-STD-2024-023', name: 'Emily Edwards', type: 'One-to-Many' },
+                    { id: 'LSE-STD-2024-028', name: 'Archie Turner', type: 'One-to-One' },
+                    { id: 'LSE-STD-2024-032', name: 'Evie Campbell', type: 'One-to-Many' },
+                    { id: 'LSE-STD-2024-037', name: 'Theo Mitchell', type: 'One-to-Many' },
+                    { id: 'LSE-STD-2024-041', name: 'Ruby Carter', type: 'One-to-One' },
+                    { id: 'LSE-STD-2024-046', name: 'Alfie Phillips', type: 'One-to-Many' },
+                    { id: 'LSE-STD-2024-050', name: 'Alice Morris', type: 'One-to-Many' },
+                    { id: 'LSE-STD-2024-055', name: 'Joshua Murphy', type: 'One-to-One' },
+                    { id: 'LSE-STD-2024-059', name: 'Florence Cook', type: 'One-to-Many' }
+                ]
+            },
+            'chemistry': {
+                name: 'Chemistry',
+                subtitle: '12 Enrolled Students • Fri (04:00 PM - 05:30 PM)',
+                icon: '<i class="feather-activity"></i>',
+                students: [
+                    { id: 'LSE-STD-2024-003', name: 'Benjamin Moore', type: 'One-to-One' },
+                    { id: 'LSE-STD-2024-008', name: 'Chloe Harris', type: 'One-to-Many' },
+                    { id: 'LSE-STD-2024-013', name: 'Alexander King', type: 'One-to-Many' },
+                    { id: 'LSE-STD-2024-017', name: 'Zoe Lee', type: 'One-to-One' },
+                    { id: 'LSE-STD-2024-021', name: 'Daniel Adams', type: 'One-to-Many' },
+                    { id: 'LSE-STD-2024-026', name: 'Hannah Baker', type: 'One-to-Many' },
+                    { id: 'LSE-STD-2024-031', name: 'Samuel Bell', type: 'One-to-One' },
+                    { id: 'LSE-STD-2024-036', name: 'Lily Ward', type: 'One-to-Many' },
+                    { id: 'LSE-STD-2024-040', name: 'Max Bennett', type: 'One-to-Many' },
+                    { id: 'LSE-STD-2024-045', name: 'Phoebe Gray', type: 'One-to-One' },
+                    { id: 'LSE-STD-2024-049', name: 'Logan Price', type: 'One-to-Many' },
+                    { id: 'LSE-STD-2024-054', name: 'Sienna Russell', type: 'One-to-Many' }
+                ]
+            },
+            'biology': {
+                name: 'Biology',
+                subtitle: '10 Enrolled Students • Sat (10:00 AM - 11:30 AM)',
+                icon: '<i class="feather-sun"></i>',
+                students: [
+                    { id: 'LSE-STD-2024-006', name: 'James Harrison', type: 'One-to-One' },
+                    { id: 'LSE-STD-2024-011', name: 'Poppy Foster', type: 'One-to-Many' },
+                    { id: 'LSE-STD-2024-016', name: 'Mason Cox', type: 'One-to-Many' },
+                    { id: 'LSE-STD-2024-020', name: 'Ivy Sanders', type: 'One-to-One' },
+                    { id: 'LSE-STD-2024-027', name: 'William Price', type: 'One-to-Many' },
+                    { id: 'LSE-STD-2024-035', name: 'Daisy Barnes', type: 'One-to-Many' },
+                    { id: 'LSE-STD-2024-039', name: 'Jacob Ross', type: 'One-to-One' },
+                    { id: 'LSE-STD-2024-044', name: 'Matilda Henderson', type: 'One-to-Many' },
+                    { id: 'LSE-STD-2024-048', name: 'Sebastian Perry', type: 'One-to-Many' },
+                    { id: 'LSE-STD-2024-053', name: 'Scarlett Powell', type: 'One-to-One' }
+                ]
+            },
+            'computer-science': {
+                name: 'Computer Science',
+                subtitle: '15 Enrolled Students • Sat (01:00 PM - 02:30 PM)',
+                icon: '<i class="feather-code"></i>',
+                students: [
+                    { id: 'LSE-STD-2024-010', name: 'Liam Jackson', type: 'One-to-One' },
+                    { id: 'LSE-STD-2024-015', name: 'Eleanor Wood', type: 'One-to-Many' },
+                    { id: 'LSE-STD-2024-024', name: 'Edward Jenkins', type: 'One-to-One' },
+                    { id: 'LSE-STD-2024-030', name: 'Jessica Perry', type: 'One-to-Many' },
+                    { id: 'LSE-STD-2024-034', name: 'Toby Coleman', type: 'One-to-Many' },
+                    { id: 'LSE-STD-2024-043', name: 'Isabelle Brooks', type: 'One-to-One' },
+                    { id: 'LSE-STD-2024-052', name: 'Gabriel Butler', type: 'One-to-Many' },
+                    { id: 'LSE-STD-2024-057', name: 'Maya Bailey', type: 'One-to-Many' },
+                    { id: 'LSE-STD-2024-058', name: 'Nathan Kelly', type: 'One-to-One' },
+                    { id: 'LSE-STD-2024-061', name: 'Zara Simmons', type: 'One-to-Many' },
+                    { id: 'LSE-STD-2024-062', name: 'Caleb Foster', type: 'One-to-Many' },
+                    { id: 'LSE-STD-2024-063', name: 'Lola Patterson', type: 'One-to-One' },
+                    { id: 'LSE-STD-2024-064', name: 'Isaac Henderson', type: 'One-to-Many' },
+                    { id: 'LSE-STD-2024-065', name: 'Heidi Reynolds', type: 'One-to-Many' },
+                    { id: 'LSE-STD-2024-066', name: 'Dylan Powell', type: 'One-to-One' }
+                ]
+            }
+        };
+
+        let activeSubjectKey = null;
+        let currentFilterType = 'all'; // 'all', 'One-to-One', 'One-to-Many'
+
+        function openStudentModal(subjectKey) {
+            activeSubjectKey = subjectKey;
+            currentFilterType = 'all'; // Reset filter when opened
+            
+            const data = subjectStudentsData[subjectKey];
+            if (!data) return;
+
+            document.getElementById('modal-subject-title').textContent = data.name;
+            document.getElementById('modal-subject-subtitle').textContent = data.subtitle;
+            document.getElementById('modal-subject-icon').innerHTML = data.icon;
+
+            const countOneToOne = data.students.filter(s => s.type === 'One-to-One').length;
+            const countOneToMany = data.students.filter(s => s.type === 'One-to-Many').length;
+
+            document.getElementById('badge-count-one-to-one').textContent = countOneToOne;
+            document.getElementById('badge-count-one-to-many').textContent = countOneToMany;
+
+            renderStudentList();
+
+            const modal = document.getElementById('student-list-modal');
+            modal.style.display = 'flex';
+            setTimeout(() => {
+                modal.classList.add('active');
+            }, 10);
+            document.body.style.overflow = 'hidden';
+        }
+
+        function toggleStudentFilter(type) {
+            if (currentFilterType === type) {
+                currentFilterType = 'all'; // Toggle off back to all
+            } else {
+                currentFilterType = type;
+            }
+            renderStudentList();
+        }
+
+        function renderStudentList() {
+            if (!activeSubjectKey) return;
+            const data = subjectStudentsData[activeSubjectKey];
+            if (!data) return;
+
+            const btnOneToOne = document.getElementById('filter-btn-one-to-one');
+            const btnOneToMany = document.getElementById('filter-btn-one-to-many');
+
+            if (currentFilterType === 'One-to-One') {
+                btnOneToOne.classList.add('active');
+                btnOneToMany.classList.remove('active');
+            } else if (currentFilterType === 'One-to-Many') {
+                btnOneToOne.classList.remove('active');
+                btnOneToMany.classList.add('active');
+            } else {
+                btnOneToOne.classList.remove('active');
+                btnOneToMany.classList.remove('active');
+            }
+
+            let filtered = data.students;
+            if (currentFilterType === 'One-to-One') {
+                filtered = data.students.filter(s => s.type === 'One-to-One');
+            } else if (currentFilterType === 'One-to-Many') {
+                filtered = data.students.filter(s => s.type === 'One-to-Many');
+            }
+
+            const tbody = document.getElementById('student-modal-tbody');
+            tbody.innerHTML = '';
+
+            if (filtered.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="4" style="text-align:center; padding: 24px; color: #94a3b8;">No students found for this filter</td></tr>';
+            } else {
+                filtered.forEach((st, idx) => {
+                    const isOneToOne = st.type === 'One-to-One';
+                    const typePill = isOneToOne
+                        ? '<span class="type-pill type-one-to-one"><i class="feather-user" style="font-size: 11px;"></i> One-to-One</span>'
+                        : '<span class="type-pill type-one-to-many"><i class="feather-users" style="font-size: 11px;"></i> One-to-Many</span>';
+
+                    const tr = document.createElement('tr');
+                    tr.innerHTML = `
+                        <td style="text-align: center; font-weight: 600; color: #64748b;">${idx + 1}</td>
+                        <td style="font-weight: 600; color: #6c4df6;"><span style="background: #f0edff; padding: 3px 8px; border-radius: 6px; font-size: 13.5px;">${st.id}</span></td>
+                        <td style="font-weight: 600; color: #1e293b;">${st.name}</td>
+                        <td style="text-align: center;">${typePill}</td>
+                    `;
+                    tbody.appendChild(tr);
+                });
+            }
+
+            const summaryElem = document.getElementById('modal-summary-text');
+            if (currentFilterType === 'One-to-One') {
+                summaryElem.textContent = `Showing ${filtered.length} One-to-One student${filtered.length === 1 ? '' : 's'} (click again to view all)`;
+            } else if (currentFilterType === 'One-to-Many') {
+                summaryElem.textContent = `Showing ${filtered.length} One-to-Many student${filtered.length === 1 ? '' : 's'} (click again to view all)`;
+            } else {
+                summaryElem.textContent = `Showing all ${data.students.length} enrolled students`;
+            }
+        }
+
+        function closeStudentModal() {
+            const modal = document.getElementById('student-list-modal');
+            if (!modal) return;
+            modal.classList.remove('active');
+            setTimeout(() => {
+                modal.style.display = 'none';
+                document.body.style.overflow = '';
+            }, 250);
+        }
+
+        function handleModalBackdropClick(event) {
+            if (event.target.id === 'student-list-modal') {
+                closeStudentModal();
+            }
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeStudentModal();
+            }
+        });
+    </script>
+
 </body>
 </html>

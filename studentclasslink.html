@@ -1,3 +1,6 @@
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -60,6 +63,8 @@
 
     <link rel="stylesheet"
         href="assets/css/style.css">
+    <link rel="stylesheet"
+        href="assets/css/custom-ui.css">
 
 
     <!-- CUSTOM CSS -->
@@ -85,16 +90,7 @@
             display: inline-block !important;
         }
 
-        i[class^="fa-"],
-        i[class*=" fa-"],
-        [class^="fa-"],
-        [class*=" fa-"],
-        .fa, .fas, .far, .fal, .fad, .fab {
-            font-family: "Font Awesome 5 Pro", "Font Awesome 5 Free", "FontAwesome" !important;
-            font-style: normal !important;
-            font-weight: normal !important;
-            display: inline-block !important;
-        }
+        /* Font Awesome managed in style.css */
 
         /* Header Navigation (Increased Size, Clean Medium Weight, 100% Zoom Safe) */
         .rbt-header .mainbar-row {
@@ -281,16 +277,23 @@
 
         .class-card {
             border: 1px solid #e5e7eb;
-            border-radius: 12px;
+            border-radius: 14px;
             overflow: hidden;
-            transition: 0.3s;
+            transition: all 0.3s ease;
             background: #ffffff;
             height: 100%;
+            display: flex;
+            flex-direction: column;
         }
 
         .class-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+        }
+
+        .class-card.is-live {
+            border-color: #6c4df6;
+            box-shadow: 0 6px 20px rgba(108, 77, 246, 0.12);
         }
 
         .math-card {
@@ -305,18 +308,19 @@
             font-weight: 700 !important;
             letter-spacing: 0.5px;
             color: #192335 !important;
-            margin-bottom: 8px;
+            margin-bottom: 4px;
             font-size: 22px !important;
-            line-height: 1.4;
+            line-height: 1.3;
         }
 
         .class-card-header {
-            min-height: 75px;
+            min-height: 65px;
         }
 
         .class-card .card-body {
             display: flex;
             flex-direction: column;
+            flex: 1 1 auto;
             padding: 24px !important;
         }
 
@@ -338,23 +342,127 @@
         }
 
         .class-details {
-            margin-top: 20px;
-            margin-bottom: 24px;
+            margin-top: 16px;
+            margin-bottom: 16px;
         }
 
         .class-details p {
-            font-size: 18px !important;
+            font-size: 17px !important;
             font-weight: 400 !important;
             color: #374151 !important;
             display: flex;
             align-items: center;
-            gap: 12px;
-            margin-bottom: 14px;
+            gap: 10px;
+            margin-bottom: 10px;
         }
 
         .class-details p i {
-            font-size: 20px !important;
+            font-size: 18px !important;
             color: #6c4df6;
+        }
+
+        /* Class Link Box & Copy Function */
+        .class-link-box {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 12px 14px;
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        .class-link-box.awaiting {
+            border-style: dashed;
+            border-color: #cbd5e1;
+            color: #64748b;
+            font-size: 14.5px !important;
+            justify-content: center;
+            background: #fbfcfe;
+        }
+
+        .class-link-box .link-url-text {
+            font-size: 15px !important;
+            font-weight: 500 !important;
+            color: #2f57ef !important;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .copy-link-btn {
+            border: 1px solid #dcdfe6;
+            background: #ffffff;
+            color: #374151;
+            font-size: 14px !important;
+            font-weight: 600 !important;
+            padding: 6px 14px;
+            border-radius: 6px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.2s ease;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        .copy-link-btn:hover {
+            border-color: #2f57ef;
+            color: #2f57ef;
+            background: #f5f7ff;
+        }
+
+        .copy-link-btn.copied {
+            border-color: #10b981 !important;
+            background: #ecfdf5 !important;
+            color: #059669 !important;
+        }
+
+        .live-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: #ecfdf5;
+            color: #059669;
+            border: 1px solid #a7f3d0;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 13px !important;
+            font-weight: 600 !important;
+        }
+
+        .live-badge .pulse-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #10b981;
+            box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+            animation: livePulse 1.8s infinite;
+        }
+
+        @keyframes livePulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        .awaiting-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: #f1f5f9;
+            color: #64748b;
+            border: 1px solid #e2e8f0;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 13px !important;
+            font-weight: 500 !important;
         }
 
         /* =========================================
@@ -365,13 +473,14 @@
         .awaiting-btn {
             margin-top: auto;
             padding: 14px 20px;
-            font-size: 18px !important;
+            font-size: 17.5px !important;
             font-weight: 600 !important;
-            min-height: 54px;
+            min-height: 52px;
             border-radius: 8px;
             display: inline-flex;
             align-items: center;
             justify-content: center;
+            width: 100%;
         }
 
         .join-btn {
@@ -379,6 +488,7 @@
             background: linear-gradient(90deg, #6c4df6 0%, #a855f7 100%) !important;
             border: none;
             transition: 0.3s;
+            cursor: pointer;
         }
 
         .join-btn:hover {
@@ -450,315 +560,185 @@
      HEADER
 ========================================================= -->
 
-<header class="rbt-header rbt-header-9">
+    <!-- Start Header Area -->
+    <header class="rbt-header rbt-header-9">
+        <div class="rbt-sticky-placeholder"></div>
 
-    <div class="rbt-sticky-placeholder"></div>
-
-    <!-- Start Header Top -->
-
-    <div class="rbt-header-middle position-relative rbt-header-mid-1 bg-color-white rbt-border-bottom">
-
-        <div class="container">
-
-            <div class="rbt-header-sec align-items-center">
-
-                <div class="rbt-header-sec-col rbt-header-left">
-
-                    <div class="rbt-header-content">
-
-                        <!-- Language -->
-
+        
+        <div class="rbt-header-wrapper header-not-transparent header-sticky">
+            <div class="container">
+                <div class="mainbar-row rbt-navigation-end align-items-center">
+                    <div class="header-left rbt-header-content">
                         <div class="header-info">
-
-                            <ul class="rbt-dropdown-menu switcher-language">
-
-                                <li class="has-child-menu">
-
-                                    <a href="#">
-
-                                        <img class="left-image"
-                                            src="assets/images/icons/en-us.png"
-                                            alt="Language Images">
-
-                                        <span class="menu-item">
-                                            English
-                                        </span>
-
-                                    </a>
-
-                                </li>
-
-                            </ul>
-
-                        </div>
-
-
-                        <!-- Currency -->
-
-                        <div class="header-info">
-
-                            <ul class="rbt-dropdown-menu currency-menu">
-
-                                <li class="has-child-menu">
-
-                                    <ul class="sub-menu hover-reverse">
-
-                                        <li>
-                                            <a href="#">
-                                                <span class="menu-item">
-                                                    EUR
-                                                </span>
-                                            </a>
-                                        </li>
-
-                                        <li>
-                                            <a href="#">
-                                                <span class="menu-item">
-                                                    GBP
-                                                </span>
-                                            </a>
-                                        </li>
-
-                                    </ul>
-
-                                </li>
-
-                            </ul>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <div class="rbt-header-sec-col rbt-header-center d-none d-md-block">
-
-                    <div class="rbt-header-content">
-
-                        <div class="header-info">
-
-                            <div class="rbt-search-field">
-
-                                <div class="search-field">
-
-                                    <input type="text"
-                                        placeholder="Search Course">
-
-                                    <button class="rbt-round-btn serach-btn"
-                                        type="submit">
-
-                                        <i class="feather-search"></i>
-
-                                    </button>
-
-                                </div>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <div class="rbt-header-sec-col rbt-header-right">
-
-                    <div class="rbt-btn-wrapper">
-
-                        <div class="login-dropdown">
-
-                            <button type="button"
-                                class="rbt-btn rbt-switch-btn btn-gradient btn-sm hover-transform-none login-dropdown-btn">
-
-                                <span data-text="Login">
-                                    Login
-                                </span>
-
-                                <i class="feather-chevron-down"></i>
-
-                            </button>
-
-
-                            <div class="login-dropdown-menu">
-
-                                <a href="instructor-profile.html">
-
-                                    <i class="feather-user"></i>
-
-                                    <span>
-                                        Tutor Login
-                                    </span>
-
-                                </a>
-
-
-                                <a href="student-profile.html">
-
-                                    <i class="feather-book-open"></i>
-
-                                    <span>
-                                        Student Login
-                                    </span>
-
-                                </a>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-                    <!-- Mobile Menu -->
-
-                    <div class="mobile-menu-bar d-block d-xl-none">
-
-                        <div class="hamberger">
-
-                            <button class="hamberger-button rbt-round-btn">
-
-                                <i class="feather-menu"></i>
-
-                            </button>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <!-- Main Navigation -->
-
-    <div class="rbt-header-wrapper header-not-transparent header-sticky">
-
-        <div class="container">
-
-            <div class="mainbar-row rbt-navigation-end align-items-center">
-
-
-                <div class="header-left rbt-header-content">
-
-                    <div class="header-info">
-
-                        <div class="logo">
-
-                            <a href="index.html">
-
-                                <img src="assets/images/logo/logo.png"
-                                    alt="Education Logo Images">
-
-                            </a>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <div class="rbt-main-navigation d-none d-xl-block">
-
-                    <nav class="mainmenu-nav">
-
-                        <ul class="mainmenu">
-
-                            <li>
+                            <div class="logo">
                                 <a href="index.html">
-                                    Home
+                                    <img src="assets/images/logo/logo.png" alt="London Star Education Logo">
                                 </a>
-                            </li>
-
-                            <li>
-                                <a href="about-us.html">
-                                    About
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href="our-team.html">
-                                    Our Team
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href="our-tuition.html">
-                                    Our Tuition
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href="holiday-camps.html">
-                                    Holiday Camps
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href="plans-and-pricing.html">
-                                    Plans &amp; Pricing
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href="book-online.html">
-                                    Book Online
-                                </a>
-                            </li>
-
-                        </ul>
-
-                    </nav>
-
-                </div>
-
-
-                <div class="header-right">
-
-                    <div class="rbt-btn-wrapper d-none d-xl-block">
-
-                        <a class="rbt-btn rbt-switch-btn btn-gradient btn-sm hover-transform-none"
-                            href="login-register.html">
-
-                            <span data-text="Join Now">
-                                Join Now
-                            </span>
-
-                        </a>
-
-                    </div>
-
-
-                    <div class="mobile-menu-bar d-block d-xl-none">
-
-                        <div class="hamberger">
-
-                            <button class="hamberger-button rbt-round-btn">
-
-                                <i class="feather-menu"></i>
-
-                            </button>
-
+                            </div>
                         </div>
-
                     </div>
 
-                </div>
+                    <div class="rbt-main-navigation d-none d-xl-block">
+                        <nav class="mainmenu-nav">
+                            <ul class="mainmenu">
+                                <li>
+                                    <a href="index.html">Home</a>
+                                </li>
+                                <li>
+                                    <a href="about-us.html">About</a>
+                                </li>
+                                <li>
+                                    <a href="our-team.html">Our Team</a>
+                                </li>
+                                <li class="has-dropdown">
+                                    <a href="our-tuition.html">Our Tuition <i class="feather-chevron-down"></i></a>
+                                    <ul class="submenu">
+                                        <li><a href="reading-comprehension.html">Reading &amp; Comprehension</a></li>
+                                        <li><a href="creative-writing.html">Creative Writing</a></li>
+                                        <li><a href="english-language.html">English Language</a></li>
+                                        <li><a href="lamda-public-speaking.html">LAMDA &amp; Public Speaking</a></li>
+                                        <li><a href="spelling-grammar.html">Spelling &amp; Grammar</a></li>
+                                        <li><a href="mock-exams-intensive-revision.html">Mock Exams &amp; Revision</a></li>
+                                        <li><a href="our-tuition.html">All Tuition Programs</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="holiday-camps.html">Holiday Camps</a>
+                                </li>
+                                <li>
+                                    <a href="plans-and-pricing.html">Plans &amp; Pricing</a>
+                                </li>
+                                <li>
+                                    <a href="book-online.html">Book Online</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
 
+                    <div class="header-right">
+                        <div class="rbt-btn-wrapper d-none d-xl-flex align-items-center gap-3">
+                            <div class="login-dropdown">
+                                <button type="button"
+                                    class="rbt-btn rbt-switch-btn btn-gradient btn-sm hover-transform-none login-dropdown-btn">
+                                    <span data-text="Login">Login</span>
+                                    <i class="feather-chevron-down"></i>
+                                </button>
+                                <div class="login-dropdown-menu">
+                                    <a href="instructor-profile.html">
+                                        <i class="feather-user"></i>
+                                        <span>Tutor Login</span>
+                                    </a>
+                                    <a href="student-profile.html">
+                                        <i class="feather-book-open"></i>
+                                        <span>Student Login</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <a class="rbt-btn rbt-switch-btn btn-gradient btn-sm hover-transform-none"
+                                href="login-register.html">
+                                <span data-text="Join Now">Join Now</span>
+                            </a>
+                        </div>
+                        <!-- Start Mobile-Menu-Bar -->
+                        <div class="mobile-menu-bar d-block d-xl-none">
+                            <div class="hamberger">
+                                <button class="hamberger-button rbt-round-btn" aria-label="Menu">
+                                    <i class="feather-menu"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <!-- Start Mobile-Menu-Bar -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Mobile Menu Section -->
+    <div class="popup-mobile-menu">
+        <div class="inner-wrapper">
+            <div class="inner-top">
+                <div class="content">
+                    <div class="logo">
+                        <a href="index.html">
+                            <img src="assets/images/logo/logo.png" alt="London Star Education Logo">
+                        </a>
+                    </div>
+                    <div class="rbt-btn-close">
+                        <button class="close-button rbt-round-btn" aria-label="Close menu"><i class="feather-x"></i></button>
+                    </div>
+                </div>
+                <p class="description">London Star Education provides quality online tuition and educational support.</p>
+                <ul class="navbar-top-left rbt-information-list justify-content-start">
+                    <li>
+                        <a href="mailto:info@londonstaredu.com"><i class="feather-mail"></i>info@londonstaredu.com</a>
+                    </li>
+                    <li>
+                        <a href="tel:(406)555-0120"><i class="feather-phone"></i>(406) 555-0120</a>
+                    </li>
+                </ul>
             </div>
 
+            <nav class="mainmenu-nav">
+                <ul class="mainmenu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about-us.html">About</a></li>
+                    <li><a href="our-team.html">Our Team</a></li>
+                    <li class="has-dropdown">
+                        <a href="our-tuition.html">Our Tuition <i class="feather-chevron-down"></i></a>
+                        <ul class="submenu">
+                            <li><a href="reading-comprehension.html">Reading &amp; Comprehension</a></li>
+                            <li><a href="creative-writing.html">Creative Writing</a></li>
+                            <li><a href="english-language.html">English Language</a></li>
+                            <li><a href="lamda-public-speaking.html">LAMDA &amp; Public Speaking</a></li>
+                            <li><a href="spelling-grammar.html">Spelling &amp; Grammar</a></li>
+                            <li><a href="mock-exams-intensive-revision.html">Mock Exams &amp; Revision</a></li>
+                            <li><a href="our-tuition.html">All Tuition Programs</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="holiday-camps.html">Holiday Camps</a></li>
+                    <li><a href="plans-and-pricing.html">Plans &amp; Pricing</a></li>
+                    <li><a href="book-online.html">Book Online</a></li>
+                </ul>
+            </nav>
+
+            <div class="mobile-menu-bottom">
+                <div class="rbt-btn-wrapper mb--20">
+                    <a class="rbt-btn btn-border-gradient radius-round btn-sm hover-transform-none w-100 justify-content-center text-center" href="login-register.html">
+                        <span>Enroll Now</span>
+                    </a>
+                </div>
+
+                <div class="social-share-wrapper">
+                    <span class="rbt-short-title d-block">Find With Us</span>
+                    <ul class="social-icon social-default transparent-with-border justify-content-start mt--20">
+                        <li>
+                            <a href="https://www.facebook.com/" aria-label="Facebook">
+                                <i class="feather-facebook"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.twitter.com" aria-label="X (Twitter)">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" viewBox="0 0 24 24" class="social-icon-x" style="vertical-align: -2px;"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/" aria-label="Instagram">
+                                <i class="feather-instagram"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/" aria-label="LinkedIn">
+                                <i class="feather-linkedin"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
-
     </div>
+    <!-- End Side Vav -->
+    <a class="close_side_menu" href="javascript:void(0);"></a>
 
-</header>
 
 
 <!-- =========================================================
@@ -1022,12 +1002,12 @@
 
 
                     <!-- =========================================
-                         CREATIVE WRITING
+                         1. CREATIVE WRITING
                     ========================================== -->
 
                     <div class="col-md-6">
 
-                        <div class="card class-card math-card h-100">
+                        <div class="card class-card math-card student-course-card h-100" data-course="creative">
 
                             <div class="card-body p-4">
 
@@ -1038,6 +1018,10 @@
                                         <h4 class="subject">
                                             Creative Writing
                                         </h4>
+
+                                        <div class="status-badge-container mt-1">
+                                            <span class="live-badge"><span class="pulse-dot"></span> Class Live</span>
+                                        </div>
 
                                     </div>
 
@@ -1072,16 +1056,28 @@
 
                                 </div>
 
+                                <!-- Class Link & Copy Box -->
+                                <div class="link-box-container">
+                                    <div class="class-link-box">
+                                        <span class="link-url-text" title="https://zoom.us/j/91000000001"><i class="feather-link"></i> https://zoom.us/j/91000000001</span>
+                                        <button type="button" class="copy-link-btn" onclick="copyClassLink('https://zoom.us/j/91000000001', this)">
+                                            <i class="feather-copy"></i> Copy Link
+                                        </button>
+                                    </div>
+                                </div>
 
-                                <button
-                                    class="btn join-btn rbt-btn rbt-switch-btn btn-gradient btn-sm hover-transform-none w-100"
-                                    onclick="joinClass('https://meet.google.com/')">
+                                <!-- Action Button -->
+                                <div class="action-btn-container">
+                                    <button
+                                        class="btn join-btn rbt-btn rbt-switch-btn btn-gradient btn-sm hover-transform-none w-100"
+                                        onclick="joinClass('https://zoom.us/j/91000000001')">
 
-                                    <i class="feather-log-in me-2"></i>
+                                        <i class="feather-log-in me-2"></i>
 
-                                    Join Class
+                                        Join Class
 
-                                </button>
+                                    </button>
+                                </div>
 
                             </div>
 
@@ -1091,12 +1087,12 @@
 
 
                     <!-- =========================================
-                         READING & COMPREHENSION
+                         2. READING & COMPREHENSION
                     ========================================== -->
 
                     <div class="col-md-6">
 
-                        <div class="card class-card literature-card h-100">
+                        <div class="card class-card literature-card student-course-card h-100" data-course="reading">
 
                             <div class="card-body p-4">
 
@@ -1107,6 +1103,10 @@
                                         <h4 class="subject">
                                             Reading &amp; Comprehension
                                         </h4>
+
+                                        <div class="status-badge-container mt-1">
+                                            <span class="awaiting-badge"><i class="feather-clock"></i> Awaiting Link</span>
+                                        </div>
 
                                     </div>
 
@@ -1141,16 +1141,189 @@
 
                                 </div>
 
+                                <!-- Class Link & Copy Box -->
+                                <div class="link-box-container">
+                                    <div class="class-link-box awaiting">
+                                        <span><i class="feather-info me-1"></i> Awaiting tutor to enable link</span>
+                                    </div>
+                                </div>
 
-                                <button
-                                    class="btn awaiting-btn w-100"
-                                    disabled>
+                                <!-- Action Button -->
+                                <div class="action-btn-container">
+                                    <button
+                                        class="btn awaiting-btn w-100"
+                                        disabled>
 
-                                    <i class="feather-clock me-2"></i>
+                                        <i class="feather-clock me-2"></i>
 
-                                    Awaiting Link
+                                        Awaiting Link
 
-                                </button>
+                                    </button>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- =========================================
+                         3. ENGLISH LANGUAGE
+                    ========================================== -->
+
+                    <div class="col-md-6">
+
+                        <div class="card class-card math-card student-course-card h-100" data-course="english">
+
+                            <div class="card-body p-4">
+
+                                <div class="d-flex justify-content-between align-items-start class-card-header">
+
+                                    <div>
+
+                                        <h4 class="subject">
+                                            English Language
+                                        </h4>
+
+                                        <div class="status-badge-container mt-1">
+                                            <span class="awaiting-badge"><i class="feather-clock"></i> Awaiting Link</span>
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="subject-icon">
+
+                                        <i class="feather-edit-3"></i>
+
+                                    </div>
+
+                                </div>
+
+
+                                <div class="class-details">
+
+                                    <p>
+
+                                        <i class="feather-user"></i>
+
+                                        Sarah Khan
+
+                                    </p>
+
+
+                                    <p>
+
+                                        <i class="feather-clock"></i>
+
+                                        Thursday, 16:00 - 17:30
+
+                                    </p>
+
+                                </div>
+
+                                <!-- Class Link & Copy Box -->
+                                <div class="link-box-container">
+                                    <div class="class-link-box awaiting">
+                                        <span><i class="feather-info me-1"></i> Awaiting tutor to enable link</span>
+                                    </div>
+                                </div>
+
+                                <!-- Action Button -->
+                                <div class="action-btn-container">
+                                    <button
+                                        class="btn awaiting-btn w-100"
+                                        disabled>
+
+                                        <i class="feather-clock me-2"></i>
+
+                                        Awaiting Link
+
+                                    </button>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- =========================================
+                         4. LAMDA & PUBLIC SPEAKING
+                    ========================================== -->
+
+                    <div class="col-md-6">
+
+                        <div class="card class-card literature-card student-course-card h-100" data-course="lamda">
+
+                            <div class="card-body p-4">
+
+                                <div class="d-flex justify-content-between align-items-start class-card-header">
+
+                                    <div>
+
+                                        <h4 class="subject">
+                                            LAMDA &amp; Public Speaking
+                                        </h4>
+
+                                        <div class="status-badge-container mt-1">
+                                            <span class="awaiting-badge"><i class="feather-clock"></i> Awaiting Link</span>
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="subject-icon literature-icon">
+
+                                        <i class="feather-mic"></i>
+
+                                    </div>
+
+                                </div>
+
+
+                                <div class="class-details">
+
+                                    <p>
+
+                                        <i class="feather-user"></i>
+
+                                        Victoria Wood
+
+                                    </p>
+
+
+                                    <p>
+
+                                        <i class="feather-clock"></i>
+
+                                        Friday, 15:00 - 16:30
+
+                                    </p>
+
+                                </div>
+
+                                <!-- Class Link & Copy Box -->
+                                <div class="link-box-container">
+                                    <div class="class-link-box awaiting">
+                                        <span><i class="feather-info me-1"></i> Awaiting tutor to enable link</span>
+                                    </div>
+                                </div>
+
+                                <!-- Action Button -->
+                                <div class="action-btn-container">
+                                    <button
+                                        class="btn awaiting-btn w-100"
+                                        disabled>
+
+                                        <i class="feather-clock me-2"></i>
+
+                                        Awaiting Link
+
+                                    </button>
+                                </div>
 
                             </div>
 
@@ -1175,7 +1348,7 @@
      FOOTER
 ========================================================= -->
 
-    <!-- Start Footer Area -->
+            <!-- Start Footer Area -->
     <footer class="rbt-footer footer-style-1 bg-color-white overflow-hidden">
         <div class="footer-top">
             <div class="container">
@@ -1307,75 +1480,37 @@
         </div>
         <!-- End Copyright Area -->
     </footer>
-    <!-- End Footer Area --><!-- =========================================================
-     BACK TO TOP
-========================================================= -->
+    <!-- End Footer Area -->
 
-<div class="rbt-progress-parent">
-
-    <svg
-        class="rbt-back-circle svg-inner"
-        width="100%"
-        height="100%"
-        viewBox="-1 -1 102 102">
-
-        <path
-            d="M50,1 a49,49 0,1,0 0,98 a49,49 0,1,0 0,-98" />
-
-    </svg>
-
-</div>
-
-
-<!-- =========================================================
-     FLOATING CONTACT BUTTONS
-========================================================= -->
-
-<div class="floating-contact">
-
-
-    <!-- CALL -->
-
-    <div class="contact-item call-item">
-
-        <div class="contact-label call-label">
-            Talk To Our Experts
-        </div>
-
-        <a
-            href="tel:+919876543210"
-            class="contact-button call-button"
-            aria-label="Call us">
-
-            <i class="fa fa-phone"></i>
-
-        </a>
-
+        <div class="rbt-progress-parent">
+        <svg class="rbt-back-circle svg-inner" width="100%" height="100%" viewBox="-1 -1 102 102">
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+        </svg>
     </div>
 
-
-    <!-- WHATSAPP -->
-
-    <div class="contact-item whatsapp-item">
-
-        <div class="contact-label whatsapp-label">
-            Message Us
+    <!-- Floating Contact Buttons -->
+    <div class="floating-contact">
+        <!-- Call -->
+        <div class="contact-item call-item">
+            <div class="contact-label call-label">
+                Talk To Our Experts
+            </div>
+            <a href="tel:+919876543210" class="contact-button call-button" aria-label="Call us">
+                <i class="fa fa-phone"></i>
+            </a>
         </div>
 
-        <a
-            href="https://wa.me/919876543210"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="contact-button whatsapp-button"
-            aria-label="Chat with us on WhatsApp">
-
-            <i class="fab fa-whatsapp"></i>
-
-        </a>
-
+        <!-- WhatsApp -->
+        <div class="contact-item whatsapp-item">
+            <div class="contact-label whatsapp-label">
+                Message Us
+            </div>
+            <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer"
+                class="contact-button whatsapp-button" aria-label="Chat with us on WhatsApp">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+        </div>
     </div>
-
-</div>
 
 
 <!-- =========================================================
@@ -1388,26 +1523,132 @@
 
 <script src="assets/js/vendor/bootstrap-select.min.js"></script>
 
-<script src="assets/js/main.js"></script>
+<script src="assets/js/vendor/backtotop.js"></script>
+    <script src="assets/js/main.js"></script>
 
 
 <!-- JOIN CLASS -->
 
 <script>
-
     function joinClass(meetingLink) {
-
-        if (meetingLink) {
-
-            window.open(
-                meetingLink,
-                "_blank"
-            );
-
+        if (meetingLink && meetingLink !== "#") {
+            window.open(meetingLink, "_blank");
         }
-
     }
 
+    function copyClassLink(url, btn) {
+        if (!url) return;
+        if (navigator.clipboard && window.isSecureContext) {
+            navigator.clipboard.writeText(url).then(function() {
+                showCopiedFeedback(btn);
+            }).catch(function() {
+                fallbackCopy(url, btn);
+            });
+        } else {
+            fallbackCopy(url, btn);
+        }
+    }
+
+    function fallbackCopy(url, btn) {
+        var textArea = document.createElement("textarea");
+        textArea.value = url;
+        textArea.style.position = "fixed";
+        textArea.style.left = "-999999px";
+        textArea.style.top = "-999999px";
+        document.body.appendChild(textArea);
+        textArea.focus();
+        textArea.select();
+        try {
+            document.execCommand('copy');
+            showCopiedFeedback(btn);
+        } catch (err) {}
+        textArea.remove();
+    }
+
+    function showCopiedFeedback(btn) {
+        if (!btn) return;
+        var originalHtml = btn.innerHTML;
+        btn.innerHTML = '<i class="feather-check"></i> Copied!';
+        btn.classList.add('copied');
+        setTimeout(function() {
+            btn.innerHTML = originalHtml;
+            btn.classList.remove('copied');
+        }, 2000);
+    }
+
+    function syncStudentClasses() {
+        var POOL_KEY = "lse_class_link_pool";
+        var pool = [];
+        try {
+            var raw = localStorage.getItem(POOL_KEY);
+            if (raw) pool = JSON.parse(raw);
+        } catch (e) {}
+
+        var courseCards = document.querySelectorAll('.student-course-card');
+        courseCards.forEach(function(card) {
+            var courseKey = card.getAttribute('data-course');
+            var assignedLink = pool.find(function(l) {
+                return l.status === "in-use" && l.course === courseKey;
+            });
+
+            var isLive = false;
+            var linkUrl = "";
+
+            if (assignedLink && assignedLink.url) {
+                isLive = true;
+                linkUrl = assignedLink.url;
+            } else if (courseKey === "creative" && (!pool.length || pool.every(function(l){ return l.status === "available"; }))) {
+                // Initial demo display for creative writing
+                isLive = true;
+                linkUrl = "https://zoom.us/j/91000000001";
+            }
+
+            var badgeContainer = card.querySelector('.status-badge-container');
+            var linkBoxContainer = card.querySelector('.link-box-container');
+            var actionContainer = card.querySelector('.action-btn-container');
+
+            if (isLive && linkUrl) {
+                card.classList.add('is-live');
+                if (badgeContainer) {
+                    badgeContainer.innerHTML = '<span class="live-badge"><span class="pulse-dot"></span> Class Live</span>';
+                }
+                if (linkBoxContainer) {
+                    linkBoxContainer.innerHTML = '<div class="class-link-box">' +
+                        '<span class="link-url-text" title="' + linkUrl + '"><i class="feather-link"></i> ' + linkUrl + '</span>' +
+                        '<button type="button" class="copy-link-btn" onclick="copyClassLink(\'' + linkUrl + '\', this)">' +
+                            '<i class="feather-copy"></i> Copy Link' +
+                        '</button>' +
+                    '</div>';
+                }
+                if (actionContainer) {
+                    actionContainer.innerHTML = '<button class="btn join-btn rbt-btn rbt-switch-btn btn-gradient btn-sm hover-transform-none w-100" onclick="joinClass(\'' + linkUrl + '\')">' +
+                        '<i class="feather-log-in me-2"></i> Join Class' +
+                    '</button>';
+                }
+            } else {
+                card.classList.remove('is-live');
+                if (badgeContainer) {
+                    badgeContainer.innerHTML = '<span class="awaiting-badge"><i class="feather-clock"></i> Awaiting Link</span>';
+                }
+                if (linkBoxContainer) {
+                    linkBoxContainer.innerHTML = '<div class="class-link-box awaiting">' +
+                        '<span><i class="feather-info me-1"></i> Awaiting tutor to enable link</span>' +
+                    '</div>';
+                }
+                if (actionContainer) {
+                    actionContainer.innerHTML = '<button class="btn awaiting-btn w-100" disabled>' +
+                        '<i class="feather-clock me-2"></i> Awaiting Link' +
+                    '</button>';
+                }
+            }
+        });
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+        syncStudentClasses();
+        window.addEventListener("storage", syncStudentClasses);
+        setInterval(syncStudentClasses, 2000);
+    });
 </script>
 
 
@@ -1510,6 +1751,61 @@
 </script>
 
 
+
+    <!-- Login Dropdown Script -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const dropdown = document.querySelector(".login-dropdown");
+            const button = document.querySelector(".login-dropdown-btn");
+            if (!dropdown || !button) return;
+
+            button.addEventListener("click", function (e) {
+                e.stopPropagation();
+                dropdown.classList.toggle("active");
+            });
+
+            document.addEventListener("click", function (e) {
+                if (!dropdown.contains(e.target)) {
+                    dropdown.classList.remove("active");
+                }
+            });
+        });
+    </script>
+
+    <!-- Floating Contact Hover / Mobile Toggle Script -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const contactItems = document.querySelectorAll(".floating-contact .contact-item");
+            contactItems.forEach(function (item) {
+                const button = item.querySelector(".contact-button");
+                if (!button) return;
+
+                item.addEventListener("mouseenter", function () {
+                    item.classList.add("show-label");
+                });
+                item.addEventListener("mouseleave", function () {
+                    item.classList.remove("show-label");
+                });
+
+                button.addEventListener("touchstart", function (e) {
+                    if (!item.classList.contains("show-label")) {
+                        contactItems.forEach(function (other) {
+                            other.classList.remove("show-label");
+                        });
+                        item.classList.add("show-label");
+                    }
+                }, { passive: true });
+            });
+
+            document.addEventListener("click", function (event) {
+                if (!event.target.closest(".floating-contact")) {
+                    contactItems.forEach(function (item) {
+                        item.classList.remove("show-label");
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>

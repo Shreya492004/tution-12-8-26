@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -32,10 +33,17 @@
     <link rel="stylesheet" href="assets/css/plugins/magnigy-popup.min.css">
     <link rel="stylesheet" href="assets/css/plugins/plyr.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/custom-ui.css">
 
 
     <!-- Custom CSS -->
     <style>
+
+        /* Base & Global Typography - Euclid Circular matching index.html */
+        body, button, input, select, textarea, table, th, td, h1, h2, h3, h4, h5, h6, p, span, a, label, div {
+            font-family: "Euclid Circular", "Euclid Circular A", var(--font-primary), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+        }
+
         /* Icon Font Protection - Ensure feather and fontawesome icons always render */
         i[class^="feather-"],
         i[class*=" feather-"],
@@ -67,7 +75,43 @@
             display: inline-block !important;
         }
 
-        /* Header Navigation (Increased Size, Clean Medium Weight, 100% Zoom Safe) */
+        /* Base & Global Typography - Euclid Circular matching student-profile.html */
+        body, button, input, select, textarea, table, th, td, h1, h2, h3, h4, h5, h6, p, span, a, label, div {
+            font-family: var(--font-primary), "Euclid Circular", "Euclid Circular A", sans-serif !important;
+        }
+
+        /* Icon Font Protection - Ensure feather and fontawesome icons always render */
+        i[class^="feather-"],
+        i[class*=" feather-"],
+        span[class^="feather-"],
+        span[class*=" feather-"],
+        .feather,
+        [class^="feather-"],
+        [class*=" feather-"] {
+            font-family: 'feather', 'Feather' !important;
+            speak: none;
+            font-style: normal !important;
+            font-weight: normal !important;
+            font-variant: normal !important;
+            text-transform: none !important;
+            line-height: 1 !important;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            display: inline-block !important;
+        }
+
+        i[class^="fa-"],
+        i[class*=" fa-"],
+        [class^="fa-"],
+        [class*=" fa-"],
+        .fa, .fas, .far, .fal, .fad, .fab {
+            font-family: "Font Awesome 5 Pro", "Font Awesome 5 Free", "FontAwesome" !important;
+            font-style: normal !important;
+            font-weight: normal !important;
+            display: inline-block !important;
+        }
+
+        /* Header Navigation (Matched to student-profile.html) */
         .rbt-header .mainbar-row {
             display: flex !important;
             flex-wrap: nowrap !important;
@@ -132,7 +176,7 @@
             }
         }
 
-        /* Dashboard Sidebar Navigation - Restored Original Clean & Beautiful Styling */
+        /* Dashboard Sidebar Navigation (Matched to student-profile.html) */
         .rbt-default-sidebar-wrapper,
         .rbt-dashboard-sidebar {
             position: relative !important;
@@ -239,32 +283,33 @@
             color: var(--color-primary, #2f57ef) !important;
         }
 
-        .rbt-dashboard-content,
-        .rbt-dashboard-content *,
-        .course-fee-box,
-        .course-fee-box * {
-            font-family: var(--font-primary, "Euclid Circular A", "Plus Jakarta Sans", "Inter", sans-serif) !important;
-        }
-
-        .rbt-card-title,
-        .rbt-card-title a {
-            font-family: var(--font-primary, "Euclid Circular A", "Plus Jakarta Sans", "Inter", sans-serif) !important;
-            font-size: 22px !important;
+        .section-title h4.rbt-title-style-3 {
+            margin: 0 0 6px;
+            font-size: 24px !important;
             font-weight: 700 !important;
             color: #192335 !important;
-            line-height: 1.35 !important;
+            font-family: var(--font-primary) !important;
+        }
+
+        .section-title h6 {
+            font-size: 15px !important;
+            font-weight: 600 !important;
+            color: #374151 !important;
+            text-transform: uppercase !important;
+            letter-spacing: 0.05em !important;
+            font-family: var(--font-primary) !important;
         }
 
         /* ==============================
            COURSE FILTER DROPDOWNS
         ============================== */
-
         .course-filter-wrapper {
             background: #fbfbfe;
-            border: 1px solid #e5e7eb;
+            border: 1px solid #e8e8e8;
             border-radius: 12px;
             padding: 20px 24px;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.02);
         }
 
         .course-filter-row {
@@ -279,44 +324,48 @@
         }
 
         .course-filter-label {
-            font-size: 16px !important;
+            font-size: 14px !important;
             font-weight: 600 !important;
-            color: #192335 !important;
+            color: #374151 !important;
+            text-transform: uppercase !important;
+            letter-spacing: 0.05em !important;
             margin-bottom: 8px !important;
             display: block !important;
+            font-family: var(--font-primary) !important;
         }
 
         .course-filter-select {
             display: block !important;
             width: 100% !important;
-            font-size: 18px !important;
+            font-size: 15px !important;
             font-weight: 500 !important;
-            height: 54px !important;
+            height: 46px !important;
             line-height: 1.5 !important;
             color: #192335 !important;
             background-color: #ffffff !important;
-            border: 1px solid #dcdfe6 !important;
-            border-radius: 10px !important;
-            padding: 0 45px 0 18px !important;
+            border: 1px solid #e2e8f0 !important;
+            border-radius: 8px !important;
+            padding: 0 40px 0 16px !important;
             cursor: pointer !important;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%23192335' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E") !important;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236c4df6' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E") !important;
             background-repeat: no-repeat !important;
-            background-position: right 18px center !important;
-            background-size: 18px !important;
+            background-position: right 16px center !important;
+            background-size: 16px !important;
             -webkit-appearance: none !important;
             -moz-appearance: none !important;
             appearance: none !important;
-            transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
+            transition: all 0.2s ease !important;
+            font-family: var(--font-primary) !important;
         }
 
         .course-filter-select:focus {
             outline: none !important;
             border-color: #6c4df6 !important;
-            box-shadow: 0 0 0 3px rgba(108, 77, 246, 0.15) !important;
+            box-shadow: 0 0 0 3px rgba(108, 77, 246, 0.12) !important;
         }
 
         .course-filter-select option {
-            font-size: 18px !important;
+            font-size: 15px !important;
             font-weight: 400 !important;
             color: #192335 !important;
             background: #ffffff !important;
@@ -328,80 +377,142 @@
         }
 
         /* ==============================
-           COURSE FEE STRUCTURE & BADGES
+           COURSE CARD & SINGLE-LINE FEE / TIME BOXES
         ============================== */
+        .rbt-card.variation-01 {
+            border: 1px solid #e8e8e8 !important;
+            border-radius: 12px !important;
+            overflow: hidden !important;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03) !important;
+            transition: all 0.25s ease !important;
+            background: #ffffff !important;
+            height: 100%;
+        }
+
+        .rbt-card.variation-01:hover {
+            transform: translateY(-3px) !important;
+            border-color: #6c4df6 !important;
+            box-shadow: 0 8px 20px rgba(108, 77, 246, 0.12) !important;
+        }
+
+        .rbt-card-title,
+        .rbt-card-title a {
+            font-family: var(--font-primary), "Euclid Circular", sans-serif !important;
+            font-size: 18px !important;
+            font-weight: 600 !important;
+            color: #192335 !important;
+            line-height: 1.4 !important;
+            margin-bottom: 0 !important;
+            transition: color 0.2s ease !important;
+        }
+
+        .rbt-card-title a:hover {
+            color: #6c4df6 !important;
+        }
+
+        .rbt-card-body {
+            padding: 18px 20px 20px !important;
+        }
 
         .course-fee-box {
-            margin-top: 18px;
-            padding-top: 15px;
-            border-top: 1px solid #e6e6e6;
-        }
-
-        .course-fee-title {
-            font-size: 14px !important;
-            font-weight: 600 !important;
-            margin-bottom: 8px !important;
-            color: #64748b !important;
-            text-transform: uppercase !important;
-            letter-spacing: 0.03em !important;
+            margin-top: 14px;
+            padding-top: 12px;
+            border-top: 1px solid #e8e8e8;
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .course-type-tag {
-            display: inline-block;
-            padding: 3px 10px;
-            border-radius: 6px;
-            font-size: 13px !important;
-            font-weight: 600 !important;
-            text-transform: none !important;
-        }
-
-        .course-type-tag.one-to-one {
-            background: #eeecfb;
-            color: #6c4df6;
-        }
-
-        .course-type-tag.one-to-many {
-            background: #eaf8ef;
-            color: #168653;
-        }
-
-        .course-fee {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
+            flex-direction: column;
             gap: 10px;
         }
 
-        .course-fee-label {
-            font-size: 18px !important;
+        /* STRICT SAME-LINE ROWS */
+        .course-fee-row,
+        .course-time-row {
+            display: flex !important;
+            flex-wrap: nowrap !important;
+            align-items: center !important;
+            justify-content: space-between !important;
+            gap: 8px !important;
+            width: 100% !important;
+        }
+
+        .course-row-label {
+            font-size: 13px !important;
+            font-weight: 600 !important;
             color: #374151 !important;
-            font-weight: 500 !important;
+            text-transform: uppercase !important;
+            letter-spacing: 0.04em !important;
+            font-family: var(--font-primary), "Euclid Circular", sans-serif !important;
+            white-space: nowrap !important;
+            flex-shrink: 0 !important;
         }
 
-        .course-fee-price {
-            font-size: 24px !important;
-            font-weight: 700 !important;
-            color: #2f57ef !important;
+        .course-row-right {
+            display: flex !important;
+            flex-wrap: nowrap !important;
+            align-items: center !important;
+            gap: 6px !important;
+            flex-shrink: 0 !important;
+            justify-content: flex-end !important;
         }
 
-        .course-fee-price small {
-            font-size: 17px !important;
+        /* Badge Pills - Colorful Boxes */
+        .course-badge-pill {
+            display: inline-flex !important;
+            align-items: center !important;
+            gap: 4px !important;
+            padding: 3px 8px !important;
+            border-radius: 6px !important;
+            font-size: 12.5px !important;
             font-weight: 500 !important;
-            color: #64748b !important;
+            white-space: nowrap !important;
+            font-family: var(--font-primary), "Euclid Circular", sans-serif !important;
+            line-height: 1.2 !important;
+            flex-shrink: 0 !important;
+        }
+
+        /* Fee Pill (Colorful box for £80 /month) */
+        .fee-pill {
+            background: #f0edff !important;
+            color: #6c4df6 !important;
+            border: 1px solid #dcd5ff !important;
+            font-weight: 600 !important;
+        }
+
+        /* One to One Pill */
+        .type-pill.one-to-one {
+            background: #ede9fe !important;
+            color: #6d28d9 !important;
+            border: 1px solid #ddd6fe !important;
+        }
+
+        /* One to Many Pill */
+        .type-pill.one-to-many {
+            background: #e0f2fe !important;
+            color: #0369a1 !important;
+            border: 1px solid #bae6fd !important;
+        }
+
+        /* Time Pill (Colorful box for Class Time on the right) */
+        .time-pill {
+            background: #f5f5f7 !important;
+            color: #444444 !important;
+            border: 1px solid #e8e8ea !important;
+        }
+
+        .time-pill i {
+            color: #6c4df6 !important;
+            font-size: 12.5px !important;
         }
 
         .no-course-found {
             display: none;
             text-align: center;
             padding: 40px 20px;
-            font-size: 18px;
+            font-size: 16px;
             color: #64748b;
             background: #f9fafb;
             border-radius: 12px;
             width: 100%;
+            font-family: var(--font-primary) !important;
         }
     </style>
 
@@ -418,188 +529,6 @@
     <header class="rbt-header rbt-header-9">
 
         <div class="rbt-sticky-placeholder"></div>
-
-
-        <!-- Header Top -->
-
-        <div class="rbt-header-middle position-relative rbt-header-mid-1 bg-color-white rbt-border-bottom">
-
-            <div class="container">
-
-                <div class="rbt-header-sec align-items-center">
-
-
-                    <!-- Header Left -->
-
-                    <div class="rbt-header-sec-col rbt-header-left">
-
-                        <div class="rbt-header-content">
-
-                            <div class="header-info">
-
-                                <ul class="rbt-dropdown-menu switcher-language">
-
-                                    <li class="has-child-menu">
-
-                                        <a href="#">
-
-                                            <img class="left-image"
-                                                src="assets/images/icons/en-us.png"
-                                                alt="Language Images">
-
-                                            <span class="menu-item">
-                                                English
-                                            </span>
-
-                                        </a>
-
-                                    </li>
-
-                                </ul>
-
-                            </div>
-
-
-                            <div class="header-info">
-
-                                <ul class="rbt-dropdown-menu currency-menu">
-
-                                    <li class="has-child-menu">
-
-                                        <ul class="sub-menu hover-reverse">
-
-                                            <li>
-                                                <a href="#">
-                                                    <span class="menu-item">EUR</span>
-                                                </a>
-                                            </li>
-
-                                            <li>
-                                                <a href="#">
-                                                    <span class="menu-item">GBP</span>
-                                                </a>
-                                            </li>
-
-                                        </ul>
-
-                                    </li>
-
-                                </ul>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-                    <!-- Search -->
-
-                    <div class="rbt-header-sec-col rbt-header-center d-none d-md-block">
-
-                        <div class="rbt-header-content">
-
-                            <div class="header-info">
-
-                                <div class="rbt-search-field">
-
-                                    <div class="search-field">
-
-                                        <input type="text"
-                                            placeholder="Search Course">
-
-                                        <button class="rbt-round-btn serach-btn"
-                                            type="submit">
-
-                                            <i class="feather-search"></i>
-
-                                        </button>
-
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-                    <!-- Login -->
-
-                    <div class="rbt-header-sec-col rbt-header-right">
-
-                        <div class="rbt-btn-wrapper">
-
-                            <div class="login-dropdown">
-
-                                <button type="button"
-                                    class="rbt-btn rbt-switch-btn btn-gradient btn-sm hover-transform-none login-dropdown-btn">
-
-                                    <span data-text="Login">
-                                        Login
-                                    </span>
-
-                                    <i class="feather-chevron-down"></i>
-
-                                </button>
-
-
-                                <div class="login-dropdown-menu">
-
-                                    <a href="instructor-profile.html">
-
-                                        <i class="feather-user"></i>
-
-                                        <span>
-                                            Tutor Login
-                                        </span>
-
-                                    </a>
-
-
-                                    <a href="student-profile.html">
-
-                                        <i class="feather-book-open"></i>
-
-                                        <span>
-                                            Student Login
-                                        </span>
-
-                                    </a>
-
-                                </div>
-
-                            </div>
-
-                        </div>
-
-
-                        <!-- Mobile Menu -->
-
-                        <div class="mobile-menu-bar d-block d-xl-none">
-
-                            <div class="hamberger">
-
-                                <button class="hamberger-button rbt-round-btn">
-
-                                    <i class="feather-menu"></i>
-
-                                </button>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
 
         <!-- =====================================================
              MAIN NAVIGATION
@@ -689,17 +618,28 @@
 
                     <div class="header-right">
 
-                        <div class="rbt-btn-wrapper d-none d-xl-block">
-
+                        <div class="rbt-btn-wrapper d-none d-xl-flex align-items-center gap-3">
+                            <div class="login-dropdown">
+                                <button type="button"
+                                    class="rbt-btn rbt-switch-btn btn-gradient btn-sm hover-transform-none login-dropdown-btn">
+                                    <span data-text="Login">Login</span>
+                                    <i class="feather-chevron-down"></i>
+                                </button>
+                                <div class="login-dropdown-menu">
+                                    <a href="instructor-profile.html">
+                                        <i class="feather-user"></i>
+                                        <span>Tutor Login</span>
+                                    </a>
+                                    <a href="student-profile.html">
+                                        <i class="feather-book-open"></i>
+                                        <span>Student Login</span>
+                                    </a>
+                                </div>
+                            </div>
                             <a class="rbt-btn rbt-switch-btn btn-gradient btn-sm hover-transform-none"
                                 href="login-register.html">
-
-                                <span data-text="Join Now">
-                                    Join Now
-                                </span>
-
+                                <span data-text="Join Now">Join Now</span>
                             </a>
-
                         </div>
 
 
@@ -783,7 +723,7 @@
                         </li>
                         <li>
                             <a href="https://www.twitter.com" aria-label="X (Twitter)">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" viewBox="0 0 24 24" class="social-icon-x" style="vertical-align: -2px;"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" viewBox="0 0 24 24" class="social-icon-x" style="vertical-align: -2px;"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
                             </a>
                         </li>
                         <li>
@@ -1075,50 +1015,6 @@
                                     </div>
 
 
-                                    <!-- =========================================
-                                         COURSE & CLASS TIME FILTER DROPDOWNS
-                                    ========================================== -->
-
-                                    <div class="course-filter-wrapper">
-
-                                        <div class="course-filter-row">
-
-                                            <!-- COURSE NAME DROPDOWN (4 COURSES) -->
-                                            <div class="course-filter-item">
-
-                                                <label class="course-filter-label" for="courseFilterSelect">
-                                                    Course Name
-                                                </label>
-
-                                                <select id="courseFilterSelect" class="form-control course-filter-select">
-                                                    <option value="all">All Courses</option>
-                                                    <option value="reading">Reading &amp; Comprehension</option>
-                                                    <option value="creative">Creative Writing</option>
-                                                    <option value="english">English Language</option>
-                                                    <option value="lamda">LAMDA &amp; Public Speaking</option>
-                                                </select>
-
-                                            </div>
-
-
-                                            <!-- CLASS TIME / TYPE DROPDOWN (ONE TO ONE / ONE TO MANY) -->
-                                            <div class="course-filter-item">
-
-                                                <label class="course-filter-label" for="classTypeFilterSelect">
-                                                    Class Time / Type
-                                                </label>
-
-                                                <select id="classTypeFilterSelect" class="form-control course-filter-select">
-                                                    <option value="all">All Class Types</option>
-                                                    <option value="one-to-one">One to One</option>
-                                                    <option value="one-to-many">One to Many (Group)</option>
-                                                </select>
-
-                                            </div>
-
-                                        </div>
-
-                                    </div>
 
 
                                     <!-- =========================================
@@ -1134,232 +1030,151 @@
 
                                             <div class="row g-5" id="studentCoursesGrid">
 
-
                                                 <!-- COURSE 1: Reading & Comprehension (One to One) -->
                                                 <div class="col-lg-6 col-md-6 col-12 student-course-card-col" data-course="reading" data-type="one-to-one">
-
                                                     <div class="rbt-card variation-01 rbt-hover">
 
                                                         <div class="rbt-card-img">
-
-                                                            <a href="reading-comprehension.html">
-
-                                                                <img src="assets/images/course/classic-lms-01.jpg"
-                                                                    alt="Reading and Comprehension">
-
-                                                            </a>
-
+                                                            <img src="assets/images/course/classic-lms-01.jpg" alt="Reading and Comprehension">
                                                         </div>
 
-
                                                         <div class="rbt-card-body">
-
                                                             <h4 class="rbt-card-title">
-
-                                                                <a href="reading-comprehension.html">
-                                                                    Reading &amp; Comprehension
-                                                                </a>
-
+                                                                Reading &amp; Comprehension
                                                             </h4>
 
-
                                                             <div class="course-fee-box">
-
-                                                                <div class="course-fee-title">
-                                                                    <span>Fee Structure</span>
-                                                                    <span class="course-type-tag one-to-one">One to One</span>
+                                                                <div class="course-fee-row">
+                                                                    <span class="course-row-label">Fee Structure </span>
+                                                                    <div class="course-row-right">
+                                                                        <span class="course-badge-pill fee-pill">£80 /month</span>
+                                                                        <span class="course-badge-pill type-pill one-to-one">One-to-One</span><br>
+                                                                    </div>
                                                                 </div>
 
-                                                                <div class="course-fee">
-
-                                                                    <span class="course-fee-label">
-                                                                        Monthly Payment
-                                                                    </span>
-
-                                                                    <span class="course-fee-price">
-                                                                        £80
-                                                                        <small>/month</small>
-                                                                    </span>
-
+                                                                <div class="course-time-row">
+                                                                    <span class="course-row-label">Class Time</span>
+                                                                    <div class="course-row-right">
+                                                                        <span class="course-badge-pill time-pill">
+                                                                            <i class="feather-clock"></i> Mon &amp; Wed • 10:00 AM - 11:30 AM
+                                                                        </span>
+                                                                    </div>
                                                                 </div>
-
                                                             </div>
-
                                                         </div>
 
                                                     </div>
-
                                                 </div>
 
 
                                                 <!-- COURSE 2: Creative Writing (One to Many) -->
                                                 <div class="col-lg-6 col-md-6 col-12 student-course-card-col" data-course="creative" data-type="one-to-many">
-
                                                     <div class="rbt-card variation-01 rbt-hover">
 
                                                         <div class="rbt-card-img">
-
-                                                            <a href="creative-writing.html">
-
-                                                                <img src="assets/images/course/course-01.jpg"
-                                                                    alt="Creative Writing">
-
-                                                            </a>
-
+                                                            <img src="assets/images/course/course-01.jpg" alt="Creative Writing">
                                                         </div>
 
-
                                                         <div class="rbt-card-body">
-
                                                             <h4 class="rbt-card-title">
-
-                                                                <a href="creative-writing.html">
-                                                                    Creative Writing
-                                                                </a>
-
+                                                                Creative Writing
                                                             </h4>
 
-
                                                             <div class="course-fee-box">
-
-                                                                <div class="course-fee-title">
-                                                                    <span>Fee Structure</span>
-                                                                    <span class="course-type-tag one-to-many">One to Many</span>
+                                                                <div class="course-fee-row">
+                                                                    <span class="course-row-label">Fee Structure</span>
+                                                                    <div class="course-row-right">
+                                                                        <span class="course-badge-pill fee-pill">£80 /month</span>
+                                                                        <span class="course-badge-pill type-pill one-to-many">One-to-Many</span><br>
+                                                                    </div>
                                                                 </div>
 
-                                                                <div class="course-fee">
-
-                                                                    <span class="course-fee-label">
-                                                                        Monthly Payment
-                                                                    </span>
-
-                                                                    <span class="course-fee-price">
-                                                                        £75
-                                                                        <small>/month</small>
-                                                                    </span>
-
+                                                                <div class="course-time-row">
+                                                                    <span class="course-row-label">Class Time</span>
+                                                                    <div class="course-row-right">
+                                                                        <span class="course-badge-pill time-pill">
+                                                                            <i class="feather-clock"></i> Tue &amp; Thu • 02:00 PM - 03:30 PM
+                                                                        </span>
+                                                                    </div>
                                                                 </div>
-
                                                             </div>
-
                                                         </div>
 
                                                     </div>
-
                                                 </div>
 
 
                                                 <!-- COURSE 3: English Language (One to One) -->
                                                 <div class="col-lg-6 col-md-6 col-12 student-course-card-col" data-course="english" data-type="one-to-one">
-
                                                     <div class="rbt-card variation-01 rbt-hover">
 
                                                         <div class="rbt-card-img">
-
-                                                            <a href="english-language.html">
-
-                                                                <img src="assets/images/course/course-online-02.jpg"
-                                                                    alt="English Language">
-
-                                                            </a>
-
+                                                            <img src="assets/images/course/course-online-02.jpg" alt="English Language">
                                                         </div>
 
-
                                                         <div class="rbt-card-body">
-
                                                             <h4 class="rbt-card-title">
-
-                                                                <a href="english-language.html">
-                                                                    English Language
-                                                                </a>
-
+                                                                English Language
                                                             </h4>
 
-
                                                             <div class="course-fee-box">
-
-                                                                <div class="course-fee-title">
-                                                                    <span>Fee Structure</span>
-                                                                    <span class="course-type-tag one-to-one">One to One</span>
+                                                                <div class="course-fee-row">
+                                                                    <span class="course-row-label">Fee Structure</span>
+                                                                    <div class="course-row-right">
+                                                                        <span class="course-badge-pill fee-pill">£80 /month</span>
+                                                                        <span class="course-badge-pill type-pill one-to-one">One-to-One</span><br>
+                                                                    </div>
                                                                 </div>
 
-                                                                <div class="course-fee">
-
-                                                                    <span class="course-fee-label">
-                                                                        Monthly Payment
-                                                                    </span>
-
-                                                                    <span class="course-fee-price">
-                                                                        £90
-                                                                        <small>/month</small>
-                                                                    </span>
-
+                                                                <div class="course-time-row">
+                                                                    <span class="course-row-label">Class Time</span>
+                                                                    <div class="course-row-right">
+                                                                        <span class="course-badge-pill time-pill">
+                                                                            <i class="feather-clock"></i> Fri • 04:00 PM - 05:30 PM
+                                                                        </span>
+                                                                    </div>
                                                                 </div>
-
                                                             </div>
-
                                                         </div>
 
                                                     </div>
-
                                                 </div>
 
 
                                                 <!-- COURSE 4: LAMDA & Public Speaking (One to Many) -->
                                                 <div class="col-lg-6 col-md-6 col-12 student-course-card-col" data-course="lamda" data-type="one-to-many">
-
                                                     <div class="rbt-card variation-01 rbt-hover">
 
                                                         <div class="rbt-card-img">
-
-                                                            <a href="lamda-and-public-speaking.html">
-
-                                                                <img src="assets/images/course/classic-lms-04.jpg"
-                                                                    alt="LAMDA & Public Speaking">
-
-                                                            </a>
-
+                                                            <img src="assets/images/course/classic-lms-04.jpg" alt="LAMDA & Public Speaking">
                                                         </div>
 
-
                                                         <div class="rbt-card-body">
-
                                                             <h4 class="rbt-card-title">
-
-                                                                <a href="lamda-and-public-speaking.html">
-                                                                    LAMDA &amp; Public Speaking
-                                                                </a>
-
+                                                                LAMDA &amp; Public Speaking
                                                             </h4>
 
-
                                                             <div class="course-fee-box">
-
-                                                                <div class="course-fee-title">
-                                                                    <span>Fee Structure</span>
-                                                                    <span class="course-type-tag one-to-many">One to Many</span>
+                                                                <div class="course-fee-row">
+                                                                    <span class="course-row-label">Fee Structure</span>
+                                                                    <div class="course-row-right">
+                                                                        <span class="course-badge-pill fee-pill">£80 /month</span>
+                                                                        <span class="course-badge-pill type-pill one-to-many">One-to-Many</span><br>
+                                                                    </div>
                                                                 </div>
 
-                                                                <div class="course-fee">
-
-                                                                    <span class="course-fee-label">
-                                                                        Monthly Payment
-                                                                    </span>
-
-                                                                    <span class="course-fee-price">
-                                                                        £85
-                                                                        <small>/month</small>
-                                                                    </span>
-
+                                                                <div class="course-time-row">
+                                                                    <span class="course-row-label">Class Time</span>
+                                                                    <div class="course-row-right">
+                                                                        <span class="course-badge-pill time-pill">
+                                                                            <i class="feather-clock"></i> Sat • 10:00 AM - 11:30 AM
+                                                                        </span>
+                                                                    </div>
                                                                 </div>
-
                                                             </div>
-
                                                         </div>
 
                                                     </div>
-
                                                 </div>
 
 
@@ -1390,6 +1205,7 @@
 
     </div>
 
+
     <!-- =========================================================
          FOOTER SEPARATOR
     ========================================================== -->
@@ -1409,155 +1225,315 @@
          FOOTER
     ========================================================== -->
 
-                                <!-- Start Footer Area -->
+    <!-- Start Footer Area -->
     <footer class="rbt-footer footer-style-1 bg-color-white overflow-hidden">
+
         <div class="footer-top">
+
             <div class="container">
+
                 <div class="row g-5">
+
                     <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+
                         <div class="footer-widget">
+
                             <div class="logo">
+
                                 <a href="index.html">
-                                    <img src="assets/images/logo/logo.png" alt="Edu-Loop Sign Logo">
+
+                                    <img src="assets/images/logo/logo.png"
+                                        alt="Edu-Loop Sign Logo">
+
                                 </a>
+
                             </div>
 
-                            <p class="description mt--20">We are always seeking talented and motivated individuals to
-                                join our team.</p>
+                            <p class="description mt--20">
+                                We are always seeking talented and motivated individuals to
+                                join our team.
+                            </p>
 
                             <ul class="social-icon social-default justify-content-start">
-                                <li><a href="https://www.facebook.com/">
+
+                                <li>
+                                    <a href="https://www.facebook.com/">
                                         <i class="feather-facebook"></i>
                                     </a>
                                 </li>
-                                <li><a href="https://www.twitter.com" aria-label="X (Twitter)">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" viewBox="0 0 24 24" class="social-icon-x" style="vertical-align: -2px;"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+
+                                <li>
+                                    <a href="https://www.twitter.com"
+                                        aria-label="X (Twitter)">
+
+                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                            width="15"
+                                            height="15"
+                                            fill="currentColor"
+                                            viewBox="0 0 24 24"
+                                            class="social-icon-x"
+                                            style="vertical-align: -2px;">
+
+                                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+
+                                        </svg>
+
                                     </a>
                                 </li>
-                                <li><a href="https://www.instagram.com/">
+
+                                <li>
+                                    <a href="https://www.instagram.com/">
                                         <i class="feather-instagram"></i>
                                     </a>
                                 </li>
-                                <li><a href="https://www.linkdin.com/">
+
+                                <li>
+                                    <a href="https://www.linkdin.com/">
                                         <i class="feather-linkedin"></i>
                                     </a>
                                 </li>
+
                             </ul>
+
                         </div>
+
                     </div>
 
-                    <div class="col-lg-2 col-md-6 col-sm-6 col-12">
-                        <div class="footer-widget">
-                            <h5 class="ft-title">Useful Links</h5>
-                            <ul class="ft-link">
-                                <li>
-                                    <a href="our-team.html">Our Team</a>
-                                </li>
-                                <li>
-                                    <a href="our-tuition.html">Our Tuition</a>
-                                </li>
-                                <li>
-                                    <a href="holiday-camps.html">Holiday Camps</a>
-                                </li>
-                                <li>
-                                    <a href="plans-and-pricing.html">Plans &amp; Pricing</a>
-                                </li>
-                                <li>
-                                    <a href="book-online.html">Book Online</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
 
                     <div class="col-lg-2 col-md-6 col-sm-6 col-12">
+
                         <div class="footer-widget">
-                            <h5 class="ft-title">Popular Programs</h5>
+
+                            <h5 class="ft-title">
+                                Useful Links
+                            </h5>
+
                             <ul class="ft-link">
+
                                 <li>
-                                    <a href="our-tuition.html">Primary Tuition</a>
+                                    <a href="our-team.html">
+                                        Our Team
+                                    </a>
                                 </li>
+
                                 <li>
-                                    <a href="our-tuition.html">Secondary Tuition</a>
+                                    <a href="our-tuition.html">
+                                        Our Tuition
+                                    </a>
                                 </li>
+
                                 <li>
-                                    <a href="our-tuition.html">GCSE Tuition</a>
+                                    <a href="holiday-camps.html">
+                                        Holiday Camps
+                                    </a>
                                 </li>
+
                                 <li>
-                                    <a href="our-tuition.html">IGCSE Tuition</a>
+                                    <a href="plans-and-pricing.html">
+                                        Plans &amp; Pricing
+                                    </a>
                                 </li>
+
                                 <li>
-                                    <a href="our-tuition.html">A-Level Tuition</a>
+                                    <a href="book-online.html">
+                                        Book Online
+                                    </a>
                                 </li>
-                                <li>
-                                    <a href="holiday-camps.html">Holiday Camps</a>
-                                </li>
+
                             </ul>
+
                         </div>
+
                     </div>
+
+
+                    <div class="col-lg-2 col-md-6 col-sm-6 col-12">
+
+                        <div class="footer-widget">
+
+                            <h5 class="ft-title">
+                                Popular Programs
+                            </h5>
+
+                            <ul class="ft-link">
+
+                                <li>
+                                    <a href="our-tuition.html">
+                                        Primary Tuition
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="our-tuition.html">
+                                        Secondary Tuition
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="our-tuition.html">
+                                        GCSE Tuition
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="our-tuition.html">
+                                        IGCSE Tuition
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="our-tuition.html">
+                                        A-Level Tuition
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="holiday-camps.html">
+                                        Holiday Camps
+                                    </a>
+                                </li>
+
+                            </ul>
+
+                        </div>
+
+                    </div>
+
 
                     <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+
                         <div class="footer-widget">
-                            <h5 class="ft-title">Get Contact</h5>
+
+                            <h5 class="ft-title">
+                                Get Contact
+                            </h5>
+
                             <ul class="ft-link">
-                                <li><span>Phone:</span> <a href="#">(406) 555-0120</a></li>
-                                <li><span>E-mail:</span> <a href="mailto:info@londonstaredu.com">info@londonstaredu.com</a></li>
+
+                                <li>
+                                    <span>Phone:</span>
+                                    <a href="#">
+                                        (406) 555-0120
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <span>E-mail:</span>
+                                    <a href="mailto:info@londonstaredu.com">
+                                        info@londonstaredu.com
+                                    </a>
+                                </li>
+
                             </ul>
 
+
                             <div class="newsletter-form mt--20">
-                                <h6 class="w-600">Location</h6>
-                                <p class="description">2000+ Our students are subscribe Around the World.<br> Don’t be
-                                    shy introduce yourself!</p>
+
+                                <h6 class="w-600">
+                                    Location
+                                </h6>
+
+                                <p class="description">
+                                    2000+ Our students are subscribe Around the World.<br>
+                                    Don’t be shy introduce yourself!
+                                </p>
+
                             </div>
+
                         </div>
+
                     </div>
+
                 </div>
+
             </div>
+
         </div>
+
+
         <div class="rbt-separator-mid">
+
             <div class="container">
+
                 <hr class="rbt-separator m-0">
+
             </div>
+
         </div>
+
+
         <!-- Start Copyright Area -->
+
         <div class="copyright-area copyright-style-1 ptb--20">
+
             <div class="container">
+
                 <div class="row align-items-center">
+
                     <div class="col-xxl-7 col-xl-7 col-lg-7 col-md-12 col-12">
+
                         <p class="rbt-link-hover text-center text-lg-start">
+
                             Copyright © 2026 by
-                            <a href="index.html">London Star Education Ltd.</a>
+
+                            <a href="index.html">
+                                London Star Education Ltd.
+                            </a>
+
                             All Rights Reserved. Designed by
-                            <a href="https://rkisystems.co.uk/" target="_blank">RKI Systems</a>
+
+                            <a href="https://rkisystems.co.uk/"
+                                target="_blank">
+                                RKI Systems
+                            </a>
+
                         </p>
+
                     </div>
+
+
                     <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-12 col-12">
+
                         <ul class="copyright-link rbt-link-hover justify-content-center justify-content-lg-end mt_sm--10 mt_md--10">
-                            <li><a href="#">Terms of service</a></li>
-                            <li><a href="privacy-policy.html">Privacy policy</a></li>
+
+                            <li>
+                                <a href="#">
+                                    Terms of service
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="privacy-policy.html">
+                                    Privacy policy
+                                </a>
+                            </li>
+
                         </ul>
+
                     </div>
+
                 </div>
+
             </div>
+
         </div>
+
         <!-- End Copyright Area -->
+
     </footer>
-    <!-- End Footer Area --><!-- =========================================================
+
+    <!-- End Footer Area -->
+
+
+    <!-- =========================================================
          BACK TO TOP
     ========================================================== -->
 
-    <div class="rbt-progress-parent">
-
-        <svg class="rbt-back-circle svg-inner"
-            width="100%"
-            height="100%"
-            viewBox="-1 -1 102 102">
-
+        <div class="rbt-progress-parent">
+        <svg class="rbt-back-circle svg-inner" width="100%" height="100%" viewBox="-1 -1 102 102">
             <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
-
         </svg>
-
     </div>
-
 
     <!-- Floating Contact Buttons -->
     <div class="floating-contact">
@@ -1589,56 +1565,35 @@
     ========================================================== -->
 
     <script src="assets/js/vendor/modernizr.min.js"></script>
-
     <script src="assets/js/vendor/jquery.js"></script>
-
     <script src="assets/js/vendor/bootstrap.min.js"></script>
-
     <script src="assets/js/vendor/sal.js"></script>
-
     <script src="assets/js/vendor/swiper.js"></script>
-
     <script src="assets/js/vendor/magnify.min.js"></script>
-
     <script src="assets/js/vendor/jquery-appear.js"></script>
-
     <script src="assets/js/vendor/odometer.js"></script>
-
     <script src="assets/js/vendor/backtotop.js"></script>
-
     <script src="assets/js/vendor/isotop.js"></script>
-
     <script src="assets/js/vendor/imageloaded.js"></script>
-
     <script src="assets/js/vendor/wow.js"></script>
-
     <script src="assets/js/vendor/waypoint.min.js"></script>
-
     <script src="assets/js/vendor/easypie.js"></script>
-
     <script src="assets/js/vendor/text-type.js"></script>
-
     <script src="assets/js/vendor/jquery-one-page-nav.js"></script>
-
     <script src="assets/js/vendor/bootstrap-select.min.js"></script>
-
     <script src="assets/js/vendor/jquery-ui.js"></script>
-
     <script src="assets/js/vendor/magnify-popup.min.js"></script>
-
     <script src="assets/js/vendor/paralax-scroll.js"></script>
-
     <script src="assets/js/vendor/paralax.min.js"></script>
-
     <script src="assets/js/vendor/countdown.js"></script>
-
     <script src="assets/js/vendor/plyr.js"></script>
-
     <script src="assets/js/main.js"></script>
 
 
     <!-- Floating Contact Script -->
+
     <script>
+
         document.addEventListener("DOMContentLoaded", function () {
 
             const contactItems =
@@ -1656,7 +1611,9 @@
                         contactItems.forEach(function (otherItem) {
 
                             if (otherItem !== item) {
+
                                 otherItem.classList.remove("show-label");
+
                             }
 
                         });
@@ -1685,6 +1642,7 @@
             });
 
         });
+
     </script>
 
 
@@ -1730,47 +1688,93 @@
     </script>
 
 
-
     <script>
+
         document.addEventListener('DOMContentLoaded', function () {
-            var courseSelect = document.getElementById('courseFilterSelect');
-            var typeSelect = document.getElementById('classTypeFilterSelect');
-            var cards = document.querySelectorAll('.student-course-card-col');
-            var noFound = document.getElementById('noCourseFound');
+
+            var courseSelect =
+                document.getElementById('courseFilterSelect');
+
+            var typeSelect =
+                document.getElementById('classTypeFilterSelect');
+
+            var cards =
+                document.querySelectorAll('.student-course-card-col');
+
+            var noFound =
+                document.getElementById('noCourseFound');
+
 
             function filterCourses() {
-                var selectedCourse = courseSelect ? courseSelect.value : 'all';
-                var selectedType = typeSelect ? typeSelect.value : 'all';
+
+                var selectedCourse =
+                    courseSelect ? courseSelect.value : 'all';
+
+                var selectedType =
+                    typeSelect ? typeSelect.value : 'all';
+
                 var visibleCount = 0;
 
-                cards.forEach(function (card) {
-                    var cardCourse = card.getAttribute('data-course');
-                    var cardType = card.getAttribute('data-type');
 
-                    var matchCourse = (selectedCourse === 'all' || cardCourse === selectedCourse);
-                    var matchType = (selectedType === 'all' || cardType === selectedType);
+                cards.forEach(function (card) {
+
+                    var cardCourse =
+                        card.getAttribute('data-course');
+
+                    var cardType =
+                        card.getAttribute('data-type');
+
+
+                    var matchCourse =
+                        (selectedCourse === 'all' ||
+                            cardCourse === selectedCourse);
+
+                    var matchType =
+                        (selectedType === 'all' ||
+                            cardType === selectedType);
+
 
                     if (matchCourse && matchType) {
+
                         card.style.display = 'block';
+
                         visibleCount++;
+
                     } else {
+
                         card.style.display = 'none';
+
                     }
+
                 });
 
+
                 if (noFound) {
-                    noFound.style.display = (visibleCount === 0) ? 'block' : 'none';
+
+                    noFound.style.display =
+                        (visibleCount === 0) ? 'block' : 'none';
+
                 }
+
             }
 
+
             if (courseSelect) {
+
                 courseSelect.addEventListener('change', filterCourses);
+
             }
+
             if (typeSelect) {
+
                 typeSelect.addEventListener('change', filterCourses);
+
             }
+
         });
+
     </script>
+
 </body>
 
 </html>

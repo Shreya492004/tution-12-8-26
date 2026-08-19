@@ -27,6 +27,7 @@
     <link rel="stylesheet" href="assets/css/plugins/magnigy-popup.min.css">
     <link rel="stylesheet" href="assets/css/plugins/plyr.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/custom-ui.css">
 
     <!-- CLASS LINK CUSTOM STYLE -->
     <style>
@@ -54,7 +55,12 @@
         i[class*=" fa-"],
         [class^="fa-"],
         [class*=" fa-"],
-        .fa, .fas, .far, .fal, .fad, .fab {
+        .fa,
+        .fas,
+        .far,
+        .fal,
+        .fad,
+        .fab {
             font-family: "Font Awesome 5 Pro", "Font Awesome 5 Free", "FontAwesome" !important;
             font-style: normal !important;
             font-weight: normal !important;
@@ -91,14 +97,14 @@
             list-style: none !important;
         }
 
-        .rbt-header .rbt-main-navigation .mainmenu > li {
+        .rbt-header .rbt-main-navigation .mainmenu>li {
             flex-shrink: 0 !important;
             margin: 0 !important;
             padding: 0 !important;
             position: relative !important;
         }
 
-        .rbt-header .rbt-main-navigation .mainmenu > li > a,
+        .rbt-header .rbt-main-navigation .mainmenu>li>a,
         .rbt-header .rbt-main-navigation a {
             font-size: 17.5px !important;
             font-weight: 500 !important;
@@ -113,13 +119,14 @@
             text-decoration: none !important;
         }
 
-        .rbt-header .rbt-main-navigation .mainmenu > li > a:hover,
+        .rbt-header .rbt-main-navigation .mainmenu>li>a:hover,
         .rbt-header .rbt-main-navigation a:hover {
             color: #2f57ef !important;
         }
 
         @media only screen and (min-width: 1200px) and (max-width: 1440px) {
-            .rbt-header .rbt-main-navigation .mainmenu > li > a,
+
+            .rbt-header .rbt-main-navigation .mainmenu>li>a,
             .rbt-header .rbt-main-navigation a {
                 font-size: 16.5px !important;
                 padding: 0 8px !important;
@@ -269,7 +276,7 @@
         }
 
         /* =========================================
-           DROPDOWN STYLES
+           DROPDOWN STYLES (GREY TEXT CONTENT)
         ========================================= */
 
         .class-link-page select.form-control {
@@ -279,13 +286,14 @@
             font-weight: 500 !important;
             height: 56px !important;
             line-height: 1.5 !important;
-            color: #192335 !important;
+            color: #64748b !important;
+            /* Content changed to grey color */
             background-color: #ffffff !important;
             border: 1px solid #dcdfe6 !important;
             border-radius: 10px !important;
             padding: 0 45px 0 18px !important;
             cursor: pointer !important;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%23192335' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E") !important;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E") !important;
             background-repeat: no-repeat !important;
             background-position: right 18px center !important;
             background-size: 18px !important;
@@ -304,7 +312,8 @@
         .class-link-page select.form-control option {
             font-size: 18px !important;
             font-weight: 400 !important;
-            color: #192335 !important;
+            color: #64748b !important;
+            /* Dropdown option items in grey color */
             background: #ffffff !important;
             padding: 12px !important;
         }
@@ -318,7 +327,7 @@
             padding: 0 !important;
         }
 
-        .class-link-page .bootstrap-select > button.dropdown-toggle {
+        .class-link-page .bootstrap-select>button.dropdown-toggle {
             display: flex !important;
             align-items: center !important;
             justify-content: space-between !important;
@@ -326,7 +335,7 @@
             font-size: 18px !important;
             font-weight: 500 !important;
             height: 56px !important;
-            color: #192335 !important;
+            color: #64748b !important;
             background-color: #ffffff !important;
             border: 1px solid #dcdfe6 !important;
             border-radius: 10px !important;
@@ -334,14 +343,14 @@
             box-shadow: none !important;
         }
 
-        .class-link-page .bootstrap-select > button.dropdown-toggle:focus {
+        .class-link-page .bootstrap-select>button.dropdown-toggle:focus {
             border-color: #6c4df6 !important;
             box-shadow: 0 0 0 3px rgba(108, 77, 246, 0.15) !important;
         }
 
         .class-link-page .bootstrap-select .dropdown-menu {
             border-radius: 10px !important;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.12) !important;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12) !important;
             border: 1px solid #e5e7eb !important;
             padding: 8px !important;
         }
@@ -349,7 +358,7 @@
         .class-link-page .bootstrap-select .dropdown-menu li a {
             font-size: 17px !important;
             font-weight: 500 !important;
-            color: #192335 !important;
+            color: #64748b !important;
             padding: 10px 14px !important;
             border-radius: 6px !important;
         }
@@ -500,6 +509,30 @@
             transform: translateY(-1px);
         }
 
+        .class-link-page .link-badge.selected {
+            border-color: #2f57ef;
+            color: #2f57ef;
+            background: #eef1fe;
+            box-shadow: 0 0 0 2px rgba(47, 87, 239, 0.35);
+            cursor: pointer;
+            position: relative;
+        }
+
+        .class-link-page .link-badge.selected small {
+            color: #2f57ef;
+            font-weight: 600 !important;
+        }
+
+        .class-link-page .link-badge.selected::after {
+            content: "\2713";
+            position: absolute;
+            top: 6px;
+            right: 10px;
+            font-size: 14px;
+            font-weight: 700;
+            color: #2f57ef;
+        }
+
         .class-link-page .link-badge.in-use-others {
             border-color: #e5e5e5;
             color: #999;
@@ -604,6 +637,47 @@
             background: #f8fafc;
         }
 
+        .class-link-page .current-link-box.expired {
+            background: #fef2f2;
+            color: #b91c1c;
+        }
+
+        .class-link-page .current-link-box.pending {
+            background: #eef1fe;
+            color: #2f57ef;
+            border: 1px dashed #2f57ef;
+        }
+
+        .class-link-page .current-link-box.pending .link-countdown {
+            color: #2f57ef;
+        }
+
+        .class-link-page .current-link-box .link-url-wrap {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .class-link-page .current-link-box .link-url-text {
+            display: block;
+            word-break: break-all;
+        }
+
+        .class-link-page .current-link-box .link-countdown {
+            display: block;
+            font-size: 13px !important;
+            font-weight: 600 !important;
+            margin-top: 4px;
+            color: #2f57ef;
+        }
+
+        .class-link-page .current-link-box.expiring-soon .link-countdown {
+            color: #dc2626;
+        }
+
+        .class-link-page .current-link-box.expired .link-countdown {
+            color: #b91c1c;
+        }
+
         .class-link-page .copy-link-btn {
             border: none;
             background: #2f57ef;
@@ -647,7 +721,6 @@
                 font-size: 20px !important;
             }
         }
-
     </style>
 
 </head>
@@ -662,285 +735,6 @@
     <header class="rbt-header rbt-header-9">
 
         <div class="rbt-sticky-placeholder"></div>
-
-        <div class="rbt-header-middle position-relative rbt-header-mid-1 bg-color-white rbt-border-bottom">
-
-            <div class="container">
-
-                <div class="rbt-header-sec align-items-center">
-
-                    <div class="rbt-header-sec-col rbt-header-left">
-
-                        <div class="rbt-header-content">
-
-                            <div class="header-info">
-
-                                <ul class="rbt-dropdown-menu switcher-language">
-
-                                    <li class="has-child-menu">
-
-                                        <a href="#">
-
-                                            <img
-                                                class="left-image"
-                                                src="assets/images/icons/en-us.png"
-                                                alt="Language Images">
-
-                                            <span class="menu-item">
-                                                English
-                                            </span>
-
-                                        </a>
-
-                                    </li>
-
-                                </ul>
-
-                            </div>
-
-
-                            <div class="header-info">
-
-                                <ul class="rbt-dropdown-menu currency-menu">
-
-                                    <li class="has-child-menu">
-
-                                        <ul class="sub-menu hover-reverse">
-
-                                            <li>
-                                                <a href="#">
-                                                    <span class="menu-item">EUR</span>
-                                                </a>
-                                            </li>
-
-                                            <li>
-                                                <a href="#">
-                                                    <span class="menu-item">GBP</span>
-                                                </a>
-                                            </li>
-
-                                        </ul>
-
-                                    </li>
-
-                                </ul>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="rbt-header-sec-col rbt-header-center d-none d-md-block">
-
-                        <div class="rbt-header-content">
-
-                            <div class="header-info">
-
-                                <div class="rbt-search-field">
-
-                                    <div class="search-field">
-
-                                        <input
-                                            type="text"
-                                            placeholder="Search Course">
-
-                                        <button
-                                            class="rbt-round-btn serach-btn"
-                                            type="submit">
-
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="16"
-                                                height="16"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="currentColor"
-                                                stroke-width="2"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round">
-
-                                                <circle
-                                                    cx="11"
-                                                    cy="11"
-                                                    r="8">
-                                                </circle>
-
-                                                <line
-                                                    x1="21"
-                                                    y1="21"
-                                                    x2="16.65"
-                                                    y2="16.65">
-                                                </line>
-
-                                            </svg>
-
-                                        </button>
-
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="rbt-header-sec-col rbt-header-right">
-
-                        <div class="rbt-btn-wrapper">
-
-                            <div class="login-dropdown">
-
-                                <button
-                                    type="button"
-                                    class="rbt-btn rbt-switch-btn btn-gradient btn-sm hover-transform-none login-dropdown-btn">
-
-                                    <span data-text="Login">
-                                        Login
-                                    </span>
-
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width="14"
-                                        height="14"
-                                        viewBox="0 0 24 24"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        stroke-width="2"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        style="margin-left: 5px;">
-
-                                        <polyline points="6 9 12 15 18 9"></polyline>
-
-                                    </svg>
-
-                                </button>
-
-
-                                <div class="login-dropdown-menu">
-
-                                    <a href="instructor-profile.html">
-
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            width="15"
-                                            height="15"
-                                            viewBox="0 0 24 24"
-                                            fill="none"
-                                            stroke="currentColor"
-                                            stroke-width="2"
-                                            stroke-linecap="round"
-                                            stroke-linejoin="round"
-                                            style="margin-right: 8px;">
-
-                                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-
-                                            <circle
-                                                cx="12"
-                                                cy="7"
-                                                r="4">
-                                            </circle>
-
-                                        </svg>
-
-                                        <span>
-                                            Tutor Login
-                                        </span>
-
-                                    </a>
-
-
-                                    <a href="student-profile.html">
-
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            width="15"
-                                            height="15"
-                                            viewBox="0 0 24 24"
-                                            fill="none"
-                                            stroke="currentColor"
-                                            stroke-width="2"
-                                            stroke-linecap="round"
-                                            stroke-linejoin="round"
-                                            style="margin-right: 8px;">
-
-                                            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
-
-                                            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
-
-                                        </svg>
-
-                                        <span>
-                                            Student Login
-                                        </span>
-
-                                    </a>
-
-                                </div>
-
-                            </div>
-
-                        </div>
-
-
-                        <div class="mobile-menu-bar d-block d-xl-none">
-
-                            <div class="hamberger">
-
-                                <button class="hamberger-button rbt-round-btn">
-
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width="18"
-                                        height="18"
-                                        viewBox="0 0 24 24"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        stroke-width="2"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round">
-
-                                        <line
-                                            x1="3"
-                                            y1="12"
-                                            x2="21"
-                                            y2="12">
-                                        </line>
-
-                                        <line
-                                            x1="3"
-                                            y1="6"
-                                            x2="21"
-                                            y2="6">
-                                        </line>
-
-                                        <line
-                                            x1="3"
-                                            y1="18"
-                                            x2="21"
-                                            y2="18">
-                                        </line>
-
-                                    </svg>
-
-                                </button>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
 
 
         <div class="rbt-header-wrapper header-not-transparent header-sticky">
@@ -957,9 +751,7 @@
 
                                 <a href="index.html">
 
-                                    <img
-                                        src="assets/images/logo/logo.png"
-                                        alt="Education Logo Images">
+                                    <img src="assets/images/logo/logo.png" alt="Education Logo Images">
 
                                 </a>
 
@@ -1027,18 +819,28 @@
 
                     <div class="header-right">
 
-                        <div class="rbt-btn-wrapper d-none d-xl-block">
-
-                            <a
-                                class="rbt-btn rbt-switch-btn btn-gradient btn-sm hover-transform-none"
+                        <div class="rbt-btn-wrapper d-none d-xl-flex align-items-center gap-3">
+                            <div class="login-dropdown">
+                                <button type="button"
+                                    class="rbt-btn rbt-switch-btn btn-gradient btn-sm hover-transform-none login-dropdown-btn">
+                                    <span data-text="Login">Login</span>
+                                    <i class="feather-chevron-down"></i>
+                                </button>
+                                <div class="login-dropdown-menu">
+                                    <a href="instructor-profile.html">
+                                        <i class="feather-user"></i>
+                                        <span>Tutor Login</span>
+                                    </a>
+                                    <a href="student-profile.html">
+                                        <i class="feather-book-open"></i>
+                                        <span>Student Login</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <a class="rbt-btn rbt-switch-btn btn-gradient btn-sm hover-transform-none"
                                 href="login-register.html">
-
-                                <span data-text="Join Now">
-                                    Join Now
-                                </span>
-
+                                <span data-text="Join Now">Join Now</span>
                             </a>
-
                         </div>
 
 
@@ -1048,15 +850,8 @@
 
                                 <button class="hamberger-button rbt-round-btn">
 
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width="18"
-                                        height="18"
-                                        viewBox="0 0 24 24"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        stroke-width="2"
-                                        stroke-linecap="round"
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                         stroke-linejoin="round">
 
                                         <line x1="3" y1="12" x2="21" y2="12"></line>
@@ -1086,9 +881,7 @@
          PAGE TITLE
     ================================= -->
 
-    <div
-        class="slider-area rbt-banner-10 height-400 bg_image bg_image--11"
-        data-black-overlay="5">
+    <div class="slider-area rbt-banner-10 height-400 bg_image bg_image--11" data-black-overlay="5">
 
         <div class="container">
 
@@ -1157,24 +950,16 @@
 
                                                         <a href="instructor-profile.html">
 
-                                                            <svg
-                                                                class="sidebar-icon-svg"
-                                                                xmlns="http://www.w3.org/2000/svg"
-                                                                width="16"
-                                                                height="16"
-                                                                viewBox="0 0 24 24"
-                                                                fill="none"
-                                                                stroke="currentColor"
-                                                                stroke-width="2"
-                                                                stroke-linecap="round"
-                                                                stroke-linejoin="round">
+                                                            <svg class="sidebar-icon-svg"
+                                                                xmlns="http://www.w3.org/2000/svg" width="16"
+                                                                height="16" viewBox="0 0 24 24" fill="none"
+                                                                stroke="currentColor" stroke-width="2"
+                                                                stroke-linecap="round" stroke-linejoin="round">
 
-                                                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2">
+                                                                </path>
 
-                                                                <circle
-                                                                    cx="12"
-                                                                    cy="7"
-                                                                    r="4">
+                                                                <circle cx="12" cy="7" r="4">
                                                                 </circle>
 
                                                             </svg>
@@ -1200,24 +985,16 @@
 
                                                         <a href="students-list.html">
 
-                                                            <svg
-                                                                class="sidebar-icon-svg"
-                                                                xmlns="http://www.w3.org/2000/svg"
-                                                                width="16"
-                                                                height="16"
-                                                                viewBox="0 0 24 24"
-                                                                fill="none"
-                                                                stroke="currentColor"
-                                                                stroke-width="2"
-                                                                stroke-linecap="round"
-                                                                stroke-linejoin="round">
+                                                            <svg class="sidebar-icon-svg"
+                                                                xmlns="http://www.w3.org/2000/svg" width="16"
+                                                                height="16" viewBox="0 0 24 24" fill="none"
+                                                                stroke="currentColor" stroke-width="2"
+                                                                stroke-linecap="round" stroke-linejoin="round">
 
-                                                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2">
+                                                                </path>
 
-                                                                <circle
-                                                                    cx="9"
-                                                                    cy="7"
-                                                                    r="4">
+                                                                <circle cx="9" cy="7" r="4">
                                                                 </circle>
 
                                                                 <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
@@ -1245,25 +1022,21 @@
 
                                                     <li class="active">
 
-                                                        <a
-                                                            class="active"
-                                                            href="classlink.html">
+                                                        <a class="active" href="classlink.html">
 
-                                                            <svg
-                                                                class="sidebar-icon-svg"
-                                                                xmlns="http://www.w3.org/2000/svg"
-                                                                width="16"
-                                                                height="16"
-                                                                viewBox="0 0 24 24"
-                                                                fill="none"
-                                                                stroke="currentColor"
-                                                                stroke-width="2"
-                                                                stroke-linecap="round"
-                                                                stroke-linejoin="round">
+                                                            <svg class="sidebar-icon-svg"
+                                                                xmlns="http://www.w3.org/2000/svg" width="16"
+                                                                height="16" viewBox="0 0 24 24" fill="none"
+                                                                stroke="currentColor" stroke-width="2"
+                                                                stroke-linecap="round" stroke-linejoin="round">
 
-                                                                <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                                                                <path
+                                                                    d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71">
+                                                                </path>
 
-                                                                <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                                                                <path
+                                                                    d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71">
+                                                                </path>
 
                                                             </svg>
 
@@ -1288,25 +1061,13 @@
 
                                                         <a href="tutor-attendance.html">
 
-                                                            <svg
-                                                                class="sidebar-icon-svg"
-                                                                xmlns="http://www.w3.org/2000/svg"
-                                                                width="16"
-                                                                height="16"
-                                                                viewBox="0 0 24 24"
-                                                                fill="none"
-                                                                stroke="currentColor"
-                                                                stroke-width="2"
-                                                                stroke-linecap="round"
-                                                                stroke-linejoin="round">
+                                                            <svg class="sidebar-icon-svg"
+                                                                xmlns="http://www.w3.org/2000/svg" width="16"
+                                                                height="16" viewBox="0 0 24 24" fill="none"
+                                                                stroke="currentColor" stroke-width="2"
+                                                                stroke-linecap="round" stroke-linejoin="round">
 
-                                                                <rect
-                                                                    x="3"
-                                                                    y="4"
-                                                                    width="18"
-                                                                    height="18"
-                                                                    rx="2"
-                                                                    ry="2">
+                                                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2">
                                                                 </rect>
 
                                                                 <line x1="16" y1="2" x2="16" y2="6"></line>
@@ -1336,19 +1097,15 @@
 
                                                         <a href="tutor-homework.html">
 
-                                                            <svg
-                                                                class="sidebar-icon-svg"
-                                                                xmlns="http://www.w3.org/2000/svg"
-                                                                width="16"
-                                                                height="16"
-                                                                viewBox="0 0 24 24"
-                                                                fill="none"
-                                                                stroke="currentColor"
-                                                                stroke-width="2"
-                                                                stroke-linecap="round"
-                                                                stroke-linejoin="round">
+                                                            <svg class="sidebar-icon-svg"
+                                                                xmlns="http://www.w3.org/2000/svg" width="16"
+                                                                height="16" viewBox="0 0 24 24" fill="none"
+                                                                stroke="currentColor" stroke-width="2"
+                                                                stroke-linecap="round" stroke-linejoin="round">
 
-                                                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                                                <path
+                                                                    d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 2 2h12a2 2 0 0 0 2-2V8z">
+                                                                </path>
 
                                                                 <polyline points="14 2 14 8 20 8"></polyline>
 
@@ -1389,25 +1146,18 @@
 
                                                         <a href="tuitor-edit.html">
 
-                                                            <svg
-                                                                class="sidebar-icon-svg"
-                                                                xmlns="http://www.w3.org/2000/svg"
-                                                                width="16"
-                                                                height="16"
-                                                                viewBox="0 0 24 24"
-                                                                fill="none"
-                                                                stroke="currentColor"
-                                                                stroke-width="2"
-                                                                stroke-linecap="round"
-                                                                stroke-linejoin="round">
+                                                            <svg class="sidebar-icon-svg"
+                                                                xmlns="http://www.w3.org/2000/svg" width="16"
+                                                                height="16" viewBox="0 0 24 24" fill="none"
+                                                                stroke="currentColor" stroke-width="2"
+                                                                stroke-linecap="round" stroke-linejoin="round">
 
-                                                                <circle
-                                                                    cx="12"
-                                                                    cy="12"
-                                                                    r="3">
+                                                                <circle cx="12" cy="12" r="3">
                                                                 </circle>
 
-                                                                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                                                                <path
+                                                                    d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z">
+                                                                </path>
 
                                                             </svg>
 
@@ -1424,27 +1174,18 @@
 
                                                         <a href="index.html">
 
-                                                            <svg
-                                                                class="sidebar-icon-svg"
-                                                                xmlns="http://www.w3.org/2000/svg"
-                                                                width="16"
-                                                                height="16"
-                                                                viewBox="0 0 24 24"
-                                                                fill="none"
-                                                                stroke="currentColor"
-                                                                stroke-width="2"
-                                                                stroke-linecap="round"
-                                                                stroke-linejoin="round">
+                                                            <svg class="sidebar-icon-svg"
+                                                                xmlns="http://www.w3.org/2000/svg" width="16"
+                                                                height="16" viewBox="0 0 24 24" fill="none"
+                                                                stroke="currentColor" stroke-width="2"
+                                                                stroke-linecap="round" stroke-linejoin="round">
 
-                                                                <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                                                                <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4">
+                                                                </path>
 
                                                                 <polyline points="16 17 21 12 16 7"></polyline>
 
-                                                                <line
-                                                                    x1="21"
-                                                                    y1="12"
-                                                                    x2="9"
-                                                                    y2="12">
+                                                                <line x1="21" y1="12" x2="9" y2="12">
                                                                 </line>
 
                                                             </svg>
@@ -1513,9 +1254,7 @@
                                         </div>
 
 
-                                        <div
-                                            class="link-pool-grid"
-                                            id="linkPoolGrid">
+                                        <div class="link-pool-grid" id="linkPoolGrid">
                                         </div>
 
 
@@ -1539,12 +1278,11 @@
                                         </div>
 
 
-                                        <p
-                                            class="capacity-note"
-                                            style="margin-top:14px; margin-bottom:0;">
+                                        <p class="capacity-note" style="margin-top:14px; margin-bottom:0;">
 
-                                            Tap an available link above to assign it.
-                                            Tap it again to unassign it and pick a different one.
+                                            Tap an available link above to select it.
+                                            Tap it again to deselect it, then choose a course, class type
+                                            and duration below and press &ldquo;Update Class Link&rdquo; to confirm.
 
                                         </p>
 
@@ -1555,9 +1293,7 @@
                                          CLASS SESSION 1
                                     ================================= -->
 
-                                    <div
-                                        class="class-slot-card"
-                                        data-slot="1">
+                                    <div class="class-slot-card" data-slot="1">
 
                                         <div class="class-slot-title">
 
@@ -1573,20 +1309,15 @@
                                         <div class="row">
 
                                             <!-- 1. COURSE NAME DROPDOWN -->
-                                            <div class="col-lg-6 mb--20">
+                                            <div class="col-lg-4 mb--20">
 
                                                 <label>
                                                     Course Name
                                                 </label>
 
-                                                <select
-                                                    class="form-control slot-course"
-                                                    required>
+                                                <select class="form-control slot-course" required>
 
-                                                    <option
-                                                        value=""
-                                                        selected
-                                                        disabled>
+                                                    <option value="" selected disabled>
                                                         Select Course
                                                     </option>
 
@@ -1611,22 +1342,17 @@
                                             </div>
 
 
-                                            <!-- 2. CLASS TIME DROPDOWN -->
-                                            <div class="col-lg-6 mb--20">
+                                            <!-- 2. CLASS TYPE DROPDOWN -->
+                                            <div class="col-lg-4 mb--20">
 
                                                 <label>
-                                                    Class Time
+                                                    Class Type
                                                 </label>
 
-                                                <select
-                                                    class="form-control slot-type"
-                                                    required>
+                                                <select class="form-control slot-type" required>
 
-                                                    <option
-                                                        value=""
-                                                        selected
-                                                        disabled>
-                                                        Select Class Time
+                                                    <option value="" selected disabled>
+                                                        Select Class Type
                                                     </option>
 
                                                     <option value="one-to-one">
@@ -1635,6 +1361,40 @@
 
                                                     <option value="one-to-many">
                                                         One to Many (Group)
+                                                    </option>
+
+                                                </select>
+
+                                            </div>
+
+
+                                            <!-- 3. CLASS DURATION DROPDOWN -->
+                                            <div class="col-lg-4 mb--20">
+
+                                                <label>
+                                                    Session Duration
+                                                </label>
+
+                                                <select class="form-control slot-duration" required>
+
+                                                    <option value="" selected disabled>
+                                                        Select Duration
+                                                    </option>
+
+                                                    <option value="30">
+                                                        30 Minutes
+                                                    </option>
+
+                                                    <option value="60">
+                                                        1 Hour
+                                                    </option>
+
+                                                    <option value="90">
+                                                        1.5 Hours
+                                                    </option>
+
+                                                    <option value="120">
+                                                        2 Hours
                                                     </option>
 
                                                 </select>
@@ -1656,8 +1416,7 @@
 
                                             <div class="rbt-btn-wrapper">
 
-                                                <button
-                                                    type="button"
+                                                <button type="button"
                                                     class="rbt-btn btn-gradient hover-icon-reverse slot-update-btn">
 
                                                     <span class="icon-reverse-wrapper">
@@ -1683,15 +1442,10 @@
 
                                             <div class="form-check form-switch mb--0">
 
-                                                <input
-                                                    class="form-check-input slot-status-toggle"
-                                                    type="checkbox"
+                                                <input class="form-check-input slot-status-toggle" type="checkbox"
                                                     id="slotStatus1">
 
-                                                <label
-                                                    class="form-check-label"
-                                                    for="slotStatus1"
-                                                    id="slotStatusText1">
+                                                <label class="form-check-label" for="slotStatus1" id="slotStatusText1">
 
                                                     Disable
 
@@ -1708,9 +1462,7 @@
                                          CLASS SESSION 2
                                     ================================= -->
 
-                                    <div
-                                        class="class-slot-card"
-                                        data-slot="2">
+                                    <div class="class-slot-card" data-slot="2">
 
                                         <div class="class-slot-title">
 
@@ -1726,20 +1478,15 @@
                                         <div class="row">
 
                                             <!-- 1. COURSE NAME DROPDOWN -->
-                                            <div class="col-lg-6 mb--20">
+                                            <div class="col-lg-4 mb--20">
 
                                                 <label>
                                                     Course Name
                                                 </label>
 
-                                                <select
-                                                    class="form-control slot-course"
-                                                    required>
+                                                <select class="form-control slot-course" required>
 
-                                                    <option
-                                                        value=""
-                                                        selected
-                                                        disabled>
+                                                    <option value="" selected disabled>
                                                         Select Course
                                                     </option>
 
@@ -1764,22 +1511,17 @@
                                             </div>
 
 
-                                            <!-- 2. CLASS TIME DROPDOWN -->
-                                            <div class="col-lg-6 mb--20">
+                                            <!-- 2. CLASS TYPE DROPDOWN -->
+                                            <div class="col-lg-4 mb--20">
 
                                                 <label>
-                                                    Class Time
+                                                    Class Type
                                                 </label>
 
-                                                <select
-                                                    class="form-control slot-type"
-                                                    required>
+                                                <select class="form-control slot-type" required>
 
-                                                    <option
-                                                        value=""
-                                                        selected
-                                                        disabled>
-                                                        Select Class Time
+                                                    <option value="" selected disabled>
+                                                        Select Class Type
                                                     </option>
 
                                                     <option value="one-to-one">
@@ -1788,6 +1530,40 @@
 
                                                     <option value="one-to-many">
                                                         One to Many (Group)
+                                                    </option>
+
+                                                </select>
+
+                                            </div>
+
+
+                                            <!-- 3. CLASS DURATION DROPDOWN -->
+                                            <div class="col-lg-4 mb--20">
+
+                                                <label>
+                                                    Session Duration
+                                                </label>
+
+                                                <select class="form-control slot-duration" required>
+
+                                                    <option value="" selected disabled>
+                                                        Select Duration
+                                                    </option>
+
+                                                    <option value="30">
+                                                        30 Minutes
+                                                    </option>
+
+                                                    <option value="60">
+                                                        1 Hour
+                                                    </option>
+
+                                                    <option value="90">
+                                                        1.5 Hours
+                                                    </option>
+
+                                                    <option value="120">
+                                                        2 Hours
                                                     </option>
 
                                                 </select>
@@ -1809,8 +1585,7 @@
 
                                             <div class="rbt-btn-wrapper">
 
-                                                <button
-                                                    type="button"
+                                                <button type="button"
                                                     class="rbt-btn btn-gradient hover-icon-reverse slot-update-btn">
 
                                                     <span class="icon-reverse-wrapper">
@@ -1836,15 +1611,10 @@
 
                                             <div class="form-check form-switch mb--0">
 
-                                                <input
-                                                    class="form-check-input slot-status-toggle"
-                                                    type="checkbox"
+                                                <input class="form-check-input slot-status-toggle" type="checkbox"
                                                     id="slotStatus2">
 
-                                                <label
-                                                    class="form-check-label"
-                                                    for="slotStatus2"
-                                                    id="slotStatusText2">
+                                                <label class="form-check-label" for="slotStatus2" id="slotStatusText2">
 
                                                     Disable
 
@@ -1878,479 +1648,175 @@
          FOOTER
     ================================= -->
 
+    <!-- Start Footer Area -->
     <footer class="rbt-footer footer-style-1 bg-color-white overflow-hidden">
-
         <div class="footer-top">
-
             <div class="container">
-
                 <div class="row g-5">
-
-
                     <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-
                         <div class="footer-widget">
-
                             <div class="logo">
-
                                 <a href="index.html">
-
-                                    <img
-                                        src="assets/images/logo/logo.png"
-                                        alt="Edu-Loop Sign Logo">
-
+                                    <img src="assets/images/logo/logo.png" alt="Edu-Loop Sign Logo">
                                 </a>
-
                             </div>
 
-
-                            <p class="description mt--20">
-
-                                We are always seeking talented and motivated
-                                individuals to join our team.
-
-                            </p>
-
+                            <p class="description mt--20">We are always seeking talented and motivated individuals to
+                                join our team.</p>
 
                             <ul class="social-icon social-default justify-content-start">
-
-                                <li>
-
-                                    <a href="https://www.facebook.com/">
-
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            width="15"
-                                            height="15"
-                                            viewBox="0 0 24 24"
-                                            fill="none"
-                                            stroke="currentColor"
-                                            stroke-width="2"
-                                            stroke-linecap="round"
-                                            stroke-linejoin="round">
-
-                                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
-
-                                        </svg>
-
+                                <li><a href="https://www.facebook.com/">
+                                        <i class="feather-facebook"></i>
                                     </a>
-
                                 </li>
-
-
-                                <li>
-
-                                    <a
-                                        href="https://www.twitter.com"
-                                        aria-label="X (Twitter)">
-
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            width="15"
-                                            height="15"
-                                            fill="currentColor"
-                                            viewBox="0 0 24 24"
-                                            class="social-icon-x"
+                                <li><a href="https://www.twitter.com" aria-label="X (Twitter)">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15"
+                                            fill="currentColor" viewBox="0 0 24 24" class="social-icon-x"
                                             style="vertical-align: -2px;">
-
-                                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-
+                                            <path
+                                                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
                                         </svg>
-
                                     </a>
-
                                 </li>
-
-
-                                <li>
-
-                                    <a href="https://www.instagram.com/">
-
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            width="15"
-                                            height="15"
-                                            viewBox="0 0 24 24"
-                                            fill="none"
-                                            stroke="currentColor"
-                                            stroke-width="2"
-                                            stroke-linecap="round"
-                                            stroke-linejoin="round">
-
-                                            <rect
-                                                x="2"
-                                                y="2"
-                                                width="20"
-                                                height="20"
-                                                rx="5">
-                                            </rect>
-
-                                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-
-                                            <line
-                                                x1="17.5"
-                                                y1="6.5"
-                                                x2="17.51"
-                                                y2="6.5">
-                                            </line>
-
-                                        </svg>
-
+                                <li><a href="https://www.instagram.com/">
+                                        <i class="feather-instagram"></i>
                                     </a>
-
                                 </li>
-
-
-                                <li>
-
-                                    <a href="https://www.linkedin.com/">
-
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            width="15"
-                                            height="15"
-                                            viewBox="0 0 24 24"
-                                            fill="none"
-                                            stroke="currentColor"
-                                            stroke-width="2"
-                                            stroke-linecap="round"
-                                            stroke-linejoin="round">
-
-                                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-
-                                            <rect
-                                                x="2"
-                                                y="9"
-                                                width="4"
-                                                height="12">
-                                            </rect>
-
-                                            <circle
-                                                cx="4"
-                                                cy="4"
-                                                r="2">
-                                            </circle>
-
-                                        </svg>
-
+                                <li><a href="https://www.linkdin.com/">
+                                        <i class="feather-linkedin"></i>
                                     </a>
-
                                 </li>
-
                             </ul>
-
                         </div>
-
                     </div>
-
 
                     <div class="col-lg-2 col-md-6 col-sm-6 col-12">
-
                         <div class="footer-widget">
-
-                            <h5 class="ft-title">
-                                Useful Links
-                            </h5>
-
+                            <h5 class="ft-title">Useful Links</h5>
                             <ul class="ft-link">
-
                                 <li>
-                                    <a href="our-team.html">
-                                        Our Team
-                                    </a>
+                                    <a href="our-team.html">Our Team</a>
                                 </li>
-
                                 <li>
-                                    <a href="our-tuition.html">
-                                        Our Tuition
-                                    </a>
+                                    <a href="our-tuition.html">Our Tuition</a>
                                 </li>
-
                                 <li>
-                                    <a href="holiday-camps.html">
-                                        Holiday Camps
-                                    </a>
+                                    <a href="holiday-camps.html">Holiday Camps</a>
                                 </li>
-
                                 <li>
-                                    <a href="plans-and-pricing.html">
-                                        Plans &amp; Pricing
-                                    </a>
+                                    <a href="plans-and-pricing.html">Plans &amp; Pricing</a>
                                 </li>
-
                                 <li>
-                                    <a href="book-online.html">
-                                        Book Online
-                                    </a>
+                                    <a href="book-online.html">Book Online</a>
                                 </li>
-
                             </ul>
-
                         </div>
-
                     </div>
-
 
                     <div class="col-lg-2 col-md-6 col-sm-6 col-12">
-
                         <div class="footer-widget">
-
-                            <h5 class="ft-title">
-                                Popular Programs
-                            </h5>
-
+                            <h5 class="ft-title">Popular Programs</h5>
                             <ul class="ft-link">
-
                                 <li>
-                                    <a href="our-tuition.html">
-                                        Primary Tuition
-                                    </a>
+                                    <a href="our-tuition.html">Primary Tuition</a>
                                 </li>
-
                                 <li>
-                                    <a href="our-tuition.html">
-                                        Secondary Tuition
-                                    </a>
+                                    <a href="our-tuition.html">Secondary Tuition</a>
                                 </li>
-
                                 <li>
-                                    <a href="our-tuition.html">
-                                        GCSE Tuition
-                                    </a>
+                                    <a href="our-tuition.html">GCSE Tuition</a>
                                 </li>
-
                                 <li>
-                                    <a href="our-tuition.html">
-                                        IGCSE Tuition
-                                    </a>
+                                    <a href="our-tuition.html">IGCSE Tuition</a>
                                 </li>
-
                                 <li>
-                                    <a href="our-tuition.html">
-                                        A-Level Tuition
-                                    </a>
+                                    <a href="our-tuition.html">A-Level Tuition</a>
                                 </li>
-
                                 <li>
-                                    <a href="holiday-camps.html">
-                                        Holiday Camps
-                                    </a>
+                                    <a href="holiday-camps.html">Holiday Camps</a>
                                 </li>
-
                             </ul>
-
                         </div>
-
                     </div>
-
 
                     <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-
                         <div class="footer-widget">
-
-                            <h5 class="ft-title">
-                                Get Contact
-                            </h5>
-
+                            <h5 class="ft-title">Get Contact</h5>
                             <ul class="ft-link">
-
-                                <li>
-                                    <span>Phone:</span>
-                                    <a href="#">
-                                        (406) 555-0120
-                                    </a>
-                                </li>
-
-                                <li>
-                                    <span>E-mail:</span>
-                                    <a href="mailto:info@londonstaredu.com">
-                                        info@londonstaredu.com
-                                    </a>
-                                </li>
-
+                                <li><span>Phone:</span> <a href="#">(406) 555-0120</a></li>
+                                <li><span>E-mail:</span> <a
+                                        href="mailto:info@londonstaredu.com">info@londonstaredu.com</a></li>
                             </ul>
 
-
                             <div class="newsletter-form mt--20">
-
-                                <h6 class="w-600">
-                                    Location
-                                </h6>
-
-                                <p class="description">
-
-                                    2000+ Our students are subscribe Around
-                                    the World.<br>
-                                    Don’t be shy introduce yourself!
-
-                                </p>
-
+                                <h6 class="w-600">Location</h6>
+                                <p class="description">2000+ Our students are subscribe Around the World.<br> Don’t be
+                                    shy introduce yourself!</p>
                             </div>
-
                         </div>
-
                     </div>
-
                 </div>
-
             </div>
-
         </div>
-
-
-        <div class="copyright-area copyright-style-1 ptb--20">
-
+        <div class="rbt-separator-mid">
             <div class="container">
-
-                <div class="row align-items-center">
-
-                    <div class="col-xxl-7 col-xl-7 col-lg-7 col-md-12 col-12">
-
-                        <p class="rbt-link-hover text-center text-lg-start">
-
-                            Copyright © 2026 by
-                            <a href="index.html">
-                                London Star Education Ltd.
-                            </a>
-
-                            All Rights Reserved.
-
-                            Designed by
-
-                            <a
-                                href="https://rkisystems.co.uk/"
-                                target="_blank">
-
-                                RKI Systems
-
-                            </a>
-
-                        </p>
-
-                    </div>
-
-
-                    <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-12 col-12">
-
-                        <ul class="copyright-link rbt-link-hover justify-content-center justify-content-lg-end mt_sm--10 mt_md--10">
-
-                            <li>
-                                <a href="#">
-                                    Terms of service
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href="privacy-policy.html">
-                                    Privacy policy
-                                </a>
-                            </li>
-
-                        </ul>
-
-                    </div>
-
-                </div>
-
+                <hr class="rbt-separator m-0">
             </div>
-
         </div>
-
+        <!-- Start Copyright Area -->
+        <div class="copyright-area copyright-style-1 ptb--20">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-xxl-7 col-xl-7 col-lg-7 col-md-12 col-12">
+                        <p class="rbt-link-hover text-center text-lg-start">
+                            Copyright © 2026 by
+                            <a href="index.html">London Star Education Ltd.</a>
+                            All Rights Reserved. Designed by
+                            <a href="https://rkisystems.co.uk/" target="_blank">RKI Systems</a>
+                        </p>
+                    </div>
+                    <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-12 col-12">
+                        <ul
+                            class="copyright-link rbt-link-hover justify-content-center justify-content-lg-end mt_sm--10 mt_md--10">
+                            <li><a href="#">Terms of service</a></li>
+                            <li><a href="privacy-policy.html">Privacy policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Copyright Area -->
     </footer>
+    <!-- End Footer Area -->
 
-
-    <!-- ================================
-         PROGRESS / BACK TO TOP
-    ================================= -->
-
-    <div class="rbt-progress-parent">
-
-        <svg
-            class="rbt-back-circle svg-inner"
-            width="100%"
-            height="100%"
-            viewBox="-1 -1 102 102">
-
-            <path
-                d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
-
+        <div class="rbt-progress-parent">
+        <svg class="rbt-back-circle svg-inner" width="100%" height="100%" viewBox="-1 -1 102 102">
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
         </svg>
-
     </div>
 
-
-    <!-- ================================
-         FLOATING CONTACT (PHONE & WHATSAPP)
-    ================================= -->
-
+    <!-- Floating Contact Buttons -->
     <div class="floating-contact">
-
-
-        <!-- CALL -->
-
+        <!-- Call -->
         <div class="contact-item call-item">
-
             <div class="contact-label call-label">
                 Talk To Our Experts
             </div>
-
-
-            <a
-                href="tel:+919876543210"
-                class="contact-button call-button"
-                aria-label="Call us">
-
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="18"
-                    height="18"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round">
-
-                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-
-                </svg>
-
+            <a href="tel:+919876543210" class="contact-button call-button" aria-label="Call us">
+                <i class="fa fa-phone"></i>
             </a>
-
         </div>
 
-
-        <!-- WHATSAPP -->
-
+        <!-- WhatsApp -->
         <div class="contact-item whatsapp-item">
-
             <div class="contact-label whatsapp-label">
                 Message Us
             </div>
-
-
-            <a
-                href="https://wa.me/919876543210"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="contact-button whatsapp-button"
-                aria-label="Chat with us on WhatsApp">
-
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="22"
-                    height="22"
-                    fill="currentColor"
-                    viewBox="0 0 24 24">
-
-                    <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
-
-                </svg>
-
+            <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer"
+                class="contact-button whatsapp-button" aria-label="Chat with us on WhatsApp">
+                <i class="fab fa-whatsapp"></i>
             </a>
-
         </div>
-
     </div>
 
 
@@ -2492,7 +1958,11 @@
         document.addEventListener("DOMContentLoaded", function () {
 
             var POOL_KEY = "lse_class_link_pool";
+            var EXPIRY_KEY = "lse_class_link_expiry";
             var CURRENT_TUTOR = "Ruben";
+            var SLOT_NUMBERS = [1, 2];
+            var selectedLinkId = null; /* link tapped in the pool, pending confirmation via Update Class Link */
+            var pendingPreviewSlot = null; /* which slot is currently previewing the selected link */
 
             /* Destroy bootstrap-select completely to avoid multi-border overlay */
             function cleanupBootstrapSelect() {
@@ -2502,7 +1972,7 @@
                             if (jQuery(this).parent().hasClass('bootstrap-select')) {
                                 jQuery(this).selectpicker('destroy');
                             }
-                        } catch (e) {}
+                        } catch (e) { }
                     });
                 }
                 document.querySelectorAll('.class-link-page select').forEach(function (el) {
@@ -2518,13 +1988,13 @@
 
             function defaultPool() {
                 return [
-                    { id: 1, label: "Link 1", url: "https://zoom.us/j/91000000001", status: "in-use", tutor: "Sarah Khan", course: "english", type: "one-to-one" },
-                    { id: 2, label: "Link 2", url: "https://zoom.us/j/91000000002", status: "in-use", tutor: "Sarah Khan", course: "creative", type: "one-to-many" },
+                    { id: 1, label: "Link 1", url: "https://zoom.us/j/91000000001", status: "available", tutor: null, course: null, type: null },
+                    { id: 2, label: "Link 2", url: "https://zoom.us/j/91000000002", status: "available", tutor: null, course: null, type: null },
                     { id: 3, label: "Link 3", url: "https://zoom.us/j/91000000003", status: "available", tutor: null, course: null, type: null },
-                    { id: 4, label: "Link 4", url: "https://zoom.us/j/91000000004", status: "in-use", tutor: "Mark Wilson", course: "reading", type: "one-to-one" },
-                    { id: 5, label: "Link 5", url: "https://zoom.us/j/91000000005", status: "available", tutor: null, course: null, type: null },
+                    { id: 4, label: "Link 4", url: "https://zoom.us/j/91000000004", status: "available", tutor: null, course: null, type: null },
+                    { id: 5, label: "Link 5", url: "https://zoom.us/j/91000000005", status: "in-use", tutor: "Sarah Khan", course: "english", type: "one-to-one" },
                     { id: 6, label: "Link 6", url: "https://zoom.us/j/91000000006", status: "available", tutor: null, course: null, type: null },
-                    { id: 7, label: "Link 7", url: "https://zoom.us/j/91000000007", status: "in-use", tutor: "Mark Wilson", course: "lamda", type: "one-to-many" },
+                    { id: 7, label: "Link 7", url: "https://zoom.us/j/91000000007", status: "available", tutor: null, course: null, type: null },
                     { id: 8, label: "Link 8", url: "https://zoom.us/j/91000000008", status: "available", tutor: null, course: null, type: null }
                 ];
             }
@@ -2547,11 +2017,65 @@
                 localStorage.setItem(POOL_KEY, JSON.stringify(pool));
             }
 
+            /* ---- Per-slot expiry tracking (drives auto-disable) ---- */
+
+            function getExpiryMap() {
+                try {
+                    var raw = localStorage.getItem(EXPIRY_KEY);
+                    return raw ? JSON.parse(raw) : {};
+                } catch (e) {
+                    return {};
+                }
+            }
+
+            function saveExpiryMap(map) {
+                localStorage.setItem(EXPIRY_KEY, JSON.stringify(map));
+            }
+
+            function setSlotExpiry(slotNumber, expiresAt, durationMinutes) {
+                var map = getExpiryMap();
+                map[slotNumber] = { expiresAt: expiresAt, durationMinutes: durationMinutes };
+                saveExpiryMap(map);
+            }
+
+            function clearSlotExpiry(slotNumber) {
+                var map = getExpiryMap();
+                delete map[slotNumber];
+                saveExpiryMap(map);
+            }
+
+            function getSlotExpiry(slotNumber) {
+                var map = getExpiryMap();
+                return map[slotNumber] || null;
+            }
+
+            function formatCountdown(ms) {
+                var totalSeconds = Math.max(0, Math.round(ms / 1000));
+                var h = Math.floor(totalSeconds / 3600);
+                var m = Math.floor((totalSeconds % 3600) / 60);
+                var s = totalSeconds % 60;
+                var mm = (m < 10 ? "0" : "") + m;
+                var ss = (s < 10 ? "0" : "") + s;
+                if (h > 0) {
+                    var hh = (h < 10 ? "0" : "") + h;
+                    return hh + ":" + mm + ":" + ss;
+                }
+                return mm + ":" + ss;
+            }
+
             function renderPool() {
                 var pool = getPool();
                 var grid = document.getElementById("linkPoolGrid");
                 var countText = document.getElementById("poolCountText");
                 if (!grid) return;
+
+                /* Drop the pending selection if that link is no longer available */
+                if (selectedLinkId) {
+                    var stillAvailable = pool.some(function (l) {
+                        return l.id === selectedLinkId && l.status === "available";
+                    });
+                    if (!stillAvailable) selectedLinkId = null;
+                }
 
                 var availableCount = pool.filter(function (l) { return l.status === "available"; }).length;
                 if (countText) {
@@ -2565,11 +2089,16 @@
                     var sub = "";
 
                     if (link.status === "available") {
-                        cls += "available";
-                        sub = "Available";
-                    } else if (link.tutor === CURRENT_TUTOR) {
-                        cls += "in-use-mine";
-                        sub = "Your class";
+                        if (selectedLinkId === link.id) {
+                            cls += "available selected";
+                            sub = "Selected";
+                        } else {
+                            cls += "available";
+                            sub = "Available";
+                        }
+                        // } else if (link.tutor === CURRENT_TUTOR) { 
+                        //     cls += "in-use-mine"; 
+                        //     sub = "Your class"; 
                     } else {
                         cls += "in-use-others";
                         sub = "In use";
@@ -2592,9 +2121,28 @@
                 var box = card.querySelector(".slot-current-link");
                 var linkId = card.getAttribute("data-assigned-link");
 
+                box.classList.remove("expired", "expiring-soon", "pending");
+
                 if (!linkId) {
+                    var pendingLinkId = card.getAttribute("data-pending-link");
+                    if (pendingLinkId) {
+                        var pool = getPool();
+                        var pendingLink = pool.find(function (l) { return l.id === parseInt(pendingLinkId, 10); });
+                        if (pendingLink) {
+                            box.classList.remove("no-link");
+                            box.classList.add("pending");
+                            box.innerHTML = '<span class="link-url-wrap"><span class="link-url-text">' + pendingLink.url + '</span>' +
+                                '<span class="link-countdown">Selected &mdash; press &ldquo;Update Class Link&rdquo; to confirm</span></span>';
+                            return;
+                        }
+                    }
                     box.classList.add("no-link");
-                    box.innerHTML = "No link assigned yet";
+                    if (card.getAttribute("data-just-expired") === "1") {
+                        box.classList.add("expired");
+                        box.innerHTML = "Link disabled &mdash; time limit reached. Assign a new link to continue.";
+                    } else {
+                        box.innerHTML = "No link assigned yet";
+                    }
                     return;
                 }
 
@@ -2608,7 +2156,22 @@
                 }
 
                 box.classList.remove("no-link");
-                box.innerHTML = '<span style="flex:1;">' + link.url + '</span>' +
+
+                var countdownHtml = "";
+                var expiry = getSlotExpiry(slotNumber);
+                if (expiry && expiry.expiresAt) {
+                    var remaining = expiry.expiresAt - Date.now();
+                    if (remaining <= 0) {
+                        countdownHtml = '<span class="link-countdown">Time limit reached</span>';
+                    } else {
+                        if (remaining <= 5 * 60 * 1000) {
+                            box.classList.add("expiring-soon");
+                        }
+                        countdownHtml = '<span class="link-countdown">Link active for ' + formatCountdown(remaining) + '</span>';
+                    }
+                }
+
+                box.innerHTML = '<span class="link-url-wrap"><span class="link-url-text">' + link.url + '</span>' + countdownHtml + '</span>' +
                     '<button type="button" class="copy-link-btn" data-copy="' + link.url + '">Copy</button>';
             }
 
@@ -2645,6 +2208,7 @@
 
                 var courseSelect = card.querySelector(".slot-course");
                 var typeSelect = card.querySelector(".slot-type");
+                var durationSelect = card.querySelector(".slot-duration");
                 var toggle = card.querySelector(".slot-status-toggle");
                 var toggleLabel = card.querySelector("#slotStatusText" + slotNumber);
                 var previousLinkId = card.getAttribute("data-assigned-link");
@@ -2655,12 +2219,68 @@
 
                 assignLink(linkId, courseSelect ? courseSelect.value : "", typeSelect ? typeSelect.value : "");
                 card.setAttribute("data-assigned-link", linkId);
+                card.removeAttribute("data-just-expired");
+                card.removeAttribute("data-pending-link");
+
+                /* If this link was being previewed in another (or this) slot, clear that preview too */
+                if (pendingPreviewSlot !== null) {
+                    var previewCard = getSlotCard(pendingPreviewSlot);
+                    if (previewCard && previewCard.getAttribute("data-pending-link") === String(linkId)) {
+                        previewCard.removeAttribute("data-pending-link");
+                        var previewSlotToRefresh = pendingPreviewSlot;
+                        pendingPreviewSlot = null;
+                        if (previewSlotToRefresh !== slotNumber) renderSlotCurrentLink(previewSlotToRefresh);
+                    }
+                }
+                if (selectedLinkId === parseInt(linkId, 10)) selectedLinkId = null;
+
+                var durationMinutes = durationSelect ? parseInt(durationSelect.value, 10) : 0;
+                if (durationMinutes) {
+                    setSlotExpiry(slotNumber, Date.now() + durationMinutes * 60000, durationMinutes);
+                } else {
+                    clearSlotExpiry(slotNumber);
+                }
 
                 if (toggle) toggle.checked = true;
                 if (toggleLabel) toggleLabel.textContent = "Enable";
 
                 renderPool();
                 renderSlotCurrentLink(slotNumber);
+            }
+
+            /* Auto-disable a slot once its session duration has elapsed */
+            function expireSlot(slotNumber) {
+                var card = getSlotCard(slotNumber);
+                if (!card) return;
+                var linkId = card.getAttribute("data-assigned-link");
+                if (!linkId) return;
+
+                releaseLink(linkId);
+                card.removeAttribute("data-assigned-link");
+                card.setAttribute("data-just-expired", "1");
+                clearSlotExpiry(slotNumber);
+
+                var toggle = card.querySelector(".slot-status-toggle");
+                var toggleLabel = card.querySelector("#slotStatusText" + slotNumber);
+                if (toggle) toggle.checked = false;
+                if (toggleLabel) toggleLabel.textContent = "Disable";
+
+                renderPool();
+                renderSlotCurrentLink(slotNumber);
+            }
+
+            /* Runs every second: disables any slot whose duration has run out */
+            function tickExpiryCheck() {
+                SLOT_NUMBERS.forEach(function (slotNumber) {
+                    var card = getSlotCard(slotNumber);
+                    if (!card || !card.getAttribute("data-assigned-link")) return;
+                    var expiry = getSlotExpiry(slotNumber);
+                    if (expiry && expiry.expiresAt && Date.now() >= expiry.expiresAt) {
+                        expireSlot(slotNumber);
+                    } else {
+                        renderSlotCurrentLink(slotNumber);
+                    }
+                });
             }
 
             function setupSlot(slotNumber) {
@@ -2672,23 +2292,26 @@
                 var toggleLabel = card.querySelector("#slotStatusText" + slotNumber);
                 var courseSelect = card.querySelector(".slot-course");
                 var typeSelect = card.querySelector(".slot-type");
+                var durationSelect = card.querySelector(".slot-duration");
 
                 updateBtn.addEventListener("click", function () {
                     var course = courseSelect.value;
                     var type = typeSelect.value;
-                    var assigned = card.getAttribute("data-assigned-link");
+                    var duration = durationSelect.value;
+                    var assigned = selectedLinkId || card.getAttribute("data-assigned-link");
 
-                    if (!course || !type) {
-                        alert("Please select both a Course Name and Class Time.");
+                    if (!course || !type || !duration) {
+                        alert("Please select a Course Name, Class Type and Session Duration.");
                         return;
                     }
 
                     if (!assigned) {
-                        alert("Please click an available link from the pool above first.");
+                        alert("Please tap an available link from the pool above first.");
                         return;
                     }
 
                     commitLinkAssignment(slotNumber, assigned);
+                    selectedLinkId = null;
                 });
 
                 toggle.addEventListener("change", function () {
@@ -2697,12 +2320,19 @@
                         toggleLabel.textContent = "Enable";
                         if (assignedLinkId && courseSelect.value && typeSelect.value) {
                             assignLink(assignedLinkId, courseSelect.value, typeSelect.value);
+                            var durationMinutes = durationSelect ? parseInt(durationSelect.value, 10) : 0;
+                            if (durationMinutes) {
+                                setSlotExpiry(slotNumber, Date.now() + durationMinutes * 60000, durationMinutes);
+                            }
+                            card.removeAttribute("data-just-expired");
                         }
                     } else {
                         toggleLabel.textContent = "Disable";
                         if (assignedLinkId) {
                             releaseLink(assignedLinkId);
                             card.removeAttribute("data-assigned-link");
+                            clearSlotExpiry(slotNumber);
+                            card.removeAttribute("data-just-expired");
                         }
                     }
                     renderPool();
@@ -2733,7 +2363,7 @@
                     if (!linkId) return;
 
                     if (badge.classList.contains("in-use-mine")) {
-                        var ownerSlot = [1, 2].find(function (slotNumber) {
+                        var ownerSlot = SLOT_NUMBERS.find(function (slotNumber) {
                             var card = getSlotCard(slotNumber);
                             return card && card.getAttribute("data-assigned-link") === linkId;
                         });
@@ -2741,6 +2371,8 @@
                             var card = getSlotCard(ownerSlot);
                             releaseLink(linkId);
                             card.removeAttribute("data-assigned-link");
+                            clearSlotExpiry(ownerSlot);
+                            card.removeAttribute("data-just-expired");
                             var toggle = card.querySelector(".slot-status-toggle");
                             var toggleLabel = card.querySelector("#slotStatusText" + ownerSlot);
                             if (toggle) toggle.checked = false;
@@ -2753,17 +2385,35 @@
 
                     if (!badge.classList.contains("available")) return;
 
-                    var targetSlot = [1, 2].find(function (slotNumber) {
-                        var card = getSlotCard(slotNumber);
-                        return card && !card.getAttribute("data-assigned-link");
-                    });
+                    var numericId = parseInt(linkId, 10);
 
-                    if (!targetSlot) {
-                        alert("Both class sessions already have links assigned. Please disable or unassign one first.");
-                        return;
+                    /* Clear any existing preview before applying the new selection */
+                    if (pendingPreviewSlot !== null) {
+                        var prevCard = getSlotCard(pendingPreviewSlot);
+                        if (prevCard) prevCard.removeAttribute("data-pending-link");
+                        var clearedSlot = pendingPreviewSlot;
+                        pendingPreviewSlot = null;
+                        renderSlotCurrentLink(clearedSlot);
                     }
 
-                    commitLinkAssignment(targetSlot, linkId);
+                    if (selectedLinkId === numericId) {
+                        /* Deselecting */
+                        selectedLinkId = null;
+                    } else {
+                        /* Selecting: preview it in the first empty class session box */
+                        selectedLinkId = numericId;
+                        var openSlot = SLOT_NUMBERS.find(function (slotNumber) {
+                            var slotCard = getSlotCard(slotNumber);
+                            return slotCard && !slotCard.getAttribute("data-assigned-link");
+                        });
+                        if (openSlot) {
+                            var openCard = getSlotCard(openSlot);
+                            openCard.setAttribute("data-pending-link", numericId);
+                            pendingPreviewSlot = openSlot;
+                            renderSlotCurrentLink(openSlot);
+                        }
+                    }
+                    renderPool();
                 });
             }
 
@@ -2773,6 +2423,8 @@
             setupPoolGridClicks();
             renderSlotCurrentLink(1);
             renderSlotCurrentLink(2);
+            tickExpiryCheck();
+            setInterval(tickExpiryCheck, 1000);
 
         });
 
