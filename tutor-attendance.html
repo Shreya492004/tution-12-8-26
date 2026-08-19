@@ -70,6 +70,35 @@
 
 
     <style>
+        /* =========================================================
+           FIXED HEADER (PREVENTS DISAPPEARING ON SCROLL)
+        ========================================================= */
+        header.rbt-header,
+        .rbt-header .rbt-header-wrapper,
+        .rbt-header-wrapper.header-sticky {
+            position: fixed !important;
+            top: 0 !important;
+            left: 0 !important;
+            right: 0 !important;
+            width: 100% !important;
+            z-index: 99999 !important;
+            background-color: #ffffff !important;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08) !important;
+            transform: none !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+        }
+
+        /* Offset page content below the fixed header */
+        .slider-area.rbt-banner-10 {
+            margin-top: 0 !important;
+        }
+
+        /* Base & Global Typography */
+        body, button, input, select, textarea, table, th, td, h1, h2, h3, h4, h5, h6, p, span, a, label, div {
+            font-family: var(--font-primary), "Euclid Circular A", "Euclid Circular", sans-serif !important;
+        }
+
         /* Icon Font Protection - Ensure feather and fontawesome icons always render */
         i[class^="feather-"],
         i[class*=" feather-"],
@@ -101,7 +130,7 @@
             display: inline-block !important;
         }
 
-                        /* Header Navigation (Desktop Only - Responsive Handled in custom-ui.css) */
+        /* Header Navigation (Matched across all pages) */
         @media only screen and (min-width: 1200px) {
             .rbt-header .mainbar-row {
                 display: flex !important;
@@ -141,126 +170,65 @@
 
             .rbt-header .rbt-main-navigation .mainmenu > li > a,
             .rbt-header .rbt-main-navigation a {
-                font-size: 17.5px !important;
+                padding: 0 12px !important;
+                font-size: 16.5px !important;
                 font-weight: 500 !important;
+                font-family: var(--font-primary), "Euclid Circular A", "Euclid Circular", sans-serif !important;
                 color: #192335 !important;
-                white-space: nowrap !important;
-                padding: 0 11px !important;
-                display: flex !important;
+                display: inline-flex !important;
                 align-items: center !important;
                 height: 80px !important;
                 line-height: 80px !important;
-                transition: all 0.3s ease !important;
-                text-decoration: none !important;
+                white-space: nowrap !important;
+                text-transform: none !important;
+                letter-spacing: 0 !important;
+                transition: color 0.3s ease !important;
             }
 
             .rbt-header .rbt-main-navigation .mainmenu > li > a:hover,
             .rbt-header .rbt-main-navigation a:hover {
-                color: #2f57ef !important;
+                color: var(--color-primary, #2f57ef) !important;
             }
         }
 
-        @media only screen and (min-width: 1200px) and (max-width: 1440px) {
-            .rbt-header .rbt-main-navigation .mainmenu > li > a,
-            .rbt-header .rbt-main-navigation a {
-                font-size: 16.5px !important;
-                padding: 0 8px !important;
-            }
-        }
-
-/* Dashboard Sidebar Navigation - Restored Original Clean & Beautiful Styling */
-        .rbt-default-sidebar-wrapper,
-        .rbt-dashboard-sidebar {
-            position: relative !important;
-        }
-
-        .rbt-default-sidebar-wrapper .mainmenu-nav,
-        .rbt-dashboard-sidebar .mainmenu-nav {
-            display: block !important;
-            width: 100% !important;
-        }
-
-        .dashboard-mainmenu,
-        .rbt-default-sidebar-list {
-            margin: 0 !important;
-            padding: 0 !important;
-            list-style: none !important;
-            display: block !important;
-            width: 100% !important;
-        }
-
-        .dashboard-mainmenu li,
-        .rbt-default-sidebar-list li {
-            margin-bottom: 4px !important;
-            display: block !important;
-            width: 100% !important;
-        }
-
+        /* Dashboard Sidebar Navigation - 17px font & perfect alignment with SVG icons */
         .dashboard-mainmenu li a,
         .rbt-default-sidebar-list li a,
         .rbt-default-sidebar-wrapper .dashboard-mainmenu li a,
         .rbt-default-sidebar-wrapper .rbt-default-sidebar-list li a {
+            font-family: var(--font-primary), "Euclid Circular A", "Euclid Circular", sans-serif !important;
+            font-size: 17px !important;
+            font-weight: 500 !important;
+            color: #192335 !important;
             display: flex !important;
             align-items: center !important;
-            justify-content: flex-start !important;
-            font-size: 15px !important;
-            font-weight: 500 !important;
-            font-family: var(--font-primary) !important;
-            line-height: 20px !important;
-            color: #2b354f !important;
-            padding: 10px 14px !important;
+            gap: 12px !important;
+            line-height: 1.4 !important;
+            padding: 12px 16px !important;
             border-radius: 8px !important;
-            transition: all 0.2s ease !important;
             text-decoration: none !important;
-            width: 100% !important;
-            height: auto !important;
-            background: transparent !important;
+            transition: all 0.2s ease !important;
         }
 
         .dashboard-mainmenu li a span,
-        .rbt-default-sidebar-list li a span,
-        .rbt-default-sidebar-wrapper .dashboard-mainmenu li a span,
-        .rbt-default-sidebar-wrapper .rbt-default-sidebar-list li a span {
-            font-size: 15px !important;
-            font-weight: 500 !important;
-            font-family: var(--font-primary) !important;
-            color: inherit !important;
-            white-space: normal !important;
-        }
-
-        .dashboard-mainmenu li a i,
-        .rbt-default-sidebar-list li a i,
-        .rbt-default-sidebar-wrapper .dashboard-mainmenu li a i,
-        .rbt-default-sidebar-wrapper .rbt-default-sidebar-list li a i {
+        .rbt-default-sidebar-list li a span {
+            display: block !important;
+            line-height: 1.4 !important;
             font-size: 17px !important;
-            margin-right: 12px !important;
-            color: #7e879b !important;
-            transition: all 0.2s ease !important;
-            width: 20px !important;
-            text-align: center !important;
-            flex-shrink: 0 !important;
+            font-weight: 500 !important;
         }
 
         .dashboard-mainmenu li.active a,
-        .dashboard-mainmenu li a.active,
         .rbt-default-sidebar-list li.active a,
+        .dashboard-mainmenu li a.active,
         .rbt-default-sidebar-list li a.active {
             background: #f0edff !important;
             color: var(--color-primary, #2f57ef) !important;
         }
 
         .dashboard-mainmenu li.active a span,
-        .dashboard-mainmenu li a.active span,
-        .rbt-default-sidebar-list li.active a span,
-        .rbt-default-sidebar-list li a.active span {
+        .rbt-default-sidebar-list li.active a span {
             font-weight: 600 !important;
-            color: var(--color-primary, #2f57ef) !important;
-        }
-
-        .dashboard-mainmenu li.active a i,
-        .dashboard-mainmenu li a.active i,
-        .rbt-default-sidebar-list li.active a i,
-        .rbt-default-sidebar-list li a.active i {
             color: var(--color-primary, #2f57ef) !important;
         }
 
@@ -270,27 +238,37 @@
             color: var(--color-primary, #2f57ef) !important;
         }
 
-        .dashboard-mainmenu li a:hover i,
-        .rbt-default-sidebar-list li a:hover i {
-            color: var(--color-primary, #2f57ef) !important;
+        .sidebar-icon-svg {
+            width: 20px !important;
+            height: 20px !important;
+            min-width: 20px !important;
+            margin: 0 !important;
+            vertical-align: middle !important;
+            flex: 0 0 20px !important;
+            display: block !important;
+        }
+
+        .rbt-default-sidebar .section-title .rbt-title-style-2 {
+            font-size: 17px !important;
+            line-height: 1.4 !important;
         }
 
         #courseFilter {
             display: block !important;
             width: 100% !important;
-            font-size: 18px !important;
-            font-weight: 500 !important;
-            height: 56px !important;
+            font-size: 17px !important;
+            font-weight: 400 !important;
+            height: 52px !important;
             line-height: 1.5 !important;
-            color: #192335 !important;
+            color: #64748b !important;
             background-color: #ffffff !important;
             border: 1px solid #dcdfe6 !important;
-            border-radius: 10px !important;
-            padding: 0 45px 0 18px !important;
+            border-radius: 8px !important;
+            padding: 0 45px 0 16px !important;
             cursor: pointer !important;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%23192335' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E") !important;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E") !important;
             background-repeat: no-repeat !important;
-            background-position: right 18px center !important;
+            background-position: right 16px center !important;
             background-size: 18px !important;
             -webkit-appearance: none !important;
             -moz-appearance: none !important;
@@ -305,25 +283,16 @@
         }
 
         #courseFilter option {
-            font-size: 18px !important;
+            font-size: 17px !important;
             font-weight: 400 !important;
-            color: #192335 !important;
+            color: #64748b !important;
             background: #ffffff !important;
             padding: 12px !important;
-        }
-        .attendance-page-content,
-        .attendance-page-content *,
-        .attendance-header,
-        .attendance-header *,
-        .attendance-table,
-        .attendance-table * {
-            font-family: var(--font-primary, "Euclid Circular A", "Plus Jakarta Sans", "Inter", sans-serif) !important;
         }
 
         /* =========================================
            ATTENDANCE HEADER
         ========================================= */
-
         .attendance-header {
             display: flex;
             justify-content: space-between;
@@ -334,18 +303,20 @@
 
         .attendance-header h4 {
             margin-bottom: 5px;
+            font-size: 26px !important;
+            font-weight: 700 !important;
+            color: #192335 !important;
         }
 
         .attendance-header p {
             margin: 0;
-            color: #777;
+            color: #475569 !important;
+            font-size: 18px !important;
         }
 
-
         /* =========================================
-           SUMMARY
+           SUMMARY CARDS
         ========================================= */
-
         .attendance-summary {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -357,101 +328,66 @@
             background: #fff;
             border-radius: 10px;
             padding: 22px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-            border: 1px solid #eee;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
+            border: 1px solid #e8e8e8;
         }
 
         .attendance-summary-card span {
             display: block;
-            font-size: 17px;
-            color: #777;
+            font-size: 17px !important;
+            color: #475569 !important;
             margin-bottom: 8px;
+            font-weight: 500;
         }
 
         .attendance-summary-card strong {
-            font-size: 26px;
-            font-weight: 700;
-            color: #222;
+            font-size: 26px !important;
+            font-weight: 700 !important;
+            color: #192335 !important;
         }
-
 
         /* =========================================
            FILTER
         ========================================= */
-
         .attendance-filter {
             background: #fff;
             padding: 20px;
             border-radius: 10px;
             margin-bottom: 25px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.04);
-            border: 1px solid #eee;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
+            border: 1px solid #e8e8e8;
         }
 
         .attendance-filter label {
             display: block;
-            font-size: 18px;
-            font-weight: 600;
+            font-size: 17px !important;
+            font-weight: 600 !important;
             margin-bottom: 8px;
-            color: #000 !important;
+            color: #192335 !important;
         }
 
         .attendance-filter input,
         .attendance-filter select {
-            height: 48px;
-            border-radius: 6px;
-            border: 1px solid #ddd;
+            height: 52px;
+            border-radius: 8px;
+            border: 1px solid #dcdfe6;
             width: 100%;
-            padding: 0 12px;
+            padding: 0 16px;
             outline: none;
-            color: #000 !important;
-            font-size: 18px;
+            color: #192335 !important;
+            font-size: 17px !important;
             font-family: inherit;
-        }
-
-        .attendance-filter select option {
-            color: #000;
         }
 
         .attendance-filter input:focus,
         .attendance-filter select:focus {
             border-color: #6c4df6;
+            box-shadow: 0 0 0 3px rgba(108, 77, 246, 0.15);
         }
-
-        .attendance-filter input[type="date"],
-        .attendance-filter input[type="time"] {
-            color: #000000 !important;
-            font-family: inherit;
-            font-size: 18px;
-        }
-
-        .attendance-filter input[type="date"]::-webkit-datetime-edit,
-        .attendance-filter input[type="time"]::-webkit-datetime-edit,
-        .attendance-filter input[type="date"]::-webkit-datetime-edit-fields-wrapper,
-        .attendance-filter input[type="time"]::-webkit-datetime-edit-fields-wrapper,
-        .attendance-filter input[type="date"]::-webkit-datetime-edit-text,
-        .attendance-filter input[type="time"]::-webkit-datetime-edit-text,
-        .attendance-filter input[type="date"]::-webkit-datetime-edit-month-field,
-        .attendance-filter input[type="date"]::-webkit-datetime-edit-day-field,
-        .attendance-filter input[type="date"]::-webkit-datetime-edit-year-field,
-        .attendance-filter input[type="time"]::-webkit-datetime-edit-hour-field,
-        .attendance-filter input[type="time"]::-webkit-datetime-edit-minute-field,
-        .attendance-filter input[type="time"]::-webkit-datetime-edit-ampm-field {
-            color: #000000 !important;
-            font-family: inherit !important;
-            font-weight: 400 !important;
-        }
-
-        .attendance-filter input[type="date"]::-webkit-calendar-picker-indicator,
-        .attendance-filter input[type="time"]::-webkit-calendar-picker-indicator {
-            filter: opacity(0.6);
-        }
-
 
         /* =========================================
            STUDENT SEARCH
         ========================================= */
-
         .student-search-section {
             display: flex;
             justify-content: space-between;
@@ -462,9 +398,9 @@
 
         .student-search-title {
             margin: 0;
-            font-size: 17px;
-            font-weight: 600;
-            color: #222;
+            font-size: 19px !important;
+            font-weight: 600 !important;
+            color: #192335 !important;
         }
 
         .student-search-wrapper {
@@ -478,7 +414,7 @@
             left: 13px;
             top: 50%;
             transform: translateY(-50%);
-            color: #999;
+            color: #94a3b8;
             font-size: 17px;
             pointer-events: none;
         }
@@ -486,12 +422,12 @@
         .student-search-wrapper input {
             width: 100%;
             height: 44px;
-            border: 1px solid #ddd;
-            border-radius: 6px;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
             padding: 0 12px 0 36px;
             outline: none;
-            font-size: 17px;
-            color: #000;
+            font-size: 16px !important;
+            color: #192335 !important;
             background: #fff;
         }
 
@@ -500,29 +436,20 @@
         }
 
         .student-search-wrapper input::placeholder {
-            color: #999;
+            color: #94a3b8;
         }
-
 
         /* =========================================
            ATTENDANCE PERCENTAGE
         ========================================= */
-
         .attendance-percentage {
             display: flex;
             align-items: center;
             justify-content: space-between;
             gap: 20px;
-
-            background: linear-gradient(
-                135deg,
-                #f8f6ff,
-                #ffffff
-            );
-
-            border: 1px solid #ebe7ff;
+            background: linear-gradient(135deg, #f8f9ff, #ffffff);
+            border: 1px solid #e5e0ff;
             border-radius: 10px;
-
             padding: 18px 22px;
             margin-bottom: 25px;
         }
@@ -537,147 +464,118 @@
             width: 42px;
             height: 42px;
             border-radius: 50%;
-
             display: flex;
             align-items: center;
             justify-content: center;
-
             background: rgba(108, 77, 246, 0.10);
             color: #6c4df6;
-
             font-size: 18px;
         }
 
         .attendance-percentage-title {
-            font-size: 18px;
-            font-weight: 600;
+            font-size: 18px !important;
+            font-weight: 600 !important;
             margin: 0 0 3px;
-            color: #000 !important;
+            color: #192335 !important;
         }
 
         .attendance-percentage-subtitle {
-            font-size: 18px;
-            color: #888;
+            font-size: 16px !important;
+            color: #64748b !important;
             margin: 0;
         }
 
         .attendance-percentage-value {
-            font-size: 24px;
-            font-weight: 700;
-            color: #000 !important;
+            font-size: 24px !important;
+            font-weight: 700 !important;
+            color: #6c4df6 !important;
             white-space: nowrap;
         }
-
 
         /* =========================================
            TABLE
         ========================================= */
-
         .attendance-table-wrapper {
             width: 100%;
+            border: 1px solid #e8e8e8;
+            border-radius: 10px;
             overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
         }
 
         .attendance-table {
             width: 100%;
             table-layout: fixed;
             border-collapse: collapse;
+            margin: 0;
         }
 
         .attendance-table th {
-            background: #f8f8f8;
-            padding: 14px 10px;
+            background: #f8fafc;
+            padding: 13px 18px;
             text-align: left;
-            font-size: 17px;
-            font-weight: 600;
-            color: #555;
-            border-bottom: 1px solid #eee;
+            font-size: 16px !important;
+            font-weight: 600 !important;
+            color: #192335 !important;
+            border-bottom: 1px solid #e6e6e6;
         }
 
         .attendance-table td {
-        padding: 14px 18px;
-        font-size: 17px;
-        font-weight: 400;
-        color: #374151;
-        border-bottom: 1px solid #f0f0f0;
-    }
-
-        .attendance-table th:nth-child(1),
-        .attendance-table td:nth-child(1) {
-            width: 28%;
+            padding: 13px 18px;
+            font-size: 17px !important;
+            font-weight: 400 !important;
+            color: #475569 !important;
+            border-bottom: 1px solid #f1f5f9;
+            vertical-align: middle;
         }
 
-        .attendance-table th:nth-child(2),
-        .attendance-table td:nth-child(2) {
-            width: 26%;
+        .attendance-table tbody tr:last-child td {
+            border-bottom: none;
         }
 
-        .attendance-table th:nth-child(3),
-        .attendance-table td:nth-child(3) {
-            width: 20%;
+        .attendance-table tbody tr:hover {
+            background: #fafaff !important;
         }
-
-        .attendance-table th:nth-child(4),
-        .attendance-table td:nth-child(4) {
-            width: 14%;
-        }
-
-        .attendance-table th:nth-child(5),
-        .attendance-table td:nth-child(5) {
-            width: 12%;
-            text-align: center;
-        }
-
-
-        /* =========================================
-           STUDENT NAME
-        ========================================= */
 
         .student-name {
-            font-weight: 600;
+            font-weight: 500 !important;
             display: block;
-            color: #222;
-            font-size: 18px;
+            color: #192335 !important;
+            font-size: 17px !important;
         }
 
         .student-id {
-            color: #888;
-            font-size: 17px;
-            display: block;
+            color: #6c4df6 !important;
+            font-size: 13.5px !important;
+            display: inline-block;
             margin-top: 3px;
+            background: #f0edff;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 500;
         }
-
-
-        /* =========================================
-           DATE
-        ========================================= */
 
         .attendance-table td.row-date {
-            color: #000000 !important;
-            font-weight: 400 !important;
-            font-size: 17px !important;
-            font-family: inherit !important;
+            color: #475569 !important;
+            font-weight: 500 !important;
+            font-size: 16px !important;
         }
 
-
-        /* =========================================
-           STATUS
-           CLICKABLE
-        ========================================= */
-
+        /* Status Pills */
         .attendance-status {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        padding: 5px 12px;
-        border-radius: 20px;
-        font-size: 17px;
-        font-weight: 500;
-    }
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 4px 12px;
+            border-radius: 16px;
+            font-size: 14px !important;
+            font-weight: 600 !important;
+        }
 
         .attendance-status.clickable-status {
             cursor: pointer;
             user-select: none;
+            transition: all 0.2s ease;
         }
 
         .attendance-status.clickable-status:hover {
@@ -685,38 +583,18 @@
         }
 
         .attendance-yes {
-            color: #168653;
-
-            background: rgba(76, 211, 153, 0.14);
-
-            border: 1px solid rgba(76, 211, 153, 0.28);
-
-            box-shadow:
-                inset 0 1px 2px rgba(255, 255, 255, 0.8),
-                0 3px 10px rgba(76, 211, 153, 0.08);
-
-            backdrop-filter: blur(8px);
+            color: #16c763 !important;
+            background: #e8fbf1 !important;
+            border: 1px solid #c3f5db !important;
         }
 
         .attendance-no {
-            color: #c0392b;
-
-            background: rgba(255, 105, 105, 0.13);
-
-            border: 1px solid rgba(255, 105, 105, 0.28);
-
-            box-shadow:
-                inset 0 1px 2px rgba(255, 255, 255, 0.8),
-                0 3px 10px rgba(255, 105, 105, 0.08);
-
-            backdrop-filter: blur(8px);
+            color: #ef4444 !important;
+            background: #fee2e2 !important;
+            border: 1px solid #fecaca !important;
         }
 
-
-        /* =========================================
-           VIEW BUTTON
-        ========================================= */
-
+        /* View Button */
         .attendance-action-group {
             display: flex;
             gap: 8px;
@@ -725,42 +603,37 @@
         }
 
         .attendance-view-btn {
-            border: 1px solid #ebe4ff;
-            background: rgba(108, 77, 246, 0.08);
-
-            padding: 7px 14px;
-
+            border: 1px solid #e0dbff;
+            background: #f3f0ff;
+            padding: 6px 14px;
             border-radius: 6px;
-
-            font-size: 18px;
-            font-weight: 600;
-
-            color: #6c4df6;
-
+            font-size: 15px !important;
+            font-weight: 500 !important;
+            color: #6c4df6 !important;
             cursor: pointer;
-            transition: 0.2s ease;
+            transition: all 0.2s ease;
         }
 
         .attendance-view-btn:hover {
             border-color: #6c4df6;
-            background: rgba(108, 77, 246, 0.14);
+            background: #6c4df6;
+            color: #ffffff !important;
         }
 
-
         /* =========================================
-           MODAL - ONE WEEK ATTENDANCE
+           VIEW ATTENDANCE MODAL
         ========================================= */
-
         .view-modal-overlay {
             display: none;
             position: fixed;
             inset: 0;
-            background: rgba(20, 15, 40, 0.55);
-            backdrop-filter: blur(4px);
-            z-index: 9999;
+            background: rgba(15, 23, 42, 0.65);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            z-index: 999999;
             align-items: center;
             justify-content: center;
-            padding: 20px;
+            padding: 16px;
         }
 
         .view-modal-overlay.active {
@@ -772,10 +645,10 @@
             border-radius: 14px;
             width: 100%;
             max-width: 680px;
-            max-height: 85vh;
+            max-height: 88vh;
             overflow-y: auto;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
-            font-family: var(--font-primary), "Euclid Circular A", "Euclid Circular", sans-serif;
+            box-shadow: 0 20px 50px rgba(15, 23, 42, 0.22);
+            border: 1px solid #e2e8f0;
         }
 
         .view-modal-header {
@@ -783,32 +656,32 @@
             align-items: flex-start;
             justify-content: space-between;
             gap: 12px;
-            padding: 24px 26px 18px;
-            border-bottom: 1px solid #eee;
+            padding: 18px 22px;
+            border-bottom: 1px solid #e2e8f0;
             position: sticky;
             top: 0;
-            background: #fff;
+            background: linear-gradient(135deg, #f8f9ff 0%, #f3f0ff 100%);
             border-radius: 14px 14px 0 0;
             z-index: 2;
         }
 
         .view-modal-header h4 {
-            margin: 0 0 6px;
-            font-weight: 700;
-            font-size: 20px;
-            color: #192335;
+            margin: 0 0 4px;
+            font-weight: 700 !important;
+            font-size: 20px !important;
+            color: #192335 !important;
         }
 
         .view-modal-header p {
             margin: 0;
-            font-size: 17px;
-            color: #555;
+            font-size: 15px !important;
+            color: #64748b !important;
         }
 
         .view-modal-close {
-            border: none;
-            background: #f5f3ff;
-            color: #6c4df6;
+            border: 1px solid #e2e8f0;
+            background: #ffffff;
+            color: #64748b;
             width: 34px;
             height: 34px;
             border-radius: 50%;
@@ -821,51 +694,47 @@
         }
 
         .view-modal-close:hover {
-            background: #ede9fe;
+            background: #fee2e2;
+            color: #ef4444;
+            border-color: #fca5a5;
             transform: rotate(90deg);
         }
 
         .view-modal-body {
-            padding: 20px 26px 26px;
+            padding: 18px 22px;
         }
 
         .view-history-note {
-            font-size: 17px;
-            color: #4b5563;
-            font-weight: 500;
-            margin: 0 0 16px;
+            font-size: 15px !important;
+            color: #64748b !important;
+            font-weight: 500 !important;
+            margin: 0 0 14px;
         }
-
-
-        /* =========================================
-           VIEW HISTORY TABLE (ONE WEEK ATTENDANCE)
-        ========================================= */
 
         .view-history-table {
             width: 100%;
-            border-collapse: separate;
-            border-spacing: 0;
-            border: 1px solid #e6e6e6;
+            border-collapse: collapse;
+            border: 1px solid #e2e8f0;
             border-radius: 10px;
             overflow: hidden;
         }
 
         .view-history-table th {
-            background: #f6f7fb;
-            padding: 13px 16px;
+            background: #f8fafc;
+            padding: 12px 16px;
             text-align: left;
-            font-size: 18px;
-            font-weight: 600;
-            color: #192335;
-            border-bottom: 1px solid #e6e6e6;
+            font-size: 16px !important;
+            font-weight: 600 !important;
+            color: #192335 !important;
+            border-bottom: 1px solid #e2e8f0;
         }
 
         .view-history-table td {
-            padding: 13px 16px;
-            border-bottom: 1px solid #f0f0f0;
-            font-size: 18px;
-            color: #333333;
-            font-weight: 400;
+            padding: 12px 16px;
+            border-bottom: 1px solid #f1f5f9;
+            font-size: 16px !important;
+            color: #334155 !important;
+            font-weight: 400 !important;
             vertical-align: middle;
         }
 
@@ -874,98 +743,70 @@
         }
 
         .view-history-table tr.is-today td {
-            background: rgba(108, 77, 246, 0.05);
+            background: #f5f3ff !important;
         }
 
         .view-today-tag {
             display: inline-block;
-            margin-left: 8px;
-            font-size: 11px;
-            font-weight: 600;
-            color: #6c4df6;
-            background: rgba(108, 77, 246, 0.12);
-            border-radius: 20px;
-            padding: 2px 8px;
+            margin-left: 6px;
+            font-size: 12px !important;
+            font-weight: 600 !important;
+            color: #6c4df6 !important;
+            background: #ede9fe !important;
+            border-radius: 12px;
+            padding: 1px 7px;
             vertical-align: middle;
         }
-
 
         /* =========================================
            LOGIN DROPDOWN
         ========================================= */
-
         .login-dropdown {
             position: relative;
         }
 
         .login-dropdown-menu {
-            display: none;
             position: absolute;
             top: calc(100% + 10px);
             right: 0;
-            min-width: 190px;
-            background: #fff;
-            border-radius: 8px;
-            padding: 8px 0;
+            min-width: 180px;
+            background: #ffffff;
+            border-radius: 6px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
-            z-index: 9999;
+            padding: 8px 0;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(8px);
+            transition: all 0.25s ease;
+            z-index: 999;
         }
 
         .login-dropdown.active .login-dropdown-menu {
-            display: block;
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
         }
 
         .login-dropdown-menu a {
             display: flex;
             align-items: center;
-            gap: 12px;
-            padding: 12px 16px;
+            gap: 10px;
+            padding: 10px 16px;
+            font-size: 16px !important;
             color: #192335;
+            transition: all 0.2s ease;
             text-decoration: none;
-            font-size: 18px;
-            font-weight: 500;
-            font-family: var(--font-primary);
         }
 
         .login-dropdown-menu a:hover {
-            background: #f3f4ff;
-            color: var(--color-primary, #2f57ef);
+            background: #f5f5f5;
+            color: #2f57ef;
         }
-
 
         /* =========================================
            RESPONSIVE
         ========================================= */
-
-        @media (max-width: 1199px) {
-
-            .attendance-table th,
-            .attendance-table td {
-        padding: 14px 18px;
-        font-size: 17px;
-        font-weight: 400;
-        color: #374151;
-        border-bottom: 1px solid #f0f0f0;
-    }
-
-            .attendance-status {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        padding: 5px 12px;
-        border-radius: 20px;
-        font-size: 17px;
-        font-weight: 500;
-    }
-
-            .attendance-view-btn {
-                padding: 6px 9px;
-            }
-        }
-
-
         @media (max-width: 991px) {
-
             .attendance-summary {
                 grid-template-columns: 1fr;
             }
@@ -1001,49 +842,6 @@
                 width: 100%;
             }
         }
-
-
-        @media (max-width: 575px) {
-
-            .attendance-filter {
-                padding: 15px;
-            }
-
-            .attendance-percentage {
-                padding: 15px;
-            }
-
-            .attendance-percentage-left {
-                gap: 10px;
-            }
-
-            .attendance-percentage-icon {
-                width: 38px;
-                height: 38px;
-                flex-shrink: 0;
-            }
-
-            .attendance-percentage-value {
-                font-size: 20px;
-            }
-
-            .view-modal-body {
-                padding: 15px;
-            }
-
-            .view-modal-header {
-                padding: 18px 15px 14px;
-            }
-
-            .view-history-table {
-                min-width: 600px;
-            }
-
-            .view-modal-body {
-                overflow-x: auto;
-            }
-        }
-
     </style>
 
 </head>
@@ -1051,14 +849,8 @@
 
 <body>
 
-
-    <!-- =========================================
-         HEADER
-    ========================================= -->    <!-- Start Header Area -->
+    <!-- Start Header Area -->
     <header class="rbt-header rbt-header-9">
-        <div class="rbt-sticky-placeholder"></div>
-
-        
         <div class="rbt-header-wrapper header-not-transparent header-sticky">
             <div class="container">
                 <div class="mainbar-row rbt-navigation-end align-items-center">
@@ -1101,7 +893,7 @@
                     </div>
 
                     <div class="header-right">
-                        <div class="rbt-btn-wrapper d-none d-xl-flex align-items-center gap-3">
+                        <div class="rbt-btn-wrapper d-flex align-items-center gap-2">
                             <div class="login-dropdown">
                                 <button type="button"
                                     class="rbt-btn rbt-switch-btn btn-gradient btn-sm hover-transform-none login-dropdown-btn">
@@ -1124,15 +916,13 @@
                                 <span data-text="Join Now">Join Now</span>
                             </a>
                         </div>
-                        <!-- Start Mobile-Menu-Bar -->
                         <div class="mobile-menu-bar d-block d-xl-none">
                             <div class="hamberger">
-                                <button class="hamberger-button rbt-round-btn">
+                                <button class="hamberger-button rbt-round-btn" aria-label="Open Menu">
                                     <i class="feather-menu"></i>
                                 </button>
                             </div>
                         </div>
-                        <!-- Start Mobile-Menu-Bar -->
                     </div>
                 </div>
             </div>
@@ -1150,133 +940,68 @@
                         </a>
                     </div>
                     <div class="rbt-btn-close">
-                        <button class="close-button rbt-round-btn" aria-label="Close Menu">
-                            <i class="feather-x"></i>
-                        </button>
+                        <button class="close-button rbt-round-btn" aria-label="Close Menu"><i class="feather-x"></i></button>
                     </div>
                 </div>
-                <p class="description">
-                    London Star Education provides high-quality online tuition and educational support.
-                </p>
+                <p class="description">London Star Education provides high-quality online tuition and educational support.</p>
                 <ul class="navbar-top-left rbt-information-list justify-content-start">
                     <li>
                         <a href="mailto:info@londonstaredu.com"><i class="feather-mail"></i>info@londonstaredu.com</a>
                     </li>
                     <li>
-                        <a href="#"><i class="feather-phone"></i>(302) 555-0107</a>
+                        <a href="tel:3025550107"><i class="feather-phone"></i>(302) 555-0107</a>
                     </li>
                 </ul>
             </div>
 
             <nav class="mainmenu-nav">
                 <ul class="mainmenu">
-                    <li>
-                        <a href="index.html">Home</a>
-                    </li>
-                    <li>
-                        <a href="about-us.html">About</a>
-                    </li>
-                    <li>
-                        <a href="our-team.html">Our Team</a>
-                    </li>
-                    <li>
-                        <a href="our-tuition.html">Our Tuition</a>
-                    </li>
-                    <li>
-                        <a href="holiday-camps.html">Holiday Camps</a>
-                    </li>
-                    <li>
-                        <a href="plans-and-pricing.html">Plans &amp; Pricing</a>
-                    </li>
-                    <li>
-                        <a href="book-online.html">Book Online</a>
-                    </li>
-                    <li class="has-dropdown">
-                        <a href="#">Login <i class="feather-chevron-down"></i></a>
-                        <ul class="submenu">
-                            <li><a href="instructor-profile.html"><i class="feather-user"></i> Tutor Login</a></li>
-                            <li><a href="student-profile.html"><i class="feather-book-open"></i> Student Login</a></li>
-                        </ul>
-                    </li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about-us.html">About</a></li>
+                    <li><a href="our-team.html">Our Team</a></li>
+                    <li><a href="our-tuition.html">Our Tuition</a></li>
+                    <li><a href="holiday-camps.html">Holiday Camps</a></li>
+                    <li><a href="plans-and-pricing.html">Plans &amp; Pricing</a></li>
+                    <li><a href="book-online.html">Book Online</a></li>
                 </ul>
             </nav>
 
             <div class="mobile-menu-bottom">
-                <div class="rbt-btn-wrapper mb--20">
-                    <a class="rbt-btn btn-gradient btn-sm hover-transform-none w-100 justify-content-center text-center mb--10"
-                        href="login-register.html">
-                        <span>Join Now</span>
-                    </a>
-                    <a class="rbt-btn btn-border-gradient radius-round btn-sm hover-transform-none w-100 justify-content-center text-center"
-                        href="book-online.html">
-                        <span>Book Now</span>
-                    </a>
-                </div>
-
                 <div class="social-share-wrapper">
                     <span class="rbt-short-title d-block">Find With Us</span>
                     <ul class="social-icon social-default transparent-with-border justify-content-start mt--20">
-                        <li>
-                            <a href="https://www.facebook.com/" aria-label="Facebook">
-                                <i class="feather-facebook"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.twitter.com" aria-label="X (Twitter)">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" viewBox="0 0 24 24" class="social-icon-x" style="vertical-align: -2px;"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.instagram.com/" aria-label="Instagram">
-                                <i class="feather-instagram"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.linkedin.com/" aria-label="LinkedIn">
-                                <i class="feather-linkedin"></i>
-                            </a>
-                        </li>
+                        <li><a href="https://www.facebook.com/" aria-label="Facebook"><i class="feather-facebook"></i></a></li>
+                        <li><a href="https://www.twitter.com" aria-label="X (Twitter)"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" viewBox="0 0 24 24" class="social-icon-x" style="vertical-align: -2px;"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a></li>
+                        <li><a href="https://www.instagram.com/" aria-label="Instagram"><i class="feather-instagram"></i></a></li>
+                        <li><a href="https://www.linkedin.com/" aria-label="LinkedIn"><i class="feather-linkedin"></i></a></li>
                     </ul>
                 </div>
             </div>
-
         </div>
     </div>
-    <!-- End Mobile Menu -->
 
-
-
-
-    <!-- =========================================
-         BANNER
-    ========================================= -->
-
-    
-
-
-  <div class="slider-area rbt-banner-10 height-400 bg_image bg_image--11" data-black-overlay="5">
+    <!-- BANNER -->
+    <div class="slider-area rbt-banner-10 height-400 bg_image bg_image--11" data-black-overlay="5">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="inner text-center">
-
-                        <h1 class="title display-one text-white">My Profile</h1>
-
+                        <h1 class="title display-one text-white">Attendance</h1>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Start Card Style -->
+
+    <!-- DASHBOARD -->
     <div class="rbt-dashboard-area rbt-section-gap">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                   
 
                     <div class="row g-5">
                         <div class="col-lg-3">
-                            <!-- Start Dashboard Sidebar  -->
+                            <!-- Start Dashboard Sidebar -->
                             <div class="rbt-default-sidebar sticky-top rbt-shadow-box rbt-gradient-border">
                                 <div class="inner">
                                     <div class="content-item-content">
@@ -1285,57 +1010,41 @@
                                             <div class="section-title mb--20">
                                                 <h6 class="rbt-title-style-2">Welcome, Ruben</h6>
                                             </div>
+
                                             <nav class="mainmenu-nav">
                                                 <ul class="dashboard-mainmenu rbt-default-sidebar-list">
-                                                                                            <li><a href="instructor-profile.html"><i class="feather-user"></i><span>My Profile</span></a></li>
+                                                    <li>
+                                                        <a href="instructor-profile.html">
+                                                            <i class="feather-user"></i>
+                                                            <span>My Profile</span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="students-list.html">
+                                                            <i class="feather-monitor"></i>
+                                                            <span>Students List</span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="classlink.html">
+                                                            <i class="feather-link"></i>
+                                                            <span>Class Link</span>
+                                                        </a>
+                                                    </li>
+                                                    <li class="active">
+                                                        <a class="active" href="tutor-attendance.html">
+                                                            <i class="feather-calendar"></i>
+                                                            <span>Attendance</span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="tutor-homework.html">
+                                                            <i class="feather-file-text"></i>
+                                                            <span>Homework &amp; Notes</span>
+                                                        </a>
+                                                    </li>
                                                 </ul>
                                             </nav>
-
-                                           
-
-                                           <nav class="mainmenu-nav">
-    <ul class="dashboard-mainmenu rbt-default-sidebar-list">
-        <li>
-            <a href="students-list.html">
-                <i class="feather-users"></i>
-                <span>Students List</span>
-            </a>
-        </li>
-    </ul>
-</nav>
-
-<nav class="mainmenu-nav">
-    <ul class="dashboard-mainmenu rbt-default-sidebar-list">
-        <li>
-            <a href="classlink.html">
-                <i class="feather-link"></i>
-                <span>Class Link</span>
-            </a>
-        </li>
-    </ul>
-</nav>
-
-<nav class="mainmenu-nav">
-    <ul class="dashboard-mainmenu rbt-default-sidebar-list">
-        <li class="active">
-            <a class="active" href="tutor-attendance.html">
-                <i class="feather-calendar"></i>
-                <span>Attendance</span>
-            </a>
-        </li>
-    </ul>
-</nav>
-
-<nav class="mainmenu-nav">
-    <ul class="dashboard-mainmenu rbt-default-sidebar-list">
-        <li>
-            <a href="tutor-homework.html">
-                <i class="feather-file-text"></i>
-                <span>Homework &amp; Notes</span>
-            </a>
-        </li>
-    </ul>
-</nav>
 
                                             <div class="section-title mt--40 mb--20">
                                                 <h6 class="rbt-title-style-2">User</h6>
@@ -1343,62 +1052,49 @@
 
                                             <nav class="mainmenu-nav">
                                                 <ul class="dashboard-mainmenu rbt-default-sidebar-list">
-                                                    <li><a href="tuitor-edit.html"><i class="feather-settings"></i><span>Edit Profile</span></a></li>
-                                                    <li><a href="index.html"><i class="feather-log-out"></i><span>Logout</span></a></li>
+                                                    <li>
+                                                        <a href="tuitor-edit.html">
+                                                            <i class="feather-settings"></i>
+                                                            <span>Edit Profile</span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="index.html">
+                                                            <i class="feather-log-out"></i>
+                                                            <span>Logout</span>
+                                                        </a>
+                                                    </li>
                                                 </ul>
                                             </nav>
+
                                         </div>
 
                                     </div>
                                 </div>
                             </div>
-                            <!-- End Dashboard Sidebar  -->
+                            <!-- End Dashboard Sidebar -->
                         </div>
 
-
                         <!-- RIGHT CONTENT -->
-
                         <div class="col-lg-9">
-
                             <div class="rbt-dashboard-content bg-color-white rbt-shadow-box">
-
                                 <div class="content">
 
-
                                     <!-- HEADER -->
-
                                     <div class="attendance-header">
-
                                         <div>
-
                                             <div class="section-title">
-
-                                                <h4 class="rbt-title-style-3">
-                                                    Attendance
-                                                </h4>
-
+                                                <h4 class="rbt-title-style-3">Attendance</h4>
                                             </div>
-
-                                            <p>
-                                                Manage student attendance for today's class.
-                                            </p>
-
+                                            <p>Manage student attendance for today's class.</p>
                                         </div>
-
 
                                         <button type="button"
                                             class="rbt-btn rbt-switch-btn btn-gradient btn-sm hover-transform-none attendance-save-btn"
                                             onclick="saveAttendance()">
-
-                                            <span data-text="Save Attendance">
-                                                Save Attendance
-                                            </span>
-
+                                            <span data-text="Save Attendance">Save Attendance</span>
                                         </button>
-
                                     </div>
-
-
 
                                     <!-- FILTER -->
                                     <div class="attendance-filter">
@@ -1576,24 +1272,16 @@
                                     </div>
 
                                 </div>
-
                             </div>
-
                         </div>
 
                     </div>
-
                 </div>
-
             </div>
-
         </div>
-
     </div>
 
-    <!-- =========================================
-         VIEW ATTENDANCE MODAL (ONE WEEK ATTENDANCE)
-    ========================================= -->
+    <!-- VIEW ATTENDANCE MODAL -->
     <div class="view-modal-overlay" id="viewModalOverlay">
         <div class="view-modal-box">
             <div class="view-modal-header">
@@ -1628,13 +1316,13 @@
         </div>
     </div>
 
-<div class="rbt-separator-mid">
+    <div class="rbt-separator-mid">
         <div class="container">
             <hr class="rbt-separator m-0">
         </div>
     </div>
 
-                                    <!-- Start Footer Area -->
+    <!-- Footer Area -->
     <footer class="rbt-footer footer-style-1 bg-color-white overflow-hidden">
         <div class="footer-top">
             <div class="container">
@@ -1646,27 +1334,14 @@
                                     <img src="assets/images/logo/logo.png" alt="Edu-Loop Sign Logo">
                                 </a>
                             </div>
-
-                            <p class="description mt--20">We are always seeking talented and motivated individuals to
-                                join our team.</p>
-
+                            <p class="description mt--20">We are always seeking talented and motivated individuals to join our team.</p>
                             <ul class="social-icon social-default justify-content-start">
-                                <li><a href="https://www.facebook.com/">
-                                        <i class="feather-facebook"></i>
-                                    </a>
-                                </li>
+                                <li><a href="https://www.facebook.com/"><i class="feather-facebook"></i></a></li>
                                 <li><a href="https://www.twitter.com" aria-label="X (Twitter)">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" viewBox="0 0 24 24" class="social-icon-x" style="vertical-align: -2px;"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-                                    </a>
-                                </li>
-                                <li><a href="https://www.instagram.com/">
-                                        <i class="feather-instagram"></i>
-                                    </a>
-                                </li>
-                                <li><a href="https://www.linkdin.com/">
-                                        <i class="feather-linkedin"></i>
-                                    </a>
-                                </li>
+                                    </a></li>
+                                <li><a href="https://www.instagram.com/"><i class="feather-instagram"></i></a></li>
+                                <li><a href="https://www.linkedin.com/"><i class="feather-linkedin"></i></a></li>
                             </ul>
                         </div>
                     </div>
@@ -1675,21 +1350,11 @@
                         <div class="footer-widget">
                             <h5 class="ft-title">Useful Links</h5>
                             <ul class="ft-link">
-                                <li>
-                                    <a href="our-team.html">Our Team</a>
-                                </li>
-                                <li>
-                                    <a href="our-tuition.html">Our Tuition</a>
-                                </li>
-                                <li>
-                                    <a href="holiday-camps.html">Holiday Camps</a>
-                                </li>
-                                <li>
-                                    <a href="plans-and-pricing.html">Plans &amp; Pricing</a>
-                                </li>
-                                <li>
-                                    <a href="book-online.html">Book Online</a>
-                                </li>
+                                <li><a href="our-team.html">Our Team</a></li>
+                                <li><a href="our-tuition.html">Our Tuition</a></li>
+                                <li><a href="holiday-camps.html">Holiday Camps</a></li>
+                                <li><a href="plans-and-pricing.html">Plans &amp; Pricing</a></li>
+                                <li><a href="book-online.html">Book Online</a></li>
                             </ul>
                         </div>
                     </div>
@@ -1698,24 +1363,12 @@
                         <div class="footer-widget">
                             <h5 class="ft-title">Popular Programs</h5>
                             <ul class="ft-link">
-                                <li>
-                                    <a href="our-tuition.html">Primary Tuition</a>
-                                </li>
-                                <li>
-                                    <a href="our-tuition.html">Secondary Tuition</a>
-                                </li>
-                                <li>
-                                    <a href="our-tuition.html">GCSE Tuition</a>
-                                </li>
-                                <li>
-                                    <a href="our-tuition.html">IGCSE Tuition</a>
-                                </li>
-                                <li>
-                                    <a href="our-tuition.html">A-Level Tuition</a>
-                                </li>
-                                <li>
-                                    <a href="holiday-camps.html">Holiday Camps</a>
-                                </li>
+                                <li><a href="our-tuition.html">Primary Tuition</a></li>
+                                <li><a href="our-tuition.html">Secondary Tuition</a></li>
+                                <li><a href="our-tuition.html">GCSE Tuition</a></li>
+                                <li><a href="our-tuition.html">IGCSE Tuition</a></li>
+                                <li><a href="our-tuition.html">A-Level Tuition</a></li>
+                                <li><a href="holiday-camps.html">Holiday Camps</a></li>
                             </ul>
                         </div>
                     </div>
@@ -1727,11 +1380,9 @@
                                 <li><span>Phone:</span> <a href="#">(406) 555-0120</a></li>
                                 <li><span>E-mail:</span> <a href="mailto:info@londonstaredu.com">info@londonstaredu.com</a></li>
                             </ul>
-
                             <div class="newsletter-form mt--20">
                                 <h6 class="w-600">Location</h6>
-                                <p class="description">2000+ Our students are subscribe Around the World.<br> Don’t be
-                                    shy introduce yourself!</p>
+                                <p class="description">2000+ Our students are subscribe Around the World.<br> Don’t be shy introduce yourself!</p>
                             </div>
                         </div>
                     </div>
@@ -1743,16 +1394,12 @@
                 <hr class="rbt-separator m-0">
             </div>
         </div>
-        <!-- Start Copyright Area -->
         <div class="copyright-area copyright-style-1 ptb--20">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-xxl-7 col-xl-7 col-lg-7 col-md-12 col-12">
                         <p class="rbt-link-hover text-center text-lg-start">
-                            Copyright © 2026 by
-                            <a href="index.html">London Star Education Ltd.</a>
-                            All Rights Reserved. Designed by
-                            <a href="https://rkisystems.co.uk/" target="_blank">RKI Systems</a>
+                            Copyright © 2026 by <a href="index.html">London Star Education Ltd.</a> All Rights Reserved. Designed by <a href="https://rkisystems.co.uk/" target="_blank">RKI Systems</a>
                         </p>
                     </div>
                     <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-12 col-12">
@@ -1764,11 +1411,9 @@
                 </div>
             </div>
         </div>
-        <!-- End Copyright Area -->
     </footer>
-    <!-- End Footer Area -->
 
-        <div class="rbt-progress-parent">
+    <div class="rbt-progress-parent">
         <svg class="rbt-back-circle svg-inner" width="100%" height="100%" viewBox="-1 -1 102 102">
             <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
         </svg>
@@ -1776,21 +1421,14 @@
 
     <!-- Floating Contact Buttons -->
     <div class="floating-contact">
-        <!-- Call -->
         <div class="contact-item call-item">
-            <div class="contact-label call-label">
-                Talk To Our Experts
-            </div>
+            <div class="contact-label call-label">Talk To Our Experts</div>
             <a href="tel:+919876543210" class="contact-button call-button" aria-label="Call us">
                 <i class="fa fa-phone"></i>
             </a>
         </div>
-
-        <!-- WhatsApp -->
         <div class="contact-item whatsapp-item">
-            <div class="contact-label whatsapp-label">
-                Message Us
-            </div>
+            <div class="contact-label whatsapp-label">Message Us</div>
             <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer"
                 class="contact-button whatsapp-button" aria-label="Chat with us on WhatsApp">
                 <i class="fab fa-whatsapp"></i>
@@ -1799,9 +1437,7 @@
     </div>
 
 
-    <!-- =========================================
-         JAVASCRIPT
-    ========================================= -->
+    <!-- JAVASCRIPT -->
     <script src="assets/js/vendor/jquery.js"></script>
     <script src="assets/js/vendor/bootstrap.min.js"></script>
     <script src="assets/js/vendor/backtotop.js"></script>
@@ -1818,7 +1454,6 @@
         const dd = String(today.getDate()).padStart(2, "0");
         dateInput.value = `${yyyy}-${mm}-${dd}`;
 
-        /* Update displayed dates in table rows */
         function updateDates() {
             const val = dateInput.value;
             if (!val) return;
@@ -1946,7 +1581,6 @@
             document.getElementById("viewStudentName").textContent = `${name} (${studentId})`;
             document.getElementById("viewStudentMeta").textContent = course;
 
-            /* Generate 1-week dynamic history */
             const selectedDateVal = dateInput.value;
             const baseDate = selectedDateVal ? new Date(selectedDateVal + "T00:00:00") : new Date();
 
@@ -1954,7 +1588,6 @@
             const pastStatuses = studentPastWeekMap[studentId] || ["Present", "Present", "Present", "Absent", "Present", "Present"];
             const courseSubjects = subjectModules[course] || ["Module 1", "Module 2", "Module 3", "Module 4", "Module 5", "Module 6", "Module 7"];
 
-            /* 7 days: from current day backwards */
             for (let i = 0; i < 7; i++) {
                 const curDate = new Date(baseDate);
                 curDate.setDate(baseDate.getDate() - i);
@@ -1997,7 +1630,7 @@
                 tr.innerHTML = `
                     <td>
                         <span style="font-weight: 600; color: #1e293b;">${record.date}</span>
-                        <span style="color: #64748b; font-size: 17px; display: block; margin-top: 2px;">${record.dayName}</span>
+                        <span style="color: #64748b; font-size: 14px; display: block; margin-top: 2px;">${record.dayName}</span>
                         ${record.isToday ? "<span class='view-today-tag'>Current Selected</span>" : ""}
                     </td>
                     <td>
@@ -2013,9 +1646,6 @@
             });
         }
 
-        /* =========================================
-           CLOSE MODAL
-        ========================================= */
         function closeViewModal() {
             document.getElementById("viewModalOverlay").classList.remove("active");
         }
@@ -2057,7 +1687,6 @@
             if (absEl) absEl.textContent = absent;
         }
 
-        /* Initial summary */
         updateSummary();
 
         /* =========================================

@@ -12,7 +12,8 @@
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.png">
 
-   <!-- css -->
+    <!-- CSS
+	============================================ -->
     <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/vendor/slick.css">
     <link rel="stylesheet" href="assets/css/vendor/slick-theme.css">
@@ -61,190 +62,15 @@
             font-weight: normal !important;
             display: inline-block !important;
         }
-
-                        /* Header Navigation (Desktop Only - Responsive Handled in custom-ui.css) */
-        @media only screen and (min-width: 1200px) {
-            .rbt-header .mainbar-row {
-                display: flex !important;
-                flex-wrap: nowrap !important;
-                align-items: center !important;
-                justify-content: space-between !important;
-            }
-
-            .rbt-header .rbt-main-navigation {
-                display: block !important;
-                flex: 1 1 auto !important;
-                min-width: 0 !important;
-            }
-
-            .rbt-header .rbt-main-navigation .mainmenu-nav {
-                display: flex !important;
-                justify-content: center !important;
-                width: auto !important;
-            }
-
-            .rbt-header .rbt-main-navigation .mainmenu {
-                display: flex !important;
-                flex-wrap: nowrap !important;
-                align-items: center !important;
-                justify-content: center !important;
-                margin: 0 !important;
-                padding: 0 !important;
-                list-style: none !important;
-            }
-
-            .rbt-header .rbt-main-navigation .mainmenu > li {
-                flex-shrink: 0 !important;
-                margin: 0 !important;
-                padding: 0 !important;
-                position: relative !important;
-            }
-
-            .rbt-header .rbt-main-navigation .mainmenu > li > a,
-            .rbt-header .rbt-main-navigation a {
-                font-size: 17.5px !important;
-                font-weight: 500 !important;
-                color: #192335 !important;
-                white-space: nowrap !important;
-                padding: 0 11px !important;
-                display: flex !important;
-                align-items: center !important;
-                height: 80px !important;
-                line-height: 80px !important;
-                transition: all 0.3s ease !important;
-                text-decoration: none !important;
-            }
-
-            .rbt-header .rbt-main-navigation .mainmenu > li > a:hover,
-            .rbt-header .rbt-main-navigation a:hover {
-                color: #2f57ef !important;
-            }
-        }
-
-        @media only screen and (min-width: 1200px) and (max-width: 1440px) {
-            .rbt-header .rbt-main-navigation .mainmenu > li > a,
-            .rbt-header .rbt-main-navigation a {
-                font-size: 16.5px !important;
-                padding: 0 8px !important;
-            }
-        }
-
-/* Dashboard Sidebar Navigation - Restored Original Clean & Beautiful Styling */
-        .rbt-default-sidebar-wrapper,
-        .rbt-dashboard-sidebar {
-            position: relative !important;
-        }
-
-        .rbt-default-sidebar-wrapper .mainmenu-nav,
-        .rbt-dashboard-sidebar .mainmenu-nav {
-            display: block !important;
-            width: 100% !important;
-        }
-
-        .dashboard-mainmenu,
-        .rbt-default-sidebar-list {
-            margin: 0 !important;
-            padding: 0 !important;
-            list-style: none !important;
-            display: block !important;
-            width: 100% !important;
-        }
-
-        .dashboard-mainmenu li,
-        .rbt-default-sidebar-list li {
-            margin-bottom: 4px !important;
-            display: block !important;
-            width: 100% !important;
-        }
-
-        .dashboard-mainmenu li a,
-        .rbt-default-sidebar-list li a,
-        .rbt-default-sidebar-wrapper .dashboard-mainmenu li a,
-        .rbt-default-sidebar-wrapper .rbt-default-sidebar-list li a {
-            display: flex !important;
-            align-items: center !important;
-            justify-content: flex-start !important;
-            font-size: 15px !important;
-            font-weight: 500 !important;
-            font-family: var(--font-primary) !important;
-            line-height: 20px !important;
-            color: #2b354f !important;
-            padding: 10px 14px !important;
-            border-radius: 8px !important;
-            transition: all 0.2s ease !important;
-            text-decoration: none !important;
-            width: 100% !important;
-            height: auto !important;
-            background: transparent !important;
-        }
-
-        .dashboard-mainmenu li a span,
-        .rbt-default-sidebar-list li a span,
-        .rbt-default-sidebar-wrapper .dashboard-mainmenu li a span,
-        .rbt-default-sidebar-wrapper .rbt-default-sidebar-list li a span {
-            font-size: 15px !important;
-            font-weight: 500 !important;
-            font-family: var(--font-primary) !important;
-            color: inherit !important;
-            white-space: normal !important;
-        }
-
-        .dashboard-mainmenu li a i,
-        .rbt-default-sidebar-list li a i,
-        .rbt-default-sidebar-wrapper .dashboard-mainmenu li a i,
-        .rbt-default-sidebar-wrapper .rbt-default-sidebar-list li a i {
-            font-size: 17px !important;
-            margin-right: 12px !important;
-            color: #7e879b !important;
-            transition: all 0.2s ease !important;
-            width: 20px !important;
-            text-align: center !important;
-            flex-shrink: 0 !important;
-        }
-
-        .dashboard-mainmenu li.active a,
-        .dashboard-mainmenu li a.active,
-        .rbt-default-sidebar-list li.active a,
-        .rbt-default-sidebar-list li a.active {
-            background: #f0edff !important;
-            color: var(--color-primary, #2f57ef) !important;
-        }
-
-        .dashboard-mainmenu li.active a span,
-        .dashboard-mainmenu li a.active span,
-        .rbt-default-sidebar-list li.active a span,
-        .rbt-default-sidebar-list li a.active span {
-            font-weight: 600 !important;
-            color: var(--color-primary, #2f57ef) !important;
-        }
-
-        .dashboard-mainmenu li.active a i,
-        .dashboard-mainmenu li a.active i,
-        .rbt-default-sidebar-list li.active a i,
-        .rbt-default-sidebar-list li a.active i {
-            color: var(--color-primary, #2f57ef) !important;
-        }
-
-        .dashboard-mainmenu li a:hover,
-        .rbt-default-sidebar-list li a:hover {
-            background: #f6f7fb !important;
-            color: var(--color-primary, #2f57ef) !important;
-        }
-
-        .dashboard-mainmenu li a:hover i,
-        .rbt-default-sidebar-list li a:hover i {
-            color: var(--color-primary, #2f57ef) !important;
-        }
     </style>
 </head>
 
 <body class="rbt-header-sticky">
 
-        <!-- Start Header Area -->
+    <!-- Start Header Area -->
     <header class="rbt-header rbt-header-9">
         <div class="rbt-sticky-placeholder"></div>
 
-        
         <div class="rbt-header-wrapper header-not-transparent header-sticky">
             <div class="container">
                 <div class="mainbar-row rbt-navigation-end align-items-center">
@@ -287,7 +113,7 @@
                     </div>
 
                     <div class="header-right">
-                        <div class="rbt-btn-wrapper d-none d-xl-flex align-items-center gap-3">
+                        <div class="rbt-btn-wrapper d-flex align-items-center gap-2">
                             <div class="login-dropdown">
                                 <button type="button"
                                     class="rbt-btn rbt-switch-btn btn-gradient btn-sm hover-transform-none login-dropdown-btn">
@@ -313,7 +139,7 @@
                         <!-- Start Mobile-Menu-Bar -->
                         <div class="mobile-menu-bar d-block d-xl-none">
                             <div class="hamberger">
-                                <button class="hamberger-button rbt-round-btn">
+                                <button class="hamberger-button rbt-round-btn" aria-label="Open Menu">
                                     <i class="feather-menu"></i>
                                 </button>
                             </div>
@@ -325,7 +151,6 @@
         </div>
     </header>
     <!-- Mobile Menu Section -->
-        <!-- Mobile Menu Section -->
     <div class="popup-mobile-menu">
         <div class="inner-wrapper">
             <div class="inner-top">
@@ -336,99 +161,153 @@
                         </a>
                     </div>
                     <div class="rbt-btn-close">
-                        <button class="close-button rbt-round-btn" aria-label="Close Menu">
-                            <i class="feather-x"></i>
-                        </button>
+                        <button class="close-button rbt-round-btn" aria-label="Close Menu"><i class="feather-x"></i></button>
                     </div>
                 </div>
-                <p class="description">
-                    London Star Education provides high-quality online tuition and educational support.
-                </p>
+                <p class="description">London Star Education provides high-quality online tuition and educational support.</p>
                 <ul class="navbar-top-left rbt-information-list justify-content-start">
                     <li>
                         <a href="mailto:info@londonstaredu.com"><i class="feather-mail"></i>info@londonstaredu.com</a>
                     </li>
                     <li>
-                        <a href="#"><i class="feather-phone"></i>(302) 555-0107</a>
+                        <a href="tel:3025550107"><i class="feather-phone"></i>(302) 555-0107</a>
                     </li>
                 </ul>
             </div>
 
             <nav class="mainmenu-nav">
                 <ul class="mainmenu">
-                    <li>
-                        <a href="index.html">Home</a>
-                    </li>
-                    <li>
-                        <a href="about-us.html">About</a>
-                    </li>
-                    <li>
-                        <a href="our-team.html">Our Team</a>
-                    </li>
-                    <li>
-                        <a href="our-tuition.html">Our Tuition</a>
-                    </li>
-                    <li>
-                        <a href="holiday-camps.html">Holiday Camps</a>
-                    </li>
-                    <li>
-                        <a href="plans-and-pricing.html">Plans &amp; Pricing</a>
-                    </li>
-                    <li>
-                        <a href="book-online.html">Book Online</a>
-                    </li>
-                    <li class="has-dropdown">
-                        <a href="#">Login <i class="feather-chevron-down"></i></a>
-                        <ul class="submenu">
-                            <li><a href="instructor-profile.html"><i class="feather-user"></i> Tutor Login</a></li>
-                            <li><a href="student-profile.html"><i class="feather-book-open"></i> Student Login</a></li>
-                        </ul>
-                    </li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about-us.html">About</a></li>
+                    <li><a href="our-team.html">Our Team</a></li>
+                    <li><a href="our-tuition.html">Our Tuition</a></li>
+                    <li><a href="holiday-camps.html">Holiday Camps</a></li>
+                    <li><a href="plans-and-pricing.html">Plans &amp; Pricing</a></li>
+                    <li><a href="book-online.html">Book Online</a></li>
                 </ul>
             </nav>
 
             <div class="mobile-menu-bottom">
-                <div class="rbt-btn-wrapper mb--20">
-                    <a class="rbt-btn btn-gradient btn-sm hover-transform-none w-100 justify-content-center text-center mb--10"
-                        href="login-register.html">
-                        <span>Join Now</span>
-                    </a>
-                    <a class="rbt-btn btn-border-gradient radius-round btn-sm hover-transform-none w-100 justify-content-center text-center"
-                        href="book-online.html">
-                        <span>Book Now</span>
-                    </a>
-                </div>
-
                 <div class="social-share-wrapper">
                     <span class="rbt-short-title d-block">Find With Us</span>
                     <ul class="social-icon social-default transparent-with-border justify-content-start mt--20">
-                        <li>
-                            <a href="https://www.facebook.com/" aria-label="Facebook">
-                                <i class="feather-facebook"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.twitter.com" aria-label="X (Twitter)">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" viewBox="0 0 24 24" class="social-icon-x" style="vertical-align: -2px;"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.instagram.com/" aria-label="Instagram">
-                                <i class="feather-instagram"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.linkedin.com/" aria-label="LinkedIn">
-                                <i class="feather-linkedin"></i>
-                            </a>
-                        </li>
+                        <li><a href="https://www.facebook.com/" aria-label="Facebook"><i class="feather-facebook"></i></a></li>
+                        <li><a href="https://www.twitter.com" aria-label="X (Twitter)"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" viewBox="0 0 24 24" class="social-icon-x" style="vertical-align: -2px;"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a></li>
+                        <li><a href="https://www.instagram.com/" aria-label="Instagram"><i class="feather-instagram"></i></a></li>
+                        <li><a href="https://www.linkedin.com/" aria-label="LinkedIn"><i class="feather-linkedin"></i></a></li>
                     </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Start Side Vav -->
+    <div class="rbt-cart-side-menu">
+        <div class="inner-wrapper">
+            <div class="inner-top">
+                <div class="content">
+                    <div class="title">
+                        <h4 class="title mb--0">Your shopping cart</h4>
+                    </div>
+                    <div class="rbt-btn-close" id="btn_sideNavClose">
+                        <button class="minicart-close-button rbt-round-btn"><i class="feather-x"></i></button>
+                    </div>
+                </div>
+            </div>
+            <nav class="side-nav w-100">
+                <ul class="rbt-minicart-wrapper">
+                    <li class="minicart-item">
+                        <div class="thumbnail">
+                            <a href="#">
+                                <img src="assets/images/product/1.jpg" alt="Product Images">
+                            </a>
+                        </div>
+                        <div class="product-content">
+                            <h6 class="title"><a href="single-product.html">Miracle Morning</a></h6>
+
+                            <span class="quantity">1 * <span class="price">$22</span></span>
+                        </div>
+                        <div class="close-btn">
+                            <button class="rbt-round-btn"><i class="feather-x"></i></button>
+                        </div>
+                    </li>
+
+                    <li class="minicart-item">
+                        <div class="thumbnail">
+                            <a href="#">
+                                <img src="assets/images/product/7.jpg" alt="Product Images">
+                            </a>
+                        </div>
+                        <div class="product-content">
+                            <h6 class="title"><a href="single-product.html">Happy Strong</a></h6>
+
+                            <span class="quantity">1 * <span class="price">$30</span></span>
+                        </div>
+                        <div class="close-btn">
+                            <button class="rbt-round-btn"><i class="feather-x"></i></button>
+                        </div>
+                    </li>
+
+                    <li class="minicart-item">
+                        <div class="thumbnail">
+                            <a href="#">
+                                <img src="assets/images/product/3.jpg" alt="Product Images">
+                            </a>
+                        </div>
+                        <div class="product-content">
+                            <h6 class="title"><a href="single-product.html">Rich Dad Poor Dad</a></h6>
+
+                            <span class="quantity">1 * <span class="price">$50</span></span>
+                        </div>
+                        <div class="close-btn">
+                            <button class="rbt-round-btn"><i class="feather-x"></i></button>
+                        </div>
+                    </li>
+
+                    <li class="minicart-item">
+                        <div class="thumbnail">
+                            <a href="#">
+                                <img src="assets/images/product/4.jpg" alt="Product Images">
+                            </a>
+                        </div>
+                        <div class="product-content">
+                            <h6 class="title"><a href="single-product.html">Momentum Theorem</a></h6>
+
+                            <span class="quantity">1 * <span class="price">$50</span></span>
+                        </div>
+                        <div class="close-btn">
+                            <button class="rbt-round-btn"><i class="feather-x"></i></button>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="rbt-minicart-footer">
+                <hr class="mb--0">
+                <div class="rbt-cart-subttotal">
+                    <p class="subtotal"><strong>Subtotal:</strong></p>
+                    <p class="price">$121</p>
+                </div>
+                <hr class="mb--0">
+                <div class="rbt-minicart-bottom mt--20">
+                    <div class="view-cart-btn">
+                        <a class="rbt-btn btn-border icon-hover w-100 text-center" href="#">
+                            <span class="btn-text">View Cart</span>
+                            <span class="btn-icon"><i class="feather-arrow-right"></i></span>
+                        </a>
+                    </div>
+                    <div class="checkout-btn mt--20">
+                        <a class="rbt-btn btn-gradient icon-hover w-100 text-center" href="#">
+                            <span class="btn-text">Checkout</span>
+                            <span class="btn-icon"><i class="feather-arrow-right"></i></span>
+                        </a>
+                    </div>
                 </div>
             </div>
 
         </div>
     </div>
-    <!-- End Mobile Menu -->
+    <!-- End Side Vav -->
+    <a class="close_side_menu" href="javascript:void(0);"></a>
 
     <!-- Start Banner Area  -->
     <div class="slider-area rbt-banner-10 height-400 bg_image bg_image--11" data-black-overlay="5">

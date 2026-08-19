@@ -10,6 +10,9 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.png">
+
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/vendor/slick.css">
@@ -31,6 +34,60 @@
 
     <!-- CLASS LINK CUSTOM STYLE -->
     <style>
+        /* =========================================================
+           STICKY HEADER & ZERO-GAP FIX
+        ========================================================= */
+        .rbt-header.rbt-header-9 {
+            position: sticky !important;
+            top: 0 !important;
+            left: 0 !important;
+            width: 100% !important;
+            z-index: 9999 !important;
+            background-color: #ffffff;
+            margin-bottom: 0 !important;
+            padding-bottom: 0 !important;
+        }
+
+        .rbt-header .rbt-header-wrapper {
+            background-color: #ffffff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            margin-bottom: 0 !important;
+        }
+
+        /* Remove any gap between header and banner */
+        .rbt-sticky-placeholder {
+            display: none !important;
+            height: 0 !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+
+        .slider-area.rbt-banner-10 {
+            margin-top: 0 !important;
+            padding-top: 0 !important;
+        }
+
+        @media (min-width: 992px) {
+            .rbt-dashboard-area .col-lg-3 {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .rbt-default-sidebar.sticky-top {
+                position: -webkit-sticky !important;
+                position: sticky !important;
+                top: 100px !important;
+                z-index: 99 !important;
+                max-height: calc(100vh - 120px);
+                overflow-y: auto;
+            }
+        }
+
+        /* Base & Global Typography */
+        body, button, input, select, textarea, table, th, td, h1, h2, h3, h4, h5, h6, p, span, a, label, div {
+            font-family: var(--font-primary), "Euclid Circular A", "Euclid Circular", sans-serif !important;
+        }
+
         /* Icon Font Protection - Ensure feather and fontawesome icons always render */
         i[class^="feather-"],
         i[class*=" feather-"],
@@ -67,7 +124,7 @@
             display: inline-block !important;
         }
 
-                        /* Header Navigation (Desktop Only - Responsive Handled in custom-ui.css) */
+        /* Header Navigation */
         @media only screen and (min-width: 1200px) {
             .rbt-header .mainbar-row {
                 display: flex !important;
@@ -98,135 +155,76 @@
                 list-style: none !important;
             }
 
-            .rbt-header .rbt-main-navigation .mainmenu > li {
+            .rbt-header .rbt-main-navigation .mainmenu>li {
                 flex-shrink: 0 !important;
                 margin: 0 !important;
                 padding: 0 !important;
                 position: relative !important;
             }
 
-            .rbt-header .rbt-main-navigation .mainmenu > li > a,
+            .rbt-header .rbt-main-navigation .mainmenu>li>a,
             .rbt-header .rbt-main-navigation a {
-                font-size: 17.5px !important;
+                padding: 0 12px !important;
+                font-size: 16.5px !important;
                 font-weight: 500 !important;
+                font-family: var(--font-primary), "Euclid Circular A", "Euclid Circular", sans-serif !important;
                 color: #192335 !important;
-                white-space: nowrap !important;
-                padding: 0 11px !important;
-                display: flex !important;
+                display: inline-flex !important;
                 align-items: center !important;
                 height: 80px !important;
                 line-height: 80px !important;
-                transition: all 0.3s ease !important;
+                white-space: nowrap !important;
+                text-transform: none !important;
+                letter-spacing: 0 !important;
+                transition: color 0.3s ease !important;
                 text-decoration: none !important;
             }
 
-            .rbt-header .rbt-main-navigation .mainmenu > li > a:hover,
-            .rbt-header .rbt-main-navigation a:hover {
-                color: #2f57ef !important;
+            .rbt-header .rbt-main-navigation .mainmenu>li>a:hover,
+            .rbt-header .rbt-main-navigation a:hover,
+            .rbt-header .rbt-main-navigation .mainmenu>li>a.active {
+                color: var(--color-primary, #2f57ef) !important;
             }
         }
 
-        @media only screen and (min-width: 1200px) and (max-width: 1440px) {
-            .rbt-header .rbt-main-navigation .mainmenu > li > a,
-            .rbt-header .rbt-main-navigation a {
-                font-size: 16.5px !important;
-                padding: 0 8px !important;
-            }
-        }
-
-/* Dashboard Sidebar Navigation - Restored Original Clean & Beautiful Styling */
-        .rbt-default-sidebar-wrapper,
-        .rbt-dashboard-sidebar {
-            position: relative !important;
-        }
-
-        .rbt-default-sidebar-wrapper .mainmenu-nav,
-        .rbt-dashboard-sidebar .mainmenu-nav {
-            display: block !important;
-            width: 100% !important;
-        }
-
-        .dashboard-mainmenu,
-        .rbt-default-sidebar-list {
-            margin: 0 !important;
-            padding: 0 !important;
-            list-style: none !important;
-            display: block !important;
-            width: 100% !important;
-        }
-
-        .dashboard-mainmenu li,
-        .rbt-default-sidebar-list li {
-            margin-bottom: 4px !important;
-            display: block !important;
-            width: 100% !important;
-        }
-
+        /* Dashboard Sidebar Navigation */
         .dashboard-mainmenu li a,
         .rbt-default-sidebar-list li a,
         .rbt-default-sidebar-wrapper .dashboard-mainmenu li a,
         .rbt-default-sidebar-wrapper .rbt-default-sidebar-list li a {
+            font-family: var(--font-primary), "Euclid Circular A", "Euclid Circular", sans-serif !important;
+            font-size: 17px !important;
+            font-weight: 500 !important;
+            color: #192335 !important;
             display: flex !important;
             align-items: center !important;
-            justify-content: flex-start !important;
-            font-size: 15px !important;
-            font-weight: 500 !important;
-            font-family: var(--font-primary) !important;
-            line-height: 20px !important;
-            color: #2b354f !important;
-            padding: 10px 14px !important;
+            gap: 12px !important;
+            line-height: 1.4 !important;
+            padding: 12px 16px !important;
             border-radius: 8px !important;
-            transition: all 0.2s ease !important;
             text-decoration: none !important;
-            width: 100% !important;
-            height: auto !important;
-            background: transparent !important;
+            transition: all 0.2s ease !important;
         }
 
         .dashboard-mainmenu li a span,
-        .rbt-default-sidebar-list li a span,
-        .rbt-default-sidebar-wrapper .dashboard-mainmenu li a span,
-        .rbt-default-sidebar-wrapper .rbt-default-sidebar-list li a span {
-            font-size: 15px !important;
-            font-weight: 500 !important;
-            font-family: var(--font-primary) !important;
-            color: inherit !important;
-            white-space: normal !important;
-        }
-
-        .dashboard-mainmenu li a i,
-        .rbt-default-sidebar-list li a i,
-        .rbt-default-sidebar-wrapper .dashboard-mainmenu li a i,
-        .rbt-default-sidebar-wrapper .rbt-default-sidebar-list li a i {
+        .rbt-default-sidebar-list li a span {
+            display: block !important;
+            line-height: 1.4 !important;
             font-size: 17px !important;
-            margin-right: 12px !important;
-            color: #7e879b !important;
-            transition: all 0.2s ease !important;
-            width: 20px !important;
-            text-align: center !important;
-            flex-shrink: 0 !important;
+            font-weight: 500 !important;
         }
 
         .dashboard-mainmenu li.active a,
-        .dashboard-mainmenu li a.active,
         .rbt-default-sidebar-list li.active a,
+        .dashboard-mainmenu li a.active,
         .rbt-default-sidebar-list li a.active {
             background: #f0edff !important;
             color: var(--color-primary, #2f57ef) !important;
         }
 
         .dashboard-mainmenu li.active a span,
-        .dashboard-mainmenu li a.active span,
-        .rbt-default-sidebar-list li.active a span,
-        .rbt-default-sidebar-list li a.active span {
+        .rbt-default-sidebar-list li.active a span {
             font-weight: 600 !important;
-            color: var(--color-primary, #2f57ef) !important;
-        }
-
-        .dashboard-mainmenu li.active a i,
-        .dashboard-mainmenu li a.active i,
-        .rbt-default-sidebar-list li.active a i,
-        .rbt-default-sidebar-list li a.active i {
             color: var(--color-primary, #2f57ef) !important;
         }
 
@@ -236,20 +234,26 @@
             color: var(--color-primary, #2f57ef) !important;
         }
 
-        .dashboard-mainmenu li a:hover i,
-        .rbt-default-sidebar-list li a:hover i {
-            color: var(--color-primary, #2f57ef) !important;
+        .sidebar-icon-svg {
+            width: 20px !important;
+            height: 20px !important;
+            min-width: 20px !important;
+            margin: 0 !important;
+            vertical-align: middle !important;
+            flex: 0 0 20px !important;
+            display: block !important;
         }
 
+        .rbt-default-sidebar .section-title .rbt-title-style-2 {
+            font-size: 17px !important;
+            line-height: 1.4 !important;
+        }
 
-        /* =========================================
-           MAIN CLASS LINK CONTENT (SYNCHRONIZED FONTS)
-        ========================================= */
-
+        /* Main Class Link Content */
         .class-link-page,
         .class-link-page * {
             box-sizing: border-box;
-            font-family: var(--font-primary, "Euclid Circular A", "Plus Jakarta Sans", "Inter", sans-serif) !important;
+            font-family: var(--font-primary), "Euclid Circular A", "Euclid Circular", sans-serif !important;
         }
 
         .class-link-page .section-title h4 {
@@ -263,12 +267,12 @@
         .class-link-page .section-title p {
             font-size: 18px !important;
             line-height: 1.6 !important;
-            color: #374151 !important;
+            color: #475569 !important;
             margin-bottom: 0;
         }
 
         .class-link-page label {
-            font-size: 18px !important;
+            font-size: 17px !important;
             font-weight: 600 !important;
             line-height: 1.4 !important;
             color: #192335 !important;
@@ -276,27 +280,23 @@
             display: block;
         }
 
-        /* =========================================
-           DROPDOWN STYLES (GREY TEXT CONTENT)
-        ========================================= */
-
+        /* Dropdown Styles */
         .class-link-page select.form-control {
             display: block !important;
             width: 100% !important;
-            font-size: 18px !important;
-            font-weight: 500 !important;
-            height: 56px !important;
+            font-size: 17px !important;
+            font-weight: 400 !important;
+            height: 52px !important;
             line-height: 1.5 !important;
             color: #64748b !important;
-            /* Content changed to grey color */
             background-color: #ffffff !important;
             border: 1px solid #dcdfe6 !important;
-            border-radius: 10px !important;
-            padding: 0 45px 0 18px !important;
+            border-radius: 8px !important;
+            padding: 0 45px 0 16px !important;
             cursor: pointer !important;
             background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E") !important;
             background-repeat: no-repeat !important;
-            background-position: right 18px center !important;
+            background-position: right 16px center !important;
             background-size: 18px !important;
             -webkit-appearance: none !important;
             -moz-appearance: none !important;
@@ -311,63 +311,11 @@
         }
 
         .class-link-page select.form-control option {
-            font-size: 18px !important;
+            font-size: 17px !important;
             font-weight: 400 !important;
             color: #64748b !important;
-            /* Dropdown option items in grey color */
             background: #ffffff !important;
             padding: 12px !important;
-        }
-
-        /* BOOTSTRAP SELECT STYLING */
-        .class-link-page .bootstrap-select {
-            display: block !important;
-            width: 100% !important;
-            background: transparent !important;
-            border: none !important;
-            padding: 0 !important;
-        }
-
-        .class-link-page .bootstrap-select>button.dropdown-toggle {
-            display: flex !important;
-            align-items: center !important;
-            justify-content: space-between !important;
-            width: 100% !important;
-            font-size: 18px !important;
-            font-weight: 500 !important;
-            height: 56px !important;
-            color: #64748b !important;
-            background-color: #ffffff !important;
-            border: 1px solid #dcdfe6 !important;
-            border-radius: 10px !important;
-            padding: 0 18px !important;
-            box-shadow: none !important;
-        }
-
-        .class-link-page .bootstrap-select>button.dropdown-toggle:focus {
-            border-color: #6c4df6 !important;
-            box-shadow: 0 0 0 3px rgba(108, 77, 246, 0.15) !important;
-        }
-
-        .class-link-page .bootstrap-select .dropdown-menu {
-            border-radius: 10px !important;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12) !important;
-            border: 1px solid #e5e7eb !important;
-            padding: 8px !important;
-        }
-
-        .class-link-page .bootstrap-select .dropdown-menu li a {
-            font-size: 17px !important;
-            font-weight: 500 !important;
-            color: #64748b !important;
-            padding: 10px 14px !important;
-            border-radius: 6px !important;
-        }
-
-        .class-link-page .bootstrap-select .dropdown-menu li a:hover,
-        .class-link-page .bootstrap-select .dropdown-menu li.selected a {
-            background: #f5f3ff !important;
-            color: #6c4df6 !important;
         }
 
         .class-link-page .bootstrap-select select.form-control {
@@ -375,7 +323,7 @@
         }
 
         .class-link-page .btn-text {
-            font-size: 18px !important;
+            font-size: 16px !important;
             font-weight: 600 !important;
         }
 
@@ -386,15 +334,7 @@
             margin-bottom: 0;
         }
 
-        .sidebar-icon-svg {
-            margin-right: 12px;
-            vertical-align: -3px;
-        }
-
-        /* =========================================
-           LOGIN DROPDOWN
-        ========================================= */
-
+        /* Login Dropdown */
         .login-dropdown {
             position: relative;
         }
@@ -405,7 +345,7 @@
             right: 0;
             min-width: 180px;
             background: #ffffff;
-            border-radius: 5px;
+            border-radius: 6px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
             padding: 8px 0;
             opacity: 0;
@@ -427,8 +367,9 @@
             gap: 10px;
             padding: 10px 16px;
             font-size: 16px !important;
-            color: #222;
+            color: #192335;
             transition: all 0.2s ease;
+            text-decoration: none;
         }
 
         .login-dropdown-menu a:hover {
@@ -436,10 +377,7 @@
             color: #2f57ef;
         }
 
-        /* =========================================
-           CAPACITY NOTE
-        ========================================= */
-
+        /* Capacity Note */
         .class-link-page .capacity-note {
             font-size: 16px !important;
             line-height: 1.6 !important;
@@ -451,15 +389,13 @@
             margin-bottom: 25px;
         }
 
-        /* =========================================
-           SHARED LINK POOL PANEL
-        ========================================= */
-
+        /* Shared Link Pool Panel */
         .class-link-page .link-pool-panel {
             margin-bottom: 30px;
             padding: 24px;
             background: #f8f9fe;
             border-radius: 12px;
+            border: 1px solid #e5e0ff;
         }
 
         .class-link-page .link-pool-title {
@@ -567,7 +503,7 @@
             gap: 20px;
             font-size: 15px !important;
             font-weight: 500 !important;
-            color: #374151;
+            color: #475569;
             margin-top: 16px;
             flex-wrap: wrap;
         }
@@ -585,19 +521,18 @@
             display: inline-block;
         }
 
-        /* =========================================
-           CLASS SESSION SLOT CARDS
-        ========================================= */
-
+        /* Class Session Slot Cards */
         .class-link-page .class-slot-card {
-            border: 1px solid #e5e5e5;
+            border: 1px solid #e8e8e8;
             border-radius: 12px;
             padding: 24px;
             margin-bottom: 24px;
+            background: #ffffff;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
         }
 
         .class-link-page .class-slot-title {
-            font-size: 22px !important;
+            font-size: 20px !important;
             font-weight: 700 !important;
             color: #192335 !important;
             margin-bottom: 20px;
@@ -610,7 +545,7 @@
             width: 28px;
             height: 28px;
             border-radius: 50%;
-            background: #2f57ef;
+            background: #6c4df6;
             color: #fff;
             display: inline-flex;
             align-items: center;
@@ -625,7 +560,8 @@
             align-items: center;
             gap: 12px;
             padding: 14px 18px;
-            background: #f5f7ff;
+            background: #fbfbfe;
+            border: 1px solid #f0edf8;
             border-radius: 8px;
             margin-top: 6px;
             font-size: 17px !important;
@@ -636,21 +572,23 @@
         .class-link-page .current-link-box.no-link {
             color: #64748b;
             background: #f8fafc;
+            border-color: #e2e8f0;
         }
 
         .class-link-page .current-link-box.expired {
             background: #fef2f2;
+            border-color: #fecaca;
             color: #b91c1c;
         }
 
         .class-link-page .current-link-box.pending {
-            background: #eef1fe;
-            color: #2f57ef;
-            border: 1px dashed #2f57ef;
+            background: #f3f0ff;
+            color: #6c4df6;
+            border: 1px dashed #6c4df6;
         }
 
         .class-link-page .current-link-box.pending .link-countdown {
-            color: #2f57ef;
+            color: #6c4df6;
         }
 
         .class-link-page .current-link-box .link-url-wrap {
@@ -668,7 +606,7 @@
             font-size: 13px !important;
             font-weight: 600 !important;
             margin-top: 4px;
-            color: #2f57ef;
+            color: #6c4df6;
         }
 
         .class-link-page .current-link-box.expiring-soon .link-countdown {
@@ -681,21 +619,23 @@
 
         .class-link-page .copy-link-btn {
             border: none;
-            background: #2f57ef;
+            background: #6c4df6;
             color: #fff;
             border-radius: 6px;
-            padding: 8px 16px;
-            font-size: 16px !important;
+            padding: 7px 16px;
+            font-size: 15px !important;
             font-weight: 600 !important;
             cursor: pointer;
             white-space: nowrap;
             flex-shrink: 0;
+            transition: all 0.2s ease;
         }
 
-        /* =========================================
-           MOBILE
-        ========================================= */
+        .class-link-page .copy-link-btn:hover {
+            background: #5b3ce0;
+        }
 
+        /* Mobile */
         @media (max-width: 767px) {
             .class-link-page .section-title h4 {
                 font-size: 22px !important;
@@ -719,7 +659,7 @@
             }
 
             .class-link-page .class-slot-title {
-                font-size: 20px !important;
+                font-size: 18px !important;
             }
         }
     </style>
@@ -734,92 +674,34 @@
     ================================= -->
 
     <header class="rbt-header rbt-header-9">
-
-        <div class="rbt-sticky-placeholder"></div>
-
-
         <div class="rbt-header-wrapper header-not-transparent header-sticky">
-
             <div class="container">
-
                 <div class="mainbar-row rbt-navigation-end align-items-center">
-
                     <div class="header-left rbt-header-content">
-
                         <div class="header-info">
-
                             <div class="logo">
-
                                 <a href="index.html">
-
                                     <img src="assets/images/logo/logo.png" alt="Education Logo Images">
-
                                 </a>
-
                             </div>
-
                         </div>
-
                     </div>
-
 
                     <div class="rbt-main-navigation d-none d-xl-block">
-
                         <nav class="mainmenu-nav">
-
                             <ul class="mainmenu">
-
-                                <li>
-                                    <a href="index.html">
-                                        Home
-                                    </a>
-                                </li>
-
-                                <li>
-                                    <a href="about-us.html">
-                                        About
-                                    </a>
-                                </li>
-
-                                <li>
-                                    <a href="our-team.html">
-                                        Our Team
-                                    </a>
-                                </li>
-
-                                <li>
-                                    <a href="our-tuition.html">
-                                        Our Tuition
-                                    </a>
-                                </li>
-
-                                <li>
-                                    <a href="holiday-camps.html">
-                                        Holiday Camps
-                                    </a>
-                                </li>
-
-                                <li>
-                                    <a href="plans-and-pricing.html">
-                                        Plans &amp; Pricing
-                                    </a>
-                                </li>
-
-                                <li>
-                                    <a href="book-online.html">
-                                        Book Online
-                                    </a>
-                                </li>
-
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="about-us.html">About</a></li>
+                                <li><a href="our-team.html">Our Team</a></li>
+                                <li><a href="our-tuition.html">Our Tuition</a></li>
+                                <li><a href="holiday-camps.html">Holiday Camps</a></li>
+                                <li><a href="plans-and-pricing.html">Plans &amp; Pricing</a></li>
+                                <li><a href="book-online.html">Book Online</a></li>
                             </ul>
-
                         </nav>
-
                     </div>
 
-
                     <div class="header-right">
-
                         <div class="rbt-btn-wrapper d-none d-xl-flex align-items-center gap-3">
                             <div class="login-dropdown">
                                 <button type="button"
@@ -844,144 +726,18 @@
                             </a>
                         </div>
 
-
                         <div class="mobile-menu-bar d-block d-xl-none">
-
                             <div class="hamberger">
-
-                                <button class="hamberger-button rbt-round-btn">
-
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round">
-
-                                        <line x1="3" y1="12" x2="21" y2="12"></line>
-                                        <line x1="3" y1="6" x2="21" y2="6"></line>
-                                        <line x1="3" y1="18" x2="21" y2="18"></line>
-
-                                    </svg>
-
+                                <button class="hamberger-button rbt-round-btn" aria-label="Open Menu">
+                                    <i class="feather-menu"></i>
                                 </button>
-
                             </div>
-
                         </div>
-
                     </div>
-
                 </div>
-
             </div>
-
         </div>
-
     </header>
-
-    <!-- Mobile Menu Section -->
-    <div class="popup-mobile-menu">
-        <div class="inner-wrapper">
-            <div class="inner-top">
-                <div class="content">
-                    <div class="logo">
-                        <a href="index.html">
-                            <img src="assets/images/logo/logo.png" alt="Education Logo Images">
-                        </a>
-                    </div>
-                    <div class="rbt-btn-close">
-                        <button class="close-button rbt-round-btn" aria-label="Close Menu">
-                            <i class="feather-x"></i>
-                        </button>
-                    </div>
-                </div>
-                <p class="description">
-                    London Star Education provides high-quality online tuition and educational support.
-                </p>
-                <ul class="navbar-top-left rbt-information-list justify-content-start">
-                    <li>
-                        <a href="mailto:info@londonstaredu.com"><i class="feather-mail"></i>info@londonstaredu.com</a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="feather-phone"></i>(302) 555-0107</a>
-                    </li>
-                </ul>
-            </div>
-
-            <nav class="mainmenu-nav">
-                <ul class="mainmenu">
-                    <li>
-                        <a href="index.html">Home</a>
-                    </li>
-                    <li>
-                        <a href="about-us.html">About</a>
-                    </li>
-                    <li>
-                        <a href="our-team.html">Our Team</a>
-                    </li>
-                    <li>
-                        <a href="our-tuition.html">Our Tuition</a>
-                    </li>
-                    <li>
-                        <a href="holiday-camps.html">Holiday Camps</a>
-                    </li>
-                    <li>
-                        <a href="plans-and-pricing.html">Plans &amp; Pricing</a>
-                    </li>
-                    <li>
-                        <a href="book-online.html">Book Online</a>
-                    </li>
-                    <li class="has-dropdown">
-                        <a href="#">Login <i class="feather-chevron-down"></i></a>
-                        <ul class="submenu">
-                            <li><a href="instructor-profile.html"><i class="feather-user"></i> Tutor Login</a></li>
-                            <li><a href="student-profile.html"><i class="feather-book-open"></i> Student Login</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </nav>
-
-            <div class="mobile-menu-bottom">
-                <div class="rbt-btn-wrapper mb--20">
-                    <a class="rbt-btn btn-gradient btn-sm hover-transform-none w-100 justify-content-center text-center mb--10"
-                        href="login-register.html">
-                        <span>Join Now</span>
-                    </a>
-                    <a class="rbt-btn btn-border-gradient radius-round btn-sm hover-transform-none w-100 justify-content-center text-center"
-                        href="book-online.html">
-                        <span>Book Now</span>
-                    </a>
-                </div>
-
-                <div class="social-share-wrapper">
-                    <span class="rbt-short-title d-block">Find With Us</span>
-                    <ul class="social-icon social-default transparent-with-border justify-content-start mt--20">
-                        <li>
-                            <a href="https://www.facebook.com/" aria-label="Facebook">
-                                <i class="feather-facebook"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.twitter.com" aria-label="X (Twitter)">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" viewBox="0 0 24 24" class="social-icon-x" style="vertical-align: -2px;"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.instagram.com/" aria-label="Instagram">
-                                <i class="feather-instagram"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.linkedin.com/" aria-label="LinkedIn">
-                                <i class="feather-linkedin"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-        </div>
-    </div>
-    <!-- End Mobile Menu -->
-
 
 
     <!-- ================================
@@ -989,27 +745,17 @@
     ================================= -->
 
     <div class="slider-area rbt-banner-10 height-400 bg_image bg_image--11" data-black-overlay="5">
-
         <div class="container">
-
             <div class="row">
-
                 <div class="col-lg-12">
-
                     <div class="inner text-center">
-
                         <h1 class="title display-one text-white">
                             Class Link
                         </h1>
-
                     </div>
-
                 </div>
-
             </div>
-
         </div>
-
     </div>
 
 
@@ -1018,736 +764,308 @@
     ================================= -->
 
     <div class="rbt-dashboard-area rbt-section-gap">
-
         <div class="container">
-
             <div class="row">
-
                 <div class="col-lg-12">
-
                     <div class="row g-5">
 
-
                         <!-- SIDEBAR -->
-
                         <div class="col-lg-3">
-
                             <div class="rbt-default-sidebar sticky-top rbt-shadow-box rbt-gradient-border">
-
                                 <div class="inner">
-
                                     <div class="content-item-content">
-
                                         <div class="rbt-default-sidebar-wrapper">
 
                                             <div class="section-title mb--20">
-
-                                                <h6 class="rbt-title-style-2">
-                                                    Welcome, Ruben
-                                                </h6>
-
+                                                <h6 class="rbt-title-style-2">Welcome, Ruben</h6>
                                             </div>
 
-
                                             <nav class="mainmenu-nav">
-
                                                 <ul class="dashboard-mainmenu rbt-default-sidebar-list">
-
                                                     <li>
-
                                                         <a href="instructor-profile.html">
-
-                                                            <svg class="sidebar-icon-svg"
-                                                                xmlns="http://www.w3.org/2000/svg" width="16"
-                                                                height="16" viewBox="0 0 24 24" fill="none"
-                                                                stroke="currentColor" stroke-width="2"
-                                                                stroke-linecap="round" stroke-linejoin="round">
-
-                                                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2">
-                                                                </path>
-
-                                                                <circle cx="12" cy="7" r="4">
-                                                                </circle>
-
-                                                            </svg>
-
-                                                            <span>
-                                                                My Profile
-                                                            </span>
-
+                                                            <i class="feather-user"></i>
+                                                            <span>My Profile</span>
                                                         </a>
-
                                                     </li>
-
-                                                </ul>
-
-                                            </nav>
-
-
-                                            <nav class="mainmenu-nav">
-
-                                                <ul class="dashboard-mainmenu rbt-default-sidebar-list">
-
                                                     <li>
-
                                                         <a href="students-list.html">
-
-                                                            <svg class="sidebar-icon-svg"
-                                                                xmlns="http://www.w3.org/2000/svg" width="16"
-                                                                height="16" viewBox="0 0 24 24" fill="none"
-                                                                stroke="currentColor" stroke-width="2"
-                                                                stroke-linecap="round" stroke-linejoin="round">
-
-                                                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2">
-                                                                </path>
-
-                                                                <circle cx="9" cy="7" r="4">
-                                                                </circle>
-
-                                                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-
-                                                                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-
-                                                            </svg>
-
-                                                            <span>
-                                                                Students List
-                                                            </span>
-
+                                                            <i class="feather-monitor"></i>
+                                                            <span>Students List</span>
                                                         </a>
-
                                                     </li>
-
-                                                </ul>
-
-                                            </nav>
-
-
-                                            <nav class="mainmenu-nav">
-
-                                                <ul class="dashboard-mainmenu rbt-default-sidebar-list">
-
                                                     <li class="active">
-
                                                         <a class="active" href="classlink.html">
-
-                                                            <svg class="sidebar-icon-svg"
-                                                                xmlns="http://www.w3.org/2000/svg" width="16"
-                                                                height="16" viewBox="0 0 24 24" fill="none"
-                                                                stroke="currentColor" stroke-width="2"
-                                                                stroke-linecap="round" stroke-linejoin="round">
-
-                                                                <path
-                                                                    d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71">
-                                                                </path>
-
-                                                                <path
-                                                                    d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71">
-                                                                </path>
-
-                                                            </svg>
-
-                                                            <span>
-                                                                Class Link
-                                                            </span>
-
+                                                            <i class="feather-link"></i>
+                                                            <span>Class Link</span>
                                                         </a>
-
                                                     </li>
-
-                                                </ul>
-
-                                            </nav>
-
-
-                                            <nav class="mainmenu-nav">
-
-                                                <ul class="dashboard-mainmenu rbt-default-sidebar-list">
-
                                                     <li>
-
                                                         <a href="tutor-attendance.html">
-
-                                                            <svg class="sidebar-icon-svg"
-                                                                xmlns="http://www.w3.org/2000/svg" width="16"
-                                                                height="16" viewBox="0 0 24 24" fill="none"
-                                                                stroke="currentColor" stroke-width="2"
-                                                                stroke-linecap="round" stroke-linejoin="round">
-
-                                                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2">
-                                                                </rect>
-
-                                                                <line x1="16" y1="2" x2="16" y2="6"></line>
-                                                                <line x1="8" y1="2" x2="8" y2="6"></line>
-                                                                <line x1="3" y1="10" x2="21" y2="10"></line>
-
-                                                            </svg>
-
-                                                            <span>
-                                                                Attendance
-                                                            </span>
-
+                                                            <i class="feather-calendar"></i>
+                                                            <span>Attendance</span>
                                                         </a>
-
                                                     </li>
-
-                                                </ul>
-
-                                            </nav>
-
-
-                                            <nav class="mainmenu-nav">
-
-                                                <ul class="dashboard-mainmenu rbt-default-sidebar-list">
-
                                                     <li>
-
                                                         <a href="tutor-homework.html">
-
-                                                            <svg class="sidebar-icon-svg"
-                                                                xmlns="http://www.w3.org/2000/svg" width="16"
-                                                                height="16" viewBox="0 0 24 24" fill="none"
-                                                                stroke="currentColor" stroke-width="2"
-                                                                stroke-linecap="round" stroke-linejoin="round">
-
-                                                                <path
-                                                                    d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 2 2h12a2 2 0 0 0 2-2V8z">
-                                                                </path>
-
-                                                                <polyline points="14 2 14 8 20 8"></polyline>
-
-                                                                <line x1="16" y1="13" x2="8" y2="13"></line>
-                                                                <line x1="16" y1="17" x2="8" y2="17"></line>
-
-                                                                <polyline points="10 9 9 9 8 9"></polyline>
-
-                                                            </svg>
-
-                                                            <span>
-                                                                Homework &amp; Notes
-                                                            </span>
-
+                                                            <i class="feather-file-text"></i>
+                                                            <span>Homework &amp; Notes</span>
                                                         </a>
-
                                                     </li>
-
                                                 </ul>
-
                                             </nav>
-
 
                                             <div class="section-title mt--40 mb--20">
-
-                                                <h6 class="rbt-title-style-2">
-                                                    User
-                                                </h6>
-
+                                                <h6 class="rbt-title-style-2">User</h6>
                                             </div>
 
-
                                             <nav class="mainmenu-nav">
-
                                                 <ul class="dashboard-mainmenu rbt-default-sidebar-list">
-
                                                     <li>
-
                                                         <a href="tuitor-edit.html">
-
-                                                            <svg class="sidebar-icon-svg"
-                                                                xmlns="http://www.w3.org/2000/svg" width="16"
-                                                                height="16" viewBox="0 0 24 24" fill="none"
-                                                                stroke="currentColor" stroke-width="2"
-                                                                stroke-linecap="round" stroke-linejoin="round">
-
-                                                                <circle cx="12" cy="12" r="3">
-                                                                </circle>
-
-                                                                <path
-                                                                    d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z">
-                                                                </path>
-
-                                                            </svg>
-
-                                                            <span>
-                                                                Edit Profile
-                                                            </span>
-
+                                                            <i class="feather-settings"></i>
+                                                            <span>Edit Profile</span>
                                                         </a>
-
                                                     </li>
-
-
                                                     <li>
-
                                                         <a href="index.html">
-
-                                                            <svg class="sidebar-icon-svg"
+                                                            <i class="feather-log-out"></i>
+                                                            <span>Logout</span>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </nav>
                                                                 xmlns="http://www.w3.org/2000/svg" width="16"
                                                                 height="16" viewBox="0 0 24 24" fill="none"
                                                                 stroke="currentColor" stroke-width="2"
                                                                 stroke-linecap="round" stroke-linejoin="round">
-
                                                                 <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4">
                                                                 </path>
-
                                                                 <polyline points="16 17 21 12 16 7"></polyline>
-
                                                                 <line x1="21" y1="12" x2="9" y2="12">
                                                                 </line>
-
                                                             </svg>
-
-                                                            <span>
-                                                                Logout
-                                                            </span>
-
+                                                            <span>Logout</span>
                                                         </a>
-
                                                     </li>
-
                                                 </ul>
-
                                             </nav>
 
                                         </div>
-
                                     </div>
-
                                 </div>
-
                             </div>
-
                         </div>
 
-
                         <!-- MAIN CONTENT -->
-
                         <div class="col-lg-9">
-
                             <div class="rbt-dashboard-content bg-color-white rbt-shadow-box class-link-page">
-
                                 <div class="content">
 
-
                                     <!-- TITLE -->
-
                                     <div class="section-title mb--30">
-
                                         <h4 class="rbt-title-style-3">
                                             Update Class Link
                                         </h4>
-
                                         <p>
                                             Assign meeting links to your active classes.
                                         </p>
-
                                     </div>
 
-
                                     <!-- SHARED LINK POOL STATUS -->
-
                                     <div class="link-pool-panel">
-
                                         <div class="link-pool-title">
-
                                             <span>
                                                 Shared Zoom Link Pool
                                             </span>
-
                                             <span id="poolCountText">
                                                 &nbsp;
                                             </span>
-
                                         </div>
-
 
                                         <div class="link-pool-grid" id="linkPoolGrid">
                                         </div>
 
-
                                         <div class="pool-legend">
-
                                             <span>
                                                 <i style="background:#2fb51c"></i>
                                                 Available
                                             </span>
-
                                             <span>
                                                 <i style="background:#2f57ef"></i>
                                                 Assigned to you
                                             </span>
-
                                             <span>
                                                 <i style="background:#bbb"></i>
                                                 In use by another tutor
                                             </span>
-
                                         </div>
 
-
                                         <p class="capacity-note" style="margin-top:14px; margin-bottom:0;">
-
                                             Tap an available link above to select it.
                                             Tap it again to deselect it, then choose a course, class type
                                             and duration below and press &ldquo;Update Class Link&rdquo; to confirm.
-
                                         </p>
-
                                     </div>
 
-
-                                    <!-- =================================
-                                         CLASS SESSION 1
-                                    ================================= -->
-
+                                    <!-- CLASS SESSION 1 -->
                                     <div class="class-slot-card" data-slot="1">
-
                                         <div class="class-slot-title">
-
-                                            <span class="slot-number">
-                                                1
-                                            </span>
-
+                                            <span class="slot-number">1</span>
                                             Class Session 1
-
                                         </div>
 
-
                                         <div class="row">
-
                                             <!-- 1. COURSE NAME DROPDOWN -->
                                             <div class="col-lg-4 mb--20">
-
-                                                <label>
-                                                    Course Name
-                                                </label>
-
+                                                <label>Course Name</label>
                                                 <select class="form-control slot-course" required>
-
-                                                    <option value="" selected disabled>
-                                                        Select Course
-                                                    </option>
-
-                                                    <option value="reading">
-                                                        Reading &amp; Comprehension
-                                                    </option>
-
-                                                    <option value="creative">
-                                                        Creative Writing
-                                                    </option>
-
-                                                    <option value="english">
-                                                        English Language
-                                                    </option>
-
-                                                    <option value="lamda">
-                                                        LAMDA &amp; Public Speaking
-                                                    </option>
-
+                                                    <option value="" selected disabled>Select Course</option>
+                                                    <option value="reading">Reading &amp; Comprehension</option>
+                                                    <option value="creative">Creative Writing</option>
+                                                    <option value="english">English Language</option>
+                                                    <option value="lamda">LAMDA &amp; Public Speaking</option>
                                                 </select>
-
                                             </div>
-
 
                                             <!-- 2. CLASS TYPE DROPDOWN -->
                                             <div class="col-lg-4 mb--20">
-
-                                                <label>
-                                                    Class Type
-                                                </label>
-
+                                                <label>Class Type</label>
                                                 <select class="form-control slot-type" required>
-
-                                                    <option value="" selected disabled>
-                                                        Select Class Type
-                                                    </option>
-
-                                                    <option value="one-to-one">
-                                                        One to One
-                                                    </option>
-
-                                                    <option value="one-to-many">
-                                                        One to Many (Group)
-                                                    </option>
-
+                                                    <option value="" selected disabled>Select Class Type</option>
+                                                    <option value="one-to-one">One to One</option>
+                                                    <option value="one-to-many">One to Many (Group)</option>
                                                 </select>
-
                                             </div>
-
 
                                             <!-- 3. CLASS DURATION DROPDOWN -->
                                             <div class="col-lg-4 mb--20">
-
-                                                <label>
-                                                    Session Duration
-                                                </label>
-
+                                                <label>Session Duration</label>
                                                 <select class="form-control slot-duration" required>
-
-                                                    <option value="" selected disabled>
-                                                        Select Duration
-                                                    </option>
-
-                                                    <option value="30">
-                                                        30 Minutes
-                                                    </option>
-
-                                                    <option value="60">
-                                                        1 Hour
-                                                    </option>
-
-                                                    <option value="90">
-                                                        1.5 Hours
-                                                    </option>
-
-                                                    <option value="120">
-                                                        2 Hours
-                                                    </option>
-
+                                                    <option value="" selected disabled>Select Duration</option>
+                                                    <option value="30">30 Minutes</option>
+                                                    <option value="60">1 Hour</option>
+                                                    <option value="90">1.5 Hours</option>
+                                                    <option value="120">2 Hours</option>
                                                 </select>
-
                                             </div>
-
                                         </div>
 
-
                                         <input type="hidden" class="slot-link" value="">
-
 
                                         <div class="current-link-box no-link slot-current-link">
                                             No link assigned yet
                                         </div>
 
-
                                         <div class="d-flex justify-content-between align-items-center mt--20">
-
                                             <div class="rbt-btn-wrapper">
-
                                                 <button type="button"
                                                     class="rbt-btn btn-gradient hover-icon-reverse slot-update-btn">
-
                                                     <span class="icon-reverse-wrapper">
-
-                                                        <span class="btn-text">
-                                                            Update Class Link
-                                                        </span>
-
+                                                        <span class="btn-text">Update Class Link</span>
                                                         <span class="btn-icon">
                                                             <i class="feather-arrow-right"></i>
                                                         </span>
-
                                                         <span class="btn-icon">
                                                             <i class="feather-arrow-right"></i>
                                                         </span>
-
                                                     </span>
-
                                                 </button>
-
                                             </div>
 
-
                                             <div class="form-check form-switch mb--0">
-
                                                 <input class="form-check-input slot-status-toggle" type="checkbox"
                                                     id="slotStatus1">
-
                                                 <label class="form-check-label" for="slotStatus1" id="slotStatusText1">
-
                                                     Disable
-
                                                 </label>
-
                                             </div>
-
                                         </div>
-
                                     </div>
 
-
-                                    <!-- =================================
-                                         CLASS SESSION 2
-                                    ================================= -->
-
+                                    <!-- CLASS SESSION 2 -->
                                     <div class="class-slot-card" data-slot="2">
-
                                         <div class="class-slot-title">
-
-                                            <span class="slot-number">
-                                                2
-                                            </span>
-
+                                            <span class="slot-number">2</span>
                                             Class Session 2
-
                                         </div>
 
-
                                         <div class="row">
-
                                             <!-- 1. COURSE NAME DROPDOWN -->
                                             <div class="col-lg-4 mb--20">
-
-                                                <label>
-                                                    Course Name
-                                                </label>
-
+                                                <label>Course Name</label>
                                                 <select class="form-control slot-course" required>
-
-                                                    <option value="" selected disabled>
-                                                        Select Course
-                                                    </option>
-
-                                                    <option value="reading">
-                                                        Reading &amp; Comprehension
-                                                    </option>
-
-                                                    <option value="creative">
-                                                        Creative Writing
-                                                    </option>
-
-                                                    <option value="english">
-                                                        English Language
-                                                    </option>
-
-                                                    <option value="lamda">
-                                                        LAMDA &amp; Public Speaking
-                                                    </option>
-
+                                                    <option value="" selected disabled>Select Course</option>
+                                                    <option value="reading">Reading &amp; Comprehension</option>
+                                                    <option value="creative">Creative Writing</option>
+                                                    <option value="english">English Language</option>
+                                                    <option value="lamda">LAMDA &amp; Public Speaking</option>
                                                 </select>
-
                                             </div>
-
 
                                             <!-- 2. CLASS TYPE DROPDOWN -->
                                             <div class="col-lg-4 mb--20">
-
-                                                <label>
-                                                    Class Type
-                                                </label>
-
+                                                <label>Class Type</label>
                                                 <select class="form-control slot-type" required>
-
-                                                    <option value="" selected disabled>
-                                                        Select Class Type
-                                                    </option>
-
-                                                    <option value="one-to-one">
-                                                        One to One
-                                                    </option>
-
-                                                    <option value="one-to-many">
-                                                        One to Many (Group)
-                                                    </option>
-
+                                                    <option value="" selected disabled>Select Class Type</option>
+                                                    <option value="one-to-one">One to One</option>
+                                                    <option value="one-to-many">One to Many (Group)</option>
                                                 </select>
-
                                             </div>
-
 
                                             <!-- 3. CLASS DURATION DROPDOWN -->
                                             <div class="col-lg-4 mb--20">
-
-                                                <label>
-                                                    Session Duration
-                                                </label>
-
+                                                <label>Session Duration</label>
                                                 <select class="form-control slot-duration" required>
-
-                                                    <option value="" selected disabled>
-                                                        Select Duration
-                                                    </option>
-
-                                                    <option value="30">
-                                                        30 Minutes
-                                                    </option>
-
-                                                    <option value="60">
-                                                        1 Hour
-                                                    </option>
-
-                                                    <option value="90">
-                                                        1.5 Hours
-                                                    </option>
-
-                                                    <option value="120">
-                                                        2 Hours
-                                                    </option>
-
+                                                    <option value="" selected disabled>Select Duration</option>
+                                                    <option value="30">30 Minutes</option>
+                                                    <option value="60">1 Hour</option>
+                                                    <option value="90">1.5 Hours</option>
+                                                    <option value="120">2 Hours</option>
                                                 </select>
-
                                             </div>
-
                                         </div>
 
-
                                         <input type="hidden" class="slot-link" value="">
-
 
                                         <div class="current-link-box no-link slot-current-link">
                                             No link assigned yet
                                         </div>
 
-
                                         <div class="d-flex justify-content-between align-items-center mt--20">
-
                                             <div class="rbt-btn-wrapper">
-
                                                 <button type="button"
                                                     class="rbt-btn btn-gradient hover-icon-reverse slot-update-btn">
-
                                                     <span class="icon-reverse-wrapper">
-
-                                                        <span class="btn-text">
-                                                            Update Class Link
-                                                        </span>
-
+                                                        <span class="btn-text">Update Class Link</span>
                                                         <span class="btn-icon">
                                                             <i class="feather-arrow-right"></i>
                                                         </span>
-
                                                         <span class="btn-icon">
                                                             <i class="feather-arrow-right"></i>
                                                         </span>
-
                                                     </span>
-
                                                 </button>
-
                                             </div>
-
 
                                             <div class="form-check form-switch mb--0">
-
                                                 <input class="form-check-input slot-status-toggle" type="checkbox"
                                                     id="slotStatus2">
-
                                                 <label class="form-check-label" for="slotStatus2" id="slotStatusText2">
-
                                                     Disable
-
                                                 </label>
-
                                             </div>
-
                                         </div>
-
                                     </div>
 
-
                                 </div>
-
                             </div>
-
                         </div>
 
                     </div>
-
                 </div>
-
             </div>
-
         </div>
-
     </div>
 
 
@@ -1755,7 +1073,6 @@
          FOOTER
     ================================= -->
 
-    <!-- Start Footer Area -->
     <footer class="rbt-footer footer-style-1 bg-color-white overflow-hidden">
         <div class="footer-top">
             <div class="container">
@@ -1767,15 +1084,10 @@
                                     <img src="assets/images/logo/logo.png" alt="Edu-Loop Sign Logo">
                                 </a>
                             </div>
-
                             <p class="description mt--20">We are always seeking talented and motivated individuals to
                                 join our team.</p>
-
                             <ul class="social-icon social-default justify-content-start">
-                                <li><a href="https://www.facebook.com/">
-                                        <i class="feather-facebook"></i>
-                                    </a>
-                                </li>
+                                <li><a href="https://www.facebook.com/"><i class="feather-facebook"></i></a></li>
                                 <li><a href="https://www.twitter.com" aria-label="X (Twitter)">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15"
                                             fill="currentColor" viewBox="0 0 24 24" class="social-icon-x"
@@ -1785,14 +1097,8 @@
                                         </svg>
                                     </a>
                                 </li>
-                                <li><a href="https://www.instagram.com/">
-                                        <i class="feather-instagram"></i>
-                                    </a>
-                                </li>
-                                <li><a href="https://www.linkdin.com/">
-                                        <i class="feather-linkedin"></i>
-                                    </a>
-                                </li>
+                                <li><a href="https://www.instagram.com/"><i class="feather-instagram"></i></a></li>
+                                <li><a href="https://www.linkedin.com/"><i class="feather-linkedin"></i></a></li>
                             </ul>
                         </div>
                     </div>
@@ -1801,21 +1107,11 @@
                         <div class="footer-widget">
                             <h5 class="ft-title">Useful Links</h5>
                             <ul class="ft-link">
-                                <li>
-                                    <a href="our-team.html">Our Team</a>
-                                </li>
-                                <li>
-                                    <a href="our-tuition.html">Our Tuition</a>
-                                </li>
-                                <li>
-                                    <a href="holiday-camps.html">Holiday Camps</a>
-                                </li>
-                                <li>
-                                    <a href="plans-and-pricing.html">Plans &amp; Pricing</a>
-                                </li>
-                                <li>
-                                    <a href="book-online.html">Book Online</a>
-                                </li>
+                                <li><a href="our-team.html">Our Team</a></li>
+                                <li><a href="our-tuition.html">Our Tuition</a></li>
+                                <li><a href="holiday-camps.html">Holiday Camps</a></li>
+                                <li><a href="plans-and-pricing.html">Plans &amp; Pricing</a></li>
+                                <li><a href="book-online.html">Book Online</a></li>
                             </ul>
                         </div>
                     </div>
@@ -1824,24 +1120,12 @@
                         <div class="footer-widget">
                             <h5 class="ft-title">Popular Programs</h5>
                             <ul class="ft-link">
-                                <li>
-                                    <a href="our-tuition.html">Primary Tuition</a>
-                                </li>
-                                <li>
-                                    <a href="our-tuition.html">Secondary Tuition</a>
-                                </li>
-                                <li>
-                                    <a href="our-tuition.html">GCSE Tuition</a>
-                                </li>
-                                <li>
-                                    <a href="our-tuition.html">IGCSE Tuition</a>
-                                </li>
-                                <li>
-                                    <a href="our-tuition.html">A-Level Tuition</a>
-                                </li>
-                                <li>
-                                    <a href="holiday-camps.html">Holiday Camps</a>
-                                </li>
+                                <li><a href="our-tuition.html">Primary Tuition</a></li>
+                                <li><a href="our-tuition.html">Secondary Tuition</a></li>
+                                <li><a href="our-tuition.html">GCSE Tuition</a></li>
+                                <li><a href="our-tuition.html">IGCSE Tuition</a></li>
+                                <li><a href="our-tuition.html">A-Level Tuition</a></li>
+                                <li><a href="holiday-camps.html">Holiday Camps</a></li>
                             </ul>
                         </div>
                     </div>
@@ -1851,10 +1135,8 @@
                             <h5 class="ft-title">Get Contact</h5>
                             <ul class="ft-link">
                                 <li><span>Phone:</span> <a href="#">(406) 555-0120</a></li>
-                                <li><span>E-mail:</span> <a
-                                        href="mailto:info@londonstaredu.com">info@londonstaredu.com</a></li>
+                                <li><span>E-mail:</span> <a href="mailto:info@londonstaredu.com">info@londonstaredu.com</a></li>
                             </ul>
-
                             <div class="newsletter-form mt--20">
                                 <h6 class="w-600">Location</h6>
                                 <p class="description">2000+ Our students are subscribe Around the World.<br> Don’t be
@@ -1870,7 +1152,6 @@
                 <hr class="rbt-separator m-0">
             </div>
         </div>
-        <!-- Start Copyright Area -->
         <div class="copyright-area copyright-style-1 ptb--20">
             <div class="container">
                 <div class="row align-items-center">
@@ -1883,8 +1164,7 @@
                         </p>
                     </div>
                     <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-12 col-12">
-                        <ul
-                            class="copyright-link rbt-link-hover justify-content-center justify-content-lg-end mt_sm--10 mt_md--10">
+                        <ul class="copyright-link rbt-link-hover justify-content-center justify-content-lg-end mt_sm--10 mt_md--10">
                             <li><a href="#">Terms of service</a></li>
                             <li><a href="privacy-policy.html">Privacy policy</a></li>
                         </ul>
@@ -1892,11 +1172,9 @@
                 </div>
             </div>
         </div>
-        <!-- End Copyright Area -->
     </footer>
-    <!-- End Footer Area -->
 
-        <div class="rbt-progress-parent">
+    <div class="rbt-progress-parent">
         <svg class="rbt-back-circle svg-inner" width="100%" height="100%" viewBox="-1 -1 102 102">
             <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
         </svg>
@@ -1904,7 +1182,6 @@
 
     <!-- Floating Contact Buttons -->
     <div class="floating-contact">
-        <!-- Call -->
         <div class="contact-item call-item">
             <div class="contact-label call-label">
                 Talk To Our Experts
@@ -1914,7 +1191,6 @@
             </a>
         </div>
 
-        <!-- WhatsApp -->
         <div class="contact-item whatsapp-item">
             <div class="contact-label whatsapp-label">
                 Message Us
@@ -1954,124 +1230,75 @@
     <script src="assets/js/vendor/paralax.min.js"></script>
     <script src="assets/js/vendor/countdown.js"></script>
     <script src="assets/js/vendor/plyr.js"></script>
-
     <script src="assets/js/main.js"></script>
 
 
     <!-- LOGIN DROPDOWN -->
-
     <script>
-
         document.addEventListener("DOMContentLoaded", function () {
-
-            const dropdown =
-                document.querySelector(".login-dropdown");
-
-            const button =
-                document.querySelector(".login-dropdown-btn");
+            const dropdown = document.querySelector(".login-dropdown");
+            const button = document.querySelector(".login-dropdown-btn");
 
             if (!dropdown || !button) return;
 
             button.addEventListener("click", function (event) {
-
                 event.stopPropagation();
-
                 dropdown.classList.toggle("active");
-
             });
-
 
             document.addEventListener("click", function (event) {
-
                 if (!dropdown.contains(event.target)) {
-
                     dropdown.classList.remove("active");
-
                 }
-
             });
-
         });
-
     </script>
 
 
     <!-- FLOATING CONTACT -->
-
     <script>
-
         document.addEventListener("DOMContentLoaded", function () {
-
-            const contactItems =
-                document.querySelectorAll(".contact-item");
-
+            const contactItems = document.querySelectorAll(".contact-item");
 
             contactItems.forEach(function (item) {
-
-                const button =
-                    item.querySelector(".contact-button");
-
+                const button = item.querySelector(".contact-button");
                 if (!button) return;
 
-
                 button.addEventListener("click", function () {
-
                     if (window.innerWidth <= 767) {
-
                         contactItems.forEach(function (otherItem) {
-
                             if (otherItem !== item) {
-
                                 otherItem.classList.remove("show-label");
-
                             }
-
                         });
-
                         item.classList.toggle("show-label");
-
                     }
-
                 });
-
             });
-
 
             document.addEventListener("click", function (event) {
-
                 if (!event.target.closest(".floating-contact")) {
-
                     contactItems.forEach(function (item) {
-
                         item.classList.remove("show-label");
-
                     });
-
                 }
-
             });
-
         });
-
     </script>
 
 
     <!-- =========================================
          CLASS LINK POOL MANAGER
     ========================================= -->
-
     <script>
-
         document.addEventListener("DOMContentLoaded", function () {
-
             var POOL_KEY = "lse_class_link_pool";
             var EXPIRY_KEY = "lse_class_link_expiry";
             var CURRENT_TUTOR = "Ruben";
             var SLOT_NUMBERS = [1, 2];
-            var selectedLinkId = null; /* link tapped in the pool, pending confirmation via Update Class Link */
-            var pendingPreviewSlot = null; /* which slot is currently previewing the selected link */
+            var selectedLinkId = null;
+            var pendingPreviewSlot = null;
 
-            /* Destroy bootstrap-select completely to avoid multi-border overlay */
             function cleanupBootstrapSelect() {
                 if (window.jQuery && typeof jQuery.fn.selectpicker === "function") {
                     jQuery('.class-link-page select').each(function () {
@@ -2124,8 +1351,6 @@
                 localStorage.setItem(POOL_KEY, JSON.stringify(pool));
             }
 
-            /* ---- Per-slot expiry tracking (drives auto-disable) ---- */
-
             function getExpiryMap() {
                 try {
                     var raw = localStorage.getItem(EXPIRY_KEY);
@@ -2176,7 +1401,6 @@
                 var countText = document.getElementById("poolCountText");
                 if (!grid) return;
 
-                /* Drop the pending selection if that link is no longer available */
                 if (selectedLinkId) {
                     var stillAvailable = pool.some(function (l) {
                         return l.id === selectedLinkId && l.status === "available";
@@ -2203,9 +1427,6 @@
                             cls += "available";
                             sub = "Available";
                         }
-                        // } else if (link.tutor === CURRENT_TUTOR) { 
-                        //     cls += "in-use-mine"; 
-                        //     sub = "Your class"; 
                     } else {
                         cls += "in-use-others";
                         sub = "In use";
@@ -2329,7 +1550,6 @@
                 card.removeAttribute("data-just-expired");
                 card.removeAttribute("data-pending-link");
 
-                /* If this link was being previewed in another (or this) slot, clear that preview too */
                 if (pendingPreviewSlot !== null) {
                     var previewCard = getSlotCard(pendingPreviewSlot);
                     if (previewCard && previewCard.getAttribute("data-pending-link") === String(linkId)) {
@@ -2355,7 +1575,6 @@
                 renderSlotCurrentLink(slotNumber);
             }
 
-            /* Auto-disable a slot once its session duration has elapsed */
             function expireSlot(slotNumber) {
                 var card = getSlotCard(slotNumber);
                 if (!card) return;
@@ -2376,7 +1595,6 @@
                 renderSlotCurrentLink(slotNumber);
             }
 
-            /* Runs every second: disables any slot whose duration has run out */
             function tickExpiryCheck() {
                 SLOT_NUMBERS.forEach(function (slotNumber) {
                     var card = getSlotCard(slotNumber);
@@ -2494,7 +1712,6 @@
 
                     var numericId = parseInt(linkId, 10);
 
-                    /* Clear any existing preview before applying the new selection */
                     if (pendingPreviewSlot !== null) {
                         var prevCard = getSlotCard(pendingPreviewSlot);
                         if (prevCard) prevCard.removeAttribute("data-pending-link");
@@ -2504,10 +1721,8 @@
                     }
 
                     if (selectedLinkId === numericId) {
-                        /* Deselecting */
                         selectedLinkId = null;
                     } else {
-                        /* Selecting: preview it in the first empty class session box */
                         selectedLinkId = numericId;
                         var openSlot = SLOT_NUMBERS.find(function (slotNumber) {
                             var slotCard = getSlotCard(slotNumber);
@@ -2534,7 +1749,6 @@
             setInterval(tickExpiryCheck, 1000);
 
         });
-
     </script>
 
 </body>

@@ -12,8 +12,7 @@
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.png">
 
-    <!-- CSS
-	============================================ -->
+    <!-- CSS ============================================ -->
     <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/vendor/slick.css">
     <link rel="stylesheet" href="assets/css/vendor/slick-theme.css">
@@ -34,6 +33,55 @@
 
     <!-- Teacher Profile Professional Styles -->
     <style>
+        /* =========================================================
+           STICKY HEADER & ZERO-GAP FIX
+        ========================================================= */
+        .rbt-header.rbt-header-9 {
+            position: sticky !important;
+            top: 0 !important;
+            left: 0 !important;
+            width: 100% !important;
+            z-index: 9999 !important;
+            background-color: #ffffff;
+            margin-bottom: 0 !important;
+            padding-bottom: 0 !important;
+        }
+
+        .rbt-header .rbt-header-wrapper {
+            background-color: #ffffff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            margin-bottom: 0 !important;
+        }
+
+        /* Remove any gap between header and banner */
+        .rbt-sticky-placeholder {
+            display: none !important;
+            height: 0 !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+
+        .slider-area.rbt-banner-10 {
+            margin-top: 0 !important;
+            padding-top: 0 !important;
+        }
+
+        @media (min-width: 992px) {
+            .rbt-dashboard-area .col-lg-3 {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .rbt-default-sidebar.sticky-top {
+                position: -webkit-sticky !important;
+                position: sticky !important;
+                top: 100px !important;
+                z-index: 99 !important;
+                max-height: calc(100vh - 120px);
+                overflow-y: auto;
+            }
+        }
+
         /* Icon Font Protection - Ensure feather and fontawesome icons always render */
         i[class^="feather-"],
         i[class*=" feather-"],
@@ -64,42 +112,44 @@
             font-weight: normal !important;
             display: inline-block !important;
         }
-/* Centered Section Title Icons */
-.teacher-details-title-left {
-    display: flex !important;
-    align-items: center !important;
-    gap: 12px !important;
-}
 
-.teacher-details-title-left .icon-box,
-.teacher-details-title-left i {
-    width: 38px !important;
-    height: 38px !important;
-    min-width: 38px !important;
-    border-radius: 8px !important;
-    background: #f3f0ff !important;
-    color: #6c4df6 !important;
-    font-size: 18px !important;
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    line-height: 1 !important;
-    text-align: center !important;
-    margin: 0 !important;
-    padding: 0 !important;
-}
+        /* Centered Section Title Icons */
+        .teacher-details-title-left {
+            display: flex !important;
+            align-items: center !important;
+            gap: 12px !important;
+        }
 
-.teacher-details-title-left h5 {
-    margin: 0 !important;
-    font-size: 20px !important;
-    font-weight: 700 !important;
-    font-family: var(--font-primary) !important;
-    color: #192335 !important;
-    line-height: 1.2 !important;
-    display: flex !important;
-    align-items: center !important;
-}
-                        /* Header Navigation (Desktop Only - Responsive Handled in custom-ui.css) */
+        .teacher-details-title-left .icon-box,
+        .teacher-details-title-left i {
+            width: 38px !important;
+            height: 38px !important;
+            min-width: 38px !important;
+            border-radius: 8px !important;
+            background: #f3f0ff !important;
+            color: #6c4df6 !important;
+            font-size: 18px !important;
+            display: inline-flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            line-height: 1 !important;
+            text-align: center !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+
+        .teacher-details-title-left h5 {
+            margin: 0 !important;
+            font-size: 20px !important;
+            font-weight: 700 !important;
+            font-family: var(--font-primary) !important;
+            color: #192335 !important;
+            line-height: 1.2 !important;
+            display: flex !important;
+            align-items: center !important;
+        }
+
+        /* Header Navigation */
         @media only screen and (min-width: 1200px) {
             .rbt-header .mainbar-row {
                 display: flex !important;
@@ -137,36 +187,37 @@
                 position: relative !important;
             }
 
-            .rbt-header .rbt-main-navigation .mainmenu > li > a,
-            .rbt-header .rbt-main-navigation a {
-                font-size: 17.5px !important;
+            .rbt-header .rbt-main-navigation .mainmenu > li > a {
+                padding: 0 12px !important;
+                font-size: 16.5px !important;
                 font-weight: 500 !important;
+                font-family: var(--font-primary), "Euclid Circular A", "Euclid Circular", sans-serif !important;
                 color: #192335 !important;
-                white-space: nowrap !important;
-                padding: 0 11px !important;
-                display: flex !important;
+                display: inline-flex !important;
                 align-items: center !important;
                 height: 80px !important;
                 line-height: 80px !important;
-                transition: all 0.3s ease !important;
+                white-space: nowrap !important;
+                text-transform: none !important;
+                letter-spacing: 0 !important;
+                transition: color 0.3s ease !important;
                 text-decoration: none !important;
             }
 
             .rbt-header .rbt-main-navigation .mainmenu > li > a:hover,
-            .rbt-header .rbt-main-navigation a:hover {
-                color: #2f57ef !important;
+            .rbt-header .rbt-main-navigation .mainmenu > li > a.active {
+                color: var(--color-primary, #2f57ef) !important;
             }
         }
 
         @media only screen and (min-width: 1200px) and (max-width: 1440px) {
-            .rbt-header .rbt-main-navigation .mainmenu > li > a,
-            .rbt-header .rbt-main-navigation a {
+            .rbt-header .rbt-main-navigation .mainmenu > li > a {
                 font-size: 16.5px !important;
                 padding: 0 8px !important;
             }
         }
 
-/* Sidebar menu - larger font and perfectly aligned icons */
+        /* Sidebar menu */
         .dashboard-mainmenu li a,
         .rbt-default-sidebar-list li a {
             font-family: var(--font-primary), "Euclid Circular A", "Euclid Circular", sans-serif !important;
@@ -217,9 +268,7 @@
             color: var(--color-primary, #2f57ef) !important;
         }
 
-        /* =========================================================
-           TEACHER PROFILE STYLING (MATCHED TO INDEX TYPOGRAPHY)
-        ========================================================= */
+        /* Teacher Profile Styling */
         .teacher-profile-hero,
         .teacher-details-card,
         .teacher-profile-hero *,
@@ -289,7 +338,6 @@
             color: #192335 !important;
         }
 
-        /* Single line without scrolling */
         .teacher-meta-badges {
             display: flex;
             align-items: center;
@@ -367,7 +415,7 @@
             white-space: nowrap;
         }
 
-        /* PROFILE CARDS */
+        /* Profile Cards */
         .teacher-details-card {
             margin-top: 24px;
             padding: 24px 26px;
@@ -420,15 +468,14 @@
         }
 
         .profile-info-item {
-           background: #fbfbfe;
-    border: 1px solid #f0edf8;
-    border-radius: 8px;
-    padding: 12px 16px;
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-    transition: all 0.2s ease;
-
+            background: #fbfbfe;
+            border: 1px solid #f0edf8;
+            border-radius: 8px;
+            padding: 12px 16px;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            transition: all 0.2s ease;
         }
 
         .profile-info-item:hover {
@@ -456,20 +503,20 @@
         }
 
         .profile-info-label {
-           font-size: 16px !important;
-    font-weight: 400 !important;
-    text-transform: uppercase !important;
-    letter-spacing: 0.05em !important;
-    color: black;
-    margin-bottom: 2px;
+            font-size: 16px !important;
+            font-weight: 400 !important;
+            text-transform: uppercase !important;
+            letter-spacing: 0.05em !important;
+            color: black;
+            margin-bottom: 2px;
         }
 
         .profile-info-val {
-               font-size: 17px !important;
-    font-weight: 400 !important;
-    color: gray;
-    word-break: break-word;
-    line-height: 1.5 !important;
+            font-size: 17px !important;
+            font-weight: 400 !important;
+            color: gray;
+            word-break: break-word;
+            line-height: 1.5 !important;
         }
 
         .profile-info-val p {
@@ -582,7 +629,6 @@
             border: 1px solid #c3f5db;
         }
 
-        /* Sidebar SVG icon alignment */
         .sidebar-icon-svg {
             width: 20px !important;
             height: 20px !important;
@@ -593,7 +639,6 @@
             display: block !important;
         }
 
-        /* Increase sidebar section headings */
         .rbt-default-sidebar .section-title .rbt-title-style-2 {
             font-size: 17px !important;
             line-height: 1.4 !important;
@@ -630,8 +675,6 @@
             }
         }
 
-
-        /* Readability improvements */
         .teacher-details-card,
         .teacher-profile-hero {
             font-size: 17px !important;
@@ -641,9 +684,7 @@
             font-size: 18px !important;
         }
 
-        /* =========================================================
-           STUDENT LIST MODAL STYLES WITH FILTER BUTTONS
-        ========================================================= */
+        /* Modal Styles */
         .student-modal-btn {
             border: none;
             outline: none;
@@ -903,8 +944,6 @@
 
     <!-- Start Header Area -->
     <header class="rbt-header rbt-header-9">
-        <div class="rbt-sticky-placeholder"></div>
-
         <div class="rbt-header-wrapper header-not-transparent header-sticky">
             <div class="container">
                 <div class="mainbar-row rbt-navigation-end align-items-center">
@@ -933,7 +972,7 @@
                     </div>
 
                     <div class="header-right">
-                        <div class="rbt-btn-wrapper d-none d-xl-flex align-items-center gap-3">
+                        <div class="rbt-btn-wrapper d-flex align-items-center gap-2">
                             <div class="login-dropdown">
                                 <button type="button"
                                     class="rbt-btn rbt-switch-btn btn-gradient btn-sm hover-transform-none login-dropdown-btn">
@@ -956,13 +995,15 @@
                                 <span data-text="Join Now">Join Now</span>
                             </a>
                         </div>
+                        <!-- Start Mobile-Menu-Bar -->
                         <div class="mobile-menu-bar d-block d-xl-none">
                             <div class="hamberger">
-                                <button class="hamberger-button rbt-round-btn">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+                                <button class="hamberger-button rbt-round-btn" aria-label="Open Menu">
+                                    <i class="feather-menu"></i>
                                 </button>
                             </div>
                         </div>
+                        <!-- Start Mobile-Menu-Bar -->
                     </div>
                 </div>
             </div>
@@ -980,100 +1021,45 @@
                         </a>
                     </div>
                     <div class="rbt-btn-close">
-                        <button class="close-button rbt-round-btn" aria-label="Close Menu">
-                            <i class="feather-x"></i>
-                        </button>
+                        <button class="close-button rbt-round-btn" aria-label="Close Menu"><i class="feather-x"></i></button>
                     </div>
                 </div>
-                <p class="description">
-                    London Star Education provides high-quality online tuition and educational support.
-                </p>
+                <p class="description">London Star Education provides high-quality online tuition and educational support.</p>
                 <ul class="navbar-top-left rbt-information-list justify-content-start">
                     <li>
                         <a href="mailto:info@londonstaredu.com"><i class="feather-mail"></i>info@londonstaredu.com</a>
                     </li>
                     <li>
-                        <a href="#"><i class="feather-phone"></i>(302) 555-0107</a>
+                        <a href="tel:3025550107"><i class="feather-phone"></i>(302) 555-0107</a>
                     </li>
                 </ul>
             </div>
 
             <nav class="mainmenu-nav">
                 <ul class="mainmenu">
-                    <li>
-                        <a href="index.html">Home</a>
-                    </li>
-                    <li>
-                        <a href="about-us.html">About</a>
-                    </li>
-                    <li>
-                        <a href="our-team.html">Our Team</a>
-                    </li>
-                    <li>
-                        <a href="our-tuition.html">Our Tuition</a>
-                    </li>
-                    <li>
-                        <a href="holiday-camps.html">Holiday Camps</a>
-                    </li>
-                    <li>
-                        <a href="plans-and-pricing.html">Plans &amp; Pricing</a>
-                    </li>
-                    <li>
-                        <a href="book-online.html">Book Online</a>
-                    </li>
-                    <li class="has-dropdown">
-                        <a href="#">Login <i class="feather-chevron-down"></i></a>
-                        <ul class="submenu">
-                            <li><a href="instructor-profile.html"><i class="feather-user"></i> Tutor Login</a></li>
-                            <li><a href="student-profile.html"><i class="feather-book-open"></i> Student Login</a></li>
-                        </ul>
-                    </li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about-us.html">About</a></li>
+                    <li><a href="our-team.html">Our Team</a></li>
+                    <li><a href="our-tuition.html">Our Tuition</a></li>
+                    <li><a href="holiday-camps.html">Holiday Camps</a></li>
+                    <li><a href="plans-and-pricing.html">Plans &amp; Pricing</a></li>
+                    <li><a href="book-online.html">Book Online</a></li>
                 </ul>
             </nav>
 
             <div class="mobile-menu-bottom">
-                <div class="rbt-btn-wrapper mb--20">
-                    <a class="rbt-btn btn-gradient btn-sm hover-transform-none w-100 justify-content-center text-center mb--10"
-                        href="login-register.html">
-                        <span>Join Now</span>
-                    </a>
-                    <a class="rbt-btn btn-border-gradient radius-round btn-sm hover-transform-none w-100 justify-content-center text-center"
-                        href="book-online.html">
-                        <span>Book Now</span>
-                    </a>
-                </div>
-
                 <div class="social-share-wrapper">
                     <span class="rbt-short-title d-block">Find With Us</span>
                     <ul class="social-icon social-default transparent-with-border justify-content-start mt--20">
-                        <li>
-                            <a href="https://www.facebook.com/" aria-label="Facebook">
-                                <i class="feather-facebook"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.twitter.com" aria-label="X (Twitter)">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" viewBox="0 0 24 24" class="social-icon-x" style="vertical-align: -2px;"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.instagram.com/" aria-label="Instagram">
-                                <i class="feather-instagram"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.linkedin.com/" aria-label="LinkedIn">
-                                <i class="feather-linkedin"></i>
-                            </a>
-                        </li>
+                        <li><a href="https://www.facebook.com/" aria-label="Facebook"><i class="feather-facebook"></i></a></li>
+                        <li><a href="https://www.twitter.com" aria-label="X (Twitter)"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" viewBox="0 0 24 24" class="social-icon-x" style="vertical-align: -2px;"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a></li>
+                        <li><a href="https://www.instagram.com/" aria-label="Instagram"><i class="feather-instagram"></i></a></li>
+                        <li><a href="https://www.linkedin.com/" aria-label="LinkedIn"><i class="feather-linkedin"></i></a></li>
                     </ul>
                 </div>
             </div>
-
         </div>
     </div>
-    <!-- End Mobile Menu -->
-
 
     <div class="slider-area rbt-banner-10 height-400 bg_image bg_image--11" data-black-overlay="5">
         <div class="container">
@@ -1094,7 +1080,7 @@
                 <div class="col-lg-12">
                     <div class="row g-5">
                         
-                        <!-- Sidebar -->
+                        <!-- Sticky Sidebar -->
                         <div class="col-lg-3">
                             <div class="rbt-default-sidebar sticky-top rbt-shadow-box rbt-gradient-border">
                                 <div class="inner">
@@ -1109,51 +1095,31 @@
                                                 <ul class="dashboard-mainmenu rbt-default-sidebar-list">
                                                     <li class="active">
                                                         <a class="active" href="instructor-profile.html">
-                                                            <svg class="sidebar-icon-svg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                                                            <i class="feather-user"></i>
                                                             <span>My Profile</span>
                                                         </a>
                                                     </li>
-                                                </ul>
-                                            </nav>
-
-                                            <nav class="mainmenu-nav">
-                                                <ul class="dashboard-mainmenu rbt-default-sidebar-list">
                                                     <li>
                                                         <a href="students-list.html">
-                                                            <svg class="sidebar-icon-svg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                                                            <i class="feather-monitor"></i>
                                                             <span>Students List</span>
                                                         </a>
                                                     </li>
-                                                </ul>
-                                            </nav>
-
-                                            <nav class="mainmenu-nav">
-                                                <ul class="dashboard-mainmenu rbt-default-sidebar-list">
                                                     <li>
                                                         <a href="classlink.html">
-                                                            <svg class="sidebar-icon-svg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                                                            <i class="feather-link"></i>
                                                             <span>Class Link</span>
                                                         </a>
                                                     </li>
-                                                </ul>
-                                            </nav>
-
-                                            <nav class="mainmenu-nav">
-                                                <ul class="dashboard-mainmenu rbt-default-sidebar-list">
                                                     <li>
                                                         <a href="tutor-attendance.html">
-                                                            <svg class="sidebar-icon-svg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                                                            <i class="feather-calendar"></i>
                                                             <span>Attendance</span>
                                                         </a>
                                                     </li>
-                                                </ul>
-                                            </nav>
-
-                                            <nav class="mainmenu-nav">
-                                                <ul class="dashboard-mainmenu rbt-default-sidebar-list">
                                                     <li>
                                                         <a href="tutor-homework.html">
-                                                            <svg class="sidebar-icon-svg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                                                            <i class="feather-file-text"></i>
                                                             <span>Homework &amp; Notes</span>
                                                         </a>
                                                     </li>
@@ -1168,13 +1134,13 @@
                                                 <ul class="dashboard-mainmenu rbt-default-sidebar-list">
                                                     <li>
                                                         <a href="tuitor-edit.html">
-                                                            <svg class="sidebar-icon-svg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+                                                            <i class="feather-settings"></i>
                                                             <span>Edit Profile</span>
                                                         </a>
                                                     </li>
                                                     <li>
                                                         <a href="index.html">
-                                                            <svg class="sidebar-icon-svg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+                                                            <i class="feather-log-out"></i>
                                                             <span>Logout</span>
                                                         </a>
                                                     </li>
@@ -1217,17 +1183,17 @@
 
                                         <div class="teacher-hero-stats">
                                             <div class="hero-stat-box">
-                                                <div class="hero-stat-value">5</div>
+                                                <div class="hero-stat-value">4</div>
                                                 <div class="hero-stat-label">Handled Subjects</div>
                                             </div>
                                             <div class="hero-stat-box">
-                                                <div class="hero-stat-value">67</div>
+                                                <div class="hero-stat-value">57</div>
                                                 <div class="hero-stat-label">Active Students</div>
                                             </div>
                                         </div>
                                     </div>
 
-                                    <!-- 1. SUBJECTS HANDLED / ASSIGNED STUDENTS (FIRST SECTION) -->
+                                    <!-- 1. SUBJECTS HANDLED / ASSIGNED STUDENTS -->
                                     <div class="teacher-details-card mt-0">
                                         <div class="teacher-details-title">
                                             <div class="teacher-details-title-left">
@@ -1235,7 +1201,7 @@
                                                 <h5>Subjects Handled</h5>
                                             </div>
                                             <span class="teacher-badge-status">
-                                                <i class="feather-check-circle"></i> 5 Active Subjects
+                                                <i class="feather-check-circle"></i> 4 Active Subjects
                                             </span>
                                         </div>
 
@@ -1243,9 +1209,9 @@
                                             <table class="subject-table">
                                                 <thead>
                                                     <tr>
-                                                        <th style="width: 32%;">Subject</th>
-                                                        <th style="width: 28%;">Assigned Students</th>
-                                                        <th style="width: 40%;">Class Schedule</th>
+                                                        <th style="width: 28%;">Course Name</th>
+                                                        <th style="width: 26%;">Assigned Students</th>
+                                                        <th style="width: 46%;">Class Schedule</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
@@ -1268,7 +1234,7 @@
                                                         <td>
                                                             <span class="subject-time">
                                                                 <i class="feather-clock"></i>
-                                                                Mon &amp; Wed | 10:00 AM - 11:30 AM
+                                                                Mon-Sat (10:00 AM) <br> • Mon (02:00 PM) <br> • Wed (04:00 PM)
                                                             </span>
                                                         </td>
                                                     </tr>
@@ -1292,7 +1258,7 @@
                                                         <td>
                                                             <span class="subject-time">
                                                                 <i class="feather-clock"></i>
-                                                                Tue &amp; Thu | 02:00 PM - 03:30 PM
+                                                                Mon-Sat (02:00 PM - 03:30 PM) • Tue (05:00 PM - 06:30 PM)
                                                             </span>
                                                         </td>
                                                     </tr>
@@ -1316,31 +1282,7 @@
                                                         <td>
                                                             <span class="subject-time">
                                                                 <i class="feather-clock"></i>
-                                                                Fri | 04:00 PM - 05:30 PM
-                                                            </span>
-                                                        </td>
-                                                    </tr>
-
-                                                    <tr>
-                                                        <td>
-                                                            <div class="subject-badge-icon">
-                                                                <div class="subject-icon-box">
-                                                                    <i class="feather-sun"></i>
-                                                                </div>
-                                                                <span class="subject-name">Biology</span>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <button type="button" class="student-count-badge student-modal-btn" onclick="openStudentModal('biology')" title="Click to view enrolled students">
-                                                                <i class="feather-users"></i>
-                                                                <span>10 Students</span>
-                                                                <i class="feather-external-link" style="font-size: 13px; margin-left: 4px; opacity: 0.85;"></i>
-                                                            </button>
-                                                        </td>
-                                                        <td>
-                                                            <span class="subject-time">
-                                                                <i class="feather-clock"></i>
-                                                                Sat | 10:00 AM - 11:30 AM
+                                                                Mon-Sat (04:00 PM - 05:30 PM) • Tue (06:00 PM - 07:30 PM)
                                                             </span>
                                                         </td>
                                                     </tr>
@@ -1364,7 +1306,7 @@
                                                         <td>
                                                             <span class="subject-time">
                                                                 <i class="feather-clock"></i>
-                                                                Sat | 01:00 PM - 02:30 PM
+                                                                Mon, Wed, Fri, Sat (01:00 PM) • Tue, Thu, Sat (03:00 PM)
                                                             </span>
                                                         </td>
                                                     </tr>
@@ -1374,9 +1316,7 @@
                                     </div>
                                     <!-- End Subject Handling -->
 
-                                  
-
-                                    <!-- 3. TUTOR DETAILS (UNDER BIOGRAPHY) -->
+                                    <!-- 2. TUTOR DETAILS -->
                                     <div class="teacher-details-card">
                                         <div class="teacher-details-title">
                                             <div class="teacher-details-title-left">
@@ -1450,7 +1390,8 @@
                                             </div>
                                         </div>
                                     </div>
-                                      <!-- 2. BIOGRAPHY & TEACHING PHILOSOPHY (SECOND SECTION) -->
+
+                                    <!-- 3. BIOGRAPHY & TEACHING PHILOSOPHY -->
                                     <div class="teacher-details-card">
                                         <div class="teacher-details-title">
                                             <div class="teacher-details-title-left">
@@ -1463,18 +1404,6 @@
                                             <p style="margin-bottom: 14px; font-weight: 400; color: #374151; font-size: 18px;">With over two decades of dedicated experience in education and a robust professional background in engineering, I offer a unique and comprehensive tutoring experience. Since 2001, I have been committed to helping students excel across a wide range of academic levels, from Year 7 through to A-Levels, specialising in Mathematics, Physics, Chemistry, Biology, and Computer Science. My long standing tenure in tutoring has allowed me to refine my teaching methods, ensuring that complex concepts are broken down into manageable and engaging lessons tailored to each student’s individual learning style.</p>
                                             <p style="margin-bottom: 14px; font-weight: 400; color: #374151; font-size: 18px;">By profession, I am a Computer Systems Engineer, which provides me with a practical, real-world perspective on the subjects I teach. I don’t just teach theory, I demonstrate how these principles are applied in the modern technology and engineering sectors, helping students understand the “why” behind their studies and inspiring them toward future career paths in STEM. My goal is to build confidence and foster a deep understanding of the subject matter, whether a student is looking to bridge foundational gaps or aiming for top marks in their A-Levels.</p>
                                             <p style="margin-bottom: 0; font-weight: 400; color: #374151; font-size: 18px;">Throughout my career, I have developed a particular expertise and passion for working with students with special educational needs. I understand that every learner processes information differently, and I take pride in my ability to adapt my communication and teaching strategies to provide a supportive, patient, and inclusive environment. By building strong rapport and utilizing tailored pedagogical approaches, I have successfully helped many students with diverse learning requirements overcome academic hurdles and build the confidence necessary for long-term success.</p>
-                                        </div>
-                                    </div>
-                                            </div>
-
-                                            
-
-                                          
-
-                                            
-                                            
-
-
                                         </div>
                                     </div>
 
@@ -1582,7 +1511,7 @@
     </footer>
 
     <!-- Back to Top -->
-        <div class="rbt-progress-parent">
+    <div class="rbt-progress-parent">
         <svg class="rbt-back-circle svg-inner" width="100%" height="100%" viewBox="-1 -1 102 102">
             <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
         </svg>
@@ -1590,21 +1519,14 @@
 
     <!-- Floating Contact Buttons -->
     <div class="floating-contact">
-        <!-- Call -->
         <div class="contact-item call-item">
-            <div class="contact-label call-label">
-                Talk To Our Experts
-            </div>
+            <div class="contact-label call-label">Talk To Our Experts</div>
             <a href="tel:+919876543210" class="contact-button call-button" aria-label="Call us">
                 <i class="fa fa-phone"></i>
             </a>
         </div>
-
-        <!-- WhatsApp -->
         <div class="contact-item whatsapp-item">
-            <div class="contact-label whatsapp-label">
-                Message Us
-            </div>
+            <div class="contact-label whatsapp-label">Message Us</div>
             <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer"
                 class="contact-button whatsapp-button" aria-label="Chat with us on WhatsApp">
                 <i class="fab fa-whatsapp"></i>
@@ -1694,7 +1616,7 @@
                     </div>
                     <div>
                         <h4 id="modal-subject-title" style="margin: 0; font-size: 20px; font-weight: 700; color: #192335;">Mathematics</h4>
-                        <p id="modal-subject-subtitle" style="margin: 2px 0 0; font-size: 14px; color: #64748b;">16 Enrolled Students &bull; Mon &amp; Wed (10:00 AM - 11:30 AM)</p>
+                        <p id="modal-subject-subtitle" style="margin: 2px 0 0; font-size: 14px; color: #64748b;">16 Enrolled Students &bull; Mon-Sat (10:00 AM) &bull; Mon (02:00 PM) &bull; Wed (04:00 PM)</p>
                     </div>
                 </div>
                 <button type="button" class="student-modal-close" onclick="closeStudentModal()" aria-label="Close modal">
@@ -1745,7 +1667,7 @@
         const subjectStudentsData = {
             'mathematics': {
                 name: 'Mathematics',
-                subtitle: '16 Enrolled Students • Mon & Wed (10:00 AM - 11:30 AM)',
+                subtitle: '16 Enrolled Students • Mon-Sat (10:00 AM) • Mon (02:00 PM) • Wed (04:00 PM)',
                 icon: '<i class="feather-book"></i>',
                 students: [
                     { id: 'LSE-STD-2024-001', name: 'Oliver Smith', type: 'One-to-One' },
@@ -1768,7 +1690,7 @@
             },
             'physics': {
                 name: 'Physics',
-                subtitle: '14 Enrolled Students • Tue & Thu (02:00 PM - 03:30 PM)',
+                subtitle: '14 Enrolled Students • Mon-Sat (02:00 PM - 03:30 PM) • Tue (05:00 PM - 06:30 PM)',
                 icon: '<i class="feather-zap"></i>',
                 students: [
                     { id: 'LSE-STD-2024-002', name: 'Jack Williams', type: 'One-to-One' },
@@ -1789,7 +1711,7 @@
             },
             'chemistry': {
                 name: 'Chemistry',
-                subtitle: '12 Enrolled Students • Fri (04:00 PM - 05:30 PM)',
+                subtitle: '12 Enrolled Students • Mon-Sat (04:00 PM - 05:30 PM) • Tue (06:00 PM - 07:30 PM)',
                 icon: '<i class="feather-activity"></i>',
                 students: [
                     { id: 'LSE-STD-2024-003', name: 'Benjamin Moore', type: 'One-to-One' },
@@ -1806,26 +1728,9 @@
                     { id: 'LSE-STD-2024-054', name: 'Sienna Russell', type: 'One-to-Many' }
                 ]
             },
-            'biology': {
-                name: 'Biology',
-                subtitle: '10 Enrolled Students • Sat (10:00 AM - 11:30 AM)',
-                icon: '<i class="feather-sun"></i>',
-                students: [
-                    { id: 'LSE-STD-2024-006', name: 'James Harrison', type: 'One-to-One' },
-                    { id: 'LSE-STD-2024-011', name: 'Poppy Foster', type: 'One-to-Many' },
-                    { id: 'LSE-STD-2024-016', name: 'Mason Cox', type: 'One-to-Many' },
-                    { id: 'LSE-STD-2024-020', name: 'Ivy Sanders', type: 'One-to-One' },
-                    { id: 'LSE-STD-2024-027', name: 'William Price', type: 'One-to-Many' },
-                    { id: 'LSE-STD-2024-035', name: 'Daisy Barnes', type: 'One-to-Many' },
-                    { id: 'LSE-STD-2024-039', name: 'Jacob Ross', type: 'One-to-One' },
-                    { id: 'LSE-STD-2024-044', name: 'Matilda Henderson', type: 'One-to-Many' },
-                    { id: 'LSE-STD-2024-048', name: 'Sebastian Perry', type: 'One-to-Many' },
-                    { id: 'LSE-STD-2024-053', name: 'Scarlett Powell', type: 'One-to-One' }
-                ]
-            },
             'computer-science': {
                 name: 'Computer Science',
-                subtitle: '15 Enrolled Students • Sat (01:00 PM - 02:30 PM)',
+                subtitle: '15 Enrolled Students • Mon, Wed, Fri, Sat (01:00 PM) • Tue, Thu, Sat (03:00 PM)',
                 icon: '<i class="feather-code"></i>',
                 students: [
                     { id: 'LSE-STD-2024-010', name: 'Liam Jackson', type: 'One-to-One' },
@@ -1848,11 +1753,11 @@
         };
 
         let activeSubjectKey = null;
-        let currentFilterType = 'all'; // 'all', 'One-to-One', 'One-to-Many'
+        let currentFilterType = 'all';
 
         function openStudentModal(subjectKey) {
             activeSubjectKey = subjectKey;
-            currentFilterType = 'all'; // Reset filter when opened
+            currentFilterType = 'all';
             
             const data = subjectStudentsData[subjectKey];
             if (!data) return;
@@ -1879,7 +1784,7 @@
 
         function toggleStudentFilter(type) {
             if (currentFilterType === type) {
-                currentFilterType = 'all'; // Toggle off back to all
+                currentFilterType = 'all';
             } else {
                 currentFilterType = type;
             }

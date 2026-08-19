@@ -30484,11 +30484,11 @@ ul.mega-menu-item li a:hover {
 
 .rbt-header .rbt-main-navigation .mainmenu > li > a,
 .rbt-header .rbt-main-navigation a {
-    font-size: 17.5px !important;
+    font-size: 16.5px !important;
     font-weight: 500 !important;
     color: #192335 !important;
     white-space: nowrap !important;
-    padding: 0 11px !important;
+    padding: 0 12px !important;
     display: flex !important;
     align-items: center !important;
     height: 80px !important;
@@ -30500,14 +30500,6 @@ ul.mega-menu-item li a:hover {
 .rbt-header .rbt-main-navigation .mainmenu > li > a:hover,
 .rbt-header .rbt-main-navigation a:hover {
     color: #2f57ef !important;
-}
-
-@media only screen and (min-width: 1200px) and (max-width: 1440px) {
-    .rbt-header .rbt-main-navigation .mainmenu > li > a,
-    .rbt-header .rbt-main-navigation a {
-        font-size: 16.5px !important;
-        padding: 0 8px !important;
-    }
 }
 
 /* Category Box Cards - Clean Non-Bold Titles */

@@ -2,22 +2,14 @@
 <html lang="en">
 
 <head>
-
     <meta charset="utf-8">
-
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-
     <title>My Attendance - London Star Education</title>
-
     <meta name="robots" content="noindex, follow">
-
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Favicon -->
-    <link rel="shortcut icon"
-        type="image/x-icon"
-        href="assets/images/favicon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.png">
 
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
@@ -38,8 +30,40 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/custom-ui.css">
 
+    <style>
+        /* =========================================================
+           STICKY HEADER & SIDEBAR FIX
+        ========================================================= */
+        .rbt-header.rbt-header-9 {
+            position: sticky !important;
+            top: 0 !important;
+            left: 0 !important;
+            width: 100% !important;
+            z-index: 9999 !important;
+            background-color: #ffffff;
+        }
 
-<style>
+        .rbt-header .rbt-header-wrapper {
+            background-color: #ffffff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        @media (min-width: 992px) {
+            .rbt-dashboard-area .col-lg-3 {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .rbt-default-sidebar.sticky-top {
+                position: -webkit-sticky !important;
+                position: sticky !important;
+                top: 100px !important;
+                z-index: 99 !important;
+                max-height: calc(100vh - 120px);
+                overflow-y: auto;
+            }
+        }
+
         /* Icon Font Protection - Ensure feather and fontawesome icons always render */
         i[class^="feather-"],
         i[class*=" feather-"],
@@ -71,7 +95,7 @@
             display: inline-block !important;
         }
 
-                        /* Header Navigation (Desktop Only - Responsive Handled in custom-ui.css) */
+        /* Header Navigation */
         @media only screen and (min-width: 1200px) {
             .rbt-header .mainbar-row {
                 display: flex !important;
@@ -111,11 +135,11 @@
 
             .rbt-header .rbt-main-navigation .mainmenu > li > a,
             .rbt-header .rbt-main-navigation a {
-                font-size: 17.5px !important;
+                font-size: 16.5px !important;
                 font-weight: 500 !important;
                 color: #192335 !important;
                 white-space: nowrap !important;
-                padding: 0 11px !important;
+                padding: 0 12px !important;
                 display: flex !important;
                 align-items: center !important;
                 height: 80px !important;
@@ -130,15 +154,7 @@
             }
         }
 
-        @media only screen and (min-width: 1200px) and (max-width: 1440px) {
-            .rbt-header .rbt-main-navigation .mainmenu > li > a,
-            .rbt-header .rbt-main-navigation a {
-                font-size: 16.5px !important;
-                padding: 0 8px !important;
-            }
-        }
-
-/* Dashboard Sidebar Navigation - Restored Original Clean & Beautiful Styling */
+        /* Dashboard Sidebar Navigation */
         .rbt-default-sidebar-wrapper,
         .rbt-dashboard-sidebar {
             position: relative !important;
@@ -245,2846 +261,1191 @@
             color: var(--color-primary, #2f57ef) !important;
         }
 
-
-/* =========================================================
-   STUDENT ATTENDANCE PAGE
-========================================================= */
-
-.student-attendance-page,
-.student-attendance-page * {
-    font-family: var(--font-primary, "Euclid Circular A", "Plus Jakarta Sans", "Inter", sans-serif) !important;
-}
-
-.student-attendance-page {
-    background: #ffffff;
-    border-radius: 10px;
-    padding: 25px;
-    border: 1px solid #eee;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-}
-
-
-/* =========================================================
-   PAGE HEADER
-========================================================= */
-
-.attendance-page-header {
-
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: center;
-
-    margin-bottom: 25px;
-}
-
-
-.attendance-page-header h3 {
-
-    margin: 0 0 6px;
-
-    font-size: 26px;
-
-    font-weight: 700;
-
-    color: #222;
-}
-
-
-.attendance-page-header p {
-    margin: 0;
-    color: #777;
-    font-size: 18px;
-    line-height: 1.6;
-}
-
-.attendance-date {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 8px 13px;
-    background: #f8f6ff;
-    border: 1px solid #ebe7ff;
-    border-radius: 8px;
-    color: #6c4df6;
-    font-size: 18px;
-    font-weight: 600;
-}
-
-
-/* =========================================================
-   SECTION
-========================================================= */
-
-.attendance-section {
-
-    margin-bottom: 30px;
-}
-
-
-.section-title-row {
-
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: center;
-
-    margin-bottom: 15px;
-}
-
-
-.section-title-row h4 {
-
-    margin: 0 0 5px;
-
-    font-size: 21px;
-
-    font-weight: 700;
-
-    color: #222;
-}
-
-
-.section-title-row p {
-
-    margin: 0;
-
-    margin: 0;
-    color: #888;
-    font-size: 17px;
-}
-
-/* =========================================================
-   LATEST ATTENDANCE
-========================================================= */
-
-.latest-attendance-list {
-    background: #ffffff;
-    border: 1px solid #eee;
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-.latest-attendance-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 14px 16px;
-    border-bottom: 1px solid #f0f0f0;
-    transition: 0.25s ease;
-}
-
-.latest-attendance-item:last-child {
-    border-bottom: none;
-}
-
-.latest-attendance-item:hover {
-    background: #faf9ff;
-}
-
-.latest-left {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.latest-icon {
-    width: 42px;
-    height: 42px;
-    min-width: 42px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    background: rgba(108, 77, 246, 0.10);
-    color: #6c4df6;
-    font-size: 17px;
-}
-
-.latest-info h6 {
-    margin: 0 0 3px;
-    font-size: 18px !important;
-    font-weight: 600 !important;
-    color: #192335 !important;
-    font-family: var(--font-primary) !important;
-}
-
-.latest-info p {
-    margin: 0;
-    color: #374151;
-    font-size: 18px;
-    font-weight: 400;
-}
-
-.latest-right {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.latest-time {
-    color: #374151;
-    font-size: 18px;
-    font-weight: 400;
-}
-
-/* =========================================================
-   STATUS
-========================================================= */
-
-.attendance-status {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 70px;
-    padding: 6px 14px;
-    border-radius: 30px;
-    font-size: 17px;
-    font-weight: 500;
-}
-
-.attendance-status.present {
-    color: #168653;
-    background: rgba(76, 211, 153, 0.14);
-    border: 1px solid rgba(76, 211, 153, 0.28);
-    box-shadow:
-        inset 0 1px 2px rgba(255,255,255,.8),
-        0 3px 10px rgba(76,211,153,.08);
-}
-
-.attendance-status.absent {
-    color: #c0392b;
-    background: rgba(255,105,105,.13);
-    border: 1px solid rgba(255,105,105,.28);
-    box-shadow:
-        inset 0 1px 2px rgba(255,255,255,.8),
-        0 3px 10px rgba(255,105,105,.08);
-}
-
-/* =========================================================
-   SUBJECT CARDS
-========================================================= */
-
-.subject-cards {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
-}
-
-.subject-card {
-    background: #ffffff;
-    border: 1px solid #e9e9e9;
-    border-radius: 10px;
-    padding: 18px;
-    cursor: pointer;
-    transition: all .25s ease;
-    position: relative;
-}
-
-.subject-card:hover {
-    border-color: #cfc6ff;
-    box-shadow: 0 8px 25px rgba(108,77,246,.10);
-    transform: translateY(-2px);
-}
-
-.subject-card.selected {
-    border-color: #6c4df6;
-    box-shadow: 0 8px 25px rgba(108,77,246,.14);
-    background: #fbfaff;
-}
-
-.subject-card-top {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 14px;
-}
-
-.subject-card-icon {
-    width: 45px;
-    height: 45px;
-    min-width: 45px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 10px;
-    background: rgba(108,77,246,.10);
-    color: #6c4df6;
-    font-size: 18px;
-}
-
-.subject-card h5 {
-    margin: 0 0 4px;
-    font-size: 20px !important;
-    font-weight: 600 !important;
-    color: #192335 !important;
-    font-family: var(--font-primary) !important;
-}
-
-.subject-card p {
-    margin: 0;
-    font-size: 18px;
-    color: #888;
-}
-
-.subject-card-bottom {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 12px;
-    border-top: 1px solid #f0f0f0;
-}
-
-.subject-card-bottom span {
-    font-size: 18px;
-    color: #777;
-}
-
-.view-week {
-    color: #6c4df6 !important;
-    font-weight: 500;
-}
-
-.view-week i {
-    margin-left: 3px;
-    font-size: 17px;
-}
-
-
-/* =========================================================
-   SELECTED CHECK
-========================================================= */
-
-.subject-selected-icon {
-
-    position: absolute;
-
-    top: 12px;
-
-    right: 12px;
-
-    width: 22px;
-
-    height: 22px;
-
-    border-radius: 50%;
-
-    display: none;
-
-    align-items: center;
-
-    justify-content: center;
-
-    background: #6c4df6;
-
-    color: #ffffff;
-
-    font-size: 17px;
-}
-
-
-.subject-card.selected .subject-selected-icon {
-
-    display: flex;
-}
-
-
-/* =========================================================
-   WEEKLY ATTENDANCE
-========================================================= */
-
-.weekly-attendance-section {
-
-    margin-top: 22px;
-
-    display: none;
-
-    animation: fadeIn .3s ease;
-}
-
-
-.weekly-attendance-section.show {
-
-    display: block;
-}
-
-
-@keyframes fadeIn {
-
-    from {
-
-        opacity: 0;
-
-        transform: translateY(8px);
-
-    }
-
-    to {
-
-        opacity: 1;
-
-        transform: translateY(0);
-
-    }
-
-}
-
-
-/* =========================================================
-   WEEKLY HEADER
-========================================================= */
-
-.weekly-header {
-
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: center;
-
-    margin-bottom: 15px;
-
-    padding: 15px;
-
-    border: 1px solid #eee;
-
-    border-radius: 10px;
-
-    background: #fbfaff;
-}
-
-
-.weekly-header-left {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 12px;
-}
-
-
-.weekly-header-icon {
-
-    width: 42px;
-
-    height: 42px;
-
-    border-radius: 10px;
-
-    background: rgba(108,77,246,.10);
-
-    color: #6c4df6;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    font-size: 17px;
-}
-
-
-.weekly-header h4,
-#weeklySubjectName {
-    margin: 0 0 4px;
-    font-size: 22px !important;
-    font-weight: 700 !important;
-    color: #192335 !important;
-    font-family: var(--font-primary) !important;
-}
-
-
-.weekly-header p {
-
-    margin: 0;
-
-    font-size: 18px;
-
-    color: #888;
-}
-
-
-.weekly-badge {
-    padding: 6px 12px;
-    border-radius: 20px;
-    background: #f5f2ff;
-    color: #6c4df6;
-    font-size: 18px;
-    font-weight: 500;
-}
-
-
-/* =========================================================
-   WEEKLY LIST
-========================================================= */
-
-.weekly-attendance-list {
-
-    border: 1px solid #eee;
-
-    border-radius: 10px;
-
-    overflow: hidden;
-
-    background: #fff;
-}
-
-
-.weekly-row {
-
-    display: grid;
-
-    grid-template-columns:
-        1.4fr 1fr 1fr;
-
-    align-items: center;
-
-    padding: 14px 16px;
-
-    border-bottom: 1px solid #f0f0f0;
-
-    transition: .2s ease;
-}
-
-
-.weekly-row:last-child {
-
-    border-bottom: none;
-}
-
-
-.weekly-row:hover {
-
-    background: #faf9ff;
-}
-
-
-.weekly-date {
-
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 3px;
-}
-
-
-.weekly-day-label {
-    font-size: 17px;
-    font-weight: 400;
-    color: #374151;
-}
-
-
-.weekly-full-date {
-    font-size: 17px;
-    font-weight: 400;
-    color: #8c94a3;
-}
-
-
-.weekly-time {
-    font-size: 18px;
-    font-weight: 400;
-    color: #374151;
-    text-align: center;
-}
-
-
-.weekly-status {
-
-    text-align: right;
-}
-
-
-/* =========================================================
-   TODAY / YESTERDAY
-========================================================= */
-
-.day-highlight {
-    color: #6c4df6;
-    font-weight: 500;
-}
-
-
-/* =========================================================
-   EMPTY
-========================================================= */
-
-.empty-attendance {
-
-    padding: 30px 20px;
-
-    text-align: center;
-
-    color: #888;
-}
-
-
-.empty-attendance i {
-
-    display: block;
-
-    margin-bottom: 10px;
-
-    font-size: 30px;
-}
-
-
-.empty-attendance p {
-
-    margin: 0;
-
-    font-size: 17px;
-}
-
-
-/* =========================================================
-   RESPONSIVE
-========================================================= */
-
-@media(max-width: 991px) {
-
-    .subject-cards {
-
-        grid-template-columns:
-            repeat(2, 1fr);
-    }
-
-}
-
-
-@media(max-width: 767px) {
-
-    .student-attendance-page {
-
-        padding: 20px 15px;
-    }
-
-
-    .attendance-page-header {
-
-        flex-direction: column;
-
-        align-items: flex-start;
-
-        gap: 12px;
-    }
-
-
-    .attendance-page-header h3 {
-
-        font-size: 22px;
-    }
-
-
-    .subject-cards {
-
-        grid-template-columns: 1fr;
-    }
-
-
-    .latest-attendance-item {
-
-        align-items: flex-start;
-    }
-
-
-    .latest-right {
-
-        flex-direction: column;
-
-        align-items: flex-end;
-
-        gap: 5px;
-    }
-
-
-    .weekly-header {
-
-        align-items: flex-start;
-
-        gap: 10px;
-
-    }
-
-
-    .weekly-row {
-
-        grid-template-columns:
-            1.2fr .8fr 1fr;
-
-        padding: 12px;
-    }
-
-
-    .weekly-day-label {
-    font-size: 17px;
-    font-weight: 400;
-    color: #374151;
-}
-
-
-    .weekly-time {
-    font-size: 18px;
-    font-weight: 400;
-    color: #374151;
-    text-align: center;
-}
-
-}
-
-</style>
-
+        /* Student Attendance Page */
+        .student-attendance-page,
+        .student-attendance-page * {
+            font-family: var(--font-primary, "Euclid Circular A", "Plus Jakarta Sans", "Inter", sans-serif) !important;
+        }
+
+        .student-attendance-page {
+            background: #ffffff;
+            border-radius: 10px;
+            padding: 25px;
+            border: 1px solid #eee;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Page Header */
+        .attendance-page-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+
+        .attendance-page-header h3 {
+            margin: 0 0 6px;
+            font-size: 26px;
+            font-weight: 700;
+            color: #222;
+        }
+
+        .attendance-page-header p {
+            margin: 0;
+            color: #777;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .attendance-date {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 13px;
+            background: #f8f6ff;
+            border: 1px solid #ebe7ff;
+            border-radius: 8px;
+            color: #6c4df6;
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        /* Sections */
+        .attendance-section {
+            margin-bottom: 30px;
+        }
+
+        .section-title-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .section-title-row h4,
+        .section-title-row h5 {
+            margin: 0 0 5px;
+            font-size: 21px;
+            font-weight: 700;
+            color: #222;
+        }
+
+        .section-title-row p {
+            margin: 0;
+            color: #888;
+            font-size: 17px;
+        }
+
+        /* Latest Attendance */
+        .latest-attendance-list {
+            background: #ffffff;
+            border: 1px solid #eee;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .latest-attendance-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 14px 16px;
+            border-bottom: 1px solid #f0f0f0;
+            transition: 0.25s ease;
+        }
+
+        .latest-attendance-item:last-child {
+            border-bottom: none;
+        }
+
+        .latest-attendance-item:hover {
+            background: #faf9ff;
+        }
+
+        .latest-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .latest-icon {
+            width: 42px;
+            height: 42px;
+            min-width: 42px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(108, 77, 246, 0.10);
+            color: #6c4df6;
+            font-size: 17px;
+        }
+
+        .latest-info h6 {
+            margin: 0 0 3px;
+            font-size: 18px !important;
+            font-weight: 600 !important;
+            color: #192335 !important;
+            font-family: var(--font-primary) !important;
+        }
+
+        .latest-info p {
+            margin: 0;
+            color: #374151;
+            font-size: 18px;
+            font-weight: 400;
+        }
+
+        .latest-right {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .latest-time {
+            color: #374151;
+            font-size: 18px;
+            font-weight: 400;
+        }
+
+        /* Status */
+        .attendance-status {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 70px;
+            padding: 6px 14px;
+            border-radius: 30px;
+            font-size: 17px;
+            font-weight: 500;
+        }
+
+        .attendance-status.present {
+            color: #168653;
+            background: rgba(76, 211, 153, 0.14);
+            border: 1px solid rgba(76, 211, 153, 0.28);
+            box-shadow: inset 0 1px 2px rgba(255,255,255,.8), 0 3px 10px rgba(76,211,153,.08);
+        }
+
+        .attendance-status.absent {
+            color: #c0392b;
+            background: rgba(255,105,105,.13);
+            border: 1px solid rgba(255,105,105,.28);
+            box-shadow: inset 0 1px 2px rgba(255,255,255,.8), 0 3px 10px rgba(255,105,105,.08);
+        }
+
+        /* Subject Cards */
+        .subject-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .subject-card {
+            background: #ffffff;
+            border: 1px solid #e9e9e9;
+            border-radius: 10px;
+            padding: 18px;
+            cursor: pointer;
+            transition: all .25s ease;
+            position: relative;
+        }
+
+        .subject-card:hover {
+            border-color: #cfc6ff;
+            box-shadow: 0 8px 25px rgba(108,77,246,.10);
+            transform: translateY(-2px);
+        }
+
+        .subject-card.selected {
+            border-color: #6c4df6;
+            box-shadow: 0 8px 25px rgba(108,77,246,.14);
+            background: #fbfaff;
+        }
+
+        .subject-card-top {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 14px;
+        }
+
+        .subject-card-icon {
+            width: 45px;
+            height: 45px;
+            min-width: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            background: rgba(108,77,246,.10);
+            color: #6c4df6;
+            font-size: 18px;
+        }
+
+        .subject-card h5 {
+            margin: 0 0 4px;
+            font-size: 20px !important;
+            font-weight: 600 !important;
+            color: #192335 !important;
+            font-family: var(--font-primary) !important;
+        }
+
+        .subject-card p {
+            margin: 0;
+            font-size: 18px;
+            color: #888;
+        }
+
+        .subject-card-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 12px;
+            border-top: 1px solid #f0f0f0;
+        }
+
+        .subject-card-bottom span {
+            font-size: 18px;
+            color: #777;
+        }
+
+        .view-week {
+            color: #6c4df6 !important;
+            font-weight: 500;
+        }
+
+        .view-week i {
+            margin-left: 3px;
+            font-size: 17px;
+        }
+
+        /* Selected Check */
+        .subject-selected-icon {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            background: #6c4df6;
+            color: #ffffff;
+            font-size: 17px;
+        }
+
+        .subject-card.selected .subject-selected-icon {
+            display: flex;
+        }
+
+        /* Weekly Attendance */
+        .weekly-attendance-section {
+            margin-top: 22px;
+            display: none;
+            animation: fadeIn .3s ease;
+        }
+
+        .weekly-attendance-section.show {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(8px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .weekly-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            padding: 15px;
+            border: 1px solid #eee;
+            border-radius: 10px;
+            background: #fbfaff;
+        }
+
+        .weekly-header-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .weekly-header-icon {
+            width: 42px;
+            height: 42px;
+            border-radius: 10px;
+            background: rgba(108,77,246,.10);
+            color: #6c4df6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 17px;
+        }
+
+        .weekly-header h4,
+        #weeklySubjectName {
+            margin: 0 0 4px;
+            font-size: 22px !important;
+            font-weight: 700 !important;
+            color: #192335 !important;
+            font-family: var(--font-primary) !important;
+        }
+
+        .weekly-header p {
+            margin: 0;
+            font-size: 18px;
+            color: #888;
+        }
+
+        .weekly-badge {
+            padding: 6px 12px;
+            border-radius: 20px;
+            background: #f5f2ff;
+            color: #6c4df6;
+            font-size: 18px;
+            font-weight: 500;
+        }
+
+        /* Weekly List */
+        .weekly-attendance-list {
+            border: 1px solid #eee;
+            border-radius: 10px;
+            overflow: hidden;
+            background: #fff;
+        }
+
+        .weekly-row {
+            display: grid;
+            grid-template-columns: 1.4fr 1fr 1fr;
+            align-items: center;
+            padding: 14px 16px;
+            border-bottom: 1px solid #f0f0f0;
+            transition: .2s ease;
+        }
+
+        .weekly-row:last-child {
+            border-bottom: none;
+        }
+
+        .weekly-row:hover {
+            background: #faf9ff;
+        }
+
+        .weekly-date {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+        }
+
+        .weekly-day-label {
+            font-size: 17px;
+            font-weight: 400;
+            color: #374151;
+        }
+
+        .weekly-full-date {
+            font-size: 17px;
+            font-weight: 400;
+            color: #8c94a3;
+        }
+
+        .weekly-time {
+            font-size: 18px;
+            font-weight: 400;
+            color: #374151;
+            text-align: center;
+        }
+
+        .weekly-status {
+            text-align: right;
+        }
+
+        .day-highlight {
+            color: #6c4df6;
+            font-weight: 500;
+        }
+
+        .empty-attendance {
+            padding: 30px 20px;
+            text-align: center;
+            color: #888;
+        }
+
+        .empty-attendance i {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 30px;
+        }
+
+        .empty-attendance p {
+            margin: 0;
+            font-size: 17px;
+        }
+
+        /* Responsive */
+        @media(max-width: 991px) {
+            .subject-cards {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media(max-width: 767px) {
+            .student-attendance-page {
+                padding: 20px 15px;
+            }
+
+            .attendance-page-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+            }
+
+            .attendance-page-header h3 {
+                font-size: 22px;
+            }
+
+            .subject-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .latest-attendance-item {
+                align-items: flex-start;
+            }
+
+            .latest-right {
+                flex-direction: column;
+                align-items: flex-end;
+                gap: 5px;
+            }
+
+            .weekly-header {
+                align-items: flex-start;
+                gap: 10px;
+            }
+
+            .weekly-row {
+                grid-template-columns: 1.2fr .8fr 1fr;
+                padding: 12px;
+            }
+
+            .weekly-day-label {
+                font-size: 17px;
+                font-weight: 400;
+                color: #374151;
+            }
+
+            .weekly-time {
+                font-size: 18px;
+                font-weight: 400;
+                color: #374151;
+                text-align: center;
+            }
+        }
+    </style>
 </head>
-
 
 <body>
 
-
-<!-- =========================================================
-     HEADER
-========================================================= -->
-
+<!-- Header -->
 <header class="rbt-header rbt-header-9">
-
-    <div class="rbt-sticky-placeholder"></div>
-
-    
-        <div class="rbt-header-wrapper
-                header-not-transparent
-                header-sticky">
-
+    <div class="rbt-header-wrapper header-not-transparent header-sticky">
         <div class="container">
-
-            <div class="mainbar-row
-                        rbt-navigation-end
-                        align-items-center">
+            <div class="mainbar-row rbt-navigation-end align-items-center">
 
                 <div class="header-left rbt-header-content">
-
                     <div class="header-info">
-
                         <div class="logo">
-
                             <a href="index.html">
-
-                                <img src="assets/images/logo/logo.png"
-                                    alt="Education Logo Images">
-
+                                <img src="assets/images/logo/logo.png" alt="Education Logo Images">
                             </a>
-
                         </div>
-
                     </div>
-
                 </div>
-
 
                 <div class="rbt-main-navigation d-none d-xl-block">
-
                     <nav class="mainmenu-nav">
-
                         <ul class="mainmenu">
-
-                            <li>
-                                <a href="index.html">
-                                    Home
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href="about-us.html">
-                                    About
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href="our-team.html">
-                                    Our Team
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href="our-tuition.html">
-                                    Our Tuition
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href="holiday-camps.html">
-                                    Holiday Camps
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href="plans-and-pricing.html">
-                                    Plans &amp; Pricing
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href="book-online.html">
-                                    Book Online
-                                </a>
-                            </li>
-
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about-us.html">About</a></li>
+                            <li><a href="our-team.html">Our Team</a></li>
+                            <li><a href="our-tuition.html">Our Tuition</a></li>
+                            <li><a href="holiday-camps.html">Holiday Camps</a></li>
+                            <li><a href="plans-and-pricing.html">Plans &amp; Pricing</a></li>
+                            <li><a href="book-online.html">Book Online</a></li>
                         </ul>
-
                     </nav>
-
                 </div>
-
 
                 <div class="header-right">
-
-                    <div class="rbt-btn-wrapper d-none d-xl-flex align-items-center gap-3">
-                            <div class="login-dropdown">
-                                <button type="button"
-                                    class="rbt-btn rbt-switch-btn btn-gradient btn-sm hover-transform-none login-dropdown-btn">
-                                    <span data-text="Login">Login</span>
-                                    <i class="feather-chevron-down"></i>
-                                </button>
-                                <div class="login-dropdown-menu">
-                                    <a href="instructor-profile.html">
-                                        <i class="feather-user"></i>
-                                        <span>Tutor Login</span>
-                                    </a>
-                                    <a href="student-profile.html">
-                                        <i class="feather-book-open"></i>
-                                        <span>Student Login</span>
-                                    </a>
-                                </div>
-                            </div>
-                            <a class="rbt-btn rbt-switch-btn btn-gradient btn-sm hover-transform-none"
-                                href="login-register.html">
-                                <span data-text="Join Now">Join Now</span>
-                            </a>
-                        </div>
-
-
-                    <div class="mobile-menu-bar d-block d-xl-none">
-
-                        <div class="hamberger">
-
-                            <button class="hamberger-button rbt-round-btn">
-
-                                <i class="feather-menu"></i>
-
+                    <div class="rbt-btn-wrapper d-flex align-items-center gap-2">
+                        <div class="login-dropdown">
+                            <button type="button"
+                                class="rbt-btn rbt-switch-btn btn-gradient btn-sm hover-transform-none login-dropdown-btn">
+                                <span data-text="Login">Login</span>
+                                <i class="feather-chevron-down"></i>
                             </button>
-
+                            <div class="login-dropdown-menu">
+                                <a href="instructor-profile.html">
+                                    <i class="feather-user"></i>
+                                    <span>Tutor Login</span>
+                                </a>
+                                <a href="student-profile.html">
+                                    <i class="feather-book-open"></i>
+                                    <span>Student Login</span>
+                                </a>
+                            </div>
                         </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</header>
-
-    <!-- Mobile Menu Section -->
-    <div class="popup-mobile-menu">
-        <div class="inner-wrapper">
-            <div class="inner-top">
-                <div class="content">
-                    <div class="logo">
-                        <a href="index.html">
-                            <img src="assets/images/logo/logo.png" alt="Education Logo Images">
+                        <a class="rbt-btn rbt-switch-btn btn-gradient btn-sm hover-transform-none"
+                            href="login-register.html">
+                            <span data-text="Join Now">Join Now</span>
                         </a>
                     </div>
-                    <div class="rbt-btn-close">
-                        <button class="close-button rbt-round-btn" aria-label="Close Menu">
-                            <i class="feather-x"></i>
-                        </button>
+
+                    <div class="mobile-menu-bar d-block d-xl-none">
+                        <div class="hamberger">
+                            <button class="hamberger-button rbt-round-btn" aria-label="Open Menu">
+                                <i class="feather-menu"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
-                <p class="description">
-                    London Star Education provides high-quality online tuition and educational support.
-                </p>
-                <ul class="navbar-top-left rbt-information-list justify-content-start">
-                    <li>
-                        <a href="mailto:info@londonstaredu.com"><i class="feather-mail"></i>info@londonstaredu.com</a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="feather-phone"></i>(302) 555-0107</a>
-                    </li>
-                </ul>
+
             </div>
-
-            <nav class="mainmenu-nav">
-                <ul class="mainmenu">
-                    <li>
-                        <a href="index.html">Home</a>
-                    </li>
-                    <li>
-                        <a href="about-us.html">About</a>
-                    </li>
-                    <li>
-                        <a href="our-team.html">Our Team</a>
-                    </li>
-                    <li>
-                        <a href="our-tuition.html">Our Tuition</a>
-                    </li>
-                    <li>
-                        <a href="holiday-camps.html">Holiday Camps</a>
-                    </li>
-                    <li>
-                        <a href="plans-and-pricing.html">Plans &amp; Pricing</a>
-                    </li>
-                    <li>
-                        <a href="book-online.html">Book Online</a>
-                    </li>
-                    <li class="has-dropdown">
-                        <a href="#">Login <i class="feather-chevron-down"></i></a>
-                        <ul class="submenu">
-                            <li><a href="instructor-profile.html"><i class="feather-user"></i> Tutor Login</a></li>
-                            <li><a href="student-profile.html"><i class="feather-book-open"></i> Student Login</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </nav>
-
-            <div class="mobile-menu-bottom">
-                <div class="rbt-btn-wrapper mb--20">
-                    <a class="rbt-btn btn-gradient btn-sm hover-transform-none w-100 justify-content-center text-center mb--10"
-                        href="login-register.html">
-                        <span>Join Now</span>
-                    </a>
-                    <a class="rbt-btn btn-border-gradient radius-round btn-sm hover-transform-none w-100 justify-content-center text-center"
-                        href="book-online.html">
-                        <span>Book Now</span>
-                    </a>
-                </div>
-
-                <div class="social-share-wrapper">
-                    <span class="rbt-short-title d-block">Find With Us</span>
-                    <ul class="social-icon social-default transparent-with-border justify-content-start mt--20">
-                        <li>
-                            <a href="https://www.facebook.com/" aria-label="Facebook">
-                                <i class="feather-facebook"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.twitter.com" aria-label="X (Twitter)">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" viewBox="0 0 24 24" class="social-icon-x" style="vertical-align: -2px;"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.instagram.com/" aria-label="Instagram">
-                                <i class="feather-instagram"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.linkedin.com/" aria-label="LinkedIn">
-                                <i class="feather-linkedin"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
         </div>
     </div>
-    <!-- End Mobile Menu -->
+</header>
 
-
-
-<!-- =========================================================
-     BANNER
-========================================================= -->
-
-<div class="slider-area
-            rbt-banner-10
-            height-400
-            bg_image
-            bg_image--11"
-    data-black-overlay="5">
-
-    <div class="container">
-
-        <div class="row">
-
-            <div class="col-lg-12">
-
-                <div class="inner text-center">
-
-                    <h1 class="title display-one text-white">
-                        My Attendance
-                    </h1>
-
+<!-- Mobile Menu Section -->
+<div class="popup-mobile-menu">
+    <div class="inner-wrapper">
+        <div class="inner-top">
+            <div class="content">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="assets/images/logo/logo.png" alt="Education Logo Images">
+                    </a>
                 </div>
-
+                <div class="rbt-btn-close">
+                    <button class="close-button rbt-round-btn" aria-label="Close Menu"><i class="feather-x"></i></button>
+                </div>
             </div>
-
+            <p class="description">London Star Education provides high-quality online tuition and educational support.</p>
+            <ul class="navbar-top-left rbt-information-list justify-content-start">
+                <li>
+                    <a href="mailto:info@londonstaredu.com"><i class="feather-mail"></i>info@londonstaredu.com</a>
+                </li>
+                <li>
+                    <a href="tel:3025550107"><i class="feather-phone"></i>(302) 555-0107</a>
+                </li>
+            </ul>
         </div>
 
-    </div>
+        <nav class="mainmenu-nav">
+            <ul class="mainmenu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about-us.html">About</a></li>
+                <li><a href="our-team.html">Our Team</a></li>
+                <li><a href="our-tuition.html">Our Tuition</a></li>
+                <li><a href="holiday-camps.html">Holiday Camps</a></li>
+                <li><a href="plans-and-pricing.html">Plans &amp; Pricing</a></li>
+                <li><a href="book-online.html">Book Online</a></li>
+            </ul>
+        </nav>
 
+        <div class="mobile-menu-bottom">
+            <div class="social-share-wrapper">
+                <span class="rbt-short-title d-block">Find With Us</span>
+                <ul class="social-icon social-default transparent-with-border justify-content-start mt--20">
+                    <li><a href="https://www.facebook.com/" aria-label="Facebook"><i class="feather-facebook"></i></a></li>
+                    <li><a href="https://www.twitter.com" aria-label="X (Twitter)"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" viewBox="0 0 24 24" class="social-icon-x" style="vertical-align: -2px;"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a></li>
+                    <li><a href="https://www.instagram.com/" aria-label="Instagram"><i class="feather-instagram"></i></a></li>
+                    <li><a href="https://www.linkedin.com/" aria-label="LinkedIn"><i class="feather-linkedin"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
 </div>
 
-
-<!-- =========================================================
-     DASHBOARD
-========================================================= -->
-
-<div class="rbt-dashboard-area rbt-section-gap">
-
+<!-- Banner -->
+<div class="slider-area rbt-banner-10 height-400 bg_image bg_image--11" data-black-overlay="5">
     <div class="container">
-
         <div class="row">
-
             <div class="col-lg-12">
+                <div class="inner text-center">
+                    <h1 class="title display-one text-white">My Attendance</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
+<!-- Dashboard Area -->
+<div class="rbt-dashboard-area rbt-section-gap">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
                 <div class="row g-5">
 
-
-                    <!-- SIDEBAR -->
-
+                    <!-- Sticky Sidebar -->
                     <div class="col-lg-3">
-
-                        <div class="rbt-default-sidebar
-                                    sticky-top
-                                    rbt-shadow-box
-                                    rbt-gradient-border">
-
+                        <div class="rbt-default-sidebar sticky-top rbt-shadow-box rbt-gradient-border">
                             <div class="inner">
-
                                 <div class="content-item-content">
-
                                     <div class="rbt-default-sidebar-wrapper">
 
                                         <div class="section-title mb--20">
-
-                                            <h6 class="rbt-title-style-2">
-                                                Welcome, Jone Due
-                                            </h6>
-
+                                            <h6 class="rbt-title-style-2">Welcome, Jone Due</h6>
                                         </div>
 
-
                                         <nav class="mainmenu-nav">
-
-                                            <ul class="dashboard-mainmenu
-                                                       rbt-default-sidebar-list">
-
+                                            <ul class="dashboard-mainmenu rbt-default-sidebar-list">
                                                 <li>
-
                                                     <a href="student-profile.html">
-
                                                         <i class="feather-user"></i>
-
-                                                        <span>
-                                                            My Profile
-                                                        </span>
-
+                                                        <span>My Profile</span>
                                                     </a>
-
                                                 </li>
-
-                                            </ul>
-
-                                        </nav>
-
-
-                                        <nav class="mainmenu-nav">
-
-                                            <ul class="dashboard-mainmenu
-                                                       rbt-default-sidebar-list">
-
                                                 <li>
-
                                                     <a href="student-course.html">
-
                                                         <i class="feather-monitor"></i>
-
-                                                        <span>
-                                                            My Courses
-                                                        </span>
-
+                                                        <span>My Courses</span>
                                                     </a>
-
                                                 </li>
-
-                                            </ul>
-
-                                        </nav>
-
-
-                                        <nav class="mainmenu-nav">
-
-                                            <ul class="dashboard-mainmenu
-                                                       rbt-default-sidebar-list">
-
                                                 <li>
-
                                                     <a href="studentclasslink.html">
-
                                                         <i class="feather-link"></i>
-
-                                                        <span>
-                                                            Class Link
-                                                        </span>
-
+                                                        <span>Class Link</span>
                                                     </a>
-
                                                 </li>
-
-                                            </ul>
-
-                                        </nav>
-
-
-                                        <nav class="mainmenu-nav">
-
-                                            <ul class="dashboard-mainmenu
-                                                       rbt-default-sidebar-list">
-
                                                 <li class="active">
-
-                                                    <a href="student-profile-attendance.html"
-                                                       class="active">
-
+                                                    <a class="active" href="student-profile-attendance.html">
                                                         <i class="feather-calendar"></i>
-
-                                                        <span>
-                                                            Attendance
-                                                        </span>
-
+                                                        <span>Attendance</span>
                                                     </a>
-
                                                 </li>
-
-                                            </ul>
-
-                                        </nav>
-
-
-                                        <nav class="mainmenu-nav">
-
-                                            <ul class="dashboard-mainmenu
-                                                       rbt-default-sidebar-list">
-
                                                 <li>
-
                                                     <a href="student-homework-task.html">
-
-                                                        <i class="feather-check-square"></i>
-
-                                                        <span>
-                                                            Homework &amp; Task
-                                                        </span>
-
+                                                        <i class="feather-file-text"></i>
+                                                        <span>Homework &amp; Notes</span>
                                                     </a>
-
                                                 </li>
-
                                             </ul>
-
                                         </nav>
-
 
                                         <div class="section-title mt--40 mb--20">
-
-                                            <h6 class="rbt-title-style-2">
-                                                User
-                                            </h6>
-
+                                            <h6 class="rbt-title-style-2">User</h6>
                                         </div>
 
-
                                         <nav class="mainmenu-nav">
-
-                                            <ul class="dashboard-mainmenu
-                                                       rbt-default-sidebar-list">
-
+                                            <ul class="dashboard-mainmenu rbt-default-sidebar-list">
                                                 <li>
-
                                                     <a href="student-edit.html">
-
                                                         <i class="feather-settings"></i>
-
-                                                        <span>
-                                                            Edit Profile
-                                                        </span>
-
+                                                        <span>Edit Profile</span>
                                                     </a>
-
                                                 </li>
-
-
                                                 <li>
-
                                                     <a href="index.html">
-
                                                         <i class="feather-log-out"></i>
-
-                                                        <span>
-                                                            Logout
-                                                        </span>
-
+                                                        <span>Logout</span>
                                                     </a>
-
                                                 </li>
-
                                             </ul>
-
                                         </nav>
 
                                     </div>
-
                                 </div>
-
                             </div>
-
                         </div>
-
                     </div>
 
-
-                    <!-- =================================================
-                         MAIN CONTENT
-                    ================================================== -->
-
+                    <!-- Main Content -->
                     <div class="col-lg-9">
-
                         <div class="student-attendance-page">
 
-
-                            <!-- PAGE HEADER -->
-
+                            <!-- Page Header -->
                             <div class="attendance-page-header">
-
                                 <div>
-
-                                    <h3>
-                                        My Attendance
-                                    </h3>
-
-                                    <p>
-                                        View your latest attendance
-                                        and weekly attendance by subject.
-                                    </p>
-
+                                    <h3>My Attendance</h3>
+                                    <p>View your latest attendance and weekly attendance by subject.</p>
                                 </div>
-
-
                                 <div class="attendance-date">
-
                                     <i class="feather-calendar"></i>
-
-                                    <span id="currentDate">
-                                        Loading...
-                                    </span>
-
+                                    <span id="currentDate">Loading...</span>
                                 </div>
-
                             </div>
 
-
-                            <!-- =================================================
-                                 LATEST ATTENDANCE
-                            ================================================== -->
-
+                            <!-- Latest Attendance Section -->
                             <div class="attendance-section">
-
                                 <div class="section-title-row">
-
                                     <div>
-
-                                        <h5>
-                                            Latest Attendance
-                                        </h5>
-
-                                        <p>
-                                            Your most recent attendance
-                                            across all subjects.
-                                        </p>
-
+                                        <h5>Latest Attendance</h5>
+                                        <p>Your most recent attendance across all subjects.</p>
                                     </div>
-
                                 </div>
-
-
-                                <div class="latest-attendance-list"
-                                     id="latestAttendanceList">
-
-                                </div>
-
+                                <div class="latest-attendance-list" id="latestAttendanceList"></div>
                             </div>
 
-
-                            <!-- =================================================
-                                 SUBJECTS
-                            ================================================== -->
-
+                            <!-- Subjects Section -->
                             <div class="attendance-section">
-
                                 <div class="section-title-row">
-
                                     <div>
-
-                                        <h5>
-                                            My Subjects
-                                        </h5>
-
-                                        <p>
-                                            Click a subject to view
-                                            its last 7 days of attendance.
-                                        </p>
-
+                                        <h5>My Subjects</h5>
+                                        <p>Click a subject to view its last 7 days of attendance.</p>
                                     </div>
-
                                 </div>
+                                <div class="subject-cards" id="subjectCards"></div>
 
-
-                                <div class="subject-cards"
-                                     id="subjectCards">
-
-                                </div>
-
-
-                                <!-- WEEKLY ATTENDANCE -->
-
-                                <div class="weekly-attendance-section"
-                                     id="weeklyAttendanceSection">
-
+                                <!-- Weekly Attendance -->
+                                <div class="weekly-attendance-section" id="weeklyAttendanceSection">
                                     <div class="weekly-header">
-
                                         <div class="weekly-header-left">
-
-                                            <div class="weekly-header-icon"
-                                                 id="weeklyIcon">
-
+                                            <div class="weekly-header-icon" id="weeklyIcon">
                                                 <i class="feather-calendar"></i>
-
                                             </div>
-
                                             <div>
-
-                                                <h4 id="weeklySubjectName">
-                                                    Weekly Attendance
-                                                </h4>
-
-                                                <p id="weeklyTeacher">
-                                                    Last 7 days
-                                                </p>
-
+                                                <h4 id="weeklySubjectName">Weekly Attendance</h4>
+                                                <p id="weeklyTeacher">Last 7 days</p>
                                             </div>
-
                                         </div>
-
-
-                                        <div class="weekly-badge">
-                                            Last 7 Days
-                                        </div>
-
+                                        <div class="weekly-badge">Last 7 Days</div>
                                     </div>
-
-
-                                    <div class="weekly-attendance-list"
-                                         id="weeklyAttendanceList">
-
-                                    </div>
-
+                                    <div class="weekly-attendance-list" id="weeklyAttendanceList"></div>
                                 </div>
-
                             </div>
 
-
                         </div>
-
                     </div>
 
                 </div>
-
             </div>
-
         </div>
-
     </div>
-
 </div>
 
-
-<!-- =========================================================
-     FOOTER
-========================================================= -->
-
+<!-- Separator -->
 <div class="rbt-separator-mid">
-
     <div class="container">
-
         <hr class="rbt-separator m-0">
-
     </div>
-
 </div>
 
-
-                                <!-- Start Footer Area -->
-    <footer class="rbt-footer footer-style-1 bg-color-white overflow-hidden">
-        <div class="footer-top">
-            <div class="container">
-                <div class="row g-5">
-                    <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-                        <div class="footer-widget">
-                            <div class="logo">
-                                <a href="index.html">
-                                    <img src="assets/images/logo/logo.png" alt="Edu-Loop Sign Logo">
-                                </a>
-                            </div>
-
-                            <p class="description mt--20">We are always seeking talented and motivated individuals to
-                                join our team.</p>
-
-                            <ul class="social-icon social-default justify-content-start">
-                                <li><a href="https://www.facebook.com/">
-                                        <i class="feather-facebook"></i>
-                                    </a>
-                                </li>
-                                <li><a href="https://www.twitter.com" aria-label="X (Twitter)">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" viewBox="0 0 24 24" class="social-icon-x" style="vertical-align: -2px;"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-                                    </a>
-                                </li>
-                                <li><a href="https://www.instagram.com/">
-                                        <i class="feather-instagram"></i>
-                                    </a>
-                                </li>
-                                <li><a href="https://www.linkdin.com/">
-                                        <i class="feather-linkedin"></i>
-                                    </a>
-                                </li>
-                            </ul>
+<!-- Footer -->
+<footer class="rbt-footer footer-style-1 bg-color-white overflow-hidden">
+    <div class="footer-top">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+                    <div class="footer-widget">
+                        <div class="logo">
+                            <a href="index.html">
+                                <img src="assets/images/logo/logo.png" alt="Edu-Loop Sign Logo">
+                            </a>
                         </div>
-                    </div>
-
-                    <div class="col-lg-2 col-md-6 col-sm-6 col-12">
-                        <div class="footer-widget">
-                            <h5 class="ft-title">Useful Links</h5>
-                            <ul class="ft-link">
-                                <li>
-                                    <a href="our-team.html">Our Team</a>
-                                </li>
-                                <li>
-                                    <a href="our-tuition.html">Our Tuition</a>
-                                </li>
-                                <li>
-                                    <a href="holiday-camps.html">Holiday Camps</a>
-                                </li>
-                                <li>
-                                    <a href="plans-and-pricing.html">Plans &amp; Pricing</a>
-                                </li>
-                                <li>
-                                    <a href="book-online.html">Book Online</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-2 col-md-6 col-sm-6 col-12">
-                        <div class="footer-widget">
-                            <h5 class="ft-title">Popular Programs</h5>
-                            <ul class="ft-link">
-                                <li>
-                                    <a href="our-tuition.html">Primary Tuition</a>
-                                </li>
-                                <li>
-                                    <a href="our-tuition.html">Secondary Tuition</a>
-                                </li>
-                                <li>
-                                    <a href="our-tuition.html">GCSE Tuition</a>
-                                </li>
-                                <li>
-                                    <a href="our-tuition.html">IGCSE Tuition</a>
-                                </li>
-                                <li>
-                                    <a href="our-tuition.html">A-Level Tuition</a>
-                                </li>
-                                <li>
-                                    <a href="holiday-camps.html">Holiday Camps</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-                        <div class="footer-widget">
-                            <h5 class="ft-title">Get Contact</h5>
-                            <ul class="ft-link">
-                                <li><span>Phone:</span> <a href="#">(406) 555-0120</a></li>
-                                <li><span>E-mail:</span> <a href="mailto:info@londonstaredu.com">info@londonstaredu.com</a></li>
-                            </ul>
-
-                            <div class="newsletter-form mt--20">
-                                <h6 class="w-600">Location</h6>
-                                <p class="description">2000+ Our students are subscribe Around the World.<br> Don’t be
-                                    shy introduce yourself!</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="rbt-separator-mid">
-            <div class="container">
-                <hr class="rbt-separator m-0">
-            </div>
-        </div>
-        <!-- Start Copyright Area -->
-        <div class="copyright-area copyright-style-1 ptb--20">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-xxl-7 col-xl-7 col-lg-7 col-md-12 col-12">
-                        <p class="rbt-link-hover text-center text-lg-start">
-                            Copyright © 2026 by
-                            <a href="index.html">London Star Education Ltd.</a>
-                            All Rights Reserved. Designed by
-                            <a href="https://rkisystems.co.uk/" target="_blank">RKI Systems</a>
-                        </p>
-                    </div>
-                    <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-12 col-12">
-                        <ul class="copyright-link rbt-link-hover justify-content-center justify-content-lg-end mt_sm--10 mt_md--10">
-                            <li><a href="#">Terms of service</a></li>
-                            <li><a href="privacy-policy.html">Privacy policy</a></li>
+                        <p class="description mt--20">We are always seeking talented and motivated individuals to join our team.</p>
+                        <ul class="social-icon social-default justify-content-start">
+                            <li><a href="https://www.facebook.com/"><i class="feather-facebook"></i></a></li>
+                            <li><a href="https://www.twitter.com" aria-label="X (Twitter)"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" viewBox="0 0 24 24" class="social-icon-x" style="vertical-align: -2px;"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a></li>
+                            <li><a href="https://www.instagram.com/"><i class="feather-instagram"></i></a></li>
+                            <li><a href="https://www.linkedin.com/"><i class="feather-linkedin"></i></a></li>
                         </ul>
                     </div>
                 </div>
+
+                <div class="col-lg-2 col-md-6 col-sm-6 col-12">
+                    <div class="footer-widget">
+                        <h5 class="ft-title">Useful Links</h5>
+                        <ul class="ft-link">
+                            <li><a href="our-team.html">Our Team</a></li>
+                            <li><a href="our-tuition.html">Our Tuition</a></li>
+                            <li><a href="holiday-camps.html">Holiday Camps</a></li>
+                            <li><a href="plans-and-pricing.html">Plans &amp; Pricing</a></li>
+                            <li><a href="book-online.html">Book Online</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-md-6 col-sm-6 col-12">
+                    <div class="footer-widget">
+                        <h5 class="ft-title">Popular Programs</h5>
+                        <ul class="ft-link">
+                            <li><a href="our-tuition.html">Primary Tuition</a></li>
+                            <li><a href="our-tuition.html">Secondary Tuition</a></li>
+                            <li><a href="our-tuition.html">GCSE Tuition</a></li>
+                            <li><a href="our-tuition.html">IGCSE Tuition</a></li>
+                            <li><a href="our-tuition.html">A-Level Tuition</a></li>
+                            <li><a href="holiday-camps.html">Holiday Camps</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+                    <div class="footer-widget">
+                        <h5 class="ft-title">Get Contact</h5>
+                        <ul class="ft-link">
+                            <li><span>Phone:</span> <a href="#">(406) 555-0120</a></li>
+                            <li><span>E-mail:</span> <a href="mailto:info@londonstaredu.com">info@londonstaredu.com</a></li>
+                        </ul>
+                        <div class="newsletter-form mt--20">
+                            <h6 class="w-600">Location</h6>
+                            <p class="description">2000+ Our students are subscribe Around the World.<br> Don’t be shy introduce yourself!</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <!-- End Copyright Area -->
-    </footer>
-    <!-- End Footer Area -->
-
-        <div class="rbt-progress-parent">
-        <svg class="rbt-back-circle svg-inner" width="100%" height="100%" viewBox="-1 -1 102 102">
-            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
-        </svg>
     </div>
 
-    <!-- Floating Contact Buttons -->
-    <div class="floating-contact">
-        <!-- Call -->
-        <div class="contact-item call-item">
-            <div class="contact-label call-label">
-                Talk To Our Experts
-            </div>
-            <a href="tel:+919876543210" class="contact-button call-button" aria-label="Call us">
-                <i class="fa fa-phone"></i>
-            </a>
-        </div>
-
-        <!-- WhatsApp -->
-        <div class="contact-item whatsapp-item">
-            <div class="contact-label whatsapp-label">
-                Message Us
-            </div>
-            <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer"
-                class="contact-button whatsapp-button" aria-label="Chat with us on WhatsApp">
-                <i class="fab fa-whatsapp"></i>
-            </a>
+    <div class="rbt-separator-mid">
+        <div class="container">
+            <hr class="rbt-separator m-0">
         </div>
     </div>
 
+    <div class="copyright-area copyright-style-1 ptb--20">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-xxl-7 col-xl-7 col-lg-7 col-md-12 col-12">
+                    <p class="rbt-link-hover text-center text-lg-start">
+                        Copyright © 2026 by <a href="index.html">London Star Education Ltd.</a> All Rights Reserved. Designed by <a href="https://rkisystems.co.uk/" target="_blank">RKI Systems</a>
+                    </p>
+                </div>
+                <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-12 col-12">
+                    <ul class="copyright-link rbt-link-hover justify-content-center justify-content-lg-end mt_sm--10 mt_md--10">
+                        <li><a href="#">Terms of service</a></li>
+                        <li><a href="privacy-policy.html">Privacy policy</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
 
-<!-- =========================================================
-     JS LIBRARIES
-========================================================= -->
+<!-- Back to Top -->
+<div class="rbt-progress-parent">
+    <svg class="rbt-back-circle svg-inner" width="100%" height="100%" viewBox="-1 -1 102 102">
+        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+    </svg>
+</div>
 
+<!-- Floating Contact Buttons -->
+<div class="floating-contact">
+    <div class="contact-item call-item">
+        <div class="contact-label call-label">Talk To Our Experts</div>
+        <a href="tel:+919876543210" class="contact-button call-button" aria-label="Call us">
+            <i class="fa fa-phone"></i>
+        </a>
+    </div>
+    <div class="contact-item whatsapp-item">
+        <div class="contact-label whatsapp-label">Message Us</div>
+        <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer"
+            class="contact-button whatsapp-button" aria-label="Chat with us on WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+</div>
+
+<!-- JS Libraries -->
 <script src="assets/js/vendor/jquery.js"></script>
-
 <script src="assets/js/vendor/bootstrap.min.js"></script>
-
 <script src="assets/js/vendor/backtotop.js"></script>
-
 <script src="assets/js/main.js"></script>
 
-
-<!-- =========================================================
-     ATTENDANCE JAVASCRIPT
-========================================================= -->
-
+<!-- Attendance & Global Scripts -->
 <script>
-
-/* =========================================================
-   LOGGED-IN STUDENT
-========================================================= */
-
-const currentStudentId = "student001";
-
-
-/* =========================================================
-   STUDENT DATA
-   7 DAYS:
-   17 AUG 2026 - 11 AUG 2026
-========================================================= */
-
-const studentAttendance = {
-
-    student001: {
-
-        name: "Shreya",
-
-        subjects: [
-
-            /* =================================================
-               PHYSICS
-            ================================================= */
-
-            {
-                id: 1,
-
-                name: "Physics 101",
-
-                teacher: "Prof. E. Schrödinger",
-
-                icon: "feather-activity",
-
-                attendance: [
-
-                    {
-                        date: "2026-08-17",
-                        time: "10:00 AM",
-                        status: "Present"
-                    },
-
-                    {
-                        date: "2026-08-16",
-                        time: "10:00 AM",
-                        status: "Present"
-                    },
-
-                    {
-                        date: "2026-08-15",
-                        time: "10:00 AM",
-                        status: "Absent"
-                    },
-
-                    {
-                        date: "2026-08-14",
-                        time: "10:00 AM",
-                        status: "Present"
-                    },
-
-                    {
-                        date: "2026-08-13",
-                        time: "10:00 AM",
-                        status: "Present"
-                    },
-
-                    {
-                        date: "2026-08-12",
-                        time: "09:30 AM",
-                        status: "Present"
-                    },
-
-                    {
-                        date: "2026-08-11",
-                        time: "10:00 AM",
-                        status: "Absent"
-                    }
-
-                ]
-
-            },
-
-
-            /* =================================================
-               CALCULUS
-            ================================================= */
-
-            {
-                id: 2,
-
-                name: "Calculus II",
-
-                teacher: "Prof. I. Newton",
-
-                icon: "feather-grid",
-
-                attendance: [
-
-                    {
-                        date: "2026-08-17",
-                        time: "02:00 PM",
-                        status: "Present"
-                    },
-
-                    {
-                        date: "2026-08-16",
-                        time: "02:00 PM",
-                        status: "Absent"
-                    },
-
-                    {
-                        date: "2026-08-15",
-                        time: "02:00 PM",
-                        status: "Present"
-                    },
-
-                    {
-                        date: "2026-08-14",
-                        time: "02:00 PM",
-                        status: "Present"
-                    },
-
-                    {
-                        date: "2026-08-13",
-                        time: "02:00 PM",
-                        status: "Present"
-                    },
-
-                    {
-                        date: "2026-08-12",
-                        time: "02:00 PM",
-                        status: "Present"
-                    },
-
-                    {
-                        date: "2026-08-11",
-                        time: "09:00 AM",
-                        status: "Present"
-                    }
-
-                ]
-
-            },
-
-
-            /* =================================================
-               MODERN HISTORY
-            ================================================= */
-
-            {
-                id: 3,
-
-                name: "Modern History",
-
-                teacher: "Prof. H. Zinn",
-
-                icon: "feather-book",
-
-                attendance: [
-
-                    {
-                        date: "2026-08-17",
-                        time: "11:30 AM",
-                        status: "Absent"
-                    },
-
-                    {
-                        date: "2026-08-16",
-                        time: "11:30 AM",
-                        status: "Present"
-                    },
-
-                    {
-                        date: "2026-08-15",
-                        time: "11:30 AM",
-                        status: "Present"
-                    },
-
-                    {
-                        date: "2026-08-14",
-                        time: "11:30 AM",
-                        status: "Absent"
-                    },
-
-                    {
-                        date: "2026-08-13",
-                        time: "11:30 AM",
-                        status: "Present"
-                    },
-
-                    {
-                        date: "2026-08-12",
-                        time: "09:30 AM",
-                        status: "Present"
-                    },
-
-                    {
-                        date: "2026-08-11",
-                        time: "04:00 PM",
-                        status: "Present"
-                    }
-
-                ]
-
-            }
-
-        ]
-
-    }
-
-};
-
-
-const currentStudent =
-    studentAttendance[currentStudentId];
-
-
-/* =========================================================
-   IMPORTANT:
-   DEMO DATE = 17 AUGUST 2026
-
-   This makes the page correctly identify:
-
-   17 Aug = Today
-   16 Aug = Yesterday
-   15 Aug = Saturday
-   14 Aug = Friday
-   etc.
-
-   When connecting to your real backend later,
-   replace this with new Date().
-========================================================= */
-
-const DEMO_TODAY = "2026-08-17";
-
-
-/* =========================================================
-   DATE FUNCTIONS
-========================================================= */
-
-function getTodayDate() {
-
-    const date =
-        new Date(
-            DEMO_TODAY + "T00:00:00"
-        );
-
-    date.setHours(0, 0, 0, 0);
-
-    return date;
-
-}
-
-
-/* =========================================================
-   FORMAT DATE
-========================================================= */
-
-function formatDate(date) {
-
-    return date.toLocaleDateString(
-        "en-IN",
-        {
-            day: "2-digit",
-            month: "short",
-            year: "numeric"
+    const currentStudentId = "student001";
+    const studentAttendance = {
+        student001: {
+            name: "Shreya",
+            subjects: [
+                {
+                    id: 1,
+                    name: "Physics 101",
+                    teacher: "Prof. E. Schrödinger",
+                    icon: "feather-activity",
+                    attendance: [
+                        { date: "2026-08-17", time: "10:00 AM", status: "Present" },
+                        { date: "2026-08-16", time: "10:00 AM", status: "Present" },
+                        { date: "2026-08-15", time: "10:00 AM", status: "Absent" },
+                        { date: "2026-08-14", time: "10:00 AM", status: "Present" },
+                        { date: "2026-08-13", time: "10:00 AM", status: "Present" },
+                        { date: "2026-08-12", time: "09:30 AM", status: "Present" },
+                        { date: "2026-08-11", time: "10:00 AM", status: "Absent" }
+                    ]
+                },
+                {
+                    id: 2,
+                    name: "Calculus II",
+                    teacher: "Prof. I. Newton",
+                    icon: "feather-grid",
+                    attendance: [
+                        { date: "2026-08-17", time: "02:00 PM", status: "Present" },
+                        { date: "2026-08-16", time: "02:00 PM", status: "Absent" },
+                        { date: "2026-08-15", time: "02:00 PM", status: "Present" },
+                        { date: "2026-08-14", time: "02:00 PM", status: "Present" },
+                        { date: "2026-08-13", time: "02:00 PM", status: "Present" },
+                        { date: "2026-08-12", time: "02:00 PM", status: "Present" },
+                        { date: "2026-08-11", time: "09:00 AM", status: "Present" }
+                    ]
+                },
+                {
+                    id: 3,
+                    name: "Modern History",
+                    teacher: "Prof. H. Zinn",
+                    icon: "feather-book",
+                    attendance: [
+                        { date: "2026-08-17", time: "11:30 AM", status: "Absent" },
+                        { date: "2026-08-16", time: "11:30 AM", status: "Present" },
+                        { date: "2026-08-15", time: "11:30 AM", status: "Present" },
+                        { date: "2026-08-14", time: "11:30 AM", status: "Absent" },
+                        { date: "2026-08-13", time: "11:30 AM", status: "Present" },
+                        { date: "2026-08-12", time: "09:30 AM", status: "Present" },
+                        { date: "2026-08-11", time: "04:00 PM", status: "Present" }
+                    ]
+                }
+            ]
         }
-    );
+    };
 
-}
+    const currentStudent = studentAttendance[currentStudentId];
+    const DEMO_TODAY = "2026-08-17";
 
-
-/* =========================================================
-   FORMAT FULL DATE
-========================================================= */
-
-function formatFullDate(dateString) {
-
-    const date =
-        new Date(
-            dateString + "T00:00:00"
-        );
-
-    return date.toLocaleDateString(
-        "en-IN",
-        {
-            weekday: "short",
-            day: "2-digit",
-            month: "short",
-            year: "numeric"
-        }
-    );
-
-}
-
-
-/* =========================================================
-   TODAY / YESTERDAY / DAY
-========================================================= */
-
-function getDayLabel(dateString) {
-
-    const today =
-        getTodayDate();
-
-
-    const date =
-        new Date(
-            dateString + "T00:00:00"
-        );
-
-
-    date.setHours(0, 0, 0, 0);
-
-
-    const difference =
-        Math.round(
-            (today - date) /
-            (1000 * 60 * 60 * 24)
-        );
-
-
-    if (difference === 0) {
-
-        return `
-            <span class="day-highlight">
-                Today
-            </span>
-        `;
-
+    function getTodayDate() {
+        const date = new Date(DEMO_TODAY + "T00:00:00");
+        date.setHours(0, 0, 0, 0);
+        return date;
     }
 
-
-    if (difference === 1) {
-
-        return `
-            <span class="day-highlight">
-                Yesterday
-            </span>
-        `;
-
+    function formatDate(date) {
+        return date.toLocaleDateString("en-IN", { day: "2-digit", month: "short", year: "numeric" });
     }
 
-
-    return date.toLocaleDateString(
-        "en-IN",
-        {
-            weekday: "long"
-        }
-    );
-
-}
-
-
-/* =========================================================
-   CONVERT TIME TO 24 HOUR
-========================================================= */
-
-function convertTo24Hour(time) {
-
-    if (!time) {
-
-        return "00:00";
-
+    function formatFullDate(dateString) {
+        const date = new Date(dateString + "T00:00:00");
+        return date.toLocaleDateString("en-IN", { weekday: "short", day: "2-digit", month: "short", year: "numeric" });
     }
 
+    function getDayLabel(dateString) {
+        const today = getTodayDate();
+        const date = new Date(dateString + "T00:00:00");
+        date.setHours(0, 0, 0, 0);
+        const difference = Math.round((today - date) / (1000 * 60 * 60 * 24));
 
-    const parts =
-        time.trim().split(/\s+/);
-
-
-    const timePart =
-        parts[0];
-
-
-    const ampm =
-        parts[1]
-            ? parts[1].toUpperCase()
-            : "";
-
-
-    let [hour, minute] =
-        timePart.split(":");
-
-
-    hour =
-        parseInt(
-            hour,
-            10
-        );
-
-
-    minute =
-        minute || "00";
-
-
-    if (
-        ampm === "PM" &&
-        hour !== 12
-    ) {
-
-        hour += 12;
-
+        if (difference === 0) return `<span class="day-highlight">Today</span>`;
+        if (difference === 1) return `<span class="day-highlight">Yesterday</span>`;
+        return date.toLocaleDateString("en-IN", { weekday: "long" });
     }
 
+    function convertTo24Hour(time) {
+        if (!time) return "00:00";
+        const parts = time.trim().split(/\s+/);
+        const timePart = parts[0];
+        const ampm = parts[1] ? parts[1].toUpperCase() : "";
+        let [hour, minute] = timePart.split(":");
+        hour = parseInt(hour, 10);
+        minute = minute || "00";
 
-    if (
-        ampm === "AM" &&
-        hour === 12
-    ) {
-
-        hour = 0;
-
+        if (ampm === "PM" && hour !== 12) hour += 12;
+        if (ampm === "AM" && hour === 12) hour = 0;
+        return String(hour).padStart(2, "0") + ":" + minute;
     }
 
-
-    return (
-        String(hour).padStart(2, "0")
-        +
-        ":"
-        +
-        minute
-    );
-
-}
-
-
-/* =========================================================
-   SORT ATTENDANCE
-========================================================= */
-
-function sortAttendance(records) {
-
-    return [...records].sort(
-        function(a, b) {
-
-            const dateA =
-                new Date(
-                    `${a.date}T${convertTo24Hour(a.time)}`
-                );
-
-
-            const dateB =
-                new Date(
-                    `${b.date}T${convertTo24Hour(b.time)}`
-                );
-
-
+    function sortAttendance(records) {
+        return [...records].sort(function(a, b) {
+            const dateA = new Date(`${a.date}T${convertTo24Hour(a.time)}`);
+            const dateB = new Date(`${b.date}T${convertTo24Hour(b.time)}`);
             return dateB - dateA;
+        });
+    }
 
-        }
-    );
-
-}
-
-
-/* =========================================================
-   GET LATEST ATTENDANCE
-   ALL 3 SUBJECTS
-========================================================= */
-
-function getLatestAttendance() {
-
-    const records = [];
-
-
-    currentStudent.subjects.forEach(
-        function(subject) {
-
-            if (
-                subject.attendance &&
-                subject.attendance.length
-            ) {
-
-                const sorted =
-                    sortAttendance(
-                        subject.attendance
-                    );
-
-
+    function getLatestAttendance() {
+        const records = [];
+        currentStudent.subjects.forEach(function(subject) {
+            if (subject.attendance && subject.attendance.length) {
+                const sorted = sortAttendance(subject.attendance);
                 records.push({
-
-                    subject:
-                        subject.name,
-
-                    icon:
-                        subject.icon,
-
-                    date:
-                        sorted[0].date,
-
-                    time:
-                        sorted[0].time,
-
-                    status:
-                        sorted[0].status
-
+                    subject: subject.name,
+                    icon: subject.icon,
+                    date: sorted[0].date,
+                    time: sorted[0].time,
+                    status: sorted[0].status
                 });
-
             }
-
-        }
-    );
-
-
-    return sortAttendance(
-        records.map(
-            function(record) {
-
-                return {
-
-                    ...record
-
-                };
-
-            }
-        )
-    );
-
-}
-
-
-/* =========================================================
-   RENDER LATEST ATTENDANCE
-========================================================= */
-
-function renderLatestAttendance() {
-
-    const container =
-        document.getElementById(
-            "latestAttendanceList"
-        );
-
-
-    if (!container) {
-
-        return;
-
+        });
+        return sortAttendance(records);
     }
 
-
-    container.innerHTML = "";
-
-
-    const records =
-        getLatestAttendance();
-
-
-    if (!records.length) {
-
-        container.innerHTML = `
-
-            <div class="empty-attendance">
-
-                <i class="feather-calendar"></i>
-
-                <p>
-                    No attendance records found.
-                </p>
-
-            </div>
-
-        `;
-
-        return;
-
-    }
-
-
-    records.forEach(
-        function(record) {
-
-            const statusClass =
-                record.status.toLowerCase() ===
-                "present"
-                    ? "present"
-                    : "absent";
-
-
-            const item =
-                document.createElement(
-                    "div"
-                );
-
-
-            item.className =
-                "latest-attendance-item";
-
-
-            item.innerHTML = `
-
-                <div class="latest-left">
-
-                    <div class="latest-icon">
-
-                        <i class="${record.icon}">
-                        </i>
-
-                    </div>
-
-
-                    <div class="latest-info">
-
-                        <h6>
-                            ${record.subject}
-                        </h6>
-
-                        <p>
-                            ${getDayLabel(record.date)}
-                            ·
-                            ${formatDate(
-                                new Date(
-                                    record.date
-                                    + "T00:00:00"
-                                )
-                            )}
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-                <div class="latest-right">
-
-                    <span class="latest-time">
-                        ${record.time}
-                    </span>
-
-                    <span class="
-                        attendance-status
-                        ${statusClass}">
-
-                        ${record.status}
-
-                    </span>
-
-                </div>
-
-            `;
-
-
-            container.appendChild(item);
-
-        }
-    );
-
-}
-
-
-/* =========================================================
-   RENDER SUBJECT CARDS
-========================================================= */
-
-function renderSubjectCards() {
-
-    const container =
-        document.getElementById(
-            "subjectCards"
-        );
-
-
-    if (!container) {
-
-        return;
-
-    }
-
-
-    container.innerHTML = "";
-
-
-    currentStudent.subjects.forEach(
-        function(subject) {
-
-            const latest =
-                sortAttendance(
-                    subject.attendance
-                )[0];
-
-
-            const card =
-                document.createElement(
-                    "div"
-                );
-
-
-            card.className =
-                "subject-card";
-
-
-            card.dataset.subjectId =
-                subject.id;
-
-
-            card.innerHTML = `
-
-                <div class="subject-selected-icon">
-
-                    <i class="feather-check"></i>
-
-                </div>
-
-
-                <div class="subject-card-top">
-
-                    <div class="subject-card-icon">
-
-                        <i class="${subject.icon}">
-                        </i>
-
-                    </div>
-
-
-                    <div>
-
-                        <h5>
-                            ${subject.name}
-                        </h5>
-
-                        <p>
-                            ${subject.teacher}
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-                <div class="subject-card-bottom">
-
-                    <span>
-
-                        Last marked:
-                        ${formatDate(
-                            new Date(
-                                latest.date
-                                + "T00:00:00"
-                            )
-                        )}
-
-                    </span>
-
-
-                    <span class="view-week">
-
-                        View 7 Days
-
-                        <i class="feather-arrow-right"></i>
-
-                    </span>
-
-                </div>
-
-            `;
-
-
-            card.addEventListener(
-                "click",
-                function() {
-
-                    selectSubject(
-                        subject.id
-                    );
-
-                }
-            );
-
-
-            container.appendChild(card);
-
-        }
-    );
-
-}
-
-
-/* =========================================================
-   SELECT / DESELECT SUBJECT
-========================================================= */
-
-function selectSubject(subjectId) {
-
-    const section =
-        document.getElementById(
-            "weeklyAttendanceSection"
-        );
-
-
-    const selectedCard =
-        document.querySelector(
-            `.subject-card[data-subject-id="${subjectId}"]`
-        );
-
-
-    /*
-       If the SAME subject is clicked again,
-       close the weekly attendance.
-    */
-
-    if (
-        selectedCard &&
-        selectedCard.classList.contains("selected")
-    ) {
-
-        selectedCard.classList.remove(
-            "selected"
-        );
-
-
-        section.classList.remove(
-            "show"
-        );
-
-
-        document.getElementById(
-            "weeklyAttendanceList"
-        ).innerHTML = "";
-
-
-        return;
-
-    }
-
-
-    const subject =
-        currentStudent.subjects.find(
-            function(item) {
-
-                return item.id === subjectId;
-
-            }
-        );
-
-
-    if (!subject) {
-
-        return;
-
-    }
-
-
-    /*
-       Remove selected state
-       from all cards.
-    */
-
-    document
-        .querySelectorAll(
-            ".subject-card"
-        )
-        .forEach(
-            function(card) {
-
-                card.classList.remove(
-                    "selected"
-                );
-
-            }
-        );
-
-
-    /*
-       Select clicked card.
-    */
-
-    if (selectedCard) {
-
-        selectedCard.classList.add(
-            "selected"
-        );
-
-    }
-
-
-    /*
-       Update weekly heading.
-    */
-
-    document.getElementById(
-        "weeklySubjectName"
-    ).textContent =
-        subject.name;
-
-
-    document.getElementById(
-        "weeklyTeacher"
-    ).textContent =
-        `${subject.teacher} · Last 7 days`;
-
-
-    document.getElementById(
-        "weeklyIcon"
-    ).innerHTML =
-        `<i class="${subject.icon}"></i>`;
-
-
-    /*
-       Render attendance.
-    */
-
-    renderWeeklyAttendance(
-        subject
-    );
-
-
-    /*
-       Show section.
-    */
-
-    section.classList.add(
-        "show"
-    );
-
-
-    /*
-       On mobile, scroll to attendance.
-    */
-
-    if (window.innerWidth < 992) {
-
-        setTimeout(
-            function() {
-
-                section.scrollIntoView({
-                    behavior: "smooth",
-                    block: "start"
-                });
-
-            },
-            100
-        );
-
-    }
-
-}
-
-
-/* =========================================================
-   RENDER 7 DAYS ATTENDANCE
-========================================================= */
-
-function renderWeeklyAttendance(subject) {
-
-    const container =
-        document.getElementById(
-            "weeklyAttendanceList"
-        );
-
-
-    container.innerHTML = "";
-
-
-    const sorted =
-        sortAttendance(
-            subject.attendance
-        );
-
-
-    /*
-       Exactly 7 attendance records.
-    */
-
-    const records =
-        sorted.slice(
-            0,
-            7
-        );
-
-
-    if (!records.length) {
-
-        container.innerHTML = `
-
-            <div class="empty-attendance">
-
-                <i class="feather-calendar"></i>
-
-                <p>
-                    No attendance records found
-                    for this subject.
-                </p>
-
-            </div>
-
-        `;
-
-        return;
-
-    }
-
-
-    records.forEach(
-        function(record) {
-
-            const statusClass =
-                record.status.toLowerCase() ===
-                "present"
-                    ? "present"
-                    : "absent";
-
-
-            const row =
-                document.createElement(
-                    "div"
-                );
-
-
-            row.className =
-                "weekly-row";
-
-
-            row.innerHTML = `
-
-                <div class="weekly-date">
-
-                    <span class="weekly-day-label">
-
-                        ${getDayLabel(
-                            record.date
-                        )}
-
-                    </span>
-
-
-                    <span class="weekly-full-date">
-
-                        ${formatFullDate(
-                            record.date
-                        )}
-
-                    </span>
-
-                </div>
-
-
-                <div class="weekly-time">
-
-                    ${record.time}
-
-                </div>
-
-
-                <div class="weekly-status">
-
-                    <span class="
-                        attendance-status
-                        ${statusClass}">
-
-                        ${record.status}
-
-                    </span>
-
-                </div>
-
-            `;
-
-
-            container.appendChild(row);
-
-        }
-    );
-
-}
-
-
-/* =========================================================
-   CURRENT DATE
-========================================================= */
-
-function renderCurrentDate() {
-
-    const element =
-        document.getElementById(
-            "currentDate"
-        );
-
-
-    if (element) {
-
-        element.textContent =
-            formatDate(
-                getTodayDate()
-            );
-
-    }
-
-}
-
-
-/* =========================================================
-   LOGIN DROPDOWN
-========================================================= */
-
-document.addEventListener(
-    "DOMContentLoaded",
-    function() {
-
-        const dropdown =
-            document.querySelector(
-                ".login-dropdown"
-            );
-
-
-        const button =
-            document.querySelector(
-                ".login-dropdown-btn"
-            );
-
-
-        if (!dropdown || !button) {
-
+    function renderLatestAttendance() {
+        const container = document.getElementById("latestAttendanceList");
+        if (!container) return;
+        container.innerHTML = "";
+        const records = getLatestAttendance();
+
+        if (!records.length) {
+            container.innerHTML = `<div class="empty-attendance"><i class="feather-calendar"></i><p>No attendance records found.</p></div>`;
             return;
-
         }
 
-
-        button.addEventListener(
-            "click",
-            function(event) {
-
-                event.stopPropagation();
-
-                dropdown.classList.toggle(
-                    "active"
-                );
-
-            }
-        );
-
-
-        document.addEventListener(
-            "click",
-            function(event) {
-
-                if (
-                    !dropdown.contains(
-                        event.target
-                    )
-                ) {
-
-                    dropdown.classList.remove(
-                        "active"
-                    );
-
-                }
-
-            }
-        );
-
+        records.forEach(function(record) {
+            const statusClass = record.status.toLowerCase() === "present" ? "present" : "absent";
+            const item = document.createElement("div");
+            item.className = "latest-attendance-item";
+            item.innerHTML = `
+                <div class="latest-left">
+                    <div class="latest-icon"><i class="${record.icon}"></i></div>
+                    <div class="latest-info">
+                        <h6>${record.subject}</h6>
+                        <p>${getDayLabel(record.date)} · ${formatDate(new Date(record.date + "T00:00:00"))}</p>
+                    </div>
+                </div>
+                <div class="latest-right">
+                    <span class="latest-time">${record.time}</span>
+                    <span class="attendance-status ${statusClass}">${record.status}</span>
+                </div>
+            `;
+            container.appendChild(item);
+        });
     }
-);
 
+    function renderSubjectCards() {
+        const container = document.getElementById("subjectCards");
+        if (!container) return;
+        container.innerHTML = "";
 
-/* =========================================================
-   FLOATING CONTACT BUTTONS
-========================================================= */
-
-document.addEventListener(
-    "DOMContentLoaded",
-    function() {
-
-        const contactItems =
-            document.querySelectorAll(
-                ".contact-item"
-            );
-
-
-        contactItems.forEach(
-            function(item) {
-
-                const button =
-                    item.querySelector(
-                        ".contact-button"
-                    );
-
-
-                if (!button) {
-
-                    return;
-
-                }
-
-
-                button.addEventListener(
-                    "click",
-                    function() {
-
-                        if (
-                            window.innerWidth <= 767
-                        ) {
-
-                            contactItems.forEach(
-                                function(otherItem) {
-
-                                    if (
-                                        otherItem !== item
-                                    ) {
-
-                                        otherItem.classList.remove(
-                                            "show-label"
-                                        );
-
-                                    }
-
-                                }
-                            );
-
-
-                            item.classList.toggle(
-                                "show-label"
-                            );
-
-                        }
-
-                    }
-                );
-
-            }
-        );
-
-
-        document.addEventListener(
-            "click",
-            function(event) {
-
-                if (
-                    !event.target.closest(
-                        ".floating-contact"
-                    )
-                ) {
-
-                    contactItems.forEach(
-                        function(item) {
-
-                            item.classList.remove(
-                                "show-label"
-                            );
-
-                        }
-                    );
-
-                }
-
-            }
-        );
-
+        currentStudent.subjects.forEach(function(subject) {
+            const latest = sortAttendance(subject.attendance)[0];
+            const card = document.createElement("div");
+            card.className = "subject-card";
+            card.dataset.subjectId = subject.id;
+            card.innerHTML = `
+                <div class="subject-selected-icon"><i class="feather-check"></i></div>
+                <div class="subject-card-top">
+                    <div class="subject-card-icon"><i class="${subject.icon}"></i></div>
+                    <div>
+                        <h5>${subject.name}</h5>
+                        <p>${subject.teacher}</p>
+                    </div>
+                </div>
+                <div class="subject-card-bottom">
+                    <span>Last marked: ${formatDate(new Date(latest.date + "T00:00:00"))}</span>
+                    <span class="view-week">View 7 Days <i class="feather-arrow-right"></i></span>
+                </div>
+            `;
+            card.addEventListener("click", function() { selectSubject(subject.id); });
+            container.appendChild(card);
+        });
     }
-);
 
+    function selectSubject(subjectId) {
+        const section = document.getElementById("weeklyAttendanceSection");
+        const selectedCard = document.querySelector(`.subject-card[data-subject-id="${subjectId}"]`);
 
-/* =========================================================
-   INITIALIZE
-========================================================= */
+        if (selectedCard && selectedCard.classList.contains("selected")) {
+            selectedCard.classList.remove("selected");
+            section.classList.remove("show");
+            document.getElementById("weeklyAttendanceList").innerHTML = "";
+            return;
+        }
 
-document.addEventListener(
-    "DOMContentLoaded",
-    function() {
+        const subject = currentStudent.subjects.find(item => item.id === subjectId);
+        if (!subject) return;
 
+        document.querySelectorAll(".subject-card").forEach(card => card.classList.remove("selected"));
+        if (selectedCard) selectedCard.classList.add("selected");
+
+        document.getElementById("weeklySubjectName").textContent = subject.name;
+        document.getElementById("weeklyTeacher").textContent = `${subject.teacher} · Last 7 days`;
+        document.getElementById("weeklyIcon").innerHTML = `<i class="${subject.icon}"></i>`;
+
+        renderWeeklyAttendance(subject);
+        section.classList.add("show");
+
+        if (window.innerWidth < 992) {
+            setTimeout(function() {
+                section.scrollIntoView({ behavior: "smooth", block: "start" });
+            }, 100);
+        }
+    }
+
+    function renderWeeklyAttendance(subject) {
+        const container = document.getElementById("weeklyAttendanceList");
+        container.innerHTML = "";
+        const records = sortAttendance(subject.attendance).slice(0, 7);
+
+        if (!records.length) {
+            container.innerHTML = `<div class="empty-attendance"><i class="feather-calendar"></i><p>No attendance records found for this subject.</p></div>`;
+            return;
+        }
+
+        records.forEach(function(record) {
+            const statusClass = record.status.toLowerCase() === "present" ? "present" : "absent";
+            const row = document.createElement("div");
+            row.className = "weekly-row";
+            row.innerHTML = `
+                <div class="weekly-date">
+                    <span class="weekly-day-label">${getDayLabel(record.date)}</span>
+                    <span class="weekly-full-date">${formatFullDate(record.date)}</span>
+                </div>
+                <div class="weekly-time">${record.time}</div>
+                <div class="weekly-status">
+                    <span class="attendance-status ${statusClass}">${record.status}</span>
+                </div>
+            `;
+            container.appendChild(row);
+        });
+    }
+
+    function renderCurrentDate() {
+        const element = document.getElementById("currentDate");
+        if (element) element.textContent = formatDate(getTodayDate());
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
         renderCurrentDate();
-
         renderLatestAttendance();
-
         renderSubjectCards();
 
-    }
-);
+        // Login dropdown
+        const dropdown = document.querySelector(".login-dropdown");
+        const button = document.querySelector(".login-dropdown-btn");
+        if (dropdown && button) {
+            button.addEventListener("click", function(event) {
+                event.stopPropagation();
+                dropdown.classList.toggle("active");
+            });
+            document.addEventListener("click", function(event) {
+                if (!dropdown.contains(event.target)) dropdown.classList.remove("active");
+            });
+        }
 
+        // Floating contact toggle
+        const contactItems = document.querySelectorAll(".contact-item");
+        contactItems.forEach(function(item) {
+            const btn = item.querySelector(".contact-button");
+            if (btn) {
+                btn.addEventListener("click", function() {
+                    if (window.innerWidth <= 767) {
+                        contactItems.forEach(other => { if (other !== item) other.classList.remove("show-label"); });
+                        item.classList.toggle("show-label");
+                    }
+                });
+            }
+        });
+        document.addEventListener("click", function(event) {
+            if (!event.target.closest(".floating-contact")) {
+                contactItems.forEach(item => item.classList.remove("show-label"));
+            }
+        });
+    });
 </script>
 
-
 </body>
-
 </html>
