@@ -20384,6 +20384,10 @@ ul.testimonial-thumb-wrapper li a.active .thumb img {
 }
 .rbt-testimonial-box .description p {
   margin-bottom: 0;
+      font-size: 19px !important;
+    line-height: 1.65 !important;
+    color: #475569 !important;
+    margin-bottom: 1.25rem !important;
 }
 .rbt-testimonial-box .description .rbt-btn-link {
   margin-top: 20px;
@@ -31082,4 +31086,4 @@ span.focus-border {
 }
 
 /* Import Master Custom UI & Typography Stylesheet */
-@import url('custom-ui.css');
+@import url('custom-ui.css');

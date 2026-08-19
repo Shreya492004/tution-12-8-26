@@ -138,7 +138,7 @@ body {
 }
 
 p {
-    font-size: 1rem !important; /* 16px */
+    font-size: 19px !important; /* 16px */
     line-height: 1.65 !important;
     color: #475569 !important;
     margin-bottom: 1.25rem !important;
@@ -329,6 +329,7 @@ h6, .h6 {
 .popup-mobile-menu .mainmenu > li > a:hover {
     color: #2f57ef !important;
 }
+
 
 /* --------------------------------------------------------------------------
    5. SIDEBAR NAVIGATION SYSTEM (ISSUE #1 FIX)
@@ -736,16 +737,6 @@ table td,
         padding-bottom: 40px !important;
     }
 
-    .btn,
-    .rbt-btn {
-        width: 100% !important;
-        margin-bottom: 8px !important;
-    }
-
-    .header-right .rbt-btn-wrapper {
-        display: none !important;
-    }
-
     .copyright-area p,
     .copyright-area a {
         white-space: normal !important;
@@ -760,3 +751,702 @@ table td,
         padding-bottom: 60px !important;
     }
 }
+
+/* --------------------------------------------------------------------------
+   13. RESPONSIVE HEADER, LOGIN/JOIN BUTTONS & MOBILE NAVIGATION SYSTEM
+   -------------------------------------------------------------------------- */
+
+/* Global overflow protection against horizontal scrolling */
+html, body {
+    max-width: 100% !important;
+    overflow-x: clip !important;
+}
+
+.rbt-header,
+.rbt-header-wrapper,
+.rbt-header .container,
+.rbt-header .mainbar-row {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+/* Header container & row base */
+.rbt-header .mainbar-row {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+}
+
+/* Header Right wrapper */
+.rbt-header .header-right {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    flex-shrink: 0 !important;
+    gap: 10px !important;
+}
+
+.rbt-header .header-right .rbt-btn-wrapper {
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    flex-shrink: 0 !important;
+}
+
+/* Desktop Header (min-width: 1200px) - Exactly preserves original desktop styling */
+@media only screen and (min-width: 1200px) {
+    .rbt-header .rbt-main-navigation {
+        display: block !important;
+        flex: 1 1 auto !important;
+        min-width: 0 !important;
+    }
+
+    .rbt-header .rbt-main-navigation .mainmenu-nav {
+        display: flex !important;
+        justify-content: center !important;
+        width: auto !important;
+    }
+
+    .rbt-header .rbt-main-navigation .mainmenu {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        align-items: center !important;
+        justify-content: center !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        list-style: none !important;
+    }
+
+    .rbt-header .rbt-main-navigation .mainmenu > li {
+        flex-shrink: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        position: relative !important;
+    }
+
+    .rbt-header .rbt-main-navigation .mainmenu > li > a,
+    .rbt-header .rbt-main-navigation a {
+        font-size: 17.5px !important;
+        font-weight: 500 !important;
+        color: #192335 !important;
+        white-space: nowrap !important;
+        padding: 0 11px !important;
+        display: flex !important;
+        align-items: center !important;
+        height: 80px !important;
+        line-height: 80px !important;
+        transition: all 0.3s ease !important;
+        text-decoration: none !important;
+    }
+
+    .rbt-header .rbt-main-navigation .mainmenu > li > a:hover,
+    .rbt-header .rbt-main-navigation a:hover {
+        color: #2f57ef !important;
+    }
+
+    .rbt-header .header-right .rbt-btn-wrapper {
+        display: flex !important;
+        align-items: center !important;
+        gap: 12px !important;
+    }
+
+    .rbt-header .mobile-menu-bar {
+        display: none !important;
+    }
+}
+
+/* Mid-range Desktop / Laptop screens (1200px - 1440px) */
+@media only screen and (min-width: 1200px) and (max-width: 1440px) {
+    .rbt-header .rbt-main-navigation .mainmenu > li > a,
+    .rbt-header .rbt-main-navigation a {
+        font-size: 16px !important;
+        padding: 0 7px !important;
+    }
+}
+
+/* Tablet & Laptop screens (< 1200px down to 768px) */
+@media only screen and (max-width: 1199.98px) {
+    .rbt-header .rbt-main-navigation {
+        display: none !important;
+    }
+
+    .rbt-header .mobile-menu-bar {
+        display: block !important;
+        flex-shrink: 0 !important;
+    }
+
+    .rbt-header .mainbar-row {
+        height: 72px !important;
+    }
+
+    .rbt-header .logo a img {
+        max-height: 42px !important;
+        width: auto !important;
+        height: auto !important;
+        object-fit: contain !important;
+    }
+
+    .rbt-header .header-info {
+        display: flex !important;
+        align-items: center !important;
+    }
+
+    .rbt-header .header-right {
+        display: flex !important;
+        align-items: center !important;
+        gap: 8px !important;
+    }
+
+    .rbt-header .header-right .rbt-btn-wrapper {
+        display: flex !important;
+        align-items: center !important;
+        gap: 8px !important;
+    }
+
+    .rbt-header .header-right .rbt-btn {
+        height: 38px !important;
+        line-height: 38px !important;
+        padding: 0 12px !important;
+        font-size: 13.5px !important;
+        white-space: nowrap !important;
+    }
+}
+
+/* Mobile Screens (576px - 767.98px) */
+@media only screen and (max-width: 767.98px) {
+    .rbt-header .mainbar-row {
+        height: 68px !important;
+    }
+
+    .rbt-header .logo a img {
+        max-height: 38px !important;
+        max-width: 130px !important;
+    }
+
+    .rbt-header .header-right {
+        gap: 6px !important;
+    }
+
+    .rbt-header .header-right .rbt-btn-wrapper {
+        gap: 6px !important;
+    }
+
+    .rbt-header .header-right .rbt-btn {
+        height: 36px !important;
+        line-height: 36px !important;
+        padding: 0 10px !important;
+        font-size: 13px !important;
+        border-radius: 6px !important;
+    }
+
+    .rbt-header .header-right .login-dropdown-btn i {
+        font-size: 12px !important;
+        margin-left: 2px !important;
+    }
+
+    .hamberger-button.rbt-round-btn,
+    .mobile-menu-bar .hamberger button {
+        width: 38px !important;
+        height: 38px !important;
+        min-width: 38px !important;
+        line-height: 38px !important;
+    }
+
+    .hamberger-button i,
+    .hamberger-button svg {
+        font-size: 18px !important;
+    }
+}
+
+/* Small Mobile Screens (375px - 575.98px) */
+@media only screen and (max-width: 575.98px) {
+    .rbt-header .mainbar-row {
+        height: 64px !important;
+    }
+
+    .rbt-header .logo a img {
+        max-height: 34px !important;
+        max-width: 100px !important;
+    }
+
+    .rbt-header .header-right {
+        gap: 5px !important;
+    }
+
+    .rbt-header .header-right .rbt-btn-wrapper {
+        gap: 5px !important;
+    }
+
+    .rbt-header .header-right .rbt-btn {
+        height: 34px !important;
+        line-height: 34px !important;
+        padding: 0 8px !important;
+        font-size: 12.5px !important;
+        border-radius: 6px !important;
+        letter-spacing: -0.2px !important;
+    }
+
+    .rbt-header .header-right .login-dropdown-btn {
+        padding: 0 7px !important;
+        gap: 3px !important;
+    }
+
+    .rbt-header .header-right .login-dropdown-btn i {
+        font-size: 11px !important;
+        margin-left: 1px !important;
+    }
+
+    .hamberger-button.rbt-round-btn,
+    .mobile-menu-bar .hamberger button {
+        width: 34px !important;
+        height: 34px !important;
+        min-width: 34px !important;
+        line-height: 34px !important;
+    }
+
+    .hamberger-button i,
+    .hamberger-button svg {
+        font-size: 16px !important;
+    }
+}
+
+/* Extra Small Mobile Screens (<= 374.98px down to 320px) */
+@media only screen and (max-width: 374.98px) {
+    .container,
+    .container-fluid {
+        padding-left: 8px !important;
+        padding-right: 8px !important;
+    }
+
+    .rbt-header .mainbar-row {
+        height: 58px !important;
+    }
+
+    .rbt-header .logo a img {
+        max-height: 28px !important;
+        max-width: 75px !important;
+    }
+
+    .rbt-header .header-right {
+        gap: 4px !important;
+    }
+
+    .rbt-header .header-right .rbt-btn-wrapper {
+        gap: 4px !important;
+    }
+
+    .rbt-header .header-right .rbt-btn {
+        height: 30px !important;
+        line-height: 30px !important;
+        padding: 0 6px !important;
+        font-size: 11.5px !important;
+        border-radius: 5px !important;
+        letter-spacing: -0.3px !important;
+    }
+
+    .rbt-header .header-right .login-dropdown-btn {
+        padding: 0 5px !important;
+        gap: 2px !important;
+    }
+
+    .rbt-header .header-right .login-dropdown-btn i {
+        font-size: 10px !important;
+    }
+
+    .hamberger-button.rbt-round-btn,
+    .mobile-menu-bar .hamberger button {
+        width: 30px !important;
+        height: 30px !important;
+        min-width: 30px !important;
+        line-height: 30px !important;
+    }
+
+    .hamberger-button i,
+    .hamberger-button svg {
+        font-size: 14px !important;
+    }
+}
+
+/* Login Dropdown & Dropdown Menu Responsiveness */
+.login-dropdown {
+    position: relative !important;
+    display: inline-block !important;
+}
+
+.login-dropdown-btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    cursor: pointer !important;
+}
+
+.login-dropdown-menu {
+    position: absolute !important;
+    top: calc(100% + 8px) !important;
+    right: 0 !important;
+    min-width: 190px !important;
+    background: #ffffff !important;
+    border: 1px solid #eef0f4 !important;
+    border-radius: 8px !important;
+    padding: 6px !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.14) !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transform: translateY(8px) !important;
+    transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease !important;
+    z-index: 99999 !important;
+}
+
+.login-dropdown.active .login-dropdown-menu {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) !important;
+}
+
+.login-dropdown.active .login-dropdown-btn i {
+    transform: rotate(180deg) !important;
+}
+
+.login-dropdown-menu a {
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    padding: 10px 12px !important;
+    color: #192335 !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    text-decoration: none !important;
+    border-radius: 6px !important;
+    transition: background 0.2s ease, color 0.2s ease !important;
+    white-space: nowrap !important;
+}
+
+.login-dropdown-menu a:hover {
+    background: #f0edff !important;
+    color: var(--color-primary, #2f57ef) !important;
+}
+
+.login-dropdown-menu a i {
+    font-size: 16px !important;
+    color: var(--color-primary, #2f57ef) !important;
+    width: 18px !important;
+    text-align: center !important;
+}
+
+/* Ensure Login Dropdown fits on mobile screens */
+@media only screen and (max-width: 767.98px) {
+    .login-dropdown-menu {
+        min-width: 175px !important;
+        right: -65px !important;
+        max-width: calc(100vw - 20px) !important;
+    }
+
+    .login-dropdown-menu a {
+        padding: 8px 10px !important;
+        font-size: 13.5px !important;
+    }
+}
+
+@media only screen and (max-width: 374.98px) {
+    .login-dropdown-menu {
+        min-width: 160px !important;
+        right: -55px !important;
+    }
+
+    .login-dropdown-menu a {
+        padding: 7px 8px !important;
+        font-size: 12.5px !important;
+        gap: 6px !important;
+    }
+}
+
+/* Hamburger button base styling */
+.hamberger-button.rbt-round-btn,
+.mobile-menu-bar .hamberger button {
+    width: 44px !important;
+    height: 44px !important;
+    min-width: 44px !important;
+    line-height: 44px !important;
+    border-radius: 50% !important;
+    background: #f6f7fb !important;
+    border: 1px solid #e6e8ec !important;
+    color: #192335 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    cursor: pointer !important;
+    transition: all 0.25s ease !important;
+    flex-shrink: 0 !important;
+}
+
+.hamberger-button.rbt-round-btn:hover,
+.mobile-menu-bar .hamberger button:hover {
+    background: var(--color-primary, #2f57ef) !important;
+    border-color: var(--color-primary, #2f57ef) !important;
+    color: #ffffff !important;
+}
+
+.hamberger-button i,
+.hamberger-button svg {
+    font-size: 20px !important;
+    line-height: 1 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+/* ==========================================================================
+   POPUP MOBILE MENU DRAWER
+   ========================================================================== */
+.popup-mobile-menu {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    bottom: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    background-color: rgba(15, 23, 42, 0.65) !important;
+    backdrop-filter: blur(4px) !important;
+    -webkit-backdrop-filter: blur(4px) !important;
+    z-index: 999999 !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    transition: opacity 0.35s ease, visibility 0.35s ease !important;
+}
+
+.popup-mobile-menu.active {
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+.popup-mobile-menu .inner-wrapper {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    bottom: 0 !important;
+    width: 320px !important;
+    max-width: 85vw !important;
+    height: 100% !important;
+    background: #ffffff !important;
+    z-index: 10 !important;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    padding: 24px 20px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    transform: translateX(-100%) !important;
+    transition: transform 0.35s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+    box-shadow: 6px 0 28px rgba(0, 0, 0, 0.18) !important;
+}
+
+.popup-mobile-menu.active .inner-wrapper {
+    transform: translateX(0) !important;
+}
+
+.popup-mobile-menu .inner-top {
+    border-bottom: 1px solid #eef0f4 !important;
+    padding-bottom: 16px !important;
+    margin-bottom: 16px !important;
+}
+
+.popup-mobile-menu .inner-top .content {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    margin-bottom: 12px !important;
+}
+
+.popup-mobile-menu .inner-top .logo a img {
+    max-height: 38px !important;
+    width: auto !important;
+}
+
+.popup-mobile-menu .close-button.rbt-round-btn {
+    width: 36px !important;
+    height: 36px !important;
+    min-width: 36px !important;
+    line-height: 36px !important;
+    border-radius: 50% !important;
+    background: #f6f7fb !important;
+    border: 1px solid #e6e8ec !important;
+    color: #192335 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    cursor: pointer !important;
+    transition: all 0.2s ease !important;
+    flex-shrink: 0 !important;
+}
+
+.popup-mobile-menu .close-button.rbt-round-btn:hover {
+    background: #ff4757 !important;
+    border-color: #ff4757 !important;
+    color: #ffffff !important;
+}
+
+.popup-mobile-menu .description {
+    font-size: 13.5px !important;
+    line-height: 1.5 !important;
+    color: #6b7385 !important;
+    margin-bottom: 12px !important;
+}
+
+.popup-mobile-menu .rbt-information-list {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 6px !important;
+}
+
+.popup-mobile-menu .rbt-information-list li a {
+    font-size: 13.5px !important;
+    color: #4b5563 !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    text-decoration: none !important;
+}
+
+.popup-mobile-menu .rbt-information-list li a i {
+    color: var(--color-primary, #2f57ef) !important;
+    font-size: 14px !important;
+}
+
+/* Mobile menu navigation links */
+.popup-mobile-menu .mainmenu-nav {
+    flex: 1 0 auto !important;
+    margin-bottom: 16px !important;
+}
+
+.popup-mobile-menu .mainmenu {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    display: block !important;
+}
+
+.popup-mobile-menu .mainmenu > li {
+    border-bottom: 1px solid #f1f3f7 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: block !important;
+}
+
+.popup-mobile-menu .mainmenu > li:last-child {
+    border-bottom: none !important;
+}
+
+.popup-mobile-menu .mainmenu > li > a {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 12px 4px !important;
+    font-size: 15.5px !important;
+    font-weight: 500 !important;
+    color: #192335 !important;
+    text-decoration: none !important;
+    transition: color 0.2s ease !important;
+}
+
+.popup-mobile-menu .mainmenu > li > a:hover {
+    color: var(--color-primary, #2f57ef) !important;
+}
+
+.popup-mobile-menu .mainmenu .submenu {
+    list-style: none !important;
+    padding: 4px 0 10px 16px !important;
+    margin: 0 !important;
+    display: none;
+}
+
+.popup-mobile-menu .mainmenu .submenu li a {
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    padding: 8px 0 !important;
+    font-size: 14.5px !important;
+    font-weight: 500 !important;
+    color: #4b5563 !important;
+    text-decoration: none !important;
+}
+
+.popup-mobile-menu .mainmenu .submenu li a:hover {
+    color: var(--color-primary, #2f57ef) !important;
+}
+
+/* Mobile menu bottom buttons */
+.popup-mobile-menu .mobile-menu-bottom {
+    margin-top: auto !important;
+    padding-top: 16px !important;
+    border-top: 1px solid #eef0f4 !important;
+}
+
+.popup-mobile-menu .mobile-menu-bottom .rbt-btn-wrapper {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+    margin-bottom: 16px !important;
+}
+
+.popup-mobile-menu .mobile-menu-bottom .rbt-btn {
+    width: 100% !important;
+    padding: 10px 16px !important;
+    font-size: 14.5px !important;
+    height: auto !important;
+    line-height: normal !important;
+    border-radius: 8px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    text-decoration: none !important;
+}
+
+.popup-mobile-menu .social-share-wrapper .rbt-short-title {
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    color: #8c90a4 !important;
+    margin-bottom: 8px !important;
+}
+
+.popup-mobile-menu .social-icon {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+}
+
+.popup-mobile-menu .social-icon li a {
+    width: 36px !important;
+    height: 36px !important;
+    min-width: 36px !important;
+    line-height: 36px !important;
+    border-radius: 50% !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border: 1px solid #e6e8ec !important;
+    color: #6b7385 !important;
+    text-decoration: none !important;
+    transition: all 0.2s ease !important;
+}
+
+.popup-mobile-menu .social-icon li a:hover {
+    background: var(--color-primary, #2f57ef) !important;
+    border-color: var(--color-primary, #2f57ef) !important;
+    color: #ffffff !important;
+}
+
