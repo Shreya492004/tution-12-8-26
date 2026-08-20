@@ -59,7 +59,6 @@
             z-index: 5;
         }
 
-        /* Mobile Height Adjustments */
         @media (max-width: 768px) {
             .slider-area.rbt-banner-10.height-400 {
                 height: 160px !important;
@@ -85,7 +84,7 @@
         }
 
         /* =========================================================
-           DESIGN TOKENS — single source of truth for the roster UI
+           DESIGN TOKENS
         ========================================================= */
         :root {
             --clr-primary: #6c4df6;
@@ -110,7 +109,6 @@
             --shadow-hover: 0 10px 26px rgba(108, 77, 246, 0.15);
         }
 
-        /* Visible keyboard focus across every interactive element in this UI */
         .subject-card:focus-visible,
         .session-pill-btn:focus-visible,
         .type-filter-btn:focus-visible,
@@ -152,18 +150,26 @@
             flex: 0 0 20px !important;
         }
 
-        /* 2 Subjects Per Row Grid */
+        /* =========================================================
+           FORCE 1 FULL-WIDTH SUBJECT PER ROW (STACKED VERTICALLY)
+        ========================================================= */
         .subject-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr) !important;
-            gap: 24px;
-            margin-bottom: 26px;
+            display: flex !important;
+            flex-direction: column !important;
+            width: 100% !important;
+            grid-template-columns: none !important;
+            gap: 20px !important;
+            margin-bottom: 26px !important;
         }
 
         .subject-card {
+            width: 100% !important;
+            max-width: 100% !important;
+            flex: 1 1 100% !important;
+            box-sizing: border-box !important;
             background: #ffffff;
             border-radius: 14px;
-            padding: 22px;
+            padding: 18px 22px;
             border: 1px solid #e8e8e8;
             box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
             cursor: pointer;
@@ -210,19 +216,19 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
 
         .subject-icon-box {
-            width: 42px;
-            height: 42px;
+            width: 38px;
+            height: 38px;
             border-radius: 10px;
             background: #f3f0ff;
             color: #6c4df6;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 19px;
+            font-size: 18px;
             flex-shrink: 0;
         }
 
@@ -231,7 +237,7 @@
             color: #ffffff;
         }
 
-        /* Per-subject accent so the four cards read distinctly at a glance */
+        /* Per-subject colors */
         #card-subject-physics .subject-icon-box { background: #e0f2fe; color: #0284c7; }
         #card-subject-physics.active-subject .subject-icon-box,
         #card-subject-physics.active-subject::before { background: #0284c7; }
@@ -264,43 +270,32 @@
         }
 
         .subject-card-title {
-            font-size: 20px !important;
+            font-size: 19px !important;
             font-weight: 700 !important;
             color: #192335 !important;
-            margin-bottom: 4px !important;
+            margin-bottom: 2px !important;
         }
 
         .subject-card-sub {
-            font-size: 14.5px !important;
+            font-size: 13.5px !important;
             color: #64748b !important;
-            margin-bottom: 14px;
+            margin-bottom: 10px;
         }
 
         /* =========================================================
-           NEXT 1-WEEK VERTICAL TIMETABLE (WITH EXACT SCREENSHOT FORMAT)
+           COMPACT TIMETABLE CONTAINER WITH INTERNAL SCROLLING
         ========================================================= */
         .subject-timetable-vertical {
-            margin-top: 10px;
-            padding-top: 14px;
+            margin-top: 8px;
+            padding-top: 10px;
             border-top: 1px dashed #e2e8f0;
             display: flex;
             flex-direction: column;
-            gap: 10px;
-            max-height: 340px;
-            overflow-y: auto;
-            padding-right: 6px;
-        }
-
-        .subject-timetable-vertical::-webkit-scrollbar {
-            width: 5px;
-        }
-        .subject-timetable-vertical::-webkit-scrollbar-thumb {
-            background: #cbd5e1;
-            border-radius: 4px;
+            gap: 8px;
         }
 
         .subject-timetable-title {
-            font-size: 12.5px;
+            font-size: 12px;
             font-weight: 700;
             color: #475569;
             text-transform: uppercase;
@@ -311,35 +306,62 @@
             gap: 6px;
         }
 
+        /* Height-ஐ reduce பண்ணி scroll பண்ணும் wrapper */
+        .timetable-days-wrapper {
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 8px !important;
+            width: 100% !important;
+            max-height: 200px !important; /* Reduced compact height */
+            overflow-y: auto !important;
+            padding-right: 6px;
+        }
+
+        /* Smooth Custom Scrollbar */
+        .timetable-days-wrapper::-webkit-scrollbar {
+            width: 5px;
+        }
+        .timetable-days-wrapper::-webkit-scrollbar-track {
+            background: #f1f5f9;
+            border-radius: 4px;
+        }
+        .timetable-days-wrapper::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        .timetable-days-wrapper::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+
         .timetable-day-group {
             display: flex;
             flex-direction: column;
             background: #fbfcfe;
             border: 1px solid #eef2f6;
-            border-radius: 10px;
-            padding: 10px 12px;
-            margin-bottom: 4px;
+            border-radius: 8px;
+            padding: 8px 12px;
+            width: 100%;
         }
 
         .timetable-day-header {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            margin-bottom: 6px;
+            margin-bottom: 4px;
         }
 
         .timetable-day-tag {
-            font-size: 12.5px;
+            font-size: 12px;
             font-weight: 700;
             color: #5b21b6;
             background: #ede9fe;
-            padding: 3px 10px;
+            padding: 2px 8px;
             border-radius: 6px;
             display: inline-block;
         }
 
         .timetable-sessions-count {
-            font-size: 12.5px;
+            font-size: 12px;
             color: #475569;
             font-weight: 500;
         }
@@ -348,11 +370,11 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 8px 12px;
+            padding: 6px 10px;
             background: #ffffff;
             border: 1px solid #e2e8f0;
-            border-radius: 8px;
-            margin-top: 6px;
+            border-radius: 6px;
+            margin-top: 5px;
             gap: 8px;
             transition: all 0.2s ease;
         }
@@ -363,7 +385,7 @@
         }
 
         .timetable-slot-time {
-            font-size: 13.5px;
+            font-size: 13px;
             font-weight: 600;
             color: #1e293b;
             display: flex;
@@ -374,7 +396,7 @@
 
         .timetable-slot-time i {
             color: #64748b;
-            font-size: 14px;
+            font-size: 13px;
         }
 
         .timetable-slot-badges {
@@ -389,9 +411,9 @@
             display: inline-flex;
             align-items: center;
             gap: 5px;
-            padding: 4px 12px;
+            padding: 3px 10px;
             border-radius: 20px;
-            font-size: 12px;
+            font-size: 11.5px;
             font-weight: 600;
             border: 1px solid transparent;
             cursor: pointer;
@@ -433,10 +455,10 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-size: 14.5px !important;
+            font-size: 13.5px !important;
             color: #64748b !important;
-            padding-top: 14px;
-            margin-top: 14px;
+            padding-top: 10px;
+            margin-top: 10px;
             border-top: 1px solid #f1f5f9;
         }
 
@@ -448,7 +470,7 @@
             color: #6c4df6;
         }
 
-        /* Group Session Modal Styling */
+        /* Group Session Modal */
         .group-modal-card-box {
             background: #ffffff;
             border-radius: 14px;
@@ -967,11 +989,6 @@
             color: #ffffff;
         }
 
-        @media (max-width: 991px) {
-            .subject-grid {
-                grid-template-columns: 1fr !important;
-            }
-        }
         @media (max-width: 768px) {
             .detail-grid {
                 grid-template-columns: 1fr;
@@ -1003,7 +1020,7 @@
 </head>
 
 <body class="rbt-header-sticky">
- <!-- Start Header Area -->
+    <!-- Header Area -->
     <header class="rbt-header rbt-header-9">
         <div class="rbt-header-wrapper header-not-transparent header-sticky">
             <div class="container">
@@ -1068,57 +1085,6 @@
             </div>
         </div>
     </header>
-
-    <!-- Mobile Menu Section -->
-    <div class="popup-mobile-menu">
-        <div class="inner-wrapper">
-            <div class="inner-top">
-                <div class="content">
-                    <div class="logo">
-                        <a href="index.html">
-                            <img src="assets/images/logo/logo.png" alt="Education Logo Images">
-                        </a>
-                    </div>
-                    <div class="rbt-btn-close">
-                        <button class="close-button rbt-round-btn" aria-label="Close Menu"><i class="feather-x"></i></button>
-                    </div>
-                </div>
-                <p class="description">London Star Education provides high-quality online tuition and educational support.</p>
-                <ul class="navbar-top-left rbt-information-list justify-content-start">
-                    <li>
-                        <a href="mailto:info@londonstaredu.com"><i class="feather-mail"></i>info@londonstaredu.com</a>
-                    </li>
-                    <li>
-                        <a href="tel:3025550107"><i class="feather-phone"></i>(302) 555-0107</a>
-                    </li>
-                </ul>
-            </div>
-
-            <nav class="mainmenu-nav">
-                <ul class="mainmenu">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about-us.html">About</a></li>
-                    <li><a href="our-team.html">Our Team</a></li>
-                    <li><a href="our-tuition.html">Our Tuition</a></li>
-                    <li><a href="holiday-camps.html">Holiday Camps</a></li>
-                    <li><a href="plans-and-pricing.html">Plans &amp; Pricing</a></li>
-                    <li><a href="book-online.html">Book Online</a></li>
-                </ul>
-            </nav>
-
-            <div class="mobile-menu-bottom">
-                <div class="social-share-wrapper">
-                    <span class="rbt-short-title d-block">Find With Us</span>
-                    <ul class="social-icon social-default transparent-with-border justify-content-start mt--20">
-                        <li><a href="https://www.facebook.com/" aria-label="Facebook"><i class="feather-facebook"></i></a></li>
-                        <li><a href="https://www.twitter.com" aria-label="X (Twitter)"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" viewBox="0 0 24 24" class="social-icon-x" style="vertical-align: -2px;"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a></li>
-                        <li><a href="https://www.instagram.com/" aria-label="Instagram"><i class="feather-instagram"></i></a></li>
-                        <li><a href="https://www.linkedin.com/" aria-label="LinkedIn"><i class="feather-linkedin"></i></a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <!-- Banner Area -->
     <div class="slider-area rbt-banner-10 height-400 bg_image bg_image--11" data-black-overlay="5">
@@ -1213,606 +1179,614 @@
                             </div>
                         </div>
 
-                <!-- RIGHT MAIN CONTENT -->
-                <div class="col-lg-9">
-                    <div class="rbt-dashboard-content bg-color-white rbt-shadow-box">
-                        <div class="content">
+                        <!-- RIGHT MAIN CONTENT -->
+                        <div class="col-lg-9">
+                            <div class="rbt-dashboard-content bg-color-white rbt-shadow-box">
+                                <div class="content">
 
-                            <div class="roster-header-container">
-                                <div class="roster-title-group">
-                                    <h4 class="rbt-title-style-3">Student List</h4>
-                                    <p>Select an assigned teaching subject to view its student roster and details.</p>
+                                    <div class="roster-header-container">
+                                        <div class="roster-title-group">
+                                            <h4 class="rbt-title-style-3">Student List</h4>
+                                            <p>Select an assigned teaching subject to view its student roster and details.</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="subject-cards-title mb-3">
+                                        <i class="feather-grid"></i> Assigned Teaching Subjects
+                                    </div>
+
+                                    <!-- STACKED 1 PER ROW (FULL-WIDTH), DAYS IN SEPARATE ROWS WITH SCROLL -->
+                                    <div class="subject-grid">
+
+                                        <!-- 1. Mathematics (Full Row 1) -->
+                                        <div class="subject-card" onclick="toggleSubject('mathematics')" id="card-subject-mathematics">
+                                            <div>
+                                                <div class="subject-card-header">
+                                                    <div class="subject-icon-box">
+                                                        <i class="feather-book"></i>
+                                                    </div>
+                                                    <span class="subject-badge" id="badge-count-mathematics" onclick="event.stopPropagation(); toggleSubject('mathematics');">16 Students</span>
+                                                </div>
+                                                <h5 class="subject-card-title">Mathematics</h5>
+                                                <p class="subject-card-sub">Next 1-Week Class Schedule</p>
+
+                                                <div class="subject-timetable-vertical" onclick="event.stopPropagation();">
+                                                    <div class="subject-timetable-title">
+                                                        <i class="feather-calendar"></i> Next 1-Week Sessions
+                                                    </div>
+                                                    
+                                                    <!-- DAYS WRAPPER (VERTICAL 1 DAY PER ROW WITH SCROLL) -->
+                                                    <div class="timetable-days-wrapper">
+                                                        <!-- Monday: 2 Sessions -->
+                                                        <div class="timetable-day-group">
+                                                            <div class="timetable-day-header">
+                                                                <span class="timetable-day-tag">Monday</span>
+                                                                <span class="timetable-sessions-count">2 Sessions</span>
+                                                            </div>
+                                                            <div class="timetable-slot-row">
+                                                                <span class="timetable-slot-time"><i class="feather-clock"></i> 10:00 AM - 11:30 AM</span>
+                                                                <div class="timetable-slot-badges">
+                                                                    <button type="button" class="session-pill-btn pill-oto" onclick="openSessionPopup(event, 'mathematics', 'math-mon-1000-oto-1')"><i class="feather-user"></i> One-To-One</button>
+                                                                    <button type="button" class="session-pill-btn pill-oto" onclick="openSessionPopup(event, 'mathematics', 'math-mon-1000-oto-2')"><i class="feather-user"></i> One-To-One</button>
+                                                                </div>
+                                                            </div>
+                                                            <div class="timetable-slot-row">
+                                                                <span class="timetable-slot-time"><i class="feather-clock"></i> 02:00 PM - 03:30 PM</span>
+                                                                <div class="timetable-slot-badges">
+                                                                    <button type="button" class="session-pill-btn pill-otm" onclick="openSessionPopup(event, 'mathematics', 'math-mon-1400-otm')"><i class="feather-users"></i> One-To-Many</button>
+                                                                    <button type="button" class="session-pill-btn pill-oto" onclick="openSessionPopup(event, 'mathematics', 'math-mon-1400-oto')"><i class="feather-user"></i> One-To-One</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <!-- Tuesday: 1 Session -->
+                                                        <div class="timetable-day-group">
+                                                            <div class="timetable-day-header">
+                                                                <span class="timetable-day-tag">Tuesday</span>
+                                                                <span class="timetable-sessions-count">1 Session</span>
+                                                            </div>
+                                                            <div class="timetable-slot-row">
+                                                                <span class="timetable-slot-time"><i class="feather-clock"></i> 10:00 AM - 11:30 AM</span>
+                                                                <div class="timetable-slot-badges">
+                                                                    <button type="button" class="session-pill-btn pill-otm" onclick="openSessionPopup(event, 'mathematics', 'math-tue-1000-otm')"><i class="feather-users"></i> One-To-Many</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <!-- Wednesday: 2 Sessions -->
+                                                        <div class="timetable-day-group">
+                                                            <div class="timetable-day-header">
+                                                                <span class="timetable-day-tag">Wednesday</span>
+                                                                <span class="timetable-sessions-count">2 Sessions</span>
+                                                            </div>
+                                                            <div class="timetable-slot-row">
+                                                                <span class="timetable-slot-time"><i class="feather-clock"></i> 10:00 AM - 11:30 AM</span>
+                                                                <div class="timetable-slot-badges">
+                                                                    <button type="button" class="session-pill-btn pill-oto" onclick="openSessionPopup(event, 'mathematics', 'math-wed-1000-oto-1')"><i class="feather-user"></i> One-To-One</button>
+                                                                    <button type="button" class="session-pill-btn pill-oto" onclick="openSessionPopup(event, 'mathematics', 'math-wed-1000-oto-2')"><i class="feather-user"></i> One-To-One</button>
+                                                                </div>
+                                                            </div>
+                                                            <div class="timetable-slot-row">
+                                                                <span class="timetable-slot-time"><i class="feather-clock"></i> 04:00 PM - 05:30 PM</span>
+                                                                <div class="timetable-slot-badges">
+                                                                    <button type="button" class="session-pill-btn pill-otm" onclick="openSessionPopup(event, 'mathematics', 'math-wed-1600-otm')"><i class="feather-users"></i> One-To-Many</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <!-- Thursday: 1 Session -->
+                                                        <div class="timetable-day-group">
+                                                            <div class="timetable-day-header">
+                                                                <span class="timetable-day-tag">Thursday</span>
+                                                                <span class="timetable-sessions-count">1 Session</span>
+                                                            </div>
+                                                            <div class="timetable-slot-row">
+                                                                <span class="timetable-slot-time"><i class="feather-clock"></i> 10:00 AM - 11:30 AM</span>
+                                                                <div class="timetable-slot-badges">
+                                                                    <button type="button" class="session-pill-btn pill-otm" onclick="openSessionPopup(event, 'mathematics', 'math-thu-1000-otm')"><i class="feather-users"></i> One-To-Many</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <!-- Friday: 1 Session -->
+                                                        <div class="timetable-day-group">
+                                                            <div class="timetable-day-header">
+                                                                <span class="timetable-day-tag">Friday</span>
+                                                                <span class="timetable-sessions-count">1 Session</span>
+                                                            </div>
+                                                            <div class="timetable-slot-row">
+                                                                <span class="timetable-slot-time"><i class="feather-clock"></i> 10:00 AM - 11:30 AM</span>
+                                                                <div class="timetable-slot-badges">
+                                                                    <button type="button" class="session-pill-btn pill-oto" onclick="openSessionPopup(event, 'mathematics', 'math-fri-1000-oto')"><i class="feather-user"></i> One-To-One</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <!-- Saturday: 1 Session -->
+                                                        <div class="timetable-day-group">
+                                                            <div class="timetable-day-header">
+                                                                <span class="timetable-day-tag">Saturday</span>
+                                                                <span class="timetable-sessions-count">1 Session</span>
+                                                            </div>
+                                                            <div class="timetable-slot-row">
+                                                                <span class="timetable-slot-time"><i class="feather-clock"></i> 10:00 AM - 11:30 AM</span>
+                                                                <div class="timetable-slot-badges">
+                                                                    <button type="button" class="session-pill-btn pill-otm" onclick="openSessionPopup(event, 'mathematics', 'math-sat-1000-otm')"><i class="feather-users"></i> One-To-Many</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <!-- Sunday: No Class -->
+                                                        <div class="timetable-day-group" style="opacity: 0.65;">
+                                                            <div class="timetable-day-header">
+                                                                <span class="timetable-day-tag" style="background:#f1f5f9; color:#94a3b8;">Sunday</span>
+                                                                <span class="timetable-sessions-count" style="color:#94a3b8;">No Classes</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="subject-card-footer">
+                                                <span>Click to view all (16)</span>
+                                                <span class="active-indicator" id="indicator-mathematics" style="display:none;">
+                                                    <i class="feather-check-circle"></i> Active
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                        <!-- 2. Physics (Full Row 2) -->
+                                        <div class="subject-card" onclick="toggleSubject('physics')" id="card-subject-physics">
+                                            <div>
+                                                <div class="subject-card-header">
+                                                    <div class="subject-icon-box">
+                                                        <i class="feather-zap"></i>
+                                                    </div>
+                                                    <span class="subject-badge" id="badge-count-physics" onclick="event.stopPropagation(); toggleSubject('physics');">14 Students</span>
+                                                </div>
+                                                <h5 class="subject-card-title">Physics</h5>
+                                                <p class="subject-card-sub">Next 1-Week Class Schedule</p>
+
+                                                <div class="subject-timetable-vertical" onclick="event.stopPropagation();">
+                                                    <div class="subject-timetable-title">
+                                                        <i class="feather-calendar"></i> Next 1-Week Sessions
+                                                    </div>
+                                                    
+                                                    <!-- DAYS WRAPPER (VERTICAL 1 DAY PER ROW WITH SCROLL) -->
+                                                    <div class="timetable-days-wrapper">
+                                                        <!-- Monday: 1 Session -->
+                                                        <div class="timetable-day-group">
+                                                            <div class="timetable-day-header">
+                                                                <span class="timetable-day-tag">Monday</span>
+                                                                <span class="timetable-sessions-count">1 Session</span>
+                                                            </div>
+                                                            <div class="timetable-slot-row">
+                                                                <span class="timetable-slot-time"><i class="feather-clock"></i> 02:00 PM - 03:30 PM</span>
+                                                                <div class="timetable-slot-badges">
+                                                                    <button type="button" class="session-pill-btn pill-otm" onclick="openSessionPopup(event, 'physics', 'phy-mon-1400-otm')"><i class="feather-users"></i> One-To-Many</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <!-- Tuesday: 2 Sessions -->
+                                                        <div class="timetable-day-group">
+                                                            <div class="timetable-day-header">
+                                                                <span class="timetable-day-tag">Tuesday</span>
+                                                                <span class="timetable-sessions-count">2 Sessions</span>
+                                                            </div>
+                                                            <div class="timetable-slot-row">
+                                                                <span class="timetable-slot-time"><i class="feather-clock"></i> 02:00 PM - 03:30 PM</span>
+                                                                <div class="timetable-slot-badges">
+                                                                    <button type="button" class="session-pill-btn pill-oto" onclick="openSessionPopup(event, 'physics', 'phy-tue-1400-oto-1')"><i class="feather-user"></i> One-To-One</button>
+                                                                    <button type="button" class="session-pill-btn pill-oto" onclick="openSessionPopup(event, 'physics', 'phy-tue-1400-oto-2')"><i class="feather-user"></i> One-To-One</button>
+                                                                </div>
+                                                            </div>
+                                                            <div class="timetable-slot-row">
+                                                                <span class="timetable-slot-time"><i class="feather-clock"></i> 05:00 PM - 06:30 PM</span>
+                                                                <div class="timetable-slot-badges">
+                                                                    <button type="button" class="session-pill-btn pill-otm" onclick="openSessionPopup(event, 'physics', 'phy-tue-1700-otm')"><i class="feather-users"></i> One-To-Many</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <!-- Wednesday: 1 Session -->
+                                                        <div class="timetable-day-group">
+                                                            <div class="timetable-day-header">
+                                                                <span class="timetable-day-tag">Wednesday</span>
+                                                                <span class="timetable-sessions-count">1 Session</span>
+                                                            </div>
+                                                            <div class="timetable-slot-row">
+                                                                <span class="timetable-slot-time"><i class="feather-clock"></i> 02:00 PM - 03:30 PM</span>
+                                                                <div class="timetable-slot-badges">
+                                                                    <button type="button" class="session-pill-btn pill-otm" onclick="openSessionPopup(event, 'physics', 'phy-wed-1400-otm')"><i class="feather-users"></i> One-To-Many</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <!-- Thursday: 1 Session -->
+                                                        <div class="timetable-day-group">
+                                                            <div class="timetable-day-header">
+                                                                <span class="timetable-day-tag">Thursday</span>
+                                                                <span class="timetable-sessions-count">1 Session</span>
+                                                            </div>
+                                                            <div class="timetable-slot-row">
+                                                                <span class="timetable-slot-time"><i class="feather-clock"></i> 02:00 PM - 03:30 PM</span>
+                                                                <div class="timetable-slot-badges">
+                                                                    <button type="button" class="session-pill-btn pill-oto" onclick="openSessionPopup(event, 'physics', 'phy-thu-1400-oto-1')"><i class="feather-user"></i> One-To-One</button>
+                                                                    <button type="button" class="session-pill-btn pill-oto" onclick="openSessionPopup(event, 'physics', 'phy-thu-1400-oto-2')"><i class="feather-user"></i> One-To-One</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <!-- Friday: 1 Session -->
+                                                        <div class="timetable-day-group">
+                                                            <div class="timetable-day-header">
+                                                                <span class="timetable-day-tag">Friday</span>
+                                                                <span class="timetable-sessions-count">1 Session</span>
+                                                            </div>
+                                                            <div class="timetable-slot-row">
+                                                                <span class="timetable-slot-time"><i class="feather-clock"></i> 02:00 PM - 03:30 PM</span>
+                                                                <div class="timetable-slot-badges">
+                                                                    <button type="button" class="session-pill-btn pill-otm" onclick="openSessionPopup(event, 'physics', 'phy-fri-1400-otm')"><i class="feather-users"></i> One-To-Many</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <!-- Saturday: 1 Session -->
+                                                        <div class="timetable-day-group">
+                                                            <div class="timetable-day-header">
+                                                                <span class="timetable-day-tag">Saturday</span>
+                                                                <span class="timetable-sessions-count">1 Session</span>
+                                                            </div>
+                                                            <div class="timetable-slot-row">
+                                                                <span class="timetable-slot-time"><i class="feather-clock"></i> 02:00 PM - 03:30 PM</span>
+                                                                <div class="timetable-slot-badges">
+                                                                    <button type="button" class="session-pill-btn pill-oto" onclick="openSessionPopup(event, 'physics', 'phy-sat-1400-oto')"><i class="feather-user"></i> One-To-One</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <!-- Sunday: No Class -->
+                                                        <div class="timetable-day-group" style="opacity: 0.65;">
+                                                            <div class="timetable-day-header">
+                                                                <span class="timetable-day-tag" style="background:#f1f5f9; color:#94a3b8;">Sunday</span>
+                                                                <span class="timetable-sessions-count" style="color:#94a3b8;">No Classes</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="subject-card-footer">
+                                                <span>Click to view all (14)</span>
+                                                <span class="active-indicator" id="indicator-physics" style="display:none;">
+                                                    <i class="feather-check-circle"></i> Active
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                        <!-- 3. Chemistry (Full Row 3) -->
+                                        <div class="subject-card" onclick="toggleSubject('chemistry')" id="card-subject-chemistry">
+                                            <div>
+                                                <div class="subject-card-header">
+                                                    <div class="subject-icon-box">
+                                                        <i class="feather-activity"></i>
+                                                    </div>
+                                                    <span class="subject-badge" id="badge-count-chemistry" onclick="event.stopPropagation(); toggleSubject('chemistry');">12 Students</span>
+                                                </div>
+                                                <h5 class="subject-card-title">Chemistry</h5>
+                                                <p class="subject-card-sub">Next 1-Week Class Schedule</p>
+
+                                                <div class="subject-timetable-vertical" onclick="event.stopPropagation();">
+                                                    <div class="subject-timetable-title">
+                                                        <i class="feather-calendar"></i> Next 1-Week Sessions
+                                                    </div>
+                                                    
+                                                    <!-- DAYS WRAPPER (VERTICAL 1 DAY PER ROW WITH SCROLL) -->
+                                                    <div class="timetable-days-wrapper">
+                                                        <!-- Monday: 1 Session -->
+                                                        <div class="timetable-day-group">
+                                                            <div class="timetable-day-header">
+                                                                <span class="timetable-day-tag">Monday</span>
+                                                                <span class="timetable-sessions-count">1 Session</span>
+                                                            </div>
+                                                            <div class="timetable-slot-row">
+                                                                <span class="timetable-slot-time"><i class="feather-clock"></i> 04:00 PM - 05:30 PM</span>
+                                                                <div class="timetable-slot-badges">
+                                                                    <button type="button" class="session-pill-btn pill-oto" onclick="openSessionPopup(event, 'chemistry', 'chem-mon-1600-oto-1')"><i class="feather-user"></i> One-To-One</button>
+                                                                    <button type="button" class="session-pill-btn pill-oto" onclick="openSessionPopup(event, 'chemistry', 'chem-mon-1600-oto-2')"><i class="feather-user"></i> One-To-One</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <!-- Tuesday: 2 Sessions -->
+                                                        <div class="timetable-day-group">
+                                                            <div class="timetable-day-header">
+                                                                <span class="timetable-day-tag">Tuesday</span>
+                                                                <span class="timetable-sessions-count">2 Sessions</span>
+                                                            </div>
+                                                            <div class="timetable-slot-row">
+                                                                <span class="timetable-slot-time"><i class="feather-clock"></i> 04:00 PM - 05:30 PM</span>
+                                                                <div class="timetable-slot-badges">
+                                                                    <button type="button" class="session-pill-btn pill-otm" onclick="openSessionPopup(event, 'chemistry', 'chem-tue-1600-otm')"><i class="feather-users"></i> One-To-Many</button>
+                                                                </div>
+                                                            </div>
+                                                            <div class="timetable-slot-row">
+                                                                <span class="timetable-slot-time"><i class="feather-clock"></i> 06:00 PM - 07:30 PM</span>
+                                                                <div class="timetable-slot-badges">
+                                                                    <button type="button" class="session-pill-btn pill-otm" onclick="openSessionPopup(event, 'chemistry', 'chem-tue-1800-otm')"><i class="feather-users"></i> One-To-Many</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <!-- Wednesday: 1 Session -->
+                                                        <div class="timetable-day-group">
+                                                            <div class="timetable-day-header">
+                                                                <span class="timetable-day-tag">Wednesday</span>
+                                                                <span class="timetable-sessions-count">1 Session</span>
+                                                            </div>
+                                                            <div class="timetable-slot-row">
+                                                                <span class="timetable-slot-time"><i class="feather-clock"></i> 04:00 PM - 05:30 PM</span>
+                                                                <div class="timetable-slot-badges">
+                                                                    <button type="button" class="session-pill-btn pill-oto" onclick="openSessionPopup(event, 'chemistry', 'chem-wed-1600-oto')"><i class="feather-user"></i> One-To-One</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <!-- Thursday: 1 Session -->
+                                                        <div class="timetable-day-group">
+                                                            <div class="timetable-day-header">
+                                                                <span class="timetable-day-tag">Thursday</span>
+                                                                <span class="timetable-sessions-count">1 Session</span>
+                                                            </div>
+                                                            <div class="timetable-slot-row">
+                                                                <span class="timetable-slot-time"><i class="feather-clock"></i> 04:00 PM - 05:30 PM</span>
+                                                                <div class="timetable-slot-badges">
+                                                                    <button type="button" class="session-pill-btn pill-otm" onclick="openSessionPopup(event, 'chemistry', 'chem-thu-1600-otm')"><i class="feather-users"></i> One-To-Many</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <!-- Friday: 1 Session -->
+                                                        <div class="timetable-day-group">
+                                                            <div class="timetable-day-header">
+                                                                <span class="timetable-day-tag">Friday</span>
+                                                                <span class="timetable-sessions-count">1 Session</span>
+                                                            </div>
+                                                            <div class="timetable-slot-row">
+                                                                <span class="timetable-slot-time"><i class="feather-clock"></i> 04:00 PM - 05:30 PM</span>
+                                                                <div class="timetable-slot-badges">
+                                                                    <button type="button" class="session-pill-btn pill-otm" onclick="openSessionPopup(event, 'chemistry', 'chem-fri-1600-otm')"><i class="feather-users"></i> One-To-Many</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <!-- Saturday: 1 Session -->
+                                                        <div class="timetable-day-group">
+                                                            <div class="timetable-day-header">
+                                                                <span class="timetable-day-tag">Saturday</span>
+                                                                <span class="timetable-sessions-count">1 Session</span>
+                                                            </div>
+                                                            <div class="timetable-slot-row">
+                                                                <span class="timetable-slot-time"><i class="feather-clock"></i> 04:00 PM - 05:30 PM</span>
+                                                                <div class="timetable-slot-badges">
+                                                                    <button type="button" class="session-pill-btn pill-oto" onclick="openSessionPopup(event, 'chemistry', 'chem-sat-1600-oto')"><i class="feather-user"></i> One-To-One</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <!-- Sunday: No Class -->
+                                                        <div class="timetable-day-group" style="opacity: 0.65;">
+                                                            <div class="timetable-day-header">
+                                                                <span class="timetable-day-tag" style="background:#f1f5f9; color:#94a3b8;">Sunday</span>
+                                                                <span class="timetable-sessions-count" style="color:#94a3b8;">No Classes</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="subject-card-footer">
+                                                <span>Click to view all (12)</span>
+                                                <span class="active-indicator" id="indicator-chemistry" style="display:none;">
+                                                    <i class="feather-check-circle"></i> Active
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                        <!-- 4. Computer Science (Full Row 4) -->
+                                        <div class="subject-card" onclick="toggleSubject('computer-science')" id="card-subject-computer-science">
+                                            <div>
+                                                <div class="subject-card-header">
+                                                    <div class="subject-icon-box">
+                                                        <i class="feather-code"></i>
+                                                    </div>
+                                                    <span class="subject-badge" id="badge-count-computer-science" onclick="event.stopPropagation(); toggleSubject('computer-science');">15 Students</span>
+                                                </div>
+                                                <h5 class="subject-card-title">Computer Science</h5>
+                                                <p class="subject-card-sub">Next 1-Week Class Schedule</p>
+
+                                                <div class="subject-timetable-vertical" onclick="event.stopPropagation();">
+                                                    <div class="subject-timetable-title">
+                                                        <i class="feather-calendar"></i> Next 1-Week Sessions
+                                                    </div>
+                                                    
+                                                    <!-- DAYS WRAPPER (VERTICAL 1 DAY PER ROW WITH SCROLL) -->
+                                                    <div class="timetable-days-wrapper">
+                                                        <!-- Monday: 1 Session -->
+                                                        <div class="timetable-day-group">
+                                                            <div class="timetable-day-header">
+                                                                <span class="timetable-day-tag">Monday</span>
+                                                                <span class="timetable-sessions-count">1 Session</span>
+                                                            </div>
+                                                            <div class="timetable-slot-row">
+                                                                <span class="timetable-slot-time"><i class="feather-clock"></i> 01:00 PM - 02:30 PM</span>
+                                                                <div class="timetable-slot-badges">
+                                                                    <button type="button" class="session-pill-btn pill-oto" onclick="openSessionPopup(event, 'computer-science', 'cs-mon-1300-oto-1')"><i class="feather-user"></i> One-To-One</button>
+                                                                    <button type="button" class="session-pill-btn pill-oto" onclick="openSessionPopup(event, 'computer-science', 'cs-mon-1300-oto-2')"><i class="feather-user"></i> One-To-One</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <!-- Tuesday: 1 Session -->
+                                                        <div class="timetable-day-group">
+                                                            <div class="timetable-day-header">
+                                                                <span class="timetable-day-tag">Tuesday</span>
+                                                                <span class="timetable-sessions-count">1 Session</span>
+                                                            </div>
+                                                            <div class="timetable-slot-row">
+                                                                <span class="timetable-slot-time"><i class="feather-clock"></i> 03:00 PM - 04:30 PM</span>
+                                                                <div class="timetable-slot-badges">
+                                                                    <button type="button" class="session-pill-btn pill-otm" onclick="openSessionPopup(event, 'computer-science', 'cs-tue-1500-otm')"><i class="feather-users"></i> One-To-Many</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <!-- Wednesday: 1 Session -->
+                                                        <div class="timetable-day-group">
+                                                            <div class="timetable-day-header">
+                                                                <span class="timetable-day-tag">Wednesday</span>
+                                                                <span class="timetable-sessions-count">1 Session</span>
+                                                            </div>
+                                                            <div class="timetable-slot-row">
+                                                                <span class="timetable-slot-time"><i class="feather-clock"></i> 01:00 PM - 02:30 PM</span>
+                                                                <div class="timetable-slot-badges">
+                                                                    <button type="button" class="session-pill-btn pill-oto" onclick="openSessionPopup(event, 'computer-science', 'cs-wed-1300-oto')"><i class="feather-user"></i> One-To-One</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <!-- Thursday: 1 Session -->
+                                                        <div class="timetable-day-group">
+                                                            <div class="timetable-day-header">
+                                                                <span class="timetable-day-tag">Thursday</span>
+                                                                <span class="timetable-sessions-count">1 Session</span>
+                                                            </div>
+                                                            <div class="timetable-slot-row">
+                                                                <span class="timetable-slot-time"><i class="feather-clock"></i> 03:00 PM - 04:30 PM</span>
+                                                                <div class="timetable-slot-badges">
+                                                                    <button type="button" class="session-pill-btn pill-otm" onclick="openSessionPopup(event, 'computer-science', 'cs-thu-1500-otm')"><i class="feather-users"></i> One-To-Many</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <!-- Friday: 1 Session -->
+                                                        <div class="timetable-day-group">
+                                                            <div class="timetable-day-header">
+                                                                <span class="timetable-day-tag">Friday</span>
+                                                                <span class="timetable-sessions-count">1 Session</span>
+                                                            </div>
+                                                            <div class="timetable-slot-row">
+                                                                <span class="timetable-slot-time"><i class="feather-clock"></i> 01:00 PM - 02:30 PM</span>
+                                                                <div class="timetable-slot-badges">
+                                                                    <button type="button" class="session-pill-btn pill-oto" onclick="openSessionPopup(event, 'computer-science', 'cs-fri-1300-oto-1')"><i class="feather-user"></i> One-To-One</button>
+                                                                    <button type="button" class="session-pill-btn pill-oto" onclick="openSessionPopup(event, 'computer-science', 'cs-fri-1300-oto-2')"><i class="feather-user"></i> One-To-One</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <!-- Saturday: 2 Sessions -->
+                                                        <div class="timetable-day-group">
+                                                            <div class="timetable-day-header">
+                                                                <span class="timetable-day-tag">Saturday</span>
+                                                                <span class="timetable-sessions-count">2 Sessions</span>
+                                                            </div>
+                                                            <div class="timetable-slot-row">
+                                                                <span class="timetable-slot-time"><i class="feather-clock"></i> 01:00 PM - 02:30 PM</span>
+                                                                <div class="timetable-slot-badges">
+                                                                    <button type="button" class="session-pill-btn pill-oto" onclick="openSessionPopup(event, 'computer-science', 'cs-sat-1300-oto')"><i class="feather-user"></i> One-To-One</button>
+                                                                </div>
+                                                            </div>
+                                                            <div class="timetable-slot-row">
+                                                                <span class="timetable-slot-time"><i class="feather-clock"></i> 03:00 PM - 04:30 PM</span>
+                                                                <div class="timetable-slot-badges">
+                                                                    <button type="button" class="session-pill-btn pill-otm" onclick="openSessionPopup(event, 'computer-science', 'cs-sat-1500-otm')"><i class="feather-users"></i> One-To-Many</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <!-- Sunday: No Class -->
+                                                        <div class="timetable-day-group" style="opacity: 0.65;">
+                                                            <div class="timetable-day-header">
+                                                                <span class="timetable-day-tag" style="background:#f1f5f9; color:#94a3b8;">Sunday</span>
+                                                                <span class="timetable-sessions-count" style="color:#94a3b8;">No Classes</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="subject-card-footer">
+                                                <span>Click to view all (15)</span>
+                                                <span class="active-indicator" id="indicator-computer-science" style="display:none;">
+                                                    <i class="feather-check-circle"></i> Active
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <!-- ROSTER TABLE SECTION -->
+                                    <div id="roster-section-container">
+                                        <div class="roster-toolbar">
+                                            <div class="toolbar-left">
+                                                <div class="selected-subject-tag">
+                                                    <span id="active-subject-title">Mathematics</span> Roster
+                                                </div>
+                                                <div class="total-counter-pill">
+                                                    <i class="feather-users"></i> Total: <span id="total-student-count">0</span> Students
+                                                </div>
+                                                <div class="roster-type-filters">
+                                                    <button type="button" class="type-filter-btn" id="filter-btn-one-to-one" onclick="toggleTypeFilter('One-To-One')">
+                                                        <i class="feather-user"></i> One-To-One <span class="filter-count-badge" id="badge-filter-one-to-one">0</span>
+                                                    </button>
+                                                    <button type="button" class="type-filter-btn" id="filter-btn-one-to-many" onclick="toggleTypeFilter('One-To-Many')">
+                                                        <i class="feather-users"></i> One-To-Many <span class="filter-count-badge" id="badge-filter-one-to-many">0</span>
+                                                    </button>
+                                                </div>
+                                            </div>
+
+                                            <div class="toolbar-right">
+                                                <div class="roster-search-input">
+                                                    <input type="text" id="student-search-input" placeholder="Search by name or ID" aria-label="Search students by name or ID" onkeyup="filterStudents()">
+                                                </div>
+
+                                                <button class="sort-toggle-btn" id="sort-toggle-btn" onclick="toggleSortOrder()">
+                                                    <i class="feather-arrow-up" id="sort-icon"></i>
+                                                    <span>Name: <span id="sort-label">A-Z</span></span>
+                                                </button>
+                                            </div>
+                                        </div>
+
+                                        <div class="student-table-card">
+                                            <div class="table-responsive">
+                                                <table class="student-table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th style="width: 10%; text-align: center;">S.No</th>
+                                                            <th style="width: 34%;">Student Name</th>
+                                                            <th style="width: 20%; text-align: center;">Type</th>
+                                                            <th style="width: 24%;">Time</th>
+                                                            <th style="width: 12%; text-align: center;">Action</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody id="student-table-body">
+                                                        <!-- Dynamic Rows Injected Here -->
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+
                                 </div>
                             </div>
-
-                            <div class="subject-cards-title mb-3">
-                                <i class="feather-grid"></i> Assigned Teaching Subjects
-                            </div>
-
-                            <!-- 2 SUBJECTS PER ROW (4 SUBJECTS TOTAL) -->
-                            <div class="subject-grid">
-
-                                <!-- 1. Mathematics (16 Students) -->
-                                <div class="subject-card" onclick="toggleSubject('mathematics')" id="card-subject-mathematics">
-                                    <div>
-                                        <div class="subject-card-header">
-                                            <div class="subject-icon-box">
-                                                <i class="feather-book"></i>
-                                            </div>
-                                            <span class="subject-badge" id="badge-count-mathematics" onclick="event.stopPropagation(); toggleSubject('mathematics');">16 Students</span>
-                                        </div>
-                                        <h5 class="subject-card-title">Mathematics</h5>
-                                        <p class="subject-card-sub">Next 1-Week Class Schedule</p>
-
-                                        <!-- Multi-slot Day Grouped Timetable -->
-                                        <div class="subject-timetable-vertical" onclick="event.stopPropagation();">
-                                            <div class="subject-timetable-title">
-                                                <i class="feather-calendar"></i> Next 1-Week Sessions
-                                            </div>
-                                            
-                                            <!-- Monday: 2 Sessions -->
-                                            <div class="timetable-day-group">
-                                                <div class="timetable-day-header">
-                                                    <span class="timetable-day-tag">Monday</span>
-                                                    <span class="timetable-sessions-count">2 Sessions</span>
-                                                </div>
-                                                <div class="timetable-slot-row">
-                                                    <span class="timetable-slot-time"><i class="feather-clock"></i> 10:00 AM - 11:30 AM</span>
-                                                    <div class="timetable-slot-badges">
-                                                        <button type="button" class="session-pill-btn pill-oto" onclick="openSessionPopup(event, 'mathematics', 'math-mon-1000-oto-1')"><i class="feather-user"></i> 1-on-1</button>
-                                                        <button type="button" class="session-pill-btn pill-oto" onclick="openSessionPopup(event, 'mathematics', 'math-mon-1000-oto-2')"><i class="feather-user"></i> 1-on-1</button>
-                                                    </div>
-                                                </div>
-                                                <div class="timetable-slot-row">
-                                                    <span class="timetable-slot-time"><i class="feather-clock"></i> 02:00 PM - 03:30 PM</span>
-                                                    <div class="timetable-slot-badges">
-                                                        <button type="button" class="session-pill-btn pill-otm" onclick="openSessionPopup(event, 'mathematics', 'math-mon-1400-otm')"><i class="feather-users"></i> 1-to-Many</button>
-                                                        <button type="button" class="session-pill-btn pill-oto" onclick="openSessionPopup(event, 'mathematics', 'math-mon-1400-oto')"><i class="feather-user"></i> 1-on-1</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <!-- Tuesday: 1 Session -->
-                                            <div class="timetable-day-group">
-                                                <div class="timetable-day-header">
-                                                    <span class="timetable-day-tag">Tuesday</span>
-                                                    <span class="timetable-sessions-count">1 Session</span>
-                                                </div>
-                                                <div class="timetable-slot-row">
-                                                    <span class="timetable-slot-time"><i class="feather-clock"></i> 10:00 AM - 11:30 AM</span>
-                                                    <div class="timetable-slot-badges">
-                                                        <button type="button" class="session-pill-btn pill-otm" onclick="openSessionPopup(event, 'mathematics', 'math-tue-1000-otm')"><i class="feather-users"></i> 1-to-Many</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <!-- Wednesday: 2 Sessions -->
-                                            <div class="timetable-day-group">
-                                                <div class="timetable-day-header">
-                                                    <span class="timetable-day-tag">Wednesday</span>
-                                                    <span class="timetable-sessions-count">2 Sessions</span>
-                                                </div>
-                                                <div class="timetable-slot-row">
-                                                    <span class="timetable-slot-time"><i class="feather-clock"></i> 10:00 AM - 11:30 AM</span>
-                                                    <div class="timetable-slot-badges">
-                                                        <button type="button" class="session-pill-btn pill-oto" onclick="openSessionPopup(event, 'mathematics', 'math-wed-1000-oto-1')"><i class="feather-user"></i> 1-on-1</button>
-                                                        <button type="button" class="session-pill-btn pill-oto" onclick="openSessionPopup(event, 'mathematics', 'math-wed-1000-oto-2')"><i class="feather-user"></i> 1-on-1</button>
-                                                    </div>
-                                                </div>
-                                                <div class="timetable-slot-row">
-                                                    <span class="timetable-slot-time"><i class="feather-clock"></i> 04:00 PM - 05:30 PM</span>
-                                                    <div class="timetable-slot-badges">
-                                                        <button type="button" class="session-pill-btn pill-otm" onclick="openSessionPopup(event, 'mathematics', 'math-wed-1600-otm')"><i class="feather-users"></i> 1-to-Many</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <!-- Thursday: 1 Session -->
-                                            <div class="timetable-day-group">
-                                                <div class="timetable-day-header">
-                                                    <span class="timetable-day-tag">Thursday</span>
-                                                    <span class="timetable-sessions-count">1 Session</span>
-                                                </div>
-                                                <div class="timetable-slot-row">
-                                                    <span class="timetable-slot-time"><i class="feather-clock"></i> 10:00 AM - 11:30 AM</span>
-                                                    <div class="timetable-slot-badges">
-                                                        <button type="button" class="session-pill-btn pill-otm" onclick="openSessionPopup(event, 'mathematics', 'math-thu-1000-otm')"><i class="feather-users"></i> 1-to-Many</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <!-- Friday: 1 Session -->
-                                            <div class="timetable-day-group">
-                                                <div class="timetable-day-header">
-                                                    <span class="timetable-day-tag">Friday</span>
-                                                    <span class="timetable-sessions-count">1 Session</span>
-                                                </div>
-                                                <div class="timetable-slot-row">
-                                                    <span class="timetable-slot-time"><i class="feather-clock"></i> 10:00 AM - 11:30 AM</span>
-                                                    <div class="timetable-slot-badges">
-                                                        <button type="button" class="session-pill-btn pill-oto" onclick="openSessionPopup(event, 'mathematics', 'math-fri-1000-oto')"><i class="feather-user"></i> 1-on-1</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <!-- Saturday: 1 Session -->
-                                            <div class="timetable-day-group">
-                                                <div class="timetable-day-header">
-                                                    <span class="timetable-day-tag">Saturday</span>
-                                                    <span class="timetable-sessions-count">1 Session</span>
-                                                </div>
-                                                <div class="timetable-slot-row">
-                                                    <span class="timetable-slot-time"><i class="feather-clock"></i> 10:00 AM - 11:30 AM</span>
-                                                    <div class="timetable-slot-badges">
-                                                        <button type="button" class="session-pill-btn pill-otm" onclick="openSessionPopup(event, 'mathematics', 'math-sat-1000-otm')"><i class="feather-users"></i> 1-to-Many</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <!-- Sunday: No Class -->
-                                            <div class="timetable-day-group" style="opacity: 0.65;">
-                                                <div class="timetable-day-header">
-                                                    <span class="timetable-day-tag" style="background:#f1f5f9; color:#94a3b8;">Sunday</span>
-                                                    <span class="timetable-sessions-count" style="color:#94a3b8;">No Classes</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="subject-card-footer">
-                                        <span>Click to view all (16)</span>
-                                        <span class="active-indicator" id="indicator-mathematics" style="display:none;">
-                                            <i class="feather-check-circle"></i> Active
-                                        </span>
-                                    </div>
-                                </div>
-
-                                <!-- 2. Physics (14 Students) -->
-                                <div class="subject-card" onclick="toggleSubject('physics')" id="card-subject-physics">
-                                    <div>
-                                        <div class="subject-card-header">
-                                            <div class="subject-icon-box">
-                                                <i class="feather-zap"></i>
-                                            </div>
-                                            <span class="subject-badge" id="badge-count-physics" onclick="event.stopPropagation(); toggleSubject('physics');">14 Students</span>
-                                        </div>
-                                        <h5 class="subject-card-title">Physics</h5>
-                                        <p class="subject-card-sub">Next 1-Week Class Schedule</p>
-
-                                        <!-- Multi-slot Day Grouped Timetable -->
-                                        <div class="subject-timetable-vertical" onclick="event.stopPropagation();">
-                                            <div class="subject-timetable-title">
-                                                <i class="feather-calendar"></i> Next 1-Week Sessions
-                                            </div>
-                                            
-                                            <!-- Monday: 1 Session -->
-                                            <div class="timetable-day-group">
-                                                <div class="timetable-day-header">
-                                                    <span class="timetable-day-tag">Monday</span>
-                                                    <span class="timetable-sessions-count">1 Session</span>
-                                                </div>
-                                                <div class="timetable-slot-row">
-                                                    <span class="timetable-slot-time"><i class="feather-clock"></i> 02:00 PM - 03:30 PM</span>
-                                                    <div class="timetable-slot-badges">
-                                                        <button type="button" class="session-pill-btn pill-otm" onclick="openSessionPopup(event, 'physics', 'phy-mon-1400-otm')"><i class="feather-users"></i> 1-to-Many</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <!-- Tuesday: 2 Sessions -->
-                                            <div class="timetable-day-group">
-                                                <div class="timetable-day-header">
-                                                    <span class="timetable-day-tag">Tuesday</span>
-                                                    <span class="timetable-sessions-count">2 Sessions</span>
-                                                </div>
-                                                <div class="timetable-slot-row">
-                                                    <span class="timetable-slot-time"><i class="feather-clock"></i> 02:00 PM - 03:30 PM</span>
-                                                    <div class="timetable-slot-badges">
-                                                        <button type="button" class="session-pill-btn pill-oto" onclick="openSessionPopup(event, 'physics', 'phy-tue-1400-oto-1')"><i class="feather-user"></i> 1-on-1</button>
-                                                        <button type="button" class="session-pill-btn pill-oto" onclick="openSessionPopup(event, 'physics', 'phy-tue-1400-oto-2')"><i class="feather-user"></i> 1-on-1</button>
-                                                    </div>
-                                                </div>
-                                                <div class="timetable-slot-row">
-                                                    <span class="timetable-slot-time"><i class="feather-clock"></i> 05:00 PM - 06:30 PM</span>
-                                                    <div class="timetable-slot-badges">
-                                                        <button type="button" class="session-pill-btn pill-otm" onclick="openSessionPopup(event, 'physics', 'phy-tue-1700-otm')"><i class="feather-users"></i> 1-to-Many</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <!-- Wednesday: 1 Session -->
-                                            <div class="timetable-day-group">
-                                                <div class="timetable-day-header">
-                                                    <span class="timetable-day-tag">Wednesday</span>
-                                                    <span class="timetable-sessions-count">1 Session</span>
-                                                </div>
-                                                <div class="timetable-slot-row">
-                                                    <span class="timetable-slot-time"><i class="feather-clock"></i> 02:00 PM - 03:30 PM</span>
-                                                    <div class="timetable-slot-badges">
-                                                        <button type="button" class="session-pill-btn pill-otm" onclick="openSessionPopup(event, 'physics', 'phy-wed-1400-otm')"><i class="feather-users"></i> 1-to-Many</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <!-- Thursday: 1 Session -->
-                                            <div class="timetable-day-group">
-                                                <div class="timetable-day-header">
-                                                    <span class="timetable-day-tag">Thursday</span>
-                                                    <span class="timetable-sessions-count">1 Session</span>
-                                                </div>
-                                                <div class="timetable-slot-row">
-                                                    <span class="timetable-slot-time"><i class="feather-clock"></i> 02:00 PM - 03:30 PM</span>
-                                                    <div class="timetable-slot-badges">
-                                                        <button type="button" class="session-pill-btn pill-oto" onclick="openSessionPopup(event, 'physics', 'phy-thu-1400-oto-1')"><i class="feather-user"></i> 1-on-1</button>
-                                                        <button type="button" class="session-pill-btn pill-oto" onclick="openSessionPopup(event, 'physics', 'phy-thu-1400-oto-2')"><i class="feather-user"></i> 1-on-1</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <!-- Friday: 1 Session -->
-                                            <div class="timetable-day-group">
-                                                <div class="timetable-day-header">
-                                                    <span class="timetable-day-tag">Friday</span>
-                                                    <span class="timetable-sessions-count">1 Session</span>
-                                                </div>
-                                                <div class="timetable-slot-row">
-                                                    <span class="timetable-slot-time"><i class="feather-clock"></i> 02:00 PM - 03:30 PM</span>
-                                                    <div class="timetable-slot-badges">
-                                                        <button type="button" class="session-pill-btn pill-otm" onclick="openSessionPopup(event, 'physics', 'phy-fri-1400-otm')"><i class="feather-users"></i> 1-to-Many</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <!-- Saturday: 1 Session -->
-                                            <div class="timetable-day-group">
-                                                <div class="timetable-day-header">
-                                                    <span class="timetable-day-tag">Saturday</span>
-                                                    <span class="timetable-sessions-count">1 Session</span>
-                                                </div>
-                                                <div class="timetable-slot-row">
-                                                    <span class="timetable-slot-time"><i class="feather-clock"></i> 02:00 PM - 03:30 PM</span>
-                                                    <div class="timetable-slot-badges">
-                                                        <button type="button" class="session-pill-btn pill-oto" onclick="openSessionPopup(event, 'physics', 'phy-sat-1400-oto')"><i class="feather-user"></i> 1-on-1</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <!-- Sunday: No Class -->
-                                            <div class="timetable-day-group" style="opacity: 0.65;">
-                                                <div class="timetable-day-header">
-                                                    <span class="timetable-day-tag" style="background:#f1f5f9; color:#94a3b8;">Sunday</span>
-                                                    <span class="timetable-sessions-count" style="color:#94a3b8;">No Classes</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="subject-card-footer">
-                                        <span>Click to view all (14)</span>
-                                        <span class="active-indicator" id="indicator-physics" style="display:none;">
-                                            <i class="feather-check-circle"></i> Active
-                                        </span>
-                                    </div>
-                                </div>
-
-                                <!-- 3. Chemistry (12 Students) -->
-                                <div class="subject-card" onclick="toggleSubject('chemistry')" id="card-subject-chemistry">
-                                    <div>
-                                        <div class="subject-card-header">
-                                            <div class="subject-icon-box">
-                                                <i class="feather-activity"></i>
-                                            </div>
-                                            <span class="subject-badge" id="badge-count-chemistry" onclick="event.stopPropagation(); toggleSubject('chemistry');">12 Students</span>
-                                        </div>
-                                        <h5 class="subject-card-title">Chemistry</h5>
-                                        <p class="subject-card-sub">Next 1-Week Class Schedule</p>
-
-                                        <!-- Multi-slot Day Grouped Timetable -->
-                                        <div class="subject-timetable-vertical" onclick="event.stopPropagation();">
-                                            <div class="subject-timetable-title">
-                                                <i class="feather-calendar"></i> Next 1-Week Sessions
-                                            </div>
-                                            
-                                            <!-- Monday: 1 Session -->
-                                            <div class="timetable-day-group">
-                                                <div class="timetable-day-header">
-                                                    <span class="timetable-day-tag">Monday</span>
-                                                    <span class="timetable-sessions-count">1 Session</span>
-                                                </div>
-                                                <div class="timetable-slot-row">
-                                                    <span class="timetable-slot-time"><i class="feather-clock"></i> 04:00 PM - 05:30 PM</span>
-                                                    <div class="timetable-slot-badges">
-                                                        <button type="button" class="session-pill-btn pill-oto" onclick="openSessionPopup(event, 'chemistry', 'chem-mon-1600-oto-1')"><i class="feather-user"></i> 1-on-1</button>
-                                                        <button type="button" class="session-pill-btn pill-oto" onclick="openSessionPopup(event, 'chemistry', 'chem-mon-1600-oto-2')"><i class="feather-user"></i> 1-on-1</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <!-- Tuesday: 2 Sessions -->
-                                            <div class="timetable-day-group">
-                                                <div class="timetable-day-header">
-                                                    <span class="timetable-day-tag">Tuesday</span>
-                                                    <span class="timetable-sessions-count">2 Sessions</span>
-                                                </div>
-                                                <div class="timetable-slot-row">
-                                                    <span class="timetable-slot-time"><i class="feather-clock"></i> 04:00 PM - 05:30 PM</span>
-                                                    <div class="timetable-slot-badges">
-                                                        <button type="button" class="session-pill-btn pill-otm" onclick="openSessionPopup(event, 'chemistry', 'chem-tue-1600-otm')"><i class="feather-users"></i> 1-to-Many</button>
-                                                    </div>
-                                                </div>
-                                                <div class="timetable-slot-row">
-                                                    <span class="timetable-slot-time"><i class="feather-clock"></i> 06:00 PM - 07:30 PM</span>
-                                                    <div class="timetable-slot-badges">
-                                                        <button type="button" class="session-pill-btn pill-otm" onclick="openSessionPopup(event, 'chemistry', 'chem-tue-1800-otm')"><i class="feather-users"></i> 1-to-Many</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <!-- Wednesday: 1 Session -->
-                                            <div class="timetable-day-group">
-                                                <div class="timetable-day-header">
-                                                    <span class="timetable-day-tag">Wednesday</span>
-                                                    <span class="timetable-sessions-count">1 Session</span>
-                                                </div>
-                                                <div class="timetable-slot-row">
-                                                    <span class="timetable-slot-time"><i class="feather-clock"></i> 04:00 PM - 05:30 PM</span>
-                                                    <div class="timetable-slot-badges">
-                                                        <button type="button" class="session-pill-btn pill-oto" onclick="openSessionPopup(event, 'chemistry', 'chem-wed-1600-oto')"><i class="feather-user"></i> 1-on-1</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <!-- Thursday: 1 Session -->
-                                            <div class="timetable-day-group">
-                                                <div class="timetable-day-header">
-                                                    <span class="timetable-day-tag">Thursday</span>
-                                                    <span class="timetable-sessions-count">1 Session</span>
-                                                </div>
-                                                <div class="timetable-slot-row">
-                                                    <span class="timetable-slot-time"><i class="feather-clock"></i> 04:00 PM - 05:30 PM</span>
-                                                    <div class="timetable-slot-badges">
-                                                        <button type="button" class="session-pill-btn pill-otm" onclick="openSessionPopup(event, 'chemistry', 'chem-thu-1600-otm')"><i class="feather-users"></i> 1-to-Many</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <!-- Friday: 1 Session -->
-                                            <div class="timetable-day-group">
-                                                <div class="timetable-day-header">
-                                                    <span class="timetable-day-tag">Friday</span>
-                                                    <span class="timetable-sessions-count">1 Session</span>
-                                                </div>
-                                                <div class="timetable-slot-row">
-                                                    <span class="timetable-slot-time"><i class="feather-clock"></i> 04:00 PM - 05:30 PM</span>
-                                                    <div class="timetable-slot-badges">
-                                                        <button type="button" class="session-pill-btn pill-otm" onclick="openSessionPopup(event, 'chemistry', 'chem-fri-1600-otm')"><i class="feather-users"></i> 1-to-Many</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <!-- Saturday: 1 Session -->
-                                            <div class="timetable-day-group">
-                                                <div class="timetable-day-header">
-                                                    <span class="timetable-day-tag">Saturday</span>
-                                                    <span class="timetable-sessions-count">1 Session</span>
-                                                </div>
-                                                <div class="timetable-slot-row">
-                                                    <span class="timetable-slot-time"><i class="feather-clock"></i> 04:00 PM - 05:30 PM</span>
-                                                    <div class="timetable-slot-badges">
-                                                        <button type="button" class="session-pill-btn pill-oto" onclick="openSessionPopup(event, 'chemistry', 'chem-sat-1600-oto')"><i class="feather-user"></i> 1-on-1</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <!-- Sunday: No Class -->
-                                            <div class="timetable-day-group" style="opacity: 0.65;">
-                                                <div class="timetable-day-header">
-                                                    <span class="timetable-day-tag" style="background:#f1f5f9; color:#94a3b8;">Sunday</span>
-                                                    <span class="timetable-sessions-count" style="color:#94a3b8;">No Classes</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="subject-card-footer">
-                                        <span>Click to view all (12)</span>
-                                        <span class="active-indicator" id="indicator-chemistry" style="display:none;">
-                                            <i class="feather-check-circle"></i> Active
-                                        </span>
-                                    </div>
-                                </div>
-
-                                <!-- 4. Computer Science (15 Students) -->
-                                <div class="subject-card" onclick="toggleSubject('computer-science')" id="card-subject-computer-science">
-                                    <div>
-                                        <div class="subject-card-header">
-                                            <div class="subject-icon-box">
-                                                <i class="feather-code"></i>
-                                            </div>
-                                            <span class="subject-badge" id="badge-count-computer-science" onclick="event.stopPropagation(); toggleSubject('computer-science');">15 Students</span>
-                                        </div>
-                                        <h5 class="subject-card-title">Computer Science</h5>
-                                        <p class="subject-card-sub">Next 1-Week Class Schedule</p>
-
-                                        <!-- Multi-slot Day Grouped Timetable -->
-                                        <div class="subject-timetable-vertical" onclick="event.stopPropagation();">
-                                            <div class="subject-timetable-title">
-                                                <i class="feather-calendar"></i> Next 1-Week Sessions
-                                            </div>
-                                            
-                                            <!-- Monday: 1 Session -->
-                                            <div class="timetable-day-group">
-                                                <div class="timetable-day-header">
-                                                    <span class="timetable-day-tag">Monday</span>
-                                                    <span class="timetable-sessions-count">1 Session</span>
-                                                </div>
-                                                <div class="timetable-slot-row">
-                                                    <span class="timetable-slot-time"><i class="feather-clock"></i> 01:00 PM - 02:30 PM</span>
-                                                    <div class="timetable-slot-badges">
-                                                        <button type="button" class="session-pill-btn pill-oto" onclick="openSessionPopup(event, 'computer-science', 'cs-mon-1300-oto-1')"><i class="feather-user"></i> 1-on-1</button>
-                                                        <button type="button" class="session-pill-btn pill-oto" onclick="openSessionPopup(event, 'computer-science', 'cs-mon-1300-oto-2')"><i class="feather-user"></i> 1-on-1</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <!-- Tuesday: 1 Session -->
-                                            <div class="timetable-day-group">
-                                                <div class="timetable-day-header">
-                                                    <span class="timetable-day-tag">Tuesday</span>
-                                                    <span class="timetable-sessions-count">1 Session</span>
-                                                </div>
-                                                <div class="timetable-slot-row">
-                                                    <span class="timetable-slot-time"><i class="feather-clock"></i> 03:00 PM - 04:30 PM</span>
-                                                    <div class="timetable-slot-badges">
-                                                        <button type="button" class="session-pill-btn pill-otm" onclick="openSessionPopup(event, 'computer-science', 'cs-tue-1500-otm')"><i class="feather-users"></i> 1-to-Many</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <!-- Wednesday: 1 Session -->
-                                            <div class="timetable-day-group">
-                                                <div class="timetable-day-header">
-                                                    <span class="timetable-day-tag">Wednesday</span>
-                                                    <span class="timetable-sessions-count">1 Session</span>
-                                                </div>
-                                                <div class="timetable-slot-row">
-                                                    <span class="timetable-slot-time"><i class="feather-clock"></i> 01:00 PM - 02:30 PM</span>
-                                                    <div class="timetable-slot-badges">
-                                                        <button type="button" class="session-pill-btn pill-oto" onclick="openSessionPopup(event, 'computer-science', 'cs-wed-1300-oto')"><i class="feather-user"></i> 1-on-1</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <!-- Thursday: 1 Session -->
-                                            <div class="timetable-day-group">
-                                                <div class="timetable-day-header">
-                                                    <span class="timetable-day-tag">Thursday</span>
-                                                    <span class="timetable-sessions-count">1 Session</span>
-                                                </div>
-                                                <div class="timetable-slot-row">
-                                                    <span class="timetable-slot-time"><i class="feather-clock"></i> 03:00 PM - 04:30 PM</span>
-                                                    <div class="timetable-slot-badges">
-                                                        <button type="button" class="session-pill-btn pill-otm" onclick="openSessionPopup(event, 'computer-science', 'cs-thu-1500-otm')"><i class="feather-users"></i> 1-to-Many</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <!-- Friday: 1 Session -->
-                                            <div class="timetable-day-group">
-                                                <div class="timetable-day-header">
-                                                    <span class="timetable-day-tag">Friday</span>
-                                                    <span class="timetable-sessions-count">1 Session</span>
-                                                </div>
-                                                <div class="timetable-slot-row">
-                                                    <span class="timetable-slot-time"><i class="feather-clock"></i> 01:00 PM - 02:30 PM</span>
-                                                    <div class="timetable-slot-badges">
-                                                        <button type="button" class="session-pill-btn pill-oto" onclick="openSessionPopup(event, 'computer-science', 'cs-fri-1300-oto-1')"><i class="feather-user"></i> 1-on-1</button>
-                                                        <button type="button" class="session-pill-btn pill-oto" onclick="openSessionPopup(event, 'computer-science', 'cs-fri-1300-oto-2')"><i class="feather-user"></i> 1-on-1</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <!-- Saturday: 2 Sessions -->
-                                            <div class="timetable-day-group">
-                                                <div class="timetable-day-header">
-                                                    <span class="timetable-day-tag">Saturday</span>
-                                                    <span class="timetable-sessions-count">2 Sessions</span>
-                                                </div>
-                                                <div class="timetable-slot-row">
-                                                    <span class="timetable-slot-time"><i class="feather-clock"></i> 01:00 PM - 02:30 PM</span>
-                                                    <div class="timetable-slot-badges">
-                                                        <button type="button" class="session-pill-btn pill-oto" onclick="openSessionPopup(event, 'computer-science', 'cs-sat-1300-oto')"><i class="feather-user"></i> 1-on-1</button>
-                                                    </div>
-                                                </div>
-                                                <div class="timetable-slot-row">
-                                                    <span class="timetable-slot-time"><i class="feather-clock"></i> 03:00 PM - 04:30 PM</span>
-                                                    <div class="timetable-slot-badges">
-                                                        <button type="button" class="session-pill-btn pill-otm" onclick="openSessionPopup(event, 'computer-science', 'cs-sat-1500-otm')"><i class="feather-users"></i> 1-to-Many</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <!-- Sunday: No Class -->
-                                            <div class="timetable-day-group" style="opacity: 0.65;">
-                                                <div class="timetable-day-header">
-                                                    <span class="timetable-day-tag" style="background:#f1f5f9; color:#94a3b8;">Sunday</span>
-                                                    <span class="timetable-sessions-count" style="color:#94a3b8;">No Classes</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="subject-card-footer">
-                                        <span>Click to view all (15)</span>
-                                        <span class="active-indicator" id="indicator-computer-science" style="display:none;">
-                                            <i class="feather-check-circle"></i> Active
-                                        </span>
-                                    </div>
-                                </div>
-
-                            </div>
-
-                            <!-- ROSTER TABLE SECTION -->
-                            <div id="roster-section-container">
-                                <div class="roster-toolbar">
-                                    <div class="toolbar-left">
-                                        <div class="selected-subject-tag">
-                                            <span id="active-subject-title">Mathematics</span> Roster
-                                        </div>
-                                        <div class="total-counter-pill">
-                                            <i class="feather-users"></i> Total: <span id="total-student-count">0</span> Students
-                                        </div>
-                                        <div class="roster-type-filters">
-                                            <button type="button" class="type-filter-btn" id="filter-btn-one-to-one" onclick="toggleTypeFilter('One-to-One')">
-                                                <i class="feather-user"></i> One-to-One <span class="filter-count-badge" id="badge-filter-one-to-one">0</span>
-                                            </button>
-                                            <button type="button" class="type-filter-btn" id="filter-btn-one-to-many" onclick="toggleTypeFilter('One-to-Many')">
-                                                <i class="feather-users"></i> One-to-Many <span class="filter-count-badge" id="badge-filter-one-to-many">0</span>
-                                            </button>
-                                        </div>
-                                    </div>
-
-                                    <div class="toolbar-right">
-                                        <div class="roster-search-input">
-                                            <!-- <i class="feather-search" aria-hidden="true"></i> -->
-                                            <input type="text" id="student-search-input" placeholder="Search by name or ID" aria-label="Search students by name or ID" onkeyup="filterStudents()">
-                                        </div>
-
-                                        <button class="sort-toggle-btn" id="sort-toggle-btn" onclick="toggleSortOrder()">
-                                            <i class="feather-arrow-up" id="sort-icon"></i>
-                                            <span>Name: <span id="sort-label">A-Z</span></span>
-                                        </button>
-                                    </div>
-                                </div>
-
-                                <div class="student-table-card">
-                                    <div class="table-responsive">
-                                        <table class="student-table">
-                                            <thead>
-                                                <tr>
-                                                    <th style="width: 10%; text-align: center;">S.No</th>
-                                                    <th style="width: 34%;">Student Name</th>
-                                                    <th style="width: 20%; text-align: center;">Type</th>
-                                                    <th style="width: 24%;">Time</th>
-                                                    <th style="width: 12%; text-align: center;">Action</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody id="student-table-body">
-                                                <!-- Dynamic Rows Injected Here -->
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- STUDENT DETAIL MODAL (RESTORED FULL ORIGINAL DETAIL FIELDS) -->
+    <!-- STUDENT DETAIL MODAL -->
     <div class="modal-overlay" id="detail-modal" onclick="handleDetailModalBackdrop(event)">
         <div class="modal-card-box">
             <div class="modal-header-bg">
@@ -1831,7 +1805,6 @@
             </div>
 
             <div class="student-modal-body">
-
                 <h6 class="detail-section-title"><i class="feather-user" aria-hidden="true"></i> Personal Details</h6>
                 <div class="detail-grid">
                     <div class="detail-item">
@@ -1859,7 +1832,7 @@
                 <div class="detail-grid">
                     <div class="detail-item">
                         <label>Tuition Type</label>
-                        <p id="modal-student-type">One-to-One</p>
+                        <p id="modal-student-type">One-To-One</p>
                     </div>
 
                     <div class="detail-item">
@@ -1918,7 +1891,7 @@
         </div>
     </div>
 
-    <!-- GROUP SESSION MODAL (FOR ONE-TO-MANY STUDENT LIST POPUP) -->
+    <!-- GROUP SESSION MODAL -->
     <div class="modal-overlay" id="group-session-modal" onclick="handleGroupModalBackdrop(event)">
         <div class="group-modal-card-box">
             <div class="modal-header-bg">
@@ -1945,7 +1918,7 @@
                         <i class="feather-clock"></i> <span id="group-modal-session-time">Monday • 02:00 PM - 03:30 PM</span>
                     </div>
                     <div class="session-info-item">
-                        <span class="type-pill type-one-to-many"><i class="feather-users"></i> One-to-Many Batch</span>
+                        <span class="type-pill type-one-to-many"><i class="feather-users"></i> One-To-Many Batch</span>
                     </div>
                     <div class="session-info-item">
                         <i class="feather-user-check"></i> <strong id="group-modal-student-count">2 Students Enrolled</strong>
@@ -1968,7 +1941,7 @@
                             </tr>
                         </thead>
                         <tbody id="group-session-table-body">
-                            <!-- Injected dynamically -->
+                            <!-- Dynamic group rows -->
                         </tbody>
                     </table>
                 </div>
@@ -1981,7 +1954,8 @@
             </div>
         </div>
     </div>
-  <!-- Footer Area -->
+
+    <!-- Footer Area -->
     <footer class="rbt-footer footer-style-1 bg-color-white overflow-hidden">
         <div class="footer-top">
             <div class="container">
@@ -2058,7 +2032,7 @@
                 <div class="row align-items-center">
                     <div class="col-xxl-7 col-xl-7 col-lg-7 col-md-12 col-12">
                         <p class="rbt-link-hover text-center text-lg-start">
-                            Copyright © 2026 by <a href="index.html">London Star Education Ltd.</a> All Rights Reserved. Designed by <a href="https://rkisystems.co.uk/" target="_blank">RKI Systems</a>
+                            Copyright © 2026 by <a href="index.html">London Star Education Ltd.</a> All Rights Reserved.
                         </p>
                     </div>
                     <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-12 col-12">
@@ -2072,19 +2046,8 @@
         </div>
     </footer>
 
-
-
-
-    
-  <div class="rbt-progress-parent">
-        <svg class="rbt-back-circle svg-inner" width="100%" height="100%" viewBox="-1 -1 102 102">
-            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
-        </svg>
-    </div>
-
     <!-- Floating Contact Buttons -->
     <div class="floating-contact">
-        <!-- Call -->
         <div class="contact-item call-item">
             <div class="contact-label call-label">
                 Talk To Our Experts
@@ -2094,7 +2057,6 @@
             </a>
         </div>
 
-        <!-- WhatsApp -->
         <div class="contact-item whatsapp-item">
             <div class="contact-label whatsapp-label">
                 Message Us
@@ -2106,129 +2068,120 @@
         </div>
     </div>
 
-   
     <!-- SCRIPTS -->
     <script src="assets/js/vendor/jquery.js"></script>
     <script src="assets/js/vendor/bootstrap.min.js"></script>
 
     <script>
-        // FULL DATASETS ACCURATELY POPULATED WITH CLASS TIMES
         const studentDatasets = {
             'mathematics': [
-                { id: 'LSE-STD-2024-001', name: 'Oliver Smith', type: 'One-to-One', time: 'Monday • 10:00 AM - 11:30 AM', assignedDate: '2024-03-28', joinDate: '2024-03-28', dob: '14 Mar 2010', gender: 'Male', email: 'oliver.smith@gmail.com', phone: '+44 7700 900101', parentPhone: '+44 7900 111222', attended: '26 Classes', missed: '1 Class' },
-                { id: 'LSE-STD-2024-004', name: 'Amelia Jones', type: 'One-to-Many', time: 'Tuesday • 10:00 AM - 11:30 AM', assignedDate: '2024-03-25', joinDate: '2024-03-25', dob: '22 Aug 2011', gender: 'Female', email: 'amelia.jones@gmail.com', phone: '+44 7700 900102', parentPhone: '+44 7900 111223', attended: '24 Classes', missed: '2 Classes' },
-                { id: 'LSE-STD-2024-007', name: 'Harry Wilson', type: 'One-to-One', time: 'Wednesday • 10:00 AM - 11:30 AM', assignedDate: '2024-01-20', joinDate: '2024-01-20', dob: '05 Nov 2009', gender: 'Male', email: 'harry.wilson@gmail.com', phone: '+44 7700 900103', parentPhone: '+44 7900 111224', attended: '25 Classes', missed: '0 Classes' },
-                { id: 'LSE-STD-2024-012', name: 'Sophia Brown', type: 'One-to-Many', time: 'Thursday • 10:00 AM - 11:30 AM', assignedDate: '2024-02-01', joinDate: '2024-02-01', dob: '18 Jun 2010', gender: 'Female', email: 'sophia.brown@gmail.com', phone: '+44 7700 900104', parentPhone: '+44 7900 111225', attended: '22 Classes', missed: '0 Classes' },
-                { id: 'LSE-STD-2024-015', name: 'George Taylor', type: 'One-to-Many', time: 'Monday • 02:00 PM - 03:30 PM', assignedDate: '2024-02-05', joinDate: '2024-02-05', dob: '11 Dec 2010', gender: 'Male', email: 'george.taylor@gmail.com', phone: '+44 7700 900105', parentPhone: '+44 7900 111226', attended: '20 Classes', missed: '3 Classes' },
-                { id: 'LSE-STD-2024-018', name: 'Isabella Davies', type: 'One-to-One', time: 'Friday • 10:00 AM - 11:30 AM', assignedDate: '2024-03-30', joinDate: '2024-03-30', dob: '03 Feb 2011', gender: 'Female', email: 'isabella.d@gmail.com', phone: '+44 7700 900106', parentPhone: '+44 7900 111227', attended: '21 Classes', missed: '1 Class' },
-                { id: 'LSE-STD-2024-022', name: 'Noah Evans', type: 'One-to-Many', time: 'Thursday • 10:00 AM - 11:30 AM', assignedDate: '2024-01-15', joinDate: '2024-01-15', dob: '19 Sep 2010', gender: 'Male', email: 'noah.evans@gmail.com', phone: '+44 7700 900107', parentPhone: '+44 7900 111228', attended: '27 Classes', missed: '0 Classes' },
-                { id: 'LSE-STD-2024-025', name: 'Mia Thomas', type: 'One-to-Many', time: 'Saturday • 10:00 AM - 11:30 AM', assignedDate: '2024-02-12', joinDate: '2024-02-12', dob: '08 May 2011', gender: 'Female', email: 'mia.thomas@gmail.com', phone: '+44 7700 900108', parentPhone: '+44 7900 111229', attended: '23 Classes', missed: '1 Class' },
-                { id: 'LSE-STD-2024-029', name: 'Leo Roberts', type: 'One-to-One', time: 'Monday • 10:00 AM - 11:30 AM', assignedDate: '2024-03-01', joinDate: '2024-03-01', dob: '14 Oct 2009', gender: 'Male', email: 'leo.roberts@gmail.com', phone: '+44 7700 900109', parentPhone: '+44 7900 111230', attended: '25 Classes', missed: '1 Class' },
-                { id: 'LSE-STD-2024-033', name: 'Ava Johnson', type: 'One-to-Many', time: 'Saturday • 10:00 AM - 11:30 AM', assignedDate: '2024-02-18', joinDate: '2024-02-18', dob: '27 Apr 2010', gender: 'Female', email: 'ava.johnson@gmail.com', phone: '+44 7700 900110', parentPhone: '+44 7900 111231', attended: '24 Classes', missed: '2 Classes' },
-                { id: 'LSE-STD-2024-038', name: 'Lucas Walker', type: 'One-to-Many', time: 'Tuesday • 10:00 AM - 11:30 AM', assignedDate: '2024-01-28', joinDate: '2024-01-28', dob: '02 Dec 2011', gender: 'Male', email: 'lucas.walker@gmail.com', phone: '+44 7700 900111', parentPhone: '+44 7900 111232', attended: '26 Classes', missed: '0 Classes' },
-                { id: 'LSE-STD-2024-042', name: 'Grace Robinson', type: 'One-to-One', time: 'Wednesday • 10:00 AM - 11:30 AM', assignedDate: '2024-03-15', joinDate: '2024-03-15', dob: '16 Jan 2010', gender: 'Female', email: 'grace.robinson@gmail.com', phone: '+44 7700 900112', parentPhone: '+44 7900 111233', attended: '22 Classes', missed: '1 Class' },
-                { id: 'LSE-STD-2024-047', name: 'Arthur Wright', type: 'One-to-Many', time: 'Wednesday • 04:00 PM - 05:30 PM', assignedDate: '2024-02-22', joinDate: '2024-02-22', dob: '29 Jul 2009', gender: 'Male', email: 'arthur.wright@gmail.com', phone: '+44 7700 900113', parentPhone: '+44 7900 111234', attended: '25 Classes', missed: '1 Class' },
-                { id: 'LSE-STD-2024-051', name: 'Freya Scott', type: 'One-to-Many', time: 'Saturday • 10:00 AM - 11:30 AM', assignedDate: '2024-03-05', joinDate: '2024-03-05', dob: '11 Aug 2011', gender: 'Female', email: 'freya.scott@gmail.com', phone: '+44 7700 900114', parentPhone: '+44 7900 111235', attended: '23 Classes', missed: '0 Classes' },
-                { id: 'LSE-STD-2024-056', name: 'Henry Green', type: 'One-to-One', time: 'Friday • 10:00 AM - 11:30 AM', assignedDate: '2024-01-10', joinDate: '2024-01-10', dob: '04 Mar 2010', gender: 'Male', email: 'henry.green@gmail.com', phone: '+44 7700 900115', parentPhone: '+44 7900 111236', attended: '28 Classes', missed: '0 Classes' },
-                { id: 'LSE-STD-2024-060', name: 'Ella Hall', type: 'One-to-Many', time: 'Monday • 02:00 PM - 03:30 PM', assignedDate: '2024-03-20', joinDate: '2024-03-20', dob: '25 Sep 2010', gender: 'Female', email: 'ella.hall@gmail.com', phone: '+44 7700 900116', parentPhone: '+44 7900 111237', attended: '21 Classes', missed: '2 Classes' }
+                { id: 'LSE-STD-2024-001', name: 'Oliver Smith', type: 'One-To-One', time: 'Monday • 10:00 AM - 11:30 AM', assignedDate: '2024-03-28', joinDate: '2024-03-28', dob: '14 Mar 2010', gender: 'Male', email: 'oliver.smith@gmail.com', phone: '+44 7700 900101', parentPhone: '+44 7900 111222', attended: '26 Classes', missed: '1 Class' },
+                { id: 'LSE-STD-2024-004', name: 'Amelia Jones', type: 'One-To-Many', time: 'Tuesday • 10:00 AM - 11:30 AM', assignedDate: '2024-03-25', joinDate: '2024-03-25', dob: '22 Aug 2011', gender: 'Female', email: 'amelia.jones@gmail.com', phone: '+44 7700 900102', parentPhone: '+44 7900 111223', attended: '24 Classes', missed: '2 Classes' },
+                { id: 'LSE-STD-2024-007', name: 'Harry Wilson', type: 'One-To-One', time: 'Wednesday • 10:00 AM - 11:30 AM', assignedDate: '2024-01-20', joinDate: '2024-01-20', dob: '05 Nov 2009', gender: 'Male', email: 'harry.wilson@gmail.com', phone: '+44 7700 900103', parentPhone: '+44 7900 111224', attended: '25 Classes', missed: '0 Classes' },
+                { id: 'LSE-STD-2024-012', name: 'Sophia Brown', type: 'One-To-Many', time: 'Thursday • 10:00 AM - 11:30 AM', assignedDate: '2024-02-01', joinDate: '2024-02-01', dob: '18 Jun 2010', gender: 'Female', email: 'sophia.brown@gmail.com', phone: '+44 7700 900104', parentPhone: '+44 7900 111225', attended: '22 Classes', missed: '0 Classes' },
+                { id: 'LSE-STD-2024-015', name: 'George Taylor', type: 'One-To-Many', time: 'Monday • 02:00 PM - 03:30 PM', assignedDate: '2024-02-05', joinDate: '2024-02-05', dob: '11 Dec 2010', gender: 'Male', email: 'george.taylor@gmail.com', phone: '+44 7700 900105', parentPhone: '+44 7900 111226', attended: '20 Classes', missed: '3 Classes' },
+                { id: 'LSE-STD-2024-018', name: 'Isabella Davies', type: 'One-To-One', time: 'Friday • 10:00 AM - 11:30 AM', assignedDate: '2024-03-30', joinDate: '2024-03-30', dob: '03 Feb 2011', gender: 'Female', email: 'isabella.d@gmail.com', phone: '+44 7700 900106', parentPhone: '+44 7900 111227', attended: '21 Classes', missed: '1 Class' },
+                { id: 'LSE-STD-2024-022', name: 'Noah Evans', type: 'One-To-Many', time: 'Thursday • 10:00 AM - 11:30 AM', assignedDate: '2024-01-15', joinDate: '2024-01-15', dob: '19 Sep 2010', gender: 'Male', email: 'noah.evans@gmail.com', phone: '+44 7700 900107', parentPhone: '+44 7900 111228', attended: '27 Classes', missed: '0 Classes' },
+                { id: 'LSE-STD-2024-025', name: 'Mia Thomas', type: 'One-To-Many', time: 'Saturday • 10:00 AM - 11:30 AM', assignedDate: '2024-02-12', joinDate: '2024-02-12', dob: '08 May 2011', gender: 'Female', email: 'mia.thomas@gmail.com', phone: '+44 7700 900108', parentPhone: '+44 7900 111229', attended: '23 Classes', missed: '1 Class' },
+                { id: 'LSE-STD-2024-029', name: 'Leo Roberts', type: 'One-To-One', time: 'Monday • 10:00 AM - 11:30 AM', assignedDate: '2024-03-01', joinDate: '2024-03-01', dob: '14 Oct 2009', gender: 'Male', email: 'leo.roberts@gmail.com', phone: '+44 7700 900109', parentPhone: '+44 7900 111230', attended: '25 Classes', missed: '1 Class' },
+                { id: 'LSE-STD-2024-033', name: 'Ava Johnson', type: 'One-To-Many', time: 'Saturday • 10:00 AM - 11:30 AM', assignedDate: '2024-02-18', joinDate: '2024-02-18', dob: '27 Apr 2010', gender: 'Female', email: 'ava.johnson@gmail.com', phone: '+44 7700 900110', parentPhone: '+44 7900 111231', attended: '24 Classes', missed: '2 Classes' },
+                { id: 'LSE-STD-2024-038', name: 'Lucas Walker', type: 'One-To-Many', time: 'Tuesday • 10:00 AM - 11:30 AM', assignedDate: '2024-01-28', joinDate: '2024-01-28', dob: '02 Dec 2011', gender: 'Male', email: 'lucas.walker@gmail.com', phone: '+44 7700 900111', parentPhone: '+44 7900 111232', attended: '26 Classes', missed: '0 Classes' },
+                { id: 'LSE-STD-2024-042', name: 'Grace Robinson', type: 'One-To-One', time: 'Wednesday • 10:00 AM - 11:30 AM', assignedDate: '2024-03-15', joinDate: '2024-03-15', dob: '16 Jan 2010', gender: 'Female', email: 'grace.robinson@gmail.com', phone: '+44 7700 900112', parentPhone: '+44 7900 111233', attended: '22 Classes', missed: '1 Class' },
+                { id: 'LSE-STD-2024-047', name: 'Arthur Wright', type: 'One-To-Many', time: 'Wednesday • 04:00 PM - 05:30 PM', assignedDate: '2024-02-22', joinDate: '2024-02-22', dob: '29 Jul 2009', gender: 'Male', email: 'arthur.wright@gmail.com', phone: '+44 7700 900113', parentPhone: '+44 7900 111234', attended: '25 Classes', missed: '1 Class' },
+                { id: 'LSE-STD-2024-051', name: 'Freya Scott', type: 'One-To-Many', time: 'Saturday • 10:00 AM - 11:30 AM', assignedDate: '2024-03-05', joinDate: '2024-03-05', dob: '11 Aug 2011', gender: 'Female', email: 'freya.scott@gmail.com', phone: '+44 7700 900114', parentPhone: '+44 7900 111235', attended: '23 Classes', missed: '0 Classes' },
+                { id: 'LSE-STD-2024-056', name: 'Henry Green', type: 'One-To-One', time: 'Friday • 10:00 AM - 11:30 AM', assignedDate: '2024-01-10', joinDate: '2024-01-10', dob: '04 Mar 2010', gender: 'Male', email: 'henry.green@gmail.com', phone: '+44 7700 900115', parentPhone: '+44 7900 111236', attended: '28 Classes', missed: '0 Classes' },
+                { id: 'LSE-STD-2024-060', name: 'Ella Hall', type: 'One-To-Many', time: 'Monday • 02:00 PM - 03:30 PM', assignedDate: '2024-03-20', joinDate: '2024-03-20', dob: '25 Sep 2010', gender: 'Female', email: 'ella.hall@gmail.com', phone: '+44 7700 900116', parentPhone: '+44 7900 111237', attended: '21 Classes', missed: '2 Classes' }
             ],
             'physics': [
-                { id: 'LSE-STD-2024-001', name: 'Oliver Smith', type: 'One-to-One', time: 'Tuesday • 02:00 PM - 03:30 PM', assignedDate: '2024-01-15', joinDate: '2024-01-15', dob: '14 Mar 2010', gender: 'Male', email: 'oliver.smith@gmail.com', phone: '+44 7700 900101', parentPhone: '+44 7900 111222', attended: '28 Classes', missed: '0 Classes' },
-                { id: 'LSE-STD-2024-002', name: 'Jack Williams', type: 'One-to-One', time: 'Tuesday • 02:00 PM - 03:30 PM', assignedDate: '2024-03-24', joinDate: '2024-03-24', dob: '09 Jul 2011', gender: 'Male', email: 'jack.w@gmail.com', phone: '+44 7800 800201', parentPhone: '+44 7900 222333', attended: '28 Classes', missed: '0 Classes' },
-                { id: 'LSE-STD-2024-005', name: 'Charlotte Taylor', type: 'One-to-Many', time: 'Monday • 02:00 PM - 03:30 PM', assignedDate: '2024-01-14', joinDate: '2024-01-14', dob: '17 Apr 2012', gender: 'Female', email: 'charlotte.t@gmail.com', phone: '+44 7800 800202', parentPhone: '+44 7900 222334', attended: '26 Classes', missed: '1 Class' },
-                { id: 'LSE-STD-2024-009', name: 'Ethan Clarke', type: 'One-to-Many', time: 'Wednesday • 02:00 PM - 03:30 PM', assignedDate: '2024-01-18', joinDate: '2024-01-18', dob: '30 Sep 2010', gender: 'Male', email: 'ethan.c@gmail.com', phone: '+44 7800 800203', parentPhone: '+44 7900 222335', attended: '25 Classes', missed: '2 Classes' },
-                { id: 'LSE-STD-2024-014', name: 'Harper White', type: 'One-to-One', time: 'Thursday • 02:00 PM - 03:30 PM', assignedDate: '2024-03-29', joinDate: '2024-03-29', dob: '12 May 2011', gender: 'Female', email: 'harper.w@gmail.com', phone: '+44 7800 800204', parentPhone: '+44 7900 222336', attended: '23 Classes', missed: '0 Classes' },
-                { id: 'LSE-STD-2024-019', name: 'Freddie Hughes', type: 'One-to-Many', time: 'Friday • 02:00 PM - 03:30 PM', assignedDate: '2024-02-10', joinDate: '2024-02-10', dob: '21 Jun 2010', gender: 'Male', email: 'freddie.h@gmail.com', phone: '+44 7800 800205', parentPhone: '+44 7900 222337', attended: '24 Classes', missed: '1 Class' },
-                { id: 'LSE-STD-2024-023', name: 'Emily Edwards', type: 'One-to-Many', time: 'Monday • 02:00 PM - 03:30 PM', assignedDate: '2024-01-25', joinDate: '2024-01-25', dob: '04 Feb 2011', gender: 'Female', email: 'emily.e@gmail.com', phone: '+44 7800 800206', parentPhone: '+44 7900 222338', attended: '27 Classes', missed: '0 Classes' },
-                { id: 'LSE-STD-2024-028', name: 'Archie Turner', type: 'One-to-One', time: 'Saturday • 02:00 PM - 03:30 PM', assignedDate: '2024-03-12', joinDate: '2024-03-12', dob: '15 Aug 2009', gender: 'Male', email: 'archie.t@gmail.com', phone: '+44 7800 800207', parentPhone: '+44 7900 222339', attended: '22 Classes', missed: '1 Class' },
-                { id: 'LSE-STD-2024-032', name: 'Evie Campbell', type: 'One-to-Many', time: 'Tuesday • 05:00 PM - 06:30 PM', assignedDate: '2024-02-04', joinDate: '2024-02-04', dob: '28 Nov 2010', gender: 'Female', email: 'evie.c@gmail.com', phone: '+44 7800 800208', parentPhone: '+44 7900 222340', attended: '25 Classes', missed: '1 Class' },
-                { id: 'LSE-STD-2024-037', name: 'Theo Mitchell', type: 'One-to-Many', time: 'Friday • 02:00 PM - 03:30 PM', assignedDate: '2024-01-30', joinDate: '2024-01-30', dob: '10 Oct 2011', gender: 'Male', email: 'theo.m@gmail.com', phone: '+44 7800 800209', parentPhone: '+44 7900 222341', attended: '26 Classes', missed: '0 Classes' },
-                { id: 'LSE-STD-2024-041', name: 'Ruby Carter', type: 'One-to-One', time: 'Tuesday • 02:00 PM - 03:30 PM', assignedDate: '2024-03-18', joinDate: '2024-03-18', dob: '07 Jan 2010', gender: 'Female', email: 'ruby.c@gmail.com', phone: '+44 7800 800210', parentPhone: '+44 7900 222342', attended: '21 Classes', missed: '2 Classes' },
-                { id: 'LSE-STD-2024-046', name: 'Alfie Phillips', type: 'One-to-Many', time: 'Monday • 02:00 PM - 03:30 PM', assignedDate: '2024-02-14', joinDate: '2024-02-14', dob: '19 Mar 2009', gender: 'Male', email: 'alfie.p@gmail.com', phone: '+44 7800 800211', parentPhone: '+44 7900 222343', attended: '25 Classes', missed: '1 Class' },
-                { id: 'LSE-STD-2024-050', name: 'Alice Morris', type: 'One-to-Many', time: 'Wednesday • 02:00 PM - 03:30 PM', assignedDate: '2024-03-02', joinDate: '2024-03-02', dob: '23 May 2011', gender: 'Female', email: 'alice.m@gmail.com', phone: '+44 7800 800212', parentPhone: '+44 7900 222344', attended: '24 Classes', missed: '0 Classes' },
-                { id: 'LSE-STD-2024-055', name: 'Joshua Murphy', type: 'One-to-One', time: 'Thursday • 02:00 PM - 03:30 PM', assignedDate: '2024-01-12', joinDate: '2024-01-12', dob: '14 Dec 2010', gender: 'Male', email: 'joshua.m@gmail.com', phone: '+44 7800 800213', parentPhone: '+44 7900 222345', attended: '28 Classes', missed: '0 Classes' },
-                { id: 'LSE-STD-2024-059', name: 'Florence Cook', type: 'One-to-Many', time: 'Tuesday • 05:00 PM - 06:30 PM', assignedDate: '2024-03-22', joinDate: '2024-03-22', dob: '02 Sep 2010', gender: 'Female', email: 'florence.c@gmail.com', phone: '+44 7800 800214', parentPhone: '+44 7900 222346', attended: '20 Classes', missed: '2 Classes' }
+                { id: 'LSE-STD-2024-002', name: 'Jack Williams', type: 'One-To-One', time: 'Tuesday • 02:00 PM - 03:30 PM', assignedDate: '2024-03-24', joinDate: '2024-03-24', dob: '09 Jul 2011', gender: 'Male', email: 'jack.w@gmail.com', phone: '+44 7800 800201', parentPhone: '+44 7900 222333', attended: '28 Classes', missed: '0 Classes' },
+                { id: 'LSE-STD-2024-005', name: 'Charlotte Taylor', type: 'One-To-Many', time: 'Monday • 02:00 PM - 03:30 PM', assignedDate: '2024-01-14', joinDate: '2024-01-14', dob: '17 Apr 2012', gender: 'Female', email: 'charlotte.t@gmail.com', phone: '+44 7800 800202', parentPhone: '+44 7900 222334', attended: '26 Classes', missed: '1 Class' },
+                { id: 'LSE-STD-2024-009', name: 'Ethan Clarke', type: 'One-To-Many', time: 'Wednesday • 02:00 PM - 03:30 PM', assignedDate: '2024-01-18', joinDate: '2024-01-18', dob: '30 Sep 2010', gender: 'Male', email: 'ethan.c@gmail.com', phone: '+44 7800 800203', parentPhone: '+44 7900 222335', attended: '25 Classes', missed: '2 Classes' },
+                { id: 'LSE-STD-2024-014', name: 'Harper White', type: 'One-To-One', time: 'Thursday • 02:00 PM - 03:30 PM', assignedDate: '2024-03-29', joinDate: '2024-03-29', dob: '12 May 2011', gender: 'Female', email: 'harper.w@gmail.com', phone: '+44 7800 800204', parentPhone: '+44 7900 222336', attended: '23 Classes', missed: '0 Classes' },
+                { id: 'LSE-STD-2024-019', name: 'Freddie Hughes', type: 'One-To-Many', time: 'Friday • 02:00 PM - 03:30 PM', assignedDate: '2024-02-10', joinDate: '2024-02-10', dob: '21 Jun 2010', gender: 'Male', email: 'freddie.h@gmail.com', phone: '+44 7800 800205', parentPhone: '+44 7900 222337', attended: '24 Classes', missed: '1 Class' },
+                { id: 'LSE-STD-2024-023', name: 'Emily Edwards', type: 'One-To-Many', time: 'Monday • 02:00 PM - 03:30 PM', assignedDate: '2024-01-25', joinDate: '2024-01-25', dob: '04 Feb 2011', gender: 'Female', email: 'emily.e@gmail.com', phone: '+44 7800 800206', parentPhone: '+44 7900 222338', attended: '27 Classes', missed: '0 Classes' },
+                { id: 'LSE-STD-2024-028', name: 'Archie Turner', type: 'One-To-One', time: 'Saturday • 02:00 PM - 03:30 PM', assignedDate: '2024-03-12', joinDate: '2024-03-12', dob: '15 Aug 2009', gender: 'Male', email: 'archie.t@gmail.com', phone: '+44 7800 800207', parentPhone: '+44 7900 222339', attended: '22 Classes', missed: '1 Class' },
+                { id: 'LSE-STD-2024-032', name: 'Evie Campbell', type: 'One-To-Many', time: 'Tuesday • 05:00 PM - 06:30 PM', assignedDate: '2024-02-04', joinDate: '2024-02-04', dob: '28 Nov 2010', gender: 'Female', email: 'evie.c@gmail.com', phone: '+44 7800 800208', parentPhone: '+44 7900 222340', attended: '25 Classes', missed: '1 Class' },
+                { id: 'LSE-STD-2024-037', name: 'Theo Mitchell', type: 'One-To-Many', time: 'Friday • 02:00 PM - 03:30 PM', assignedDate: '2024-01-30', joinDate: '2024-01-30', dob: '10 Oct 2011', gender: 'Male', email: 'theo.m@gmail.com', phone: '+44 7800 800209', parentPhone: '+44 7900 222341', attended: '26 Classes', missed: '0 Classes' },
+                { id: 'LSE-STD-2024-041', name: 'Ruby Carter', type: 'One-To-One', time: 'Tuesday • 02:00 PM - 03:30 PM', assignedDate: '2024-03-18', joinDate: '2024-03-18', dob: '07 Jan 2010', gender: 'Female', email: 'ruby.c@gmail.com', phone: '+44 7800 800210', parentPhone: '+44 7900 222342', attended: '21 Classes', missed: '2 Classes' },
+                { id: 'LSE-STD-2024-046', name: 'Alfie Phillips', type: 'One-To-Many', time: 'Monday • 02:00 PM - 03:30 PM', assignedDate: '2024-02-14', joinDate: '2024-02-14', dob: '19 Mar 2009', gender: 'Male', email: 'alfie.p@gmail.com', phone: '+44 7800 800211', parentPhone: '+44 7900 222343', attended: '25 Classes', missed: '1 Class' },
+                { id: 'LSE-STD-2024-050', name: 'Alice Morris', type: 'One-To-Many', time: 'Wednesday • 02:00 PM - 03:30 PM', assignedDate: '2024-03-02', joinDate: '2024-03-02', dob: '23 May 2011', gender: 'Female', email: 'alice.m@gmail.com', phone: '+44 7800 800212', parentPhone: '+44 7900 222344', attended: '24 Classes', missed: '0 Classes' },
+                { id: 'LSE-STD-2024-055', name: 'Joshua Murphy', type: 'One-To-One', time: 'Thursday • 02:00 PM - 03:30 PM', assignedDate: '2024-01-12', joinDate: '2024-01-12', dob: '14 Dec 2010', gender: 'Male', email: 'joshua.m@gmail.com', phone: '+44 7800 800213', parentPhone: '+44 7900 222345', attended: '28 Classes', missed: '0 Classes' },
+                { id: 'LSE-STD-2024-059', name: 'Florence Cook', type: 'One-To-Many', time: 'Tuesday • 05:00 PM - 06:30 PM', assignedDate: '2024-03-22', joinDate: '2024-03-22', dob: '02 Sep 2010', gender: 'Female', email: 'florence.c@gmail.com', phone: '+44 7800 800214', parentPhone: '+44 7900 222346', attended: '20 Classes', missed: '2 Classes' }
             ],
             'chemistry': [
-                { id: 'LSE-STD-2024-001', name: 'Oliver Smith', type: 'One-to-One', time: 'Monday • 04:00 PM - 05:30 PM', assignedDate: '2024-01-15', joinDate: '2024-01-15', dob: '14 Mar 2010', gender: 'Male', email: 'oliver.smith@gmail.com', phone: '+44 7700 900101', parentPhone: '+44 7900 111222', attended: '22 Classes', missed: '1 Class' },
-                { id: 'LSE-STD-2024-003', name: 'Benjamin Moore', type: 'One-to-One', time: 'Monday • 04:00 PM - 05:30 PM', assignedDate: '2024-03-26', joinDate: '2024-03-26', dob: '25 Jan 2011', gender: 'Male', email: 'benjamin.m@gmail.com', phone: '+44 7900 700301', parentPhone: '+44 7900 333444', attended: '18 Classes', missed: '0 Classes' },
-                { id: 'LSE-STD-2024-008', name: 'Chloe Harris', type: 'One-to-Many', time: 'Tuesday • 04:00 PM - 05:30 PM', assignedDate: '2024-01-16', joinDate: '2024-01-16', dob: '17 Jan 2010', gender: 'Female', email: 'chloe.h@gmail.com', phone: '+44 7900 700302', parentPhone: '+44 7900 333445', attended: '16 Classes', missed: '2 Classes' },
-                { id: 'LSE-STD-2024-013', name: 'Alexander King', type: 'One-to-Many', time: 'Thursday • 04:00 PM - 05:30 PM', assignedDate: '2024-01-22', joinDate: '2024-01-22', dob: '23 Nov 2011', gender: 'Male', email: 'alex.king@gmail.com', phone: '+44 7900 700303', parentPhone: '+44 7900 333446', attended: '17 Classes', missed: '1 Class' },
-                { id: 'LSE-STD-2024-017', name: 'Zoe Lee', type: 'One-to-One', time: 'Wednesday • 04:00 PM - 05:30 PM', assignedDate: '2024-03-31', joinDate: '2024-03-31', dob: '02 Mar 2009', gender: 'Female', email: 'zoe.lee@gmail.com', phone: '+44 7900 700304', parentPhone: '+44 7900 333447', attended: '15 Classes', missed: '0 Classes' },
-                { id: 'LSE-STD-2024-021', name: 'Daniel Adams', type: 'One-to-Many', time: 'Friday • 04:00 PM - 05:30 PM', assignedDate: '2024-02-11', joinDate: '2024-02-11', dob: '14 Apr 2010', gender: 'Male', email: 'daniel.a@gmail.com', phone: '+44 7900 700305', parentPhone: '+44 7900 333448', attended: '19 Classes', missed: '1 Class' },
-                { id: 'LSE-STD-2024-026', name: 'Hannah Baker', type: 'One-to-Many', time: 'Tuesday • 04:00 PM - 05:30 PM', assignedDate: '2024-01-29', joinDate: '2024-01-29', dob: '08 Jul 2011', gender: 'Female', email: 'hannah.b@gmail.com', phone: '+44 7900 700306', parentPhone: '+44 7900 333449', attended: '20 Classes', missed: '0 Classes' },
-                { id: 'LSE-STD-2024-031', name: 'Samuel Bell', type: 'One-to-One', time: 'Saturday • 04:00 PM - 05:30 PM', assignedDate: '2024-03-14', joinDate: '2024-03-14', dob: '19 Oct 2009', gender: 'Male', email: 'samuel.b@gmail.com', phone: '+44 7900 700307', parentPhone: '+44 7900 333450', attended: '16 Classes', missed: '1 Class' },
-                { id: 'LSE-STD-2024-036', name: 'Lily Ward', type: 'One-to-Many', time: 'Thursday • 04:00 PM - 05:30 PM', assignedDate: '2024-02-08', joinDate: '2024-02-08', dob: '31 Dec 2010', gender: 'Female', email: 'lily.w@gmail.com', phone: '+44 7900 700308', parentPhone: '+44 7900 333451', attended: '18 Classes', missed: '1 Class' },
-                { id: 'LSE-STD-2024-040', name: 'Max Bennett', type: 'One-to-Many', time: 'Tuesday • 06:00 PM - 07:30 PM', assignedDate: '2024-01-19', joinDate: '2024-01-19', dob: '05 May 2011', gender: 'Male', email: 'max.b@gmail.com', phone: '+44 7900 700309', parentPhone: '+44 7900 333452', attended: '21 Classes', missed: '0 Classes' },
-                { id: 'LSE-STD-2024-045', name: 'Phoebe Gray', type: 'One-to-One', time: 'Monday • 04:00 PM - 05:30 PM', assignedDate: '2024-03-08', joinDate: '2024-03-08', dob: '12 Sep 2010', gender: 'Female', email: 'phoebe.g@gmail.com', phone: '+44 7900 700310', parentPhone: '+44 7900 333453', attended: '17 Classes', missed: '2 Classes' },
-                { id: 'LSE-STD-2024-049', name: 'Logan Price', type: 'One-to-Many', time: 'Tuesday • 06:00 PM - 07:30 PM', assignedDate: '2024-02-25', joinDate: '2024-02-25', dob: '26 Feb 2009', gender: 'Male', email: 'logan.p@gmail.com', phone: '+44 7900 700311', parentPhone: '+44 7900 333454', attended: '19 Classes', missed: '0 Classes' },
-                { id: 'LSE-STD-2024-054', name: 'Sienna Russell', type: 'One-to-Many', time: 'Friday • 04:00 PM - 05:30 PM', assignedDate: '2024-03-19', joinDate: '2024-03-19', dob: '18 Jun 2011', gender: 'Female', email: 'sienna.r@gmail.com', phone: '+44 7900 700312', parentPhone: '+44 7900 333455', attended: '15 Classes', missed: '1 Class' }
+                { id: 'LSE-STD-2024-003', name: 'Benjamin Moore', type: 'One-To-One', time: 'Monday • 04:00 PM - 05:30 PM', assignedDate: '2024-03-26', joinDate: '2024-03-26', dob: '25 Jan 2011', gender: 'Male', email: 'benjamin.m@gmail.com', phone: '+44 7900 700301', parentPhone: '+44 7900 333444', attended: '18 Classes', missed: '0 Classes' },
+                { id: 'LSE-STD-2024-008', name: 'Chloe Harris', type: 'One-To-Many', time: 'Tuesday • 04:00 PM - 05:30 PM', assignedDate: '2024-01-16', joinDate: '2024-01-16', dob: '17 Jan 2010', gender: 'Female', email: 'chloe.h@gmail.com', phone: '+44 7900 700302', parentPhone: '+44 7900 333445', attended: '16 Classes', missed: '2 Classes' },
+                { id: 'LSE-STD-2024-013', name: 'Alexander King', type: 'One-To-Many', time: 'Thursday • 04:00 PM - 05:30 PM', assignedDate: '2024-01-22', joinDate: '2024-01-22', dob: '23 Nov 2011', gender: 'Male', email: 'alex.king@gmail.com', phone: '+44 7900 700303', parentPhone: '+44 7900 333446', attended: '17 Classes', missed: '1 Class' },
+                { id: 'LSE-STD-2024-017', name: 'Zoe Lee', type: 'One-To-One', time: 'Wednesday • 04:00 PM - 05:30 PM', assignedDate: '2024-03-31', joinDate: '2024-03-31', dob: '02 Mar 2009', gender: 'Female', email: 'zoe.lee@gmail.com', phone: '+44 7900 700304', parentPhone: '+44 7900 333447', attended: '15 Classes', missed: '0 Classes' },
+                { id: 'LSE-STD-2024-021', name: 'Daniel Adams', type: 'One-To-Many', time: 'Friday • 04:00 PM - 05:30 PM', assignedDate: '2024-02-11', joinDate: '2024-02-11', dob: '14 Apr 2010', gender: 'Male', email: 'daniel.a@gmail.com', phone: '+44 7900 700305', parentPhone: '+44 7900 333448', attended: '19 Classes', missed: '1 Class' },
+                { id: 'LSE-STD-2024-026', name: 'Hannah Baker', type: 'One-To-Many', time: 'Tuesday • 04:00 PM - 05:30 PM', assignedDate: '2024-01-29', joinDate: '2024-01-29', dob: '08 Jul 2011', gender: 'Female', email: 'hannah.b@gmail.com', phone: '+44 7900 700306', parentPhone: '+44 7900 333449', attended: '20 Classes', missed: '0 Classes' },
+                { id: 'LSE-STD-2024-031', name: 'Samuel Bell', type: 'One-To-One', time: 'Saturday • 04:00 PM - 05:30 PM', assignedDate: '2024-03-14', joinDate: '2024-03-14', dob: '19 Oct 2009', gender: 'Male', email: 'samuel.b@gmail.com', phone: '+44 7900 700307', parentPhone: '+44 7900 333450', attended: '16 Classes', missed: '1 Class' },
+                { id: 'LSE-STD-2024-036', name: 'Lily Ward', type: 'One-To-Many', time: 'Thursday • 04:00 PM - 05:30 PM', assignedDate: '2024-02-08', joinDate: '2024-02-08', dob: '31 Dec 2010', gender: 'Female', email: 'lily.w@gmail.com', phone: '+44 7900 700308', parentPhone: '+44 7900 333451', attended: '18 Classes', missed: '1 Class' },
+                { id: 'LSE-STD-2024-040', name: 'Max Bennett', type: 'One-To-Many', time: 'Tuesday • 06:00 PM - 07:30 PM', assignedDate: '2024-01-19', joinDate: '2024-01-19', dob: '05 May 2011', gender: 'Male', email: 'max.b@gmail.com', phone: '+44 7900 700309', parentPhone: '+44 7900 333452', attended: '21 Classes', missed: '0 Classes' },
+                { id: 'LSE-STD-2024-045', name: 'Phoebe Gray', type: 'One-To-One', time: 'Monday • 04:00 PM - 05:30 PM', assignedDate: '2024-03-08', joinDate: '2024-03-08', dob: '12 Sep 2010', gender: 'Female', email: 'phoebe.g@gmail.com', phone: '+44 7900 700310', parentPhone: '+44 7900 333453', attended: '17 Classes', missed: '2 Classes' },
+                { id: 'LSE-STD-2024-049', name: 'Logan Price', type: 'One-To-Many', time: 'Tuesday • 06:00 PM - 07:30 PM', assignedDate: '2024-02-25', joinDate: '2024-02-25', dob: '26 Feb 2009', gender: 'Male', email: 'logan.p@gmail.com', phone: '+44 7900 700311', parentPhone: '+44 7900 333454', attended: '19 Classes', missed: '0 Classes' },
+                { id: 'LSE-STD-2024-054', name: 'Sienna Russell', type: 'One-To-Many', time: 'Friday • 04:00 PM - 05:30 PM', assignedDate: '2024-03-19', joinDate: '2024-03-19', dob: '18 Jun 2011', gender: 'Female', email: 'sienna.r@gmail.com', phone: '+44 7900 700312', parentPhone: '+44 7900 333455', attended: '15 Classes', missed: '1 Class' }
             ],
             'computer-science': [
-                { id: 'LSE-STD-2024-001', name: 'Oliver Smith', type: 'One-to-One', time: 'Saturday • 01:00 PM - 02:30 PM', assignedDate: '2024-01-15', joinDate: '2024-01-15', dob: '14 Mar 2010', gender: 'Male', email: 'oliver.smith@gmail.com', phone: '+44 7700 900101', parentPhone: '+44 7900 111222', attended: '20 Classes', missed: '0 Classes' },
-                { id: 'LSE-STD-2024-010', name: 'Liam Jackson', type: 'One-to-One', time: 'Monday • 01:00 PM - 02:30 PM', assignedDate: '2024-03-28', joinDate: '2024-03-28', dob: '15 Jul 2010', gender: 'Male', email: 'liam.j@gmail.com', phone: '+44 7500 500501', parentPhone: '+44 7900 555666', attended: '24 Classes', missed: '0 Classes' },
-                { id: 'LSE-STD-2024-015', name: 'Eleanor Wood', type: 'One-to-Many', time: 'Tuesday • 03:00 PM - 04:30 PM', assignedDate: '2024-01-18', joinDate: '2024-01-18', dob: '29 Mar 2011', gender: 'Female', email: 'eleanor.w@gmail.com', phone: '+44 7500 500502', parentPhone: '+44 7900 555667', attended: '26 Classes', missed: '1 Class' },
-                { id: 'LSE-STD-2024-024', name: 'Edward Jenkins', type: 'One-to-One', time: 'Wednesday • 01:00 PM - 02:30 PM', assignedDate: '2024-02-14', joinDate: '2024-02-14', dob: '04 Nov 2009', gender: 'Male', email: 'edward.j@gmail.com', phone: '+44 7500 500503', parentPhone: '+44 7900 555668', attended: '23 Classes', missed: '1 Class' },
-                { id: 'LSE-STD-2024-030', name: 'Jessica Perry', type: 'One-to-Many', time: 'Thursday • 03:00 PM - 04:30 PM', assignedDate: '2024-03-05', joinDate: '2024-03-05', dob: '18 Aug 2010', gender: 'Female', email: 'jessica.p@gmail.com', phone: '+44 7500 500504', parentPhone: '+44 7900 555669', attended: '21 Classes', missed: '0 Classes' },
-                { id: 'LSE-STD-2024-034', name: 'Toby Coleman', type: 'One-to-Many', time: 'Saturday • 03:00 PM - 04:30 PM', assignedDate: '2024-01-25', joinDate: '2024-01-25', dob: '12 Jan 2011', gender: 'Male', email: 'toby.c@gmail.com', phone: '+44 7500 500505', parentPhone: '+44 7900 555670', attended: '27 Classes', missed: '0 Classes' },
-                { id: 'LSE-STD-2024-043', name: 'Isabelle Brooks', type: 'One-to-One', time: 'Friday • 01:00 PM - 02:30 PM', assignedDate: '2024-03-20', joinDate: '2024-03-20', dob: '23 Sep 2010', gender: 'Female', email: 'isabelle.b@gmail.com', phone: '+44 7500 500506', parentPhone: '+44 7900 555671', attended: '20 Classes', missed: '1 Class' },
-                { id: 'LSE-STD-2024-052', name: 'Gabriel Butler', type: 'One-to-Many', time: 'Tuesday • 03:00 PM - 04:30 PM', assignedDate: '2024-02-08', joinDate: '2024-02-08', dob: '08 Dec 2009', gender: 'Male', email: 'gabriel.b@gmail.com', phone: '+44 7500 500507', parentPhone: '+44 7900 555672', attended: '25 Classes', missed: '1 Class' },
-                { id: 'LSE-STD-2024-057', name: 'Maya Bailey', type: 'One-to-Many', time: 'Thursday • 03:00 PM - 04:30 PM', assignedDate: '2024-01-30', joinDate: '2024-01-30', dob: '14 Apr 2011', gender: 'Female', email: 'maya.b@gmail.com', phone: '+44 7500 500508', parentPhone: '+44 7900 555673', attended: '26 Classes', missed: '0 Classes' },
-                { id: 'LSE-STD-2024-058', name: 'Nathan Kelly', type: 'One-to-One', time: 'Monday • 01:00 PM - 02:30 PM', assignedDate: '2024-03-12', joinDate: '2024-03-12', dob: '27 Jun 2010', gender: 'Male', email: 'nathan.k@gmail.com', phone: '+44 7500 500509', parentPhone: '+44 7900 555674', attended: '22 Classes', missed: '2 Classes' },
-                { id: 'LSE-STD-2024-061', name: 'Zara Simmons', type: 'One-to-Many', time: 'Saturday • 03:00 PM - 04:30 PM', assignedDate: '2024-02-21', joinDate: '2024-02-21', dob: '03 Oct 2011', gender: 'Female', email: 'zara.s@gmail.com', phone: '+44 7500 500510', parentPhone: '+44 7900 555675', attended: '24 Classes', missed: '1 Class' },
-                { id: 'LSE-STD-2024-062', name: 'Caleb Foster', type: 'One-to-Many', time: 'Tuesday • 03:00 PM - 04:30 PM', assignedDate: '2024-01-15', joinDate: '2024-01-15', dob: '19 Feb 2010', gender: 'Male', email: 'caleb.f@gmail.com', phone: '+44 7500 500511', parentPhone: '+44 7900 555676', attended: '28 Classes', missed: '0 Classes' },
-                { id: 'LSE-STD-2024-063', name: 'Lola Patterson', type: 'One-to-One', time: 'Saturday • 01:00 PM - 02:30 PM', assignedDate: '2024-03-24', joinDate: '2024-03-24', dob: '06 May 2011', gender: 'Female', email: 'lola.p@gmail.com', phone: '+44 7500 500512', parentPhone: '+44 7900 555677', attended: '19 Classes', missed: '1 Class' },
-                { id: 'LSE-STD-2024-064', name: 'Isaac Henderson', type: 'One-to-Many', time: 'Thursday • 03:00 PM - 04:30 PM', assignedDate: '2024-02-16', joinDate: '2024-02-16', dob: '11 Aug 2009', gender: 'Male', email: 'isaac.h@gmail.com', phone: '+44 7500 500513', parentPhone: '+44 7900 555678', attended: '25 Classes', missed: '1 Class' },
-                { id: 'LSE-STD-2024-065', name: 'Heidi Reynolds', type: 'One-to-Many', time: 'Saturday • 03:00 PM - 04:30 PM', assignedDate: '2024-01-22', joinDate: '2024-01-22', dob: '22 Nov 2010', gender: 'Female', email: 'heidi.r@gmail.com', phone: '+44 7500 500514', parentPhone: '+44 7900 555679', attended: '27 Classes', missed: '0 Classes' },
-                { id: 'LSE-STD-2024-066', name: 'Dylan Powell', type: 'One-to-One', time: 'Friday • 01:00 PM - 02:30 PM', assignedDate: '2024-03-08', joinDate: '2024-03-08', dob: '15 Jan 2011', gender: 'Male', email: 'dylan.p@gmail.com', phone: '+44 7500 500515', parentPhone: '+44 7900 555680', attended: '21 Classes', missed: '0 Classes' }
+                { id: 'LSE-STD-2024-010', name: 'Liam Jackson', type: 'One-To-One', time: 'Monday • 01:00 PM - 02:30 PM', assignedDate: '2024-03-28', joinDate: '2024-03-28', dob: '15 Jul 2010', gender: 'Male', email: 'liam.j@gmail.com', phone: '+44 7500 500501', parentPhone: '+44 7900 555666', attended: '24 Classes', missed: '0 Classes' },
+                { id: 'LSE-STD-2024-015', name: 'Eleanor Wood', type: 'One-To-Many', time: 'Tuesday • 03:00 PM - 04:30 PM', assignedDate: '2024-01-18', joinDate: '2024-01-18', dob: '29 Mar 2011', gender: 'Female', email: 'eleanor.w@gmail.com', phone: '+44 7500 500502', parentPhone: '+44 7900 555667', attended: '26 Classes', missed: '1 Class' },
+                { id: 'LSE-STD-2024-024', name: 'Edward Jenkins', type: 'One-To-One', time: 'Wednesday • 01:00 PM - 02:30 PM', assignedDate: '2024-02-14', joinDate: '2024-02-14', dob: '04 Nov 2009', gender: 'Male', email: 'edward.j@gmail.com', phone: '+44 7500 500503', parentPhone: '+44 7900 555668', attended: '23 Classes', missed: '1 Class' },
+                { id: 'LSE-STD-2024-030', name: 'Jessica Perry', type: 'One-To-Many', time: 'Thursday • 03:00 PM - 04:30 PM', assignedDate: '2024-03-05', joinDate: '2024-03-05', dob: '18 Aug 2010', gender: 'Female', email: 'jessica.p@gmail.com', phone: '+44 7500 500504', parentPhone: '+44 7900 555669', attended: '21 Classes', missed: '0 Classes' },
+                { id: 'LSE-STD-2024-034', name: 'Toby Coleman', type: 'One-To-Many', time: 'Saturday • 03:00 PM - 04:30 PM', assignedDate: '2024-01-25', joinDate: '2024-01-25', dob: '12 Jan 2011', gender: 'Male', email: 'toby.c@gmail.com', phone: '+44 7500 500505', parentPhone: '+44 7900 555670', attended: '27 Classes', missed: '0 Classes' },
+                { id: 'LSE-STD-2024-043', name: 'Isabelle Brooks', type: 'One-To-One', time: 'Friday • 01:00 PM - 02:30 PM', assignedDate: '2024-03-20', joinDate: '2024-03-20', dob: '23 Sep 2010', gender: 'Female', email: 'isabelle.b@gmail.com', phone: '+44 7500 500506', parentPhone: '+44 7900 555671', attended: '20 Classes', missed: '1 Class' },
+                { id: 'LSE-STD-2024-052', name: 'Gabriel Butler', type: 'One-To-Many', time: 'Tuesday • 03:00 PM - 04:30 PM', assignedDate: '2024-02-08', joinDate: '2024-02-08', dob: '08 Dec 2009', gender: 'Male', email: 'gabriel.b@gmail.com', phone: '+44 7500 500507', parentPhone: '+44 7900 555672', attended: '25 Classes', missed: '1 Class' },
+                { id: 'LSE-STD-2024-057', name: 'Maya Bailey', type: 'One-To-Many', time: 'Thursday • 03:00 PM - 04:30 PM', assignedDate: '2024-01-30', joinDate: '2024-01-30', dob: '14 Apr 2011', gender: 'Female', email: 'maya.b@gmail.com', phone: '+44 7500 500508', parentPhone: '+44 7900 555673', attended: '26 Classes', missed: '0 Classes' },
+                { id: 'LSE-STD-2024-058', name: 'Nathan Kelly', type: 'One-To-One', time: 'Monday • 01:00 PM - 02:30 PM', assignedDate: '2024-03-12', joinDate: '2024-03-12', dob: '27 Jun 2010', gender: 'Male', email: 'nathan.k@gmail.com', phone: '+44 7500 500509', parentPhone: '+44 7900 555674', attended: '22 Classes', missed: '2 Classes' },
+                { id: 'LSE-STD-2024-061', name: 'Zara Simmons', type: 'One-To-Many', time: 'Saturday • 03:00 PM - 04:30 PM', assignedDate: '2024-02-21', joinDate: '2024-02-21', dob: '03 Oct 2011', gender: 'Female', email: 'zara.s@gmail.com', phone: '+44 7500 500510', parentPhone: '+44 7900 555675', attended: '24 Classes', missed: '1 Class' },
+                { id: 'LSE-STD-2024-062', name: 'Caleb Foster', type: 'One-To-Many', time: 'Tuesday • 03:00 PM - 04:30 PM', assignedDate: '2024-01-15', joinDate: '2024-01-15', dob: '19 Feb 2010', gender: 'Male', email: 'caleb.f@gmail.com', phone: '+44 7500 500511', parentPhone: '+44 7900 555676', attended: '28 Classes', missed: '0 Classes' },
+                { id: 'LSE-STD-2024-063', name: 'Lola Patterson', type: 'One-To-One', time: 'Saturday • 01:00 PM - 02:30 PM', assignedDate: '2024-03-24', joinDate: '2024-03-24', dob: '06 May 2011', gender: 'Female', email: 'lola.p@gmail.com', phone: '+44 7500 500512', parentPhone: '+44 7900 555677', attended: '19 Classes', missed: '1 Class' },
+                { id: 'LSE-STD-2024-064', name: 'Isaac Henderson', type: 'One-To-Many', time: 'Thursday • 03:00 PM - 04:30 PM', assignedDate: '2024-02-16', joinDate: '2024-02-16', dob: '11 Aug 2009', gender: 'Male', email: 'isaac.h@gmail.com', phone: '+44 7500 500513', parentPhone: '+44 7900 555678', attended: '25 Classes', missed: '1 Class' },
+                { id: 'LSE-STD-2024-065', name: 'Heidi Reynolds', type: 'One-To-Many', time: 'Saturday • 03:00 PM - 04:30 PM', assignedDate: '2024-01-22', joinDate: '2024-01-22', dob: '22 Nov 2010', gender: 'Female', email: 'heidi.r@gmail.com', phone: '+44 7500 500514', parentPhone: '+44 7900 555679', attended: '27 Classes', missed: '0 Classes' },
+                { id: 'LSE-STD-2024-066', name: 'Dylan Powell', type: 'One-To-One', time: 'Friday • 01:00 PM - 02:30 PM', assignedDate: '2024-03-08', joinDate: '2024-03-08', dob: '15 Jan 2011', gender: 'Male', email: 'dylan.p@gmail.com', phone: '+44 7500 500515', parentPhone: '+44 7900 555680', attended: '21 Classes', missed: '0 Classes' }
             ]
         };
 
         const sessionCatalog = {
-            // Mathematics
-            'math-mon-1000-oto-1': { subject: 'mathematics', type: '1-on-1', time: 'Monday • 10:00 AM - 11:30 AM', studentIds: ['LSE-STD-2024-001'] },
-            'math-mon-1000-oto-2': { subject: 'mathematics', type: '1-on-1', time: 'Monday • 10:00 AM - 11:30 AM', studentIds: ['LSE-STD-2024-029'] },
-            'math-mon-1400-otm':   { subject: 'mathematics', type: '1-to-Many', time: 'Monday • 02:00 PM - 03:30 PM', studentIds: ['LSE-STD-2024-015', 'LSE-STD-2024-060'] },
-            'math-mon-1400-oto':   { subject: 'mathematics', type: '1-on-1', time: 'Monday • 02:00 PM - 03:30 PM', studentIds: ['LSE-STD-2024-056'] },
-            'math-tue-1000-otm':   { subject: 'mathematics', type: '1-to-Many', time: 'Tuesday • 10:00 AM - 11:30 AM', studentIds: ['LSE-STD-2024-004', 'LSE-STD-2024-038'] },
-            'math-wed-1000-oto-1': { subject: 'mathematics', type: '1-on-1', time: 'Wednesday • 10:00 AM - 11:30 AM', studentIds: ['LSE-STD-2024-007'] },
-            'math-wed-1000-oto-2': { subject: 'mathematics', type: '1-on-1', time: 'Wednesday • 10:00 AM - 11:30 AM', studentIds: ['LSE-STD-2024-042'] },
-            'math-wed-1600-otm':   { subject: 'mathematics', type: '1-to-Many', time: 'Wednesday • 04:00 PM - 05:30 PM', studentIds: ['LSE-STD-2024-047'] },
-            'math-thu-1000-otm':   { subject: 'mathematics', type: '1-to-Many', time: 'Thursday • 10:00 AM - 11:30 AM', studentIds: ['LSE-STD-2024-012', 'LSE-STD-2024-022'] },
-            'math-fri-1000-oto':   { subject: 'mathematics', type: '1-on-1', time: 'Friday • 10:00 AM - 11:30 AM', studentIds: ['LSE-STD-2024-018'] },
-            'math-sat-1000-otm':   { subject: 'mathematics', type: '1-to-Many', time: 'Saturday • 10:00 AM - 11:30 AM', studentIds: ['LSE-STD-2024-025', 'LSE-STD-2024-033', 'LSE-STD-2024-051'] },
+            'math-mon-1000-oto-1': { subject: 'mathematics', type: 'One-To-One', time: 'Monday • 10:00 AM - 11:30 AM', studentIds: ['LSE-STD-2024-001'] },
+            'math-mon-1000-oto-2': { subject: 'mathematics', type: 'One-To-One', time: 'Monday • 10:00 AM - 11:30 AM', studentIds: ['LSE-STD-2024-029'] },
+            'math-mon-1400-otm':   { subject: 'mathematics', type: 'One-To-Many', time: 'Monday • 02:00 PM - 03:30 PM', studentIds: ['LSE-STD-2024-015', 'LSE-STD-2024-060'] },
+            'math-mon-1400-oto':   { subject: 'mathematics', type: 'One-To-One', time: 'Monday • 02:00 PM - 03:30 PM', studentIds: ['LSE-STD-2024-056'] },
+            'math-tue-1000-otm':   { subject: 'mathematics', type: 'One-To-Many', time: 'Tuesday • 10:00 AM - 11:30 AM', studentIds: ['LSE-STD-2024-004', 'LSE-STD-2024-038'] },
+            'math-wed-1000-oto-1': { subject: 'mathematics', type: 'One-To-One', time: 'Wednesday • 10:00 AM - 11:30 AM', studentIds: ['LSE-STD-2024-007'] },
+            'math-wed-1000-oto-2': { subject: 'mathematics', type: 'One-To-One', time: 'Wednesday • 10:00 AM - 11:30 AM', studentIds: ['LSE-STD-2024-042'] },
+            'math-wed-1600-otm':   { subject: 'mathematics', type: 'One-To-Many', time: 'Wednesday • 04:00 PM - 05:30 PM', studentIds: ['LSE-STD-2024-047'] },
+            'math-thu-1000-otm':   { subject: 'mathematics', type: 'One-To-Many', time: 'Thursday • 10:00 AM - 11:30 AM', studentIds: ['LSE-STD-2024-012', 'LSE-STD-2024-022'] },
+            'math-fri-1000-oto':   { subject: 'mathematics', type: 'One-To-One', time: 'Friday • 10:00 AM - 11:30 AM', studentIds: ['LSE-STD-2024-018'] },
+            'math-sat-1000-otm':   { subject: 'mathematics', type: 'One-To-Many', time: 'Saturday • 10:00 AM - 11:30 AM', studentIds: ['LSE-STD-2024-025', 'LSE-STD-2024-033', 'LSE-STD-2024-051'] },
 
-            // Physics
-            'phy-mon-1400-otm':   { subject: 'physics', type: '1-to-Many', time: 'Monday • 02:00 PM - 03:30 PM', studentIds: ['LSE-STD-2024-005', 'LSE-STD-2024-023', 'LSE-STD-2024-046'] },
-            'phy-tue-1400-oto-1': { subject: 'physics', type: '1-on-1', time: 'Tuesday • 02:00 PM - 03:30 PM', studentIds: ['LSE-STD-2024-001', 'LSE-STD-2024-002'] },
-            'phy-tue-1400-oto-2': { subject: 'physics', type: '1-on-1', time: 'Tuesday • 02:00 PM - 03:30 PM', studentIds: ['LSE-STD-2024-041'] },
-            'phy-tue-1700-otm':   { subject: 'physics', type: '1-to-Many', time: 'Tuesday • 05:00 PM - 06:30 PM', studentIds: ['LSE-STD-2024-032', 'LSE-STD-2024-059'] },
-            'phy-wed-1400-otm':   { subject: 'physics', type: '1-to-Many', time: 'Wednesday • 02:00 PM - 03:30 PM', studentIds: ['LSE-STD-2024-009', 'LSE-STD-2024-050'] },
-            'phy-thu-1400-oto-1': { subject: 'physics', type: '1-on-1', time: 'Thursday • 02:00 PM - 03:30 PM', studentIds: ['LSE-STD-2024-014'] },
-            'phy-thu-1400-oto-2': { subject: 'physics', type: '1-on-1', time: 'Thursday • 02:00 PM - 03:30 PM', studentIds: ['LSE-STD-2024-055'] },
-            'phy-fri-1400-otm':   { subject: 'physics', type: '1-to-Many', time: 'Friday • 02:00 PM - 03:30 PM', studentIds: ['LSE-STD-2024-019', 'LSE-STD-2024-037'] },
-            'phy-sat-1400-oto':   { subject: 'physics', type: '1-on-1', time: 'Saturday • 02:00 PM - 03:30 PM', studentIds: ['LSE-STD-2024-028'] },
+            'phy-mon-1400-otm':   { subject: 'physics', type: 'One-To-Many', time: 'Monday • 02:00 PM - 03:30 PM', studentIds: ['LSE-STD-2024-005', 'LSE-STD-2024-023', 'LSE-STD-2024-046'] },
+            'phy-tue-1400-oto-1': { subject: 'physics', type: 'One-To-One', time: 'Tuesday • 02:00 PM - 03:30 PM', studentIds: ['LSE-STD-2024-002'] },
+            'phy-tue-1400-oto-2': { subject: 'physics', type: 'One-To-One', time: 'Tuesday • 02:00 PM - 03:30 PM', studentIds: ['LSE-STD-2024-041'] },
+            'phy-tue-1700-otm':   { subject: 'physics', type: 'One-To-Many', time: 'Tuesday • 05:00 PM - 06:30 PM', studentIds: ['LSE-STD-2024-032', 'LSE-STD-2024-059'] },
+            'phy-wed-1400-otm':   { subject: 'physics', type: 'One-To-Many', time: 'Wednesday • 02:00 PM - 03:30 PM', studentIds: ['LSE-STD-2024-009', 'LSE-STD-2024-050'] },
+            'phy-thu-1400-oto-1': { subject: 'physics', type: 'One-To-One', time: 'Thursday • 02:00 PM - 03:30 PM', studentIds: ['LSE-STD-2024-014'] },
+            'phy-thu-1400-oto-2': { subject: 'physics', type: 'One-To-One', time: 'Thursday • 02:00 PM - 03:30 PM', studentIds: ['LSE-STD-2024-055'] },
+            'phy-fri-1400-otm':   { subject: 'physics', type: 'One-To-Many', time: 'Friday • 02:00 PM - 03:30 PM', studentIds: ['LSE-STD-2024-019', 'LSE-STD-2024-037'] },
+            'phy-sat-1400-oto':   { subject: 'physics', type: 'One-To-One', time: 'Saturday • 02:00 PM - 03:30 PM', studentIds: ['LSE-STD-2024-028'] },
 
-            // Chemistry
-            'chem-mon-1600-oto-1': { subject: 'chemistry', type: '1-on-1', time: 'Monday • 04:00 PM - 05:30 PM', studentIds: ['LSE-STD-2024-001', 'LSE-STD-2024-003'] },
-            'chem-mon-1600-oto-2': { subject: 'chemistry', type: '1-on-1', time: 'Monday • 04:00 PM - 05:30 PM', studentIds: ['LSE-STD-2024-045'] },
-            'chem-tue-1600-otm':   { subject: 'chemistry', type: '1-to-Many', time: 'Tuesday • 04:00 PM - 05:30 PM', studentIds: ['LSE-STD-2024-008', 'LSE-STD-2024-026'] },
-            'chem-tue-1800-otm':   { subject: 'chemistry', type: '1-to-Many', time: 'Tuesday • 06:00 PM - 07:30 PM', studentIds: ['LSE-STD-2024-040', 'LSE-STD-2024-049'] },
-            'chem-wed-1600-oto':   { subject: 'chemistry', type: '1-on-1', time: 'Wednesday • 04:00 PM - 05:30 PM', studentIds: ['LSE-STD-2024-017'] },
-            'chem-thu-1600-otm':   { subject: 'chemistry', type: '1-to-Many', time: 'Thursday • 04:00 PM - 05:30 PM', studentIds: ['LSE-STD-2024-013', 'LSE-STD-2024-036'] },
-            'chem-fri-1600-otm':   { subject: 'chemistry', type: '1-to-Many', time: 'Friday • 04:00 PM - 05:30 PM', studentIds: ['LSE-STD-2024-021', 'LSE-STD-2024-054'] },
-            'chem-sat-1600-oto':   { subject: 'chemistry', type: '1-on-1', time: 'Saturday • 04:00 PM - 05:30 PM', studentIds: ['LSE-STD-2024-031'] },
+            'chem-mon-1600-oto-1': { subject: 'chemistry', type: 'One-To-One', time: 'Monday • 04:00 PM - 05:30 PM', studentIds: ['LSE-STD-2024-003'] },
+            'chem-mon-1600-oto-2': { subject: 'chemistry', type: 'One-To-One', time: 'Monday • 04:00 PM - 05:30 PM', studentIds: ['LSE-STD-2024-045'] },
+            'chem-tue-1600-otm':   { subject: 'chemistry', type: 'One-To-Many', time: 'Tuesday • 04:00 PM - 05:30 PM', studentIds: ['LSE-STD-2024-008', 'LSE-STD-2024-026'] },
+            'chem-tue-1800-otm':   { subject: 'chemistry', type: 'One-To-Many', time: 'Tuesday • 06:00 PM - 07:30 PM', studentIds: ['LSE-STD-2024-040', 'LSE-STD-2024-049'] },
+            'chem-wed-1600-oto':   { subject: 'chemistry', type: 'One-To-One', time: 'Wednesday • 04:00 PM - 05:30 PM', studentIds: ['LSE-STD-2024-017'] },
+            'chem-thu-1600-otm':   { subject: 'chemistry', type: 'One-To-Many', time: 'Thursday • 04:00 PM - 05:30 PM', studentIds: ['LSE-STD-2024-013', 'LSE-STD-2024-036'] },
+            'chem-fri-1600-otm':   { subject: 'chemistry', type: 'One-To-Many', time: 'Friday • 04:00 PM - 05:30 PM', studentIds: ['LSE-STD-2024-021', 'LSE-STD-2024-054'] },
+            'chem-sat-1600-oto':   { subject: 'chemistry', type: 'One-To-One', time: 'Saturday • 04:00 PM - 05:30 PM', studentIds: ['LSE-STD-2024-031'] },
 
-            // Computer Science
-            'cs-mon-1300-oto-1': { subject: 'computer-science', type: '1-on-1', time: 'Monday • 01:00 PM - 02:30 PM', studentIds: ['LSE-STD-2024-010'] },
-            'cs-mon-1300-oto-2': { subject: 'computer-science', type: '1-on-1', time: 'Monday • 01:00 PM - 02:30 PM', studentIds: ['LSE-STD-2024-058'] },
-            'cs-tue-1500-otm':   { subject: 'computer-science', type: '1-to-Many', time: 'Tuesday • 03:00 PM - 04:30 PM', studentIds: ['LSE-STD-2024-015', 'LSE-STD-2024-052', 'LSE-STD-2024-062'] },
-            'cs-wed-1300-oto':   { subject: 'computer-science', type: '1-on-1', time: 'Wednesday • 01:00 PM - 02:30 PM', studentIds: ['LSE-STD-2024-024'] },
-            'cs-thu-1500-otm':   { subject: 'computer-science', type: '1-to-Many', time: 'Thursday • 03:00 PM - 04:30 PM', studentIds: ['LSE-STD-2024-030', 'LSE-STD-2024-057', 'LSE-STD-2024-064'] },
-            'cs-fri-1300-oto-1': { subject: 'computer-science', type: '1-on-1', time: 'Friday • 01:00 PM - 02:30 PM', studentIds: ['LSE-STD-2024-043'] },
-            'cs-fri-1300-oto-2': { subject: 'computer-science', type: '1-on-1', time: 'Friday • 01:00 PM - 02:30 PM', studentIds: ['LSE-STD-2024-066'] },
-            'cs-sat-1300-oto':   { subject: 'computer-science', type: '1-on-1', time: 'Saturday • 01:00 PM - 02:30 PM', studentIds: ['LSE-STD-2024-001', 'LSE-STD-2024-063'] },
-            'cs-sat-1500-otm':   { subject: 'computer-science', type: '1-to-Many', time: 'Saturday • 03:00 PM - 04:30 PM', studentIds: ['LSE-STD-2024-034', 'LSE-STD-2024-061', 'LSE-STD-2024-065'] }
+            'cs-mon-1300-oto-1': { subject: 'computer-science', type: 'One-To-One', time: 'Monday • 01:00 PM - 02:30 PM', studentIds: ['LSE-STD-2024-010'] },
+            'cs-mon-1300-oto-2': { subject: 'computer-science', type: 'One-To-One', time: 'Monday • 01:00 PM - 02:30 PM', studentIds: ['LSE-STD-2024-058'] },
+            'cs-tue-1500-otm':   { subject: 'computer-science', type: 'One-To-Many', time: 'Tuesday • 03:00 PM - 04:30 PM', studentIds: ['LSE-STD-2024-015', 'LSE-STD-2024-052', 'LSE-STD-2024-062'] },
+            'cs-wed-1300-oto':   { subject: 'computer-science', type: 'One-To-One', time: 'Wednesday • 01:00 PM - 02:30 PM', studentIds: ['LSE-STD-2024-024'] },
+            'cs-thu-1500-otm':   { subject: 'computer-science', type: 'One-To-Many', time: 'Thursday • 03:00 PM - 04:30 PM', studentIds: ['LSE-STD-2024-030', 'LSE-STD-2024-057', 'LSE-STD-2024-064'] },
+            'cs-fri-1300-oto-1': { subject: 'computer-science', type: 'One-To-One', time: 'Friday • 01:00 PM - 02:30 PM', studentIds: ['LSE-STD-2024-043'] },
+            'cs-fri-1300-oto-2': { subject: 'computer-science', type: 'One-To-One', time: 'Friday • 01:00 PM - 02:30 PM', studentIds: ['LSE-STD-2024-066'] },
+            'cs-sat-1300-oto':   { subject: 'computer-science', type: 'One-To-One', time: 'Saturday • 01:00 PM - 02:30 PM', studentIds: ['LSE-STD-2024-063'] },
+            'cs-sat-1500-otm':   { subject: 'computer-science', type: 'One-To-Many', time: 'Saturday • 03:00 PM - 04:30 PM', studentIds: ['LSE-STD-2024-034', 'LSE-STD-2024-061', 'LSE-STD-2024-065'] }
         };
 
         const subjectTitles = {
@@ -2243,7 +2196,6 @@
         let currentSessionFilter = null;
         let isAscending = true;
 
-        // Toggle Subject & Auto-scroll down to bottom table
         function toggleSubject(key) {
             const rosterContainer = document.getElementById('roster-section-container');
 
@@ -2279,7 +2231,6 @@
             }, 100);
         }
 
-        // Triggered when a 1-on-1 or 1-to-Many pill button is clicked in any timetable slot
         function openSessionPopup(event, subjectKey, sessionId) {
             if (event) {
                 event.preventDefault();
@@ -2289,7 +2240,6 @@
             const session = sessionCatalog[sessionId];
             if (!session) return;
 
-            // Highlight active subject card
             currentSubjectKey = subjectKey;
             document.querySelectorAll('.subject-card').forEach(c => c.classList.remove('active-subject'));
             document.querySelectorAll('.active-indicator').forEach(i => i.style.display = 'none');
@@ -2300,13 +2250,11 @@
             const subjectList = studentDatasets[subjectKey] || [];
             const enrolledStudents = subjectList.filter(s => session.studentIds.includes(s.id));
 
-            if (session.type === '1-on-1') {
-                // EXACTLY 1 STUDENT POPUP MODAL
+            if (session.type === 'One-To-One') {
                 if (enrolledStudents.length > 0) {
                     openDetailModal(enrolledStudents[0].id, subjectKey);
                 }
             } else {
-                // ONE-TO-MANY POPUP MODAL SHOWING LIST OF ENROLLED STUDENTS IN THIS TIME SLOT
                 openGroupModal(session, enrolledStudents, subjectKey);
             }
         }
@@ -2366,12 +2314,12 @@
         function updateTypeFilterBadges() {
             if (!currentSubjectKey) return;
             const students = studentDatasets[currentSubjectKey] || [];
-            document.getElementById('badge-filter-one-to-one').textContent = students.filter(s => s.type === 'One-to-One').length;
-            document.getElementById('badge-filter-one-to-many').textContent = students.filter(s => s.type === 'One-to-Many').length;
+            document.getElementById('badge-filter-one-to-one').textContent = students.filter(s => s.type.toLowerCase() === 'one-to-one').length;
+            document.getElementById('badge-filter-one-to-many').textContent = students.filter(s => s.type.toLowerCase() === 'one-to-many').length;
         }
 
         function toggleTypeFilter(type) {
-            currentTypeFilter = currentTypeFilter === type ? 'all' : type;
+            currentTypeFilter = currentTypeFilter.toLowerCase() === type.toLowerCase() ? 'all' : type;
             renderRoster();
         }
 
@@ -2381,8 +2329,8 @@
             const tableBody = document.getElementById('student-table-body');
             const searchVal = (document.getElementById('student-search-input')?.value || '').toLowerCase().trim();
 
-            document.getElementById('filter-btn-one-to-one')?.classList.toggle('active', currentTypeFilter === 'One-to-One');
-            document.getElementById('filter-btn-one-to-many')?.classList.toggle('active', currentTypeFilter === 'One-to-Many');
+            document.getElementById('filter-btn-one-to-one')?.classList.toggle('active', currentTypeFilter.toLowerCase() === 'one-to-one');
+            document.getElementById('filter-btn-one-to-many')?.classList.toggle('active', currentTypeFilter.toLowerCase() === 'one-to-many');
 
             let list = [...(studentDatasets[currentSubjectKey] || [])];
 
@@ -2391,7 +2339,7 @@
             }
 
             if (currentTypeFilter !== 'all') {
-                list = list.filter(item => item.type === currentTypeFilter);
+                list = list.filter(item => item.type.toLowerCase() === currentTypeFilter.toLowerCase());
             }
 
             if (searchVal !== '') {
@@ -2412,12 +2360,13 @@
 
             list.forEach((student, index) => {
                 const sno = (index + 1) < 10 ? `0${index + 1}` : index + 1;
+                const isOneToOne = student.type.toLowerCase() === 'one-to-one';
                 const tr = document.createElement('tr');
                 tr.innerHTML = `
                     <td style="text-align: center;"><span class="sno-badge">${sno}</span></td>
                     <td><strong>${student.name}</strong></td>
                     <td style="text-align: center;">
-                        <span class="type-pill ${student.type === 'One-to-One' ? 'type-one-to-one' : 'type-one-to-many'}">
+                        <span class="type-pill ${isOneToOne ? 'type-one-to-one' : 'type-one-to-many'}">
                             ${student.type}
                         </span>
                     </td>
@@ -2441,7 +2390,6 @@
             renderRoster();
         }
 
-        // Student Profile Modal
         function openDetailModal(studentId, subjectKey) {
             if (subjectKey) {
                 currentSubjectKey = subjectKey;
@@ -2515,32 +2463,6 @@
             }
         });
     </script>
-
-    <!-- JS ============================================ -->
-    <script src="assets/js/vendor/modernizr.min.js"></script>
-    <script src="assets/js/vendor/jquery.js"></script>
-    <script src="assets/js/vendor/bootstrap.min.js"></script>
-    <script src="assets/js/vendor/sal.js"></script>
-    <script src="assets/js/vendor/swiper.js"></script>
-    <script src="assets/js/vendor/magnify.min.js"></script>
-    <script src="assets/js/vendor/jquery-appear.js"></script>
-    <script src="assets/js/vendor/odometer.js"></script>
-    <script src="assets/js/vendor/backtotop.js"></script>
-    <script src="assets/js/vendor/isotop.js"></script>
-    <script src="assets/js/vendor/imageloaded.js"></script>
-    <script src="assets/js/vendor/wow.js"></script>
-    <script src="assets/js/vendor/waypoint.min.js"></script>
-    <script src="assets/js/vendor/easypie.js"></script>
-    <script src="assets/js/vendor/text-type.js"></script>
-    <script src="assets/js/vendor/jquery-one-page-nav.js"></script>
-    <script src="assets/js/vendor/bootstrap-select.min.js"></script>
-    <script src="assets/js/vendor/jquery-ui.js"></script>
-    <script src="assets/js/vendor/magnify-popup.min.js"></script>
-    <script src="assets/js/vendor/paralax-scroll.js"></script>
-    <script src="assets/js/vendor/paralax.min.js"></script>
-    <script src="assets/js/vendor/countdown.js"></script>
-    <script src="assets/js/vendor/plyr.js"></script>
-    <script src="assets/js/main.js"></script>
 </body>
 
 </html>

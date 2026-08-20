@@ -34,7 +34,7 @@
     <!-- Teacher Profile Professional Styles -->
     <style>
         /* =========================================================
-           BANNER STYLING & COMPACT RESPONSIVE SCALING
+            BANNER STYLING & COMPACT RESPONSIVE SCALING
         ========================================================= */
         .slider-area.rbt-banner-10 {
             margin-top: 0 !important;
@@ -83,7 +83,7 @@
             }
         }
 
-        /* Icon Font Protection - Ensure feather and fontawesome icons always render */
+        /* Icon Font Protection */
         i[class^="feather-"],
         i[class*=" feather-"],
         span[class^="feather-"],
@@ -223,7 +223,7 @@
             }
         }
 
-        .teacher-badge-id i,
+        .teacher-meta-item i,
         .student-badge-id i,
         .profile-info-icon i,
         .teacher-details-title-left i,
@@ -295,7 +295,7 @@
             width: 15px;
             height: 15px;
             border-radius: 50%;
-            background: #16c763;
+            background: #2f57ef;
             border: 2.5px solid #ffffff;
         }
 
@@ -305,54 +305,42 @@
         }
 
         .teacher-user-info h3 {
-            margin: 0 0 6px;
+            margin: 0 0 4px;
             font-size: 26px !important;
             font-weight: 700 !important;
             font-family: var(--font-primary) !important;
             color: #192335 !important;
         }
 
+        /* Clean, Borderless & Screen-Friendly Meta Items */
         .teacher-meta-badges {
             display: flex;
             align-items: center;
             flex-wrap: wrap;
-            gap: 8px;
+            row-gap: 4px;
+            column-gap: 8px;
         }
 
-        .teacher-badge-id {
+        .teacher-meta-item {
             display: inline-flex;
             align-items: center;
-            gap: 6px;
-            background: #ffffff;
-            border: 1px solid #e0dbff;
-            color: #6c4df6;
-            font-size: 17px !important;
+            gap: 5px;
+            color: #5541b8;
+            font-size: 15px !important;
             font-weight: 500 !important;
             font-family: var(--font-primary) !important;
-            padding: 4px 10px;
-            border-radius: 6px;
-            white-space: nowrap !important;
-            flex-shrink: 0;
+            line-height: 1.4;
         }
 
-        .teacher-badge-id i {
+        .teacher-meta-item i {
             color: #6c4df6;
-            font-size: 13.5px;
+            font-size: 14px;
         }
 
-        .teacher-badge-status {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            background: #e8fbf1;
-            color: #16c763;
-            font-size: 17px !important;
-            font-weight: 500 !important;
-            font-family: var(--font-primary) !important;
-            padding: 4px 10px;
-            border-radius: 6px;
-            white-space: nowrap !important;
-            flex-shrink: 0;
+        .teacher-meta-badges .meta-divider {
+            color: #c4bbf5;
+            font-weight: 600;
+            user-select: none;
         }
 
         .teacher-hero-stats {
@@ -574,43 +562,17 @@
             font-size: 17px !important;
         }
 
-        .subject-time {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            padding: 5px 12px;
-            border-radius: 6px;
-            background: #f5f5f7;
-            color: #475569 !important;
-            font-weight: 500 !important;
-            font-size: 16px !important;
-        }
-
-        .subject-time i {
-            color: #6c4df6;
-        }
-
         .student-count-badge {
             display: inline-flex;
             align-items: center;
             gap: 6px;
             padding: 5px 12px;
             border-radius: 6px;
-            background: #e8fbf1;
-            color: #16c763 !important;
+            background: #f3f0ff;
+            color: #6c4df6 !important;
             font-weight: 600 !important;
             font-size: 16px !important;
-            border: 1px solid #c3f5db;
-        }
-
-        .sidebar-icon-svg {
-            width: 20px !important;
-            height: 20px !important;
-            min-width: 20px !important;
-            margin: 0 !important;
-            vertical-align: middle !important;
-            flex: 0 0 20px !important;
-            display: block !important;
+            border: 1px solid #e0dbff;
         }
 
         @media (max-width: 767px) {
@@ -618,6 +580,20 @@
                 flex-direction: column;
                 align-items: flex-start;
                 padding: 18px 16px;
+            }
+
+            .teacher-profile-user {
+                width: 100%;
+            }
+
+            .teacher-meta-badges .meta-divider {
+                display: none;
+            }
+
+            .teacher-meta-badges {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 4px;
             }
 
             .teacher-hero-stats {
@@ -651,260 +627,6 @@
 
         .teacher-details-card p {
             font-size: 18px !important;
-        }
-
-        /* Modal Styles */
-        .student-modal-btn {
-            border: none;
-            outline: none;
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-
-        .student-modal-btn:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 4px 12px rgba(22, 199, 99, 0.25);
-            background: #d3f7e3 !important;
-        }
-
-        .student-modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(15, 23, 42, 0.65);
-            backdrop-filter: blur(5px);
-            -webkit-backdrop-filter: blur(5px);
-            z-index: 999999;
-            display: none;
-            align-items: center;
-            justify-content: center;
-            padding: 16px;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.25s ease, visibility 0.25s ease;
-        }
-
-        .student-modal-overlay.active {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .student-modal-dialog {
-            background: #ffffff;
-            border-radius: 14px;
-            width: 100%;
-            max-width: 740px;
-            max-height: 88vh;
-            display: flex;
-            flex-direction: column;
-            box-shadow: 0 20px 50px rgba(15, 23, 42, 0.22);
-            border: 1px solid #e2e8f0;
-            overflow: hidden;
-            transform: scale(0.95) translateY(12px);
-            transition: transform 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
-        }
-
-        .student-modal-overlay.active .student-modal-dialog {
-            transform: scale(1) translateY(0);
-        }
-
-        .student-modal-header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 18px 22px;
-            border-bottom: 1px solid #e2e8f0;
-            background: linear-gradient(135deg, #f8f9ff 0%, #f3f0ff 100%);
-        }
-
-        .student-modal-header-left {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .student-modal-icon {
-            width: 42px;
-            height: 42px;
-            border-radius: 10px;
-            background: #ffffff;
-            color: #6c4df6;
-            border: 1px solid #e0dbff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 10px rgba(108, 77, 246, 0.1);
-            flex-shrink: 0;
-            font-size: 18px;
-        }
-
-        .student-modal-close {
-            width: 34px;
-            height: 34px;
-            border-radius: 50%;
-            border: 1px solid #e2e8f0;
-            background: #ffffff;
-            color: #64748b;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-
-        .student-modal-close:hover {
-            background: #fee2e2;
-            color: #ef4444;
-            border-color: #fca5a5;
-            transform: rotate(90deg);
-        }
-
-        /* Filter Toolbar */
-        .student-modal-filter-bar {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 12px 22px;
-            background: #fbfbfe;
-            border-bottom: 1px solid #f0edf8;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .modal-filter-label {
-            font-size: 13px !important;
-            font-weight: 600 !important;
-            color: #64748b !important;
-            text-transform: uppercase;
-            letter-spacing: 0.04em;
-        }
-
-        .student-modal-filter-group {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            flex-wrap: wrap;
-        }
-
-        .modal-filter-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-size: 17px !important;
-            font-weight: 500 !important;
-            background: #ffffff;
-            border: 1px solid #e2e8f0;
-            color: #475569;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            user-select: none;
-        }
-
-        .modal-filter-btn:hover {
-            background: #f1edff;
-            border-color: #d6d0ff;
-            color: #6c4df6;
-        }
-
-        .modal-filter-btn.active {
-            background: #6c4df6 !important;
-            border-color: #6c4df6 !important;
-            color: #ffffff !important;
-            font-weight: 600 !important;
-            box-shadow: 0 4px 12px rgba(108, 77, 246, 0.25);
-        }
-
-        .modal-filter-btn .btn-badge {
-            background: rgba(0, 0, 0, 0.08);
-            padding: 1px 7px;
-            border-radius: 12px;
-            font-size: 12px;
-            font-weight: 600;
-        }
-
-        .modal-filter-btn.active .btn-badge {
-            background: rgba(255, 255, 255, 0.25);
-            color: #ffffff;
-        }
-
-        .student-modal-body {
-            padding: 18px 22px;
-            overflow-y: auto;
-            max-height: calc(88vh - 200px);
-        }
-
-        .student-modal-table-wrap {
-            border: 1px solid #e2e8f0;
-            border-radius: 10px;
-            overflow: hidden;
-        }
-
-        .student-modal-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 0;
-        }
-
-        .student-modal-table thead th {
-            background: #f8fafc;
-            color: #1e293b !important;
-            font-size: 17px !important;
-            font-weight: 600 !important;
-            padding: 12px 16px;
-            border-bottom: 1px solid #e2e8f0;
-            text-transform: uppercase;
-            letter-spacing: 0.04em;
-        }
-
-        .student-modal-table tbody td {
-            padding: 12px 16px;
-            font-size: 16px !important;
-            color: #334155 !important;
-            border-bottom: 1px solid #f1f5f9;
-            vertical-align: middle;
-        }
-
-        .student-modal-table tbody tr:last-child td {
-            border-bottom: none;
-        }
-
-        .student-modal-table tbody tr:hover {
-            background: #f8faff;
-        }
-
-        .type-pill {
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-            padding: 3px 10px;
-            border-radius: 16px;
-            font-size: 13px !important;
-            font-weight: 600 !important;
-        }
-
-        .type-one-to-one {
-            background: #ede9fe;
-            color: #6d28d9 !important;
-            border: 1px solid #ddd6fe;
-        }
-
-        .type-one-to-many {
-            background: #e0f2fe;
-            color: #0369a1 !important;
-            border: 1px solid #bae6fd;
-        }
-
-        .student-modal-footer {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 12px 22px;
-            border-top: 1px solid #e2e8f0;
-            background: #ffffff;
         }
     </style>
 </head>
@@ -994,8 +716,7 @@
                                 class="feather-x"></i></button>
                     </div>
                 </div>
-                <p class="description">London Star Education provides high-quality online tuition and educational
-                    support.</p>
+                <p class="description">London Star Education provides high-quality online tuition and educational support.</p>
                 <ul class="navbar-top-left rbt-information-list justify-content-start">
                     <li>
                         <a href="mailto:info@londonstaredu.com"><i class="feather-mail"></i>info@londonstaredu.com</a>
@@ -1067,7 +788,7 @@
                                         <div class="rbt-default-sidebar-wrapper">
 
                                             <div class="section-title mb--20">
-                                                <h6 class="rbt-title-style-2">Welcome, Ruben</h6>
+                                                <h6 class="rbt-title-style-2" id="sidebar-welcome-text">Welcome, Ruben</h6>
                                             </div>
 
                                             <nav class="mainmenu-nav">
@@ -1141,21 +862,24 @@
                                     <div class="teacher-profile-hero">
                                         <div class="teacher-profile-user">
                                             <div class="teacher-avatar-badge">
-                                                <span>R</span>
+                                                <span id="hero-avatar-initial">R</span>
                                                 <span class="status-dot" title="Active Educator"></span>
                                             </div>
                                             <div class="teacher-user-info">
-                                                <h3>Ruben</h3>
+                                                <h3 id="hero-teacher-name">Ruben</h3>
+                                                
+                                                <!-- Clean Subtitle Meta Without Heavy Box Borders -->
                                                 <div class="teacher-meta-badges">
-                                                    <span class="teacher-badge-id">
-                                                        <i class="feather-hash"></i> LSE-TUT-2001-008
+                                                    <span class="teacher-meta-item">
+                                                        <i class="feather-hash"></i> <span id="hero-tutor-id">LSE-TUT-2001-008</span>
                                                     </span>
-                                                    <span class="teacher-badge-id">
-                                                        <i class="feather-award"></i> Computer Systems Engineer
+                                                    <span class="meta-divider">•</span>
+                                                    <span class="teacher-meta-item">
+                                                        <i class="feather-award"></i> <span id="hero-tutor-designation">Computer Systems Engineer</span>
                                                     </span>
-                                                    <span class="teacher-badge-id">
-                                                        <i class="feather-calendar"></i> Tutoring Since 2001 (20+ Years
-                                                        Exp)
+                                                    <span class="meta-divider">•</span>
+                                                    <span class="teacher-meta-item">
+                                                        <i class="feather-calendar"></i> <span id="hero-tutor-exp">Tutoring Since 2001 (20+ Years Exp)</span>
                                                     </span>
                                                 </div>
                                             </div>
@@ -1173,25 +897,21 @@
                                         </div>
                                     </div>
 
-                                    <!-- 1. SUBJECTS HANDLED / ASSIGNED STUDENTS -->
+                                    <!-- 1. SUBJECTS HANDLED -->
                                     <div class="teacher-details-card mt-0">
                                         <div class="teacher-details-title">
                                             <div class="teacher-details-title-left">
                                                 <i class="feather-book-open"></i>
                                                 <h5>Subjects Handled</h5>
                                             </div>
-                                            <span class="teacher-badge-status">
-                                                <i class="feather-check-circle"></i> 4 Active Subjects
-                                            </span>
                                         </div>
 
                                         <div class="subject-table-wrapper">
                                             <table class="subject-table">
                                                 <thead>
                                                     <tr>
-                                                        <th style="width: 28%;">Course Name</th>
-                                                        <th style="width: 26%;">Assigned Students</th>
-                                                        <th style="width: 46%;">Class Schedule</th>
+                                                        <th style="width: 50%;">Course Name</th>
+                                                        <th style="width: 50%;">Assigned Students</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
@@ -1205,25 +925,12 @@
                                                             </div>
                                                         </td>
                                                         <td>
-                                                            <button type="button"
-                                                                class="student-count-badge student-modal-btn"
-                                                                onclick="openStudentModal('mathematics')"
-                                                                title="Click to view enrolled students">
+                                                            <span class="student-count-badge">
                                                                 <i class="feather-users"></i>
                                                                 <span>16 Students</span>
-                                                                <i class="feather-external-link"
-                                                                    style="font-size: 13px; margin-left: 4px; opacity: 0.85;"></i>
-                                                            </button>
-                                                        </td>
-                                                        <td>
-                                                            <span class="subject-time">
-                                                                <i class="feather-clock"></i>
-                                                                • Mon-Sat (10:00 AM) <br> • Mon (02:00 PM) <br> • Wed
-                                                                (04:00 PM)
                                                             </span>
                                                         </td>
                                                     </tr>
-
                                                     <tr>
                                                         <td>
                                                             <div class="subject-badge-icon">
@@ -1234,25 +941,12 @@
                                                             </div>
                                                         </td>
                                                         <td>
-                                                            <button type="button"
-                                                                class="student-count-badge student-modal-btn"
-                                                                onclick="openStudentModal('physics')"
-                                                                title="Click to view enrolled students">
+                                                            <span class="student-count-badge">
                                                                 <i class="feather-users"></i>
                                                                 <span>14 Students</span>
-                                                                <i class="feather-external-link"
-                                                                    style="font-size: 13px; margin-left: 4px; opacity: 0.85;"></i>
-                                                            </button>
-                                                        </td>
-                                                        <td>
-                                                            <span class="subject-time">
-                                                                <i class="feather-clock"></i>
-                                                                • Mon-Sat (02:00 PM - 03:30 PM) <br> • Tue (05:00 PM -
-                                                                06:30 PM)
                                                             </span>
                                                         </td>
                                                     </tr>
-
                                                     <tr>
                                                         <td>
                                                             <div class="subject-badge-icon">
@@ -1263,25 +957,12 @@
                                                             </div>
                                                         </td>
                                                         <td>
-                                                            <button type="button"
-                                                                class="student-count-badge student-modal-btn"
-                                                                onclick="openStudentModal('chemistry')"
-                                                                title="Click to view enrolled students">
+                                                            <span class="student-count-badge">
                                                                 <i class="feather-users"></i>
                                                                 <span>12 Students</span>
-                                                                <i class="feather-external-link"
-                                                                    style="font-size: 13px; margin-left: 4px; opacity: 0.85;"></i>
-                                                            </button>
-                                                        </td>
-                                                        <td>
-                                                            <span class="subject-time">
-                                                                <i class="feather-clock"></i>
-                                                                • Mon-Sat (04:00 PM - 05:30 PM) <br> • Tue (06:00 PM -
-                                                                07:30 PM)
                                                             </span>
                                                         </td>
                                                     </tr>
-
                                                     <tr>
                                                         <td>
                                                             <div class="subject-badge-icon">
@@ -1292,21 +973,9 @@
                                                             </div>
                                                         </td>
                                                         <td>
-                                                            <button type="button"
-                                                                class="student-count-badge student-modal-btn"
-                                                                onclick="openStudentModal('computer-science')"
-                                                                title="Click to view enrolled students">
+                                                            <span class="student-count-badge">
                                                                 <i class="feather-users"></i>
                                                                 <span>15 Students</span>
-                                                                <i class="feather-external-link"
-                                                                    style="font-size: 13px; margin-left: 4px; opacity: 0.85;"></i>
-                                                            </button>
-                                                        </td>
-                                                        <td>
-                                                            <span class="subject-time">
-                                                                <i class="feather-clock"></i>
-                                                                • Mon, Wed, Fri, Sat (01:00 PM) <br> • Tue, Thu, Sat
-                                                                (03:00 PM)
                                                             </span>
                                                         </td>
                                                     </tr>
@@ -1335,8 +1004,8 @@
                                                     <i class="feather-user"></i>
                                                 </div>
                                                 <div class="profile-info-content">
-                                                    <div class="profile-info-label">First Name</div>
-                                                    <div class="profile-info-val">Ruben</div>
+                                                    <div class="profile-info-label">Full Name</div>
+                                                    <div class="profile-info-val" id="profile-fullname">Ruben</div>
                                                 </div>
                                             </div>
 
@@ -1346,7 +1015,7 @@
                                                 </div>
                                                 <div class="profile-info-content">
                                                     <div class="profile-info-label">Profession / Background</div>
-                                                    <div class="profile-info-val">Computer Systems Engineer</div>
+                                                    <div class="profile-info-val" id="profile-designation">Computer Systems Engineer</div>
                                                 </div>
                                             </div>
 
@@ -1356,7 +1025,7 @@
                                                 </div>
                                                 <div class="profile-info-content">
                                                     <div class="profile-info-label">Email Address</div>
-                                                    <div class="profile-info-val">ruben@londonstaredu.com</div>
+                                                    <div class="profile-info-val" id="profile-email">ruben@londonstaredu.com</div>
                                                 </div>
                                             </div>
 
@@ -1366,7 +1035,7 @@
                                                 </div>
                                                 <div class="profile-info-content">
                                                     <div class="profile-info-label">Phone Number</div>
-                                                    <div class="profile-info-val">+44 7900 889900</div>
+                                                    <div class="profile-info-val" id="profile-phone">+44 7900 889900</div>
                                                 </div>
                                             </div>
 
@@ -1376,8 +1045,7 @@
                                                 </div>
                                                 <div class="profile-info-content">
                                                     <div class="profile-info-label">Role &amp; Specialization</div>
-                                                    <div class="profile-info-val">Senior STEM Educator &amp; Computer
-                                                        Systems Engineer</div>
+                                                    <div class="profile-info-val" id="profile-skill">Senior STEM Educator &amp; Computer Systems Engineer</div>
                                                 </div>
                                             </div>
 
@@ -1402,39 +1070,15 @@
                                             </div>
                                         </div>
 
-                                        <div class="profile-info-val" style="line-height: 1.8;">
-                                            <p
-                                                style="margin-bottom: 14px; font-weight: 400; color: #374151; font-size: 18px;">
+                                        <div class="profile-info-val" id="profile-bio-container" style="line-height: 1.8;">
+                                            <p style="margin-bottom: 14px; font-weight: 400; color: #374151; font-size: 18px;">
                                                 With over two decades of dedicated experience in education and a robust
                                                 professional background in engineering, I offer a unique and
                                                 comprehensive tutoring experience. Since 2001, I have been committed to
                                                 helping students excel across a wide range of academic levels, from Year
                                                 7 through to A-Levels, specialising in Mathematics, Physics, Chemistry,
-                                                Biology, and Computer Science. My long standing tenure in tutoring has
-                                                allowed me to refine my teaching methods, ensuring that complex concepts
-                                                are broken down into manageable and engaging lessons tailored to each
-                                                student’s individual learning style.</p>
-                                            <p
-                                                style="margin-bottom: 14px; font-weight: 400; color: #374151; font-size: 18px;">
-                                                By profession, I am a Computer Systems Engineer, which provides me with
-                                                a practical, real-world perspective on the subjects I teach. I don’t
-                                                just teach theory, I demonstrate how these principles are applied in the
-                                                modern technology and engineering sectors, helping students understand
-                                                the “why” behind their studies and inspiring them toward future career
-                                                paths in STEM. My goal is to build confidence and foster a deep
-                                                understanding of the subject matter, whether a student is looking to
-                                                bridge foundational gaps or aiming for top marks in their A-Levels.</p>
-                                            <p
-                                                style="margin-bottom: 0; font-weight: 400; color: #374151; font-size: 18px;">
-                                                Throughout my career, I have developed a particular expertise and
-                                                passion for working with students with special educational needs. I
-                                                understand that every learner processes information differently, and I
-                                                take pride in my ability to adapt my communication and teaching
-                                                strategies to provide a supportive, patient, and inclusive environment.
-                                                By building strong rapport and utilizing tailored pedagogical
-                                                approaches, I have successfully helped many students with diverse
-                                                learning requirements overcome academic hurdles and build the confidence
-                                                necessary for long-term success.</p>
+                                                Biology, and Computer Science.
+                                            </p>
                                         </div>
                                     </div>
 
@@ -1466,8 +1110,10 @@
                                     <img src="assets/images/logo/logo.png" alt="Edu-Loop Sign Logo">
                                 </a>
                             </div>
+
                             <p class="description mt--20">We are always seeking talented and motivated individuals to
                                 join our team.</p>
+
                             <ul class="social-icon social-default justify-content-start">
                                 <li><a href="https://www.facebook.com/"><svg xmlns="http://www.w3.org/2000/svg"
                                             width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -1535,13 +1181,11 @@
                             <h5 class="ft-title">Get Contact</h5>
                             <ul class="ft-link">
                                 <li><span>Phone:</span> <a href="#">(406) 555-0120</a></li>
-                                <li><span>E-mail:</span> <a
-                                        href="mailto:info@londonstaredu.com">info@londonstaredu.com</a></li>
+                                <li><span>E-mail:</span> <a href="mailto:info@londonstaredu.com">info@londonstaredu.com</a></li>
                             </ul>
                             <div class="newsletter-form mt--20">
                                 <h6 class="w-600">Location</h6>
-                                <p class="description">2000+ Our students are subscribe Around the World.<br> Don’t be
-                                    shy introduce yourself!</p>
+                                <p class="description">2000+ Our students are subscribe Around the World.<br> Don’t be shy introduce yourself!</p>
                             </div>
                         </div>
                     </div>
@@ -1559,8 +1203,7 @@
                         </p>
                     </div>
                     <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-12 col-12">
-                        <ul
-                            class="copyright-link rbt-link-hover justify-content-center justify-content-lg-end mt_sm--10 mt_md--10">
+                        <ul class="copyright-link rbt-link-hover justify-content-center justify-content-lg-end mt_sm--10 mt_md--10">
                             <li><a href="#">Terms of service</a></li>
                             <li><a href="privacy-policy.html">Privacy policy</a></li>
                         </ul>
@@ -1620,8 +1263,84 @@
     <script src="assets/js/vendor/plyr.js"></script>
     <script src="assets/js/main.js"></script>
 
+    <!-- Dynamic Profile Loading Script -->
     <script>
         document.addEventListener("DOMContentLoaded", function () {
+            // Retrieve Saved Profile from localStorage
+            const savedProfile = JSON.parse(localStorage.getItem("lse_tutor_profile"));
+
+            if (savedProfile) {
+                // Construct Full Name
+                const firstName = savedProfile.firstName || "Ruben";
+                const lastName = savedProfile.lastName ? ` ${savedProfile.lastName}` : "";
+                const fullName = `${firstName}${lastName}`;
+
+                // Update Hero Header Meta Details
+                const heroNameEl = document.getElementById("hero-teacher-name");
+                if (heroNameEl) heroNameEl.textContent = fullName;
+
+                const avatarInitialEl = document.getElementById("hero-avatar-initial");
+                if (avatarInitialEl && firstName) {
+                    avatarInitialEl.textContent = firstName.charAt(0).toUpperCase();
+                }
+
+                const heroTutorIdEl = document.getElementById("hero-tutor-id");
+                if (heroTutorIdEl && savedProfile.tutorId) {
+                    heroTutorIdEl.textContent = savedProfile.tutorId;
+                }
+
+                const heroDesignationEl = document.getElementById("hero-tutor-designation");
+                if (heroDesignationEl && savedProfile.designation) {
+                    heroDesignationEl.textContent = savedProfile.designation;
+                }
+
+                const heroExpEl = document.getElementById("hero-tutor-exp");
+                if (heroExpEl && savedProfile.tutorExp) {
+                    heroExpEl.textContent = savedProfile.tutorExp;
+                }
+
+                // Update Sidebar Welcome Message
+                const sidebarWelcomeEl = document.getElementById("sidebar-welcome-text");
+                if (sidebarWelcomeEl) {
+                    sidebarWelcomeEl.textContent = `Welcome, ${firstName}`;
+                }
+
+                // Update Personal Details Card
+                const profileFullNameEl = document.getElementById("profile-fullname");
+                if (profileFullNameEl) profileFullNameEl.textContent = fullName;
+
+                const profileDesignationEl = document.getElementById("profile-designation");
+                if (profileDesignationEl && savedProfile.designation) {
+                    profileDesignationEl.textContent = savedProfile.designation;
+                }
+
+                const profileEmailEl = document.getElementById("profile-email");
+                if (profileEmailEl && savedProfile.email) {
+                    profileEmailEl.textContent = savedProfile.email;
+                }
+
+                const profilePhoneEl = document.getElementById("profile-phone");
+                if (profilePhoneEl && savedProfile.phone) {
+                    profilePhoneEl.textContent = savedProfile.phone;
+                }
+
+                const profileSkillEl = document.getElementById("profile-skill");
+                if (profileSkillEl && savedProfile.skill) {
+                    profileSkillEl.textContent = savedProfile.skill;
+                }
+
+                // Update Bio Paragraphs
+                const bioContainer = document.getElementById("profile-bio-container");
+                if (bioContainer && savedProfile.bio) {
+                    const paragraphs = savedProfile.bio.split("\n\n").filter(p => p.trim() !== "");
+                    if (paragraphs.length > 0) {
+                        bioContainer.innerHTML = paragraphs.map(p => 
+                            `<p style="margin-bottom: 14px; font-weight: 400; color: #374151; font-size: 18px;">${p.replace(/\n/g, '<br>')}</p>`
+                        ).join("");
+                    }
+                }
+            }
+
             // Mobile Floating Contact Toggle
             const contactItems = document.querySelectorAll(".contact-item");
             contactItems.forEach(function (item) {
@@ -1665,286 +1384,6 @@
             }
         });
     </script>
-
-    <!-- Enrolled Students Modal Popup -->
-    <div id="student-list-modal" class="student-modal-overlay" onclick="handleModalBackdropClick(event)">
-        <div class="student-modal-dialog">
-            <div class="student-modal-header">
-                <div class="student-modal-header-left">
-                    <div class="student-modal-icon" id="modal-subject-icon">
-                        <i class="feather-book"></i>
-                    </div>
-                    <div>
-                        <h4 id="modal-subject-title"
-                            style="margin: 0; font-size: 20px; font-weight: 700; color: #192335;">Mathematics</h4>
-                        <p id="modal-subject-subtitle" style="margin: 2px 0 0; font-size: 14px; color: #64748b;">16
-                            Enrolled Students &bull; Mon-Sat (10:00 AM) &bull; Mon (02:00 PM) &bull; Wed (04:00 PM)</p>
-                    </div>
-                </div>
-                <button type="button" class="student-modal-close" onclick="closeStudentModal()"
-                    aria-label="Close modal">
-                    <i class="feather-x"></i>
-                </button>
-            </div>
-
-            <!-- Filter Toolbar -->
-            <div class="student-modal-filter-bar">
-                <span class="modal-filter-label">Filter By Tuition Type:</span>
-                <div class="student-modal-filter-group">
-                    <button type="button" class="modal-filter-btn" id="filter-btn-one-to-one"
-                        onclick="toggleStudentFilter('One-to-One')">
-                        <i class="feather-user"></i> One-to-One <span class="btn-badge"
-                            id="badge-count-one-to-one">0</span>
-                    </button>
-                    <button type="button" class="modal-filter-btn" id="filter-btn-one-to-many"
-                        onclick="toggleStudentFilter('One-to-Many')">
-                        <i class="feather-users"></i> One-to-Many <span class="btn-badge"
-                            id="badge-count-one-to-many">0</span>
-                    </button>
-                </div>
-            </div>
-
-            <div class="student-modal-body">
-                <div class="student-modal-table-wrap">
-                    <table class="student-modal-table">
-                        <thead>
-                            <tr>
-                                <th style="width: 12%; text-align: center;">S.No</th>
-                                <th style="width: 28%;">Student ID</th>
-                                <th style="width: 38%;">Student Name</th>
-                                <th style="width: 22%; text-align: center;">Tuition Type</th>
-                            </tr>
-                        </thead>
-                        <tbody id="student-modal-tbody">
-                            <!-- Populated dynamically -->
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-
-            <div class="student-modal-footer">
-                <span id="modal-summary-text" style="font-size: 14px; color: #64748b; font-weight: 500;">Showing all
-                    enrolled students</span>
-                <button type="button" class="rbt-btn btn-sm btn-border radius-round"
-                    onclick="closeStudentModal()">Close</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Student Modal Data and Interactive Functions -->
-    <script>
-        const subjectStudentsData = {
-            'mathematics': {
-                name: 'Mathematics',
-                subtitle: '16 Enrolled Students • Mon-Sat (10:00 AM) • Mon (02:00 PM) • Wed (04:00 PM)',
-                icon: '<i class="feather-book"></i>',
-                students: [
-                    { id: 'LSE-STD-2024-001', name: 'Oliver Smith', type: 'One-to-One' },
-                    { id: 'LSE-STD-2024-004', name: 'Amelia Jones', type: 'One-to-Many' },
-                    { id: 'LSE-STD-2024-007', name: 'Harry Wilson', type: 'One-to-One' },
-                    { id: 'LSE-STD-2024-012', name: 'Sophia Brown', type: 'One-to-Many' },
-                    { id: 'LSE-STD-2024-015', name: 'George Taylor', type: 'One-to-Many' },
-                    { id: 'LSE-STD-2024-018', name: 'Isabella Davies', type: 'One-to-One' },
-                    { id: 'LSE-STD-2024-022', name: 'Noah Evans', type: 'One-to-Many' },
-                    { id: 'LSE-STD-2024-025', name: 'Mia Thomas', type: 'One-to-Many' },
-                    { id: 'LSE-STD-2024-029', name: 'Leo Roberts', type: 'One-to-One' },
-                    { id: 'LSE-STD-2024-033', name: 'Ava Johnson', type: 'One-to-Many' },
-                    { id: 'LSE-STD-2024-038', name: 'Lucas Walker', type: 'One-to-Many' },
-                    { id: 'LSE-STD-2024-042', name: 'Grace Robinson', type: 'One-to-One' },
-                    { id: 'LSE-STD-2024-047', name: 'Arthur Wright', type: 'One-to-Many' },
-                    { id: 'LSE-STD-2024-051', name: 'Freya Scott', type: 'One-to-Many' },
-                    { id: 'LSE-STD-2024-056', name: 'Henry Green', type: 'One-to-One' },
-                    { id: 'LSE-STD-2024-060', name: 'Ella Hall', type: 'One-to-Many' }
-                ]
-            },
-            'physics': {
-                name: 'Physics',
-                subtitle: '14 Enrolled Students • Mon-Sat (02:00 PM - 03:30 PM) • Tue (05:00 PM - 06:30 PM)',
-                icon: '<i class="feather-zap"></i>',
-                students: [
-                    { id: 'LSE-STD-2024-001', name: 'Oliver Smith', type: 'One-to-One' },
-                    { id: 'LSE-STD-2024-002', name: 'Jack Williams', type: 'One-to-One' },
-                    { id: 'LSE-STD-2024-005', name: 'Charlotte Taylor', type: 'One-to-Many' },
-                    { id: 'LSE-STD-2024-009', name: 'Ethan Clarke', type: 'One-to-Many' },
-                    { id: 'LSE-STD-2024-014', name: 'Harper White', type: 'One-to-One' },
-                    { id: 'LSE-STD-2024-019', name: 'Freddie Hughes', type: 'One-to-Many' },
-                    { id: 'LSE-STD-2024-023', name: 'Emily Edwards', type: 'One-to-Many' },
-                    { id: 'LSE-STD-2024-028', name: 'Archie Turner', type: 'One-to-One' },
-                    { id: 'LSE-STD-2024-032', name: 'Evie Campbell', type: 'One-to-Many' },
-                    { id: 'LSE-STD-2024-037', name: 'Theo Mitchell', type: 'One-to-Many' },
-                    { id: 'LSE-STD-2024-041', name: 'Ruby Carter', type: 'One-to-One' },
-                    { id: 'LSE-STD-2024-046', name: 'Alfie Phillips', type: 'One-to-Many' },
-                    { id: 'LSE-STD-2024-050', name: 'Alice Morris', type: 'One-to-Many' },
-                    { id: 'LSE-STD-2024-055', name: 'Joshua Murphy', type: 'One-to-One' },
-                    { id: 'LSE-STD-2024-059', name: 'Florence Cook', type: 'One-to-Many' }
-                ]
-            },
-            'chemistry': {
-                name: 'Chemistry',
-                subtitle: '12 Enrolled Students • Mon-Sat (04:00 PM - 05:30 PM) • Tue (06:00 PM - 07:30 PM)',
-                icon: '<i class="feather-activity"></i>',
-                students: [
-                    { id: 'LSE-STD-2024-001', name: 'Oliver Smith', type: 'One-to-One' },
-                    { id: 'LSE-STD-2024-003', name: 'Benjamin Moore', type: 'One-to-One' },
-                    { id: 'LSE-STD-2024-008', name: 'Chloe Harris', type: 'One-to-Many' },
-                    { id: 'LSE-STD-2024-013', name: 'Alexander King', type: 'One-to-Many' },
-                    { id: 'LSE-STD-2024-017', name: 'Zoe Lee', type: 'One-to-One' },
-                    { id: 'LSE-STD-2024-021', name: 'Daniel Adams', type: 'One-to-Many' },
-                    { id: 'LSE-STD-2024-026', name: 'Hannah Baker', type: 'One-to-Many' },
-                    { id: 'LSE-STD-2024-031', name: 'Samuel Bell', type: 'One-to-One' },
-                    { id: 'LSE-STD-2024-036', name: 'Lily Ward', type: 'One-to-Many' },
-                    { id: 'LSE-STD-2024-040', name: 'Max Bennett', type: 'One-to-Many' },
-                    { id: 'LSE-STD-2024-045', name: 'Phoebe Gray', type: 'One-to-One' },
-                    { id: 'LSE-STD-2024-049', name: 'Logan Price', type: 'One-to-Many' },
-                    { id: 'LSE-STD-2024-054', name: 'Sienna Russell', type: 'One-to-Many' }
-                ]
-            },
-            'computer-science': {
-                name: 'Computer Science',
-                subtitle: '15 Enrolled Students • Mon, Wed, Fri, Sat (01:00 PM) • Tue, Thu, Sat (03:00 PM)',
-                icon: '<i class="feather-code"></i>',
-                students: [
-                    { id: 'LSE-STD-2024-001', name: 'Oliver Smith', type: 'One-to-One' },
-                    { id: 'LSE-STD-2024-010', name: 'Liam Jackson', type: 'One-to-One' },
-                    { id: 'LSE-STD-2024-015', name: 'Eleanor Wood', type: 'One-to-Many' },
-                    { id: 'LSE-STD-2024-024', name: 'Edward Jenkins', type: 'One-to-One' },
-                    { id: 'LSE-STD-2024-030', name: 'Jessica Perry', type: 'One-to-Many' },
-                    { id: 'LSE-STD-2024-034', name: 'Toby Coleman', type: 'One-to-Many' },
-                    { id: 'LSE-STD-2024-043', name: 'Isabelle Brooks', type: 'One-to-One' },
-                    { id: 'LSE-STD-2024-052', name: 'Gabriel Butler', type: 'One-to-Many' },
-                    { id: 'LSE-STD-2024-057', name: 'Maya Bailey', type: 'One-to-Many' },
-                    { id: 'LSE-STD-2024-058', name: 'Nathan Kelly', type: 'One-to-One' },
-                    { id: 'LSE-STD-2024-061', name: 'Zara Simmons', type: 'One-to-Many' },
-                    { id: 'LSE-STD-2024-062', name: 'Caleb Foster', type: 'One-to-Many' },
-                    { id: 'LSE-STD-2024-063', name: 'Lola Patterson', type: 'One-to-One' },
-                    { id: 'LSE-STD-2024-064', name: 'Isaac Henderson', type: 'One-to-Many' },
-                    { id: 'LSE-STD-2024-065', name: 'Heidi Reynolds', type: 'One-to-Many' },
-                    { id: 'LSE-STD-2024-066', name: 'Dylan Powell', type: 'One-to-One' }
-                ]
-            }
-        };
-
-        let activeSubjectKey = null;
-        let currentFilterType = 'all';
-
-        function openStudentModal(subjectKey) {
-            activeSubjectKey = subjectKey;
-            currentFilterType = 'all';
-
-            const data = subjectStudentsData[subjectKey];
-            if (!data) return;
-
-            document.getElementById('modal-subject-title').textContent = data.name;
-            document.getElementById('modal-subject-subtitle').textContent = data.subtitle;
-            document.getElementById('modal-subject-icon').innerHTML = data.icon;
-
-            const countOneToOne = data.students.filter(s => s.type === 'One-to-One').length;
-            const countOneToMany = data.students.filter(s => s.type === 'One-to-Many').length;
-
-            document.getElementById('badge-count-one-to-one').textContent = countOneToOne;
-            document.getElementById('badge-count-one-to-many').textContent = countOneToMany;
-
-            renderStudentList();
-
-            const modal = document.getElementById('student-list-modal');
-            modal.style.display = 'flex';
-            setTimeout(() => {
-                modal.classList.add('active');
-            }, 10);
-            document.body.style.overflow = 'hidden';
-        }
-
-        function toggleStudentFilter(type) {
-            if (currentFilterType === type) {
-                currentFilterType = 'all';
-            } else {
-                currentFilterType = type;
-            }
-            renderStudentList();
-        }
-
-        function renderStudentList() {
-            if (!activeSubjectKey) return;
-            const data = subjectStudentsData[activeSubjectKey];
-            if (!data) return;
-
-            const btnOneToOne = document.getElementById('filter-btn-one-to-one');
-            const btnOneToMany = document.getElementById('filter-btn-one-to-many');
-
-            if (currentFilterType === 'One-to-One') {
-                btnOneToOne.classList.add('active');
-                btnOneToMany.classList.remove('active');
-            } else if (currentFilterType === 'One-to-Many') {
-                btnOneToOne.classList.remove('active');
-                btnOneToMany.classList.add('active');
-            } else {
-                btnOneToOne.classList.remove('active');
-                btnOneToMany.classList.remove('active');
-            }
-
-            let filtered = data.students;
-            if (currentFilterType === 'One-to-One') {
-                filtered = data.students.filter(s => s.type === 'One-to-One');
-            } else if (currentFilterType === 'One-to-Many') {
-                filtered = data.students.filter(s => s.type === 'One-to-Many');
-            }
-
-            const tbody = document.getElementById('student-modal-tbody');
-            tbody.innerHTML = '';
-
-            if (filtered.length === 0) {
-                tbody.innerHTML = '<tr><td colspan="4" style="text-align:center; padding: 24px; color: #94a3b8;">No students found for this filter</td></tr>';
-            } else {
-                filtered.forEach((st, idx) => {
-                    const isOneToOne = st.type === 'One-to-One';
-                    const typePill = isOneToOne
-                        ? '<span class="type-pill type-one-to-one"><i class="feather-user" style="font-size: 11px;"></i> One-to-One</span>'
-                        : '<span class="type-pill type-one-to-many"><i class="feather-users" style="font-size: 11px;"></i> One-to-Many</span>';
-
-                    const tr = document.createElement('tr');
-                    tr.innerHTML = `
-                        <td style="text-align: center; font-weight: 600; color: #64748b;">${idx + 1}</td>
-                        <td style="font-weight: 600; color: #6c4df6;"><span style="background: #f0edff; padding: 3px 8px; border-radius: 6px; font-size: 13.5px;">${st.id}</span></td>
-                        <td style="font-weight: 600; color: #1e293b;">${st.name}</td>
-                        <td style="text-align: center;">${typePill}</td>
-                    `;
-                    tbody.appendChild(tr);
-                });
-            }
-
-            const summaryElem = document.getElementById('modal-summary-text');
-            if (currentFilterType === 'One-to-One') {
-                summaryElem.textContent = `Showing ${filtered.length} One-to-One student${filtered.length === 1 ? '' : 's'} (click again to view all)`;
-            } else if (currentFilterType === 'One-to-Many') {
-                summaryElem.textContent = `Showing ${filtered.length} One-to-Many student${filtered.length === 1 ? '' : 's'} (click again to view all)`;
-            } else {
-                summaryElem.textContent = `Showing all ${data.students.length} enrolled students`;
-            }
-        }
-
-        function closeStudentModal() {
-            const modal = document.getElementById('student-list-modal');
-            if (!modal) return;
-            modal.classList.remove('active');
-            setTimeout(() => {
-                modal.style.display = 'none';
-                document.body.style.overflow = '';
-            }, 250);
-        }
-
-        function handleModalBackdropClick(event) {
-            if (event.target.id === 'student-list-modal') {
-                closeStudentModal();
-            }
-        }
-
-        document.addEventListener('keydown', function (event) {
-            if (event.key === 'Escape') {
-                closeStudentModal();
-            }
-        });
-    </script>
-
 </body>
 
 </html>

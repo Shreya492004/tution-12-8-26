@@ -554,7 +554,7 @@
             background: #fff;
             border-radius: 14px;
             width: 100%;
-            max-width: 680px;
+            max-width: 500px;
             max-height: 88vh;
             overflow-y: auto;
             box-shadow: 0 20px 50px rgba(15, 23, 42, 0.22);
@@ -650,22 +650,6 @@
 
         .view-history-table tbody tr:last-child td {
             border-bottom: none;
-        }
-
-        .view-history-table tr.is-today td {
-            background: #f5f3ff !important;
-        }
-
-        .view-today-tag {
-            display: inline-block;
-            margin-left: 6px;
-            font-size: 12px !important;
-            font-weight: 600 !important;
-            color: #6c4df6 !important;
-            background: #ede9fe !important;
-            border-radius: 12px;
-            padding: 1px 7px;
-            vertical-align: middle;
         }
 
         /* =========================================
@@ -1014,9 +998,10 @@
                                                 <label>Course</label>
                                                 <select id="courseFilter" onchange="filterStudents()">
                                                     <option value="" disabled selected>Select Course</option>
-                                                    <option value="Java Full Stack">Java Full Stack</option>
-                                                    <option value="Python Full Stack">Python Full Stack</option>
-                                                    <option value="Web Development">Web Development</option>
+                                                    <option value="Mathematics">Mathematics</option>
+                                                    <option value="Physics">Physics</option>
+                                                    <option value="Chemistry">Chemistry</option>
+                                                    <option value="Computer Science">Computer Science</option>
                                                 </select>
                                             </div>
 
@@ -1068,13 +1053,13 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody id="attendanceBody">
-                                                    <!-- STUDENT 1 -->
-                                                    <tr data-course="Java Full Stack" data-student-id="STU001">
+                                                    <!-- MATHEMATICS STUDENTS -->
+                                                    <tr data-course="Mathematics" data-student-id="STU001">
                                                         <td>
-                                                            <span class="student-name">Arun Kumar</span>
+                                                            <span class="student-name">Oliver Smith</span>
                                                             <span class="student-id">STU001</span>
                                                         </td>
-                                                        <td>Java Full Stack</td>
+                                                        <td>Mathematics</td>
                                                         <td class="row-date">--</td>
                                                         <td>
                                                             <span class="attendance-status attendance-yes clickable-status status" onclick="toggleAttendance(this)">Present</span>
@@ -1086,13 +1071,12 @@
                                                         </td>
                                                     </tr>
 
-                                                    <!-- STUDENT 2 -->
-                                                    <tr data-course="Java Full Stack" data-student-id="STU002">
+                                                    <tr data-course="Mathematics" data-student-id="STU002">
                                                         <td>
-                                                            <span class="student-name">Priya M</span>
+                                                            <span class="student-name">Amelia Jones</span>
                                                             <span class="student-id">STU002</span>
                                                         </td>
-                                                        <td>Java Full Stack</td>
+                                                        <td>Mathematics</td>
                                                         <td class="row-date">--</td>
                                                         <td>
                                                             <span class="attendance-status attendance-yes clickable-status status" onclick="toggleAttendance(this)">Present</span>
@@ -1104,13 +1088,13 @@
                                                         </td>
                                                     </tr>
 
-                                                    <!-- STUDENT 3 -->
-                                                    <tr data-course="Python Full Stack" data-student-id="STU003">
+                                                    <!-- PHYSICS STUDENTS -->
+                                                    <tr data-course="Physics" data-student-id="STU003">
                                                         <td>
-                                                            <span class="student-name">Rahul S</span>
+                                                            <span class="student-name">Jack Williams</span>
                                                             <span class="student-id">STU003</span>
                                                         </td>
-                                                        <td>Python Full Stack</td>
+                                                        <td>Physics</td>
                                                         <td class="row-date">--</td>
                                                         <td>
                                                             <span class="attendance-status attendance-yes clickable-status status" onclick="toggleAttendance(this)">Present</span>
@@ -1122,13 +1106,12 @@
                                                         </td>
                                                     </tr>
 
-                                                    <!-- STUDENT 4 -->
-                                                    <tr data-course="Web Development" data-student-id="STU004">
+                                                    <tr data-course="Physics" data-student-id="STU004">
                                                         <td>
-                                                            <span class="student-name">Divya K</span>
+                                                            <span class="student-name">Charlotte Taylor</span>
                                                             <span class="student-id">STU004</span>
                                                         </td>
-                                                        <td>Web Development</td>
+                                                        <td>Physics</td>
                                                         <td class="row-date">--</td>
                                                         <td>
                                                             <span class="attendance-status attendance-yes clickable-status status" onclick="toggleAttendance(this)">Present</span>
@@ -1140,13 +1123,13 @@
                                                         </td>
                                                     </tr>
 
-                                                    <!-- STUDENT 5 -->
-                                                    <tr data-course="Java Full Stack" data-student-id="STU005">
+                                                    <!-- CHEMISTRY STUDENTS -->
+                                                    <tr data-course="Chemistry" data-student-id="STU005">
                                                         <td>
-                                                            <span class="student-name">Vishnu N</span>
+                                                            <span class="student-name">Benjamin Moore</span>
                                                             <span class="student-id">STU005</span>
                                                         </td>
-                                                        <td>Java Full Stack</td>
+                                                        <td>Chemistry</td>
                                                         <td class="row-date">--</td>
                                                         <td>
                                                             <span class="attendance-status attendance-yes clickable-status status" onclick="toggleAttendance(this)">Present</span>
@@ -1158,13 +1141,47 @@
                                                         </td>
                                                     </tr>
 
-                                                    <!-- STUDENT 6 -->
-                                                    <tr data-course="Python Full Stack" data-student-id="STU006">
+                                                    <tr data-course="Chemistry" data-student-id="STU006">
                                                         <td>
-                                                            <span class="student-name">Sneha N</span>
+                                                            <span class="student-name">Chloe Harris</span>
                                                             <span class="student-id">STU006</span>
                                                         </td>
-                                                        <td>Python Full Stack</td>
+                                                        <td>Chemistry</td>
+                                                        <td class="row-date">--</td>
+                                                        <td>
+                                                            <span class="attendance-status attendance-yes clickable-status status" onclick="toggleAttendance(this)">Present</span>
+                                                        </td>
+                                                        <td style="text-align:center;">
+                                                            <div class="attendance-action-group">
+                                                                <button class="attendance-view-btn" onclick="viewAttendance(this)">View</button>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+
+                                                    <!-- COMPUTER SCIENCE STUDENTS -->
+                                                    <tr data-course="Computer Science" data-student-id="STU007">
+                                                        <td>
+                                                            <span class="student-name">Liam Jackson</span>
+                                                            <span class="student-id">STU007</span>
+                                                        </td>
+                                                        <td>Computer Science</td>
+                                                        <td class="row-date">--</td>
+                                                        <td>
+                                                            <span class="attendance-status attendance-yes clickable-status status" onclick="toggleAttendance(this)">Present</span>
+                                                        </td>
+                                                        <td style="text-align:center;">
+                                                            <div class="attendance-action-group">
+                                                                <button class="attendance-view-btn" onclick="viewAttendance(this)">View</button>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+
+                                                    <tr data-course="Computer Science" data-student-id="STU008">
+                                                        <td>
+                                                            <span class="student-name">Eleanor Wood</span>
+                                                            <span class="student-id">STU008</span>
+                                                        </td>
+                                                        <td>Computer Science</td>
                                                         <td class="row-date">--</td>
                                                         <td>
                                                             <span class="attendance-status attendance-yes clickable-status status" onclick="toggleAttendance(this)">Present</span>
@@ -1213,10 +1230,8 @@
                 <table class="view-history-table">
                     <thead>
                         <tr>
-                            <th style="width:30%;">Date</th>
-                            <th style="width:28%;">Subject</th>
-                            <th style="width:24%;">Course</th>
-                            <th style="width:18%; text-align:center;">Status</th>
+                            <th style="width:65%;">Date</th>
+                            <th style="width:35%; text-align:center;">Status</th>
                         </tr>
                     </thead>
                     <tbody id="viewHistoryBody">
@@ -1472,13 +1487,9 @@
             STU003: ["Present", "Present", "Absent", "Present", "Present", "Absent"],
             STU004: ["Present", "Present", "Present", "Present", "Absent", "Present"],
             STU005: ["Absent", "Present", "Present", "Present", "Present", "Present"],
-            STU006: ["Present", "Present", "Present", "Present", "Present", "Present"]
-        };
-
-        const subjectModules = {
-            "Java Full Stack": ["Core Java Fundamentals", "OOP Concepts & Collections", "Spring Boot Architecture", "Hibernate & JPA", "REST API Development", "Database & SQL Queries", "Full Stack Integration"],
-            "Python Full Stack": ["Python Essentials", "Data Structures in Python", "Django Web Framework", "REST Framework & APIs", "PostgreSQL Integration", "Frontend & Templates", "Deployment & Testing"],
-            "Web Development": ["HTML5 & Semantic Web", "Modern CSS & Flex/Grid", "JavaScript ES6+ Deep Dive", "DOM Manipulation & Events", "Responsive UI Architecture", "API Fetch & Async JS", "Capstone Project Review"]
+            STU006: ["Present", "Present", "Present", "Present", "Present", "Present"],
+            STU007: ["Present", "Present", "Present", "Absent", "Present", "Present"],
+            STU008: ["Present", "Absent", "Present", "Present", "Present", "Present"]
         };
 
         function viewAttendance(button) {
@@ -1496,7 +1507,6 @@
 
             const oneWeekRecords = [];
             const pastStatuses = studentPastWeekMap[studentId] || ["Present", "Present", "Present", "Absent", "Present", "Present"];
-            const courseSubjects = subjectModules[course] || ["Module 1", "Module 2", "Module 3", "Module 4", "Module 5", "Module 6", "Module 7"];
 
             for (let i = 0; i < 7; i++) {
                 const curDate = new Date(baseDate);
@@ -1504,15 +1514,11 @@
                 const dateInfo = formatDateDisplay(curDate);
                 const isToday = (i === 0);
                 const status = isToday ? todayStatus : (pastStatuses[(i - 1) % pastStatuses.length] || "Present");
-                const subject = courseSubjects[(6 - i) % courseSubjects.length] || "Curriculum Session";
 
                 oneWeekRecords.push({
                     date: dateInfo.dateStr,
                     dayName: dateInfo.dayName,
-                    subject: subject,
-                    course: course,
-                    status: status,
-                    isToday: isToday
+                    status: status
                 });
             }
 
@@ -1525,15 +1531,12 @@
             body.innerHTML = "";
 
             if (!records || records.length === 0) {
-                body.innerHTML = "<tr><td colspan='4' style='text-align:center; color:#888; padding:24px;'>No attendance records found for this week.</td></tr>";
+                body.innerHTML = "<tr><td colspan='2' style='text-align:center; color:#888; padding:24px;'>No attendance records found for this week.</td></tr>";
                 return;
             }
 
             records.forEach(function (record) {
                 const tr = document.createElement("tr");
-                if (record.isToday) {
-                    tr.classList.add("is-today");
-                }
 
                 const statusClass = record.status === "Present" ? "attendance-yes" : "attendance-no";
 
@@ -1541,12 +1544,7 @@
                     <td>
                         <span style="font-weight: 600; color: #1e293b;">${record.date}</span>
                         <span style="color: #64748b; font-size: 14px; display: block; margin-top: 2px;">${record.dayName}</span>
-                        ${record.isToday ? "<span class='view-today-tag'>Current Selected</span>" : ""}
                     </td>
-                    <td>
-                        <span style="font-weight: 500; color: #1e293b;">${record.subject}</span>
-                    </td>
-                    <td>${record.course}</td>
                     <td style="text-align:center;">
                         <span class="attendance-status ${statusClass}">${record.status}</span>
                     </td>
@@ -1616,6 +1614,10 @@
                     loginDropdown.classList.remove("active");
                 }
             });
+        }
+
+        function saveAttendance() {
+            alert("Attendance saved successfully!");
         }
     </script>
 

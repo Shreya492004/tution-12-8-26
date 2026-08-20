@@ -196,27 +196,13 @@
                     <div class="rbt-main-navigation d-none d-xl-block">
                         <nav class="mainmenu-nav">
                             <ul class="mainmenu">
-                                <li>
-                                    <a href="index.html">Home</a>
-                                </li>
-                                <li>
-                                    <a href="about-us.html">About</a>
-                                </li>
-                                <li>
-                                    <a href="our-team.html">Our Team</a>
-                                </li>
-                                <li>
-                                    <a href="our-tuition.html">Our Tuition</a>
-                                </li>
-                                <li>
-                                    <a href="holiday-camps.html">Holiday Camps</a>
-                                </li>
-                                <li>
-                                    <a href="plans-and-pricing.html">Plans &amp; Pricing</a>
-                                </li>
-                                <li>
-                                    <a href="book-online.html">Book Online</a>
-                                </li>
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="about-us.html">About</a></li>
+                                <li><a href="our-team.html">Our Team</a></li>
+                                <li><a href="our-tuition.html">Our Tuition</a></li>
+                                <li><a href="holiday-camps.html">Holiday Camps</a></li>
+                                <li><a href="plans-and-pricing.html">Plans &amp; Pricing</a></li>
+                                <li><a href="book-online.html">Book Online</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -274,12 +260,8 @@
                 </div>
                 <p class="description">London Star Education provides high-quality online tuition and educational support.</p>
                 <ul class="navbar-top-left rbt-information-list justify-content-start">
-                    <li>
-                        <a href="mailto:info@londonstaredu.com"><i class="feather-mail"></i>info@londonstaredu.com</a>
-                    </li>
-                    <li>
-                        <a href="tel:3025550107"><i class="feather-phone"></i>(302) 555-0107</a>
-                    </li>
+                    <li><a href="mailto:info@londonstaredu.com"><i class="feather-mail"></i>info@londonstaredu.com</a></li>
+                    <li><a href="tel:3025550107"><i class="feather-phone"></i>(302) 555-0107</a></li>
                 </ul>
             </div>
 
@@ -337,7 +319,7 @@
                                         <div class="rbt-default-sidebar-wrapper">
                                             
                                             <div class="section-title mb--20">
-                                                <h6 class="rbt-title-style-2">Welcome, Ruben</h6>
+                                                <h6 class="rbt-title-style-2" id="sidebar-welcome">Welcome, Ruben</h6>
                                             </div>
 
                                             <nav class="mainmenu-nav">
@@ -429,13 +411,29 @@
                                     <div class="tab-content">
                                         <!-- Profile Tab -->
                                         <div class="tab-pane fade active show" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                                            <form action="#" class="rbt-profile-row rbt-default-form row row--15">
+                                            <form id="tutor-edit-form" class="rbt-profile-row rbt-default-form row row--15">
+                                                
+                                                <div class="col-lg-6 col-md-6 col-sm-6 col-12">
+                                                    <div class="rbt-form-group">
+                                                        <label for="tutorid">Tutor ID</label>
+                                                        <input id="tutorid" type="text" value="LSE-TUT-2001-008">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-lg-6 col-md-6 col-sm-6 col-12">
+                                                    <div class="rbt-form-group">
+                                                        <label for="tutorexp">Experience / Track Record</label>
+                                                        <input id="tutorexp" type="text" value="Tutoring Since 2001 (20+ Years Exp)">
+                                                    </div>
+                                                </div>
+
                                                 <div class="col-lg-6 col-md-6 col-sm-6 col-12">
                                                     <div class="rbt-form-group">
                                                         <label for="firstname">First Name</label>
                                                         <input id="firstname" type="text" value="Ruben">
                                                     </div>
                                                 </div>
+
                                                 <div class="col-lg-6 col-md-6 col-sm-6 col-12">
                                                     <div class="rbt-form-group">
                                                         <label for="lastname">Last Name</label>
@@ -449,16 +447,25 @@
                                                         <input id="phonenumber" type="tel" value="+44 7900 889900">
                                                     </div>
                                                 </div>
+
                                                 <div class="col-lg-6 col-md-6 col-sm-6 col-12">
                                                     <div class="rbt-form-group">
                                                         <label for="email">Email</label>
                                                         <input id="email" type="email" value="ruben@londonstaredu.com">
                                                     </div>
                                                 </div>
+
                                                 <div class="col-lg-6 col-md-6 col-sm-6 col-12">
                                                     <div class="rbt-form-group">
                                                         <label for="skill">Skill/Occupation</label>
                                                         <input id="skill" type="text" value="Computer Systems Engineer &amp; Senior STEM Educator">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-lg-6 col-md-6 col-sm-6 col-12">
+                                                    <div class="rbt-form-group">
+                                                        <label for="designation">Primary Profession</label>
+                                                        <input id="designation" type="text" value="Computer Systems Engineer">
                                                     </div>
                                                 </div>
                                                 
@@ -470,9 +477,10 @@
 By profession, I am a Computer Systems Engineer, providing a practical, real-world perspective on STEM principles applied in modern technology sectors. I also have deep expertise working with students with special educational needs, creating supportive and inclusive learning environments.</textarea>
                                                     </div>
                                                 </div>
+
                                                 <div class="col-12 mt--20">
                                                     <div class="rbt-form-group">
-                                                        <button type="button" class="rbt-btn btn-gradient">Update Info</button>
+                                                        <button type="button" id="btn-update-profile" class="rbt-btn btn-gradient">Update Info</button>
                                                     </div>
                                                 </div>
                                             </form>
@@ -595,7 +603,7 @@ By profession, I am a Computer Systems Engineer, providing a practical, real-wor
                 <div class="row align-items-center">
                     <div class="col-xxl-7 col-xl-7 col-lg-7 col-md-12 col-12">
                         <p class="rbt-link-hover text-center text-lg-start">
-                            Copyright © 2026 by <a href="index.html">London Star Education Ltd.</a> All Rights Reserved. Designed by <a href="https://rkisystems.co.uk/" target="_blank">RKI Systems</a>
+                            Copyright © 2026 by <a href="index.html">London Star Education Ltd.</a> All Rights Reserved.
                         </p>
                     </div>
                     <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-12 col-12">
@@ -619,18 +627,14 @@ By profession, I am a Computer Systems Engineer, providing a practical, real-wor
     <!-- Floating Contact Buttons -->
     <div class="floating-contact">
         <div class="contact-item call-item">
-            <div class="contact-label call-label">
-                Talk To Our Experts
-            </div>
+            <div class="contact-label call-label">Talk To Our Experts</div>
             <a href="tel:+919876543210" class="contact-button call-button" aria-label="Call us">
                 <i class="fa fa-phone"></i>
             </a>
         </div>
 
         <div class="contact-item whatsapp-item">
-            <div class="contact-label whatsapp-label">
-                Message Us
-            </div>
+            <div class="contact-label whatsapp-label">Message Us</div>
             <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer"
                 class="contact-button whatsapp-button" aria-label="Chat with us on WhatsApp">
                 <i class="fab fa-whatsapp"></i>
@@ -666,6 +670,46 @@ By profession, I am a Computer Systems Engineer, providing a practical, real-wor
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
+            // Load Saved Data from LocalStorage if available
+            const savedProfile = JSON.parse(localStorage.getItem("lse_tutor_profile"));
+            if (savedProfile) {
+                if (savedProfile.tutorId) document.getElementById("tutorid").value = savedProfile.tutorId;
+                if (savedProfile.tutorExp) document.getElementById("tutorexp").value = savedProfile.tutorExp;
+                if (savedProfile.firstName) document.getElementById("firstname").value = savedProfile.firstName;
+                if (savedProfile.lastName) document.getElementById("lastname").value = savedProfile.lastName;
+                if (savedProfile.phone) document.getElementById("phonenumber").value = savedProfile.phone;
+                if (savedProfile.email) document.getElementById("email").value = savedProfile.email;
+                if (savedProfile.skill) document.getElementById("skill").value = savedProfile.skill;
+                if (savedProfile.designation) document.getElementById("designation").value = savedProfile.designation;
+                if (savedProfile.bio) document.getElementById("bio").value = savedProfile.bio;
+                
+                const welcomeEl = document.getElementById("sidebar-welcome");
+                if (welcomeEl && savedProfile.firstName) {
+                    welcomeEl.textContent = `Welcome, ${savedProfile.firstName}`;
+                }
+            }
+
+            // Save Data to LocalStorage on Click
+            const updateBtn = document.getElementById("btn-update-profile");
+            if (updateBtn) {
+                updateBtn.addEventListener("click", function () {
+                    const tutorData = {
+                        tutorId: document.getElementById("tutorid").value,
+                        tutorExp: document.getElementById("tutorexp").value,
+                        firstName: document.getElementById("firstname").value,
+                        lastName: document.getElementById("lastname").value,
+                        phone: document.getElementById("phonenumber").value,
+                        email: document.getElementById("email").value,
+                        skill: document.getElementById("skill").value,
+                        designation: document.getElementById("designation").value,
+                        bio: document.getElementById("bio").value
+                    };
+
+                    localStorage.setItem("lse_tutor_profile", JSON.stringify(tutorData));
+                    alert("Profile updated successfully!");
+                });
+            }
+
             // Mobile Floating Contact Toggle
             const contactItems = document.querySelectorAll(".contact-item");
             contactItems.forEach(function (item) {
@@ -709,6 +753,5 @@ By profession, I am a Computer Systems Engineer, providing a practical, real-wor
             }
         });
     </script>
-
 </body>
 </html>

@@ -13,7 +13,7 @@
     <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.png">
 
     <!-- CSS
-	============================================ -->
+    ============================================ -->
     <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/vendor/slick.css">
     <link rel="stylesheet" href="assets/css/vendor/slick-theme.css">
@@ -196,8 +196,13 @@
         .hw-dashboard .hw-course-row {
             display: flex;
             align-items: flex-end;
-            gap: 16px;
+            gap: 24px;
             width: 100%;
+        }
+
+        .hw-dashboard .hw-course-select-wrap {
+            flex: 1;
+            min-width: 0;
         }
 
         .hw-dashboard .hw-course-student-box {
@@ -406,78 +411,6 @@
             color: #b02a37;
         }
 
-        /* NOTES ATTACHMENT POPUP */
-        .hw-dashboard .hw-attachment-menu {
-            position: relative;
-        }
-
-        .hw-dashboard .hw-attachment-popup {
-            position: absolute;
-            top: 100%;
-            left: 50%;
-            transform: translateX(-50%);
-            margin-top: 8px;
-            width: 240px;
-            background: #ffffff;
-            border: 1px solid #e9e9e9;
-            border-radius: 12px;
-            padding: 8px;
-            display: none;
-            z-index: 999;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
-        }
-
-        .hw-dashboard .hw-attachment-popup.show {
-            display: block;
-        }
-
-        .hw-dashboard .hw-attachment-item {
-            width: 100%;
-            border: none;
-            background: transparent;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            padding: 12px 14px;
-            border-radius: 8px;
-            cursor: pointer;
-            text-align: left;
-            color: #374151 !important;
-            font-size: 17px !important;
-            font-weight: 500 !important;
-            transition: background 0.2s ease;
-        }
-
-        .hw-dashboard .hw-attachment-item:hover {
-            background: #f5f3ff;
-            color: #6c4df6 !important;
-        }
-
-        .hw-dashboard .hw-attachment-icon {
-            width: 38px;
-            height: 38px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 9px;
-            font-size: 18px;
-        }
-
-        .hw-dashboard .hw-file-icon-bg {
-            background: #f1efff;
-            color: #6c4df6;
-        }
-
-        .hw-dashboard .hw-gallery-icon-bg {
-            background: #eaf8ef;
-            color: #28a745;
-        }
-
-        .hw-dashboard .hw-camera-icon-bg {
-            background: #fff2e8;
-            color: #f26b21;
-        }
-
         /* CONDITIONAL SECTION */
         .hw-dashboard .hw-conditional {
             display: none;
@@ -545,7 +478,6 @@
     <!-- Start Header Area -->
     <header class="rbt-header rbt-header-9">
         <div class="rbt-sticky-placeholder"></div>
-
         
         <div class="rbt-header-wrapper header-not-transparent header-sticky">
             <div class="container">
@@ -839,8 +771,6 @@
                                         </div>
                                     </div>
 
-                                 
-                               
                                     <!-- =====================================
                                          SEND BUTTON
                                     ====================================== -->
@@ -862,7 +792,7 @@
         </div>
     </div>
 
-        <!-- Start Footer Area -->
+    <!-- Start Footer Area -->
     <footer class="rbt-footer footer-style-1 bg-color-white overflow-hidden">
         <div class="footer-top">
             <div class="container">
@@ -875,8 +805,7 @@
                                 </a>
                             </div>
 
-                            <p class="description mt--20">We are always seeking talented and motivated individuals to
-                                join our team.</p>
+                            <p class="description mt--20">We are always seeking talented and motivated individuals to join our team.</p>
 
                             <ul class="social-icon social-default justify-content-start">
                                 <li><a href="https://www.facebook.com/">
@@ -958,8 +887,7 @@
 
                             <div class="newsletter-form mt--20">
                                 <h6 class="w-600">Location</h6>
-                                <p class="description">2000+ Our students are subscribe Around the World.<br> Don’t be
-                                    shy introduce yourself!</p>
+                                <p class="description">2000+ Our students are subscribe Around the World.<br> Don’t be shy introduce yourself!</p>
                             </div>
                         </div>
                     </div>
@@ -996,7 +924,7 @@
     </footer>
     <!-- End Footer Area -->
 
-        <div class="rbt-progress-parent">
+    <div class="rbt-progress-parent">
         <svg class="rbt-back-circle svg-inner" width="100%" height="100%" viewBox="-1 -1 102 102">
             <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
         </svg>
@@ -1106,7 +1034,6 @@
 
     <!-- Dashboard Logic Script -->
     <script> 
-    // Destroy template Bootstrap-Select plugin on this custom select if initialized
     if (window.jQuery && typeof jQuery.fn.selectpicker !== 'undefined') {
         jQuery('#hwCourse').selectpicker('destroy');
     }
@@ -1195,82 +1122,6 @@
             }); 
         }
 
-        /* NOTES ATTACHMENT */ 
-        const notesUploadBox = document.getElementById("notesUploadBox"); 
-        const attachmentPopup = document.getElementById("attachmentPopup"); 
-        const fileOption = document.getElementById("fileOption"); 
-        const galleryOption = document.getElementById("galleryOption"); 
-        const cameraOption = document.getElementById("cameraOption"); 
-        const fileInput = document.getElementById("fileInput"); 
-        const galleryInput = document.getElementById("galleryInput"); 
-        const cameraInput = document.getElementById("cameraInput"); 
-        const selectedUpload = document.getElementById("selectedUpload"); 
-        const selectedFileName = document.getElementById("selectedFileName"); 
-        const removeFile = document.getElementById("removeFile"); 
-
-        let selectedNotesFile = null; 
-
-        if (notesUploadBox && attachmentPopup) {
-            notesUploadBox.addEventListener("click", function (event) { 
-                event.stopPropagation(); 
-                attachmentPopup.classList.toggle("show"); 
-            }); 
-        }
-
-        if (fileOption && fileInput) {
-            fileOption.addEventListener("click", function () { 
-                if (attachmentPopup) attachmentPopup.classList.remove("show"); 
-                fileInput.click(); 
-            }); 
-        }
-
-        if (galleryOption && galleryInput) {
-            galleryOption.addEventListener("click", function () { 
-                if (attachmentPopup) attachmentPopup.classList.remove("show"); 
-                galleryInput.click(); 
-            }); 
-        }
-
-        if (cameraOption && cameraInput) {
-            cameraOption.addEventListener("click", function () { 
-                if (attachmentPopup) attachmentPopup.classList.remove("show"); 
-                cameraInput.click(); 
-            }); 
-        }
-
-        function showSelectedFile(file) { 
-            if (!file) return; 
-            if (file.size > 10 * 1024 * 1024) { 
-                alert("File size must be less than 10MB."); 
-                return; 
-            } 
-            selectedNotesFile = file; 
-            if (selectedFileName) selectedFileName.textContent = file.name; 
-            if (selectedUpload) selectedUpload.classList.add("show"); 
-        } 
-
-        if (fileInput) fileInput.addEventListener("change", function () { if (this.files.length > 0) showSelectedFile(this.files[0]); }); 
-        if (galleryInput) galleryInput.addEventListener("change", function () { if (this.files.length > 0) showSelectedFile(this.files[0]); }); 
-        if (cameraInput) cameraInput.addEventListener("change", function () { if (this.files.length > 0) showSelectedFile(this.files[0]); }); 
-
-        if (removeFile && selectedUpload) {
-            removeFile.addEventListener("click", function (event) { 
-                event.stopPropagation(); 
-                if (fileInput) fileInput.value = ""; 
-                if (galleryInput) galleryInput.value = ""; 
-                if (cameraInput) cameraInput.value = ""; 
-                selectedNotesFile = null; 
-                selectedUpload.classList.remove("show"); 
-                if (selectedFileName) selectedFileName.textContent = ""; 
-            }); 
-        }
-
-        document.addEventListener("click", function (event) { 
-            if (!event.target.closest(".hw-attachment-menu") && attachmentPopup) { 
-                attachmentPopup.classList.remove("show"); 
-            } 
-        }); 
-
         /* DISTRIBUTE BUTTON ACTION */ 
         const hwCourse = document.getElementById("hwCourse"); 
         const sendUpdateBtn = document.getElementById("sendUpdateBtn"); 
@@ -1287,13 +1138,12 @@
                     && !!selectedHomeworkFile; 
 
                 const sendHomework = homeworkTextFilled || homeworkDocFilled; 
-                const sendNotes = !!selectedNotesFile; 
 
-                if (!sendHomework && !sendNotes) { 
+                if (!sendHomework) { 
                     if (textAssignment && textAssignment.classList.contains("active")) { 
-                        alert("Please type the homework instructions, add learning material, or both before sending."); 
+                        alert("Please type the homework instructions before sending."); 
                     } else { 
-                        alert("Please upload a homework document, add learning material, or both before sending."); 
+                        alert("Please upload a homework document before sending."); 
                     } 
                     return; 
                 } 
@@ -1303,16 +1153,7 @@
                     return; 
                 } 
 
-                let message = ""; 
-                if (sendHomework && sendNotes) { 
-                    message = "Homework and notes distributed to students successfully!"; 
-                } else if (sendHomework) { 
-                    message = "Homework distributed to students successfully!"; 
-                } else { 
-                    message = "Notes distributed to students successfully!"; 
-                } 
-
-                hwSuccess.textContent = message; 
+                hwSuccess.textContent = "Homework distributed to students successfully!"; 
                 hwSuccess.classList.add("show"); 
 
                 /* RESET FORM */ 
@@ -1330,13 +1171,6 @@
                 if (textAssignment && documentUpload) {
                     selectHomeworkType(textAssignment, documentUpload, textAssignmentSection, documentUploadSection); 
                 }
-
-                if (fileInput) fileInput.value = ""; 
-                if (galleryInput) galleryInput.value = ""; 
-                if (cameraInput) cameraInput.value = ""; 
-                selectedNotesFile = null; 
-                if (selectedUpload) selectedUpload.classList.remove("show"); 
-                if (selectedFileName) selectedFileName.textContent = ""; 
 
                 setTimeout(function () { 
                     hwSuccess.classList.remove("show"); 
