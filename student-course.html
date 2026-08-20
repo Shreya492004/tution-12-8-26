@@ -35,10 +35,8 @@
 
     <!-- Custom CSS -->
     <style>
-        
-
         /* =========================================================
-           BANNER STYLING & COMPACT RESPONSIVE SCALING
+            BANNER STYLING & COMPACT RESPONSIVE SCALING
         ========================================================= */
         .slider-area.rbt-banner-10 {
             margin-top: 0 !important;
@@ -491,11 +489,20 @@
             background: #f5f5f7 !important;
             color: #444444 !important;
             border: 1px solid #e8e8ea !important;
+            display: inline-flex !important;
+            align-items: flex-start !important;
+            text-align: left !important;
+            white-space: normal !important;
+            line-height: 1.4 !important;
+            padding: 6px 10px !important;
         }
 
         .time-pill i {
             color: #6c4df6 !important;
             font-size: 12.5px !important;
+            margin-top: 3px;
+            flex-shrink: 0;
+            margin-right: 6px;
         }
 
         .no-course-found {
@@ -763,7 +770,11 @@
                                                                     <span class="course-row-label">Class Time</span>
                                                                     <div class="course-row-right">
                                                                         <span class="course-badge-pill time-pill">
-                                                                            <i class="feather-clock"></i> Mon &amp; Wed • 10:00 AM - 11:30 AM
+                                                                            <i class="feather-clock"></i>
+                                                                            <span>
+                                                                                Mon • 10:00 AM - 11:30 AM<br>
+                                                                                Wed • 10:00 AM - 11:30 AM
+                                                                            </span>
                                                                         </span>
                                                                     </div>
                                                                 </div>
@@ -795,7 +806,11 @@
                                                                     <span class="course-row-label">Class Time</span>
                                                                     <div class="course-row-right">
                                                                         <span class="course-badge-pill time-pill">
-                                                                            <i class="feather-clock"></i> Tue &amp; Thu • 02:00 PM - 03:30 PM
+                                                                            <i class="feather-clock"></i>
+                                                                            <span>
+                                                                                Tue • 02:00 PM - 03:30 PM<br>
+                                                                                Thu • 02:00 PM - 03:30 PM
+                                                                            </span>
                                                                         </span>
                                                                     </div>
                                                                 </div>
@@ -827,7 +842,11 @@
                                                                     <span class="course-row-label">Class Time</span>
                                                                     <div class="course-row-right">
                                                                         <span class="course-badge-pill time-pill">
-                                                                            <i class="feather-clock"></i> Mon &amp; Fri • 04:00 PM - 05:30 PM
+                                                                            <i class="feather-clock"></i>
+                                                                            <span>
+                                                                                Mon • 04:00 PM - 05:30 PM<br>
+                                                                                Fri • 04:00 PM - 05:30 PM
+                                                                            </span>
                                                                         </span>
                                                                     </div>
                                                                 </div>
@@ -859,21 +878,22 @@
                                                                     <span class="course-row-label">Class Time</span>
                                                                     <div class="course-row-right">
                                                                         <span class="course-badge-pill time-pill">
-                                                                            <i class="feather-clock"></i> Sat • 01:00 PM - 02:30 PM
+                                                                            <i class="feather-clock"></i>
+                                                                            <span>Sat • 01:00 PM - 02:30 PM</span>
                                                                         </span>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>      </div>
-
-                                                <!-- NO COURSE FOUND MESSAGE -->
-                                                <div class="col-12 no-course-found" id="noCourseFound">
-                                                    <i class="feather-alert-circle" style="font-size: 28px; color: #6c4df6; margin-bottom: 8px; display: block;"></i>
-                                                    No courses found matching the selected filters.
                                                 </div>
 
+                                            </div>
+
+                                            <!-- NO COURSE FOUND MESSAGE -->
+                                            <div class="col-12 no-course-found" id="noCourseFound">
+                                                <i class="feather-alert-circle" style="font-size: 28px; color: #6c4df6; margin-bottom: 8px; display: block;"></i>
+                                                No courses found matching the selected filters.
                                             </div>
 
                                         </div>

@@ -67,17 +67,6 @@
             }
         }
 
-        @media (max-width: 480px) {
-            .slider-area.rbt-banner-10.height-400 {
-                height: 160px !important;
-                min-height: 160px !important;
-            }
-
-            .slider-area.rbt-banner-10 .title.display-one {
-                font-size: 22px !important;
-            }
-        }
-
         :root {
             --clr-primary: #6c4df6;
             --clr-primary-dark: #5b3ef0;
@@ -134,129 +123,129 @@
             display: inline-block !important;
         }
 
-        /* Subject Section Block */
+        /* Roster Layout & Header */
         .subject-roster-block {
-            margin-bottom: 44px;
-        }
-
-        .subject-roster-block:last-child {
             margin-bottom: 0;
         }
 
-        /* Subject Header Bar with Background Colors */
+        .main-section-title {
+            font-size: 24px !important;
+            font-weight: 700 !important;
+            color: #192335 !important;
+            margin-bottom: 6px;
+        }
+
         .static-roster-header {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            border-radius: 14px;
-            padding: 20px 24px;
             margin-bottom: 16px;
             flex-wrap: wrap;
-            gap: 14px;
+            gap: 10px;
         }
 
         .static-roster-header .header-left h3 {
             margin: 0;
-            font-size: 22px !important;
-            font-weight: 700 !important;
-            color: #192335 !important;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .static-roster-header .header-left p {
-            margin: 4px 0 0;
-            font-size: 14.5px !important;
-            color: #4b5563 !important;
-        }
-
-        /* Mathematics Theme */
-        .theme-math .static-roster-header {
-            background: #f4f0ff;
-            border: 1px solid #e2d9ff;
-        }
-        .theme-math .header-left h3 i { color: #6c4df6; }
-        .theme-math .total-counter-pill {
-            background: #6c4df6;
-            box-shadow: 0 4px 12px rgba(108, 77, 246, 0.25);
-        }
-        .theme-math .type-filter-btn.active {
-            background: #6c4df6 !important;
-            border-color: #6c4df6 !important;
-        }
-        .theme-math .sort-toggle-btn {
-            border-color: #e0dbff;
-            color: #6c4df6;
-        }
-
-        /* Physics Theme */
-        .theme-physics .static-roster-header {
-            background: #eef8ff;
-            border: 1px solid #cbe7fd;
-        }
-        .theme-physics .header-left h3 i { color: #0284c7; }
-        .theme-physics .total-counter-pill {
-            background: #0284c7;
-            box-shadow: 0 4px 12px rgba(2, 132, 199, 0.25);
-        }
-        .theme-physics .type-filter-btn.active {
-            background: #0284c7 !important;
-            border-color: #0284c7 !important;
-        }
-        .theme-physics .sort-toggle-btn {
-            border-color: #bae6fd;
-            color: #0284c7;
-        }
-
-        /* Chemistry Theme */
-        .theme-chemistry .static-roster-header {
-            background: #fff8ee;
-            border: 1px solid #fedfb9;
-        }
-        .theme-chemistry .header-left h3 i { color: #d97706; }
-        .theme-chemistry .total-counter-pill {
-            background: #d97706;
-            box-shadow: 0 4px 12px rgba(217, 119, 6, 0.25);
-        }
-        .theme-chemistry .type-filter-btn.active {
-            background: #d97706 !important;
-            border-color: #d97706 !important;
-        }
-        .theme-chemistry .sort-toggle-btn {
-            border-color: #fde68a;
-            color: #d97706;
-        }
-
-        .total-counter-pill {
-            color: #ffffff;
-            padding: 8px 20px;
-            border-radius: 24px;
-            font-size: 15px !important;
+            font-size: 19px !important;
             font-weight: 600 !important;
-            display: inline-flex;
+            color: #475569 !important;
+            display: flex;
             align-items: center;
             gap: 8px;
         }
 
-        /* Toolbar */
-        .roster-toolbar {
-            background: #ffffff;
-            border-radius: 12px;
-            padding: 16px 20px;
-            border: 1px solid #e8e8e8;
-            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
-            margin-bottom: 18px;
+        /* Dynamic Theme Accent Bars */
+        .theme-math .header-left h3 i { color: #6c4df6; }
+        .theme-math .total-counter-pill { background: #6c4df6; box-shadow: 0 4px 12px rgba(108, 77, 246, 0.25); }
+        .theme-math .type-filter-btn.active { background: #6c4df6 !important; border-color: #6c4df6 !important; }
+        .theme-math .sort-toggle-btn { border-color: #e0dbff; color: #6c4df6; }
+
+        .theme-physics .header-left h3 i { color: #0284c7; }
+        .theme-physics .total-counter-pill { background: #0284c7; box-shadow: 0 4px 12px rgba(2, 132, 199, 0.25); }
+        .theme-physics .type-filter-btn.active { background: #0284c7 !important; border-color: #0284c7 !important; }
+        .theme-physics .sort-toggle-btn { border-color: #bae6fd; color: #0284c7; }
+
+        .theme-chemistry .header-left h3 i { color: #d97706; }
+        .theme-chemistry .total-counter-pill { background: #d97706; box-shadow: 0 4px 12px rgba(217, 119, 6, 0.25); }
+        .theme-chemistry .type-filter-btn.active { background: #d97706 !important; border-color: #d97706 !important; }
+        .theme-chemistry .sort-toggle-btn { border-color: #fde68a; color: #d97706; }
+
+        .total-counter-pill {
+            color: #ffffff;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 14px !important;
+            font-weight: 600 !important;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* Toolbar Rows */
+        .toolbar-row {
             display: flex;
             flex-wrap: wrap;
-            justify-content: flex-start;
             align-items: center;
             gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        /* Clean Single-Border Native Dropdown Control */
+        .course-dropdown-wrapper {
+            position: relative;
+            width: 190px;
+            flex-shrink: 0;
+        }
+
+        .course-select-dropdown {
+            -webkit-appearance: none !important;
+            -moz-appearance: none !important;
+            appearance: none !important;
+            height: 42px !important;
+            width: 100% !important;
+            border: 1px solid #e2e8f0 !important;
+            border-radius: 8px !important;
+            background-color: #ffffff !important;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3E") !important;
+            background-repeat: no-repeat !important;
+            background-position: right 14px center !important;
+            background-size: 16px !important;
+            padding: 0 36px 0 14px !important;
+            font-size: 14.5px !important;
+            color: #192335 !important;
+            outline: none !important;
+            font-weight: 500 !important;
+            box-shadow: none !important;
+            cursor: pointer;
+            display: block !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+            line-height: 40px !important;
+            transition: border-color 0.2s ease;
+        }
+
+        .course-select-dropdown:hover,
+        .course-select-dropdown:focus {
+            border-color: #cbd5e1 !important;
+            outline: none !important;
+            box-shadow: none !important;
+        }
+
+        .course-select-dropdown option {
+            color: #192335;
+            background: #ffffff;
+            font-size: 14px;
+            padding: 6px 10px;
+        }
+
+        .course-dropdown-wrapper .bootstrap-select {
+            display: none !important;
         }
 
         .roster-search-input {
             position: relative;
-            width: 250px;
+            flex: 1;
+            min-width: 220px;
         }
 
         .roster-search-input input {
@@ -267,6 +256,8 @@
             font-size: 14.5px !important;
             width: 100%;
             outline: none;
+            box-shadow: none !important;
+            background: #ffffff;
         }
 
         .roster-search-input i {
@@ -289,6 +280,8 @@
             align-items: center;
             gap: 8px;
             cursor: pointer;
+            white-space: nowrap;
+            flex-shrink: 0;
         }
 
         .roster-type-filters {
@@ -312,6 +305,7 @@
             color: #475569;
             cursor: pointer;
             transition: all 0.2s ease;
+            white-space: nowrap;
         }
 
         .type-filter-btn.active {
@@ -338,6 +332,7 @@
             border: 1px solid #e8e8e8;
             overflow: hidden;
             box-shadow: 0 4px 14px rgba(0, 0, 0, 0.02);
+            margin-top: 18px;
         }
 
         .student-table {
@@ -423,9 +418,7 @@
             cursor: pointer;
         }
 
-        /* =========================================================
-           FLOATING BUTTONS & BACK-TO-TOP STYLES (MATCHING SCREENSHOT)
-        ========================================================= */
+        /* Floating Buttons */
         .floating-contact {
             position: fixed;
             right: 24px;
@@ -443,7 +436,6 @@
             justify-content: flex-end;
         }
 
-        /* Rounded square with white background and outline */
         .contact-button {
             width: 48px;
             height: 48px;
@@ -453,30 +445,12 @@
             align-items: center;
             justify-content: center;
             box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
             text-decoration: none !important;
         }
 
-        .contact-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
-        }
+        .call-button { border: 2px solid #8e24aa !important; color: #8e24aa !important; font-size: 20px; }
+        .whatsapp-button { border: 2px solid #00c853 !important; color: #00c853 !important; font-size: 24px; }
 
-        /* Purple Call Button */
-        .call-button {
-            border: 2px solid #8e24aa !important;
-            color: #8e24aa !important;
-            font-size: 20px;
-        }
-
-        /* Green WhatsApp Button */
-        .whatsapp-button {
-            border: 2px solid #00c853 !important;
-            color: #00c853 !important;
-            font-size: 24px;
-        }
-
-        /* Tooltip Labels */
         .contact-label {
             position: absolute;
             right: 58px;
@@ -491,7 +465,6 @@
             pointer-events: none;
             transition: opacity 0.2s ease, transform 0.2s ease;
             transform: translateX(8px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
         }
 
         .contact-item:hover .contact-label,
@@ -500,7 +473,7 @@
             transform: translateX(0);
         }
 
-        /* Back to Top Circle with Arrow Icon */
+        /* Back to top */
         .rbt-progress-parent {
             position: fixed;
             right: 24px;
@@ -514,7 +487,6 @@
             z-index: 10000;
             opacity: 0;
             visibility: hidden;
-            transform: translateY(15px);
             transition: all 200ms linear;
             background: #ffffff;
         }
@@ -522,13 +494,12 @@
         .rbt-progress-parent.rbt-backto-top-active {
             opacity: 1;
             visibility: visible;
-            transform: translateY(0);
         }
 
         .rbt-progress-parent::after {
             position: absolute;
             font-family: 'feather', 'Feather' !important;
-            content: '\e912'; /* feather-arrow-up */
+            content: '\e912';
             text-align: center;
             line-height: 48px;
             font-size: 20px;
@@ -537,24 +508,9 @@
             top: 0;
             height: 48px;
             width: 48px;
-            cursor: pointer;
-            display: block;
-            z-index: 1;
-            transition: all 200ms linear;
         }
 
-        .rbt-progress-parent svg path {
-            fill: none;
-        }
-
-        .rbt-progress-parent svg.rbt-back-circle path {
-            stroke: #4a6cf7;
-            stroke-width: 4;
-            box-sizing: border-box;
-            transition: all 200ms linear;
-        }
-
-        /* Modal styling */
+        /* Modal */
         .modal-overlay {
             position: fixed;
             top: 0;
@@ -563,7 +519,6 @@
             height: 100%;
             background: rgba(15, 23, 42, 0.65);
             backdrop-filter: blur(5px);
-            -webkit-backdrop-filter: blur(5px);
             display: none;
             align-items: center;
             justify-content: center;
@@ -574,10 +529,7 @@
             padding: 16px;
         }
 
-        .modal-overlay.active {
-            opacity: 1;
-            visibility: visible;
-        }
+        .modal-overlay.active { opacity: 1; visibility: visible; }
 
         .modal-card-box {
             background: #ffffff;
@@ -594,9 +546,7 @@
             transition: transform 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
         }
 
-        .modal-overlay.active .modal-card-box {
-            transform: scale(1) translateY(0);
-        }
+        .modal-overlay.active .modal-card-box { transform: scale(1) translateY(0); }
 
         .modal-header-bg {
             background: linear-gradient(135deg, #f8f9ff 0%, #f3f0ff 100%);
@@ -607,11 +557,7 @@
             justify-content: space-between;
         }
 
-        .modal-header-content {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
+        .modal-header-content { display: flex; align-items: center; gap: 12px; }
 
         .modal-user-icon {
             width: 42px;
@@ -624,22 +570,11 @@
             align-items: center;
             justify-content: center;
             font-size: 18px;
-            box-shadow: 0 4px 10px rgba(108, 77, 246, 0.1);
             flex-shrink: 0;
         }
 
-        .modal-title-area h4 {
-            margin: 0;
-            color: #192335 !important;
-            font-size: 20px !important;
-            font-weight: 700 !important;
-        }
-
-        .modal-title-area span {
-            font-size: 14px !important;
-            color: #6c4df6 !important;
-            font-weight: 600 !important;
-        }
+        .modal-title-area h4 { margin: 0; color: #192335 !important; font-size: 20px !important; font-weight: 700 !important; }
+        .modal-title-area span { font-size: 14px !important; color: #6c4df6 !important; font-weight: 600 !important; }
 
         .modal-close-btn {
             background: #ffffff;
@@ -652,23 +587,9 @@
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            transition: all 0.2s ease;
-            font-size: 16px;
         }
 
-        .modal-close-btn:hover {
-            background: #fee2e2;
-            color: #ef4444;
-            border-color: #fca5a5;
-            transform: rotate(90deg);
-        }
-
-        .student-modal-body {
-            padding: 18px 22px;
-            background: #ffffff;
-            overflow-y: auto;
-            max-height: calc(88vh - 140px);
-        }
+        .student-modal-body { padding: 18px 22px; background: #ffffff; overflow-y: auto; max-height: calc(88vh - 140px); }
 
         .detail-section-title {
             font-size: 12px !important;
@@ -681,95 +602,21 @@
             gap: 6px;
             margin: 20px 0 10px !important;
         }
+        .detail-section-title:first-child { margin-top: 0 !important; }
+        .detail-section-title::after { content: ''; flex: 1; height: 1px; background: var(--clr-line-soft); }
 
-        .detail-section-title:first-child {
-            margin-top: 0 !important;
-        }
-
-        .detail-section-title::after {
-            content: '';
-            flex: 1;
-            height: 1px;
-            background: var(--clr-line-soft);
-        }
-
-        .detail-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 10px 12px;
-            margin-bottom: 6px;
-        }
-
-        .detail-item {
-            background: #fbfbfe;
-            padding: 10px 14px;
-            border-radius: var(--radius-sm);
-            border: 1px solid #f0edf8;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            transition: all 0.2s ease;
-        }
-
-        .detail-item.full-width {
-            grid-column: span 2;
-        }
-
-        .detail-item label {
-            font-size: 11px !important;
-            text-transform: uppercase !important;
-            font-weight: 600 !important;
-            color: var(--clr-muted) !important;
-            display: block;
-            margin-bottom: 3px;
-            letter-spacing: 0.06em;
-        }
-
-        .detail-item p {
-            margin: 0;
-            font-size: 14.5px !important;
-            font-weight: 600 !important;
-            color: var(--clr-ink) !important;
-            line-height: 1.45;
-            word-break: break-word;
-        }
+        .detail-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px 12px; margin-bottom: 6px; }
+        .detail-item { background: #fbfbfe; padding: 10px 14px; border-radius: var(--radius-sm); border: 1px solid #f0edf8; display: flex; flex-direction: column; justify-content: center; }
+        .detail-item.full-width { grid-column: span 2; }
+        .detail-item label { font-size: 11px !important; text-transform: uppercase !important; font-weight: 600 !important; color: var(--clr-muted) !important; display: block; margin-bottom: 3px; }
+        .detail-item p { margin: 0; font-size: 14.5px !important; font-weight: 600 !important; color: var(--clr-ink) !important; line-height: 1.45; word-break: break-word; }
 
         .assigned-highlight { color: #6c4df6 !important; font-weight: 600 !important; }
-        .joined-highlight { color: #16c763 !important; font-weight: 600 !important; }
         .attendance-highlight { color: #6c4df6 !important; font-weight: 600 !important; }
         .missed-highlight { color: #ef4444 !important; font-weight: 600 !important; }
 
-        .modal-footer-area {
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-            padding-top: 14px;
-            border-top: 1px solid #e2e8f0;
-        }
-
-        .modal-close-profile-btn {
-            background: linear-gradient(135deg, #6c4df6 0%, #9b7cff 100%);
-            border: none;
-            color: #ffffff;
-            font-size: 15px !important;
-            font-weight: 500 !important;
-            padding: 8px 20px;
-            border-radius: 6px;
-            cursor: pointer;
-            box-shadow: 0 3px 10px rgba(108, 77, 246, 0.25);
-        }
-
-        @media (max-width: 768px) {
-            .static-roster-header { flex-direction: column; align-items: flex-start; }
-            .detail-grid { grid-template-columns: 1fr; }
-            .detail-item.full-width { grid-column: span 1; }
-            .roster-toolbar { flex-direction: column; align-items: stretch; }
-            .roster-search-input { width: 100%; }
-            .sort-toggle-btn { width: 100%; justify-content: center; }
-            .roster-type-filters { width: 100%; }
-            .type-filter-btn { flex: 1; justify-content: center; }
-            .student-table thead th, .student-table tbody td { padding: 10px 12px; font-size: 13.5px !important; }
-        }
+        .modal-footer-area { display: flex; align-items: center; justify-content: flex-end; padding-top: 14px; border-top: 1px solid #e2e8f0; }
+        .modal-close-profile-btn { background: linear-gradient(135deg, #6c4df6 0%, #9b7cff 100%); border: none; color: #ffffff; font-size: 15px !important; font-weight: 500 !important; padding: 8px 20px; border-radius: 6px; cursor: pointer; }
     </style>
 </head>
 
@@ -803,8 +650,26 @@
                     </div>
                     <div class="header-right">
                         <div class="rbt-btn-wrapper d-flex align-items-center gap-2">
-                            <a class="rbt-btn rbt-switch-btn btn-gradient btn-sm hover-transform-none" href="instructor-profile.html">
-                                <span data-text="Dashboard">Dashboard</span>
+                            <div class="login-dropdown">
+                                <button type="button"
+                                    class="rbt-btn rbt-switch-btn btn-gradient btn-sm hover-transform-none login-dropdown-btn">
+                                    <span data-text="Login">Login</span>
+                                    <i class="feather-chevron-down"></i>
+                                </button>
+                                <div class="login-dropdown-menu">
+                                    <a href="instructor-profile.html">
+                                        <i class="feather-user"></i>
+                                        <span>Tutor Login</span>
+                                    </a>
+                                    <a href="student-profile.html">
+                                        <i class="feather-book-open"></i>
+                                        <span>Student Login</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <a class="rbt-btn rbt-switch-btn btn-gradient btn-sm hover-transform-none"
+                                href="login-register.html">
+                                <span data-text="Join Now">Join Now</span>
                             </a>
                         </div>
                     </div>
@@ -846,37 +711,36 @@
 
                                             <nav class="mainmenu-nav">
                                                 <ul class="dashboard-mainmenu rbt-default-sidebar-list">
-                                                    <li >
+                                                    <li>
                                                         <a href="instructor-profile.html">
                                                             <i class="feather-user"></i>
                                                             <span>My Profile</span>
                                                         </a>
                                                     </li>
-                                                    <li class="active" >
-                                                        <a class="active"  href="students-list.html">
+                                                    <li class="active">
+                                                        <a class="active" href="students-list.html">
                                                             <i class="feather-monitor"></i>
                                                             <span>Students List</span>
                                                         </a>
                                                     </li>
-                                                      <li >
-                                                        <a  href="class-schedule.html">
+                                                    <li>
+                                                        <a href="class-schedule.html">
                                                             <i class="feather-calendar"></i>
                                                             <span>Class Schedule</span>
                                                         </a>
                                                     </li>
-
                                                     <li>
                                                         <a href="classlink.html">
                                                             <i class="feather-link"></i>
                                                             <span>Class Link</span>
                                                         </a>
                                                     </li>
-                                                 <li>
-    <a href="tutor-attendance.html">
-        <i class="feather-check-circle"></i>
-        <span>Attendance</span>
-    </a>
-</li>
+                                                    <li>
+                                                        <a href="tutor-attendance.html">
+                                                            <i class="feather-check-circle"></i>
+                                                            <span>Attendance</span>
+                                                        </a>
+                                                    </li>
                                                     <li>
                                                         <a href="tutor-homework.html">
                                                             <i class="feather-file-text"></i>
@@ -918,35 +782,53 @@
                             <div class="rbt-dashboard-content bg-color-white rbt-shadow-box">
                                 <div class="content">
 
-                                    <!-- 1. MATHEMATICS -->
-                                    <div class="subject-roster-block theme-math" id="block-mathematics">
+                                    <!-- Subject Roster Container -->
+                                    <div class="subject-roster-block theme-math" id="active-subject-block">
+                                        
+                                        <!-- Common Heading -->
+                                        <h2 class="main-section-title">Student List</h2>
+
                                         <div class="static-roster-header">
                                             <div class="header-left">
-                                                <h3><i class="feather-book"></i> Mathematics</h3>
-                                                <p>Complete roster of students enrolled in Mathematics tuition.</p>
+                                                <h3 id="roster-heading"><i class="feather-book"></i> Mathematics Student List</h3>
                                             </div>
                                             <div class="header-right">
-                                                <div class="total-counter-pill">
-                                                    <i class="feather-users"></i> Total Students: <span id="count-mathematics">16</span>
+                                                <div class="total-counter-pill" id="total-counter-bg">
+                                                    <i class="feather-users"></i> Total Students: <span id="count-display">0</span>
                                                 </div>
                                             </div>
                                         </div>
 
-                                        <div class="roster-toolbar">
-                                            <div class="roster-search-input">
-                                                <input type="text" id="search-mathematics" placeholder="Search by name or ID" onkeyup="renderSubjectTable('mathematics')">
-                                               
+                                        <!-- Toolbar Row 1 -->
+                                        <div class="toolbar-row">
+                                            <div class="course-dropdown-wrapper">
+                                                <select id="course-dropdown" class="course-select-dropdown no-selectpicker" onchange="switchCourse()">
+                                                 
+                                                  <option value="mathematics">Mathematics</option>
+                                                    <option value="physics">Physics</option>
+                                                    <option value="chemistry">Chemistry</option>
+                                                </select>
                                             </div>
-                                            <button class="sort-toggle-btn" id="sort-btn-mathematics" onclick="toggleSubjectSort('mathematics')">
-                                                <i class="feather-arrow-up" id="sort-icon-mathematics"></i>
-                                                <span>Name: <span id="sort-label-mathematics">A-Z</span></span>
+
+                                            <div class="roster-search-input">
+                                                <input type="text" id="search-input" placeholder="Search by name or ID" onkeyup="renderActiveTable()">
+                                                
+                                            </div>
+
+                                            <button class="sort-toggle-btn" id="sort-btn" onclick="toggleSortOrder()">
+                                                <i class="feather-arrow-up" id="sort-icon"></i>
+                                                <span>Name: <span id="sort-label">A-Z</span></span>
                                             </button>
+                                        </div>
+
+                                        <!-- Toolbar Row 2 -->
+                                        <div class="toolbar-row">
                                             <div class="roster-type-filters">
-                                                <button type="button" class="type-filter-btn" id="filter-btn-mathematics-one-to-one" onclick="toggleSubjectFilter('mathematics', 'One-To-One')">
-                                                    <i class="feather-user"></i> One-To-One <span class="filter-count-badge" id="badge-mathematics-oto">0</span>
+                                                <button type="button" class="type-filter-btn" id="filter-btn-oto" onclick="toggleFilter('One-To-One')">
+                                                    <i class="feather-user"></i> One-To-One <span class="filter-count-badge" id="badge-oto">0</span>
                                                 </button>
-                                                <button type="button" class="type-filter-btn" id="filter-btn-mathematics-one-to-many" onclick="toggleSubjectFilter('mathematics', 'One-To-Many')">
-                                                    <i class="feather-users"></i> One-To-Many <span class="filter-count-badge" id="badge-mathematics-otm">0</span>
+                                                <button type="button" class="type-filter-btn" id="filter-btn-otm" onclick="toggleFilter('One-To-Many')">
+                                                    <i class="feather-users"></i> One-To-Many <span class="filter-count-badge" id="badge-otm">0</span>
                                                 </button>
                                             </div>
                                         </div>
@@ -956,119 +838,18 @@
                                                 <table class="student-table">
                                                     <thead>
                                                         <tr>
-                                                            <th style="width: 10%; text-align: center;">S.No</th>
-                                                            <th style="width: 34%;">Student Name</th>
+                                                            <th style="width: 8%; text-align: center;">S.No</th>
+                                                            <th style="width: 38%;">Student Name</th>
                                                             <th style="width: 20%; text-align: center;">Type</th>
-                                                            <th style="width: 24%;">Time</th>
+                                                            <th style="width: 22%;">Time</th>
                                                             <th style="width: 12%; text-align: center;">Action</th>
                                                         </tr>
                                                     </thead>
-                                                    <tbody id="tbody-mathematics"></tbody>
+                                                    <tbody id="student-tbody"></tbody>
                                                 </table>
                                             </div>
                                         </div>
-                                    </div>
 
-                                    <!-- 2. PHYSICS -->
-                                    <div class="subject-roster-block theme-physics" id="block-physics">
-                                        <div class="static-roster-header">
-                                            <div class="header-left">
-                                                <h3><i class="feather-zap"></i> Physics</h3>
-                                                <p>Complete roster of students enrolled in Physics tuition.</p>
-                                            </div>
-                                            <div class="header-right">
-                                                <div class="total-counter-pill">
-                                                    <i class="feather-users"></i> Total Students: <span id="count-physics">14</span>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="roster-toolbar">
-                                            <div class="roster-search-input">
-                                                <input type="text" id="search-physics" placeholder="Search by name or ID" onkeyup="renderSubjectTable('physics')">
-                                               
-                                            </div>
-                                            <button class="sort-toggle-btn" id="sort-btn-physics" onclick="toggleSubjectSort('physics')">
-                                                <i class="feather-arrow-up" id="sort-icon-physics"></i>
-                                                <span>Name: <span id="sort-label-physics">A-Z</span></span>
-                                            </button>
-                                            <div class="roster-type-filters">
-                                                <button type="button" class="type-filter-btn" id="filter-btn-physics-one-to-one" onclick="toggleSubjectFilter('physics', 'One-To-One')">
-                                                    <i class="feather-user"></i> One-To-One <span class="filter-count-badge" id="badge-physics-oto">0</span>
-                                                </button>
-                                                <button type="button" class="type-filter-btn" id="filter-btn-physics-one-to-many" onclick="toggleSubjectFilter('physics', 'One-To-Many')">
-                                                    <i class="feather-users"></i> One-To-Many <span class="filter-count-badge" id="badge-physics-otm">0</span>
-                                                </button>
-                                            </div>
-                                        </div>
-
-                                        <div class="student-table-card">
-                                            <div class="table-responsive">
-                                                <table class="student-table">
-                                                    <thead>
-                                                        <tr>
-                                                            <th style="width: 10%; text-align: center;">S.No</th>
-                                                            <th style="width: 34%;">Student Name</th>
-                                                            <th style="width: 20%; text-align: center;">Type</th>
-                                                            <th style="width: 24%;">Time</th>
-                                                            <th style="width: 12%; text-align: center;">Action</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody id="tbody-physics"></tbody>
-                                                </table>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- 3. CHEMISTRY -->
-                                    <div class="subject-roster-block theme-chemistry" id="block-chemistry">
-                                        <div class="static-roster-header">
-                                            <div class="header-left">
-                                                <h3><i class="feather-activity"></i> Chemistry</h3>
-                                                <p>Complete roster of students enrolled in Chemistry tuition.</p>
-                                            </div>
-                                            <div class="header-right">
-                                                <div class="total-counter-pill">
-                                                    <i class="feather-users"></i> Total Students: <span id="count-chemistry">12</span>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="roster-toolbar">
-                                            <div class="roster-search-input">
-                                                <input type="text" id="search-chemistry" placeholder="Search by name or ID" onkeyup="renderSubjectTable('chemistry')">
-                                               
-                                            </div>
-                                            <button class="sort-toggle-btn" id="sort-btn-chemistry" onclick="toggleSubjectSort('chemistry')">
-                                                <i class="feather-arrow-up" id="sort-icon-chemistry"></i>
-                                                <span>Name: <span id="sort-label-chemistry">A-Z</span></span>
-                                            </button>
-                                            <div class="roster-type-filters">
-                                                <button type="button" class="type-filter-btn" id="filter-btn-chemistry-one-to-one" onclick="toggleSubjectFilter('chemistry', 'One-To-One')">
-                                                    <i class="feather-user"></i> One-To-One <span class="filter-count-badge" id="badge-chemistry-oto">0</span>
-                                                </button>
-                                                <button type="button" class="type-filter-btn" id="filter-btn-chemistry-one-to-many" onclick="toggleSubjectFilter('chemistry', 'One-To-Many')">
-                                                    <i class="feather-users"></i> One-To-Many <span class="filter-count-badge" id="badge-chemistry-otm">0</span>
-                                                </button>
-                                            </div>
-                                        </div>
-
-                                        <div class="student-table-card">
-                                            <div class="table-responsive">
-                                                <table class="student-table">
-                                                    <thead>
-                                                        <tr>
-                                                            <th style="width: 10%; text-align: center;">S.No</th>
-                                                            <th style="width: 34%;">Student Name</th>
-                                                            <th style="width: 20%; text-align: center;">Type</th>
-                                                            <th style="width: 24%;">Time</th>
-                                                            <th style="width: 12%; text-align: center;">Action</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody id="tbody-chemistry"></tbody>
-                                                </table>
-                                            </div>
-                                        </div>
                                     </div>
 
                                 </div>
@@ -1093,20 +874,15 @@
                                     <img src="assets/images/logo/logo.png" alt="Edu-Loop Sign Logo">
                                 </a>
                             </div>
-
                             <p class="description mt--20">We are always seeking talented and motivated individuals to join our team.</p>
-
                             <ul class="social-icon social-default justify-content-start">
                                 <li><a href="https://www.facebook.com/"><i class="feather-facebook"></i></a></li>
-                                <li><a href="https://www.twitter.com" aria-label="X (Twitter)">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" viewBox="0 0 24 24" class="social-icon-x" style="vertical-align: -2px;"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-                                    </a></li>
+                                <li><a href="https://www.twitter.com" aria-label="X (Twitter)"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" viewBox="0 0 24 24" class="social-icon-x" style="vertical-align: -2px;"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a></li>
                                 <li><a href="https://www.instagram.com/"><i class="feather-instagram"></i></a></li>
                                 <li><a href="https://www.linkedin.com/"><i class="feather-linkedin"></i></a></li>
                             </ul>
                         </div>
                     </div>
-
                     <div class="col-lg-2 col-md-6 col-sm-6 col-12">
                         <div class="footer-widget">
                             <h5 class="ft-title">Useful Links</h5>
@@ -1119,7 +895,6 @@
                             </ul>
                         </div>
                     </div>
-
                     <div class="col-lg-2 col-md-6 col-sm-6 col-12">
                         <div class="footer-widget">
                             <h5 class="ft-title">Popular Programs</h5>
@@ -1133,7 +908,6 @@
                             </ul>
                         </div>
                     </div>
-
                     <div class="col-lg-4 col-md-6 col-sm-6 col-12">
                         <div class="footer-widget">
                             <h5 class="ft-title">Get Contact</h5>
@@ -1173,13 +947,6 @@
             </div>
         </div>
     </footer>
-    <!-- End Footer Area -->
-
-   <div class="rbt-progress-parent">
-        <svg class="rbt-back-circle svg-inner" width="100%" height="100%" viewBox="-1 -1 102 102">
-            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
-        </svg>
-    </div>
 
     <!-- Floating Contact Buttons -->
     <div class="floating-contact">
@@ -1197,6 +964,7 @@
             </a>
         </div>
     </div>
+
     <!-- Back to Top Arrow Button -->
     <div class="rbt-progress-parent">
         <svg class="rbt-back-circle svg-inner" width="100%" height="100%" viewBox="-1 -1 102 102">
@@ -1243,37 +1011,17 @@
 
                 <h6 class="detail-section-title"><i class="feather-calendar"></i> Tuition &amp; Schedule</h6>
                 <div class="detail-grid">
+                    <div class="detail-item full-width">
+                        <label>Enrolled Subjects &amp; Schedules</label>
+                        <p id="modal-student-subjects" class="assigned-highlight">Loading...</p>
+                    </div>
                     <div class="detail-item">
                         <label>Tuition Type</label>
                         <p id="modal-student-type">One-To-One</p>
                     </div>
                     <div class="detail-item">
-                        <label>Schedule / Time</label>
-                        <p id="modal-student-time">Monday • 10:00 AM - 11:30 AM</p>
-                    </div>
-                    <div class="detail-item">
                         <label>Assigned Date</label>
                         <p id="modal-student-assigneddate" class="assigned-highlight">28 Mar 2024</p>
-                    </div>
-                    <div class="detail-item">
-                        <label>Joined Date</label>
-                        <p id="modal-student-joindate" class="joined-highlight">28 Mar 2024</p>
-                    </div>
-                </div>
-
-                <h6 class="detail-section-title"><i class="feather-phone"></i> Contact Information</h6>
-                <div class="detail-grid">
-                    <div class="detail-item full-width">
-                        <label>Email Address</label>
-                        <p id="modal-student-email">oliver.smith@gmail.com</p>
-                    </div>
-                    <div class="detail-item">
-                        <label>Student Phone</label>
-                        <p id="modal-student-phone">+44 7700 900101</p>
-                    </div>
-                    <div class="detail-item">
-                        <label>Parent Contact</label>
-                        <p id="modal-student-parent-phone">+44 7900 111222</p>
                     </div>
                 </div>
 
@@ -1327,66 +1075,85 @@
     <script>
         const studentDatasets = {
             'mathematics': [
-                { id: 'LSE-STD-2024-001', name: 'Oliver Smith', type: 'One-To-One', time: 'Monday • 10:00 AM - 11:30 AM', assignedDate: '2024-03-28', joinDate: '2024-03-28', dob: '14 Mar 2010', gender: 'Male', email: 'oliver.smith@gmail.com', phone: '+44 7700 900101', parentPhone: '+44 7900 111222', attended: '26 Classes', missed: '1 Class' },
-                { id: 'LSE-STD-2024-004', name: 'Amelia Jones', type: 'One-To-Many', time: 'Tuesday • 10:00 AM - 11:30 AM', assignedDate: '2024-03-25', joinDate: '2024-03-25', dob: '22 Aug 2011', gender: 'Female', email: 'amelia.jones@gmail.com', phone: '+44 7700 900102', parentPhone: '+44 7900 111223', attended: '24 Classes', missed: '2 Classes' },
-                { id: 'LSE-STD-2024-007', name: 'Harry Wilson', type: 'One-To-One', time: 'Wednesday • 10:00 AM - 11:30 AM', assignedDate: '2024-01-20', joinDate: '2024-01-20', dob: '05 Nov 2009', gender: 'Male', email: 'harry.wilson@gmail.com', phone: '+44 7700 900103', parentPhone: '+44 7900 111224', attended: '25 Classes', missed: '0 Classes' },
-                { id: 'LSE-STD-2024-012', name: 'Sophia Brown', type: 'One-To-Many', time: 'Thursday • 10:00 AM - 11:30 AM', assignedDate: '2024-02-01', joinDate: '2024-02-01', dob: '18 Jun 2010', gender: 'Female', email: 'sophia.brown@gmail.com', phone: '+44 7700 900104', parentPhone: '+44 7900 111225', attended: '22 Classes', missed: '0 Classes' },
-                { id: 'LSE-STD-2024-015', name: 'George Taylor', type: 'One-To-Many', time: 'Monday • 02:00 PM - 03:30 PM', assignedDate: '2024-02-05', joinDate: '2024-02-05', dob: '11 Dec 2010', gender: 'Male', email: 'george.taylor@gmail.com', phone: '+44 7700 900105', parentPhone: '+44 7900 111226', attended: '20 Classes', missed: '3 Classes' },
-                { id: 'LSE-STD-2024-018', name: 'Isabella Davies', type: 'One-To-One', time: 'Friday • 10:00 AM - 11:30 AM', assignedDate: '2024-03-30', joinDate: '2024-03-30', dob: '03 Feb 2011', gender: 'Female', email: 'isabella.d@gmail.com', phone: '+44 7700 900106', parentPhone: '+44 7900 111227', attended: '21 Classes', missed: '1 Class' },
-                { id: 'LSE-STD-2024-022', name: 'Noah Evans', type: 'One-To-Many', time: 'Thursday • 10:00 AM - 11:30 AM', assignedDate: '2024-01-15', joinDate: '2024-01-15', dob: '19 Sep 2010', gender: 'Male', email: 'noah.evans@gmail.com', phone: '+44 7700 900107', parentPhone: '+44 7900 111228', attended: '27 Classes', missed: '0 Classes' },
-                { id: 'LSE-STD-2024-025', name: 'Mia Thomas', type: 'One-To-Many', time: 'Saturday • 10:00 AM - 11:30 AM', assignedDate: '2024-02-12', joinDate: '2024-02-12', dob: '08 May 2011', gender: 'Female', email: 'mia.thomas@gmail.com', phone: '+44 7700 900108', parentPhone: '+44 7900 111229', attended: '23 Classes', missed: '1 Class' },
-                { id: 'LSE-STD-2024-029', name: 'Leo Roberts', type: 'One-To-One', time: 'Monday • 10:00 AM - 11:30 AM', assignedDate: '2024-03-01', joinDate: '2024-03-01', dob: '14 Oct 2009', gender: 'Male', email: 'leo.roberts@gmail.com', phone: '+44 7700 900109', parentPhone: '+44 7900 111230', attended: '25 Classes', missed: '1 Class' },
-                { id: 'LSE-STD-2024-033', name: 'Ava Johnson', type: 'One-To-Many', time: 'Saturday • 10:00 AM - 11:30 AM', assignedDate: '2024-02-18', joinDate: '2024-02-18', dob: '27 Apr 2010', gender: 'Female', email: 'ava.johnson@gmail.com', phone: '+44 7700 900110', parentPhone: '+44 7900 111231', attended: '24 Classes', missed: '2 Classes' },
-                { id: 'LSE-STD-2024-038', name: 'Lucas Walker', type: 'One-To-Many', time: 'Tuesday • 10:00 AM - 11:30 AM', assignedDate: '2024-01-28', joinDate: '2024-01-28', dob: '02 Dec 2011', gender: 'Male', email: 'lucas.walker@gmail.com', phone: '+44 7700 900111', parentPhone: '+44 7900 111232', attended: '26 Classes', missed: '0 Classes' },
-                { id: 'LSE-STD-2024-042', name: 'Grace Robinson', type: 'One-To-One', time: 'Wednesday • 10:00 AM - 11:30 AM', assignedDate: '2024-03-15', joinDate: '2024-03-15', dob: '16 Jan 2010', gender: 'Female', email: 'grace.robinson@gmail.com', phone: '+44 7700 900112', parentPhone: '+44 7900 111233', attended: '22 Classes', missed: '1 Class' },
-                { id: 'LSE-STD-2024-047', name: 'Arthur Wright', type: 'One-To-Many', time: 'Wednesday • 04:00 PM - 05:30 PM', assignedDate: '2024-02-22', joinDate: '2024-02-22', dob: '29 Jul 2009', gender: 'Male', email: 'arthur.wright@gmail.com', phone: '+44 7700 900113', parentPhone: '+44 7900 111234', attended: '25 Classes', missed: '1 Class' },
-                { id: 'LSE-STD-2024-051', name: 'Freya Scott', type: 'One-To-Many', time: 'Saturday • 10:00 AM - 11:30 AM', assignedDate: '2024-03-05', joinDate: '2024-03-05', dob: '11 Aug 2011', gender: 'Female', email: 'freya.scott@gmail.com', phone: '+44 7700 900114', parentPhone: '+44 7900 111235', attended: '23 Classes', missed: '0 Classes' },
-                { id: 'LSE-STD-2024-056', name: 'Henry Green', type: 'One-To-One', time: 'Friday • 10:00 AM - 11:30 AM', assignedDate: '2024-01-10', joinDate: '2024-01-10', dob: '04 Mar 2010', gender: 'Male', email: 'henry.green@gmail.com', phone: '+44 7700 900115', parentPhone: '+44 7900 111236', attended: '28 Classes', missed: '0 Classes' },
-                { id: 'LSE-STD-2024-060', name: 'Ella Hall', type: 'One-To-Many', time: 'Monday • 02:00 PM - 03:30 PM', assignedDate: '2024-03-20', joinDate: '2024-03-20', dob: '25 Sep 2010', gender: 'Female', email: 'ella.hall@gmail.com', phone: '+44 7700 900116', parentPhone: '+44 7900 111237', attended: '21 Classes', missed: '2 Classes' }
+                { id: 'LSE-STD-2024-001', name: 'Oliver Smith', type: 'One-To-One', time: 'Monday • 10:00 AM - 11:30 AM', assignedDate: '2024-03-28', joinDate: '2024-03-28', dob: '14 Mar 2010', gender: 'Male', attended: '26 Classes', missed: '1 Class' },
+                { id: 'LSE-STD-2024-004', name: 'Amelia Jones', type: 'One-To-Many', time: 'Tuesday • 10:00 AM - 11:30 AM', assignedDate: '2024-03-25', joinDate: '2024-03-25', dob: '22 Aug 2011', gender: 'Female', attended: '24 Classes', missed: '2 Classes' },
+                { id: 'LSE-STD-2024-007', name: 'Harry Wilson', type: 'One-To-One', time: 'Wednesday • 10:00 AM - 11:30 AM', assignedDate: '2024-01-20', joinDate: '2024-01-20', dob: '05 Nov 2009', gender: 'Male', attended: '25 Classes', missed: '0 Classes' },
+                { id: 'LSE-STD-2024-012', name: 'Sophia Brown', type: 'One-To-Many', time: 'Thursday • 10:00 AM - 11:30 AM', assignedDate: '2024-02-01', joinDate: '2024-02-01', dob: '18 Jun 2010', gender: 'Female', attended: '22 Classes', missed: '0 Classes' },
+                { id: 'LSE-STD-2024-015', name: 'George Taylor', type: 'One-To-Many', time: 'Monday • 02:00 PM - 03:30 PM', assignedDate: '2024-02-05', joinDate: '2024-02-05', dob: '11 Dec 2010', gender: 'Male', attended: '20 Classes', missed: '3 Classes' },
+                { id: 'LSE-STD-2024-018', name: 'Isabella Davies', type: 'One-To-One', time: 'Friday • 10:00 AM - 11:30 AM', assignedDate: '2024-03-30', joinDate: '2024-03-30', dob: '03 Feb 2011', gender: 'Female', attended: '21 Classes', missed: '1 Class' },
+                { id: 'LSE-STD-2024-022', name: 'Noah Evans', type: 'One-To-Many', time: 'Thursday • 10:00 AM - 11:30 AM', assignedDate: '2024-01-15', joinDate: '2024-01-15', dob: '19 Sep 2010', gender: 'Male', attended: '27 Classes', missed: '0 Classes' },
+                { id: 'LSE-STD-2024-025', name: 'Mia Thomas', type: 'One-To-Many', time: 'Saturday • 10:00 AM - 11:30 AM', assignedDate: '2024-02-12', joinDate: '2024-02-12', dob: '08 May 2011', gender: 'Female', attended: '23 Classes', missed: '1 Class' },
+                { id: 'LSE-STD-2024-029', name: 'Leo Roberts', type: 'One-To-One', time: 'Monday • 10:00 AM - 11:30 AM', assignedDate: '2024-03-01', joinDate: '2024-03-01', dob: '14 Oct 2009', gender: 'Male', attended: '25 Classes', missed: '1 Class' },
+                { id: 'LSE-STD-2024-033', name: 'Ava Johnson', type: 'One-To-Many', time: 'Saturday • 10:00 AM - 11:30 AM', assignedDate: '2024-02-18', joinDate: '2024-02-18', dob: '27 Apr 2010', gender: 'Female', attended: '24 Classes', missed: '2 Classes' },
+                { id: 'LSE-STD-2024-038', name: 'Lucas Walker', type: 'One-To-Many', time: 'Tuesday • 10:00 AM - 11:30 AM', assignedDate: '2024-01-28', joinDate: '2024-01-28', dob: '02 Dec 2011', gender: 'Male', attended: '26 Classes', missed: '0 Classes' },
+                { id: 'LSE-STD-2024-042', name: 'Grace Robinson', type: 'One-To-One', time: 'Wednesday • 10:00 AM - 11:30 AM', assignedDate: '2024-03-15', joinDate: '2024-03-15', dob: '16 Jan 2010', gender: 'Female', attended: '22 Classes', missed: '1 Class' },
+                { id: 'LSE-STD-2024-047', name: 'Arthur Wright', type: 'One-To-Many', time: 'Wednesday • 04:00 PM - 05:30 PM', assignedDate: '2024-02-22', joinDate: '2024-02-22', dob: '29 Jul 2009', gender: 'Male', attended: '25 Classes', missed: '1 Class' },
+                { id: 'LSE-STD-2024-051', name: 'Freya Scott', type: 'One-To-Many', time: 'Saturday • 10:00 AM - 11:30 AM', assignedDate: '2024-03-05', joinDate: '2024-03-05', dob: '11 Aug 2011', gender: 'Female', attended: '23 Classes', missed: '0 Classes' },
+                { id: 'LSE-STD-2024-056', name: 'Henry Green', type: 'One-To-One', time: 'Friday • 10:00 AM - 11:30 AM', assignedDate: '2024-01-10', joinDate: '2024-01-10', dob: '04 Mar 2010', gender: 'Male', attended: '28 Classes', missed: '0 Classes' },
+                { id: 'LSE-STD-2024-060', name: 'Ella Hall', type: 'One-To-Many', time: 'Monday • 02:00 PM - 03:30 PM', assignedDate: '2024-03-20', joinDate: '2024-03-20', dob: '25 Sep 2010', gender: 'Female', attended: '21 Classes', missed: '2 Classes' }
             ],
             'physics': [
-                { id: 'LSE-STD-2024-002', name: 'Jack Williams', type: 'One-To-One', time: 'Tuesday • 02:00 PM - 03:30 PM', assignedDate: '2024-03-24', joinDate: '2024-03-24', dob: '09 Jul 2011', gender: 'Male', email: 'jack.w@gmail.com', phone: '+44 7800 800201', parentPhone: '+44 7900 222333', attended: '28 Classes', missed: '0 Classes' },
-                { id: 'LSE-STD-2024-005', name: 'Charlotte Taylor', type: 'One-To-Many', time: 'Monday • 02:00 PM - 03:30 PM', assignedDate: '2024-01-14', joinDate: '2024-01-14', dob: '17 Apr 2012', gender: 'Female', email: 'charlotte.t@gmail.com', phone: '+44 7800 800202', parentPhone: '+44 7900 222334', attended: '26 Classes', missed: '1 Class' },
-                { id: 'LSE-STD-2024-009', name: 'Ethan Clarke', type: 'One-To-Many', time: 'Wednesday • 02:00 PM - 03:30 PM', assignedDate: '2024-01-18', joinDate: '2024-01-18', dob: '30 Sep 2010', gender: 'Male', email: 'ethan.c@gmail.com', phone: '+44 7800 800203', parentPhone: '+44 7900 222335', attended: '25 Classes', missed: '2 Classes' },
-                { id: 'LSE-STD-2024-014', name: 'Harper White', type: 'One-To-One', time: 'Thursday • 02:00 PM - 03:30 PM', assignedDate: '2024-03-29', joinDate: '2024-03-29', dob: '12 May 2011', gender: 'Female', email: 'harper.w@gmail.com', phone: '+44 7800 800204', parentPhone: '+44 7900 222336', attended: '23 Classes', missed: '0 Classes' },
-                { id: 'LSE-STD-2024-019', name: 'Freddie Hughes', type: 'One-To-Many', time: 'Friday • 02:00 PM - 03:30 PM', assignedDate: '2024-02-10', joinDate: '2024-02-10', dob: '21 Jun 2010', gender: 'Male', email: 'freddie.h@gmail.com', phone: '+44 7800 800205', parentPhone: '+44 7900 222337', attended: '24 Classes', missed: '1 Class' },
-                { id: 'LSE-STD-2024-023', name: 'Emily Edwards', type: 'One-To-Many', time: 'Monday • 02:00 PM - 03:30 PM', assignedDate: '2024-01-25', joinDate: '2024-01-25', dob: '04 Feb 2011', gender: 'Female', email: 'emily.e@gmail.com', phone: '+44 7800 800206', parentPhone: '+44 7900 222338', attended: '27 Classes', missed: '0 Classes' },
-                { id: 'LSE-STD-2024-028', name: 'Archie Turner', type: 'One-To-One', time: 'Saturday • 02:00 PM - 03:30 PM', assignedDate: '2024-03-12', joinDate: '2024-03-12', dob: '15 Aug 2009', gender: 'Male', email: 'archie.t@gmail.com', phone: '+44 7800 800207', parentPhone: '+44 7900 222339', attended: '22 Classes', missed: '1 Class' },
-                { id: 'LSE-STD-2024-032', name: 'Evie Campbell', type: 'One-To-Many', time: 'Tuesday • 05:00 PM - 06:30 PM', assignedDate: '2024-02-04', joinDate: '2024-02-04', dob: '28 Nov 2010', gender: 'Female', email: 'evie.c@gmail.com', phone: '+44 7800 800208', parentPhone: '+44 7900 222340', attended: '25 Classes', missed: '1 Class' },
-                { id: 'LSE-STD-2024-037', name: 'Theo Mitchell', type: 'One-To-Many', time: 'Friday • 02:00 PM - 03:30 PM', assignedDate: '2024-01-30', joinDate: '2024-01-30', dob: '10 Oct 2011', gender: 'Male', email: 'theo.m@gmail.com', phone: '+44 7800 800209', parentPhone: '+44 7900 222341', attended: '26 Classes', missed: '0 Classes' },
-                { id: 'LSE-STD-2024-041', name: 'Ruby Carter', type: 'One-To-One', time: 'Tuesday • 02:00 PM - 03:30 PM', assignedDate: '2024-03-18', joinDate: '2024-03-18', dob: '07 Jan 2010', gender: 'Female', email: 'ruby.c@gmail.com', phone: '+44 7800 800210', parentPhone: '+44 7900 222342', attended: '21 Classes', missed: '2 Classes' },
-                { id: 'LSE-STD-2024-046', name: 'Alfie Phillips', type: 'One-To-Many', time: 'Monday • 02:00 PM - 03:30 PM', assignedDate: '2024-02-14', joinDate: '2024-02-14', dob: '19 Mar 2009', gender: 'Male', email: 'alfie.p@gmail.com', phone: '+44 7800 800211', parentPhone: '+44 7900 222343', attended: '25 Classes', missed: '1 Class' },
-                { id: 'LSE-STD-2024-050', name: 'Alice Morris', type: 'One-To-Many', time: 'Wednesday • 02:00 PM - 03:30 PM', assignedDate: '2024-03-02', joinDate: '2024-03-02', dob: '23 May 2011', gender: 'Female', email: 'alice.m@gmail.com', phone: '+44 7800 800212', parentPhone: '+44 7900 222344', attended: '24 Classes', missed: '0 Classes' },
-                { id: 'LSE-STD-2024-055', name: 'Joshua Murphy', type: 'One-To-One', time: 'Thursday • 02:00 PM - 03:30 PM', assignedDate: '2024-01-12', joinDate: '2024-01-12', dob: '14 Dec 2010', gender: 'Male', email: 'joshua.m@gmail.com', phone: '+44 7800 800213', parentPhone: '+44 7900 222345', attended: '28 Classes', missed: '0 Classes' },
-                { id: 'LSE-STD-2024-059', name: 'Florence Cook', type: 'One-To-Many', time: 'Tuesday • 05:00 PM - 06:30 PM', assignedDate: '2024-03-22', joinDate: '2024-03-22', dob: '02 Sep 2010', gender: 'Female', email: 'florence.c@gmail.com', phone: '+44 7800 800214', parentPhone: '+44 7900 222346', attended: '20 Classes', missed: '2 Classes' }
+                { id: 'LSE-STD-2024-002', name: 'Jack Williams', type: 'One-To-One', time: 'Tuesday • 02:00 PM - 03:30 PM', assignedDate: '2024-03-24', joinDate: '2024-03-24', dob: '09 Jul 2011', gender: 'Male', attended: '28 Classes', missed: '0 Classes' },
+                { id: 'LSE-STD-2024-005', name: 'Charlotte Taylor', type: 'One-To-Many', time: 'Monday • 02:00 PM - 03:30 PM', assignedDate: '2024-01-14', joinDate: '2024-01-14', dob: '17 Apr 2012', gender: 'Female', attended: '26 Classes', missed: '1 Class' },
+                { id: 'LSE-STD-2024-009', name: 'Ethan Clarke', type: 'One-To-Many', time: 'Wednesday • 02:00 PM - 03:30 PM', assignedDate: '2024-01-18', joinDate: '2024-01-18', dob: '30 Sep 2010', gender: 'Male', attended: '25 Classes', missed: '2 Classes' },
+                { id: 'LSE-STD-2024-014', name: 'Harper White', type: 'One-To-One', time: 'Thursday • 02:00 PM - 03:30 PM', assignedDate: '2024-03-29', joinDate: '2024-03-29', dob: '12 May 2011', gender: 'Female', attended: '23 Classes', missed: '0 Classes' },
+                { id: 'LSE-STD-2024-019', name: 'Freddie Hughes', type: 'One-To-Many', time: 'Friday • 02:00 PM - 03:30 PM', assignedDate: '2024-02-10', joinDate: '2024-02-10', dob: '21 Jun 2010', gender: 'Male', attended: '24 Classes', missed: '1 Class' },
+                { id: 'LSE-STD-2024-023', name: 'Emily Edwards', type: 'One-To-Many', time: 'Monday • 02:00 PM - 03:30 PM', assignedDate: '2024-01-25', joinDate: '2024-01-25', dob: '04 Feb 2011', gender: 'Female', attended: '27 Classes', missed: '0 Classes' },
+                { id: 'LSE-STD-2024-028', name: 'Archie Turner', type: 'One-To-One', time: 'Saturday • 02:00 PM - 03:30 PM', assignedDate: '2024-03-12', joinDate: '2024-03-12', dob: '15 Aug 2009', gender: 'Male', attended: '22 Classes', missed: '1 Class' },
+                { id: 'LSE-STD-2024-032', name: 'Evie Campbell', type: 'One-To-Many', time: 'Tuesday • 05:00 PM - 06:30 PM', assignedDate: '2024-02-04', joinDate: '2024-02-04', dob: '28 Nov 2010', gender: 'Female', attended: '25 Classes', missed: '1 Class' },
+                { id: 'LSE-STD-2024-037', name: 'Theo Mitchell', type: 'One-To-Many', time: 'Friday • 02:00 PM - 03:30 PM', assignedDate: '2024-01-30', joinDate: '2024-01-30', dob: '10 Oct 2011', gender: 'Male', attended: '26 Classes', missed: '0 Classes' },
+                { id: 'LSE-STD-2024-041', name: 'Ruby Carter', type: 'One-To-One', time: 'Tuesday • 02:00 PM - 03:30 PM', assignedDate: '2024-03-18', joinDate: '2024-03-18', dob: '07 Jan 2010', gender: 'Female', attended: '21 Classes', missed: '2 Classes' },
+                { id: 'LSE-STD-2024-046', name: 'Alfie Phillips', type: 'One-To-Many', time: 'Monday • 02:00 PM - 03:30 PM', assignedDate: '2024-02-14', joinDate: '2024-02-14', dob: '19 Mar 2009', gender: 'Male', attended: '25 Classes', missed: '1 Class' },
+                { id: 'LSE-STD-2024-050', name: 'Alice Morris', type: 'One-To-Many', time: 'Wednesday • 02:00 PM - 03:30 PM', assignedDate: '2024-03-02', joinDate: '2024-03-02', dob: '23 May 2011', gender: 'Female', attended: '24 Classes', missed: '0 Classes' },
+                { id: 'LSE-STD-2024-055', name: 'Joshua Murphy', type: 'One-To-One', time: 'Thursday • 02:00 PM - 03:30 PM', assignedDate: '2024-01-12', joinDate: '2024-01-12', dob: '14 Dec 2010', gender: 'Male', attended: '28 Classes', missed: '0 Classes' },
+                { id: 'LSE-STD-2024-059', name: 'Florence Cook', type: 'One-To-Many', time: 'Tuesday • 05:00 PM - 06:30 PM', assignedDate: '2024-03-22', joinDate: '2024-03-22', dob: '02 Sep 2010', gender: 'Female', attended: '20 Classes', missed: '2 Classes' }
             ],
             'chemistry': [
-                { id: 'LSE-STD-2024-003', name: 'Benjamin Moore', type: 'One-To-One', time: 'Monday • 04:00 PM - 05:30 PM', assignedDate: '2024-03-26', joinDate: '2024-03-26', dob: '25 Jan 2011', gender: 'Male', email: 'benjamin.m@gmail.com', phone: '+44 7900 700301', parentPhone: '+44 7900 333444', attended: '18 Classes', missed: '0 Classes' },
-                { id: 'LSE-STD-2024-008', name: 'Chloe Harris', type: 'One-To-Many', time: 'Tuesday • 04:00 PM - 05:30 PM', assignedDate: '2024-01-16', joinDate: '2024-01-16', dob: '17 Jan 2010', gender: 'Female', email: 'chloe.h@gmail.com', phone: '+44 7900 700302', parentPhone: '+44 7900 333445', attended: '16 Classes', missed: '2 Classes' },
-                { id: 'LSE-STD-2024-013', name: 'Alexander King', type: 'One-To-Many', time: 'Thursday • 04:00 PM - 05:30 PM', assignedDate: '2024-01-22', joinDate: '2024-01-22', dob: '23 Nov 2011', gender: 'Male', email: 'alex.king@gmail.com', phone: '+44 7900 700303', parentPhone: '+44 7900 333446', attended: '17 Classes', missed: '1 Class' },
-                { id: 'LSE-STD-2024-017', name: 'Zoe Lee', type: 'One-To-One', time: 'Wednesday • 04:00 PM - 05:30 PM', assignedDate: '2024-03-31', joinDate: '2024-03-31', dob: '02 Mar 2009', gender: 'Female', email: 'zoe.lee@gmail.com', phone: '+44 7900 700304', parentPhone: '+44 7900 333447', attended: '15 Classes', missed: '0 Classes' },
-                { id: 'LSE-STD-2024-021', name: 'Daniel Adams', type: 'One-To-Many', time: 'Friday • 04:00 PM - 05:30 PM', assignedDate: '2024-02-11', joinDate: '2024-02-11', dob: '14 Apr 2010', gender: 'Male', email: 'daniel.a@gmail.com', phone: '+44 7900 700305', parentPhone: '+44 7900 333448', attended: '19 Classes', missed: '1 Class' },
-                { id: 'LSE-STD-2024-026', name: 'Hannah Baker', type: 'One-To-Many', time: 'Tuesday • 04:00 PM - 05:30 PM', assignedDate: '2024-01-29', joinDate: '2024-01-29', dob: '08 Jul 2011', gender: 'Female', email: 'hannah.b@gmail.com', phone: '+44 7900 700306', parentPhone: '+44 7900 333449', attended: '20 Classes', missed: '0 Classes' },
-                { id: 'LSE-STD-2024-031', name: 'Samuel Bell', type: 'One-To-One', time: 'Saturday • 04:00 PM - 05:30 PM', assignedDate: '2024-03-14', joinDate: '2024-03-14', dob: '19 Oct 2009', gender: 'Male', email: 'samuel.b@gmail.com', phone: '+44 7900 700307', parentPhone: '+44 7900 333450', attended: '16 Classes', missed: '1 Class' },
-                { id: 'LSE-STD-2024-036', name: 'Lily Ward', type: 'One-To-Many', time: 'Thursday • 04:00 PM - 05:30 PM', assignedDate: '2024-02-08', joinDate: '2024-02-08', dob: '31 Dec 2010', gender: 'Female', email: 'lily.w@gmail.com', phone: '+44 7900 700308', parentPhone: '+44 7900 333451', attended: '18 Classes', missed: '1 Class' },
-                { id: 'LSE-STD-2024-040', name: 'Max Bennett', type: 'One-To-Many', time: 'Tuesday • 06:00 PM - 07:30 PM', assignedDate: '2024-01-19', joinDate: '2024-01-19', dob: '05 May 2011', gender: 'Male', email: 'max.b@gmail.com', phone: '+44 7900 700309', parentPhone: '+44 7900 333452', attended: '21 Classes', missed: '0 Classes' },
-                { id: 'LSE-STD-2024-045', name: 'Phoebe Gray', type: 'One-To-One', time: 'Monday • 04:00 PM - 05:30 PM', assignedDate: '2024-03-08', joinDate: '2024-03-08', dob: '12 Sep 2010', gender: 'Female', email: 'phoebe.g@gmail.com', phone: '+44 7900 700310', parentPhone: '+44 7900 333453', attended: '17 Classes', missed: '2 Classes' },
-                { id: 'LSE-STD-2024-049', name: 'Logan Price', type: 'One-To-Many', time: 'Tuesday • 06:00 PM - 07:30 PM', assignedDate: '2024-02-25', joinDate: '2024-02-25', dob: '26 Feb 2009', gender: 'Male', email: 'logan.p@gmail.com', phone: '+44 7900 700311', parentPhone: '+44 7900 333454', attended: '19 Classes', missed: '0 Classes' },
-                { id: 'LSE-STD-2024-054', name: 'Sienna Russell', type: 'One-To-Many', time: 'Friday • 04:00 PM - 05:30 PM', assignedDate: '2024-03-19', joinDate: '2024-03-19', dob: '18 Jun 2011', gender: 'Female', email: 'sienna.r@gmail.com', phone: '+44 7900 700312', parentPhone: '+44 7900 333455', attended: '15 Classes', missed: '1 Class' }
+                { id: 'LSE-STD-2024-003', name: 'Benjamin Moore', type: 'One-To-One', time: 'Monday • 04:00 PM - 05:30 PM', assignedDate: '2024-03-26', joinDate: '2024-03-26', dob: '25 Jan 2011', gender: 'Male', attended: '18 Classes', missed: '0 Classes' },
+                { id: 'LSE-STD-2024-008', name: 'Chloe Harris', type: 'One-To-Many', time: 'Tuesday • 04:00 PM - 05:30 PM', assignedDate: '2024-01-16', joinDate: '2024-01-16', dob: '17 Jan 2010', gender: 'Female', attended: '16 Classes', missed: '2 Classes' },
+                { id: 'LSE-STD-2024-013', name: 'Alexander King', type: 'One-To-Many', time: 'Thursday • 04:00 PM - 05:30 PM', assignedDate: '2024-01-22', joinDate: '2024-01-22', dob: '23 Nov 2011', gender: 'Male', attended: '17 Classes', missed: '1 Class' },
+                { id: 'LSE-STD-2024-017', name: 'Zoe Lee', type: 'One-To-One', time: 'Wednesday • 04:00 PM - 05:30 PM', assignedDate: '2024-03-31', joinDate: '2024-03-31', dob: '02 Mar 2009', gender: 'Female', attended: '15 Classes', missed: '0 Classes' },
+                { id: 'LSE-STD-2024-021', name: 'Daniel Adams', type: 'One-To-Many', time: 'Friday • 04:00 PM - 05:30 PM', assignedDate: '2024-02-11', joinDate: '2024-02-11', dob: '14 Apr 2010', gender: 'Male', attended: '19 Classes', missed: '1 Class' },
+                { id: 'LSE-STD-2024-026', name: 'Hannah Baker', type: 'One-To-Many', time: 'Tuesday • 04:00 PM - 05:30 PM', assignedDate: '2024-01-29', joinDate: '2024-01-29', dob: '08 Jul 2011', gender: 'Female', attended: '20 Classes', missed: '0 Classes' },
+                { id: 'LSE-STD-2024-031', name: 'Samuel Bell', type: 'One-To-One', time: 'Saturday • 04:00 PM - 05:30 PM', assignedDate: '2024-03-14', joinDate: '2024-03-14', dob: '19 Oct 2009', gender: 'Male', attended: '16 Classes', missed: '1 Class' },
+                { id: 'LSE-STD-2024-036', name: 'Lily Ward', type: 'One-To-Many', time: 'Thursday • 04:00 PM - 05:30 PM', assignedDate: '2024-02-08', joinDate: '2024-02-08', dob: '31 Dec 2010', gender: 'Female', attended: '18 Classes', missed: '1 Class' },
+                { id: 'LSE-STD-2024-040', name: 'Max Bennett', type: 'One-To-Many', time: 'Tuesday • 06:00 PM - 07:30 PM', assignedDate: '2024-01-19', joinDate: '2024-01-19', dob: '05 May 2011', gender: 'Male', attended: '21 Classes', missed: '0 Classes' },
+                { id: 'LSE-STD-2024-045', name: 'Phoebe Gray', type: 'One-To-One', time: 'Monday • 04:00 PM - 05:30 PM', assignedDate: '2024-03-08', joinDate: '2024-03-08', dob: '12 Sep 2010', gender: 'Female', attended: '17 Classes', missed: '2 Classes' },
+                { id: 'LSE-STD-2024-049', name: 'Logan Price', type: 'One-To-Many', time: 'Tuesday • 06:00 PM - 07:30 PM', assignedDate: '2024-02-25', joinDate: '2024-02-25', dob: '26 Feb 2009', gender: 'Male', attended: '19 Classes', missed: '0 Classes' },
+                { id: 'LSE-STD-2024-054', name: 'Sienna Russell', type: 'One-To-Many', time: 'Friday • 04:00 PM - 05:30 PM', assignedDate: '2024-03-19', joinDate: '2024-03-19', dob: '18 Jun 2011', gender: 'Female', attended: '15 Classes', missed: '1 Class' }
             ]
         };
 
-        const subjectStates = {
-            'mathematics': { filter: 'all', ascending: true },
-            'physics': { filter: 'all', ascending: true },
-            'chemistry': { filter: 'all', ascending: true }
+        let currentCourse = 'mathematics';
+        let courseState = {
+            filter: 'all',
+            ascending: true
         };
 
+        function destroyBootstrapSelect() {
+            if (window.jQuery && typeof jQuery.fn.selectpicker === 'function') {
+                try {
+                    jQuery('#course-dropdown').selectpicker('destroy');
+                } catch (e) {}
+            }
+            const select = document.getElementById('course-dropdown');
+            if (select) {
+                select.classList.remove('selectpicker', 'bs-select-hidden');
+                select.style.display = 'block';
+                select.style.visibility = 'visible';
+                select.style.opacity = '1';
+            }
+            const wrapper = document.querySelector('.course-dropdown-wrapper');
+            if (wrapper) {
+                wrapper.querySelectorAll('.bootstrap-select').forEach(el => el.remove());
+            }
+        }
+
         document.addEventListener('DOMContentLoaded', () => {
-            ['mathematics', 'physics', 'chemistry'].forEach(sub => {
-                updateSubjectFilterBadges(sub);
-                renderSubjectTable(sub);
-            });
+            destroyBootstrapSelect();
+            switchCourse();
+            setTimeout(destroyBootstrapSelect, 50);
+            setTimeout(destroyBootstrapSelect, 300);
 
             // Back to Top functionality
             const progressPath = document.querySelector('.rbt-progress-parent path');
@@ -1423,7 +1190,7 @@
                 });
             }
 
-            // Mobile toggle for floating contact labels
+            // Mobile toggle for floating contact labels & login dropdown
             const contactItems = document.querySelectorAll('.contact-item');
             contactItems.forEach(item => {
                 const btn = item.querySelector('.contact-button');
@@ -1436,62 +1203,93 @@
                     });
                 }
             });
+
+            const dropdown = document.querySelector(".login-dropdown");
+            const button = document.querySelector(".login-dropdown-btn");
+            if (dropdown && button) {
+                button.addEventListener("click", function (event) {
+                    event.stopPropagation();
+                    dropdown.classList.toggle("active");
+                });
+                document.addEventListener("click", function (event) {
+                    if (!dropdown.contains(event.target)) {
+                        dropdown.classList.remove("active");
+                    }
+                });
+            }
         });
 
-        function updateSubjectFilterBadges(sub) {
-            const list = studentDatasets[sub] || [];
+        function switchCourse() {
+            const dropdown = document.getElementById('course-dropdown');
+            currentCourse = dropdown ? dropdown.value : 'mathematics';
+
+            const block = document.getElementById('active-subject-block');
+            block.className = `subject-roster-block theme-${currentCourse === 'mathematics' ? 'math' : currentCourse}`;
+
+            const heading = document.getElementById('roster-heading');
+            const capitalizedCourse = currentCourse.charAt(0).toUpperCase() + currentCourse.slice(1);
+            
+            heading.innerHTML = `<i class="${currentCourse === 'mathematics' ? 'feather-book' : currentCourse === 'physics' ? 'feather-zap' : 'feather-activity'}"></i> ${capitalizedCourse} Student List`;
+
+            const searchInput = document.getElementById('search-input');
+            if (searchInput) searchInput.value = '';
+            courseState.filter = 'all';
+
+            updateBadges();
+            renderActiveTable();
+        }
+
+        function updateBadges() {
+            const list = studentDatasets[currentCourse] || [];
             const otoCount = list.filter(s => s.type.toLowerCase() === 'one-to-one').length;
             const otmCount = list.filter(s => s.type.toLowerCase() === 'one-to-many').length;
 
-            const otoBadge = document.getElementById(`badge-${sub}-oto`);
-            const otmBadge = document.getElementById(`badge-${sub}-otm`);
-            if (otoBadge) otoBadge.textContent = otoCount;
-            if (otmBadge) otmBadge.textContent = otmCount;
+            document.getElementById('badge-oto').textContent = otoCount;
+            document.getElementById('badge-otm').textContent = otmCount;
         }
 
-        function toggleSubjectFilter(sub, type) {
-            if (subjectStates[sub].filter.toLowerCase() === type.toLowerCase()) {
-                subjectStates[sub].filter = 'all';
+        function toggleFilter(type) {
+            if (courseState.filter.toLowerCase() === type.toLowerCase()) {
+                courseState.filter = 'all';
             } else {
-                subjectStates[sub].filter = type;
+                courseState.filter = type;
             }
-            renderSubjectTable(sub);
+            renderActiveTable();
         }
 
-        function toggleSubjectSort(sub) {
-            subjectStates[sub].ascending = !subjectStates[sub].ascending;
-            const isAsc = subjectStates[sub].ascending;
-            document.getElementById(`sort-label-${sub}`).innerText = isAsc ? 'A-Z' : 'Z-A';
-            document.getElementById(`sort-icon-${sub}`).className = isAsc ? 'feather-arrow-up' : 'feather-arrow-down';
-            renderSubjectTable(sub);
+        function toggleSortOrder() {
+            courseState.ascending = !courseState.ascending;
+            const isAsc = courseState.ascending;
+            document.getElementById('sort-label').innerText = isAsc ? 'A-Z' : 'Z-A';
+            document.getElementById('sort-icon').className = isAsc ? 'feather-arrow-up' : 'feather-arrow-down';
+            renderActiveTable();
         }
 
-        function renderSubjectTable(sub) {
-            const tbody = document.getElementById(`tbody-${sub}`);
+        function renderActiveTable() {
+            const tbody = document.getElementById('student-tbody');
             if (!tbody) return;
 
-            const searchInput = document.getElementById(`search-${sub}`);
+            const searchInput = document.getElementById('search-input');
             const searchVal = (searchInput?.value || '').toLowerCase().trim();
-            const state = subjectStates[sub];
 
-            const btnOto = document.getElementById(`filter-btn-${sub}-one-to-one`);
-            const btnOtm = document.getElementById(`filter-btn-${sub}-one-to-many`);
-            if (btnOto) btnOto.classList.toggle('active', state.filter.toLowerCase() === 'one-to-one');
-            if (btnOtm) btnOtm.classList.toggle('active', state.filter.toLowerCase() === 'one-to-many');
+            const btnOto = document.getElementById('filter-btn-oto');
+            const btnOtm = document.getElementById('filter-btn-otm');
+            if (btnOto) btnOto.classList.toggle('active', courseState.filter.toLowerCase() === 'one-to-one');
+            if (btnOtm) btnOtm.classList.toggle('active', courseState.filter.toLowerCase() === 'one-to-many');
 
-            let list = [...(studentDatasets[sub] || [])];
+            let list = [...(studentDatasets[currentCourse] || [])];
 
-            if (state.filter !== 'all') {
-                list = list.filter(item => item.type.toLowerCase() === state.filter.toLowerCase());
+            if (courseState.filter !== 'all') {
+                list = list.filter(item => item.type.toLowerCase() === courseState.filter.toLowerCase());
             }
 
             if (searchVal !== '') {
                 list = list.filter(item => item.name.toLowerCase().includes(searchVal) || item.id.toLowerCase().includes(searchVal));
             }
 
-            list.sort((a, b) => state.ascending ? a.name.localeCompare(b.name) : b.name.localeCompare(a.name));
+            list.sort((a, b) => courseState.ascending ? a.name.localeCompare(b.name) : b.name.localeCompare(a.name));
             
-            const countElem = document.getElementById(`count-${sub}`);
+            const countElem = document.getElementById('count-display');
             if (countElem) countElem.innerText = list.length;
 
             tbody.innerHTML = '';
@@ -1517,7 +1315,7 @@
                     </td>
                     <td><span class="time-badge"><i class="feather-clock"></i> ${student.time}</span></td>
                     <td style="text-align: center;">
-                        <button type="button" class="action-view-btn" onclick="openDetailModal('${student.id}', '${sub}')">
+                        <button type="button" class="action-view-btn" onclick="openDetailModal('${student.id}')">
                             <i class="feather-eye"></i> View
                         </button>
                     </td>
@@ -1526,16 +1324,11 @@
             });
         }
 
-        function openDetailModal(studentId, sub) {
+        function openDetailModal(studentId) {
             let student = null;
-            if (sub && studentDatasets[sub]) {
-                student = studentDatasets[sub].find(s => s.id === studentId);
-            }
-            if (!student) {
-                for (const k in studentDatasets) {
-                    student = studentDatasets[k].find(s => s.id === studentId);
-                    if (student) break;
-                }
+            for (const k in studentDatasets) {
+                student = studentDatasets[k].find(s => s.id === studentId);
+                if (student) break;
             }
             if (!student) return;
 
@@ -1543,15 +1336,21 @@
             document.getElementById('modal-student-id').innerText = student.id;
             document.getElementById('modal-student-id-display').innerText = student.id;
             document.getElementById('modal-student-full-name').innerText = student.name;
+            
+            let enrolledDetails = [];
+            for (const k in studentDatasets) {
+                const match = studentDatasets[k].find(s => s.id === studentId);
+                if (match) {
+                    const subName = k.charAt(0).toUpperCase() + k.slice(1);
+                    enrolledDetails.push(`${subName} — ${match.time}`);
+                }
+            }
+            document.getElementById('modal-student-subjects').innerHTML = enrolledDetails.join('<br>');
+
             document.getElementById('modal-student-type').innerText = student.type;
-            document.getElementById('modal-student-time').innerText = student.time;
             document.getElementById('modal-student-assigneddate').innerText = formatDate(student.assignedDate || student.joinDate);
-            document.getElementById('modal-student-joindate').innerText = formatDate(student.joinDate);
             document.getElementById('modal-student-dob').innerText = student.dob;
             document.getElementById('modal-student-gender').innerText = student.gender;
-            document.getElementById('modal-student-email').innerText = student.email;
-            document.getElementById('modal-student-phone').innerText = student.phone;
-            document.getElementById('modal-student-parent-phone').innerText = student.parentPhone;
             document.getElementById('modal-student-attended').innerText = student.attended;
             document.getElementById('modal-student-missed').innerText = student.missed;
 

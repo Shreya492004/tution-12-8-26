@@ -36,7 +36,7 @@
     <!-- Student Profile Professional Styles -->
     <style>
         /* =========================================================
-           BANNER STYLING & COMPACT RESPONSIVE SCALING
+            BANNER STYLING & COMPACT RESPONSIVE SCALING
         ========================================================= */
         .slider-area.rbt-banner-10 {
             margin-top: 0 !important;
@@ -357,19 +357,6 @@
             border-radius: 6px;
         }
 
-        .student-badge-status {
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-            background: #e8fbf1;
-            color: #16c763;
-            font-size: 16px !important;
-            font-weight: 500 !important;
-            font-family: var(--font-primary) !important;
-            padding: 5px 12px;
-            border-radius: 6px;
-        }
-
         .student-hero-stats {
             display: flex;
             align-items: center;
@@ -635,99 +622,20 @@
         }
 
         .subject-time {
-            display: inline-flex;
-            align-items: center;
-            gap: 7px;
-            padding: 6px 14px;
+            display: inline-block;
+            padding: 8px 14px;
             border-radius: 6px;
             background: #f5f5f7;
             color: #444444;
             font-weight: 500;
             font-size: 14px;
+            line-height: 1.6;
             font-family: var(--font-primary), "Euclid Circular A", "Euclid Circular", sans-serif;
         }
 
         .subject-time i {
             color: #6c4df6;
-        }
-
-        .badge-status-active {
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-            padding: 5px 12px;
-            border-radius: 6px;
-            background: #e8fbf1;
-            color: #16c763;
-            font-weight: 500;
-            font-size: 14px;
-            font-family: var(--font-primary), "Euclid Circular A", "Euclid Circular", sans-serif;
-        }
-
-        /* Quick Action Tiles */
-        .quick-nav-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 16px;
-            margin-top: 24px;
-        }
-
-        .quick-nav-card {
-            background: #ffffff;
-            border: 1px solid #e8e8e8;
-            border-radius: 10px;
-            padding: 16px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            text-decoration: none;
-            color: inherit;
-            transition: all 0.25s ease;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
-        }
-
-        .quick-nav-card:hover {
-            transform: translateY(-3px);
-            border-color: #6c4df6;
-            box-shadow: 0 8px 20px rgba(108, 77, 246, 0.12);
-            color: inherit;
-        }
-
-        .quick-nav-icon {
-            width: 42px;
-            height: 42px;
-            border-radius: 10px;
-            background: #f3f0ff;
-            color: #6c4df6;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 18px;
-            flex-shrink: 0;
-            transition: all 0.25s ease;
-        }
-
-        .quick-nav-card:hover .quick-nav-icon {
-            background: #6c4df6;
-            color: #ffffff;
-        }
-
-        .quick-nav-title {
-            font-size: 14px;
-            font-weight: 700;
-            color: #222222;
-            margin-bottom: 2px;
-        }
-
-        .quick-nav-subtitle {
-            font-size: 12px;
-            color: #888888;
-        }
-
-        @media (max-width: 991px) {
-            .quick-nav-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
+            margin-right: 5px;
         }
 
         @media (max-width: 767px) {
@@ -758,10 +666,6 @@
 
             .profile-info-full {
                 grid-column: span 1;
-            }
-
-            .quick-nav-grid {
-                grid-template-columns: 1fr;
             }
 
             .assigned-date-box {
@@ -901,8 +805,6 @@
     </div>
     <!-- End Mobile Menu -->
 
-
-
     <!-- Banner -->
     <div class="slider-area rbt-banner-10 height-400 bg_image bg_image--11" data-black-overlay="5">
         <div class="container">
@@ -932,7 +834,7 @@
                                         <div class="rbt-default-sidebar-wrapper">
 
                                             <div class="section-title mb--20">
-                                                <h6 class="rbt-title-style-2">Welcome, Oliver Smith</h6>
+                                                <h6 class="rbt-title-style-2" id="profile-sidebar-welcome">Welcome, Oliver Smith</h6>
                                             </div>
 
                                             <nav class="mainmenu-nav">
@@ -1007,17 +909,17 @@
                                     <div class="student-profile-hero">
                                         <div class="student-profile-user">
                                             <div class="student-avatar-badge">
-                                                <span>OS</span>
+                                                <span id="profile-avatar-initials">OS</span>
                                                 <span class="status-dot" title="Active Student"></span>
                                             </div>
                                             <div class="student-user-info">
-                                                <h3>Oliver Smith</h3>
+                                                <h3 id="profile-header-name">Oliver Smith</h3>
                                                 <div class="student-meta-badges">
                                                     <span class="student-badge-id">
-                                                        <i class="feather-hash"></i> LSE-STD-2024-001
+                                                        <i class="feather-hash"></i> <span id="val-badge-studentid">LSE-STD-2024-001</span>
                                                     </span>
                                                     <span class="student-badge-id">
-                                                        <i class="feather-calendar"></i> Enrolled Jan 2024
+                                                        <i class="feather-calendar"></i> <span id="val-badge-enrolleddate">Enrolled Jan 2024</span>
                                                     </span>
                                                 </div>
                                             </div>
@@ -1046,11 +948,31 @@
                                         <div class="profile-info-grid">
                                             <div class="profile-info-item">
                                                 <div class="profile-info-icon">
+                                                    <i class="feather-hash"></i>
+                                                </div>
+                                                <div class="profile-info-content">
+                                                    <div class="profile-info-label">Student ID</div>
+                                                    <div class="profile-info-val" id="val-studentid">LSE-STD-2024-001</div>
+                                                </div>
+                                            </div>
+
+                                            <div class="profile-info-item">
+                                                <div class="profile-info-icon">
+                                                    <i class="feather-calendar"></i>
+                                                </div>
+                                                <div class="profile-info-content">
+                                                    <div class="profile-info-label">Enrolled Date</div>
+                                                    <div class="profile-info-val" id="val-enrolleddate">Enrolled Jan 2024</div>
+                                                </div>
+                                            </div>
+
+                                            <div class="profile-info-item">
+                                                <div class="profile-info-icon">
                                                     <i class="feather-user"></i>
                                                 </div>
                                                 <div class="profile-info-content">
                                                     <div class="profile-info-label">First Name</div>
-                                                    <div class="profile-info-val">Oliver</div>
+                                                    <div class="profile-info-val" id="val-firstname">Oliver</div>
                                                 </div>
                                             </div>
 
@@ -1060,7 +982,7 @@
                                                 </div>
                                                 <div class="profile-info-content">
                                                     <div class="profile-info-label">Last Name</div>
-                                                    <div class="profile-info-val">Smith</div>
+                                                    <div class="profile-info-val" id="val-lastname">Smith</div>
                                                 </div>
                                             </div>
 
@@ -1070,7 +992,7 @@
                                                 </div>
                                                 <div class="profile-info-content">
                                                     <div class="profile-info-label">Email Address</div>
-                                                    <div class="profile-info-val">oliver.smith@example.com</div>
+                                                    <div class="profile-info-val" id="val-email">oliver.smith@example.com</div>
                                                 </div>
                                             </div>
 
@@ -1080,7 +1002,7 @@
                                                 </div>
                                                 <div class="profile-info-content">
                                                     <div class="profile-info-label">Phone Number</div>
-                                                    <div class="profile-info-val">+44 20 7946 0192</div>
+                                                    <div class="profile-info-val" id="val-phonenumber">+44 20 7946 0192</div>
                                                 </div>
                                             </div>
 
@@ -1090,7 +1012,7 @@
                                                 </div>
                                                 <div class="profile-info-content">
                                                     <div class="profile-info-label">Skill / Occupation</div>
-                                                    <div class="profile-info-val">Student</div>
+                                                    <div class="profile-info-val" id="val-skill">Student</div>
                                                 </div>
                                             </div>
 
@@ -1100,7 +1022,7 @@
                                                 </div>
                                                 <div class="profile-info-content">
                                                     <div class="profile-info-label">Location / Center</div>
-                                                    <div class="profile-info-val">London, United Kingdom</div>
+                                                    <div class="profile-info-val" id="val-location">London, United Kingdom</div>
                                                 </div>
                                             </div>
 
@@ -1110,7 +1032,7 @@
                                                 </div>
                                                 <div class="profile-info-content">
                                                     <div class="profile-info-label">Biography &amp; Objectives</div>
-                                                    <div class="profile-info-val">Dedicated student enrolled in Mathematics, Physics, Chemistry, and Computer Science programs at London Star Education.</div>
+                                                    <div class="profile-info-val" id="val-bio">Dedicated student enrolled in Mathematics, Physics, Chemistry, and Computer Science programs at London Star Education.</div>
                                                 </div>
                                             </div>
                                         </div>
@@ -1156,7 +1078,8 @@
                                                         </td>
                                                         <td>
                                                             <span class="subject-time">
-                                                                <i class="feather-clock"></i> Mon &amp; Wed • 10:00 AM - 11:30 AM
+                                                                <i class="feather-clock"></i> Mon — 10:00 AM - 11:30 AM<br>
+                                                                   Wed — 10:00 AM - 11:30 AM
                                                             </span>
                                                         </td>
                                                     </tr>
@@ -1177,7 +1100,8 @@
                                                         </td>
                                                         <td>
                                                             <span class="subject-time">
-                                                                <i class="feather-clock"></i> Tue &amp; Thu • 02:00 PM - 03:30 PM
+                                                                <i class="feather-clock"></i> Tue — 02:00 PM - 03:30 PM<br>
+                                                                Thu — 02:00 PM - 03:30 PM
                                                             </span>
                                                         </td>
                                                     </tr>
@@ -1198,7 +1122,8 @@
                                                         </td>
                                                         <td>
                                                             <span class="subject-time">
-                                                                <i class="feather-clock"></i> Mon &amp; Fri • 04:00 PM - 05:30 PM
+                                                                <i class="feather-clock"></i> Mon — 04:00 PM - 05:30 PM<br>
+                                                                Fri — 04:00 PM - 05:30 PM
                                                             </span>
                                                         </td>
                                                     </tr>
@@ -1219,7 +1144,7 @@
                                                         </td>
                                                         <td>
                                                             <span class="subject-time">
-                                                                <i class="feather-clock"></i> Sat • 01:00 PM - 02:30 PM
+                                                                <i class="feather-clock"></i> Sat — 01:00 PM - 02:30 PM
                                                             </span>
                                                         </td>
                                                     </tr>
@@ -1416,9 +1341,33 @@
     <script src="assets/js/vendor/plyr.js"></script>
     <script src="assets/js/main.js"></script>
 
-    <!-- Floating Contact & Login Dropdown Scripts -->
     <script>
         document.addEventListener("DOMContentLoaded", function () {
+            // Load and display profile data dynamically
+            const savedData = JSON.parse(localStorage.getItem("studentProfileData"));
+            if (savedData) {
+                document.getElementById("profile-header-name").innerText = `${savedData.firstname} ${savedData.lastname}`;
+                document.getElementById("profile-sidebar-welcome").innerText = `Welcome, ${savedData.firstname} ${savedData.lastname}`;
+                
+                // Set initials for avatar badge
+                const fInitial = savedData.firstname ? savedData.firstname.charAt(0) : "O";
+                const lInitial = savedData.lastname ? savedData.lastname.charAt(0) : "S";
+                document.getElementById("profile-avatar-initials").innerText = (fInitial + lInitial).toUpperCase();
+
+                // Fill profile information fields
+                document.getElementById("val-studentid").innerText = savedData.studentid;
+                document.getElementById("val-badge-studentid").innerText = savedData.studentid;
+                document.getElementById("val-enrolleddate").innerText = savedData.enrolleddate;
+                document.getElementById("val-badge-enrolleddate").innerText = savedData.enrolleddate;
+                document.getElementById("val-firstname").innerText = savedData.firstname;
+                document.getElementById("val-lastname").innerText = savedData.lastname;
+                document.getElementById("val-email").innerText = savedData.email;
+                document.getElementById("val-phonenumber").innerText = savedData.phonenumber;
+                document.getElementById("val-skill").innerText = savedData.skill;
+                document.getElementById("val-location").innerText = savedData.location;
+                document.getElementById("val-bio").innerText = savedData.bio;
+            }
+
             // Floating Contact Handler
             const contactItems = document.querySelectorAll(".contact-item");
             contactItems.forEach(function (item) {
@@ -1462,7 +1411,6 @@
             }
         });
     </script>
-
 </body>
 
 </html>

@@ -13,7 +13,7 @@
     <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.png">
 
     <!-- CSS
-	============================================ -->
+    ============================================ -->
     <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/vendor/slick.css">
     <link rel="stylesheet" href="assets/css/vendor/slick-theme.css">
@@ -33,7 +33,7 @@
     <link rel="stylesheet" href="assets/css/custom-ui.css">
     <style>
         /* =========================================================
-           BANNER STYLING & COMPACT RESPONSIVE SCALING
+            BANNER STYLING & COMPACT RESPONSIVE SCALING
         ========================================================= */
         .slider-area.rbt-banner-10 {
             margin-top: 0 !important;
@@ -339,7 +339,7 @@
                                     <div class="content-item-content">
                                         <div class="rbt-default-sidebar-wrapper">
                                             <div class="section-title mb--20">
-                                                <h6 class="rbt-title-style-2">Welcome, Oliver Smith</h6>
+                                                <h6 class="rbt-title-style-2" id="sidebar-welcome">Welcome, Oliver Smith</h6>
                                             </div>
 
                                             <nav class="mainmenu-nav">
@@ -429,9 +429,21 @@
 
                                     <div class="tab-content">
                                         <div class="tab-pane fade active show" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                                           
+                                            
                                             <!-- Start Profile Row  -->
-                                            <form action="#" class="rbt-profile-row rbt-default-form row row--15">
+                                            <form id="profile-edit-form" action="#" class="rbt-profile-row rbt-default-form row row--15">
+                                                <div class="col-lg-6 col-md-6 col-sm-6 col-12">
+                                                    <div class="rbt-form-group">
+                                                        <label for="studentid">Student ID</label>
+                                                        <input id="studentid" type="text" value="LSE-STD-2024-001">
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-6 col-md-6 col-sm-6 col-12">
+                                                    <div class="rbt-form-group">
+                                                        <label for="enrolleddate">Enrolled Date <small class="text-muted">(Locked)</small></label>
+                                                        <input id="enrolleddate" type="text" value="Enrolled Jan 2024" readonly style="background-color: #f5f5f5; cursor: not-allowed;">
+                                                    </div>
+                                                </div>
                                                 <div class="col-lg-6 col-md-6 col-sm-6 col-12">
                                                     <div class="rbt-form-group">
                                                         <label for="firstname">First Name</label>
@@ -446,8 +458,8 @@
                                                 </div>
                                                 <div class="col-lg-6 col-md-6 col-sm-6 col-12">
                                                     <div class="rbt-form-group">
-                                                        <label for="username">User Name</label>
-                                                        <input id="username" type="text" value="oliversmith">
+                                                        <label for="email">Email Address</label>
+                                                        <input id="email" type="email" value="oliver.smith@example.com">
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-6 col-md-6 col-sm-6 col-12">
@@ -459,29 +471,24 @@
                                                 <div class="col-lg-6 col-md-6 col-sm-6 col-12">
                                                     <div class="rbt-form-group">
                                                         <label for="skill">Skill/Occupation</label>
-                                                        <input id="skill" type="text" value="Student (GCSE &amp; 11+)">
+                                                        <input id="skill" type="text" value="Student">
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-6 col-md-6 col-sm-6 col-12">
-                                                    <div class="filter-select rbt-modern-select">
-                                                        <label for="displayname" class="">Display name publicly as</label>
-                                                        <select id="displayname" class="w-100">
-                                                            <option>Oliver Smith</option>
-                                                            <option>Oliver</option>
-                                                            <option>Smith</option>
-                                                            <option>oliversmith</option>
-                                                        </select>
+                                                    <div class="rbt-form-group">
+                                                        <label for="location">Location / Center</label>
+                                                        <input id="location" type="text" value="London, United Kingdom">
                                                     </div>
                                                 </div>
                                                 <div class="col-12">
                                                     <div class="rbt-form-group">
-                                                        <label for="bio">Bio</label>
+                                                        <label for="bio">Biography &amp; Objectives</label>
                                                         <textarea id="bio" cols="20" rows="5">Dedicated student enrolled in Mathematics, Physics, Chemistry, and Computer Science programs at London Star Education.</textarea>
                                                     </div>
                                                 </div>
                                                 <div class="col-12 mt--20">
                                                     <div class="rbt-form-group">
-                                                        <a class="rbt-btn btn-gradient" href="#">Update Info</a>
+                                                        <button type="submit" id="update-info-btn" class="rbt-btn btn-gradient border-0">Update Info</button>
                                                     </div>
                                                 </div>
                                             </form>
@@ -517,36 +524,25 @@
                                             </form>
                                             <!-- End Profile Row  -->
                                         </div>
-
-
                                     </div>
-
-
-
-
-
                                 </div>
                             </div>
                             <!-- End Instructor Profile  -->
-
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
     </div>
     <!-- End Card Style -->
 
-
-
-
     <div class="rbt-separator-mid">
         <div class="container">
             <hr class="rbt-separator m-0">
         </div>
     </div>
-                                    <!-- Start Footer Area -->
+    
+    <!-- Start Footer Area -->
     <footer class="rbt-footer footer-style-1 bg-color-white overflow-hidden">
         <div class="footer-top">
             <div class="container">
@@ -680,7 +676,7 @@
     </footer>
     <!-- End Footer Area -->
 
-        <div class="rbt-progress-parent">
+    <div class="rbt-progress-parent">
         <svg class="rbt-back-circle svg-inner" width="100%" height="100%" viewBox="-1 -1 102 102">
             <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
         </svg>
@@ -710,15 +706,10 @@
         </div>
     </div>
 
-    <!-- JS
-============================================ -->
-    <!-- Modernizer JS -->
+    <!-- JS ============================================ -->
     <script src="assets/js/vendor/modernizr.min.js"></script>
-    <!-- jQuery JS -->
     <script src="assets/js/vendor/jquery.js"></script>
-    <!-- Bootstrap JS -->
     <script src="assets/js/vendor/bootstrap.min.js"></script>
-    <!-- sal.js -->
     <script src="assets/js/vendor/sal.js"></script>
     <script src="assets/js/vendor/swiper.js"></script>
     <script src="assets/js/vendor/magnify.min.js"></script>
@@ -727,7 +718,6 @@
     <script src="assets/js/vendor/backtotop.js"></script>
     <script src="assets/js/vendor/isotop.js"></script>
     <script src="assets/js/vendor/imageloaded.js"></script>
-
     <script src="assets/js/vendor/wow.js"></script>
     <script src="assets/js/vendor/waypoint.min.js"></script>
     <script src="assets/js/vendor/easypie.js"></script>
@@ -740,87 +730,96 @@
     <script src="assets/js/vendor/paralax.min.js"></script>
     <script src="assets/js/vendor/countdown.js"></script>
     <script src="assets/js/vendor/plyr.js"></script>
-    <!-- Main JS -->
     <script src="assets/js/main.js"></script>
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
+            // Load saved data into form inputs
+            const savedData = JSON.parse(localStorage.getItem("studentProfileData")) || {
+                studentid: "LSE-STD-2024-001",
+                enrolleddate: "Enrolled Jan 2024",
+                firstname: "Oliver",
+                lastname: "Smith",
+                email: "oliver.smith@example.com",
+                phonenumber: "+44 20 7946 0192",
+                skill: "Student",
+                location: "London, United Kingdom",
+                bio: "Dedicated student enrolled in Mathematics, Physics, Chemistry, and Computer Science programs at London Star Education."
+            };
 
+            document.getElementById("studentid").value = savedData.studentid;
+            document.getElementById("enrolleddate").value = savedData.enrolleddate;
+            document.getElementById("firstname").value = savedData.firstname;
+            document.getElementById("lastname").value = savedData.lastname;
+            document.getElementById("email").value = savedData.email;
+            document.getElementById("phonenumber").value = savedData.phonenumber;
+            document.getElementById("skill").value = savedData.skill;
+            document.getElementById("location").value = savedData.location;
+            document.getElementById("bio").value = savedData.bio;
+
+            document.getElementById("sidebar-welcome").innerText = `Welcome, ${savedData.firstname} ${savedData.lastname}`;
+
+            // Handle Form Submission (Enrolled date remains locked/unchanged)
+            const editForm = document.getElementById("profile-edit-form");
+            editForm.addEventListener("submit", function (e) {
+                e.preventDefault();
+
+                const updatedData = {
+                    studentid: document.getElementById("studentid").value,
+                    enrolleddate: savedData.enrolleddate, // Keep original enrolled date locked
+                    firstname: document.getElementById("firstname").value,
+                    lastname: document.getElementById("lastname").value,
+                    email: document.getElementById("email").value,
+                    phonenumber: document.getElementById("phonenumber").value,
+                    skill: document.getElementById("skill").value,
+                    location: document.getElementById("location").value,
+                    bio: document.getElementById("bio").value
+                };
+
+                localStorage.setItem("studentProfileData", JSON.stringify(updatedData));
+                alert("Profile updated successfully!");
+                window.location.href = "student-profile.html";
+            });
+
+            // Contact & Login Dropdown handlers
             const contactItems = document.querySelectorAll(".contact-item");
-
             contactItems.forEach(function (item) {
-
                 const button = item.querySelector(".contact-button");
-
                 button.addEventListener("click", function () {
-
-                    // On mobile, briefly show the label
                     if (window.innerWidth <= 767) {
-
                         contactItems.forEach(function (otherItem) {
-
                             if (otherItem !== item) {
                                 otherItem.classList.remove("show-label");
                             }
-
                         });
-
                         item.classList.toggle("show-label");
-
                     }
-
                 });
-
             });
 
-
-            // Close labels when clicking outside
             document.addEventListener("click", function (event) {
-
                 if (!event.target.closest(".floating-contact")) {
-
                     contactItems.forEach(function (item) {
-
                         item.classList.remove("show-label");
-
                     });
-
                 }
-
             });
 
+            const dropdown = document.querySelector(".login-dropdown");
+            const button = document.querySelector(".login-dropdown-btn");
+            if (dropdown && button) {
+                button.addEventListener("click", function (event) {
+                    event.stopPropagation();
+                    dropdown.classList.toggle("active");
+                });
+                document.addEventListener("click", function (event) {
+                    if (!dropdown.contains(event.target)) {
+                        dropdown.classList.remove("active");
+                    }
+                });
+            }
         });
     </script>
-
-    <script>
-document.addEventListener("DOMContentLoaded", function () {
-
-    const dropdown = document.querySelector(".login-dropdown");
-    const button = document.querySelector(".login-dropdown-btn");
-
-    if (!dropdown || !button) return;
-
-    button.addEventListener("click", function (event) {
-
-        event.stopPropagation();
-
-        dropdown.classList.toggle("active");
-
-    });
-
-
-    document.addEventListener("click", function (event) {
-
-        if (!dropdown.contains(event.target)) {
-
-            dropdown.classList.remove("active");
-
-        }
-
-    });
-
-});
-</script>
 </body>
 
 </html>

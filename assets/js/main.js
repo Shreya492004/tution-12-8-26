@@ -867,7 +867,7 @@
         },
 
         selectPicker: function () {
-            $('select').selectpicker();
+            $('select:not(.no-selectpicker):not(.course-select-dropdown):not(.hw-select):not(.slot-course):not(.slot-type):not(#courseFilter):not(#batchTimeFilter)').selectpicker();
         },
 
         filterClickButton: function () {
