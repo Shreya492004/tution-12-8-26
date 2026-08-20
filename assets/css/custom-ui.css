@@ -750,16 +750,20 @@ header.rbt-header,
 }
 
 /* Mobile & Tablet Drawer Menu Refinement */
+/* Mobile Popup Menu Layering & Reliability */
 .popup-mobile-menu {
     position: fixed !important;
     top: 0 !important;
     left: 0 !important;
-    bottom: 0 !important;
     right: 0 !important;
-    background: rgba(0, 0, 0, 0.6) !important;
+    bottom: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    height: 100vh !important;
     z-index: 999999 !important;
-    opacity: 0 !important;
+    background-color: rgba(0, 0, 0, 0.75) !important;
     visibility: hidden !important;
+    opacity: 0 !important;
     transition: opacity 0.3s ease, visibility 0.3s ease !important;
 }
 

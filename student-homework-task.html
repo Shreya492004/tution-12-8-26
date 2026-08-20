@@ -985,7 +985,7 @@
                                     <div class="rbt-default-sidebar-wrapper">
 
                                         <div class="section-title mb--20">
-                                            <h6 class="rbt-title-style-2">Welcome, Jone Due</h6>
+                                            <h6 class="rbt-title-style-2">Welcome, Oliver Smith</h6>
                                         </div>
 
                                         <nav class="mainmenu-nav">
@@ -1230,27 +1230,27 @@ const currentStudentId = "student001";
 
 const studentData = {
     student001: {
-        name: "Shreya",
+        name: "Oliver Smith",
+        id: "LSE-STD-2024-001",
         subjects: [
-            "Physics 101",
-            "Calculus II",
-            "Modern History",
-            "Web Development"
+            "Mathematics",
+            "Physics",
+            "Chemistry",
+            "Computer Science"
         ]
     },
     student002: {
         name: "Arun",
         subjects: [
-            "Physics 101",
-            "Biology"
+            "Mathematics",
+            "Physics"
         ]
     },
     student003: {
         name: "Rahul",
         subjects: [
-            "Java",
-            "PHP",
-            "MySQL"
+            "Chemistry",
+            "Computer Science"
         ]
     }
 };
@@ -1260,30 +1260,30 @@ const currentStudent = studentData[currentStudentId];
 const homeworkData = [
     {
         id: 1,
-        subject: "Physics 101",
-        teacher: "Prof. E. Schrödinger",
-        task: "Complete Chapter 5 numerical problems and revise the topics discussed in today's class.",
+        subject: "Mathematics",
+        teacher: "Ruben",
+        task: "Complete Chapter 5 numerical problems and solve integration exercises.",
         studentId: "student001"
     },
     {
         id: 2,
-        subject: "Calculus II",
-        teacher: "Prof. I. Newton",
-        task: "Solve the integration exercises from Chapter 5 and submit the completed work.",
+        subject: "Physics",
+        teacher: "Ruben",
+        task: "Revise Newton's Laws and complete kinematics problem set 3.",
         studentId: "student001"
     },
     {
         id: 3,
-        subject: "Modern History",
-        teacher: "Prof. H. Zinn",
-        task: "Read the assigned chapter and prepare short notes about the major historical events.",
+        subject: "Chemistry",
+        teacher: "Ruben",
+        task: "Review Periodic Table trends and balance chemical equations sheet.",
         studentId: "student001"
     },
     {
         id: 4,
-        subject: "Web Development",
-        teacher: "Prof. T. Berners-Lee",
-        task: "Create a responsive HTML and CSS webpage and submit the completed task.",
+        subject: "Computer Science",
+        teacher: "Ruben",
+        task: "Implement binary search algorithm and review time complexity.",
         studentId: "student001"
     }
 ];
@@ -1292,12 +1292,12 @@ const resourceData = [
     {
         id: 1,
         studentId: "student001",
-        subject: "Physics 101",
-        teacher: "Prof. E. Schrödinger",
+        subject: "Mathematics",
+        teacher: "Ruben",
         date: "2026-08-13",
         files: [
             {
-                name: "Physics_Ch5_Notes.pdf",
+                name: "Mathematics_Ch5_Notes.pdf",
                 file: "assets/notes/Physics_Ch5_Notes.pdf",
                 type: "PDF",
                 uploadedAt: "2026-08-13T09:30:00"
@@ -1307,13 +1307,13 @@ const resourceData = [
     {
         id: 2,
         studentId: "student001",
-        subject: "Calculus II",
-        teacher: "Prof. I. Newton",
+        subject: "Physics",
+        teacher: "Ruben",
         date: "2026-08-13",
         files: [
             {
-                name: "Calculus_Ch5_Notes.pdf",
-                file: "assets/notes/Calculus_Ch5_Notes.pdf",
+                name: "Physics_Ch5_Notes.pdf",
+                file: "assets/notes/Physics_Ch5_Notes.pdf",
                 type: "PDF",
                 uploadedAt: "2026-08-13T10:00:00"
             }
@@ -1322,13 +1322,13 @@ const resourceData = [
     {
         id: 3,
         studentId: "student001",
-        subject: "Modern History",
-        teacher: "Prof. H. Zinn",
+        subject: "Chemistry",
+        teacher: "Ruben",
         date: "2026-08-12",
         files: [
             {
-                name: "Modern_History_Chapter5.pdf",
-                file: "assets/notes/Modern_History_Chapter5.pdf",
+                name: "Chemistry_Ch5_Notes.pdf",
+                file: "assets/notes/Physics_Ch5_Notes.pdf",
                 type: "PDF",
                 uploadedAt: "2026-08-12T09:00:00"
             }
@@ -1337,12 +1337,11 @@ const resourceData = [
     {
         id: 4,
         studentId: "student001",
-        subject: "Web Development",
-        teacher: "Prof. T. Berners-Lee",
+        subject: "Computer Science",
+        teacher: "Ruben",
         date: "2026-08-11",
         files: [
             {
-                name: "HTML_CSS_Notes.pdf",
                 file: "assets/notes/HTML_CSS_Notes.pdf",
                 type: "PDF",
                 uploadedAt: "2026-08-11T09:00:00"
