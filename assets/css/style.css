@@ -8046,8 +8046,10 @@ textarea:-ms-input-placeholder {
 }
 
 .sticky-top {
-  top: 30px;
-  z-index: 9;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 95px;
+  z-index: 99;
 }
 
 .rbt-single-group {
@@ -30622,9 +30624,8 @@ table td,
 }
 
 /* 8. Dashboard Sidebar Navigation - Restored Original Clean & Beautiful Styling */
-.rbt-default-sidebar-wrapper,
-.rbt-dashboard-sidebar {
-    position: relative !important;
+.rbt-default-sidebar-wrapper {
+    position: relative;
 }
 
 .rbt-default-sidebar-wrapper .mainmenu-nav,

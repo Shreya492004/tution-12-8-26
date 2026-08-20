@@ -33,35 +33,52 @@
 
     <style>
         /* =========================================================
-           STICKY HEADER & SIDEBAR FIX
+           BANNER STYLING & COMPACT RESPONSIVE SCALING
         ========================================================= */
-        .rbt-header.rbt-header-9 {
-            position: sticky !important;
-            top: 0 !important;
-            left: 0 !important;
-            width: 100% !important;
-            z-index: 9999 !important;
-            background-color: #ffffff;
+        .slider-area.rbt-banner-10 {
+            margin-top: 0 !important;
+            padding-top: 0 !important;
+            background-size: cover !important;
+            background-position: center center !important;
+            background-repeat: no-repeat !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            position: relative;
         }
 
-        .rbt-header .rbt-header-wrapper {
-            background-color: #ffffff;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        .slider-area.rbt-banner-10.height-400 {
+            height: 160px !important;
+            min-height: 160px !important;
         }
 
-        @media (min-width: 992px) {
-            .rbt-dashboard-area .col-lg-3 {
-                display: flex;
-                flex-direction: column;
+        .slider-area.rbt-banner-10 .inner {
+            position: relative;
+            z-index: 5;
+        }
+
+        /* Mobile Height Adjustments */
+        @media (max-width: 768px) {
+            .slider-area.rbt-banner-10.height-400 {
+                height: 160px !important;
+                min-height: 160px !important;
+                padding: 10px 0 !important;
             }
 
-            .rbt-default-sidebar.sticky-top {
-                position: -webkit-sticky !important;
-                position: sticky !important;
-                top: 100px !important;
-                z-index: 99 !important;
-                max-height: calc(100vh - 120px);
-                overflow-y: auto;
+            .slider-area.rbt-banner-10 .title.display-one {
+                font-size: 26px !important;
+                line-height: 1.2 !important;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .slider-area.rbt-banner-10.height-400 {
+                height: 160px !important;
+                min-height: 160px !important;
+            }
+
+            .slider-area.rbt-banner-10 .title.display-one {
+                font-size: 22px !important;
             }
         }
 
@@ -136,11 +153,11 @@
 
             .rbt-header .rbt-main-navigation .mainmenu > li > a,
             .rbt-header .rbt-main-navigation a {
-                font-size: 17.5px !important;
+                font-size: 16.5px !important;
                 font-weight: 500 !important;
                 color: #192335 !important;
                 white-space: nowrap !important;
-                padding: 0 11px !important;
+                padding: 0 12px !important;
                 display: flex !important;
                 align-items: center !important;
                 height: 80px !important;
@@ -154,128 +171,15 @@
                 color: #2f57ef !important;
             }
         }
-
-        @media only screen and (min-width: 1200px) and (max-width: 1440px) {
-            .rbt-header .rbt-main-navigation .mainmenu > li > a,
-            .rbt-header .rbt-main-navigation a {
-                font-size: 16.5px !important;
-                padding: 0 8px !important;
-            }
-        }
-
-        /* Dashboard Sidebar Navigation */
-        .rbt-default-sidebar-wrapper,
-        .rbt-dashboard-sidebar {
-            position: relative !important;
-        }
-
-        .rbt-default-sidebar-wrapper .mainmenu-nav,
-        .rbt-dashboard-sidebar .mainmenu-nav {
-            display: block !important;
-            width: 100% !important;
-        }
-
-        .dashboard-mainmenu,
-        .rbt-default-sidebar-list {
-            margin: 0 !important;
-            padding: 0 !important;
-            list-style: none !important;
-            display: block !important;
-            width: 100% !important;
-        }
-
-        .dashboard-mainmenu li,
-        .rbt-default-sidebar-list li {
-            margin-bottom: 4px !important;
-            display: block !important;
-            width: 100% !important;
-        }
-
-        .dashboard-mainmenu li a,
-        .rbt-default-sidebar-list li a,
-        .rbt-default-sidebar-wrapper .dashboard-mainmenu li a,
-        .rbt-default-sidebar-wrapper .rbt-default-sidebar-list li a {
-            display: flex !important;
-            align-items: center !important;
-            justify-content: flex-start !important;
-            font-size: 15px !important;
-            font-weight: 500 !important;
-            font-family: var(--font-primary) !important;
-            line-height: 20px !important;
-            color: #2b354f !important;
-            padding: 10px 14px !important;
-            border-radius: 8px !important;
-            transition: all 0.2s ease !important;
-            text-decoration: none !important;
-            width: 100% !important;
-            height: auto !important;
-            background: transparent !important;
-        }
-
-        .dashboard-mainmenu li a span,
-        .rbt-default-sidebar-list li a span,
-        .rbt-default-sidebar-wrapper .dashboard-mainmenu li a span,
-        .rbt-default-sidebar-wrapper .rbt-default-sidebar-list li a span {
-            font-size: 15px !important;
-            font-weight: 500 !important;
-            font-family: var(--font-primary) !important;
-            color: inherit !important;
-            white-space: normal !important;
-        }
-
-        .dashboard-mainmenu li a i,
-        .rbt-default-sidebar-list li a i,
-        .rbt-default-sidebar-wrapper .dashboard-mainmenu li a i,
-        .rbt-default-sidebar-wrapper .rbt-default-sidebar-list li a i {
-            font-size: 17px !important;
-            margin-right: 12px !important;
-            color: #7e879b !important;
-            transition: all 0.2s ease !important;
-            width: 20px !important;
-            text-align: center !important;
-            flex-shrink: 0 !important;
-        }
-
-        .dashboard-mainmenu li.active a,
-        .dashboard-mainmenu li a.active,
-        .rbt-default-sidebar-list li.active a,
-        .rbt-default-sidebar-list li a.active {
-            background: #f0edff !important;
-            color: var(--color-primary, #2f57ef) !important;
-        }
-
-        .dashboard-mainmenu li.active a span,
-        .dashboard-mainmenu li a.active span,
-        .rbt-default-sidebar-list li.active a span,
-        .rbt-default-sidebar-list li a.active span {
-            font-weight: 600 !important;
-            color: var(--color-primary, #2f57ef) !important;
-        }
-
-        .dashboard-mainmenu li.active a i,
-        .dashboard-mainmenu li a.active i,
-        .rbt-default-sidebar-list li.active a i,
-        .rbt-default-sidebar-list li a.active i {
-            color: var(--color-primary, #2f57ef) !important;
-        }
-
-        .dashboard-mainmenu li a:hover,
-        .rbt-default-sidebar-list li a:hover {
-            background: #f6f7fb !important;
-            color: var(--color-primary, #2f57ef) !important;
-        }
-
-        .dashboard-mainmenu li a:hover i,
-        .rbt-default-sidebar-list li a:hover i {
-            color: var(--color-primary, #2f57ef) !important;
-        }
     </style>
 </head>
 
-<body>
+<body class="rbt-header-sticky">
 
     <!-- Start Header Area -->
     <header class="rbt-header rbt-header-9">
+        <div class="rbt-sticky-placeholder"></div>
+
         <div class="rbt-header-wrapper header-not-transparent header-sticky">
             <div class="container">
                 <div class="mainbar-row rbt-navigation-end align-items-center">
@@ -292,13 +196,27 @@
                     <div class="rbt-main-navigation d-none d-xl-block">
                         <nav class="mainmenu-nav">
                             <ul class="mainmenu">
-                                <li><a href="index.html">Home</a></li>
-                                <li><a href="about-us.html">About</a></li>
-                                <li><a href="our-team.html">Our Team</a></li>
-                                <li><a href="our-tuition.html">Our Tuition</a></li>
-                                <li><a href="holiday-camps.html">Holiday Camps</a></li>
-                                <li><a href="plans-and-pricing.html">Plans &amp; Pricing</a></li>
-                                <li><a href="book-online.html">Book Online</a></li>
+                                <li>
+                                    <a href="index.html">Home</a>
+                                </li>
+                                <li>
+                                    <a href="about-us.html">About</a>
+                                </li>
+                                <li>
+                                    <a href="our-team.html">Our Team</a>
+                                </li>
+                                <li>
+                                    <a href="our-tuition.html">Our Tuition</a>
+                                </li>
+                                <li>
+                                    <a href="holiday-camps.html">Holiday Camps</a>
+                                </li>
+                                <li>
+                                    <a href="plans-and-pricing.html">Plans &amp; Pricing</a>
+                                </li>
+                                <li>
+                                    <a href="book-online.html">Book Online</a>
+                                </li>
                             </ul>
                         </nav>
                     </div>

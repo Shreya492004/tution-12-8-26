@@ -34,51 +34,52 @@
     <!-- Teacher Profile Professional Styles -->
     <style>
         /* =========================================================
-           STICKY HEADER & ZERO-GAP FIX
+           BANNER STYLING & COMPACT RESPONSIVE SCALING
         ========================================================= */
-        .rbt-header.rbt-header-9 {
-            position: sticky !important;
-            top: 0 !important;
-            left: 0 !important;
-            width: 100% !important;
-            z-index: 9999 !important;
-            background-color: #ffffff;
-            margin-bottom: 0 !important;
-            padding-bottom: 0 !important;
-        }
-
-        .rbt-header .rbt-header-wrapper {
-            background-color: #ffffff;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-            margin-bottom: 0 !important;
-        }
-
-        /* Remove any gap between header and banner */
-        .rbt-sticky-placeholder {
-            display: none !important;
-            height: 0 !important;
-            margin: 0 !important;
-            padding: 0 !important;
-        }
-
         .slider-area.rbt-banner-10 {
             margin-top: 0 !important;
             padding-top: 0 !important;
+            background-size: cover !important;
+            background-position: center center !important;
+            background-repeat: no-repeat !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            position: relative;
         }
 
-        @media (min-width: 992px) {
-            .rbt-dashboard-area .col-lg-3 {
-                display: flex;
-                flex-direction: column;
+        .slider-area.rbt-banner-10.height-400 {
+            height: 160px !important;
+            min-height: 160px !important;
+        }
+
+        .slider-area.rbt-banner-10 .inner {
+            position: relative;
+            z-index: 5;
+        }
+
+        /* Mobile Height Adjustments */
+        @media (max-width: 768px) {
+            .slider-area.rbt-banner-10.height-400 {
+                height: 160px !important;
+                min-height: 160px !important;
+                padding: 10px 0 !important;
             }
 
-            .rbt-default-sidebar.sticky-top {
-                position: -webkit-sticky !important;
-                position: sticky !important;
-                top: 100px !important;
-                z-index: 99 !important;
-                max-height: calc(100vh - 120px);
-                overflow-y: auto;
+            .slider-area.rbt-banner-10 .title.display-one {
+                font-size: 26px !important;
+                line-height: 1.2 !important;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .slider-area.rbt-banner-10.height-400 {
+                height: 160px !important;
+                min-height: 160px !important;
+            }
+
+            .slider-area.rbt-banner-10 .title.display-one {
+                font-size: 22px !important;
             }
         }
 
@@ -106,7 +107,12 @@
         i[class*=" fa-"],
         [class^="fa-"],
         [class*=" fa-"],
-        .fa, .fas, .far, .fal, .fad, .fab {
+        .fa,
+        .fas,
+        .far,
+        .fal,
+        .fad,
+        .fab {
             font-family: "Font Awesome 5 Pro", "Font Awesome 5 Free", "FontAwesome" !important;
             font-style: normal !important;
             font-weight: normal !important;
@@ -180,14 +186,14 @@
                 list-style: none !important;
             }
 
-            .rbt-header .rbt-main-navigation .mainmenu > li {
+            .rbt-header .rbt-main-navigation .mainmenu>li {
                 flex-shrink: 0 !important;
                 margin: 0 !important;
                 padding: 0 !important;
                 position: relative !important;
             }
 
-            .rbt-header .rbt-main-navigation .mainmenu > li > a {
+            .rbt-header .rbt-main-navigation .mainmenu>li>a {
                 padding: 0 12px !important;
                 font-size: 16.5px !important;
                 font-weight: 500 !important;
@@ -204,42 +210,21 @@
                 text-decoration: none !important;
             }
 
-            .rbt-header .rbt-main-navigation .mainmenu > li > a:hover,
-            .rbt-header .rbt-main-navigation .mainmenu > li > a.active {
+            .rbt-header .rbt-main-navigation .mainmenu>li>a:hover,
+            .rbt-header .rbt-main-navigation .mainmenu>li>a.active {
                 color: var(--color-primary, #2f57ef) !important;
             }
         }
 
         @media only screen and (min-width: 1200px) and (max-width: 1440px) {
-            .rbt-header .rbt-main-navigation .mainmenu > li > a {
+            .rbt-header .rbt-main-navigation .mainmenu>li>a {
                 font-size: 16.5px !important;
                 padding: 0 8px !important;
             }
         }
 
-        /* Sidebar menu */
-        .dashboard-mainmenu li a,
-        .rbt-default-sidebar-list li a {
-            font-family: var(--font-primary), "Euclid Circular A", "Euclid Circular", sans-serif !important;
-            font-size: 17px !important;
-            font-weight: 500 !important;
-            color: #192335 !important;
-            display: flex !important;
-            align-items: center !important;
-            gap: 12px !important;
-            line-height: 1.4 !important;
-        }
-
-        .dashboard-mainmenu li a span,
-        .rbt-default-sidebar-list li a span {
-            display: block !important;
-            line-height: 1.4 !important;
-        }
-
         .teacher-badge-id i,
         .student-badge-id i,
-        .dashboard-mainmenu li a i,
-        .rbt-default-sidebar-list li a i,
         .profile-info-icon i,
         .teacher-details-title-left i,
         .student-details-title-left i,
@@ -255,17 +240,6 @@
             display: inline-block !important;
             -webkit-font-smoothing: antialiased !important;
             -moz-osx-font-smoothing: grayscale !important;
-        }
-
-        .dashboard-mainmenu li a:hover,
-        .rbt-default-sidebar-list li a:hover {
-            background: #f6f7fb !important;
-            color: var(--color-primary, #2f57ef) !important;
-        }
-
-        .dashboard-mainmenu li a:hover i,
-        .rbt-default-sidebar-list li a:hover i {
-            color: var(--color-primary, #2f57ef) !important;
         }
 
         /* Teacher Profile Styling */
@@ -637,11 +611,6 @@
             vertical-align: middle !important;
             flex: 0 0 20px !important;
             display: block !important;
-        }
-
-        .rbt-default-sidebar .section-title .rbt-title-style-2 {
-            font-size: 17px !important;
-            line-height: 1.4 !important;
         }
 
         @media (max-width: 767px) {
@@ -1021,10 +990,12 @@
                         </a>
                     </div>
                     <div class="rbt-btn-close">
-                        <button class="close-button rbt-round-btn" aria-label="Close Menu"><i class="feather-x"></i></button>
+                        <button class="close-button rbt-round-btn" aria-label="Close Menu"><i
+                                class="feather-x"></i></button>
                     </div>
                 </div>
-                <p class="description">London Star Education provides high-quality online tuition and educational support.</p>
+                <p class="description">London Star Education provides high-quality online tuition and educational
+                    support.</p>
                 <ul class="navbar-top-left rbt-information-list justify-content-start">
                     <li>
                         <a href="mailto:info@londonstaredu.com"><i class="feather-mail"></i>info@londonstaredu.com</a>
@@ -1051,10 +1022,18 @@
                 <div class="social-share-wrapper">
                     <span class="rbt-short-title d-block">Find With Us</span>
                     <ul class="social-icon social-default transparent-with-border justify-content-start mt--20">
-                        <li><a href="https://www.facebook.com/" aria-label="Facebook"><i class="feather-facebook"></i></a></li>
-                        <li><a href="https://www.twitter.com" aria-label="X (Twitter)"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" viewBox="0 0 24 24" class="social-icon-x" style="vertical-align: -2px;"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a></li>
-                        <li><a href="https://www.instagram.com/" aria-label="Instagram"><i class="feather-instagram"></i></a></li>
-                        <li><a href="https://www.linkedin.com/" aria-label="LinkedIn"><i class="feather-linkedin"></i></a></li>
+                        <li><a href="https://www.facebook.com/" aria-label="Facebook"><i
+                                    class="feather-facebook"></i></a></li>
+                        <li><a href="https://www.twitter.com" aria-label="X (Twitter)"><svg
+                                    xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor"
+                                    viewBox="0 0 24 24" class="social-icon-x" style="vertical-align: -2px;">
+                                    <path
+                                        d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                                </svg></a></li>
+                        <li><a href="https://www.instagram.com/" aria-label="Instagram"><i
+                                    class="feather-instagram"></i></a></li>
+                        <li><a href="https://www.linkedin.com/" aria-label="LinkedIn"><i
+                                    class="feather-linkedin"></i></a></li>
                     </ul>
                 </div>
             </div>
@@ -1079,14 +1058,14 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="row g-5">
-                        
+
                         <!-- Sticky Sidebar -->
                         <div class="col-lg-3">
                             <div class="rbt-default-sidebar sticky-top rbt-shadow-box rbt-gradient-border">
                                 <div class="inner">
                                     <div class="content-item-content">
                                         <div class="rbt-default-sidebar-wrapper">
-                                            
+
                                             <div class="section-title mb--20">
                                                 <h6 class="rbt-title-style-2">Welcome, Ruben</h6>
                                             </div>
@@ -1175,7 +1154,8 @@
                                                         <i class="feather-award"></i> Computer Systems Engineer
                                                     </span>
                                                     <span class="teacher-badge-id">
-                                                        <i class="feather-calendar"></i> Tutoring Since 2001 (20+ Years Exp)
+                                                        <i class="feather-calendar"></i> Tutoring Since 2001 (20+ Years
+                                                        Exp)
                                                     </span>
                                                 </div>
                                             </div>
@@ -1225,16 +1205,21 @@
                                                             </div>
                                                         </td>
                                                         <td>
-                                                            <button type="button" class="student-count-badge student-modal-btn" onclick="openStudentModal('mathematics')" title="Click to view enrolled students">
+                                                            <button type="button"
+                                                                class="student-count-badge student-modal-btn"
+                                                                onclick="openStudentModal('mathematics')"
+                                                                title="Click to view enrolled students">
                                                                 <i class="feather-users"></i>
                                                                 <span>16 Students</span>
-                                                                <i class="feather-external-link" style="font-size: 13px; margin-left: 4px; opacity: 0.85;"></i>
+                                                                <i class="feather-external-link"
+                                                                    style="font-size: 13px; margin-left: 4px; opacity: 0.85;"></i>
                                                             </button>
                                                         </td>
                                                         <td>
                                                             <span class="subject-time">
                                                                 <i class="feather-clock"></i>
-                                                                Mon-Sat (10:00 AM) <br> • Mon (02:00 PM) <br> • Wed (04:00 PM)
+                                                                • Mon-Sat (10:00 AM) <br> • Mon (02:00 PM) <br> • Wed
+                                                                (04:00 PM)
                                                             </span>
                                                         </td>
                                                     </tr>
@@ -1249,16 +1234,21 @@
                                                             </div>
                                                         </td>
                                                         <td>
-                                                            <button type="button" class="student-count-badge student-modal-btn" onclick="openStudentModal('physics')" title="Click to view enrolled students">
+                                                            <button type="button"
+                                                                class="student-count-badge student-modal-btn"
+                                                                onclick="openStudentModal('physics')"
+                                                                title="Click to view enrolled students">
                                                                 <i class="feather-users"></i>
                                                                 <span>14 Students</span>
-                                                                <i class="feather-external-link" style="font-size: 13px; margin-left: 4px; opacity: 0.85;"></i>
+                                                                <i class="feather-external-link"
+                                                                    style="font-size: 13px; margin-left: 4px; opacity: 0.85;"></i>
                                                             </button>
                                                         </td>
                                                         <td>
                                                             <span class="subject-time">
                                                                 <i class="feather-clock"></i>
-                                                                Mon-Sat (02:00 PM - 03:30 PM) • Tue (05:00 PM - 06:30 PM)
+                                                                • Mon-Sat (02:00 PM - 03:30 PM) <br> • Tue (05:00 PM -
+                                                                06:30 PM)
                                                             </span>
                                                         </td>
                                                     </tr>
@@ -1273,16 +1263,21 @@
                                                             </div>
                                                         </td>
                                                         <td>
-                                                            <button type="button" class="student-count-badge student-modal-btn" onclick="openStudentModal('chemistry')" title="Click to view enrolled students">
+                                                            <button type="button"
+                                                                class="student-count-badge student-modal-btn"
+                                                                onclick="openStudentModal('chemistry')"
+                                                                title="Click to view enrolled students">
                                                                 <i class="feather-users"></i>
                                                                 <span>12 Students</span>
-                                                                <i class="feather-external-link" style="font-size: 13px; margin-left: 4px; opacity: 0.85;"></i>
+                                                                <i class="feather-external-link"
+                                                                    style="font-size: 13px; margin-left: 4px; opacity: 0.85;"></i>
                                                             </button>
                                                         </td>
                                                         <td>
                                                             <span class="subject-time">
                                                                 <i class="feather-clock"></i>
-                                                                Mon-Sat (04:00 PM - 05:30 PM) • Tue (06:00 PM - 07:30 PM)
+                                                                • Mon-Sat (04:00 PM - 05:30 PM) <br> • Tue (06:00 PM -
+                                                                07:30 PM)
                                                             </span>
                                                         </td>
                                                     </tr>
@@ -1297,16 +1292,21 @@
                                                             </div>
                                                         </td>
                                                         <td>
-                                                            <button type="button" class="student-count-badge student-modal-btn" onclick="openStudentModal('computer-science')" title="Click to view enrolled students">
+                                                            <button type="button"
+                                                                class="student-count-badge student-modal-btn"
+                                                                onclick="openStudentModal('computer-science')"
+                                                                title="Click to view enrolled students">
                                                                 <i class="feather-users"></i>
                                                                 <span>15 Students</span>
-                                                                <i class="feather-external-link" style="font-size: 13px; margin-left: 4px; opacity: 0.85;"></i>
+                                                                <i class="feather-external-link"
+                                                                    style="font-size: 13px; margin-left: 4px; opacity: 0.85;"></i>
                                                             </button>
                                                         </td>
                                                         <td>
                                                             <span class="subject-time">
                                                                 <i class="feather-clock"></i>
-                                                                Mon, Wed, Fri, Sat (01:00 PM) • Tue, Thu, Sat (03:00 PM)
+                                                                • Mon, Wed, Fri, Sat (01:00 PM) <br> • Tue, Thu, Sat
+                                                                (03:00 PM)
                                                             </span>
                                                         </td>
                                                     </tr>
@@ -1323,7 +1323,8 @@
                                                 <i class="feather-user"></i>
                                                 <h5>Personal &amp; Professional Details</h5>
                                             </div>
-                                            <a href="tuitor-edit.html" class="rbt-btn btn-xs btn-border-gradient radius-round">
+                                            <a href="tuitor-edit.html"
+                                                class="rbt-btn btn-xs btn-border-gradient radius-round">
                                                 <i class="feather-edit-2 me-1"></i> Edit Profile
                                             </a>
                                         </div>
@@ -1375,7 +1376,8 @@
                                                 </div>
                                                 <div class="profile-info-content">
                                                     <div class="profile-info-label">Role &amp; Specialization</div>
-                                                    <div class="profile-info-val">Senior STEM Educator &amp; Computer Systems Engineer</div>
+                                                    <div class="profile-info-val">Senior STEM Educator &amp; Computer
+                                                        Systems Engineer</div>
                                                 </div>
                                             </div>
 
@@ -1401,9 +1403,38 @@
                                         </div>
 
                                         <div class="profile-info-val" style="line-height: 1.8;">
-                                            <p style="margin-bottom: 14px; font-weight: 400; color: #374151; font-size: 18px;">With over two decades of dedicated experience in education and a robust professional background in engineering, I offer a unique and comprehensive tutoring experience. Since 2001, I have been committed to helping students excel across a wide range of academic levels, from Year 7 through to A-Levels, specialising in Mathematics, Physics, Chemistry, Biology, and Computer Science. My long standing tenure in tutoring has allowed me to refine my teaching methods, ensuring that complex concepts are broken down into manageable and engaging lessons tailored to each student’s individual learning style.</p>
-                                            <p style="margin-bottom: 14px; font-weight: 400; color: #374151; font-size: 18px;">By profession, I am a Computer Systems Engineer, which provides me with a practical, real-world perspective on the subjects I teach. I don’t just teach theory, I demonstrate how these principles are applied in the modern technology and engineering sectors, helping students understand the “why” behind their studies and inspiring them toward future career paths in STEM. My goal is to build confidence and foster a deep understanding of the subject matter, whether a student is looking to bridge foundational gaps or aiming for top marks in their A-Levels.</p>
-                                            <p style="margin-bottom: 0; font-weight: 400; color: #374151; font-size: 18px;">Throughout my career, I have developed a particular expertise and passion for working with students with special educational needs. I understand that every learner processes information differently, and I take pride in my ability to adapt my communication and teaching strategies to provide a supportive, patient, and inclusive environment. By building strong rapport and utilizing tailored pedagogical approaches, I have successfully helped many students with diverse learning requirements overcome academic hurdles and build the confidence necessary for long-term success.</p>
+                                            <p
+                                                style="margin-bottom: 14px; font-weight: 400; color: #374151; font-size: 18px;">
+                                                With over two decades of dedicated experience in education and a robust
+                                                professional background in engineering, I offer a unique and
+                                                comprehensive tutoring experience. Since 2001, I have been committed to
+                                                helping students excel across a wide range of academic levels, from Year
+                                                7 through to A-Levels, specialising in Mathematics, Physics, Chemistry,
+                                                Biology, and Computer Science. My long standing tenure in tutoring has
+                                                allowed me to refine my teaching methods, ensuring that complex concepts
+                                                are broken down into manageable and engaging lessons tailored to each
+                                                student’s individual learning style.</p>
+                                            <p
+                                                style="margin-bottom: 14px; font-weight: 400; color: #374151; font-size: 18px;">
+                                                By profession, I am a Computer Systems Engineer, which provides me with
+                                                a practical, real-world perspective on the subjects I teach. I don’t
+                                                just teach theory, I demonstrate how these principles are applied in the
+                                                modern technology and engineering sectors, helping students understand
+                                                the “why” behind their studies and inspiring them toward future career
+                                                paths in STEM. My goal is to build confidence and foster a deep
+                                                understanding of the subject matter, whether a student is looking to
+                                                bridge foundational gaps or aiming for top marks in their A-Levels.</p>
+                                            <p
+                                                style="margin-bottom: 0; font-weight: 400; color: #374151; font-size: 18px;">
+                                                Throughout my career, I have developed a particular expertise and
+                                                passion for working with students with special educational needs. I
+                                                understand that every learner processes information differently, and I
+                                                take pride in my ability to adapt my communication and teaching
+                                                strategies to provide a supportive, patient, and inclusive environment.
+                                                By building strong rapport and utilizing tailored pedagogical
+                                                approaches, I have successfully helped many students with diverse
+                                                learning requirements overcome academic hurdles and build the confidence
+                                                necessary for long-term success.</p>
                                         </div>
                                     </div>
 
@@ -1435,14 +1466,39 @@
                                     <img src="assets/images/logo/logo.png" alt="Edu-Loop Sign Logo">
                                 </a>
                             </div>
-                            <p class="description mt--20">We are always seeking talented and motivated individuals to join our team.</p>
+                            <p class="description mt--20">We are always seeking talented and motivated individuals to
+                                join our team.</p>
                             <ul class="social-icon social-default justify-content-start">
-                                <li><a href="https://www.facebook.com/"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a></li>
+                                <li><a href="https://www.facebook.com/"><svg xmlns="http://www.w3.org/2000/svg"
+                                            width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z">
+                                            </path>
+                                        </svg></a></li>
                                 <li><a href="https://www.twitter.com" aria-label="X (Twitter)">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" viewBox="0 0 24 24" class="social-icon-x" style="vertical-align: -2px;"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-                                </a></li>
-                                <li><a href="https://www.instagram.com/"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a></li>
-                                <li><a href="https://www.linkedin.com/"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a></li>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15"
+                                            fill="currentColor" viewBox="0 0 24 24" class="social-icon-x"
+                                            style="vertical-align: -2px;">
+                                            <path
+                                                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                                        </svg>
+                                    </a></li>
+                                <li><a href="https://www.instagram.com/"><svg xmlns="http://www.w3.org/2000/svg"
+                                            width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                                        </svg></a></li>
+                                <li><a href="https://www.linkedin.com/"><svg xmlns="http://www.w3.org/2000/svg"
+                                            width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <path
+                                                d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                                            </path>
+                                            <rect x="2" y="9" width="4" height="12"></rect>
+                                            <circle cx="4" cy="4" r="2"></circle>
+                                        </svg></a></li>
                             </ul>
                         </div>
                     </div>
@@ -1479,11 +1535,13 @@
                             <h5 class="ft-title">Get Contact</h5>
                             <ul class="ft-link">
                                 <li><span>Phone:</span> <a href="#">(406) 555-0120</a></li>
-                                <li><span>E-mail:</span> <a href="mailto:info@londonstaredu.com">info@londonstaredu.com</a></li>
+                                <li><span>E-mail:</span> <a
+                                        href="mailto:info@londonstaredu.com">info@londonstaredu.com</a></li>
                             </ul>
                             <div class="newsletter-form mt--20">
                                 <h6 class="w-600">Location</h6>
-                                <p class="description">2000+ Our students are subscribe Around the World.<br> Don’t be shy introduce yourself!</p>
+                                <p class="description">2000+ Our students are subscribe Around the World.<br> Don’t be
+                                    shy introduce yourself!</p>
                             </div>
                         </div>
                     </div>
@@ -1496,11 +1554,13 @@
                 <div class="row align-items-center">
                     <div class="col-xxl-7 col-xl-7 col-lg-7 col-md-12 col-12">
                         <p class="rbt-link-hover text-center text-lg-start">
-                            Copyright © 2026 by <a href="index.html">London Star Education Ltd.</a> All Rights Reserved. Designed by <a href="https://rkisystems.co.uk/" target="_blank">RKI Systems</a>
+                            Copyright © 2026 by <a href="index.html">London Star Education Ltd.</a> All Rights Reserved.
+                            Designed by <a href="https://rkisystems.co.uk/" target="_blank">RKI Systems</a>
                         </p>
                     </div>
                     <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-12 col-12">
-                        <ul class="copyright-link rbt-link-hover justify-content-center justify-content-lg-end mt_sm--10 mt_md--10">
+                        <ul
+                            class="copyright-link rbt-link-hover justify-content-center justify-content-lg-end mt_sm--10 mt_md--10">
                             <li><a href="#">Terms of service</a></li>
                             <li><a href="privacy-policy.html">Privacy policy</a></li>
                         </ul>
@@ -1615,11 +1675,14 @@
                         <i class="feather-book"></i>
                     </div>
                     <div>
-                        <h4 id="modal-subject-title" style="margin: 0; font-size: 20px; font-weight: 700; color: #192335;">Mathematics</h4>
-                        <p id="modal-subject-subtitle" style="margin: 2px 0 0; font-size: 14px; color: #64748b;">16 Enrolled Students &bull; Mon-Sat (10:00 AM) &bull; Mon (02:00 PM) &bull; Wed (04:00 PM)</p>
+                        <h4 id="modal-subject-title"
+                            style="margin: 0; font-size: 20px; font-weight: 700; color: #192335;">Mathematics</h4>
+                        <p id="modal-subject-subtitle" style="margin: 2px 0 0; font-size: 14px; color: #64748b;">16
+                            Enrolled Students &bull; Mon-Sat (10:00 AM) &bull; Mon (02:00 PM) &bull; Wed (04:00 PM)</p>
                     </div>
                 </div>
-                <button type="button" class="student-modal-close" onclick="closeStudentModal()" aria-label="Close modal">
+                <button type="button" class="student-modal-close" onclick="closeStudentModal()"
+                    aria-label="Close modal">
                     <i class="feather-x"></i>
                 </button>
             </div>
@@ -1628,11 +1691,15 @@
             <div class="student-modal-filter-bar">
                 <span class="modal-filter-label">Filter By Tuition Type:</span>
                 <div class="student-modal-filter-group">
-                    <button type="button" class="modal-filter-btn" id="filter-btn-one-to-one" onclick="toggleStudentFilter('One-to-One')">
-                        <i class="feather-user"></i> One-to-One <span class="btn-badge" id="badge-count-one-to-one">0</span>
+                    <button type="button" class="modal-filter-btn" id="filter-btn-one-to-one"
+                        onclick="toggleStudentFilter('One-to-One')">
+                        <i class="feather-user"></i> One-to-One <span class="btn-badge"
+                            id="badge-count-one-to-one">0</span>
                     </button>
-                    <button type="button" class="modal-filter-btn" id="filter-btn-one-to-many" onclick="toggleStudentFilter('One-to-Many')">
-                        <i class="feather-users"></i> One-to-Many <span class="btn-badge" id="badge-count-one-to-many">0</span>
+                    <button type="button" class="modal-filter-btn" id="filter-btn-one-to-many"
+                        onclick="toggleStudentFilter('One-to-Many')">
+                        <i class="feather-users"></i> One-to-Many <span class="btn-badge"
+                            id="badge-count-one-to-many">0</span>
                     </button>
                 </div>
             </div>
@@ -1656,8 +1723,10 @@
             </div>
 
             <div class="student-modal-footer">
-                <span id="modal-summary-text" style="font-size: 14px; color: #64748b; font-weight: 500;">Showing all enrolled students</span>
-                <button type="button" class="rbt-btn btn-sm btn-border radius-round" onclick="closeStudentModal()">Close</button>
+                <span id="modal-summary-text" style="font-size: 14px; color: #64748b; font-weight: 500;">Showing all
+                    enrolled students</span>
+                <button type="button" class="rbt-btn btn-sm btn-border radius-round"
+                    onclick="closeStudentModal()">Close</button>
             </div>
         </div>
     </div>
@@ -1758,7 +1827,7 @@
         function openStudentModal(subjectKey) {
             activeSubjectKey = subjectKey;
             currentFilterType = 'all';
-            
+
             const data = subjectStudentsData[subjectKey];
             if (!data) return;
 
@@ -1866,7 +1935,7 @@
             }
         }
 
-        document.addEventListener('keydown', function(event) {
+        document.addEventListener('keydown', function (event) {
             if (event.key === 'Escape') {
                 closeStudentModal();
             }
@@ -1874,4 +1943,5 @@
     </script>
 
 </body>
+
 </html>

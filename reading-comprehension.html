@@ -34,6 +34,56 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/custom-ui.css">
     <style>
+        /* =========================================================
+           BANNER STYLING & COMPACT RESPONSIVE SCALING
+        ========================================================= */
+        .slider-area.rbt-banner-10 {
+            margin-top: 0 !important;
+            padding-top: 0 !important;
+            background-size: cover !important;
+            background-position: center center !important;
+            background-repeat: no-repeat !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            position: relative;
+        }
+
+        .slider-area.rbt-banner-10.height-400 {
+            height: 160px !important;
+            min-height: 160px !important;
+        }
+
+        .slider-area.rbt-banner-10 .inner {
+            position: relative;
+            z-index: 5;
+        }
+
+        /* Mobile Height Adjustments */
+        @media (max-width: 768px) {
+            .slider-area.rbt-banner-10.height-400 {
+                height: 160px !important;
+                min-height: 160px !important;
+                padding: 10px 0 !important;
+            }
+
+            .slider-area.rbt-banner-10 .title.display-one {
+                font-size: 26px !important;
+                line-height: 1.2 !important;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .slider-area.rbt-banner-10.height-400 {
+                height: 160px !important;
+                min-height: 160px !important;
+            }
+
+            .slider-area.rbt-banner-10 .title.display-one {
+                font-size: 22px !important;
+            }
+        }
+
         /* Icon Font Protection - Ensure feather and fontawesome icons always render */
         i[class^="feather-"],
         i[class*=" feather-"],

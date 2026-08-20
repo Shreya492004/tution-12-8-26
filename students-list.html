@@ -35,26 +35,100 @@
 
     <style>
         /* =========================================================
-           FIXED HEADER (PREVENTS DISAPPEARING ON SCROLL)
+           BANNER STYLING & COMPACT RESPONSIVE SCALING
         ========================================================= */
-        header.rbt-header,
-        .rbt-header .rbt-header-wrapper,
-        .rbt-header-wrapper.header-sticky {
-            position: fixed !important;
-            top: 0 !important;
-            left: 0 !important;
-            right: 0 !important;
-            width: 100% !important;
-            z-index: 99999 !important;
-            background-color: #ffffff !important;
-            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08) !important;
-            transform: none !important;
-            visibility: visible !important;
-            opacity: 1 !important;
-        }
-
         .slider-area.rbt-banner-10 {
             margin-top: 0 !important;
+            padding-top: 0 !important;
+            background-size: cover !important;
+            background-position: center center !important;
+            background-repeat: no-repeat !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            position: relative;
+        }
+
+        .slider-area.rbt-banner-10.height-400 {
+            height: 160px !important;
+            min-height: 160px !important;
+        }
+
+        .slider-area.rbt-banner-10 .inner {
+            position: relative;
+            z-index: 5;
+        }
+
+        /* Mobile Height Adjustments */
+        @media (max-width: 768px) {
+            .slider-area.rbt-banner-10.height-400 {
+                height: 160px !important;
+                min-height: 160px !important;
+                padding: 10px 0 !important;
+            }
+
+            .slider-area.rbt-banner-10 .title.display-one {
+                font-size: 26px !important;
+                line-height: 1.2 !important;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .slider-area.rbt-banner-10.height-400 {
+                height: 160px !important;
+                min-height: 160px !important;
+            }
+
+            .slider-area.rbt-banner-10 .title.display-one {
+                font-size: 22px !important;
+            }
+        }
+
+        /* =========================================================
+           DESIGN TOKENS — single source of truth for the roster UI
+        ========================================================= */
+        :root {
+            --clr-primary: #6c4df6;
+            --clr-primary-dark: #5b3ef0;
+            --clr-primary-soft: #f3f0ff;
+            --clr-secondary: #0284c7;
+            --clr-secondary-soft: #e0f2fe;
+            --clr-success: #16a34a;
+            --clr-success-soft: #eafbf1;
+            --clr-danger: #ef4444;
+            --clr-danger-soft: #fef2f2;
+            --clr-ink: #192335;
+            --clr-body: #475569;
+            --clr-muted: #64748b;
+            --clr-faint: #94a3b8;
+            --clr-line: #e8e8e8;
+            --clr-line-soft: #f1f5f9;
+            --radius-lg: 14px;
+            --radius-md: 10px;
+            --radius-sm: 8px;
+            --shadow-card: 0 4px 14px rgba(15, 23, 42, 0.05);
+            --shadow-hover: 0 10px 26px rgba(108, 77, 246, 0.15);
+        }
+
+        /* Visible keyboard focus across every interactive element in this UI */
+        .subject-card:focus-visible,
+        .session-pill-btn:focus-visible,
+        .type-filter-btn:focus-visible,
+        .sort-toggle-btn:focus-visible,
+        .action-view-btn:focus-visible,
+        .modal-close-btn:focus-visible,
+        .modal-close-profile-btn:focus-visible,
+        .roster-search-input input:focus-visible,
+        .subject-badge:focus-visible {
+            outline: 2px solid var(--clr-primary-dark);
+            outline-offset: 2px;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.001ms !important;
+                transition-duration: 0.001ms !important;
+            }
         }
 
         body, button, input, select, textarea, table, th, td, h1, h2, h3, h4, h5, h6, p, span, a, label, div {
@@ -70,32 +144,6 @@
         i[class^="fa-"], i[class*=" fa-"], [class^="fa-"], [class*=" fa-"], .fa, .fas, .far, .fal, .fad, .fab {
             font-family: "Font Awesome 5 Pro", "Font Awesome 5 Free", "FontAwesome" !important;
             display: inline-block !important;
-        }
-
-        /* Sidebar Navigation */
-        .dashboard-mainmenu li a, .rbt-default-sidebar-list li a {
-            font-family: var(--font-primary), "Euclid Circular A", "Euclid Circular", sans-serif !important;
-            font-size: 17px !important;
-            font-weight: 500 !important;
-            color: #192335 !important;
-            display: flex !important;
-            align-items: center !important;
-            gap: 12px !important;
-            line-height: 1.4 !important;
-            padding: 12px 16px !important;
-            border-radius: 8px !important;
-            text-decoration: none !important;
-            transition: all 0.2s ease !important;
-        }
-
-        .dashboard-mainmenu li.active a, .rbt-default-sidebar-list li.active a {
-            background: #f0edff !important;
-            color: var(--color-primary, #2f57ef) !important;
-        }
-
-        .dashboard-mainmenu li.active a span, .rbt-default-sidebar-list li.active a span {
-            font-weight: 600 !important;
-            color: var(--color-primary, #2f57ef) !important;
         }
 
         .sidebar-icon-svg {
@@ -183,15 +231,36 @@
             color: #ffffff;
         }
 
+        /* Per-subject accent so the four cards read distinctly at a glance */
+        #card-subject-physics .subject-icon-box { background: #e0f2fe; color: #0284c7; }
+        #card-subject-physics.active-subject .subject-icon-box,
+        #card-subject-physics.active-subject::before { background: #0284c7; }
+        #card-subject-physics.active-subject { border-color: #0284c7; box-shadow: 0 10px 26px rgba(2, 132, 199, 0.15); }
+        #card-subject-physics:hover { border-color: #0284c7; box-shadow: 0 10px 24px rgba(2, 132, 199, 0.12); }
+
+        #card-subject-chemistry .subject-icon-box { background: #fef3e2; color: #d97706; }
+        #card-subject-chemistry.active-subject .subject-icon-box,
+        #card-subject-chemistry.active-subject::before { background: #d97706; }
+        #card-subject-chemistry.active-subject { border-color: #d97706; box-shadow: 0 10px 26px rgba(217, 119, 6, 0.15); }
+        #card-subject-chemistry:hover { border-color: #d97706; box-shadow: 0 10px 24px rgba(217, 119, 6, 0.12); }
+
+        #card-subject-computer-science .subject-icon-box { background: #e6fbf5; color: #0d9488; }
+        #card-subject-computer-science.active-subject .subject-icon-box,
+        #card-subject-computer-science.active-subject::before { background: #0d9488; }
+        #card-subject-computer-science.active-subject { border-color: #0d9488; box-shadow: 0 10px 26px rgba(13, 148, 136, 0.15); }
+        #card-subject-computer-science:hover { border-color: #0d9488; box-shadow: 0 10px 24px rgba(13, 148, 136, 0.12); }
+
         .subject-badge {
             display: inline-flex;
             align-items: center;
+            gap: 5px;
             padding: 4px 12px;
-            border-radius: 6px;
-            background: #e8fbf1;
-            color: #16c763;
-            font-size: 14.5px !important;
+            border-radius: 20px;
+            background: var(--clr-primary-soft);
+            color: var(--clr-primary-dark);
+            font-size: 13.5px !important;
             font-weight: 600 !important;
+            border: 1px solid #e4dcff;
         }
 
         .subject-card-title {
@@ -781,17 +850,40 @@
             max-height: calc(88vh - 140px);
         }
 
+        .detail-section-title {
+            font-size: 12px !important;
+            font-weight: 700 !important;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--clr-primary-dark) !important;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin: 20px 0 10px !important;
+        }
+
+        .detail-section-title:first-child {
+            margin-top: 0 !important;
+        }
+
+        .detail-section-title::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--clr-line-soft);
+        }
+
         .detail-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 12px 14px;
-            margin-bottom: 18px;
+            gap: 10px 12px;
+            margin-bottom: 6px;
         }
 
         .detail-item {
             background: #fbfbfe;
-            padding: 12px 16px;
-            border-radius: 8px;
+            padding: 10px 14px;
+            border-radius: var(--radius-sm);
             border: 1px solid #f0edf8;
             display: flex;
             flex-direction: column;
@@ -810,21 +902,21 @@
         }
 
         .detail-item label {
-            font-size: 16px !important;
+            font-size: 11px !important;
             text-transform: uppercase !important;
-            font-weight: 400 !important;
-            color: black !important;
+            font-weight: 600 !important;
+            color: var(--clr-muted) !important;
             display: block;
-            margin-bottom: 2px;
-            letter-spacing: 0.05em;
+            margin-bottom: 3px;
+            letter-spacing: 0.06em;
         }
 
         .detail-item p {
             margin: 0;
-            font-size: 17px !important;
-            font-weight: 400 !important;
-            color: gray !important;
-            line-height: 1.5;
+            font-size: 14.5px !important;
+            font-weight: 600 !important;
+            color: var(--clr-ink) !important;
+            line-height: 1.45;
             word-break: break-word;
         }
 
@@ -886,6 +978,25 @@
             }
             .detail-item.full-width {
                 grid-column: span 1;
+            }
+            .roster-toolbar {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .toolbar-left, .toolbar-right {
+                width: 100%;
+            }
+            .roster-search-input {
+                width: 100%;
+                flex: 1;
+            }
+            .sort-toggle-btn {
+                white-space: nowrap;
+            }
+            .student-table thead th,
+            .student-table tbody td {
+                padding: 10px 12px;
+                font-size: 13.5px !important;
             }
         }
     </style>
@@ -1663,8 +1774,8 @@
 
                                     <div class="toolbar-right">
                                         <div class="roster-search-input">
-                                            <input type="text" id="student-search-input" placeholder="Search student name " onkeyup="filterStudents()">
-                                            <!-- <i class="feather-search"></i> -->
+                                            <!-- <i class="feather-search" aria-hidden="true"></i> -->
+                                            <input type="text" id="student-search-input" placeholder="Search by name or ID" aria-label="Search students by name or ID" onkeyup="filterStudents()">
                                         </div>
 
                                         <button class="sort-toggle-btn" id="sort-toggle-btn" onclick="toggleSortOrder()">
@@ -1720,6 +1831,8 @@
             </div>
 
             <div class="student-modal-body">
+
+                <h6 class="detail-section-title"><i class="feather-user" aria-hidden="true"></i> Personal Details</h6>
                 <div class="detail-grid">
                     <div class="detail-item">
                         <label>Student ID</label>
@@ -1727,10 +1840,23 @@
                     </div>
 
                     <div class="detail-item">
-                        <label>Student Full Name</label>
+                        <label>Full Name</label>
                         <p id="modal-student-full-name">Oliver Smith</p>
                     </div>
 
+                    <div class="detail-item">
+                        <label>Date of Birth</label>
+                        <p id="modal-student-dob">14 Mar 2010</p>
+                    </div>
+
+                    <div class="detail-item">
+                        <label>Gender</label>
+                        <p id="modal-student-gender">Male</p>
+                    </div>
+                </div>
+
+                <h6 class="detail-section-title"><i class="feather-calendar" aria-hidden="true"></i> Tuition &amp; Schedule</h6>
+                <div class="detail-grid">
                     <div class="detail-item">
                         <label>Tuition Type</label>
                         <p id="modal-student-type">One-to-One</p>
@@ -1750,24 +1876,17 @@
                         <label>Joined Date</label>
                         <p id="modal-student-joindate" class="joined-highlight">28 Mar 2024</p>
                     </div>
+                </div>
 
-                    <div class="detail-item">
-                        <label>Date of Birth (DOB)</label>
-                        <p id="modal-student-dob">14 Mar 2010</p>
-                    </div>
-
-                    <div class="detail-item">
-                        <label>Gender</label>
-                        <p id="modal-student-gender">Male</p>
-                    </div>
-
+                <h6 class="detail-section-title"><i class="feather-phone" aria-hidden="true"></i> Contact Information</h6>
+                <div class="detail-grid">
                     <div class="detail-item full-width">
                         <label>Email Address</label>
                         <p id="modal-student-email">oliver.smith@gmail.com</p>
                     </div>
 
                     <div class="detail-item">
-                        <label>Candidate Phone</label>
+                        <label>Student Phone</label>
                         <p id="modal-student-phone">+44 7700 900101</p>
                     </div>
 
@@ -1775,7 +1894,10 @@
                         <label>Parent Contact</label>
                         <p id="modal-student-parent-phone">+44 7900 111222</p>
                     </div>
+                </div>
 
+                <h6 class="detail-section-title"><i class="feather-bar-chart-2" aria-hidden="true"></i> Attendance Record</h6>
+                <div class="detail-grid">
                     <div class="detail-item">
                         <label>Classes Attended</label>
                         <p id="modal-student-attended" class="attendance-highlight">26 Classes</p>
@@ -2193,7 +2315,7 @@
             tbody.innerHTML = '';
 
             if (students.length === 0) {
-                tbody.innerHTML = `<tr><td colspan="5" style="text-align:center; padding:20px; color:#94a3b8;">No students enrolled in this session.</td></tr>`;
+                tbody.innerHTML = `<tr><td colspan="5" style="text-align:center; padding:24px; color:#94a3b8;">No students are currently enrolled in this session.</td></tr>`;
             } else {
                 students.forEach((student, idx) => {
                     const sno = (idx + 1) < 10 ? `0${idx + 1}` : (idx + 1);
@@ -2273,7 +2395,10 @@
 
             tableBody.innerHTML = '';
             if (list.length === 0) {
-                tableBody.innerHTML = `<tr><td colspan="5" style="text-align:center; padding:30px; color:#94a3b8;">No students found for this filter.</td></tr>`;
+                tableBody.innerHTML = `<tr><td colspan="5" style="text-align:center; padding:36px 20px; color:#94a3b8;">
+                    <i class="feather-search" style="font-size:20px; display:block; margin-bottom:8px;"></i>
+                    No students match your search or filter.
+                </td></tr>`;
                 return;
             }
 

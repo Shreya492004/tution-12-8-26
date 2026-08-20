@@ -18,6 +18,33 @@
 html {
     font-size: 16px !important;
     -webkit-text-size-adjust: 100%;
+    overflow-x: clip !important;
+    width: 100% !important;
+    max-width: 100vw !important;
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: clip !important;
+    width: 100% !important;
+    max-width: 100vw !important;
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
+img, svg, video, canvas, audio, iframe, embed, object {
+    max-width: 100% !important;
+    height: auto;
+}
+
+input, select, textarea, .form-control {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
 }
 
 body,
@@ -206,18 +233,25 @@ h6, .h6 {
 }
 
 /* --------------------------------------------------------------------------
-   4. HEADER & NAVIGATION ENHANCEMENTS (ISSUE #2 FIX)
-/* --------------------------------------------------------------------------
-   4. UNIFIED HEADER SYSTEM (IDENTICAL ACROSS ALL 26 PAGES)
-   - Same Width (1200px max-width container)
-   - Same Height (80px wrapper & navigation)
-   - Same Font Size (16.5px navigation links, 14.5px CTA buttons)
-   - Same Fixed Header & Sticky Shadow
+   4. UNIFIED FIXED HEADER & NAVIGATION BAR (FOR ENTIRE WEBSITE)
+   - Permanent Fixed Header starting at top: 0 with zero gap above
+   - Automatic Page Clearance via body padding below header
+   - Uniform Height (80px desktop, 70px mobile)
+   - Consistent Navigation Links (16.5px font, medium weight)
+   - Correct Stacking Context (z-index: 10000)
    -------------------------------------------------------------------------- */
+html,
+body {
+    margin: 0 !important;
+}
+
+body {
+    padding-top: 80px !important;
+}
+
 header.rbt-header,
 .rbt-header,
-.rbt-header .rbt-header-wrapper,
-.rbt-header-wrapper.header-sticky {
+.rbt-header.rbt-header-9 {
     position: fixed !important;
     top: 0 !important;
     left: 0 !important;
@@ -226,12 +260,37 @@ header.rbt-header,
     height: 80px !important;
     min-height: 80px !important;
     max-height: 80px !important;
-    z-index: 99999 !important;
+    z-index: 10000 !important;
     background-color: #ffffff !important;
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08) !important;
     transform: none !important;
     visibility: visible !important;
     opacity: 1 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.rbt-header .rbt-header-wrapper,
+.rbt-header-wrapper.header-sticky,
+.rbt-header-wrapper.rbt-sticky {
+    position: relative !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 80px !important;
+    min-height: 80px !important;
+    max-height: 80px !important;
+    background-color: #ffffff !important;
+    box-shadow: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.rbt-sticky-placeholder {
+    display: none !important;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
 }
 
 .rbt-header .container {
@@ -369,21 +428,74 @@ header.rbt-header,
 .rbt-header.rbt-header-9,
 .rbt-header .rbt-header-wrapper {
     margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
 }
 
+/* =========================================================
+   BANNER STYLING & COMPACT RESPONSIVE SCALING (MATCHING ABOUT-US.HTML)
+========================================================= */
 .slider-area.rbt-banner-10,
-.slider-area,
-.rbt-banner-10,
-.rbt-page-banner-wrapper,
-.rbt-breadcrumb-default {
+.slider-area.rbt-banner-10.height-400 {
     margin-top: 0 !important;
     padding-top: 0 !important;
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    position: relative !important;
+    height: 160px !important;
+    min-height: 160px !important;
 }
 
-/* Desktop Header (>= 1200px) */
-@media only screen and (min-width: 1200px) {
+.slider-area.rbt-banner-10 .inner {
+    position: relative;
+    z-index: 5;
+}
+
+.slider-area.rbt-banner-10 .title.display-one {
+    color: #ffffff !important;
+    font-family: var(--font-primary) !important;
+    font-weight: 700 !important;
+    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.45) !important;
+    letter-spacing: -0.5px !important;
+    margin-bottom: 0 !important;
+}
+
+/* Mobile Height Adjustments */
+@media (max-width: 768px) {
+    .slider-area.rbt-banner-10,
+    .slider-area.rbt-banner-10.height-400 {
+        height: 160px !important;
+        min-height: 160px !important;
+        padding: 10px 0 !important;
+    }
+
+    .slider-area.rbt-banner-10 .title.display-one {
+        font-size: 26px !important;
+        line-height: 1.2 !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .slider-area.rbt-banner-10,
+    .slider-area.rbt-banner-10.height-400 {
+        height: 160px !important;
+        min-height: 160px !important;
+    }
+
+    .slider-area.rbt-banner-10 .title.display-one {
+        font-size: 22px !important;
+    }
+}
+
+/* Desktop Header (>= 992px) - Includes Laptops, Desktops, & Mobile "Desktop Site" Mode */
+@media only screen and (min-width: 992px) {
     .rbt-header .rbt-main-navigation {
         display: block !important;
+        flex: 1 1 auto !important;
+        min-width: 0 !important;
     }
     .rbt-header .mobile-menu-bar {
         display: none !important;
@@ -391,20 +503,42 @@ header.rbt-header,
     .rbt-header .header-right .rbt-btn-wrapper {
         display: inline-flex !important;
         align-items: center !important;
-        gap: 12px !important;
+        gap: 10px !important;
     }
 }
 
-@media only screen and (min-width: 1200px) and (max-width: 1400px) {
+@media only screen and (min-width: 992px) and (max-width: 1199.98px) {
+    .rbt-header .rbt-main-navigation .mainmenu-nav {
+        display: flex !important;
+        justify-content: center !important;
+    }
     .rbt-header .rbt-main-navigation .mainmenu > li > a,
     .rbt-header .rbt-main-navigation a {
-        font-size: 15.5px !important;
-        padding: 0 8px !important;
+        font-size: 14px !important;
+        padding: 0 7px !important;
+        height: 70px !important;
+        line-height: 70px !important;
+    }
+    .rbt-header .header-right .rbt-btn,
+    .rbt-header .header-right a.rbt-btn,
+    .rbt-header .header-right button.rbt-btn {
+        padding: 8px 14px !important;
+        font-size: 13.5px !important;
     }
 }
 
-/* Mobile & Tablet Header (< 1200px): Navigation moves inside hamburger, Login & Join stay outside beside hamburger */
-@media only screen and (max-width: 1199.98px) {
+@media only screen and (min-width: 1200px) {
+    .rbt-header .rbt-main-navigation .mainmenu > li > a,
+    .rbt-header .rbt-main-navigation a {
+        font-size: 16px !important;
+        padding: 0 11px !important;
+        height: 80px !important;
+        line-height: 80px !important;
+    }
+}
+
+/* Mobile & Tablet Header (< 992px): Navigation moves inside hamburger, Login & Join stay outside beside hamburger */
+@media only screen and (max-width: 991.98px) {
     .rbt-header .rbt-main-navigation {
         display: none !important;
     }
@@ -420,7 +554,7 @@ header.rbt-header,
         min-width: 0 !important;
     }
     .rbt-header .header-left .logo a img {
-        max-height: 48px !important;
+        max-height: 46px !important;
         width: auto !important;
         object-fit: contain !important;
     }
@@ -455,8 +589,8 @@ header.rbt-header,
     }
 }
 
-/* Tablet adjustments (768px to 1199px) */
-@media only screen and (min-width: 768px) and (max-width: 1199.98px) {
+/* Tablet adjustments (768px to 991px) */
+@media only screen and (min-width: 768px) and (max-width: 991.98px) {
     .rbt-header .header-right .rbt-btn,
     .rbt-header .header-right a.rbt-btn,
     .rbt-header .header-right button.rbt-btn {
@@ -467,6 +601,25 @@ header.rbt-header,
 
 /* Mobile screens (<= 767.98px) */
 @media only screen and (max-width: 767.98px) {
+    body {
+        padding-top: 70px !important;
+    }
+    header.rbt-header,
+    .rbt-header,
+    .rbt-header.rbt-header-9,
+    .rbt-header .rbt-header-wrapper,
+    .rbt-header-wrapper.header-sticky {
+        height: 70px !important;
+        min-height: 70px !important;
+        max-height: 70px !important;
+    }
+    .rbt-header .mainbar-row,
+    .rbt-header .header-left,
+    .rbt-header .header-right {
+        height: 70px !important;
+        min-height: 70px !important;
+        max-height: 70px !important;
+    }
     .rbt-header .mainbar-row {
         gap: 6px !important;
     }
@@ -731,7 +884,7 @@ header.rbt-header,
     width: 100% !important;
 }
 
-/* Sidebar navigation items - bigger, crisp & readable */
+/* Sidebar navigation items - clean, consistent, matching Student reference */
 .dashboard-mainmenu li a,
 .rbt-default-sidebar-list li a,
 .rbt-default-sidebar-wrapper .dashboard-mainmenu li a,
@@ -741,17 +894,19 @@ header.rbt-header,
     display: flex !important;
     align-items: center !important;
     justify-content: flex-start !important;
-    font-size: 17px !important; /* Clearly bigger & easier to read */
-    font-weight: 500 !important; /* Professional medium weight */
-    color: #192335 !important;
-    padding: 12px 18px !important;
-    border-radius: 10px !important;
-    transition: all 0.25s ease !important;
+    font-size: 15px !important;
+    font-weight: 500 !important;
+    font-family: var(--font-primary) !important;
+    color: #2b354f !important;
+    padding: 10px 14px !important;
+    border-radius: 8px !important;
+    transition: all 0.2s ease !important;
     text-decoration: none !important;
     width: 100% !important;
     height: auto !important;
     line-height: 1.4 !important;
     gap: 12px !important;
+    background: transparent !important;
 }
 
 .dashboard-mainmenu li a span,
@@ -759,11 +914,13 @@ header.rbt-header,
 .rbt-default-sidebar-wrapper .dashboard-mainmenu li a span,
 .rbt-default-sidebar-wrapper .rbt-default-sidebar-list li a span,
 .rbt-user-tab a span {
-    font-size: 17px !important;
+    font-size: 15px !important;
     font-weight: 500 !important;
+    font-family: var(--font-primary) !important;
     color: inherit !important;
-    white-space: nowrap !important;
+    white-space: normal !important;
     line-height: 1.4 !important;
+    display: inline-block !important;
 }
 
 .dashboard-mainmenu li a i,
@@ -771,11 +928,11 @@ header.rbt-header,
 .rbt-default-sidebar-wrapper .dashboard-mainmenu li a i,
 .rbt-default-sidebar-wrapper .rbt-default-sidebar-list li a i,
 .rbt-user-tab a i {
-    font-size: 19px !important;
+    font-size: 18px !important;
     margin-right: 0 !important;
-    color: #64748b !important;
-    transition: all 0.25s ease !important;
-    width: 22px !important;
+    color: #7e879b !important;
+    transition: all 0.2s ease !important;
+    width: 20px !important;
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
@@ -1275,17 +1432,7 @@ table td,
    12. RESPONSIVE BREAKPOINTS & CLEAN SPACING
    -------------------------------------------------------------------------- */
 html, body {
-    overflow-x: visible !important;
-}
-
-@media only screen and (max-width: 991.98px) {
-    .rbt-default-sidebar.sticky-top,
-    .rbt-dashboard-sidebar {
-        position: static !important;
-        top: auto !important;
-        margin-bottom: 25px !important;
-        max-height: none !important;
-    }
+    overflow-x: clip !important;
 }
 
 @media only screen and (max-width: 767px) {
@@ -1335,62 +1482,67 @@ html, body {
 }
 
 /* --------------------------------------------------------------------------
-   13. UNIVERSAL DASHBOARD SIDEBAR NAVIGATION & STICKY BEHAVIOR
+   13. UNIVERSAL DASHBOARD SIDEBAR NAVIGATION & RESPONSIVE STICKY SYSTEM
+   Desktop Reference Style across All Viewports: Desktop, Laptop, Tablet, Mobile
    -------------------------------------------------------------------------- */
-/* Ensure all ancestor containers of the dashboard allow sticky scrolling */
+/* 1. Ensure all ancestor containers of the dashboard and courses allow sticky scrolling */
 .rbt-dashboard-area,
 .rbt-dashboard-area .container,
 .rbt-dashboard-area .container-fluid,
 .rbt-dashboard-area .row,
 .rbt-dashboard-area .col-lg-12,
-.rbt-dashboard-area .col-lg-3 {
+.rbt-dashboard-area .col-lg-3,
+.rbt-dashboard-area .col-lg-9,
+.rbt-course-details-area,
+.rbt-course-details-area .container,
+.rbt-course-details-area .container-fluid,
+.rbt-course-details-area .row,
+.rbt-course-details-area .col-lg-8,
+.rbt-course-details-area .col-lg-4,
+.rbt-section-gap,
+.rbt-section-gapBottom {
     overflow: visible !important;
 }
 
-@media only screen and (min-width: 992px) {
-    .rbt-dashboard-area .row.g-5 {
-        display: flex !important;
-        align-items: stretch !important;
-    }
-
-    .rbt-dashboard-area .col-lg-3 {
-        display: flex !important;
-        flex-direction: column !important;
-        align-self: stretch !important;
-        height: auto !important;
-        position: relative !important;
-    }
-
-    .rbt-default-sidebar.sticky-top,
-    .rbt-dashboard-sidebar.sticky-top,
-    .col-lg-3 .rbt-default-sidebar,
-    .col-lg-3 .rbt-dashboard-sidebar {
-        position: -webkit-sticky !important;
-        position: sticky !important;
-        top: 100px !important;
-        z-index: 99 !important;
-        align-self: flex-start !important;
-        max-height: calc(100vh - 120px) !important;
-        overflow-y: auto !important;
-        overflow-x: hidden !important;
-        width: 100% !important;
-        display: block !important;
-    }
+/* 2. Base Universal Sidebar Card & Sticky Styling (Desktop Reference) */
+.rbt-default-sidebar,
+.rbt-dashboard-sidebar,
+.course-sidebar,
+.sticky-top,
+.rbt-sidebar-widget-wrapper.sticky-top {
+    background: #ffffff !important;
+    border-radius: 14px !important;
+    border: 1px solid #ebebf5 !important;
+    box-shadow: 0 6px 24px rgba(25, 35, 53, 0.06) !important;
+    position: -webkit-sticky !important;
+    position: sticky !important;
+    top: 95px !important;
+    max-height: calc(100vh - 115px) !important;
+    z-index: 99 !important;
+    align-self: flex-start !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    width: 100% !important;
+    display: block !important;
+    transition: all 0.25s ease !important;
 }
 
-.rbt-default-sidebar::-webkit-scrollbar {
+.rbt-default-sidebar::-webkit-scrollbar,
+.rbt-dashboard-sidebar::-webkit-scrollbar {
     width: 4px;
 }
-.rbt-default-sidebar::-webkit-scrollbar-track {
+.rbt-default-sidebar::-webkit-scrollbar-track,
+.rbt-dashboard-sidebar::-webkit-scrollbar-track {
     background: transparent;
 }
-.rbt-default-sidebar::-webkit-scrollbar-thumb {
+.rbt-default-sidebar::-webkit-scrollbar-thumb,
+.rbt-dashboard-sidebar::-webkit-scrollbar-thumb {
     background: #cbd5e1;
     border-radius: 4px;
 }
 
 .rbt-default-sidebar-wrapper,
-.rbt-dashboard-sidebar {
+.rbt-dashboard-sidebar-wrapper {
     position: relative !important;
     width: 100% !important;
 }
@@ -1420,6 +1572,7 @@ html, body {
     width: 100% !important;
 }
 
+/* 3. Sidebar Navigation Items */
 .dashboard-mainmenu li a,
 .rbt-default-sidebar-list li a,
 .rbt-default-sidebar-wrapper .dashboard-mainmenu li a,
@@ -1427,12 +1580,8 @@ html, body {
     display: flex !important;
     align-items: center !important;
     justify-content: flex-start !important;
-    font-size: 15px !important;
-    font-weight: 500 !important;
     font-family: var(--font-primary) !important;
-    line-height: 20px !important;
     color: #2b354f !important;
-    padding: 10px 14px !important;
     border-radius: 8px !important;
     transition: all 0.2s ease !important;
     text-decoration: none !important;
@@ -1445,32 +1594,31 @@ html, body {
 .rbt-default-sidebar-list li a span,
 .rbt-default-sidebar-wrapper .dashboard-mainmenu li a span,
 .rbt-default-sidebar-wrapper .rbt-default-sidebar-list li a span {
-    font-size: 15px !important;
-    font-weight: 500 !important;
     font-family: var(--font-primary) !important;
     color: inherit !important;
-    white-space: normal !important;
+    line-height: 1.35 !important;
 }
 
 .dashboard-mainmenu li a i,
 .rbt-default-sidebar-list li a i,
 .rbt-default-sidebar-wrapper .dashboard-mainmenu li a i,
 .rbt-default-sidebar-wrapper .rbt-default-sidebar-list li a i {
-    font-size: 17px !important;
-    margin-right: 12px !important;
     color: #7e879b !important;
     transition: all 0.2s ease !important;
-    width: 20px !important;
     text-align: center !important;
     flex-shrink: 0 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
 }
 
+/* Active Highlight Pill */
 .dashboard-mainmenu li.active a,
 .dashboard-mainmenu li a.active,
 .rbt-default-sidebar-list li.active a,
 .rbt-default-sidebar-list li a.active {
     background: #f0edff !important;
-    color: var(--color-primary, #2f57ef) !important;
+    color: #2f57ef !important;
 }
 
 .dashboard-mainmenu li.active a span,
@@ -1478,25 +1626,397 @@ html, body {
 .rbt-default-sidebar-list li.active a span,
 .rbt-default-sidebar-list li a.active span {
     font-weight: 600 !important;
-    color: var(--color-primary, #2f57ef) !important;
+    color: #2f57ef !important;
 }
 
 .dashboard-mainmenu li.active a i,
 .dashboard-mainmenu li a.active i,
 .rbt-default-sidebar-list li.active a i,
 .rbt-default-sidebar-list li a.active i {
-    color: var(--color-primary, #2f57ef) !important;
+    color: #2f57ef !important;
 }
 
+/* Hover States */
 .dashboard-mainmenu li a:hover,
 .rbt-default-sidebar-list li a:hover {
     background: #f6f7fb !important;
-    color: var(--color-primary, #2f57ef) !important;
+    color: #2f57ef !important;
 }
 
 .dashboard-mainmenu li a:hover i,
 .rbt-default-sidebar-list li a:hover i {
-    color: var(--color-primary, #2f57ef) !important;
+    color: #2f57ef !important;
 }
 
+/* Section Titles */
+.rbt-default-sidebar .section-title,
+.rbt-default-sidebar-wrapper .section-title {
+    margin-top: 18px !important;
+    margin-bottom: 8px !important;
+}
 
+.rbt-default-sidebar .section-title:first-child,
+.rbt-default-sidebar-wrapper .section-title:first-child {
+    margin-top: 0 !important;
+}
+
+.rbt-default-sidebar .section-title h6,
+.rbt-default-sidebar .section-title .rbt-title-style-2,
+.rbt-default-sidebar-wrapper .section-title h6,
+.rbt-default-sidebar-wrapper .section-title .rbt-title-style-2 {
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.6px !important;
+    color: #8c94a6 !important;
+    font-family: var(--font-primary) !important;
+    margin-bottom: 6px !important;
+    line-height: 1.3 !important;
+}
+
+/* ==========================================================================
+   BREAKPOINT SPECIFIC RESPONSIVE LAYOUTS
+   ========================================================================== */
+
+/* 1. Ensure all ancestor containers of the dashboard and courses allow sticky scrolling */
+.rbt-dashboard-area,
+.rbt-dashboard-area .container,
+.rbt-dashboard-area .container-fluid,
+.rbt-dashboard-area .row,
+.rbt-dashboard-area .col-lg-12,
+.rbt-dashboard-area .col-lg-3,
+.rbt-dashboard-area .col-lg-9,
+.rbt-course-details-area,
+.rbt-course-details-area .container,
+.rbt-course-details-area .container-fluid,
+.rbt-course-details-area .row,
+.rbt-course-details-area .col-lg-8,
+.rbt-course-details-area .col-lg-4,
+.rbt-section-gap,
+.rbt-section-gapTop,
+.rbt-section-gapBottom,
+.slider-area.rbt-banner-10,
+.rbt-banner-area,
+main {
+    overflow: visible !important;
+}
+
+/* 1. Large Desktop & Laptops (>= 992px) - Sidebar on Left, Content on Right (Sticky) */
+@media only screen and (min-width: 992px) {
+    html,
+    body {
+        overflow-x: visible !important;
+        overflow-y: auto !important;
+        overflow: visible !important;
+    }
+
+    .rbt-dashboard-area .row.g-5,
+    .rbt-dashboard-area .attendance-dashboard-row,
+    .rbt-dashboard-area .row,
+    .rbt-course-details-area .row.g-5,
+    .rbt-course-details-area .row {
+        display: flex !important;
+        align-items: stretch !important;
+    }
+
+    .rbt-dashboard-area .col-lg-3,
+    .col-lg-3.attendance-sidebar,
+    .rbt-course-details-area .col-lg-4 {
+        display: block !important;
+        align-self: stretch !important;
+        height: auto !important;
+        position: relative !important;
+        overflow: visible !important;
+    }
+
+    .rbt-dashboard-area .col-lg-3,
+    .col-lg-3.attendance-sidebar {
+        width: 25% !important;
+        max-width: 25% !important;
+        flex: 0 0 25% !important;
+    }
+
+    .rbt-dashboard-area .col-lg-9,
+    .col-lg-9.attendance-content {
+        width: 75% !important;
+        max-width: 75% !important;
+        flex: 0 0 75% !important;
+    }
+
+    .rbt-course-details-area .col-lg-8 {
+        width: 66.666667% !important;
+        max-width: 66.666667% !important;
+        flex: 0 0 66.666667% !important;
+    }
+
+    .rbt-course-details-area .col-lg-4 {
+        width: 33.333333% !important;
+        max-width: 33.333333% !important;
+        flex: 0 0 33.333333% !important;
+    }
+
+    .rbt-default-sidebar,
+    .rbt-dashboard-sidebar,
+    .rbt-default-sidebar.sticky-top,
+    .course-sidebar,
+    .course-sidebar.sticky-top,
+    .sticky-top,
+    .rbt-sidebar-widget-wrapper.sticky-top {
+        position: -webkit-sticky !important;
+        position: sticky !important;
+        top: 95px !important;
+        max-height: calc(100vh - 115px) !important;
+        overflow-y: auto !important;
+        overflow-x: hidden !important;
+        z-index: 99 !important;
+        display: block !important;
+        width: 100% !important;
+        padding: 22px 18px !important;
+    }
+
+    .dashboard-mainmenu li a,
+    .rbt-default-sidebar-list li a {
+        padding: 10px 14px !important;
+        font-size: 15px !important;
+        font-weight: 500 !important;
+        gap: 12px !important;
+    }
+
+    .dashboard-mainmenu li a span,
+    .rbt-default-sidebar-list li a span {
+        font-size: 15px !important;
+        font-weight: 500 !important;
+        white-space: normal !important;
+    }
+
+    .dashboard-mainmenu li a i,
+    .rbt-default-sidebar-list li a i {
+        font-size: 18px !important;
+        width: 20px !important;
+        margin-right: 0 !important;
+    }
+}
+
+/* 2. Mobile & Tablet (< 992px) - Sidebar on TOP (100% width) and Main Content BELOW (100% width) */
+@media only screen and (max-width: 991.98px) {
+    .rbt-dashboard-area .row.g-5,
+    .rbt-dashboard-area .attendance-dashboard-row,
+    .rbt-dashboard-area .row {
+        display: flex !important;
+        flex-direction: column !important;
+        flex-wrap: wrap !important;
+        align-items: stretch !important;
+        gap: 20px !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
+    .rbt-dashboard-area .col-lg-3,
+    .col-lg-3.attendance-sidebar {
+        width: 100% !important;
+        min-width: 100% !important;
+        max-width: 100% !important;
+        flex: 0 0 100% !important;
+        display: block !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        margin-bottom: 0 !important;
+        order: 1 !important;
+    }
+
+    .rbt-dashboard-area .col-lg-9,
+    .col-lg-9.attendance-content {
+        width: 100% !important;
+        min-width: 100% !important;
+        max-width: 100% !important;
+        flex: 0 0 100% !important;
+        display: block !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        order: 2 !important;
+    }
+
+    /* Sidebar Top Container */
+    .rbt-default-sidebar,
+    .rbt-dashboard-sidebar,
+    .rbt-default-sidebar.sticky-top,
+    .course-sidebar.sticky-top,
+    .sticky-top,
+    .rbt-sidebar-widget-wrapper.sticky-top {
+        position: static !important;
+        top: auto !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        max-height: none !important;
+        padding: 20px 18px !important;
+        border-radius: 14px !important;
+        box-shadow: 0 4px 20px rgba(25, 35, 53, 0.06) !important;
+        background: #ffffff !important;
+        border: 1px solid #ebebf5 !important;
+    }
+
+    .rbt-default-sidebar .inner,
+    .rbt-dashboard-sidebar .inner {
+        width: 100% !important;
+    }
+
+    .rbt-default-sidebar .section-title,
+    .rbt-default-sidebar-wrapper .section-title {
+        margin-top: 16px !important;
+        margin-bottom: 8px !important;
+        text-align: left !important;
+    }
+
+    .rbt-default-sidebar .section-title:first-child,
+    .rbt-default-sidebar-wrapper .section-title:first-child {
+        margin-top: 0 !important;
+    }
+
+    .rbt-default-sidebar .section-title h6,
+    .rbt-default-sidebar .section-title .rbt-title-style-2 {
+        font-size: 13px !important;
+        letter-spacing: 0.5px !important;
+        text-align: left !important;
+        margin-bottom: 6px !important;
+        color: #8c94a6 !important;
+    }
+
+    .dashboard-mainmenu,
+    .rbt-default-sidebar-list {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 6px !important;
+        list-style: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    .dashboard-mainmenu li,
+    .rbt-default-sidebar-list li {
+        width: 100% !important;
+        margin: 0 !important;
+    }
+
+    .dashboard-mainmenu li a,
+    .rbt-default-sidebar-list li a {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        padding: 10px 14px !important;
+        font-size: 15px !important;
+        font-weight: 500 !important;
+        gap: 12px !important;
+        border-radius: 8px !important;
+        color: #475569 !important;
+        background: transparent !important;
+        transition: all 0.2s ease !important;
+        text-decoration: none !important;
+    }
+
+    .dashboard-mainmenu li.active a,
+    .dashboard-mainmenu li a.active,
+    .rbt-default-sidebar-list li.active a,
+    .rbt-default-sidebar-list li a.active {
+        background: #f0edff !important;
+        color: #2f57ef !important;
+        font-weight: 600 !important;
+    }
+
+    .dashboard-mainmenu li a span,
+    .rbt-default-sidebar-list li a span {
+        font-size: 15px !important;
+        font-weight: 500 !important;
+        line-height: 1.3 !important;
+        text-align: left !important;
+        display: inline-block !important;
+        white-space: normal !important;
+        color: inherit !important;
+    }
+
+    .dashboard-mainmenu li.active a span,
+    .dashboard-mainmenu li a.active span,
+    .rbt-default-sidebar-list li.active a span,
+    .rbt-default-sidebar-list li a.active span {
+        font-weight: 600 !important;
+        color: #2f57ef !important;
+    }
+
+    .dashboard-mainmenu li a i,
+    .rbt-default-sidebar-list li a i {
+        font-size: 18px !important;
+        width: 20px !important;
+        margin-right: 0 !important;
+        flex-shrink: 0 !important;
+        color: #64748b !important;
+    }
+
+    .dashboard-mainmenu li.active a i,
+    .dashboard-mainmenu li a.active i,
+    .rbt-default-sidebar-list li.active a i,
+    .rbt-default-sidebar-list li a.active i {
+        color: #2f57ef !important;
+    }
+
+    /* Content & Table Protection on Mobile/Tablet */
+    .rbt-dashboard-content,
+    .attendance-content .rbt-card,
+    .attendance-content .rbt-dashboard-card,
+    .teacher-details-card,
+    .teacher-profile-hero {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    .rbt-dashboard-table,
+    .table-responsive,
+    .rbt-dashboard-content table,
+    .attendance-content table,
+    .student-table {
+        display: block !important;
+        width: 100% !important;
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+    }
+}
+
+/* 3. Small Mobile screens (< 576px) - Extra Spacing & Padding Adjustments */
+@media only screen and (max-width: 575.98px) {
+    .rbt-dashboard-area .container,
+    .rbt-dashboard-area .container-fluid {
+        padding-left: 12px !important;
+        padding-right: 12px !important;
+    }
+
+    .rbt-default-sidebar,
+    .rbt-dashboard-sidebar {
+        padding: 16px 14px !important;
+        border-radius: 12px !important;
+    }
+
+    .dashboard-mainmenu li a,
+    .rbt-default-sidebar-list li a {
+        padding: 9px 12px !important;
+        font-size: 14px !important;
+        gap: 10px !important;
+    }
+
+    .dashboard-mainmenu li a span,
+    .rbt-default-sidebar-list li a span {
+        font-size: 14px !important;
+    }
+
+    .dashboard-mainmenu li a i,
+    .rbt-default-sidebar-list li a i {
+        font-size: 17px !important;
+        width: 18px !important;
+    }
+
+    .rbt-dashboard-content,
+    .attendance-content .rbt-card,
+    .attendance-content .rbt-dashboard-card {
+        padding: 16px 14px !important;
+        border-radius: 12px !important;
+    }
+}

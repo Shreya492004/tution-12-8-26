@@ -35,56 +35,75 @@
     <!-- CLASS LINK CUSTOM STYLE -->
     <style>
         /* =========================================================
-           STICKY HEADER & ZERO-GAP FIX
+           BANNER STYLING & COMPACT RESPONSIVE SCALING
         ========================================================= */
-        .rbt-header.rbt-header-9 {
-            position: sticky !important;
-            top: 0 !important;
-            left: 0 !important;
-            width: 100% !important;
-            z-index: 9999 !important;
-            background-color: #ffffff;
-            margin-bottom: 0 !important;
-            padding-bottom: 0 !important;
-        }
-
-        .rbt-header .rbt-header-wrapper {
-            background-color: #ffffff;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-            margin-bottom: 0 !important;
-        }
-
-        /* Remove any gap between header and banner */
-        .rbt-sticky-placeholder {
-            display: none !important;
-            height: 0 !important;
-            margin: 0 !important;
-            padding: 0 !important;
-        }
-
         .slider-area.rbt-banner-10 {
             margin-top: 0 !important;
             padding-top: 0 !important;
+            background-size: cover !important;
+            background-position: center center !important;
+            background-repeat: no-repeat !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            position: relative;
         }
 
-        @media (min-width: 992px) {
-            .rbt-dashboard-area .col-lg-3 {
-                display: flex;
-                flex-direction: column;
+        .slider-area.rbt-banner-10.height-400 {
+            height: 160px !important;
+            min-height: 160px !important;
+        }
+
+        .slider-area.rbt-banner-10 .inner {
+            position: relative;
+            z-index: 5;
+        }
+
+        /* Mobile Height Adjustments */
+        @media (max-width: 768px) {
+            .slider-area.rbt-banner-10.height-400 {
+                height: 160px !important;
+                min-height: 160px !important;
+                padding: 10px 0 !important;
             }
 
-            .rbt-default-sidebar.sticky-top {
-                position: -webkit-sticky !important;
-                position: sticky !important;
-                top: 100px !important;
-                z-index: 99 !important;
-                max-height: calc(100vh - 120px);
-                overflow-y: auto;
+            .slider-area.rbt-banner-10 .title.display-one {
+                font-size: 26px !important;
+                line-height: 1.2 !important;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .slider-area.rbt-banner-10.height-400 {
+                height: 160px !important;
+                min-height: 160px !important;
+            }
+
+            .slider-area.rbt-banner-10 .title.display-one {
+                font-size: 22px !important;
             }
         }
 
         /* Base & Global Typography */
-        body, button, input, select, textarea, table, th, td, h1, h2, h3, h4, h5, h6, p, span, a, label, div {
+        body,
+        button,
+        input,
+        select,
+        textarea,
+        table,
+        th,
+        td,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        p,
+        span,
+        a,
+        label,
+        div {
             font-family: var(--font-primary), "Euclid Circular A", "Euclid Circular", sans-serif !important;
         }
 
@@ -835,22 +854,6 @@
                                                     </li>
                                                 </ul>
                                             </nav>
-                                                                xmlns="http://www.w3.org/2000/svg" width="16"
-                                                                height="16" viewBox="0 0 24 24" fill="none"
-                                                                stroke="currentColor" stroke-width="2"
-                                                                stroke-linecap="round" stroke-linejoin="round">
-                                                                <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4">
-                                                                </path>
-                                                                <polyline points="16 17 21 12 16 7"></polyline>
-                                                                <line x1="21" y1="12" x2="9" y2="12">
-                                                                </line>
-                                                            </svg>
-                                                            <span>Logout</span>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </nav>
-
                                         </div>
                                     </div>
                                 </div>
@@ -921,10 +924,10 @@
                                                 <label>Course Name</label>
                                                 <select class="form-control slot-course" required>
                                                     <option value="" selected disabled>Select Course</option>
-                                                    <option value="reading">Reading &amp; Comprehension</option>
-                                                    <option value="creative">Creative Writing</option>
-                                                    <option value="english">English Language</option>
-                                                    <option value="lamda">LAMDA &amp; Public Speaking</option>
+                                                    <option value="reading">Maths</option>
+                                                    <option value="creative">Physics</option>
+                                                    <option value="english">Chemistry</option>
+                                                    <option value="lamda">Computer&amp;Science </option>
                                                 </select>
                                             </div>
 
@@ -939,16 +942,7 @@
                                             </div>
 
                                             <!-- 3. CLASS DURATION DROPDOWN -->
-                                            <div class="col-lg-4 mb--20">
-                                                <label>Session Duration</label>
-                                                <select class="form-control slot-duration" required>
-                                                    <option value="" selected disabled>Select Duration</option>
-                                                    <option value="30">30 Minutes</option>
-                                                    <option value="60">1 Hour</option>
-                                                    <option value="90">1.5 Hours</option>
-                                                    <option value="120">2 Hours</option>
-                                                </select>
-                                            </div>
+
                                         </div>
 
                                         <input type="hidden" class="slot-link" value="">
@@ -996,10 +990,10 @@
                                                 <label>Course Name</label>
                                                 <select class="form-control slot-course" required>
                                                     <option value="" selected disabled>Select Course</option>
-                                                    <option value="reading">Reading &amp; Comprehension</option>
-                                                    <option value="creative">Creative Writing</option>
-                                                    <option value="english">English Language</option>
-                                                    <option value="lamda">LAMDA &amp; Public Speaking</option>
+                                                    <option value="reading">Maths</option>
+                                                    <option value="creative">Physics</option>
+                                                    <option value="english">Chemistry</option>
+                                                    <option value="lamda">Computer&amp;Science </option>
                                                 </select>
                                             </div>
 
@@ -1013,17 +1007,7 @@
                                                 </select>
                                             </div>
 
-                                            <!-- 3. CLASS DURATION DROPDOWN -->
-                                            <div class="col-lg-4 mb--20">
-                                                <label>Session Duration</label>
-                                                <select class="form-control slot-duration" required>
-                                                    <option value="" selected disabled>Select Duration</option>
-                                                    <option value="30">30 Minutes</option>
-                                                    <option value="60">1 Hour</option>
-                                                    <option value="90">1.5 Hours</option>
-                                                    <option value="120">2 Hours</option>
-                                                </select>
-                                            </div>
+
                                         </div>
 
                                         <input type="hidden" class="slot-link" value="">
@@ -1135,7 +1119,8 @@
                             <h5 class="ft-title">Get Contact</h5>
                             <ul class="ft-link">
                                 <li><span>Phone:</span> <a href="#">(406) 555-0120</a></li>
-                                <li><span>E-mail:</span> <a href="mailto:info@londonstaredu.com">info@londonstaredu.com</a></li>
+                                <li><span>E-mail:</span> <a
+                                        href="mailto:info@londonstaredu.com">info@londonstaredu.com</a></li>
                             </ul>
                             <div class="newsletter-form mt--20">
                                 <h6 class="w-600">Location</h6>
@@ -1164,7 +1149,8 @@
                         </p>
                     </div>
                     <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-12 col-12">
-                        <ul class="copyright-link rbt-link-hover justify-content-center justify-content-lg-end mt_sm--10 mt_md--10">
+                        <ul
+                            class="copyright-link rbt-link-hover justify-content-center justify-content-lg-end mt_sm--10 mt_md--10">
                             <li><a href="#">Terms of service</a></li>
                             <li><a href="privacy-policy.html">Privacy policy</a></li>
                         </ul>
