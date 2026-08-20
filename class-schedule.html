@@ -1,0 +1,1592 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Class Schedule - London Star Education</title>
+    <meta name="robots" content="noindex, follow">
+    <meta name="description" content="Tutor Teaching Schedule and Timetable for London Star Education">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.png">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/vendor/slick.css">
+    <link rel="stylesheet" href="assets/css/vendor/slick-theme.css">
+    <link rel="stylesheet" href="assets/css/plugins/sal.css">
+    <link rel="stylesheet" href="assets/css/plugins/feather.css">
+    <link rel="stylesheet" href="assets/css/plugins/fontawesome.min.css">
+    <link rel="stylesheet" href="assets/css/plugins/euclid-circulara.css">
+    <link rel="stylesheet" href="assets/css/plugins/swiper.css">
+    <link rel="stylesheet" href="assets/css/plugins/magnify.css">
+    <link rel="stylesheet" href="assets/css/plugins/odometer.css">
+    <link rel="stylesheet" href="assets/css/plugins/animation.css">
+    <link rel="stylesheet" href="assets/css/plugins/bootstrap-select.min.css">
+    <link rel="stylesheet" href="assets/css/plugins/jquery-ui.css">
+    <link rel="stylesheet" href="assets/css/plugins/magnigy-popup.min.css">
+    <link rel="stylesheet" href="assets/css/plugins/plyr.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/custom-ui.css">
+
+    <style>
+        .slider-area.rbt-banner-10 {
+            margin-top: 0 !important;
+            padding-top: 0 !important;
+            background-size: cover !important;
+            background-position: center center !important;
+            background-repeat: no-repeat !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            position: relative;
+        }
+
+        .slider-area.rbt-banner-10.height-400 {
+            height: 160px !important;
+            min-height: 160px !important;
+        }
+
+        .slider-area.rbt-banner-10 .inner {
+            position: relative;
+            z-index: 5;
+        }
+
+        @media (max-width: 768px) {
+            .slider-area.rbt-banner-10.height-400 {
+                height: 160px !important;
+                min-height: 160px !important;
+                padding: 10px 0 !important;
+            }
+
+            .slider-area.rbt-banner-10 .title.display-one {
+                font-size: 26px !important;
+                line-height: 1.2 !important;
+            }
+        }
+
+        body, button, input, select, textarea, table, th, td, h1, h2, h3, h4, h5, h6, p, span, a, label, div {
+            font-family: var(--font-primary), "Euclid Circular A", "Euclid Circular", sans-serif !important;
+        }
+
+        /* Icon Font Protection */
+        i[class^="feather-"],
+        i[class*=" feather-"],
+        span[class^="feather-"],
+        span[class*=" feather-"],
+        .feather,
+        [class^="feather-"],
+        [class*=" feather-"] {
+            font-family: 'feather', 'Feather' !important;
+            speak: none;
+            font-style: normal !important;
+            font-weight: normal !important;
+            font-variant: normal !important;
+            text-transform: none !important;
+            line-height: 1 !important;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            display: inline-block !important;
+        }
+
+        i[class^="fa-"],
+        i[class*=" fa-"],
+        [class^="fa-"],
+        [class*=" fa-"],
+        .fa, .fas, .far, .fal, .fad, .fab {
+            font-family: "Font Awesome 5 Pro", "Font Awesome 5 Free", "FontAwesome" !important;
+            font-style: normal !important;
+            font-weight: normal !important;
+            display: inline-block !important;
+        }
+
+        .subject-grid {
+            display: flex !important;
+            flex-direction: column !important;
+            width: 100% !important;
+            gap: 24px !important;
+            margin-bottom: 26px !important;
+        }
+
+        /* Adjusted card height to perfectly show Mon, Tue, and Wed sessions cleanly */
+        .subject-card {
+            width: 100% !important;
+            height: 520px !important;
+            background: #ffffff;
+            border-radius: 14px;
+            padding: 20px 24px;
+            border: 1px solid #e8e8e8;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
+            position: relative;
+            overflow: hidden;
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: flex-start !important;
+            transition: all 0.25s ease;
+        }
+
+        .subject-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(135deg, #6c4df6, #9b7cff);
+        }
+
+        .subject-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+            flex-shrink: 0;
+        }
+
+        .subject-icon-box {
+            width: 38px;
+            height: 38px;
+            border-radius: 10px;
+            background: #f3f0ff;
+            color: #6c4df6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            flex-shrink: 0;
+        }
+
+        #card-subject-physics .subject-icon-box { background: #e0f2fe; color: #0284c7; }
+        #card-subject-physics::before { background: #0284c7; }
+
+        #card-subject-chemistry .subject-icon-box { background: #fef3e2; color: #d97706; }
+        #card-subject-chemistry::before { background: #d97706; }
+
+        .subject-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            padding: 4px 12px;
+            border-radius: 20px;
+            background: #f3f0ff;
+            color: #5b3ef0;
+            font-size: 13.5px !important;
+            font-weight: 600 !important;
+            border: 1px solid #e4dcff;
+        }
+
+        .subject-card-title {
+            font-size: 20px !important;
+            font-weight: 700 !important;
+            color: #192335 !important;
+            margin-bottom: 8px !important;
+            flex-shrink: 0;
+        }
+
+        .subject-timetable-vertical {
+            margin-top: 4px;
+            padding-top: 10px;
+            border-top: 1px dashed #e2e8f0;
+            display: flex;
+            flex-direction: column;
+            flex: 1 1 auto;
+            min-height: 0;
+        }
+
+        .subject-timetable-title {
+            font-size: 12px;
+            font-weight: 700;
+            color: #475569;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            flex-shrink: 0;
+        }
+
+        /* Optimized inner wrapper height for Monday, Tuesday, and Wednesday view */
+        .timetable-days-wrapper {
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 10px !important;
+            width: 100% !important;
+            height: 380px !important;
+            max-height: 380px !important;
+            overflow-y: auto !important;
+            padding-right: 8px;
+        }
+
+        .timetable-days-wrapper::-webkit-scrollbar { width: 5px; }
+        .timetable-days-wrapper::-webkit-scrollbar-track { background: #f1f5f9; border-radius: 4px; }
+        .timetable-days-wrapper::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+
+        .timetable-day-group {
+            display: flex;
+            flex-direction: column;
+            background: #fbfcfe;
+            border: 1px solid #eef2f6;
+            border-radius: 8px;
+            padding: 10px 12px;
+            width: 100%;
+            flex-shrink: 0;
+        }
+
+        .timetable-day-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 6px;
+        }
+
+        .timetable-day-tag {
+            font-size: 12px;
+            font-weight: 700;
+            color: #5b21b6;
+            background: #ede9fe;
+            padding: 2px 8px;
+            border-radius: 6px;
+            display: inline-block;
+        }
+
+        .timetable-sessions-count {
+            font-size: 12px;
+            color: #475569;
+            font-weight: 500;
+        }
+
+        .timetable-slot-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 7px 10px;
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            margin-top: 6px;
+            gap: 8px;
+        }
+
+        .timetable-slot-time {
+            font-size: 13px;
+            font-weight: 600;
+            color: #1e293b;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            white-space: nowrap;
+        }
+
+        .timetable-slot-badges {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+
+        .session-pill-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 11.5px;
+            font-weight: 600;
+            border: 1px solid transparent;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            white-space: nowrap;
+        }
+
+        .session-pill-btn.pill-oto {
+            background: #f3f0ff;
+            color: #7c3aed;
+            border-color: #ddd6fe;
+        }
+
+        .session-pill-btn.pill-oto:hover {
+            background: #7c3aed;
+            color: #ffffff;
+        }
+
+        .session-pill-btn.pill-otm {
+            background: #e0f2fe;
+            color: #0284c7;
+            border-color: #bae6fd;
+        }
+
+        .session-pill-btn.pill-otm:hover {
+            background: #0284c7;
+            color: #ffffff;
+        }
+
+        /* Modal styling */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(15, 23, 42, 0.65);
+            backdrop-filter: blur(5px);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 999999;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.25s ease, visibility 0.25s ease;
+            padding: 16px;
+        }
+
+        .modal-overlay.active { opacity: 1; visibility: visible; }
+
+        .group-modal-card-box {
+            background: #ffffff;
+            border-radius: 14px;
+            width: 100%;
+            max-width: 760px;
+            max-height: 88vh;
+            box-shadow: 0 20px 50px rgba(15, 23, 42, 0.22);
+            border: 1px solid #e2e8f0;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transform: scale(0.95) translateY(12px);
+            transition: transform 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .modal-overlay.active .group-modal-card-box {
+            transform: scale(1) translateY(0);
+        }
+
+        .modal-header-bg {
+            background: linear-gradient(135deg, #f8f9ff 0%, #f3f0ff 100%);
+            padding: 18px 22px;
+            border-bottom: 1px solid #e2e8f0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .modal-header-content {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .modal-user-icon {
+            width: 42px;
+            height: 42px;
+            border-radius: 10px;
+            background: rgba(6, 182, 212, 0.2);
+            color: #0284c7;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            flex-shrink: 0;
+        }
+
+        .modal-title-area h4 {
+            margin: 0;
+            color: #192335 !important;
+            font-size: 20px !important;
+            font-weight: 700 !important;
+        }
+
+        .modal-title-area span {
+            font-size: 14px !important;
+            color: #6c4df6 !important;
+            font-weight: 600 !important;
+        }
+
+        .modal-close-btn {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            color: #64748b;
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .modal-close-btn:hover {
+            background: #fee2e2;
+            color: #ef4444;
+            transform: rotate(90deg);
+        }
+
+        .student-modal-body {
+            padding: 20px 24px;
+            background: #ffffff;
+            overflow-y: auto;
+            max-height: calc(88vh - 140px);
+        }
+
+        .session-info-strip {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 10px 16px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .session-info-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 13.5px;
+            color: #334155;
+            font-weight: 500;
+        }
+
+        .group-student-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .group-student-table thead th {
+            background: #f8fafc;
+            padding: 10px 14px;
+            font-size: 13.5px;
+            font-weight: 600;
+            color: #1e293b;
+            border-bottom: 1px solid #e2e8f0;
+            text-align: left;
+        }
+
+        .group-student-table tbody td {
+            padding: 11px 14px;
+            font-size: 14px;
+            color: #475569;
+            border-bottom: 1px solid #f1f5f9;
+            vertical-align: middle;
+        }
+
+        .sno-badge {
+            font-weight: 600;
+            color: #6c4df6;
+            background: #f3f0ff;
+            padding: 4px 10px;
+            border-radius: 6px;
+            display: inline-block;
+        }
+
+        .modal-close-profile-btn {
+            background: linear-gradient(135deg, #6c4df6 0%, #9b7cff 100%);
+            border: none;
+            color: #ffffff;
+            font-size: 15px !important;
+            font-weight: 500 !important;
+            padding: 8px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            box-shadow: 0 3px 10px rgba(108, 77, 246, 0.25);
+        }
+
+        /* Login Dropdown */
+        .login-dropdown {
+            position: relative;
+        }
+
+        .login-dropdown-menu {
+            position: absolute;
+            top: calc(100% + 10px);
+            right: 0;
+            min-width: 180px;
+            background: #ffffff;
+            border-radius: 6px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+            padding: 8px 0;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(8px);
+            transition: all 0.25s ease;
+            z-index: 999;
+        }
+
+        .login-dropdown.active .login-dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .login-dropdown-menu a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 16px;
+            font-size: 16px !important;
+            color: #192335;
+            transition: all 0.2s ease;
+            text-decoration: none;
+        }
+
+        .login-dropdown-menu a:hover {
+            background: #f5f5f5;
+            color: #2f57ef;
+        }
+
+        /* Floating Contact & Back to Top */
+        .floating-contact {
+            position: fixed;
+            right: 24px;
+            bottom: 95px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            z-index: 9998;
+        }
+
+        .contact-item {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+
+        .contact-button {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            background: #ffffff !important;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            text-decoration: none !important;
+        }
+
+        .contact-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+        }
+
+        .call-button {
+            border: 2px solid #8e24aa !important;
+            color: #8e24aa !important;
+            font-size: 20px;
+        }
+
+        .whatsapp-button {
+            border: 2px solid #00c853 !important;
+            color: #00c853 !important;
+            font-size: 24px;
+        }
+
+        .contact-label {
+            position: absolute;
+            right: 58px;
+            background: #192335;
+            color: #ffffff;
+            font-size: 13px;
+            font-weight: 500;
+            padding: 6px 14px;
+            border-radius: 6px;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+            transform: translateX(8px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+        }
+
+        .contact-item:hover .contact-label,
+        .contact-item.show-label .contact-label {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .rbt-progress-parent {
+            position: fixed;
+            right: 24px;
+            bottom: 30px;
+            height: 48px;
+            width: 48px;
+            cursor: pointer;
+            display: block;
+            border-radius: 50px;
+            box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.05);
+            z-index: 10000;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(15px);
+            transition: all 200ms linear;
+            background: #ffffff;
+        }
+
+        .rbt-progress-parent.rbt-backto-top-active {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .rbt-progress-parent::after {
+            position: absolute;
+            font-family: 'feather', 'Feather' !important;
+            content: '\e912'; /* feather-arrow-up */
+            text-align: center;
+            line-height: 48px;
+            font-size: 20px;
+            color: #4a6cf7;
+            left: 0;
+            top: 0;
+            height: 48px;
+            width: 48px;
+            cursor: pointer;
+            display: block;
+            z-index: 1;
+            transition: all 200ms linear;
+        }
+
+        .rbt-progress-parent svg path {
+            fill: none;
+        }
+
+        .rbt-progress-parent svg.rbt-back-circle path {
+            stroke: #4a6cf7;
+            stroke-width: 4;
+            box-sizing: border-box;
+            transition: all 200ms linear;
+        }
+    </style>
+</head>
+
+<body class="rbt-header-sticky">
+    <!-- Header Area -->
+    <header class="rbt-header rbt-header-9">
+        <div class="rbt-header-wrapper header-not-transparent header-sticky">
+            <div class="container">
+                <div class="mainbar-row rbt-navigation-end align-items-center">
+                    <div class="header-left rbt-header-content">
+                        <div class="header-info">
+                            <div class="logo">
+                                <a href="index.html">
+                                    <img src="assets/images/logo/logo.png" alt="Education Logo Images">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rbt-main-navigation d-none d-xl-block">
+                        <nav class="mainmenu-nav">
+                            <ul class="mainmenu">
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="about-us.html">About</a></li>
+                                <li><a href="our-team.html">Our Team</a></li>
+                                <li><a href="our-tuition.html">Our Tuition</a></li>
+                                <li><a href="holiday-camps.html">Holiday Camps</a></li>
+                                <li><a href="plans-and-pricing.html">Plans &amp; Pricing</a></li>
+                                <li><a href="book-online.html">Book Online</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="header-right">
+                        <div class="rbt-btn-wrapper d-flex align-items-center gap-2">
+                            <div class="login-dropdown">
+                                <button type="button" class="rbt-btn rbt-switch-btn btn-gradient btn-sm hover-transform-none login-dropdown-btn">
+                                    <span data-text="Login">Login</span>
+                                    <i class="feather-chevron-down"></i>
+                                </button>
+                                <div class="login-dropdown-menu">
+                                    <a href="instructor-profile.html">
+                                        <i class="feather-user"></i>
+                                        <span>Tutor Login</span>
+                                    </a>
+                                    <a href="student-profile.html">
+                                        <i class="feather-book-open"></i>
+                                        <span>Student Login</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <a class="rbt-btn rbt-switch-btn btn-gradient btn-sm hover-transform-none" href="login-register.html">
+                                <span data-text="Join Now">Join Now</span>
+                            </a>
+                        </div>
+                        <div class="mobile-menu-bar d-block d-xl-none">
+                            <div class="hamberger">
+                                <button class="hamberger-button rbt-round-btn" aria-label="Open Menu">
+                                    <i class="feather-menu"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Banner Area -->
+    <div class="slider-area rbt-banner-10 height-400 bg_image bg_image--11" data-black-overlay="5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="inner text-center">
+                        <h1 class="title display-one text-white">Class Schedule</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Start Dashboard Area -->
+    <div class="rbt-dashboard-area rbt-section-gap">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="row g-5">
+
+                        <!-- Sticky Sidebar -->
+                        <div class="col-lg-3">
+                            <div class="rbt-default-sidebar sticky-top rbt-shadow-box rbt-gradient-border">
+                                <div class="inner">
+                                    <div class="content-item-content">
+                                        <div class="rbt-default-sidebar-wrapper">
+
+                                            <div class="section-title mb--20">
+                                                <h6 class="rbt-title-style-2" id="sidebar-welcome-text">Welcome, Ruben</h6>
+                                            </div>
+
+                                            <nav class="mainmenu-nav">
+                                                <ul class="dashboard-mainmenu rbt-default-sidebar-list">
+                                                    <li>
+                                                        <a href="instructor-profile.html">
+                                                            <i class="feather-user"></i>
+                                                            <span>My Profile</span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="students-list.html">
+                                                            <i class="feather-monitor"></i>
+                                                            <span>Students List</span>
+                                                        </a>
+                                                    </li>
+                                                    <li class="active">
+                                                        <a class="active" href="class-schedule.html">
+                                                            <i class="feather-calendar"></i>
+                                                            <span>Class Schedule</span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="classlink.html">
+                                                            <i class="feather-link"></i>
+                                                            <span>Class Link</span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="tutor-attendance.html">
+                                                            <i class="feather-check-circle"></i>
+                                                            <span>Attendance</span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="tutor-homework.html">
+                                                            <i class="feather-file-text"></i>
+                                                            <span>Homework &amp; Notes</span>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </nav>
+
+                                            <div class="section-title mt--40 mb--20">
+                                                <h6 class="rbt-title-style-2">User</h6>
+                                            </div>
+
+                                            <nav class="mainmenu-nav">
+                                                <ul class="dashboard-mainmenu rbt-default-sidebar-list">
+                                                    <li>
+                                                        <a href="tuitor-edit.html">
+                                                            <i class="feather-settings"></i>
+                                                            <span>Edit Profile</span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="index.html">
+                                                            <i class="feather-log-out"></i>
+                                                            <span>Logout</span>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </nav>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Main Content -->
+                        <div class="col-lg-9">
+                            <div class="rbt-dashboard-content bg-color-white rbt-shadow-box">
+                                <div class="content">
+
+                                    <div class="roster-header-container mb-4">
+                                        <div class="roster-title-group">
+                                            <h4 class="rbt-title-style-3">Subject Timetables</h4>
+                                            <p>View weekly class schedules and click any session badge to see enrolled students.</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="subject-grid">
+
+                                        <!-- 1. Mathematics -->
+                                        <div class="subject-card" id="card-subject-mathematics">
+                                            <div class="subject-card-header">
+                                                <div class="subject-icon-box"><i class="feather-book"></i></div>
+                                                <span class="subject-badge">16 Students</span>
+                                            </div>
+                                            <h5 class="subject-card-title">Mathematics</h5>
+
+                                            <div class="subject-timetable-vertical">
+                                                <div class="subject-timetable-title"><i class="feather-calendar"></i> Weekly Schedule</div>
+                                                <div class="timetable-days-wrapper">
+                                                    <!-- Monday -->
+                                                    <div class="timetable-day-group">
+                                                        <div class="timetable-day-header">
+                                                            <span class="timetable-day-tag">Monday</span>
+                                                            <span class="timetable-sessions-count">2 Sessions</span>
+                                                        </div>
+                                                        <div class="timetable-slot-row">
+                                                            <span class="timetable-slot-time"><i class="feather-clock"></i> 10:00 AM - 11:30 AM</span>
+                                                            <div class="timetable-slot-badges">
+                                                                <button type="button" class="session-pill-btn pill-oto" onclick="openSessionPopup('mathematics', 'math-mon-1000-oto-1')"><i class="feather-user"></i> One-To-One</button>
+                                                                <button type="button" class="session-pill-btn pill-oto" onclick="openSessionPopup('mathematics', 'math-mon-1000-oto-2')"><i class="feather-user"></i> One-To-One</button>
+                                                            </div>
+                                                        </div>
+                                                        <div class="timetable-slot-row">
+                                                            <span class="timetable-slot-time"><i class="feather-clock"></i> 02:00 PM - 03:30 PM</span>
+                                                            <div class="timetable-slot-badges">
+                                                                <button type="button" class="session-pill-btn pill-otm" onclick="openSessionPopup('mathematics', 'math-mon-1400-otm')"><i class="feather-users"></i> One-To-Many</button>
+                                                                <button type="button" class="session-pill-btn pill-oto" onclick="openSessionPopup('mathematics', 'math-mon-1400-oto')"><i class="feather-user"></i> One-To-One</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Tuesday -->
+                                                    <div class="timetable-day-group">
+                                                        <div class="timetable-day-header">
+                                                            <span class="timetable-day-tag">Tuesday</span>
+                                                            <span class="timetable-sessions-count">1 Session</span>
+                                                        </div>
+                                                        <div class="timetable-slot-row">
+                                                            <span class="timetable-slot-time"><i class="feather-clock"></i> 10:00 AM - 11:30 AM</span>
+                                                            <div class="timetable-slot-badges">
+                                                                <button type="button" class="session-pill-btn pill-otm" onclick="openSessionPopup('mathematics', 'math-tue-1000-otm')"><i class="feather-users"></i> One-To-Many</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Wednesday -->
+                                                    <div class="timetable-day-group">
+                                                        <div class="timetable-day-header">
+                                                            <span class="timetable-day-tag">Wednesday</span>
+                                                            <span class="timetable-sessions-count">2 Sessions</span>
+                                                        </div>
+                                                        <div class="timetable-slot-row">
+                                                            <span class="timetable-slot-time"><i class="feather-clock"></i> 10:00 AM - 11:30 AM</span>
+                                                            <div class="timetable-slot-badges">
+                                                                <button type="button" class="session-pill-btn pill-oto" onclick="openSessionPopup('mathematics', 'math-wed-1000-oto-1')"><i class="feather-user"></i> One-To-One</button>
+                                                                <button type="button" class="session-pill-btn pill-oto" onclick="openSessionPopup('mathematics', 'math-wed-1000-oto-2')"><i class="feather-user"></i> One-To-One</button>
+                                                            </div>
+                                                        </div>
+                                                        <div class="timetable-slot-row">
+                                                            <span class="timetable-slot-time"><i class="feather-clock"></i> 04:00 PM - 05:30 PM</span>
+                                                            <div class="timetable-slot-badges">
+                                                                <button type="button" class="session-pill-btn pill-otm" onclick="openSessionPopup('mathematics', 'math-wed-1600-otm')"><i class="feather-users"></i> One-To-Many</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Thursday -->
+                                                    <div class="timetable-day-group">
+                                                        <div class="timetable-day-header">
+                                                            <span class="timetable-day-tag">Thursday</span>
+                                                            <span class="timetable-sessions-count">1 Session</span>
+                                                        </div>
+                                                        <div class="timetable-slot-row">
+                                                            <span class="timetable-slot-time"><i class="feather-clock"></i> 10:00 AM - 11:30 AM</span>
+                                                            <div class="timetable-slot-badges">
+                                                                <button type="button" class="session-pill-btn pill-otm" onclick="openSessionPopup('mathematics', 'math-thu-1000-otm')"><i class="feather-users"></i> One-To-Many</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Friday -->
+                                                    <div class="timetable-day-group">
+                                                        <div class="timetable-day-header">
+                                                            <span class="timetable-day-tag">Friday</span>
+                                                            <span class="timetable-sessions-count">1 Session</span>
+                                                        </div>
+                                                        <div class="timetable-slot-row">
+                                                            <span class="timetable-slot-time"><i class="feather-clock"></i> 10:00 AM - 11:30 AM</span>
+                                                            <div class="timetable-slot-badges">
+                                                                <button type="button" class="session-pill-btn pill-oto" onclick="openSessionPopup('mathematics', 'math-fri-1000-oto')"><i class="feather-user"></i> One-To-One</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Saturday -->
+                                                    <div class="timetable-day-group">
+                                                        <div class="timetable-day-header">
+                                                            <span class="timetable-day-tag">Saturday</span>
+                                                            <span class="timetable-sessions-count">1 Session</span>
+                                                        </div>
+                                                        <div class="timetable-slot-row">
+                                                            <span class="timetable-slot-time"><i class="feather-clock"></i> 10:00 AM - 11:30 AM</span>
+                                                            <div class="timetable-slot-badges">
+                                                                <button type="button" class="session-pill-btn pill-otm" onclick="openSessionPopup('mathematics', 'math-sat-1000-otm')"><i class="feather-users"></i> One-To-Many</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- 2. Physics -->
+                                        <div class="subject-card" id="card-subject-physics">
+                                            <div class="subject-card-header">
+                                                <div class="subject-icon-box"><i class="feather-zap"></i></div>
+                                                <span class="subject-badge">14 Students</span>
+                                            </div>
+                                            <h5 class="subject-card-title">Physics</h5>
+
+                                            <div class="subject-timetable-vertical">
+                                                <div class="subject-timetable-title"><i class="feather-calendar"></i> Weekly Schedule</div>
+                                                <div class="timetable-days-wrapper">
+                                                    <!-- Monday -->
+                                                    <div class="timetable-day-group">
+                                                        <div class="timetable-day-header">
+                                                            <span class="timetable-day-tag">Monday</span>
+                                                            <span class="timetable-sessions-count">1 Session</span>
+                                                        </div>
+                                                        <div class="timetable-slot-row">
+                                                            <span class="timetable-slot-time"><i class="feather-clock"></i> 02:00 PM - 03:30 PM</span>
+                                                            <div class="timetable-slot-badges">
+                                                                <button type="button" class="session-pill-btn pill-otm" onclick="openSessionPopup('physics', 'phy-mon-1400-otm')"><i class="feather-users"></i> One-To-Many</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Tuesday -->
+                                                    <div class="timetable-day-group">
+                                                        <div class="timetable-day-header">
+                                                            <span class="timetable-day-tag">Tuesday</span>
+                                                            <span class="timetable-sessions-count">2 Sessions</span>
+                                                        </div>
+                                                        <div class="timetable-slot-row">
+                                                            <span class="timetable-slot-time"><i class="feather-clock"></i> 02:00 PM - 03:30 PM</span>
+                                                            <div class="timetable-slot-badges">
+                                                                <button type="button" class="session-pill-btn pill-oto" onclick="openSessionPopup('physics', 'phy-tue-1400-oto-1')"><i class="feather-user"></i> One-To-One</button>
+                                                                <button type="button" class="session-pill-btn pill-oto" onclick="openSessionPopup('physics', 'phy-tue-1400-oto-2')"><i class="feather-user"></i> One-To-One</button>
+                                                            </div>
+                                                        </div>
+                                                        <div class="timetable-slot-row">
+                                                            <span class="timetable-slot-time"><i class="feather-clock"></i> 05:00 PM - 06:30 PM</span>
+                                                            <div class="timetable-slot-badges">
+                                                                <button type="button" class="session-pill-btn pill-otm" onclick="openSessionPopup('physics', 'phy-tue-1700-otm')"><i class="feather-users"></i> One-To-Many</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Wednesday -->
+                                                    <div class="timetable-day-group">
+                                                        <div class="timetable-day-header">
+                                                            <span class="timetable-day-tag">Wednesday</span>
+                                                            <span class="timetable-sessions-count">1 Session</span>
+                                                        </div>
+                                                        <div class="timetable-slot-row">
+                                                            <span class="timetable-slot-time"><i class="feather-clock"></i> 02:00 PM - 03:30 PM</span>
+                                                            <div class="timetable-slot-badges">
+                                                                <button type="button" class="session-pill-btn pill-otm" onclick="openSessionPopup('physics', 'phy-wed-1400-otm')"><i class="feather-users"></i> One-To-Many</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Thursday -->
+                                                    <div class="timetable-day-group">
+                                                        <div class="timetable-day-header">
+                                                            <span class="timetable-day-tag">Thursday</span>
+                                                            <span class="timetable-sessions-count">1 Session</span>
+                                                        </div>
+                                                        <div class="timetable-slot-row">
+                                                            <span class="timetable-slot-time"><i class="feather-clock"></i> 02:00 PM - 03:30 PM</span>
+                                                            <div class="timetable-slot-badges">
+                                                                <button type="button" class="session-pill-btn pill-oto" onclick="openSessionPopup('physics', 'phy-thu-1400-oto-1')"><i class="feather-user"></i> One-To-One</button>
+                                                                <button type="button" class="session-pill-btn pill-oto" onclick="openSessionPopup('physics', 'phy-thu-1400-oto-2')"><i class="feather-user"></i> One-To-One</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Friday -->
+                                                    <div class="timetable-day-group">
+                                                        <div class="timetable-day-header">
+                                                            <span class="timetable-day-tag">Friday</span>
+                                                            <span class="timetable-sessions-count">1 Session</span>
+                                                        </div>
+                                                        <div class="timetable-slot-row">
+                                                            <span class="timetable-slot-time"><i class="feather-clock"></i> 02:00 PM - 03:30 PM</span>
+                                                            <div class="timetable-slot-badges">
+                                                                <button type="button" class="session-pill-btn pill-otm" onclick="openSessionPopup('physics', 'phy-fri-1400-otm')"><i class="feather-users"></i> One-To-Many</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Saturday -->
+                                                    <div class="timetable-day-group">
+                                                        <div class="timetable-day-header">
+                                                            <span class="timetable-day-tag">Saturday</span>
+                                                            <span class="timetable-sessions-count">1 Session</span>
+                                                        </div>
+                                                        <div class="timetable-slot-row">
+                                                            <span class="timetable-slot-time"><i class="feather-clock"></i> 02:00 PM - 03:30 PM</span>
+                                                            <div class="timetable-slot-badges">
+                                                                <button type="button" class="session-pill-btn pill-oto" onclick="openSessionPopup('physics', 'phy-sat-1400-oto')"><i class="feather-user"></i> One-To-One</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- 3. Chemistry -->
+                                        <div class="subject-card" id="card-subject-chemistry">
+                                            <div class="subject-card-header">
+                                                <div class="subject-icon-box"><i class="feather-activity"></i></div>
+                                                <span class="subject-badge">12 Students</span>
+                                            </div>
+                                            <h5 class="subject-card-title">Chemistry</h5>
+
+                                            <div class="subject-timetable-vertical">
+                                                <div class="subject-timetable-title"><i class="feather-calendar"></i> Weekly Schedule</div>
+                                                <div class="timetable-days-wrapper">
+                                                    <!-- Monday -->
+                                                    <div class="timetable-day-group">
+                                                        <div class="timetable-day-header">
+                                                            <span class="timetable-day-tag">Monday</span>
+                                                            <span class="timetable-sessions-count">1 Session</span>
+                                                        </div>
+                                                        <div class="timetable-slot-row">
+                                                            <span class="timetable-slot-time"><i class="feather-clock"></i> 04:00 PM - 05:30 PM</span>
+                                                            <div class="timetable-slot-badges">
+                                                                <button type="button" class="session-pill-btn pill-oto" onclick="openSessionPopup('chemistry', 'chem-mon-1600-oto-1')"><i class="feather-user"></i> One-To-One</button>
+                                                                <button type="button" class="session-pill-btn pill-oto" onclick="openSessionPopup('chemistry', 'chem-mon-1600-oto-2')"><i class="feather-user"></i> One-To-One</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Tuesday -->
+                                                    <div class="timetable-day-group">
+                                                        <div class="timetable-day-header">
+                                                            <span class="timetable-day-tag">Tuesday</span>
+                                                            <span class="timetable-sessions-count">2 Sessions</span>
+                                                        </div>
+                                                        <div class="timetable-slot-row">
+                                                            <span class="timetable-slot-time"><i class="feather-clock"></i> 04:00 PM - 05:30 PM</span>
+                                                            <div class="timetable-slot-badges">
+                                                                <button type="button" class="session-pill-btn pill-otm" onclick="openSessionPopup('chemistry', 'chem-tue-1600-otm')"><i class="feather-users"></i> One-To-Many</button>
+                                                            </div>
+                                                        </div>
+                                                        <div class="timetable-slot-row">
+                                                            <span class="timetable-slot-time"><i class="feather-clock"></i> 06:00 PM - 07:30 PM</span>
+                                                            <div class="timetable-slot-badges">
+                                                                <button type="button" class="session-pill-btn pill-otm" onclick="openSessionPopup('chemistry', 'chem-tue-1800-otm')"><i class="feather-users"></i> One-To-Many</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Wednesday -->
+                                                    <div class="timetable-day-group">
+                                                        <div class="timetable-day-header">
+                                                            <span class="timetable-day-tag">Wednesday</span>
+                                                            <span class="timetable-sessions-count">1 Session</span>
+                                                        </div>
+                                                        <div class="timetable-slot-row">
+                                                            <span class="timetable-slot-time"><i class="feather-clock"></i> 04:00 PM - 05:30 PM</span>
+                                                            <div class="timetable-slot-badges">
+                                                                <button type="button" class="session-pill-btn pill-oto" onclick="openSessionPopup('chemistry', 'chem-wed-1600-oto')"><i class="feather-user"></i> One-To-One</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Thursday -->
+                                                    <div class="timetable-day-group">
+                                                        <div class="timetable-day-header">
+                                                            <span class="timetable-day-tag">Thursday</span>
+                                                            <span class="timetable-sessions-count">1 Session</span>
+                                                        </div>
+                                                        <div class="timetable-slot-row">
+                                                            <span class="timetable-slot-time"><i class="feather-clock"></i> 04:00 PM - 05:30 PM</span>
+                                                            <div class="timetable-slot-badges">
+                                                                <button type="button" class="session-pill-btn pill-otm" onclick="openSessionPopup('chemistry', 'chem-thu-1600-otm')"><i class="feather-users"></i> One-To-Many</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Friday -->
+                                                    <div class="timetable-day-group">
+                                                        <div class="timetable-day-header">
+                                                            <span class="timetable-day-tag">Friday</span>
+                                                            <span class="timetable-sessions-count">1 Session</span>
+                                                        </div>
+                                                        <div class="timetable-slot-row">
+                                                            <span class="timetable-slot-time"><i class="feather-clock"></i> 04:00 PM - 05:30 PM</span>
+                                                            <div class="timetable-slot-badges">
+                                                                <button type="button" class="session-pill-btn pill-otm" onclick="openSessionPopup('chemistry', 'chem-fri-1600-otm')"><i class="feather-users"></i> One-To-Many</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Saturday -->
+                                                    <div class="timetable-day-group">
+                                                        <div class="timetable-day-header">
+                                                            <span class="timetable-day-tag">Saturday</span>
+                                                            <span class="timetable-sessions-count">1 Session</span>
+                                                        </div>
+                                                        <div class="timetable-slot-row">
+                                                            <span class="timetable-slot-time"><i class="feather-clock"></i> 04:00 PM - 05:30 PM</span>
+                                                            <div class="timetable-slot-badges">
+                                                                <button type="button" class="session-pill-btn pill-oto" onclick="openSessionPopup('chemistry', 'chem-sat-1600-oto')"><i class="feather-user"></i> One-To-One</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Group/Session Modal -->
+    <div class="modal-overlay" id="group-session-modal" onclick="handleGroupModalBackdrop(event)">
+        <div class="group-modal-card-box">
+            <div class="modal-header-bg">
+                <div class="modal-header-content">
+                    <div class="modal-user-icon"><i class="feather-users"></i></div>
+                    <div class="modal-title-area">
+                        <h4 id="group-modal-subject-title">Mathematics - Session</h4>
+                        <span id="group-modal-time-badge">Monday • 02:00 PM - 03:30 PM</span>
+                    </div>
+                </div>
+                <button class="modal-close-btn" onclick="closeModal('group-session-modal')" aria-label="Close modal">
+                    <i class="feather-x"></i>
+                </button>
+            </div>
+
+            <div class="student-modal-body">
+                <div class="session-info-strip">
+                    <div class="session-info-item">
+                        <i class="feather-book-open"></i> <strong id="group-modal-subject-name">Mathematics</strong>
+                    </div>
+                    <div class="session-info-item">
+                        <i class="feather-clock"></i> <span id="group-modal-session-time">Monday • 02:00 PM - 03:30 PM</span>
+                    </div>
+                    <div class="session-info-item">
+                        <i class="feather-user-check"></i> <strong id="group-modal-student-count">Enrolled Students</strong>
+                    </div>
+                </div>
+
+                <div class="table-responsive" style="border: 1px solid #e2e8f0; border-radius: 10px; overflow: hidden;">
+                    <table class="group-student-table">
+                        <thead>
+                            <tr>
+                                <th style="width: 10%; text-align: center;">S.No</th>
+                                <th style="width: 32%;">Student Name</th>
+                                <th style="width: 30%;">Email / Contact</th>
+                                <th style="width: 16%; text-align: center;">Attendance</th>
+                            </tr>
+                        </thead>
+                        <tbody id="group-session-table-body">
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="modal-footer-area" style="margin-top: 20px; display: flex; justify-content: flex-end;">
+                    <button type="button" class="modal-close-profile-btn" onclick="closeModal('group-session-modal')">
+                        Close List
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Contact Buttons -->
+    <div class="floating-contact">
+        <div class="contact-item call-item">
+            <div class="contact-label call-label">
+                Talk To Our Experts
+            </div>
+            <a href="tel:+919876543210" class="contact-button call-button" aria-label="Call us">
+                <i class="fa fa-phone"></i>
+            </a>
+        </div>
+
+        <div class="contact-item whatsapp-item">
+            <div class="contact-label whatsapp-label">
+                Message Us
+            </div>
+            <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer"
+                class="contact-button whatsapp-button" aria-label="Chat with us on WhatsApp">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+        </div>
+    </div>
+
+    <!-- Back to Top Arrow Button -->
+    <div class="rbt-progress-parent">
+        <svg class="rbt-back-circle svg-inner" width="100%" height="100%" viewBox="-1 -1 102 102">
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+        </svg>
+    </div>
+
+    <!-- Footer Area -->
+    <footer class="rbt-footer footer-style-1 bg-color-white overflow-hidden">
+        <div class="footer-top">
+            <div class="container">
+                <div class="row g-5">
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+                        <div class="footer-widget">
+                            <div class="logo">
+                                <a href="index.html">
+                                    <img src="assets/images/logo/logo.png" alt="Edu-Loop Sign Logo">
+                                </a>
+                            </div>
+                            <p class="description mt--20">We are always seeking talented and motivated individuals to join our team.</p>
+                            <ul class="social-icon social-default justify-content-start">
+                                <li><a href="https://www.facebook.com/"><i class="feather-facebook"></i></a></li>
+                                <li><a href="https://www.twitter.com" aria-label="X (Twitter)">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" viewBox="0 0 24 24" class="social-icon-x" style="vertical-align: -2px;"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                                    </a></li>
+                                <li><a href="https://www.instagram.com/"><i class="feather-instagram"></i></a></li>
+                                <li><a href="https://www.linkedin.com/"><i class="feather-linkedin"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-2 col-md-6 col-sm-6 col-12">
+                        <div class="footer-widget">
+                            <h5 class="ft-title">Useful Links</h5>
+                            <ul class="ft-link">
+                                <li><a href="our-team.html">Our Team</a></li>
+                                <li><a href="our-tuition.html">Our Tuition</a></li>
+                                <li><a href="holiday-camps.html">Holiday Camps</a></li>
+                                <li><a href="plans-and-pricing.html">Plans &amp; Pricing</a></li>
+                                <li><a href="book-online.html">Book Online</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-2 col-md-6 col-sm-6 col-12">
+                        <div class="footer-widget">
+                            <h5 class="ft-title">Popular Programs</h5>
+                            <ul class="ft-link">
+                                <li><a href="our-tuition.html">Primary Tuition</a></li>
+                                <li><a href="our-tuition.html">Secondary Tuition</a></li>
+                                <li><a href="our-tuition.html">GCSE Tuition</a></li>
+                                <li><a href="our-tuition.html">IGCSE Tuition</a></li>
+                                <li><a href="our-tuition.html">A-Level Tuition</a></li>
+                                <li><a href="holiday-camps.html">Holiday Camps</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+                        <div class="footer-widget">
+                            <h5 class="ft-title">Get Contact</h5>
+                            <ul class="ft-link">
+                                <li><span>Phone:</span> <a href="#">(406) 555-0120</a></li>
+                                <li><span>E-mail:</span> <a href="mailto:info@londonstaredu.com">info@londonstaredu.com</a></li>
+                            </ul>
+                            <div class="newsletter-form mt--20">
+                                <h6 class="w-600">Location</h6>
+                                <p class="description">2000+ Our students are subscribe Around the World.<br> Don’t be shy introduce yourself!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="rbt-separator-mid">
+            <div class="container">
+                <hr class="rbt-separator m-0">
+            </div>
+        </div>
+        <div class="copyright-area copyright-style-1 ptb--20">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-xxl-7 col-xl-7 col-lg-7 col-md-12 col-12">
+                        <p class="rbt-link-hover text-center text-lg-start">
+                            Copyright © 2026 by <a href="index.html">London Star Education Ltd.</a> All Rights Reserved. Designed by <a href="https://rkisystems.co.uk/" target="_blank">RKI Systems</a>
+                        </p>
+                    </div>
+                    <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-12 col-12">
+                        <ul class="copyright-link rbt-link-hover justify-content-center justify-content-lg-end mt_sm--10 mt_md--10">
+                            <li><a href="#">Terms of service</a></li>
+                            <li><a href="privacy-policy.html">Privacy policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/vendor/jquery.js"></script>
+    <script src="assets/js/vendor/bootstrap.min.js"></script>
+
+    <script>
+        const studentDatasets = {
+            'mathematics': [
+                { id: 'LSE-STD-2024-001', name: 'Oliver Smith', email: 'oliver.smith@gmail.com', phone: '+44 7700 900101', attended: '26 Classes' },
+                { id: 'LSE-STD-2024-004', name: 'Amelia Jones', email: 'amelia.jones@gmail.com', phone: '+44 7700 900102', attended: '24 Classes' },
+                { id: 'LSE-STD-2024-007', name: 'Harry Wilson', email: 'harry.wilson@gmail.com', phone: '+44 7700 900103', attended: '25 Classes' },
+                { id: 'LSE-STD-2024-012', name: 'Sophia Brown', email: 'sophia.brown@gmail.com', phone: '+44 7700 900104', attended: '22 Classes' },
+                { id: 'LSE-STD-2024-015', name: 'George Taylor', email: 'george.taylor@gmail.com', phone: '+44 7700 900105', attended: '20 Classes' },
+                { id: 'LSE-STD-2024-018', name: 'Isabella Davies', email: 'isabella.d@gmail.com', phone: '+44 7700 900106', attended: '21 Classes' },
+                { id: 'LSE-STD-2024-022', name: 'Noah Evans', email: 'noah.evans@gmail.com', phone: '+44 7700 900107', attended: '27 Classes' },
+                { id: 'LSE-STD-2024-025', name: 'Mia Thomas', email: 'mia.thomas@gmail.com', phone: '+44 7700 900108', attended: '23 Classes' },
+                { id: 'LSE-STD-2024-029', name: 'Leo Roberts', email: 'leo.roberts@gmail.com', phone: '+44 7700 900109', attended: '25 Classes' },
+                { id: 'LSE-STD-2024-033', name: 'Ava Johnson', email: 'ava.johnson@gmail.com', phone: '+44 7700 900110', attended: '24 Classes' },
+                { id: 'LSE-STD-2024-038', name: 'Lucas Walker', email: 'lucas.walker@gmail.com', phone: '+44 7700 900111', attended: '26 Classes' },
+                { id: 'LSE-STD-2024-042', name: 'Grace Robinson', email: 'grace.robinson@gmail.com', phone: '+44 7700 900112', attended: '22 Classes' },
+                { id: 'LSE-STD-2024-047', name: 'Arthur Wright', email: 'arthur.wright@gmail.com', phone: '+44 7700 900113', attended: '25 Classes' },
+                { id: 'LSE-STD-2024-051', name: 'Freya Scott', email: 'freya.scott@gmail.com', phone: '+44 7700 900114', attended: '23 Classes' },
+                { id: 'LSE-STD-2024-056', name: 'Henry Green', email: 'henry.green@gmail.com', phone: '+44 7700 900115', attended: '28 Classes' },
+                { id: 'LSE-STD-2024-060', name: 'Ella Hall', email: 'ella.hall@gmail.com', phone: '+44 7700 900116', attended: '21 Classes' }
+            ],
+            'physics': [
+                { id: 'LSE-STD-2024-002', name: 'Jack Williams', email: 'jack.w@gmail.com', phone: '+44 7800 800201', attended: '28 Classes' },
+                { id: 'LSE-STD-2024-005', name: 'Charlotte Taylor', email: 'charlotte.t@gmail.com', phone: '+44 7800 800202', attended: '26 Classes' },
+                { id: 'LSE-STD-2024-009', name: 'Ethan Clarke', email: 'ethan.c@gmail.com', phone: '+44 7800 800203', attended: '25 Classes' },
+                { id: 'LSE-STD-2024-014', name: 'Harper White', email: 'harper.w@gmail.com', phone: '+44 7800 800204', attended: '23 Classes' },
+                { id: 'LSE-STD-2024-019', name: 'Freddie Hughes', email: 'freddie.h@gmail.com', phone: '+44 7800 800205', attended: '24 Classes' },
+                { id: 'LSE-STD-2024-023', name: 'Emily Edwards', email: 'emily.e@gmail.com', phone: '+44 7800 800206', attended: '27 Classes' },
+                { id: 'LSE-STD-2024-028', name: 'Archie Turner', email: 'archie.t@gmail.com', phone: '+44 7800 800207', attended: '22 Classes' },
+                { id: 'LSE-STD-2024-032', name: 'Evie Campbell', email: 'evie.c@gmail.com', phone: '+44 7800 800208', attended: '25 Classes' },
+                { id: 'LSE-STD-2024-037', name: 'Theo Mitchell', email: 'theo.m@gmail.com', phone: '+44 7800 800209', attended: '26 Classes' },
+                { id: 'LSE-STD-2024-041', name: 'Ruby Carter', email: 'ruby.c@gmail.com', phone: '+44 7800 800210', attended: '21 Classes' },
+                { id: 'LSE-STD-2024-046', name: 'Alfie Phillips', email: 'alfie.p@gmail.com', phone: '+44 7800 800211', attended: '25 Classes' },
+                { id: 'LSE-STD-2024-050', name: 'Alice Morris', email: 'alice.m@gmail.com', phone: '+44 7800 800212', attended: '24 Classes' },
+                { id: 'LSE-STD-2024-055', name: 'Joshua Murphy', email: 'joshua.m@gmail.com', phone: '+44 7800 800213', attended: '28 Classes' },
+                { id: 'LSE-STD-2024-059', name: 'Florence Cook', email: 'florence.c@gmail.com', phone: '+44 7800 800214', attended: '20 Classes' }
+            ],
+            'chemistry': [
+                { id: 'LSE-STD-2024-003', name: 'Benjamin Moore', email: 'benjamin.m@gmail.com', phone: '+44 7900 700301', attended: '18 Classes' },
+                { id: 'LSE-STD-2024-008', name: 'Chloe Harris', email: 'chloe.h@gmail.com', phone: '+44 7900 700302', attended: '16 Classes' },
+                { id: 'LSE-STD-2024-013', name: 'Alexander King', email: 'alex.king@gmail.com', phone: '+44 7900 700303', attended: '17 Classes' },
+                { id: 'LSE-STD-2024-017', name: 'Zoe Lee', email: 'zoe.lee@gmail.com', phone: '+44 7900 700304', attended: '15 Classes' },
+                { id: 'LSE-STD-2024-021', name: 'Daniel Adams', email: 'daniel.a@gmail.com', phone: '+44 7900 700305', attended: '19 Classes' },
+                { id: 'LSE-STD-2024-026', name: 'Hannah Baker', email: 'hannah.b@gmail.com', phone: '+44 7900 700306', attended: '20 Classes' },
+                { id: 'LSE-STD-2024-031', name: 'Samuel Bell', email: 'samuel.b@gmail.com', phone: '+44 7900 700307', attended: '16 Classes' },
+                { id: 'LSE-STD-2024-036', name: 'Lily Ward', email: 'lily.w@gmail.com', phone: '+44 7900 700308', attended: '18 Classes' },
+                { id: 'LSE-STD-2024-040', name: 'Max Bennett', email: 'max.b@gmail.com', phone: '+44 7900 700309', attended: '21 Classes' },
+                { id: 'LSE-STD-2024-045', name: 'Phoebe Gray', email: 'phoebe.g@gmail.com', phone: '+44 7900 700310', attended: '17 Classes' },
+                { id: 'LSE-STD-2024-049', name: 'Logan Price', email: 'logan.p@gmail.com', phone: '+44 7900 700311', attended: '19 Classes' },
+                { id: 'LSE-STD-2024-054', name: 'Sienna Russell', email: 'sienna.r@gmail.com', phone: '+44 7900 700312', attended: '15 Classes' }
+            ]
+        };
+
+        const sessionCatalog = {
+            'math-mon-1000-oto-1': { subject: 'mathematics', type: 'One-To-One', time: 'Monday • 10:00 AM - 11:30 AM', studentIds: ['LSE-STD-2024-001'] },
+            'math-mon-1000-oto-2': { subject: 'mathematics', type: 'One-To-One', time: 'Monday • 10:00 AM - 11:30 AM', studentIds: ['LSE-STD-2024-029'] },
+            'math-mon-1400-otm':   { subject: 'mathematics', type: 'One-To-Many', time: 'Monday • 02:00 PM - 03:30 PM', studentIds: ['LSE-STD-2024-015', 'LSE-STD-2024-060'] },
+            'math-mon-1400-oto':   { subject: 'mathematics', type: 'One-To-One', time: 'Monday • 02:00 PM - 03:30 PM', studentIds: ['LSE-STD-2024-056'] },
+            'math-tue-1000-otm':   { subject: 'mathematics', type: 'One-To-Many', time: 'Tuesday • 10:00 AM - 11:30 AM', studentIds: ['LSE-STD-2024-004', 'LSE-STD-2024-038'] },
+            'math-wed-1000-oto-1': { subject: 'mathematics', type: 'One-To-One', time: 'Wednesday • 10:00 AM - 11:30 AM', studentIds: ['LSE-STD-2024-007'] },
+            'math-wed-1000-oto-2': { subject: 'mathematics', type: 'One-To-One', time: 'Wednesday • 10:00 AM - 11:30 AM', studentIds: ['LSE-STD-2024-042'] },
+            'math-wed-1600-otm':   { subject: 'mathematics', type: 'One-To-Many', time: 'Wednesday • 04:00 PM - 05:30 PM', studentIds: ['LSE-STD-2024-047'] },
+            'math-thu-1000-otm':   { subject: 'mathematics', type: 'One-To-Many', time: 'Thursday • 10:00 AM - 11:30 AM', studentIds: ['LSE-STD-2024-012', 'LSE-STD-2024-022'] },
+            'math-fri-1000-oto':   { subject: 'mathematics', type: 'One-To-One', time: 'Friday • 10:00 AM - 11:30 AM', studentIds: ['LSE-STD-2024-018'] },
+            'math-sat-1000-otm':   { subject: 'mathematics', type: 'One-To-Many', time: 'Saturday • 10:00 AM - 11:30 AM', studentIds: ['LSE-STD-2024-025', 'LSE-STD-2024-033', 'LSE-STD-2024-051'] },
+
+            'phy-mon-1400-otm':   { subject: 'physics', type: 'One-To-Many', time: 'Monday • 02:00 PM - 03:30 PM', studentIds: ['LSE-STD-2024-005', 'LSE-STD-2024-023', 'LSE-STD-2024-046'] },
+            'phy-tue-1400-oto-1': { subject: 'physics', type: 'One-To-One', time: 'Tuesday • 02:00 PM - 03:30 PM', studentIds: ['LSE-STD-2024-002'] },
+            'phy-tue-1400-oto-2': { subject: 'physics', type: 'One-To-One', time: 'Tuesday • 02:00 PM - 03:30 PM', studentIds: ['LSE-STD-2024-041'] },
+            'phy-tue-1700-otm':   { subject: 'physics', type: 'One-To-Many', time: 'Tuesday • 05:00 PM - 06:30 PM', studentIds: ['LSE-STD-2024-032', 'LSE-STD-2024-059'] },
+            'phy-wed-1400-otm':   { subject: 'physics', type: 'One-To-Many', time: 'Wednesday • 02:00 PM - 03:30 PM', studentIds: ['LSE-STD-2024-009', 'LSE-STD-2024-050'] },
+            'phy-thu-1400-oto-1': { subject: 'physics', type: 'One-To-One', time: 'Thursday • 02:00 PM - 03:30 PM', studentIds: ['LSE-STD-2024-014'] },
+            'phy-thu-1400-oto-2': { subject: 'physics', type: 'One-To-One', time: 'Thursday • 02:00 PM - 03:30 PM', studentIds: ['LSE-STD-2024-055'] },
+            'phy-fri-1400-otm':   { subject: 'physics', type: 'One-To-Many', time: 'Friday • 02:00 PM - 03:30 PM', studentIds: ['LSE-STD-2024-019', 'LSE-STD-2024-037'] },
+            'phy-sat-1400-oto':   { subject: 'physics', type: 'One-To-One', time: 'Saturday • 02:00 PM - 03:30 PM', studentIds: ['LSE-STD-2024-028'] },
+
+            'chem-mon-1600-oto-1': { subject: 'chemistry', type: 'One-To-One', time: 'Monday • 04:00 PM - 05:30 PM', studentIds: ['LSE-STD-2024-003'] },
+            'chem-mon-1600-oto-2': { subject: 'chemistry', type: 'One-To-One', time: 'Monday • 04:00 PM - 05:30 PM', studentIds: ['LSE-STD-2024-045'] },
+            'chem-tue-1600-otm':   { subject: 'chemistry', type: 'One-To-Many', time: 'Tuesday • 04:00 PM - 05:30 PM', studentIds: ['LSE-STD-2024-008', 'LSE-STD-2024-026'] },
+            'chem-tue-1800-otm':   { subject: 'chemistry', type: 'One-To-Many', time: 'Tuesday • 06:00 PM - 07:30 PM', studentIds: ['LSE-STD-2024-040', 'LSE-STD-2024-049'] },
+            'chem-wed-1600-oto':   { subject: 'chemistry', type: 'One-To-One', time: 'Wednesday • 04:00 PM - 05:30 PM', studentIds: ['LSE-STD-2024-017'] },
+            'chem-thu-1600-otm':   { subject: 'chemistry', type: 'One-To-Many', time: 'Thursday • 04:00 PM - 05:30 PM', studentIds: ['LSE-STD-2024-013', 'LSE-STD-2024-036'] },
+            'chem-fri-1600-otm':   { subject: 'chemistry', type: 'One-To-Many', time: 'Friday • 04:00 PM - 05:30 PM', studentIds: ['LSE-STD-2024-021', 'LSE-STD-2024-054'] },
+            'chem-sat-1600-oto':   { subject: 'chemistry', type: 'One-To-One', time: 'Saturday • 04:00 PM - 05:30 PM', studentIds: ['LSE-STD-2024-031'] }
+        };
+
+        const subjectTitles = {
+            'mathematics': 'Mathematics',
+            'physics': 'Physics',
+            'chemistry': 'Chemistry'
+        };
+
+        function openSessionPopup(subjectKey, sessionId) {
+            const session = sessionCatalog[sessionId];
+            if (!session) return;
+
+            const subjectName = subjectTitles[subjectKey] || subjectKey;
+            const subjectList = studentDatasets[subjectKey] || [];
+            const enrolledStudents = subjectList.filter(s => session.studentIds.includes(s.id));
+
+            document.getElementById('group-modal-subject-title').innerText = `${subjectName} - ${session.type}`;
+            document.getElementById('group-modal-subject-name').innerText = subjectName;
+            document.getElementById('group-modal-session-time').innerText = session.time;
+            document.getElementById('group-modal-time-badge').innerText = session.time;
+            document.getElementById('group-modal-student-count').innerText = `${enrolledStudents.length} ${enrolledStudents.length === 1 ? 'Student' : 'Students'} Enrolled`;
+
+            const tbody = document.getElementById('group-session-table-body');
+            tbody.innerHTML = '';
+
+            if (enrolledStudents.length === 0) {
+                tbody.innerHTML = `<tr><td colspan="4" style="text-align:center; padding:24px; color:#94a3b8;">No students enrolled.</td></tr>`;
+            } else {
+                enrolledStudents.forEach((student, idx) => {
+                    const sno = (idx + 1) < 10 ? `0${idx + 1}` : (idx + 1);
+                    const tr = document.createElement('tr');
+                    tr.innerHTML = `
+                        <td style="text-align: center;"><span class="sno-badge">${sno}</span></td>
+                        <td>
+                            <strong style="color: #1e293b; font-size: 14.5px;">${student.name}</strong>
+                            <div style="font-size: 12px; color: #64748b;">${student.id}</div>
+                        </td>
+                        <td>
+                            <div style="font-size: 13.5px; color: #334155;">${student.email}</div>
+                            <div style="font-size: 12px; color: #64748b;">${student.phone}</div>
+                        </td>
+                        <td style="text-align: center;">
+                            <span style="background: #eef2ff; color: #4338ca; font-weight: 600; font-size: 12.5px; padding: 3px 8px; border-radius: 6px;">
+                                ${student.attended}
+                            </span>
+                        </td>
+                    `;
+                    tbody.appendChild(tr);
+                });
+            }
+
+            const modal = document.getElementById('group-session-modal');
+            modal.style.display = 'flex';
+            setTimeout(() => modal.classList.add('active'), 10);
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal(id) {
+            const modal = document.getElementById(id);
+            if (!modal) return;
+            modal.classList.remove('active');
+            setTimeout(() => {
+                modal.style.display = 'none';
+                document.body.style.overflow = '';
+            }, 250);
+        }
+
+        function handleGroupModalBackdrop(e) {
+            if (e.target.id === 'group-session-modal') closeModal('group-session-modal');
+        }
+
+        document.addEventListener('keydown', function (event) {
+            if (event.key === 'Escape') closeModal('group-session-modal');
+        });
+
+        // Initialize Login Dropdown, Back to Top & Floating Contact
+        document.addEventListener('DOMContentLoaded', function () {
+            const loginButton = document.querySelector(".login-dropdown-btn");
+            const loginDropdown = document.querySelector(".login-dropdown");
+
+            if (loginButton && loginDropdown) {
+                loginButton.addEventListener("click", function (e) {
+                    e.stopPropagation();
+                    loginDropdown.classList.toggle("active");
+                });
+
+                document.addEventListener("click", function (e) {
+                    if (!loginDropdown.contains(e.target)) {
+                        loginDropdown.classList.remove("active");
+                    }
+                });
+            }
+
+            const progressPath = document.querySelector('.rbt-progress-parent path');
+            if (progressPath) {
+                const pathLength = progressPath.getTotalLength();
+                progressPath.style.transition = progressPath.style.WebkitTransition = 'none';
+                progressPath.style.strokeDasharray = pathLength + ' ' + pathLength;
+                progressPath.style.strokeDashoffset = pathLength;
+                progressPath.getBoundingClientRect();
+                progressPath.style.transition = progressPath.style.WebkitTransition = 'stroke-dashoffset 10ms linear';
+
+                const updateProgress = function () {
+                    const scroll = window.scrollY;
+                    const height = document.documentElement.scrollHeight - window.innerHeight;
+                    const progress = pathLength - (scroll * pathLength / height);
+                    progressPath.style.strokeDashoffset = progress;
+                };
+
+                updateProgress();
+                window.addEventListener('scroll', updateProgress);
+
+                const offset = 50;
+                window.addEventListener('scroll', function () {
+                    if (window.scrollY > offset) {
+                        document.querySelector('.rbt-progress-parent').classList.add('rbt-backto-top-active');
+                    } else {
+                        document.querySelector('.rbt-progress-parent').classList.remove('rbt-backto-top-active');
+                    }
+                });
+
+                document.querySelector('.rbt-progress-parent').addEventListener('click', function (event) {
+                    event.preventDefault();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+            }
+
+            // Mobile Floating Contact Toggle
+            const contactItems = document.querySelectorAll(".contact-item");
+            contactItems.forEach(item => {
+                const button = item.querySelector(".contact-button");
+                if (!button) return;
+                button.addEventListener("click", function () {
+                    if (window.innerWidth <= 767) {
+                        contactItems.forEach(otherItem => {
+                            if (otherItem !== item) otherItem.classList.remove("show-label");
+                        });
+                        item.classList.toggle("show-label");
+                    }
+                });
+            });
+
+            document.addEventListener("click", function (event) {
+                if (!event.target.closest(".floating-contact")) {
+                    contactItems.forEach(item => item.classList.remove("show-label"));
+                }
+            });
+        });
+    </script>
+</body>
+</html>

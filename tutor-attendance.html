@@ -2,77 +2,34 @@
 <html lang="en">
 
 <head>
-
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-
     <title>Attendance - London Star Education</title>
-
     <meta name="robots" content="noindex, follow">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <link rel="shortcut icon"
-        type="image/x-icon"
-        href="assets/images/favicon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.png">
 
     <!-- CSS -->
-    <link rel="stylesheet"
-        href="assets/css/vendor/bootstrap.min.css">
-
-    <link rel="stylesheet"
-        href="assets/css/vendor/slick.css">
-
-    <link rel="stylesheet"
-        href="assets/css/vendor/slick-theme.css">
-
-    <link rel="stylesheet"
-        href="assets/css/plugins/sal.css">
-
-    <link rel="stylesheet"
-        href="assets/css/plugins/feather.css">
-
-    <link rel="stylesheet"
-        href="assets/css/plugins/fontawesome.min.css">
-
-    <link rel="stylesheet"
-        href="assets/css/plugins/euclid-circulara.css">
-
-    <link rel="stylesheet"
-        href="assets/css/plugins/swiper.css">
-
-    <link rel="stylesheet"
-        href="assets/css/plugins/magnify.css">
-
-    <link rel="stylesheet"
-        href="assets/css/plugins/odometer.css">
-
-    <link rel="stylesheet"
-        href="assets/css/plugins/animation.css">
-
-    <link rel="stylesheet"
-        href="assets/css/plugins/bootstrap-select.min.css">
-
-    <link rel="stylesheet"
-        href="assets/css/plugins/jquery-ui.css">
-
-    <link rel="stylesheet"
-        href="assets/css/plugins/magnigy-popup.min.css">
-
-    <link rel="stylesheet"
-        href="assets/css/plugins/plyr.css">
-
-    <link rel="stylesheet"
-        href="assets/css/style.css">
-    <link rel="stylesheet"
-        href="assets/css/custom-ui.css">
-
+    <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/vendor/slick.css">
+    <link rel="stylesheet" href="assets/css/vendor/slick-theme.css">
+    <link rel="stylesheet" href="assets/css/plugins/sal.css">
+    <link rel="stylesheet" href="assets/css/plugins/feather.css">
+    <link rel="stylesheet" href="assets/css/plugins/fontawesome.min.css">
+    <link rel="stylesheet" href="assets/css/plugins/euclid-circulara.css">
+    <link rel="stylesheet" href="assets/css/plugins/swiper.css">
+    <link rel="stylesheet" href="assets/css/plugins/magnify.css">
+    <link rel="stylesheet" href="assets/css/plugins/odometer.css">
+    <link rel="stylesheet" href="assets/css/plugins/animation.css">
+    <link rel="stylesheet" href="assets/css/plugins/bootstrap-select.min.css">
+    <link rel="stylesheet" href="assets/css/plugins/jquery-ui.css">
+    <link rel="stylesheet" href="assets/css/plugins/magnigy-popup.min.css">
+    <link rel="stylesheet" href="assets/css/plugins/plyr.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/custom-ui.css">
 
     <style>
-        /* =========================================================
-           BANNER STYLING & COMPACT RESPONSIVE SCALING
-        ========================================================= */
         .slider-area.rbt-banner-10 {
             margin-top: 0 !important;
             padding-top: 0 !important;
@@ -95,7 +52,6 @@
             z-index: 5;
         }
 
-        /* Mobile Height Adjustments */
         @media (max-width: 768px) {
             .slider-area.rbt-banner-10.height-400 {
                 height: 160px !important;
@@ -120,12 +76,10 @@
             }
         }
 
-        /* Base & Global Typography */
         body, button, input, select, textarea, table, th, td, h1, h2, h3, h4, h5, h6, p, span, a, label, div {
             font-family: var(--font-primary), "Euclid Circular A", "Euclid Circular", sans-serif !important;
         }
 
-        /* Icon Font Protection */
         i[class^="feather-"],
         i[class*=" feather-"],
         span[class^="feather-"],
@@ -156,56 +110,6 @@
             display: inline-block !important;
         }
 
-        .sidebar-icon-svg {
-            width: 20px !important;
-            height: 20px !important;
-            min-width: 20px !important;
-            margin: 0 !important;
-            vertical-align: middle !important;
-            flex: 0 0 20px !important;
-            display: block !important;
-        }
-
-        #courseFilter {
-            display: block !important;
-            width: 100% !important;
-            font-size: 17px !important;
-            font-weight: 400 !important;
-            height: 52px !important;
-            line-height: 1.5 !important;
-            color: #64748b !important;
-            background-color: #ffffff !important;
-            border: 1px solid #dcdfe6 !important;
-            border-radius: 8px !important;
-            padding: 0 45px 0 16px !important;
-            cursor: pointer !important;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E") !important;
-            background-repeat: no-repeat !important;
-            background-position: right 16px center !important;
-            background-size: 18px !important;
-            -webkit-appearance: none !important;
-            -moz-appearance: none !important;
-            appearance: none !important;
-            transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
-        }
-
-        #courseFilter:focus {
-            outline: none !important;
-            border-color: #6c4df6 !important;
-            box-shadow: 0 0 0 3px rgba(108, 77, 246, 0.15) !important;
-        }
-
-        #courseFilter option {
-            font-size: 17px !important;
-            font-weight: 400 !important;
-            color: #64748b !important;
-            background: #ffffff !important;
-            padding: 12px !important;
-        }
-
-        /* =========================================
-           ATTENDANCE HEADER
-        ========================================= */
         .attendance-header {
             display: flex;
             justify-content: space-between;
@@ -256,12 +160,9 @@
             color: #192335 !important;
         }
 
-        /* =========================================
-           FILTER
-        ========================================= */
         .attendance-filter {
             background: #fff;
-            padding: 20px;
+            padding: 22px;
             border-radius: 10px;
             margin-bottom: 25px;
             box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
@@ -270,7 +171,7 @@
 
         .attendance-filter label {
             display: block;
-            font-size: 17px !important;
+            font-size: 16px !important;
             font-weight: 600 !important;
             margin-bottom: 8px;
             color: #192335 !important;
@@ -278,15 +179,29 @@
 
         .attendance-filter input,
         .attendance-filter select {
-            height: 52px;
+            height: 50px;
             border-radius: 8px;
             border: 1px solid #dcdfe6;
             width: 100%;
             padding: 0 16px;
             outline: none;
             color: #192335 !important;
-            font-size: 17px !important;
+            font-size: 15px !important;
             font-family: inherit;
+            background-color: #fff;
+            transition: all 0.2s ease;
+        }
+
+        .attendance-filter select {
+            cursor: pointer;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 14px center;
+            background-size: 16px;
+            padding-right: 40px;
         }
 
         .attendance-filter input:focus,
@@ -295,116 +210,121 @@
             box-shadow: 0 0 0 3px rgba(108, 77, 246, 0.15);
         }
 
-        /* =========================================
-           STUDENT SEARCH
-        ========================================= */
-        .student-search-section {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 20px;
+        /* Toolbar */
+        .roster-toolbar {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 16px 20px;
+            border: 1px solid #e8e8e8;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
             margin-bottom: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 12px;
         }
 
-        .student-search-title {
-            margin: 0;
-            font-size: 19px !important;
-            font-weight: 600 !important;
-            color: #192335 !important;
-        }
-
-        .student-search-wrapper {
+        .roster-search-input {
             position: relative;
-            width: 280px;
-            flex-shrink: 0;
+            width: 250px;
         }
 
-        .student-search-wrapper i {
-            position: absolute;
-            left: 13px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: #94a3b8;
-            font-size: 17px;
-            pointer-events: none;
-        }
-
-        .student-search-wrapper input {
-            width: 100%;
-            height: 44px;
-            border: 1px solid #e2e8f0;
+        .roster-search-input input {
+            height: 42px;
             border-radius: 8px;
-            padding: 0 12px 0 36px;
+            border: 1px solid #e2e8f0;
+            padding: 0 12px 0 40px;
+            font-size: 14.5px !important;
+            width: 100%;
             outline: none;
-            font-size: 16px !important;
-            color: #192335 !important;
-            background: #fff;
+            background: #ffffff;
+            color: #192335;
         }
 
-        .student-search-wrapper input:focus {
+        .roster-search-input input:focus {
             border-color: #6c4df6;
         }
 
-        .student-search-wrapper input::placeholder {
+        .roster-search-input i {
+            position: absolute;
+            left: 14px;
+            top: 50%;
+            transform: translateY(-50%);
             color: #94a3b8;
+            font-size: 16px;
         }
 
-        /* =========================================
-           ATTENDANCE PERCENTAGE
-        ========================================= */
-        .attendance-percentage {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 20px;
-            background: linear-gradient(135deg, #f8f9ff, #ffffff);
-            border: 1px solid #e5e0ff;
-            border-radius: 10px;
-            padding: 18px 22px;
-            margin-bottom: 25px;
-        }
-
-        .attendance-percentage-left {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-        }
-
-        .attendance-percentage-icon {
-            width: 42px;
+        .sort-toggle-btn {
             height: 42px;
-            border-radius: 50%;
+            padding: 0 16px;
+            border-radius: 8px;
+            border: 1px solid #e0dbff;
+            background: #ffffff;
+            font-weight: 500;
+            font-size: 14.5px !important;
+            color: #6c4df6;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .sort-toggle-btn:hover {
+            background: #f4f0ff;
+        }
+
+        .roster-type-filters {
             display: flex;
             align-items: center;
-            justify-content: center;
-            background: rgba(108, 77, 246, 0.10);
-            color: #6c4df6;
-            font-size: 18px;
+            gap: 10px;
+            flex-wrap: wrap;
         }
 
-        .attendance-percentage-title {
-            font-size: 18px !important;
+        .type-filter-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 14px;
+            height: 42px;
+            border-radius: 8px;
+            font-size: 14px !important;
+            font-weight: 500 !important;
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            color: #475569;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .type-filter-btn:hover {
+            background: #f8fafc;
+            border-color: #cbd5e1;
+        }
+
+        .type-filter-btn.active {
+            background: #6c4df6 !important;
+            border-color: #6c4df6 !important;
+            color: #ffffff !important;
             font-weight: 600 !important;
-            margin: 0 0 3px;
-            color: #192335 !important;
         }
 
-        .attendance-percentage-subtitle {
-            font-size: 16px !important;
-            color: #64748b !important;
-            margin: 0;
+        .type-filter-btn .filter-count-badge {
+            background: #f1f5f9;
+            color: #475569;
+            padding: 2px 7px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
         }
 
-        .attendance-percentage-value {
-            font-size: 24px !important;
-            font-weight: 700 !important;
-            color: #6c4df6 !important;
-            white-space: nowrap;
+        .type-filter-btn.active .filter-count-badge {
+            background: rgba(255, 255, 255, 0.25);
+            color: #ffffff;
         }
 
-        /* =========================================
-           TABLE
-        ========================================= */
+        /* Attendance Table */
         .attendance-table-wrapper {
             width: 100%;
             border: 1px solid #e8e8e8;
@@ -422,17 +342,17 @@
 
         .attendance-table th {
             background: #f8fafc;
-            padding: 13px 18px;
+            padding: 14px 18px;
             text-align: left;
-            font-size: 16px !important;
+            font-size: 15px !important;
             font-weight: 600 !important;
             color: #192335 !important;
             border-bottom: 1px solid #e6e6e6;
         }
 
         .attendance-table td {
-            padding: 13px 18px;
-            font-size: 17px !important;
+            padding: 14px 18px;
+            font-size: 15px !important;
             font-weight: 400 !important;
             color: #475569 !important;
             border-bottom: 1px solid #f1f5f9;
@@ -448,47 +368,85 @@
         }
 
         .student-name {
-            font-weight: 500 !important;
+            font-weight: 600 !important;
             display: block;
             color: #192335 !important;
-            font-size: 17px !important;
+            font-size: 15.5px !important;
+            margin-bottom: 4px;
+        }
+
+        .student-meta-tags {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            flex-wrap: wrap;
         }
 
         .student-id {
             color: #6c4df6 !important;
-            font-size: 13.5px !important;
+            font-size: 12.5px !important;
             display: inline-block;
-            margin-top: 3px;
             background: #f0edff;
-            padding: 2px 6px;
+            padding: 2px 7px;
             border-radius: 4px;
+            font-weight: 600;
+        }
+
+        .type-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 12px !important;
+            font-weight: 600 !important;
+        }
+
+        .type-one-to-one {
+            background: #ede9fe;
+            color: #6d28d9 !important;
+            border: 1px solid #ddd6fe;
+        }
+
+        .type-one-to-many {
+            background: #e0f2fe;
+            color: #0369a1 !important;
+            border: 1px solid #bae6fd;
+        }
+
+        .time-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 10px;
+            border-radius: 6px;
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            color: #475569 !important;
+            font-size: 13.5px !important;
             font-weight: 500;
         }
 
         .attendance-table td.row-date {
             color: #475569 !important;
             font-weight: 500 !important;
-            font-size: 16px !important;
+            font-size: 14.5px !important;
         }
 
-        /* Status Pills */
         .attendance-status {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            padding: 4px 12px;
+            padding: 5px 14px;
             border-radius: 16px;
-            font-size: 14px !important;
+            font-size: 13.5px !important;
             font-weight: 600 !important;
-        }
-
-        .attendance-status.clickable-status {
             cursor: pointer;
             user-select: none;
             transition: all 0.2s ease;
         }
 
-        .attendance-status.clickable-status:hover {
+        .attendance-status:hover {
             transform: translateY(-1px);
         }
 
@@ -504,11 +462,9 @@
             border: 1px solid #fecaca !important;
         }
 
-        /* View Button */
         .attendance-action-group {
             display: flex;
             gap: 8px;
-            flex-wrap: wrap;
             justify-content: center;
         }
 
@@ -517,7 +473,7 @@
             background: #f3f0ff;
             padding: 6px 14px;
             border-radius: 6px;
-            font-size: 15px !important;
+            font-size: 14px !important;
             font-weight: 500 !important;
             color: #6c4df6 !important;
             cursor: pointer;
@@ -530,9 +486,6 @@
             color: #ffffff !important;
         }
 
-        /* =========================================
-           VIEW ATTENDANCE MODAL
-        ========================================= */
         .view-modal-overlay {
             display: none;
             position: fixed;
@@ -584,7 +537,7 @@
 
         .view-modal-header p {
             margin: 0;
-            font-size: 15px !important;
+            font-size: 14.5px !important;
             color: #64748b !important;
         }
 
@@ -596,7 +549,6 @@
             height: 34px;
             border-radius: 50%;
             cursor: pointer;
-            flex-shrink: 0;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -614,13 +566,6 @@
             padding: 18px 22px;
         }
 
-        .view-history-note {
-            font-size: 15px !important;
-            color: #64748b !important;
-            font-weight: 500 !important;
-            margin: 0 0 14px;
-        }
-
         .view-history-table {
             width: 100%;
             border-collapse: collapse;
@@ -633,7 +578,7 @@
             background: #f8fafc;
             padding: 12px 16px;
             text-align: left;
-            font-size: 16px !important;
+            font-size: 15px !important;
             font-weight: 600 !important;
             color: #192335 !important;
             border-bottom: 1px solid #e2e8f0;
@@ -642,9 +587,8 @@
         .view-history-table td {
             padding: 12px 16px;
             border-bottom: 1px solid #f1f5f9;
-            font-size: 16px !important;
+            font-size: 15px !important;
             color: #334155 !important;
-            font-weight: 400 !important;
             vertical-align: middle;
         }
 
@@ -652,9 +596,129 @@
             border-bottom: none;
         }
 
-        /* =========================================
-           LOGIN DROPDOWN
-        ========================================= */
+        .floating-contact {
+            position: fixed;
+            right: 24px;
+            bottom: 95px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            z-index: 9998;
+        }
+
+        .contact-item {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+
+        .contact-button {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            background: #ffffff !important;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            text-decoration: none !important;
+        }
+
+        .contact-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+        }
+
+        .call-button {
+            border: 2px solid #8e24aa !important;
+            color: #8e24aa !important;
+            font-size: 20px;
+        }
+
+        .whatsapp-button {
+            border: 2px solid #00c853 !important;
+            color: #00c853 !important;
+            font-size: 24px;
+        }
+
+        .contact-label {
+            position: absolute;
+            right: 58px;
+            background: #192335;
+            color: #ffffff;
+            font-size: 13px;
+            font-weight: 500;
+            padding: 6px 14px;
+            border-radius: 6px;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+            transform: translateX(8px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+        }
+
+        .contact-item:hover .contact-label,
+        .contact-item.show-label .contact-label {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .rbt-progress-parent {
+            position: fixed;
+            right: 24px;
+            bottom: 30px;
+            height: 48px;
+            width: 48px;
+            cursor: pointer;
+            display: block;
+            border-radius: 50px;
+            box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.05);
+            z-index: 10000;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(15px);
+            transition: all 200ms linear;
+            background: #ffffff;
+        }
+
+        .rbt-progress-parent.rbt-backto-top-active {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .rbt-progress-parent::after {
+            position: absolute;
+            font-family: 'feather', 'Feather' !important;
+            content: '\e912';
+            text-align: center;
+            line-height: 48px;
+            font-size: 20px;
+            color: #4a6cf7;
+            left: 0;
+            top: 0;
+            height: 48px;
+            width: 48px;
+            cursor: pointer;
+            display: block;
+            z-index: 1;
+            transition: all 200ms linear;
+        }
+
+        .rbt-progress-parent svg path {
+            fill: none;
+        }
+
+        .rbt-progress-parent svg.rbt-back-circle path {
+            stroke: #4a6cf7;
+            stroke-width: 4;
+            box-sizing: border-box;
+            transition: all 200ms linear;
+        }
+
         .login-dropdown {
             position: relative;
         }
@@ -697,9 +761,6 @@
             color: #2f57ef;
         }
 
-        /* =========================================
-           RESPONSIVE
-        ========================================= */
         @media (max-width: 991px) {
             .attendance-summary {
                 grid-template-columns: 1fr;
@@ -714,36 +775,44 @@
                 width: 100%;
             }
 
-            .attendance-percentage {
-                align-items: flex-start;
-            }
-
             .attendance-table-wrapper {
                 overflow-x: auto;
                 -webkit-overflow-scrolling: touch;
             }
 
             .attendance-table {
-                min-width: 700px;
+                min-width: 780px;
             }
 
-            .student-search-section {
-                align-items: flex-start;
+            .roster-toolbar {
                 flex-direction: column;
+                align-items: stretch;
             }
 
-            .student-search-wrapper {
+            .roster-search-input, .sort-toggle-btn {
                 width: 100%;
+            }
+
+            .sort-toggle-btn {
+                justify-content: center;
+            }
+
+            .roster-type-filters {
+                width: 100%;
+            }
+
+            .type-filter-btn {
+                flex: 1;
+                justify-content: center;
             }
         }
     </style>
 
 </head>
 
-
 <body>
 
-    <!-- Start Header Area -->
+    <!-- Header Area -->
     <header class="rbt-header rbt-header-9">
         <div class="rbt-header-wrapper header-not-transparent header-sticky">
             <div class="container">
@@ -761,27 +830,13 @@
                     <div class="rbt-main-navigation d-none d-xl-block">
                         <nav class="mainmenu-nav">
                             <ul class="mainmenu">
-                                <li>
-                                    <a href="index.html">Home</a>
-                                </li>
-                                <li>
-                                    <a href="about-us.html">About</a>
-                                </li>
-                                <li>
-                                    <a href="our-team.html">Our Team</a>
-                                </li>
-                                <li>
-                                    <a href="our-tuition.html">Our Tuition</a>
-                                </li>
-                                <li>
-                                    <a href="holiday-camps.html">Holiday Camps</a>
-                                </li>
-                                <li>
-                                    <a href="plans-and-pricing.html">Plans &amp; Pricing</a>
-                                </li>
-                                <li>
-                                    <a href="book-online.html">Book Online</a>
-                                </li>
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="about-us.html">About</a></li>
+                                <li><a href="our-team.html">Our Team</a></li>
+                                <li><a href="our-tuition.html">Our Tuition</a></li>
+                                <li><a href="holiday-camps.html">Holiday Camps</a></li>
+                                <li><a href="plans-and-pricing.html">Plans &amp; Pricing</a></li>
+                                <li><a href="book-online.html">Book Online</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -789,8 +844,7 @@
                     <div class="header-right">
                         <div class="rbt-btn-wrapper d-flex align-items-center gap-2">
                             <div class="login-dropdown">
-                                <button type="button"
-                                    class="rbt-btn rbt-switch-btn btn-gradient btn-sm hover-transform-none login-dropdown-btn">
+                                <button type="button" class="rbt-btn rbt-switch-btn btn-gradient btn-sm hover-transform-none login-dropdown-btn">
                                     <span data-text="Login">Login</span>
                                     <i class="feather-chevron-down"></i>
                                 </button>
@@ -805,8 +859,7 @@
                                     </a>
                                 </div>
                             </div>
-                            <a class="rbt-btn rbt-switch-btn btn-gradient btn-sm hover-transform-none"
-                                href="login-register.html">
+                            <a class="rbt-btn rbt-switch-btn btn-gradient btn-sm hover-transform-none" href="login-register.html">
                                 <span data-text="Join Now">Join Now</span>
                             </a>
                         </div>
@@ -839,12 +892,8 @@
                 </div>
                 <p class="description">London Star Education provides high-quality online tuition and educational support.</p>
                 <ul class="navbar-top-left rbt-information-list justify-content-start">
-                    <li>
-                        <a href="mailto:info@londonstaredu.com"><i class="feather-mail"></i>info@londonstaredu.com</a>
-                    </li>
-                    <li>
-                        <a href="tel:3025550107"><i class="feather-phone"></i>(302) 555-0107</a>
-                    </li>
+                    <li><a href="mailto:info@londonstaredu.com"><i class="feather-mail"></i>info@londonstaredu.com</a></li>
+                    <li><a href="tel:3025550107"><i class="feather-phone"></i>(302) 555-0107</a></li>
                 </ul>
             </div>
 
@@ -874,7 +923,7 @@
         </div>
     </div>
 
-    <!-- BANNER -->
+    <!-- Banner Area -->
     <div class="slider-area rbt-banner-10 height-400 bg_image bg_image--11" data-black-overlay="5">
         <div class="container">
             <div class="row">
@@ -887,22 +936,22 @@
         </div>
     </div>
 
-    <!-- DASHBOARD -->
+    <!-- Dashboard Area -->
     <div class="rbt-dashboard-area rbt-section-gap">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-
                     <div class="row g-5">
+
+                        <!-- Sticky Sidebar -->
                         <div class="col-lg-3">
-                            <!-- Start Dashboard Sidebar -->
                             <div class="rbt-default-sidebar sticky-top rbt-shadow-box rbt-gradient-border">
                                 <div class="inner">
                                     <div class="content-item-content">
-
                                         <div class="rbt-default-sidebar-wrapper">
+
                                             <div class="section-title mb--20">
-                                                <h6 class="rbt-title-style-2">Welcome, Ruben</h6>
+                                                <h6 class="rbt-title-style-2" id="sidebar-welcome-text">Welcome, Ruben</h6>
                                             </div>
 
                                             <nav class="mainmenu-nav">
@@ -920,6 +969,12 @@
                                                         </a>
                                                     </li>
                                                     <li>
+                                                        <a href="class-schedule.html">
+                                                            <i class="feather-calendar"></i>
+                                                            <span>Class Schedule</span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
                                                         <a href="classlink.html">
                                                             <i class="feather-link"></i>
                                                             <span>Class Link</span>
@@ -927,7 +982,7 @@
                                                     </li>
                                                     <li class="active">
                                                         <a class="active" href="tutor-attendance.html">
-                                                            <i class="feather-calendar"></i>
+                                                            <i class="feather-check-square"></i>
                                                             <span>Attendance</span>
                                                         </a>
                                                     </li>
@@ -962,19 +1017,17 @@
                                             </nav>
 
                                         </div>
-
                                     </div>
                                 </div>
                             </div>
-                            <!-- End Dashboard Sidebar -->
                         </div>
 
-                        <!-- RIGHT CONTENT -->
+                        <!-- Right Content -->
                         <div class="col-lg-9">
                             <div class="rbt-dashboard-content bg-color-white rbt-shadow-box">
                                 <div class="content">
 
-                                    <!-- HEADER -->
+                                    <!-- Attendance Header -->
                                     <div class="attendance-header">
                                         <div>
                                             <div class="section-title">
@@ -990,33 +1043,41 @@
                                         </button>
                                     </div>
 
-                                    <!-- FILTER -->
+                                    <!-- Filter Toolbar with Course, Date, and Time -->
                                     <div class="attendance-filter">
                                         <div class="row g-4">
-                                            <!-- COURSE -->
-                                            <div class="col-lg-6 col-md-6">
-                                                <label>Course</label>
-                                                <select id="courseFilter" onchange="filterStudents()">
+                                            <!-- Course Dropdown -->
+                                            <div class="col-lg-4 col-md-4 col-12">
+                                                <label for="courseFilter">Course</label>
+                                                <select id="courseFilter" onchange="updateAvailableBatches()">
                                                     <option value="" disabled selected>Select Course</option>
-                                                    <option value="Mathematics">Mathematics</option>
-                                                    <option value="Physics">Physics</option>
-                                                    <option value="Chemistry">Chemistry</option>
-                                                    <option value="Computer Science">Computer Science</option>
+                                                    <option value="mathematics">Mathematics</option>
+                                                    <option value="physics">Physics</option>
+                                                    <option value="chemistry">Chemistry</option>
+                                                    <option value="computer-science">Computer Science</option>
                                                 </select>
                                             </div>
 
-                                            <!-- DATE -->
-                                            <div class="col-lg-6 col-md-6">
-                                                <label>Attendance Date</label>
-                                                <input type="date" id="attendanceDate">
+                                            <!-- Attendance Date -->
+                                            <div class="col-lg-4 col-md-4 col-12">
+                                                <label for="attendanceDate">Attendance Date</label>
+                                                <input type="date" id="attendanceDate" onchange="updateAvailableBatches()">
+                                            </div>
+
+                                            <!-- Batch / Schedule Time Dropdown -->
+                                            <div class="col-lg-4 col-md-4 col-12">
+                                                <label for="batchTimeFilter">Batch / Time Session</label>
+                                                <select id="batchTimeFilter" onchange="renderAttendanceTable()">
+                                                    <option value="" disabled selected>Select Course & Date First</option>
+                                                </select>
                                             </div>
                                         </div>
                                     </div>
 
-                                    <!-- CONTENT -->
+                                    <!-- Dynamic Attendance Content -->
                                     <div id="attendanceContent" style="display:none;">
 
-                                        <!-- SUMMARY -->
+                                        <!-- Summary KPI Cards -->
                                         <div class="attendance-summary">
                                             <div class="attendance-summary-card">
                                                 <span>Total Students</span>
@@ -1032,167 +1093,39 @@
                                             </div>
                                         </div>
 
-                                        <!-- STUDENT SEARCH -->
-                                        <div class="student-search-section">
-                                            <h5 class="student-search-title">Students</h5>
-                                            <div class="student-search-wrapper">
-                                                <input type="text" id="studentSearchInput" placeholder="Search student name or ID..." oninput="searchStudents()">
+                                        <!-- Toolbar (Search, Sort, Filters) -->
+                                        <div class="roster-toolbar">
+                                            <div class="roster-search-input">
+                                                <input type="text" id="studentSearchInput" placeholder="Search by name or ID" oninput="renderAttendanceTable()">
+                                              
+                                            </div>
+                                            <button type="button" class="sort-toggle-btn" id="sort-toggle-btn" onclick="toggleSort()">
+                                                <i class="feather-arrow-up" id="sort-icon"></i>
+                                                <span>Name: <span id="sort-label">A-Z</span></span>
+                                            </button>
+                                            <div class="roster-type-filters">
+                                                <button type="button" class="type-filter-btn" id="filter-btn-oto" onclick="toggleTypeFilter('One-To-One')">
+                                                    <i class="feather-user"></i> One-To-One <span class="filter-count-badge" id="badge-oto">0</span>
+                                                </button>
+                                                <button type="button" class="type-filter-btn" id="filter-btn-otm" onclick="toggleTypeFilter('One-To-Many')">
+                                                    <i class="feather-users"></i> One-To-Many <span class="filter-count-badge" id="badge-otm">0</span>
+                                                </button>
                                             </div>
                                         </div>
 
-                                        <!-- TABLE -->
+                                        <!-- Roster Table -->
                                         <div class="attendance-table-wrapper">
                                             <table class="attendance-table">
                                                 <thead>
                                                     <tr>
-                                                        <th style="width:28%;">Student</th>
-                                                        <th style="width:26%;">Course</th>
-                                                        <th style="width:20%;">Date</th>
-                                                        <th style="width:14%;">Status</th>
-                                                        <th style="width:12%; text-align:center;">Action</th>
+                                                        <th style="width:34%;">Student</th>
+                                                        <th style="width:24%;">Schedule / Batch</th>
+                                                        <th style="width:16%;">Date</th>
+                                                        <th style="width:13%; text-align:center;">Status</th>
+                                                        <th style="width:13%; text-align:center;">Action</th>
                                                     </tr>
                                                 </thead>
-                                                <tbody id="attendanceBody">
-                                                    <!-- MATHEMATICS STUDENTS -->
-                                                    <tr data-course="Mathematics" data-student-id="STU001">
-                                                        <td>
-                                                            <span class="student-name">Oliver Smith</span>
-                                                            <span class="student-id">STU001</span>
-                                                        </td>
-                                                        <td>Mathematics</td>
-                                                        <td class="row-date">--</td>
-                                                        <td>
-                                                            <span class="attendance-status attendance-yes clickable-status status" onclick="toggleAttendance(this)">Present</span>
-                                                        </td>
-                                                        <td style="text-align:center;">
-                                                            <div class="attendance-action-group">
-                                                                <button class="attendance-view-btn" onclick="viewAttendance(this)">View</button>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-
-                                                    <tr data-course="Mathematics" data-student-id="STU002">
-                                                        <td>
-                                                            <span class="student-name">Amelia Jones</span>
-                                                            <span class="student-id">STU002</span>
-                                                        </td>
-                                                        <td>Mathematics</td>
-                                                        <td class="row-date">--</td>
-                                                        <td>
-                                                            <span class="attendance-status attendance-yes clickable-status status" onclick="toggleAttendance(this)">Present</span>
-                                                        </td>
-                                                        <td style="text-align:center;">
-                                                            <div class="attendance-action-group">
-                                                                <button class="attendance-view-btn" onclick="viewAttendance(this)">View</button>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-
-                                                    <!-- PHYSICS STUDENTS -->
-                                                    <tr data-course="Physics" data-student-id="STU003">
-                                                        <td>
-                                                            <span class="student-name">Jack Williams</span>
-                                                            <span class="student-id">STU003</span>
-                                                        </td>
-                                                        <td>Physics</td>
-                                                        <td class="row-date">--</td>
-                                                        <td>
-                                                            <span class="attendance-status attendance-yes clickable-status status" onclick="toggleAttendance(this)">Present</span>
-                                                        </td>
-                                                        <td style="text-align:center;">
-                                                            <div class="attendance-action-group">
-                                                                <button class="attendance-view-btn" onclick="viewAttendance(this)">View</button>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-
-                                                    <tr data-course="Physics" data-student-id="STU004">
-                                                        <td>
-                                                            <span class="student-name">Charlotte Taylor</span>
-                                                            <span class="student-id">STU004</span>
-                                                        </td>
-                                                        <td>Physics</td>
-                                                        <td class="row-date">--</td>
-                                                        <td>
-                                                            <span class="attendance-status attendance-yes clickable-status status" onclick="toggleAttendance(this)">Present</span>
-                                                        </td>
-                                                        <td style="text-align:center;">
-                                                            <div class="attendance-action-group">
-                                                                <button class="attendance-view-btn" onclick="viewAttendance(this)">View</button>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-
-                                                    <!-- CHEMISTRY STUDENTS -->
-                                                    <tr data-course="Chemistry" data-student-id="STU005">
-                                                        <td>
-                                                            <span class="student-name">Benjamin Moore</span>
-                                                            <span class="student-id">STU005</span>
-                                                        </td>
-                                                        <td>Chemistry</td>
-                                                        <td class="row-date">--</td>
-                                                        <td>
-                                                            <span class="attendance-status attendance-yes clickable-status status" onclick="toggleAttendance(this)">Present</span>
-                                                        </td>
-                                                        <td style="text-align:center;">
-                                                            <div class="attendance-action-group">
-                                                                <button class="attendance-view-btn" onclick="viewAttendance(this)">View</button>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-
-                                                    <tr data-course="Chemistry" data-student-id="STU006">
-                                                        <td>
-                                                            <span class="student-name">Chloe Harris</span>
-                                                            <span class="student-id">STU006</span>
-                                                        </td>
-                                                        <td>Chemistry</td>
-                                                        <td class="row-date">--</td>
-                                                        <td>
-                                                            <span class="attendance-status attendance-yes clickable-status status" onclick="toggleAttendance(this)">Present</span>
-                                                        </td>
-                                                        <td style="text-align:center;">
-                                                            <div class="attendance-action-group">
-                                                                <button class="attendance-view-btn" onclick="viewAttendance(this)">View</button>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-
-                                                    <!-- COMPUTER SCIENCE STUDENTS -->
-                                                    <tr data-course="Computer Science" data-student-id="STU007">
-                                                        <td>
-                                                            <span class="student-name">Liam Jackson</span>
-                                                            <span class="student-id">STU007</span>
-                                                        </td>
-                                                        <td>Computer Science</td>
-                                                        <td class="row-date">--</td>
-                                                        <td>
-                                                            <span class="attendance-status attendance-yes clickable-status status" onclick="toggleAttendance(this)">Present</span>
-                                                        </td>
-                                                        <td style="text-align:center;">
-                                                            <div class="attendance-action-group">
-                                                                <button class="attendance-view-btn" onclick="viewAttendance(this)">View</button>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-
-                                                    <tr data-course="Computer Science" data-student-id="STU008">
-                                                        <td>
-                                                            <span class="student-name">Eleanor Wood</span>
-                                                            <span class="student-id">STU008</span>
-                                                        </td>
-                                                        <td>Computer Science</td>
-                                                        <td class="row-date">--</td>
-                                                        <td>
-                                                            <span class="attendance-status attendance-yes clickable-status status" onclick="toggleAttendance(this)">Present</span>
-                                                        </td>
-                                                        <td style="text-align:center;">
-                                                            <div class="attendance-action-group">
-                                                                <button class="attendance-view-btn" onclick="viewAttendance(this)">View</button>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
+                                                <tbody id="attendanceBody"></tbody>
                                             </table>
                                         </div>
 
@@ -1208,12 +1141,12 @@
         </div>
     </div>
 
-    <!-- VIEW ATTENDANCE MODAL -->
+    <!-- View Attendance Modal -->
     <div class="view-modal-overlay" id="viewModalOverlay">
         <div class="view-modal-box">
             <div class="view-modal-header">
                 <div>
-                    <h4 id="viewModalHeading">One Week Attendance</h4>
+                    <h4 id="viewModalHeading">Attendance History</h4>
                     <p id="viewStudentName">--</p>
                     <p id="viewStudentMeta">--</p>
                 </div>
@@ -1223,19 +1156,18 @@
             </div>
 
             <div class="view-modal-body">
-                <p class="view-history-note">
-                    One week attendance history (dynamically updated):
+                <p class="view-history-note" style="color: #64748b; font-size: 14.5px; margin-bottom: 14px;">
+                    Past 7-day attendance logs:
                 </p>
 
                 <table class="view-history-table">
                     <thead>
                         <tr>
-                            <th style="width:65%;">Date</th>
-                            <th style="width:35%; text-align:center;">Status</th>
+                            <th style="width:60%;">Date</th>
+                            <th style="width:40%; text-align:center;">Status</th>
                         </tr>
                     </thead>
-                    <tbody id="viewHistoryBody">
-                    </tbody>
+                    <tbody id="viewHistoryBody"></tbody>
                 </table>
             </div>
         </div>
@@ -1338,6 +1270,7 @@
         </div>
     </footer>
 
+    <!-- Back to Top Arrow Button -->
     <div class="rbt-progress-parent">
         <svg class="rbt-back-circle svg-inner" width="100%" height="100%" viewBox="-1 -1 102 102">
             <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
@@ -1349,7 +1282,7 @@
         <div class="contact-item call-item">
             <div class="contact-label call-label">Talk To Our Experts</div>
             <a href="tel:+919876543210" class="contact-button call-button" aria-label="Call us">
-                <i class="fa fa-phone"></i>
+                <i class="feather-phone"></i>
             </a>
         </div>
         <div class="contact-item whatsapp-item">
@@ -1361,7 +1294,6 @@
         </div>
     </div>
 
-
     <!-- JAVASCRIPT -->
     <script src="assets/js/vendor/jquery.js"></script>
     <script src="assets/js/vendor/bootstrap.min.js"></script>
@@ -1369,9 +1301,82 @@
     <script src="assets/js/main.js"></script>
 
     <script>
-        /* =========================================
-           DEFAULT DATE (TODAY)
-        ========================================= */
+        // Exact 1:1 Class Schedule Datasets mapped to student roster
+        const studentDatasets = {
+            'mathematics': [
+                { id: 'LSE-STD-2024-001', name: 'Oliver Smith', type: 'One-To-One', time: 'Monday • 10:00 AM - 11:30 AM' },
+                { id: 'LSE-STD-2024-029', name: 'Leo Roberts', type: 'One-To-One', time: 'Monday • 10:00 AM - 11:30 AM' },
+                { id: 'LSE-STD-2024-015', name: 'George Taylor', type: 'One-To-Many', time: 'Monday • 02:00 PM - 03:30 PM' },
+                { id: 'LSE-STD-2024-060', name: 'Ella Hall', type: 'One-To-Many', time: 'Monday • 02:00 PM - 03:30 PM' },
+                { id: 'LSE-STD-2024-056', name: 'Henry Green', type: 'One-To-One', time: 'Monday • 02:00 PM - 03:30 PM' },
+                { id: 'LSE-STD-2024-004', name: 'Amelia Jones', type: 'One-To-Many', time: 'Tuesday • 10:00 AM - 11:30 AM' },
+                { id: 'LSE-STD-2024-038', name: 'Lucas Walker', type: 'One-To-Many', time: 'Tuesday • 10:00 AM - 11:30 AM' },
+                { id: 'LSE-STD-2024-007', name: 'Harry Wilson', type: 'One-To-One', time: 'Wednesday • 10:00 AM - 11:30 AM' },
+                { id: 'LSE-STD-2024-042', name: 'Grace Robinson', type: 'One-To-One', time: 'Wednesday • 10:00 AM - 11:30 AM' },
+                { id: 'LSE-STD-2024-047', name: 'Arthur Wright', type: 'One-To-Many', time: 'Wednesday • 04:00 PM - 05:30 PM' },
+                { id: 'LSE-STD-2024-012', name: 'Sophia Brown', type: 'One-To-Many', time: 'Thursday • 10:00 AM - 11:30 AM' },
+                { id: 'LSE-STD-2024-022', name: 'Noah Evans', type: 'One-To-Many', time: 'Thursday • 10:00 AM - 11:30 AM' },
+                { id: 'LSE-STD-2024-018', name: 'Isabella Davies', type: 'One-To-One', time: 'Friday • 10:00 AM - 11:30 AM' },
+                { id: 'LSE-STD-2024-025', name: 'Mia Thomas', type: 'One-To-Many', time: 'Saturday • 10:00 AM - 11:30 AM' },
+                { id: 'LSE-STD-2024-033', name: 'Ava Johnson', type: 'One-To-Many', time: 'Saturday • 10:00 AM - 11:30 AM' },
+                { id: 'LSE-STD-2024-051', name: 'Freya Scott', type: 'One-To-Many', time: 'Saturday • 10:00 AM - 11:30 AM' }
+            ],
+            'physics': [
+                { id: 'LSE-STD-2024-005', name: 'Charlotte Taylor', type: 'One-To-Many', time: 'Monday • 02:00 PM - 03:30 PM' },
+                { id: 'LSE-STD-2024-023', name: 'Emily Edwards', type: 'One-To-Many', time: 'Monday • 02:00 PM - 03:30 PM' },
+                { id: 'LSE-STD-2024-046', name: 'Alfie Phillips', type: 'One-To-Many', time: 'Monday • 02:00 PM - 03:30 PM' },
+                { id: 'LSE-STD-2024-002', name: 'Jack Williams', type: 'One-To-One', time: 'Tuesday • 02:00 PM - 03:30 PM' },
+                { id: 'LSE-STD-2024-041', name: 'Ruby Carter', type: 'One-To-One', time: 'Tuesday • 02:00 PM - 03:30 PM' },
+                { id: 'LSE-STD-2024-032', name: 'Evie Campbell', type: 'One-To-Many', time: 'Tuesday • 05:00 PM - 06:30 PM' },
+                { id: 'LSE-STD-2024-059', name: 'Florence Cook', type: 'One-To-Many', time: 'Tuesday • 05:00 PM - 06:30 PM' },
+                { id: 'LSE-STD-2024-009', name: 'Ethan Clarke', type: 'One-To-Many', time: 'Wednesday • 02:00 PM - 03:30 PM' },
+                { id: 'LSE-STD-2024-050', name: 'Alice Morris', type: 'One-To-Many', time: 'Wednesday • 02:00 PM - 03:30 PM' },
+                { id: 'LSE-STD-2024-014', name: 'Harper White', type: 'One-To-One', time: 'Thursday • 02:00 PM - 03:30 PM' },
+                { id: 'LSE-STD-2024-055', name: 'Joshua Murphy', type: 'One-To-One', time: 'Thursday • 02:00 PM - 03:30 PM' },
+                { id: 'LSE-STD-2024-019', name: 'Freddie Hughes', type: 'One-To-Many', time: 'Friday • 02:00 PM - 03:30 PM' },
+                { id: 'LSE-STD-2024-037', name: 'Theo Mitchell', type: 'One-To-Many', time: 'Friday • 02:00 PM - 03:30 PM' },
+                { id: 'LSE-STD-2024-028', name: 'Archie Turner', type: 'One-To-One', time: 'Saturday • 02:00 PM - 03:30 PM' }
+            ],
+            'chemistry': [
+                { id: 'LSE-STD-2024-003', name: 'Benjamin Moore', type: 'One-To-One', time: 'Monday • 04:00 PM - 05:30 PM' },
+                { id: 'LSE-STD-2024-045', name: 'Phoebe Gray', type: 'One-To-One', time: 'Monday • 04:00 PM - 05:30 PM' },
+                { id: 'LSE-STD-2024-008', name: 'Chloe Harris', type: 'One-To-Many', time: 'Tuesday • 04:00 PM - 05:30 PM' },
+                { id: 'LSE-STD-2024-026', name: 'Hannah Baker', type: 'One-To-Many', time: 'Tuesday • 04:00 PM - 05:30 PM' },
+                { id: 'LSE-STD-2024-040', name: 'Max Bennett', type: 'One-To-Many', time: 'Tuesday • 06:00 PM - 07:30 PM' },
+                { id: 'LSE-STD-2024-049', name: 'Logan Price', type: 'One-To-Many', time: 'Tuesday • 06:00 PM - 07:30 PM' },
+                { id: 'LSE-STD-2024-017', name: 'Zoe Lee', type: 'One-To-One', time: 'Wednesday • 04:00 PM - 05:30 PM' },
+                { id: 'LSE-STD-2024-013', name: 'Alexander King', type: 'One-To-Many', time: 'Thursday • 04:00 PM - 05:30 PM' },
+                { id: 'LSE-STD-2024-036', name: 'Lily Ward', type: 'One-To-Many', time: 'Thursday • 04:00 PM - 05:30 PM' },
+                { id: 'LSE-STD-2024-021', name: 'Daniel Adams', type: 'One-To-Many', time: 'Friday • 04:00 PM - 05:30 PM' },
+                { id: 'LSE-STD-2024-054', name: 'Sienna Russell', type: 'One-To-Many', time: 'Friday • 04:00 PM - 05:30 PM' },
+                { id: 'LSE-STD-2024-031', name: 'Samuel Bell', type: 'One-To-One', time: 'Saturday • 04:00 PM - 05:30 PM' }
+            ],
+            'computer-science': [
+                { id: 'LSE-STD-2024-010', name: 'Liam Jackson', type: 'One-To-One', time: 'Monday • 01:00 PM - 02:30 PM' },
+                { id: 'LSE-STD-2024-058', name: 'Nathan Kelly', type: 'One-To-One', time: 'Monday • 01:00 PM - 02:30 PM' },
+                { id: 'LSE-STD-2024-015', name: 'Eleanor Wood', type: 'One-To-Many', time: 'Tuesday • 03:00 PM - 04:30 PM' },
+                { id: 'LSE-STD-2024-052', name: 'Gabriel Butler', type: 'One-To-Many', time: 'Tuesday • 03:00 PM - 04:30 PM' },
+                { id: 'LSE-STD-2024-062', name: 'Caleb Foster', type: 'One-To-Many', time: 'Tuesday • 03:00 PM - 04:30 PM' },
+                { id: 'LSE-STD-2024-024', name: 'Edward Jenkins', type: 'One-To-One', time: 'Wednesday • 01:00 PM - 02:30 PM' },
+                { id: 'LSE-STD-2024-030', name: 'Jessica Perry', type: 'One-To-Many', time: 'Thursday • 03:00 PM - 04:30 PM' },
+                { id: 'LSE-STD-2024-057', name: 'Maya Bailey', type: 'One-To-Many', time: 'Thursday • 03:00 PM - 04:30 PM' },
+                { id: 'LSE-STD-2024-064', name: 'Isaac Henderson', type: 'One-To-Many', time: 'Thursday • 03:00 PM - 04:30 PM' },
+                { id: 'LSE-STD-2024-043', name: 'Isabelle Brooks', type: 'One-To-One', time: 'Friday • 01:00 PM - 02:30 PM' },
+                { id: 'LSE-STD-2024-066', name: 'Dylan Powell', type: 'One-To-One', time: 'Friday • 01:00 PM - 02:30 PM' },
+                { id: 'LSE-STD-2024-063', name: 'Lola Patterson', type: 'One-To-One', time: 'Saturday • 01:00 PM - 02:30 PM' },
+                { id: 'LSE-STD-2024-034', name: 'Toby Coleman', type: 'One-To-Many', time: 'Saturday • 03:00 PM - 04:30 PM' },
+                { id: 'LSE-STD-2024-061', name: 'Zara Simmons', type: 'One-To-Many', time: 'Saturday • 03:00 PM - 04:30 PM' },
+                { id: 'LSE-STD-2024-065', name: 'Heidi Reynolds', type: 'One-To-Many', time: 'Saturday • 03:00 PM - 04:30 PM' }
+            ]
+        };
+
+        const dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+        const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+        const attendanceStatusState = {};
+
+        let currentTypeFilter = 'all';
+        let sortAscending = true;
+
         const dateInput = document.getElementById("attendanceDate");
         const today = new Date();
         const yyyy = today.getFullYear();
@@ -1379,145 +1384,252 @@
         const dd = String(today.getDate()).padStart(2, "0");
         dateInput.value = `${yyyy}-${mm}-${dd}`;
 
-        function updateDates() {
+        function getFormattedCurrentDate() {
             const val = dateInput.value;
-            if (!val) return;
+            if (!val) return "--";
             const parts = val.split("-");
-            const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-            const formatted = `${parts[2]} ${months[parseInt(parts[1], 10) - 1]} ${parts[0]}`;
-
-            document.querySelectorAll("#attendanceBody .row-date").forEach(function (cell) {
-                cell.textContent = formatted;
-            });
+            return `${parts[2]} ${monthNames[parseInt(parts[1], 10) - 1]} ${parts[0]}`;
         }
 
-        dateInput.addEventListener("change", updateDates);
-        updateDates();
-
-        /* =========================================
-           TOGGLE ATTENDANCE
-        ========================================= */
-        function toggleAttendance(el) {
-            if (el.textContent.trim() === "Present") {
-                el.textContent = "Absent";
-                el.classList.remove("attendance-yes");
-                el.classList.add("attendance-no");
-            } else {
-                el.textContent = "Present";
-                el.classList.remove("attendance-no");
-                el.classList.add("attendance-yes");
-            }
-            updateSummary();
+        function getSelectedDayName() {
+            const val = dateInput.value;
+            if (!val) return "";
+            const d = new Date(val + "T00:00:00");
+            return dayNames[d.getDay()];
         }
 
-        /* =========================================
-           STUDENT SEARCH
-        ========================================= */
-        function searchStudents() {
-            const searchValue = document.getElementById("studentSearchInput").value.toLowerCase().trim();
-            const selectedCourse = document.getElementById("courseFilter").value;
-            const rows = document.querySelectorAll("#attendanceBody tr");
-
-            rows.forEach(function (row) {
-                const course = row.getAttribute("data-course");
-                const studentName = row.querySelector(".student-name").textContent.trim().toLowerCase();
-                const studentId = row.querySelector(".student-id").textContent.trim().toLowerCase();
-
-                const matchesCourse = (course === selectedCourse);
-                const matchesSearch = studentName.includes(searchValue) || studentId.includes(searchValue);
-
-                if (matchesCourse && matchesSearch) {
-                    row.style.display = "";
-                } else {
-                    row.style.display = "none";
-                }
-            });
-
-            updateSummary();
-        }
-
-        /* =========================================
-           COURSE FILTER
-        ========================================= */
-        function filterStudents() {
-            const selected = document.getElementById("courseFilter").value;
+        function updateAvailableBatches() {
+            const course = document.getElementById("courseFilter").value;
+            const batchSelect = document.getElementById("batchTimeFilter");
             const content = document.getElementById("attendanceContent");
+            const selectedDay = getSelectedDayName();
 
-            if (!selected) {
+            content.style.display = "none";
+            batchSelect.innerHTML = "";
+
+            if (!course || !studentDatasets[course] || !selectedDay) {
+                batchSelect.innerHTML = `<option value="" disabled selected>Select Course & Date First</option>`;
+                return;
+            }
+
+            const allStudentsInCourse = studentDatasets[course];
+
+            // Filter all students who have class on the selected Day of the Week
+            const dayStudents = allStudentsInCourse.filter(s => {
+                const parts = s.time.split("•");
+                const dayPart = parts[0].trim();
+                return dayPart.toLowerCase() === selectedDay.toLowerCase();
+            });
+
+            if (dayStudents.length === 0) {
+                batchSelect.innerHTML = `<option value="" disabled selected>No Sessions on ${selectedDay}</option>`;
+                return;
+            }
+
+            // Extract all unique time slots for this specific day
+            const uniqueSlots = [...new Set(dayStudents.map(s => {
+                const parts = s.time.split("•");
+                return parts[1] ? parts[1].trim() : s.time;
+            }))];
+
+            batchSelect.innerHTML = `<option value="" disabled selected>Select Time Session (${selectedDay})</option>`;
+            
+            uniqueSlots.forEach(slot => {
+                const count = dayStudents.filter(s => s.time.includes(slot)).length;
+                const opt = document.createElement("option");
+                opt.value = slot;
+                opt.textContent = `${slot} (${count} student${count > 1 ? 's' : ''})`;
+                batchSelect.appendChild(opt);
+            });
+        }
+
+        function toggleTypeFilter(type) {
+            if (currentTypeFilter.toLowerCase() === type.toLowerCase()) {
+                currentTypeFilter = 'all';
+            } else {
+                currentTypeFilter = type;
+            }
+            renderAttendanceTable();
+        }
+
+        function toggleSort() {
+            sortAscending = !sortAscending;
+            document.getElementById('sort-label').innerText = sortAscending ? 'A-Z' : 'Z-A';
+            document.getElementById('sort-icon').className = sortAscending ? 'feather-arrow-up' : 'feather-arrow-down';
+            renderAttendanceTable();
+        }
+
+        function renderAttendanceTable() {
+            const course = document.getElementById("courseFilter").value;
+            const selectedSlot = document.getElementById("batchTimeFilter").value;
+            const content = document.getElementById("attendanceContent");
+            const searchVal = document.getElementById("studentSearchInput").value.toLowerCase().trim();
+            const tbody = document.getElementById("attendanceBody");
+            const selectedDay = getSelectedDayName();
+
+            if (!course || !selectedSlot || !selectedDay) {
                 content.style.display = "none";
                 return;
             }
 
             content.style.display = "block";
-            document.getElementById("studentSearchInput").value = "";
 
-            const rows = document.querySelectorAll("#attendanceBody tr");
-            rows.forEach(function (row) {
-                const course = row.getAttribute("data-course");
-                if (course === selected) {
-                    row.style.display = "";
-                } else {
-                    row.style.display = "none";
+            // Filter students by Course, Day of Week, and Selected Time Slot (includes BOTH One-To-One and One-To-Many)
+            const baseList = studentDatasets[course].filter(s => {
+                const parts = s.time.split("•");
+                const dayPart = parts[0].trim();
+                const timePart = parts[1] ? parts[1].trim() : "";
+                return (dayPart.toLowerCase() === selectedDay.toLowerCase()) && (timePart === selectedSlot);
+            });
+
+            // Update badge counts for this exact session
+            const otoCount = baseList.filter(s => s.type.toLowerCase() === 'one-to-one').length;
+            const otmCount = baseList.filter(s => s.type.toLowerCase() === 'one-to-many').length;
+            document.getElementById('badge-oto').textContent = otoCount;
+            document.getElementById('badge-otm').textContent = otmCount;
+
+            // Highlight active filter pill
+            document.getElementById('filter-btn-oto').classList.toggle('active', currentTypeFilter.toLowerCase() === 'one-to-one');
+            document.getElementById('filter-btn-otm').classList.toggle('active', currentTypeFilter.toLowerCase() === 'one-to-many');
+
+            let filteredList = [...baseList];
+
+            if (currentTypeFilter !== 'all') {
+                filteredList = filteredList.filter(s => s.type.toLowerCase() === currentTypeFilter.toLowerCase());
+            }
+
+            if (searchVal !== "") {
+                filteredList = filteredList.filter(s => s.name.toLowerCase().includes(searchVal) || s.id.toLowerCase().includes(searchVal));
+            }
+
+            filteredList.sort((a, b) => sortAscending ? a.name.localeCompare(b.name) : b.name.localeCompare(a.name));
+
+            tbody.innerHTML = "";
+            const formattedDate = getFormattedCurrentDate();
+
+            if (filteredList.length === 0) {
+                tbody.innerHTML = `<tr><td colspan="5" style="text-align:center; padding:32px 20px; color:#94a3b8;">
+                    <i class="feather-search" style="font-size:20px; display:block; margin-bottom:8px;"></i>
+                    No students match the current filters or search query.
+                </td></tr>`;
+                updateSummary();
+                return;
+            }
+
+            filteredList.forEach(student => {
+                if (!attendanceStatusState[student.id]) {
+                    attendanceStatusState[student.id] = "Present";
                 }
+                const currentStatus = attendanceStatusState[student.id];
+                const isPresent = (currentStatus === "Present");
+                const isOneToOne = (student.type.toLowerCase() === "one-to-one");
+
+                const tr = document.createElement("tr");
+                tr.setAttribute("data-student-id", student.id);
+                tr.setAttribute("data-student-name", student.name);
+                tr.setAttribute("data-course", course.charAt(0).toUpperCase() + course.slice(1));
+                tr.setAttribute("data-batch", student.time);
+
+                tr.innerHTML = `
+                    <td>
+                        <span class="student-name">${student.name}</span>
+                        <div class="student-meta-tags">
+                            <span class="student-id">${student.id}</span>
+                            <span class="type-pill ${isOneToOne ? 'type-one-to-one' : 'type-one-to-many'}">
+                                ${isOneToOne ? '<i class="feather-user"></i>' : '<i class="feather-users"></i>'} ${student.type}
+                            </span>
+                        </div>
+                    </td>
+                    <td>
+                        <span class="time-badge"><i class="feather-clock"></i> ${student.time}</span>
+                    </td>
+                    <td class="row-date">${formattedDate}</td>
+                    <td style="text-align:center;">
+                        <span class="attendance-status ${isPresent ? 'attendance-yes' : 'attendance-no'}" onclick="toggleAttendance(this, '${student.id}')">
+                            ${currentStatus}
+                        </span>
+                    </td>
+                    <td style="text-align:center;">
+                        <div class="attendance-action-group">
+                            <button type="button" class="attendance-view-btn" onclick="viewAttendance(this)">
+                                <i class="feather-eye"></i> View
+                            </button>
+                        </div>
+                    </td>
+                `;
+
+                tbody.appendChild(tr);
             });
 
             updateSummary();
         }
 
-        /* =========================================
-           ONE WEEK ATTENDANCE (DYNAMIC 7-DAY HISTORY)
-        ========================================= */
-        const dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-        const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-
-        function formatDateDisplay(d) {
-            const day = String(d.getDate()).padStart(2, "0");
-            const month = monthNames[d.getMonth()];
-            const year = d.getFullYear();
-            const dayName = dayNames[d.getDay()];
-            return {
-                dateStr: `${day} ${month} ${year}`,
-                dayName: dayName
-            };
+        function toggleAttendance(el, studentId) {
+            if (el.textContent.trim() === "Present") {
+                el.textContent = "Absent";
+                el.classList.remove("attendance-yes");
+                el.classList.add("attendance-no");
+                attendanceStatusState[studentId] = "Absent";
+            } else {
+                el.textContent = "Present";
+                el.classList.remove("attendance-no");
+                el.classList.add("attendance-yes");
+                attendanceStatusState[studentId] = "Present";
+            }
+            updateSummary();
         }
 
-        const studentPastWeekMap = {
-            STU001: ["Present", "Present", "Present", "Absent", "Present", "Present"],
-            STU002: ["Present", "Absent", "Present", "Present", "Present", "Present"],
-            STU003: ["Present", "Present", "Absent", "Present", "Present", "Absent"],
-            STU004: ["Present", "Present", "Present", "Present", "Absent", "Present"],
-            STU005: ["Absent", "Present", "Present", "Present", "Present", "Present"],
-            STU006: ["Present", "Present", "Present", "Present", "Present", "Present"],
-            STU007: ["Present", "Present", "Present", "Absent", "Present", "Present"],
-            STU008: ["Present", "Absent", "Present", "Present", "Present", "Present"]
-        };
+        function updateSummary() {
+            const rows = document.querySelectorAll("#attendanceBody tr");
+            let present = 0;
+            let absent = 0;
+
+            rows.forEach(row => {
+                const statusEl = row.querySelector(".attendance-status");
+                if (!statusEl) return;
+                const status = statusEl.textContent.trim();
+                if (status === "Present") present++;
+                if (status === "Absent") absent++;
+            });
+
+            const total = present + absent;
+            document.getElementById("totalStudents").textContent = total;
+            document.getElementById("presentStudents").textContent = present;
+            document.getElementById("absentStudents").textContent = absent;
+        }
 
         function viewAttendance(button) {
             const row = button.closest("tr");
             const studentId = row.getAttribute("data-student-id");
-            const name = row.querySelector(".student-name").textContent.trim();
-            const course = row.children[1].textContent.trim();
-            const todayStatus = row.querySelector(".status").textContent.trim();
+            const name = row.getAttribute("data-student-name");
+            const course = row.getAttribute("data-course");
+            const batch = row.getAttribute("data-batch");
+            const todayStatus = row.querySelector(".attendance-status").textContent.trim();
 
             document.getElementById("viewStudentName").textContent = `${name} (${studentId})`;
-            document.getElementById("viewStudentMeta").textContent = course;
+            document.getElementById("viewStudentMeta").textContent = `${course} • ${batch}`;
 
             const selectedDateVal = dateInput.value;
             const baseDate = selectedDateVal ? new Date(selectedDateVal + "T00:00:00") : new Date();
 
             const oneWeekRecords = [];
-            const pastStatuses = studentPastWeekMap[studentId] || ["Present", "Present", "Present", "Absent", "Present", "Present"];
+            const hash = studentId.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
 
             for (let i = 0; i < 7; i++) {
                 const curDate = new Date(baseDate);
                 curDate.setDate(baseDate.getDate() - i);
-                const dateInfo = formatDateDisplay(curDate);
-                const isToday = (i === 0);
-                const status = isToday ? todayStatus : (pastStatuses[(i - 1) % pastStatuses.length] || "Present");
+                
+                const dStr = `${String(curDate.getDate()).padStart(2, '0')} ${monthNames[curDate.getMonth()]} ${curDate.getFullYear()}`;
+                const dName = dayNames[curDate.getDay()];
+                
+                let status = todayStatus;
+                if (i > 0) {
+                    status = ((hash + i) % 5 === 0) ? "Absent" : "Present";
+                }
 
                 oneWeekRecords.push({
-                    date: dateInfo.dateStr,
-                    dayName: dateInfo.dayName,
+                    date: dStr,
+                    dayName: dName,
                     status: status
                 });
             }
@@ -1530,26 +1642,21 @@
             const body = document.getElementById("viewHistoryBody");
             body.innerHTML = "";
 
-            if (!records || records.length === 0) {
-                body.innerHTML = "<tr><td colspan='2' style='text-align:center; color:#888; padding:24px;'>No attendance records found for this week.</td></tr>";
-                return;
-            }
-
-            records.forEach(function (record) {
+            records.forEach(record => {
                 const tr = document.createElement("tr");
-
-                const statusClass = record.status === "Present" ? "attendance-yes" : "attendance-no";
+                const isPresent = (record.status === "Present");
 
                 tr.innerHTML = `
                     <td>
                         <span style="font-weight: 600; color: #1e293b;">${record.date}</span>
-                        <span style="color: #64748b; font-size: 14px; display: block; margin-top: 2px;">${record.dayName}</span>
+                        <span style="color: #64748b; font-size: 13.5px; display: block; margin-top: 2px;">${record.dayName}</span>
                     </td>
                     <td style="text-align:center;">
-                        <span class="attendance-status ${statusClass}">${record.status}</span>
+                        <span class="attendance-status ${isPresent ? 'attendance-yes' : 'attendance-no'}" style="cursor: default;">
+                            ${record.status}
+                        </span>
                     </td>
                 `;
-
                 body.appendChild(tr);
             });
         }
@@ -1559,47 +1666,9 @@
         }
 
         document.getElementById("viewModalOverlay").addEventListener("click", function (e) {
-            if (e.target === this) {
-                closeViewModal();
-            }
+            if (e.target === this) closeViewModal();
         });
 
-        /* =========================================
-           UPDATE SUMMARY
-        ========================================= */
-        function updateSummary() {
-            const rows = document.querySelectorAll("#attendanceBody tr");
-            let present = 0;
-            let absent = 0;
-
-            rows.forEach(function (row) {
-                if (row.style.display === "none") return;
-                const statusEl = row.querySelector(".status");
-                if (!statusEl) return;
-                const status = statusEl.textContent.trim();
-                if (status === "Present") {
-                    present++;
-                } else {
-                    absent++;
-                }
-            });
-
-            const total = present + absent;
-            const totalEl = document.getElementById("totalStudents");
-            if (totalEl) totalEl.textContent = total;
-
-            const presEl = document.getElementById("presentStudents");
-            if (presEl) presEl.textContent = present;
-
-            const absEl = document.getElementById("absentStudents");
-            if (absEl) absEl.textContent = absent;
-        }
-
-        updateSummary();
-
-        /* =========================================
-           LOGIN DROPDOWN
-        ========================================= */
         const loginButton = document.querySelector(".login-dropdown-btn");
         const loginDropdown = document.querySelector(".login-dropdown");
 
@@ -1619,20 +1688,22 @@
         function saveAttendance() {
             alert("Attendance saved successfully!");
         }
-    </script>
 
-    <script>
         document.addEventListener("DOMContentLoaded", function () {
+            const savedProfile = JSON.parse(localStorage.getItem("lse_tutor_profile"));
+            const welcomeEl = document.getElementById("sidebar-welcome-text");
+            if (savedProfile && savedProfile.firstName && welcomeEl) {
+                welcomeEl.textContent = `Welcome, ${savedProfile.firstName}`;
+            }
+
             const contactItems = document.querySelectorAll(".contact-item");
-            contactItems.forEach(function (item) {
+            contactItems.forEach(item => {
                 const button = item.querySelector(".contact-button");
                 if (!button) return;
                 button.addEventListener("click", function () {
                     if (window.innerWidth <= 767) {
-                        contactItems.forEach(function (otherItem) {
-                            if (otherItem !== item) {
-                                otherItem.classList.remove("show-label");
-                            }
+                        contactItems.forEach(otherItem => {
+                            if (otherItem !== item) otherItem.classList.remove("show-label");
                         });
                         item.classList.toggle("show-label");
                     }
@@ -1641,14 +1712,10 @@
 
             document.addEventListener("click", function (event) {
                 if (!event.target.closest(".floating-contact")) {
-                    contactItems.forEach(function (item) {
-                        item.classList.remove("show-label");
-                    });
+                    contactItems.forEach(item => item.classList.remove("show-label"));
                 }
             });
         });
     </script>
-
 </body>
-
 </html>
