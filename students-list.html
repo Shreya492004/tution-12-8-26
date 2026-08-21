@@ -154,21 +154,10 @@
             gap: 8px;
         }
 
-        /* Dynamic Theme Accent Bars */
         .theme-math .header-left h3 i { color: #6c4df6; }
         .theme-math .total-counter-pill { background: #6c4df6; box-shadow: 0 4px 12px rgba(108, 77, 246, 0.25); }
         .theme-math .type-filter-btn.active { background: #6c4df6 !important; border-color: #6c4df6 !important; }
         .theme-math .sort-toggle-btn { border-color: #e0dbff; color: #6c4df6; }
-
-        .theme-physics .header-left h3 i { color: #0284c7; }
-        .theme-physics .total-counter-pill { background: #0284c7; box-shadow: 0 4px 12px rgba(2, 132, 199, 0.25); }
-        .theme-physics .type-filter-btn.active { background: #0284c7 !important; border-color: #0284c7 !important; }
-        .theme-physics .sort-toggle-btn { border-color: #bae6fd; color: #0284c7; }
-
-        .theme-chemistry .header-left h3 i { color: #d97706; }
-        .theme-chemistry .total-counter-pill { background: #d97706; box-shadow: 0 4px 12px rgba(217, 119, 6, 0.25); }
-        .theme-chemistry .type-filter-btn.active { background: #d97706 !important; border-color: #d97706 !important; }
-        .theme-chemistry .sort-toggle-btn { border-color: #fde68a; color: #d97706; }
 
         .total-counter-pill {
             color: #ffffff;
@@ -181,7 +170,7 @@
             gap: 6px;
         }
 
-        /* Toolbar Rows */
+        /* Toolbar Rows - Equal Widths for Dropdown & Search Bar */
         .toolbar-row {
             display: flex;
             flex-wrap: wrap;
@@ -190,11 +179,10 @@
             margin-bottom: 12px;
         }
 
-        /* Clean Single-Border Native Dropdown Control */
         .course-dropdown-wrapper {
             position: relative;
-            width: 190px;
-            flex-shrink: 0;
+            flex: 1;
+            min-width: 220px;
         }
 
         .course-select-dropdown {
@@ -393,15 +381,21 @@
             border: 1px solid #bae6fd;
         }
 
-        .time-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            padding: 5px 12px;
-            border-radius: 6px;
-            background: #f5f5f7;
-            color: #475569 !important;
+        /* Two-Line Time Layout (Day & Time Separated) */
+        .time-container {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+        .time-day {
+            font-weight: 600;
+            color: #192335;
             font-size: 14px !important;
+        }
+        .time-slot {
+            font-weight: 400;
+            color: #64748b;
+            font-size: 13px !important;
         }
 
         .action-view-btn {
@@ -706,7 +700,7 @@
                                         <div class="rbt-default-sidebar-wrapper">
 
                                             <div class="section-title mb--20">
-                                                <h6 class="rbt-title-style-2" id="sidebar-welcome-text">Welcome, Ruben</h6>
+                                                <h6 class="rbt-title-style-2" id="sidebar-welcome-text">Welcome, Lily</h6>
                                             </div>
 
                                             <nav class="mainmenu-nav">
@@ -790,7 +784,7 @@
 
                                         <div class="static-roster-header">
                                             <div class="header-left">
-                                                <h3 id="roster-heading"><i class="feather-book"></i> Mathematics Student List</h3>
+                                                <h3 id="roster-heading"><i class="feather-book"></i> Year 5 English — Core English Skills + Reading Comprehension Student List</h3>
                                             </div>
                                             <div class="header-right">
                                                 <div class="total-counter-pill" id="total-counter-bg">
@@ -803,10 +797,10 @@
                                         <div class="toolbar-row">
                                             <div class="course-dropdown-wrapper">
                                                 <select id="course-dropdown" class="course-select-dropdown no-selectpicker" onchange="switchCourse()">
-                                                 
-                                                  <option value="mathematics">Mathematics</option>
-                                                    <option value="physics">Physics</option>
-                                                    <option value="chemistry">Chemistry</option>
+                                                     <option value="" selected disabled>Select Course</option>
+                                                    <option value="year5-english" >Year 5 English — Core English Skills + Reading Comprehension</option>
+                                                    <option value="year6-reading">Year 6 Reading Comprehension</option>
+                                                    <option value="year6-iseb">Year 6 ISEB &amp; Grammar School Multiple-Choice Preparation</option>
                                                 </select>
                                             </div>
 
@@ -1073,58 +1067,64 @@
     <script src="assets/js/main.js"></script>
 
     <script>
+        const courseTitles = {
+            'year5-english': 'Year 5 English — Core English Skills + Reading Comprehension',
+            'year6-reading': 'Year 6 Reading Comprehension',
+            'year6-iseb': 'Year 6 ISEB & Grammar School Multiple-Choice Preparation'
+        };
+
         const studentDatasets = {
-            'mathematics': [
-                { id: 'LSE-STD-2024-001', name: 'Oliver Smith', type: 'One-To-One', time: 'Monday • 10:00 AM - 11:30 AM', assignedDate: '2024-03-28', joinDate: '2024-03-28', dob: '14 Mar 2010', gender: 'Male', attended: '26 Classes', missed: '1 Class' },
-                { id: 'LSE-STD-2024-004', name: 'Amelia Jones', type: 'One-To-Many', time: 'Tuesday • 10:00 AM - 11:30 AM', assignedDate: '2024-03-25', joinDate: '2024-03-25', dob: '22 Aug 2011', gender: 'Female', attended: '24 Classes', missed: '2 Classes' },
-                { id: 'LSE-STD-2024-007', name: 'Harry Wilson', type: 'One-To-One', time: 'Wednesday • 10:00 AM - 11:30 AM', assignedDate: '2024-01-20', joinDate: '2024-01-20', dob: '05 Nov 2009', gender: 'Male', attended: '25 Classes', missed: '0 Classes' },
-                { id: 'LSE-STD-2024-012', name: 'Sophia Brown', type: 'One-To-Many', time: 'Thursday • 10:00 AM - 11:30 AM', assignedDate: '2024-02-01', joinDate: '2024-02-01', dob: '18 Jun 2010', gender: 'Female', attended: '22 Classes', missed: '0 Classes' },
-                { id: 'LSE-STD-2024-015', name: 'George Taylor', type: 'One-To-Many', time: 'Monday • 02:00 PM - 03:30 PM', assignedDate: '2024-02-05', joinDate: '2024-02-05', dob: '11 Dec 2010', gender: 'Male', attended: '20 Classes', missed: '3 Classes' },
-                { id: 'LSE-STD-2024-018', name: 'Isabella Davies', type: 'One-To-One', time: 'Friday • 10:00 AM - 11:30 AM', assignedDate: '2024-03-30', joinDate: '2024-03-30', dob: '03 Feb 2011', gender: 'Female', attended: '21 Classes', missed: '1 Class' },
-                { id: 'LSE-STD-2024-022', name: 'Noah Evans', type: 'One-To-Many', time: 'Thursday • 10:00 AM - 11:30 AM', assignedDate: '2024-01-15', joinDate: '2024-01-15', dob: '19 Sep 2010', gender: 'Male', attended: '27 Classes', missed: '0 Classes' },
-                { id: 'LSE-STD-2024-025', name: 'Mia Thomas', type: 'One-To-Many', time: 'Saturday • 10:00 AM - 11:30 AM', assignedDate: '2024-02-12', joinDate: '2024-02-12', dob: '08 May 2011', gender: 'Female', attended: '23 Classes', missed: '1 Class' },
-                { id: 'LSE-STD-2024-029', name: 'Leo Roberts', type: 'One-To-One', time: 'Monday • 10:00 AM - 11:30 AM', assignedDate: '2024-03-01', joinDate: '2024-03-01', dob: '14 Oct 2009', gender: 'Male', attended: '25 Classes', missed: '1 Class' },
-                { id: 'LSE-STD-2024-033', name: 'Ava Johnson', type: 'One-To-Many', time: 'Saturday • 10:00 AM - 11:30 AM', assignedDate: '2024-02-18', joinDate: '2024-02-18', dob: '27 Apr 2010', gender: 'Female', attended: '24 Classes', missed: '2 Classes' },
-                { id: 'LSE-STD-2024-038', name: 'Lucas Walker', type: 'One-To-Many', time: 'Tuesday • 10:00 AM - 11:30 AM', assignedDate: '2024-01-28', joinDate: '2024-01-28', dob: '02 Dec 2011', gender: 'Male', attended: '26 Classes', missed: '0 Classes' },
-                { id: 'LSE-STD-2024-042', name: 'Grace Robinson', type: 'One-To-One', time: 'Wednesday • 10:00 AM - 11:30 AM', assignedDate: '2024-03-15', joinDate: '2024-03-15', dob: '16 Jan 2010', gender: 'Female', attended: '22 Classes', missed: '1 Class' },
-                { id: 'LSE-STD-2024-047', name: 'Arthur Wright', type: 'One-To-Many', time: 'Wednesday • 04:00 PM - 05:30 PM', assignedDate: '2024-02-22', joinDate: '2024-02-22', dob: '29 Jul 2009', gender: 'Male', attended: '25 Classes', missed: '1 Class' },
-                { id: 'LSE-STD-2024-051', name: 'Freya Scott', type: 'One-To-Many', time: 'Saturday • 10:00 AM - 11:30 AM', assignedDate: '2024-03-05', joinDate: '2024-03-05', dob: '11 Aug 2011', gender: 'Female', attended: '23 Classes', missed: '0 Classes' },
-                { id: 'LSE-STD-2024-056', name: 'Henry Green', type: 'One-To-One', time: 'Friday • 10:00 AM - 11:30 AM', assignedDate: '2024-01-10', joinDate: '2024-01-10', dob: '04 Mar 2010', gender: 'Male', attended: '28 Classes', missed: '0 Classes' },
-                { id: 'LSE-STD-2024-060', name: 'Ella Hall', type: 'One-To-Many', time: 'Monday • 02:00 PM - 03:30 PM', assignedDate: '2024-03-20', joinDate: '2024-03-20', dob: '25 Sep 2010', gender: 'Female', attended: '21 Classes', missed: '2 Classes' }
+            'year5-english': [
+                { id: 'LSE-STD-2024-001', name: 'Oliver Smith', type: 'One-To-One', time: 'Monday • 05:00 PM - 06:00 PM', assignedDate: '2024-03-28', joinDate: '2024-03-28', dob: '14 Mar 2010', gender: 'Male', attended: '26 Classes', missed: '1 Class' },
+                { id: 'LSE-STD-2024-004', name: 'Amelia Jones', type: 'One-To-Many', time: 'Wednesday • 06:00 PM - 07:00 PM', assignedDate: '2024-03-25', joinDate: '2024-03-25', dob: '22 Aug 2011', gender: 'Female', attended: '24 Classes', missed: '2 Classes' },
+                { id: 'LSE-STD-2024-007', name: 'Harry Wilson', type: 'One-To-One', time: 'Saturday • 09:00 AM - 10:00 AM', assignedDate: '2024-01-20', joinDate: '2024-01-20', dob: '05 Nov 2009', gender: 'Male', attended: '25 Classes', missed: '0 Classes' },
+                { id: 'LSE-STD-2024-012', name: 'Sophia Brown', type: 'One-To-Many', time: 'Sunday • 10:00 AM - 11:00 AM', assignedDate: '2024-02-01', joinDate: '2024-02-01', dob: '18 Jun 2010', gender: 'Female', attended: '22 Classes', missed: '0 Classes' },
+                { id: 'LSE-STD-2024-015', name: 'George Taylor', type: 'One-To-Many', time: 'Monday • 05:00 PM - 06:00 PM', assignedDate: '2024-02-05', joinDate: '2024-02-05', dob: '11 Dec 2010', gender: 'Male', attended: '20 Classes', missed: '3 Classes' },
+                { id: 'LSE-STD-2024-018', name: 'Isabella Davies', type: 'One-To-One', time: 'Wednesday • 06:00 PM - 07:00 PM', assignedDate: '2024-03-30', joinDate: '2024-03-30', dob: '03 Feb 2011', gender: 'Female', attended: '21 Classes', missed: '1 Class' },
+                { id: 'LSE-STD-2024-022', name: 'Noah Evans', type: 'One-To-Many', time: 'Saturday • 09:00 AM - 10:00 AM', assignedDate: '2024-01-15', joinDate: '2024-01-15', dob: '19 Sep 2010', gender: 'Male', attended: '27 Classes', missed: '0 Classes' },
+                { id: 'LSE-STD-2024-025', name: 'Mia Thomas', type: 'One-To-Many', time: 'Sunday • 10:00 AM - 11:00 AM', assignedDate: '2024-02-12', joinDate: '2024-02-12', dob: '08 May 2011', gender: 'Female', attended: '23 Classes', missed: '1 Class' },
+                { id: 'LSE-STD-2024-029', name: 'Leo Roberts', type: 'One-To-One', time: 'Monday • 05:00 PM - 06:00 PM', assignedDate: '2024-03-01', joinDate: '2024-03-01', dob: '14 Oct 2009', gender: 'Male', attended: '25 Classes', missed: '1 Class' },
+                { id: 'LSE-STD-2024-033', name: 'Ava Johnson', type: 'One-To-Many', time: 'Wednesday • 06:00 PM - 07:00 PM', assignedDate: '2024-02-18', joinDate: '2024-02-18', dob: '27 Apr 2010', gender: 'Female', attended: '24 Classes', missed: '2 Classes' },
+                { id: 'LSE-STD-2024-038', name: 'Lucas Walker', type: 'One-To-Many', time: 'Saturday • 09:00 AM - 10:00 AM', assignedDate: '2024-01-28', joinDate: '2024-01-28', dob: '02 Dec 2011', gender: 'Male', attended: '26 Classes', missed: '0 Classes' },
+                { id: 'LSE-STD-2024-042', name: 'Grace Robinson', type: 'One-To-One', time: 'Sunday • 10:00 AM - 11:00 AM', assignedDate: '2024-03-15', joinDate: '2024-03-15', dob: '16 Jan 2010', gender: 'Female', attended: '22 Classes', missed: '1 Class' },
+                { id: 'LSE-STD-2024-047', name: 'Arthur Wright', type: 'One-To-Many', time: 'Monday • 05:00 PM - 06:00 PM', assignedDate: '2024-02-22', joinDate: '2024-02-22', dob: '29 Jul 2009', gender: 'Male', attended: '25 Classes', missed: '1 Class' },
+                { id: 'LSE-STD-2024-051', name: 'Freya Scott', type: 'One-To-Many', time: 'Wednesday • 06:00 PM - 07:00 PM', assignedDate: '2024-03-05', joinDate: '2024-03-05', dob: '11 Aug 2011', gender: 'Female', attended: '23 Classes', missed: '0 Classes' },
+                { id: 'LSE-STD-2024-056', name: 'Henry Green', type: 'One-To-One', time: 'Saturday • 09:00 AM - 10:00 AM', assignedDate: '2024-01-10', joinDate: '2024-01-10', dob: '04 Mar 2010', gender: 'Male', attended: '28 Classes', missed: '0 Classes' },
+                { id: 'LSE-STD-2024-060', name: 'Ella Hall', type: 'One-To-Many', time: 'Sunday • 10:00 AM - 11:00 AM', assignedDate: '2024-03-20', joinDate: '2024-03-20', dob: '25 Sep 2010', gender: 'Female', attended: '21 Classes', missed: '2 Classes' }
             ],
-            'physics': [
-                { id: 'LSE-STD-2024-002', name: 'Jack Williams', type: 'One-To-One', time: 'Tuesday • 02:00 PM - 03:30 PM', assignedDate: '2024-03-24', joinDate: '2024-03-24', dob: '09 Jul 2011', gender: 'Male', attended: '28 Classes', missed: '0 Classes' },
-                { id: 'LSE-STD-2024-005', name: 'Charlotte Taylor', type: 'One-To-Many', time: 'Monday • 02:00 PM - 03:30 PM', assignedDate: '2024-01-14', joinDate: '2024-01-14', dob: '17 Apr 2012', gender: 'Female', attended: '26 Classes', missed: '1 Class' },
-                { id: 'LSE-STD-2024-009', name: 'Ethan Clarke', type: 'One-To-Many', time: 'Wednesday • 02:00 PM - 03:30 PM', assignedDate: '2024-01-18', joinDate: '2024-01-18', dob: '30 Sep 2010', gender: 'Male', attended: '25 Classes', missed: '2 Classes' },
-                { id: 'LSE-STD-2024-014', name: 'Harper White', type: 'One-To-One', time: 'Thursday • 02:00 PM - 03:30 PM', assignedDate: '2024-03-29', joinDate: '2024-03-29', dob: '12 May 2011', gender: 'Female', attended: '23 Classes', missed: '0 Classes' },
-                { id: 'LSE-STD-2024-019', name: 'Freddie Hughes', type: 'One-To-Many', time: 'Friday • 02:00 PM - 03:30 PM', assignedDate: '2024-02-10', joinDate: '2024-02-10', dob: '21 Jun 2010', gender: 'Male', attended: '24 Classes', missed: '1 Class' },
-                { id: 'LSE-STD-2024-023', name: 'Emily Edwards', type: 'One-To-Many', time: 'Monday • 02:00 PM - 03:30 PM', assignedDate: '2024-01-25', joinDate: '2024-01-25', dob: '04 Feb 2011', gender: 'Female', attended: '27 Classes', missed: '0 Classes' },
-                { id: 'LSE-STD-2024-028', name: 'Archie Turner', type: 'One-To-One', time: 'Saturday • 02:00 PM - 03:30 PM', assignedDate: '2024-03-12', joinDate: '2024-03-12', dob: '15 Aug 2009', gender: 'Male', attended: '22 Classes', missed: '1 Class' },
-                { id: 'LSE-STD-2024-032', name: 'Evie Campbell', type: 'One-To-Many', time: 'Tuesday • 05:00 PM - 06:30 PM', assignedDate: '2024-02-04', joinDate: '2024-02-04', dob: '28 Nov 2010', gender: 'Female', attended: '25 Classes', missed: '1 Class' },
-                { id: 'LSE-STD-2024-037', name: 'Theo Mitchell', type: 'One-To-Many', time: 'Friday • 02:00 PM - 03:30 PM', assignedDate: '2024-01-30', joinDate: '2024-01-30', dob: '10 Oct 2011', gender: 'Male', attended: '26 Classes', missed: '0 Classes' },
-                { id: 'LSE-STD-2024-041', name: 'Ruby Carter', type: 'One-To-One', time: 'Tuesday • 02:00 PM - 03:30 PM', assignedDate: '2024-03-18', joinDate: '2024-03-18', dob: '07 Jan 2010', gender: 'Female', attended: '21 Classes', missed: '2 Classes' },
-                { id: 'LSE-STD-2024-046', name: 'Alfie Phillips', type: 'One-To-Many', time: 'Monday • 02:00 PM - 03:30 PM', assignedDate: '2024-02-14', joinDate: '2024-02-14', dob: '19 Mar 2009', gender: 'Male', attended: '25 Classes', missed: '1 Class' },
-                { id: 'LSE-STD-2024-050', name: 'Alice Morris', type: 'One-To-Many', time: 'Wednesday • 02:00 PM - 03:30 PM', assignedDate: '2024-03-02', joinDate: '2024-03-02', dob: '23 May 2011', gender: 'Female', attended: '24 Classes', missed: '0 Classes' },
-                { id: 'LSE-STD-2024-055', name: 'Joshua Murphy', type: 'One-To-One', time: 'Thursday • 02:00 PM - 03:30 PM', assignedDate: '2024-01-12', joinDate: '2024-01-12', dob: '14 Dec 2010', gender: 'Male', attended: '28 Classes', missed: '0 Classes' },
-                { id: 'LSE-STD-2024-059', name: 'Florence Cook', type: 'One-To-Many', time: 'Tuesday • 05:00 PM - 06:30 PM', assignedDate: '2024-03-22', joinDate: '2024-03-22', dob: '02 Sep 2010', gender: 'Female', attended: '20 Classes', missed: '2 Classes' }
+            'year6-reading': [
+                { id: 'LSE-STD-2024-002', name: 'Jack Williams', type: 'One-To-One', time: 'Monday • 06:00 PM - 07:00 PM', assignedDate: '2024-03-24', joinDate: '2024-03-24', dob: '09 Jul 2011', gender: 'Male', attended: '28 Classes', missed: '0 Classes' },
+                { id: 'LSE-STD-2024-005', name: 'Charlotte Taylor', type: 'One-To-Many', time: 'Monday • 07:00 PM - 08:00 PM', assignedDate: '2024-01-14', joinDate: '2024-01-14', dob: '17 Apr 2012', gender: 'Female', attended: '26 Classes', missed: '1 Class' },
+                { id: 'LSE-STD-2024-009', name: 'Ethan Clarke', type: 'One-To-Many', time: 'Wednesday • 05:00 PM - 06:00 PM', assignedDate: '2024-01-18', joinDate: '2024-01-18', dob: '30 Sep 2010', gender: 'Male', attended: '25 Classes', missed: '2 Classes' },
+                { id: 'LSE-STD-2024-014', name: 'Harper White', type: 'One-To-One', time: 'Sunday • 09:00 AM - 10:00 AM', assignedDate: '2024-03-29', joinDate: '2024-03-29', dob: '12 May 2011', gender: 'Female', attended: '23 Classes', missed: '0 Classes' },
+                { id: 'LSE-STD-2024-019', name: 'Freddie Hughes', type: 'One-To-Many', time: 'Monday • 06:00 PM - 07:00 PM', assignedDate: '2024-02-10', joinDate: '2024-02-10', dob: '21 Jun 2010', gender: 'Male', attended: '24 Classes', missed: '1 Class' },
+                { id: 'LSE-STD-2024-023', name: 'Emily Edwards', type: 'One-To-Many', time: 'Monday • 07:00 PM - 08:00 PM', assignedDate: '2024-01-25', joinDate: '2024-01-25', dob: '04 Feb 2011', gender: 'Female', attended: '27 Classes', missed: '0 Classes' },
+                { id: 'LSE-STD-2024-028', name: 'Archie Turner', type: 'One-To-One', time: 'Wednesday • 05:00 PM - 06:00 PM', assignedDate: '2024-03-12', joinDate: '2024-03-12', dob: '15 Aug 2009', gender: 'Male', attended: '22 Classes', missed: '1 Class' },
+                { id: 'LSE-STD-2024-032', name: 'Evie Campbell', type: 'One-To-Many', time: 'Sunday • 09:00 AM - 10:00 AM', assignedDate: '2024-02-04', joinDate: '2024-02-04', dob: '28 Nov 2010', gender: 'Female', attended: '25 Classes', missed: '1 Class' },
+                { id: 'LSE-STD-2024-037', name: 'Theo Mitchell', type: 'One-To-Many', time: 'Monday • 06:00 PM - 07:00 PM', assignedDate: '2024-01-30', joinDate: '2024-01-30', dob: '10 Oct 2011', gender: 'Male', attended: '26 Classes', missed: '0 Classes' },
+                { id: 'LSE-STD-2024-041', name: 'Ruby Carter', type: 'One-To-One', time: 'Monday • 07:00 PM - 08:00 PM', assignedDate: '2024-03-18', joinDate: '2024-03-18', dob: '07 Jan 2010', gender: 'Female', attended: '21 Classes', missed: '2 Classes' },
+                { id: 'LSE-STD-2024-046', name: 'Alfie Phillips', type: 'One-To-Many', time: 'Wednesday • 05:00 PM - 06:00 PM', assignedDate: '2024-02-14', joinDate: '2024-02-14', dob: '19 Mar 2009', gender: 'Male', attended: '25 Classes', missed: '1 Class' },
+                { id: 'LSE-STD-2024-050', name: 'Alice Morris', type: 'One-To-Many', time: 'Sunday • 09:00 AM - 10:00 AM', assignedDate: '2024-03-02', joinDate: '2024-03-02', dob: '23 May 2011', gender: 'Female', attended: '24 Classes', missed: '0 Classes' },
+                { id: 'LSE-STD-2024-055', name: 'Joshua Murphy', type: 'One-To-One', time: 'Monday • 06:00 PM - 07:00 PM', assignedDate: '2024-01-12', joinDate: '2024-01-12', dob: '14 Dec 2010', gender: 'Male', attended: '28 Classes', missed: '0 Classes' },
+                { id: 'LSE-STD-2024-059', name: 'Florence Cook', type: 'One-To-Many', time: 'Monday • 07:00 PM - 08:00 PM', assignedDate: '2024-03-22', joinDate: '2024-03-22', dob: '02 Sep 2010', gender: 'Female', attended: '20 Classes', missed: '2 Classes' }
             ],
-            'chemistry': [
-                { id: 'LSE-STD-2024-003', name: 'Benjamin Moore', type: 'One-To-One', time: 'Monday • 04:00 PM - 05:30 PM', assignedDate: '2024-03-26', joinDate: '2024-03-26', dob: '25 Jan 2011', gender: 'Male', attended: '18 Classes', missed: '0 Classes' },
-                { id: 'LSE-STD-2024-008', name: 'Chloe Harris', type: 'One-To-Many', time: 'Tuesday • 04:00 PM - 05:30 PM', assignedDate: '2024-01-16', joinDate: '2024-01-16', dob: '17 Jan 2010', gender: 'Female', attended: '16 Classes', missed: '2 Classes' },
-                { id: 'LSE-STD-2024-013', name: 'Alexander King', type: 'One-To-Many', time: 'Thursday • 04:00 PM - 05:30 PM', assignedDate: '2024-01-22', joinDate: '2024-01-22', dob: '23 Nov 2011', gender: 'Male', attended: '17 Classes', missed: '1 Class' },
-                { id: 'LSE-STD-2024-017', name: 'Zoe Lee', type: 'One-To-One', time: 'Wednesday • 04:00 PM - 05:30 PM', assignedDate: '2024-03-31', joinDate: '2024-03-31', dob: '02 Mar 2009', gender: 'Female', attended: '15 Classes', missed: '0 Classes' },
-                { id: 'LSE-STD-2024-021', name: 'Daniel Adams', type: 'One-To-Many', time: 'Friday • 04:00 PM - 05:30 PM', assignedDate: '2024-02-11', joinDate: '2024-02-11', dob: '14 Apr 2010', gender: 'Male', attended: '19 Classes', missed: '1 Class' },
-                { id: 'LSE-STD-2024-026', name: 'Hannah Baker', type: 'One-To-Many', time: 'Tuesday • 04:00 PM - 05:30 PM', assignedDate: '2024-01-29', joinDate: '2024-01-29', dob: '08 Jul 2011', gender: 'Female', attended: '20 Classes', missed: '0 Classes' },
-                { id: 'LSE-STD-2024-031', name: 'Samuel Bell', type: 'One-To-One', time: 'Saturday • 04:00 PM - 05:30 PM', assignedDate: '2024-03-14', joinDate: '2024-03-14', dob: '19 Oct 2009', gender: 'Male', attended: '16 Classes', missed: '1 Class' },
-                { id: 'LSE-STD-2024-036', name: 'Lily Ward', type: 'One-To-Many', time: 'Thursday • 04:00 PM - 05:30 PM', assignedDate: '2024-02-08', joinDate: '2024-02-08', dob: '31 Dec 2010', gender: 'Female', attended: '18 Classes', missed: '1 Class' },
-                { id: 'LSE-STD-2024-040', name: 'Max Bennett', type: 'One-To-Many', time: 'Tuesday • 06:00 PM - 07:30 PM', assignedDate: '2024-01-19', joinDate: '2024-01-19', dob: '05 May 2011', gender: 'Male', attended: '21 Classes', missed: '0 Classes' },
-                { id: 'LSE-STD-2024-045', name: 'Phoebe Gray', type: 'One-To-One', time: 'Monday • 04:00 PM - 05:30 PM', assignedDate: '2024-03-08', joinDate: '2024-03-08', dob: '12 Sep 2010', gender: 'Female', attended: '17 Classes', missed: '2 Classes' },
-                { id: 'LSE-STD-2024-049', name: 'Logan Price', type: 'One-To-Many', time: 'Tuesday • 06:00 PM - 07:30 PM', assignedDate: '2024-02-25', joinDate: '2024-02-25', dob: '26 Feb 2009', gender: 'Male', attended: '19 Classes', missed: '0 Classes' },
-                { id: 'LSE-STD-2024-054', name: 'Sienna Russell', type: 'One-To-Many', time: 'Friday • 04:00 PM - 05:30 PM', assignedDate: '2024-03-19', joinDate: '2024-03-19', dob: '18 Jun 2011', gender: 'Female', attended: '15 Classes', missed: '1 Class' }
+            'year6-iseb': [
+                { id: 'LSE-STD-2024-003', name: 'Benjamin Moore', type: 'One-To-One', time: 'Wednesday • 06:00 PM - 07:00 PM', assignedDate: '2024-03-26', joinDate: '2024-03-26', dob: '25 Jan 2011', gender: 'Male', attended: '18 Classes', missed: '0 Classes' },
+                { id: 'LSE-STD-2024-008', name: 'Chloe Harris', type: 'One-To-Many', time: 'Wednesday • 06:00 PM - 07:00 PM', assignedDate: '2024-01-16', joinDate: '2024-01-16', dob: '17 Jan 2010', gender: 'Female', attended: '16 Classes', missed: '2 Classes' },
+                { id: 'LSE-STD-2024-013', name: 'Alexander King', type: 'One-To-Many', time: 'Wednesday • 06:00 PM - 07:00 PM', assignedDate: '2024-01-22', joinDate: '2024-01-22', dob: '23 Nov 2011', gender: 'Male', attended: '17 Classes', missed: '1 Class' },
+                { id: 'LSE-STD-2024-017', name: 'Zoe Lee', type: 'One-To-One', time: 'Wednesday • 06:00 PM - 07:00 PM', assignedDate: '2024-03-31', joinDate: '2024-03-31', dob: '02 Mar 2009', gender: 'Female', attended: '15 Classes', missed: '0 Classes' },
+                { id: 'LSE-STD-2024-021', name: 'Daniel Adams', type: 'One-To-Many', time: 'Wednesday • 06:00 PM - 07:00 PM', assignedDate: '2024-02-11', joinDate: '2024-02-11', dob: '14 Apr 2010', gender: 'Male', attended: '19 Classes', missed: '1 Class' },
+                { id: 'LSE-STD-2024-026', name: 'Hannah Baker', type: 'One-To-Many', time: 'Wednesday • 06:00 PM - 07:00 PM', assignedDate: '2024-01-29', joinDate: '2024-01-29', dob: '08 Jul 2011', gender: 'Female', attended: '20 Classes', missed: '0 Classes' },
+                { id: 'LSE-STD-2024-031', name: 'Samuel Bell', type: 'One-To-One', time: 'Wednesday • 06:00 PM - 07:00 PM', assignedDate: '2024-03-14', joinDate: '2024-03-14', dob: '19 Oct 2009', gender: 'Male', attended: '16 Classes', missed: '1 Class' },
+                { id: 'LSE-STD-2024-036', name: 'Lily Ward', type: 'One-To-Many', time: 'Wednesday • 06:00 PM - 07:00 PM', assignedDate: '2024-02-08', joinDate: '2024-02-08', dob: '31 Dec 2010', gender: 'Female', attended: '18 Classes', missed: '1 Class' },
+                { id: 'LSE-STD-2024-040', name: 'Max Bennett', type: 'One-To-Many', time: 'Wednesday • 06:00 PM - 07:00 PM', assignedDate: '2024-01-19', joinDate: '2024-01-19', dob: '05 May 2011', gender: 'Male', attended: '21 Classes', missed: '0 Classes' },
+                { id: 'LSE-STD-2024-045', name: 'Phoebe Gray', type: 'One-To-One', time: 'Wednesday • 06:00 PM - 07:00 PM', assignedDate: '2024-03-08', joinDate: '2024-03-08', dob: '12 Sep 2010', gender: 'Female', attended: '17 Classes', missed: '2 Classes' },
+                { id: 'LSE-STD-2024-049', name: 'Logan Price', type: 'One-To-Many', time: 'Wednesday • 06:00 PM - 07:00 PM', assignedDate: '2024-02-25', joinDate: '2024-02-25', dob: '26 Feb 2009', gender: 'Male', attended: '19 Classes', missed: '0 Classes' },
+                { id: 'LSE-STD-2024-054', name: 'Sienna Russell', type: 'One-To-Many', time: 'Wednesday • 06:00 PM - 07:00 PM', assignedDate: '2024-03-19', joinDate: '2024-03-19', dob: '18 Jun 2011', gender: 'Female', attended: '15 Classes', missed: '1 Class' }
             ]
         };
 
-        let currentCourse = 'mathematics';
+        let currentCourse = 'year5-english';
         let courseState = {
             filter: 'all',
             ascending: true
@@ -1221,15 +1221,15 @@
 
         function switchCourse() {
             const dropdown = document.getElementById('course-dropdown');
-            currentCourse = dropdown ? dropdown.value : 'mathematics';
+            currentCourse = dropdown ? dropdown.value : 'year5-english';
 
             const block = document.getElementById('active-subject-block');
-            block.className = `subject-roster-block theme-${currentCourse === 'mathematics' ? 'math' : currentCourse}`;
+            block.className = `subject-roster-block theme-math`;
 
             const heading = document.getElementById('roster-heading');
-            const capitalizedCourse = currentCourse.charAt(0).toUpperCase() + currentCourse.slice(1);
+            const fullCourseTitle = courseTitles[currentCourse] || currentCourse;
             
-            heading.innerHTML = `<i class="${currentCourse === 'mathematics' ? 'feather-book' : currentCourse === 'physics' ? 'feather-zap' : 'feather-activity'}"></i> ${capitalizedCourse} Student List`;
+            heading.innerHTML = `<i class="feather-book"></i> ${fullCourseTitle} Student List`;
 
             const searchInput = document.getElementById('search-input');
             if (searchInput) searchInput.value = '';
@@ -1304,6 +1304,12 @@
             list.forEach((student, index) => {
                 const sno = (index + 1) < 10 ? `0${index + 1}` : index + 1;
                 const isOneToOne = student.type.toLowerCase() === 'one-to-one';
+                
+                // Split day and time slot
+                const timeParts = student.time.split('•');
+                const dayText = timeParts[0] ? timeParts[0].trim() : '';
+                const timeText = timeParts[1] ? timeParts[1].trim() : student.time;
+
                 const tr = document.createElement('tr');
                 tr.innerHTML = `
                     <td style="text-align: center;"><span class="sno-badge">${sno}</span></td>
@@ -1313,7 +1319,12 @@
                             ${student.type}
                         </span>
                     </td>
-                    <td><span class="time-badge"><i class="feather-clock"></i> ${student.time}</span></td>
+                    <td>
+                        <div class="time-container">
+                            <span class="time-day">${dayText}</span>
+                            <span class="time-slot">${timeText}</span>
+                        </div>
+                    </td>
                     <td style="text-align: center;">
                         <button type="button" class="action-view-btn" onclick="openDetailModal('${student.id}')">
                             <i class="feather-eye"></i> View
@@ -1341,7 +1352,7 @@
             for (const k in studentDatasets) {
                 const match = studentDatasets[k].find(s => s.id === studentId);
                 if (match) {
-                    const subName = k.charAt(0).toUpperCase() + k.slice(1);
+                    const subName = courseTitles[k] || k;
                     enrolledDetails.push(`${subName} — ${match.time}`);
                 }
             }

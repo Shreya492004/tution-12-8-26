@@ -99,87 +99,34 @@
             line-height: 1 !important;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
-            display: inline-block !important;
+            display: inline-flex !important; align-items: center !important; justify-content: center !important; vertical-align: middle !important;
         }
 
         i[class^="fa-"],
         i[class*=" fa-"],
         [class^="fa-"],
         [class*=" fa-"],
-        .fa, .fas, .far, .fal, .fad, .fab {
+        .fa,
+        .fas,
+        .far,
+        .fal,
+        .fad,
+        .fab {
             font-family: "Font Awesome 5 Pro", "Font Awesome 5 Free", "FontAwesome" !important;
             font-style: normal !important;
             font-weight: normal !important;
-            display: inline-block !important;
+            display: inline-flex !important; align-items: center !important; justify-content: center !important; vertical-align: middle !important;
         }
 
         /* Header Navigation (Increased Size, Clean Medium Weight, 100% Zoom Safe) */
-        @media only screen and (min-width: 1200px) {
-            .rbt-header .mainbar-row {
-                display: flex !important;
-                flex-wrap: nowrap !important;
-                align-items: center !important;
-                justify-content: space-between !important;
-            }
-
-            .rbt-header .rbt-main-navigation {
-                display: block !important;
-                flex: 1 1 auto !important;
-                min-width: 0 !important;
-            }
-
-            .rbt-header .rbt-main-navigation .mainmenu-nav {
-                display: flex !important;
-                justify-content: center !important;
-                width: auto !important;
-            }
-
-            .rbt-header .rbt-main-navigation .mainmenu {
-                display: flex !important;
-                flex-wrap: nowrap !important;
-                align-items: center !important;
-                justify-content: center !important;
-                margin: 0 !important;
-                padding: 0 !important;
-                list-style: none !important;
-            }
-
-            .rbt-header .rbt-main-navigation .mainmenu > li {
-                flex-shrink: 0 !important;
-                margin: 0 !important;
-                padding: 0 !important;
-                position: relative !important;
-            }
-
-            .rbt-header .rbt-main-navigation .mainmenu > li > a,
-            .rbt-header .rbt-main-navigation a {
-                font-size: 16.5px !important;
-                font-weight: 500 !important;
-                color: #192335 !important;
-                white-space: nowrap !important;
-                padding: 0 12px !important;
-                display: flex !important;
-                align-items: center !important;
-                height: 80px !important;
-                line-height: 80px !important;
-                transition: all 0.3s ease !important;
-                text-decoration: none !important;
-            }
-
-            .rbt-header .rbt-main-navigation .mainmenu > li > a:hover,
-            .rbt-header .rbt-main-navigation a:hover {
-                color: #2f57ef !important;
-            }
-        }
+        
     </style>
 </head>
 
 <body class="rbt-header-sticky">
 
-    <!-- Start Header Area -->
+        <!-- Start Header Area -->
     <header class="rbt-header rbt-header-9">
-        <div class="rbt-sticky-placeholder"></div>
-
         <div class="rbt-header-wrapper header-not-transparent header-sticky">
             <div class="container">
                 <div class="mainbar-row rbt-navigation-end align-items-center">
@@ -196,27 +143,13 @@
                     <div class="rbt-main-navigation d-none d-xl-block">
                         <nav class="mainmenu-nav">
                             <ul class="mainmenu">
-                                <li>
-                                    <a href="index.html">Home</a>
-                                </li>
-                                <li>
-                                    <a href="about-us.html">About</a>
-                                </li>
-                                <li>
-                                    <a href="our-team.html">Our Team</a>
-                                </li>
-                                <li>
-                                    <a href="our-tuition.html">Our Tuition</a>
-                                </li>
-                                <li>
-                                    <a href="holiday-camps.html">Holiday Camps</a>
-                                </li>
-                                <li>
-                                    <a href="plans-and-pricing.html">Plans &amp; Pricing</a>
-                                </li>
-                                <li>
-                                    <a href="book-online.html">Book Online</a>
-                                </li>
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="about-us.html">About</a></li>
+                                <li><a href="our-team.html">Our Team</a></li>
+                                <li><a href="our-tuition.html">Our Tuition</a></li>
+                                <li><a href="holiday-camps.html">Holiday Camps</a></li>
+                                <li><a href="plans-and-pricing.html">Plans &amp; Pricing</a></li>
+                                <li><a href="book-online.html">Book Online</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -224,28 +157,19 @@
                     <div class="header-right">
                         <div class="rbt-btn-wrapper d-flex align-items-center gap-2">
                             <div class="login-dropdown">
-                                <button type="button"
-                                    class="rbt-btn rbt-switch-btn btn-gradient btn-sm hover-transform-none login-dropdown-btn">
+                                <button type="button" class="rbt-btn rbt-switch-btn btn-gradient btn-sm hover-transform-none login-dropdown-btn">
                                     <span data-text="Login">Login</span>
                                     <i class="feather-chevron-down"></i>
                                 </button>
                                 <div class="login-dropdown-menu">
-                                    <a href="instructor-profile.html">
-                                        <i class="feather-user"></i>
-                                        <span>Tutor Login</span>
-                                    </a>
-                                    <a href="student-profile.html">
-                                        <i class="feather-book-open"></i>
-                                        <span>Student Login</span>
-                                    </a>
+                                    <a href="instructor-profile.html"><i class="feather-user"></i> <span>Tutor Login</span></a>
+                                    <a href="student-profile.html"><i class="feather-book-open"></i> <span>Student Login</span></a>
                                 </div>
                             </div>
-                            <a class="rbt-btn rbt-switch-btn btn-gradient btn-sm hover-transform-none"
-                                href="login-register.html">
+                            <a class="rbt-btn rbt-switch-btn btn-gradient btn-sm hover-transform-none" href="login-register.html">
                                 <span data-text="Join Now">Join Now</span>
                             </a>
                         </div>
-                        <!-- Start Mobile-Menu-Bar -->
                         <div class="mobile-menu-bar d-block d-xl-none">
                             <div class="hamberger">
                                 <button class="hamberger-button rbt-round-btn" aria-label="Open Menu">
@@ -253,7 +177,6 @@
                                 </button>
                             </div>
                         </div>
-                        <!-- Start Mobile-Menu-Bar -->
                     </div>
                 </div>
             </div>
@@ -309,6 +232,7 @@
             </div>
         </div>
     </div>
+    </div>
 
     <!-- Banner -->
     <div class="slider-area rbt-banner-10 height-400 bg_image bg_image--11" data-black-overlay="5">
@@ -339,7 +263,8 @@
                                     <div class="content-item-content">
                                         <div class="rbt-default-sidebar-wrapper">
                                             <div class="section-title mb--20">
-                                                <h6 class="rbt-title-style-2" id="sidebar-welcome">Welcome, Oliver Smith</h6>
+                                                <h6 class="rbt-title-style-2" id="sidebar-welcome">Welcome, Oliver Smith
+                                                </h6>
                                             </div>
 
                                             <nav class="mainmenu-nav">
@@ -413,14 +338,19 @@
                                     </div>
 
                                     <div class="advance-tab-button mb--30">
-                                        <ul class="nav nav-tabs tab-button-style-2 justify-content-start" id="settinsTab-4" role="tablist">
+                                        <ul class="nav nav-tabs tab-button-style-2 justify-content-start"
+                                            id="settinsTab-4" role="tablist">
                                             <li role="presentation">
-                                                <a href="#" class="tab-button active" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" role="tab" aria-controls="profile" aria-selected="true">
+                                                <a href="#" class="tab-button active" id="profile-tab"
+                                                    data-bs-toggle="tab" data-bs-target="#profile" role="tab"
+                                                    aria-controls="profile" aria-selected="true">
                                                     <span class="title">Profile</span>
                                                 </a>
                                             </li>
                                             <li role="presentation">
-                                                <a href="#" class="tab-button" id="password-tab" data-bs-toggle="tab" data-bs-target="#password" role="tab" aria-controls="password" aria-selected="false">
+                                                <a href="#" class="tab-button" id="password-tab" data-bs-toggle="tab"
+                                                    data-bs-target="#password" role="tab" aria-controls="password"
+                                                    aria-selected="false">
                                                     <span class="title">Password</span>
                                                 </a>
                                             </li>
@@ -428,20 +358,31 @@
                                     </div>
 
                                     <div class="tab-content">
-                                        <div class="tab-pane fade active show" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                                            
+                                        <div class="tab-pane fade active show" id="profile" role="tabpanel"
+                                            aria-labelledby="profile-tab">
+
                                             <!-- Start Profile Row  -->
-                                            <form id="profile-edit-form" action="#" class="rbt-profile-row rbt-default-form row row--15">
-                                                <div class="col-lg-6 col-md-6 col-sm-6 col-12">
-                                                    <div class="rbt-form-group">
-                                                        <label for="studentid">Student ID</label>
-                                                        <input id="studentid" type="text" value="LSE-STD-2024-001">
+                                            <form id="profile-edit-form" action="#"
+                                                class="rbt-profile-row rbt-default-form row row--15">
+
+                                               
+                                                    <div class="col-lg-6 col-md-6 col-sm-6 col-12">
+                                                        <div class="rbt-form-group">
+                                                            <label for="enrolleddate">Student Id <small
+                                                                    class="text-muted">(Locked)</small></label>
+                                                            <input id="enrolleddate" type="text"
+                                                                value="LSE-TUT-2001-010" readonly
+                                                                style="background-color: #f5f5f5; cursor: not-allowed;">
+                                                        </div>
                                                     </div>
-                                                </div>
+                                                
                                                 <div class="col-lg-6 col-md-6 col-sm-6 col-12">
                                                     <div class="rbt-form-group">
-                                                        <label for="enrolleddate">Enrolled Date <small class="text-muted">(Locked)</small></label>
-                                                        <input id="enrolleddate" type="text" value="Enrolled Jan 2024" readonly style="background-color: #f5f5f5; cursor: not-allowed;">
+                                                        <label for="enrolleddate">Enrolled Date <small
+                                                                class="text-muted">(Locked)</small></label>
+                                                        <input id="enrolleddate" type="text" value="Enrolled Jan 2024"
+                                                            readonly
+                                                            style="background-color: #f5f5f5; cursor: not-allowed;">
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-6 col-md-6 col-sm-6 col-12">
@@ -483,37 +424,43 @@
                                                 <div class="col-12">
                                                     <div class="rbt-form-group">
                                                         <label for="bio">Biography &amp; Objectives</label>
-                                                        <textarea id="bio" cols="20" rows="5">Dedicated student enrolled in Mathematics, Physics, Chemistry, and Computer Science programs at London Star Education.</textarea>
+                                                        <textarea id="bio" cols="20"
+                                                            rows="5">Dedicated student enrolled in Mathematics, Physics, Chemistry, and Computer Science programs at London Star Education.</textarea>
                                                     </div>
                                                 </div>
                                                 <div class="col-12 mt--20">
                                                     <div class="rbt-form-group">
-                                                        <button type="submit" id="update-info-btn" class="rbt-btn btn-gradient border-0">Update Info</button>
+                                                        <button type="submit" id="update-info-btn"
+                                                            class="rbt-btn btn-gradient border-0">Update Info</button>
                                                     </div>
                                                 </div>
                                             </form>
                                             <!-- End Profile Row  -->
                                         </div>
 
-                                        <div class="tab-pane fade" id="password" role="tabpanel" aria-labelledby="password-tab">
+                                        <div class="tab-pane fade" id="password" role="tabpanel"
+                                            aria-labelledby="password-tab">
                                             <!-- Start Profile Row  -->
                                             <form action="#" class="rbt-profile-row rbt-default-form row row--15">
                                                 <div class="col-12">
                                                     <div class="rbt-form-group">
                                                         <label for="currentpassword">Current Password</label>
-                                                        <input id="currentpassword" type="password" placeholder="Current Password">
+                                                        <input id="currentpassword" type="password"
+                                                            placeholder="Current Password">
                                                     </div>
                                                 </div>
                                                 <div class="col-12">
                                                     <div class="rbt-form-group">
                                                         <label for="newpassword">New Password</label>
-                                                        <input id="newpassword" type="password" placeholder="New Password">
+                                                        <input id="newpassword" type="password"
+                                                            placeholder="New Password">
                                                     </div>
                                                 </div>
                                                 <div class="col-12">
                                                     <div class="rbt-form-group">
                                                         <label for="retypenewpassword">Re-type New Password</label>
-                                                        <input id="retypenewpassword" type="password" placeholder="Re-type New Password">
+                                                        <input id="retypenewpassword" type="password"
+                                                            placeholder="Re-type New Password">
                                                     </div>
                                                 </div>
                                                 <div class="col-12 mt--10">
@@ -541,8 +488,8 @@
             <hr class="rbt-separator m-0">
         </div>
     </div>
-    
-    <!-- Start Footer Area -->
+
+        <!-- Start Footer Area -->
     <footer class="rbt-footer footer-style-1 bg-color-white overflow-hidden">
         <div class="footer-top">
             <div class="container">
@@ -559,7 +506,7 @@
                                 join our team.</p>
 
                             <ul class="social-icon social-default justify-content-start">
-                                <li><a href="https://www.facebook.com/">
+                                <li><a href="https://www.facebook.com/" aria-label="Facebook">
                                         <i class="feather-facebook"></i>
                                     </a>
                                 </li>
@@ -567,11 +514,11 @@
                                         <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" viewBox="0 0 24 24" class="social-icon-x" style="vertical-align: -2px;"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
                                     </a>
                                 </li>
-                                <li><a href="https://www.instagram.com/">
+                                <li><a href="https://www.instagram.com/" aria-label="Instagram">
                                         <i class="feather-instagram"></i>
                                     </a>
                                 </li>
-                                <li><a href="https://www.linkdin.com/">
+                                <li><a href="https://www.linkedin.com/" aria-label="LinkedIn">
                                         <i class="feather-linkedin"></i>
                                     </a>
                                 </li>
@@ -705,6 +652,10 @@
             </a>
         </div>
     </div>
+
+    
+
+    
 
     <!-- JS ============================================ -->
     <script src="assets/js/vendor/modernizr.min.js"></script>

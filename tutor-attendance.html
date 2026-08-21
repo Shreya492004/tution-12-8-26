@@ -414,19 +414,6 @@
             border: 1px solid #bae6fd;
         }
 
-        .time-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            padding: 4px 10px;
-            border-radius: 6px;
-            background: #f8fafc;
-            border: 1px solid #e2e8f0;
-            color: #475569 !important;
-            font-size: 13.5px !important;
-            font-weight: 500;
-        }
-
         .attendance-table td.row-date {
             color: #475569 !important;
             font-weight: 500 !important;
@@ -781,7 +768,7 @@
             }
 
             .attendance-table {
-                min-width: 780px;
+                min-width: 680px;
             }
 
             .roster-toolbar {
@@ -951,7 +938,7 @@
                                         <div class="rbt-default-sidebar-wrapper">
 
                                             <div class="section-title mb--20">
-                                                <h6 class="rbt-title-style-2" id="sidebar-welcome-text">Welcome, Ruben</h6>
+                                                <h6 class="rbt-title-style-2" id="sidebar-welcome-text">Welcome, Lily</h6>
                                             </div>
 
                                             <nav class="mainmenu-nav">
@@ -1051,26 +1038,25 @@
                                                 <label for="courseFilter">Course</label>
                                                 <select id="courseFilter" class="no-selectpicker" onchange="updateAvailableBatches()">
                                                     <option value="" disabled selected>Select Course</option>
-                                                    <option value="mathematics">Mathematics</option>
-                                                    <option value="physics">Physics</option>
-                                                    <option value="chemistry">Chemistry</option>
-                                                    <option value="computer-science">Computer Science</option>
+                                                    <option value="year5-english">Year 5 English — Core English Skills + Reading Comprehension</option>
+                                                    <option value="year6-reading">Year 6 Reading Comprehension</option>
+                                                    <option value="year6-iseb">Year 6 ISEB &amp; Grammar School Multiple-Choice Preparation</option>
                                                 </select>
                                             </div>
-
-                                            <!-- Attendance Date -->
-                                            <div class="col-lg-4 col-md-4 col-12">
-                                                <label for="attendanceDate">Attendance Date</label>
-                                                <input type="date" id="attendanceDate" onchange="updateAvailableBatches()">
-                                            </div>
-
-                                            <!-- Batch / Schedule Time Dropdown -->
+<!-- Batch / Schedule Time Dropdown -->
                                             <div class="col-lg-4 col-md-4 col-12">
                                                 <label for="batchTimeFilter">Batch / Time Session</label>
                                                 <select id="batchTimeFilter" class="no-selectpicker" onchange="renderAttendanceTable()">
                                                     <option value="" disabled selected>Select Course & Date First</option>
                                                 </select>
                                             </div>
+                                            <!-- Attendance Date -->
+                                            <div class="col-lg-4 col-md-4 col-12">
+                                                <label for="attendanceDate">Attendance Date</label>
+                                                <input type="date" id="attendanceDate" onchange="updateAvailableBatches()">
+                                            </div>
+
+                                            
                                         </div>
                                     </div>
 
@@ -1097,7 +1083,7 @@
                                         <div class="roster-toolbar">
                                             <div class="roster-search-input">
                                                 <input type="text" id="studentSearchInput" placeholder="Search by name or ID" oninput="renderAttendanceTable()">
-                                              
+                                                
                                             </div>
                                             <button type="button" class="sort-toggle-btn" id="sort-toggle-btn" onclick="toggleSort()">
                                                 <i class="feather-arrow-up" id="sort-icon"></i>
@@ -1118,11 +1104,10 @@
                                             <table class="attendance-table">
                                                 <thead>
                                                     <tr>
-                                                        <th style="width:34%;">Student</th>
-                                                        <th style="width:24%;">Schedule / Batch</th>
-                                                        <th style="width:16%;">Date</th>
-                                                        <th style="width:13%; text-align:center;">Status</th>
-                                                        <th style="width:13%; text-align:center;">Action</th>
+                                                        <th style="width:44%;">Student</th>
+                                                        <th style="width:20%;">Date</th>
+                                                        <th style="width:18%; text-align:center;">Status</th>
+                                                        <th style="width:18%; text-align:center;">Action</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody id="attendanceBody"></tbody>
@@ -1301,72 +1286,60 @@
     <script src="assets/js/main.js"></script>
 
     <script>
-        // Exact 1:1 Class Schedule Datasets mapped to student roster
         const studentDatasets = {
-            'mathematics': [
-                { id: 'LSE-STD-2024-001', name: 'Oliver Smith', type: 'One-To-One', time: 'Monday • 10:00 AM - 11:30 AM' },
-                { id: 'LSE-STD-2024-029', name: 'Leo Roberts', type: 'One-To-One', time: 'Monday • 10:00 AM - 11:30 AM' },
-                { id: 'LSE-STD-2024-015', name: 'George Taylor', type: 'One-To-Many', time: 'Monday • 02:00 PM - 03:30 PM' },
-                { id: 'LSE-STD-2024-060', name: 'Ella Hall', type: 'One-To-Many', time: 'Monday • 02:00 PM - 03:30 PM' },
-                { id: 'LSE-STD-2024-056', name: 'Henry Green', type: 'One-To-One', time: 'Monday • 02:00 PM - 03:30 PM' },
-                { id: 'LSE-STD-2024-004', name: 'Amelia Jones', type: 'One-To-Many', time: 'Tuesday • 10:00 AM - 11:30 AM' },
-                { id: 'LSE-STD-2024-038', name: 'Lucas Walker', type: 'One-To-Many', time: 'Tuesday • 10:00 AM - 11:30 AM' },
-                { id: 'LSE-STD-2024-007', name: 'Harry Wilson', type: 'One-To-One', time: 'Wednesday • 10:00 AM - 11:30 AM' },
-                { id: 'LSE-STD-2024-042', name: 'Grace Robinson', type: 'One-To-One', time: 'Wednesday • 10:00 AM - 11:30 AM' },
-                { id: 'LSE-STD-2024-047', name: 'Arthur Wright', type: 'One-To-Many', time: 'Wednesday • 04:00 PM - 05:30 PM' },
-                { id: 'LSE-STD-2024-012', name: 'Sophia Brown', type: 'One-To-Many', time: 'Thursday • 10:00 AM - 11:30 AM' },
-                { id: 'LSE-STD-2024-022', name: 'Noah Evans', type: 'One-To-Many', time: 'Thursday • 10:00 AM - 11:30 AM' },
-                { id: 'LSE-STD-2024-018', name: 'Isabella Davies', type: 'One-To-One', time: 'Friday • 10:00 AM - 11:30 AM' },
-                { id: 'LSE-STD-2024-025', name: 'Mia Thomas', type: 'One-To-Many', time: 'Saturday • 10:00 AM - 11:30 AM' },
-                { id: 'LSE-STD-2024-033', name: 'Ava Johnson', type: 'One-To-Many', time: 'Saturday • 10:00 AM - 11:30 AM' },
-                { id: 'LSE-STD-2024-051', name: 'Freya Scott', type: 'One-To-Many', time: 'Saturday • 10:00 AM - 11:30 AM' }
+            'year5-english': [
+                { id: 'LSE-STD-2024-001', name: 'Oliver Smith', type: 'One-To-One', time: 'Monday • 05:00 PM - 06:00 PM' },
+                { id: 'LSE-STD-2024-015', name: 'George Taylor', type: 'One-To-Many', time: 'Monday • 05:00 PM - 06:00 PM' },
+                { id: 'LSE-STD-2024-029', name: 'Leo Roberts', type: 'One-To-One', time: 'Monday • 05:00 PM - 06:00 PM' },
+                { id: 'LSE-STD-2024-047', name: 'Arthur Wright', type: 'One-To-Many', time: 'Monday • 05:00 PM - 06:00 PM' },
+
+                { id: 'LSE-STD-2024-004', name: 'Amelia Jones', type: 'One-To-Many', time: 'Wednesday • 06:00 PM - 07:00 PM' },
+                { id: 'LSE-STD-2024-018', name: 'Isabella Davies', type: 'One-To-One', time: 'Wednesday • 06:00 PM - 07:00 PM' },
+                { id: 'LSE-STD-2024-033', name: 'Ava Johnson', type: 'One-To-Many', time: 'Wednesday • 06:00 PM - 07:00 PM' },
+                { id: 'LSE-STD-2024-051', name: 'Freya Scott', type: 'One-To-Many', time: 'Wednesday • 06:00 PM - 07:00 PM' },
+
+                { id: 'LSE-STD-2024-007', name: 'Harry Wilson', type: 'One-To-One', time: 'Saturday • 09:00 AM - 10:00 AM' },
+                { id: 'LSE-STD-2024-022', name: 'Noah Evans', type: 'One-To-Many', time: 'Saturday • 09:00 AM - 10:00 AM' },
+                { id: 'LSE-STD-2024-038', name: 'Lucas Walker', type: 'One-To-Many', time: 'Saturday • 09:00 AM - 10:00 AM' },
+                { id: 'LSE-STD-2024-056', name: 'Henry Green', type: 'One-To-One', time: 'Saturday • 09:00 AM - 10:00 AM' },
+
+                { id: 'LSE-STD-2024-012', name: 'Sophia Brown', type: 'One-To-Many', time: 'Sunday • 10:00 AM - 11:00 AM' },
+                { id: 'LSE-STD-2024-025', name: 'Mia Thomas', type: 'One-To-Many', time: 'Sunday • 10:00 AM - 11:00 AM' },
+                { id: 'LSE-STD-2024-042', name: 'Grace Robinson', type: 'One-To-One', time: 'Sunday • 10:00 AM - 11:00 AM' },
+                { id: 'LSE-STD-2024-060', name: 'Ella Hall', type: 'One-To-Many', time: 'Sunday • 10:00 AM - 11:00 AM' }
             ],
-            'physics': [
-                { id: 'LSE-STD-2024-005', name: 'Charlotte Taylor', type: 'One-To-Many', time: 'Monday • 02:00 PM - 03:30 PM' },
-                { id: 'LSE-STD-2024-023', name: 'Emily Edwards', type: 'One-To-Many', time: 'Monday • 02:00 PM - 03:30 PM' },
-                { id: 'LSE-STD-2024-046', name: 'Alfie Phillips', type: 'One-To-Many', time: 'Monday • 02:00 PM - 03:30 PM' },
-                { id: 'LSE-STD-2024-002', name: 'Jack Williams', type: 'One-To-One', time: 'Tuesday • 02:00 PM - 03:30 PM' },
-                { id: 'LSE-STD-2024-041', name: 'Ruby Carter', type: 'One-To-One', time: 'Tuesday • 02:00 PM - 03:30 PM' },
-                { id: 'LSE-STD-2024-032', name: 'Evie Campbell', type: 'One-To-Many', time: 'Tuesday • 05:00 PM - 06:30 PM' },
-                { id: 'LSE-STD-2024-059', name: 'Florence Cook', type: 'One-To-Many', time: 'Tuesday • 05:00 PM - 06:30 PM' },
-                { id: 'LSE-STD-2024-009', name: 'Ethan Clarke', type: 'One-To-Many', time: 'Wednesday • 02:00 PM - 03:30 PM' },
-                { id: 'LSE-STD-2024-050', name: 'Alice Morris', type: 'One-To-Many', time: 'Wednesday • 02:00 PM - 03:30 PM' },
-                { id: 'LSE-STD-2024-014', name: 'Harper White', type: 'One-To-One', time: 'Thursday • 02:00 PM - 03:30 PM' },
-                { id: 'LSE-STD-2024-055', name: 'Joshua Murphy', type: 'One-To-One', time: 'Thursday • 02:00 PM - 03:30 PM' },
-                { id: 'LSE-STD-2024-019', name: 'Freddie Hughes', type: 'One-To-Many', time: 'Friday • 02:00 PM - 03:30 PM' },
-                { id: 'LSE-STD-2024-037', name: 'Theo Mitchell', type: 'One-To-Many', time: 'Friday • 02:00 PM - 03:30 PM' },
-                { id: 'LSE-STD-2024-028', name: 'Archie Turner', type: 'One-To-One', time: 'Saturday • 02:00 PM - 03:30 PM' }
+            'year6-reading': [
+                { id: 'LSE-STD-2024-002', name: 'Jack Williams', type: 'One-To-One', time: 'Monday • 06:00 PM - 07:00 PM' },
+                { id: 'LSE-STD-2024-019', name: 'Freddie Hughes', type: 'One-To-Many', time: 'Monday • 06:00 PM - 07:00 PM' },
+                { id: 'LSE-STD-2024-037', name: 'Theo Mitchell', type: 'One-To-Many', time: 'Monday • 06:00 PM - 07:00 PM' },
+                { id: 'LSE-STD-2024-055', name: 'Joshua Murphy', type: 'One-To-One', time: 'Monday • 06:00 PM - 07:00 PM' },
+
+                { id: 'LSE-STD-2024-005', name: 'Charlotte Taylor', type: 'One-To-Many', time: 'Monday • 07:00 PM - 08:00 PM' },
+                { id: 'LSE-STD-2024-023', name: 'Emily Edwards', type: 'One-To-Many', time: 'Monday • 07:00 PM - 08:00 PM' },
+                { id: 'LSE-STD-2024-041', name: 'Ruby Carter', type: 'One-To-One', time: 'Monday • 07:00 PM - 08:00 PM' },
+                { id: 'LSE-STD-2024-059', name: 'Florence Cook', type: 'One-To-Many', time: 'Monday • 07:00 PM - 08:00 PM' },
+
+                { id: 'LSE-STD-2024-009', name: 'Ethan Clarke', type: 'One-To-Many', time: 'Wednesday • 05:00 PM - 06:00 PM' },
+                { id: 'LSE-STD-2024-028', name: 'Archie Turner', type: 'One-To-One', time: 'Wednesday • 05:00 PM - 06:00 PM' },
+                { id: 'LSE-STD-2024-046', name: 'Alfie Phillips', type: 'One-To-Many', time: 'Wednesday • 05:00 PM - 06:00 PM' },
+
+                { id: 'LSE-STD-2024-014', name: 'Harper White', type: 'One-To-One', time: 'Sunday • 09:00 AM - 10:00 AM' },
+                { id: 'LSE-STD-2024-032', name: 'Evie Campbell', type: 'One-To-Many', time: 'Sunday • 09:00 AM - 10:00 AM' },
+                { id: 'LSE-STD-2024-050', name: 'Alice Morris', type: 'One-To-Many', time: 'Sunday • 09:00 AM - 10:00 AM' }
             ],
-            'chemistry': [
-                { id: 'LSE-STD-2024-003', name: 'Benjamin Moore', type: 'One-To-One', time: 'Monday • 04:00 PM - 05:30 PM' },
-                { id: 'LSE-STD-2024-045', name: 'Phoebe Gray', type: 'One-To-One', time: 'Monday • 04:00 PM - 05:30 PM' },
-                { id: 'LSE-STD-2024-008', name: 'Chloe Harris', type: 'One-To-Many', time: 'Tuesday • 04:00 PM - 05:30 PM' },
-                { id: 'LSE-STD-2024-026', name: 'Hannah Baker', type: 'One-To-Many', time: 'Tuesday • 04:00 PM - 05:30 PM' },
-                { id: 'LSE-STD-2024-040', name: 'Max Bennett', type: 'One-To-Many', time: 'Tuesday • 06:00 PM - 07:30 PM' },
-                { id: 'LSE-STD-2024-049', name: 'Logan Price', type: 'One-To-Many', time: 'Tuesday • 06:00 PM - 07:30 PM' },
-                { id: 'LSE-STD-2024-017', name: 'Zoe Lee', type: 'One-To-One', time: 'Wednesday • 04:00 PM - 05:30 PM' },
-                { id: 'LSE-STD-2024-013', name: 'Alexander King', type: 'One-To-Many', time: 'Thursday • 04:00 PM - 05:30 PM' },
-                { id: 'LSE-STD-2024-036', name: 'Lily Ward', type: 'One-To-Many', time: 'Thursday • 04:00 PM - 05:30 PM' },
-                { id: 'LSE-STD-2024-021', name: 'Daniel Adams', type: 'One-To-Many', time: 'Friday • 04:00 PM - 05:30 PM' },
-                { id: 'LSE-STD-2024-054', name: 'Sienna Russell', type: 'One-To-Many', time: 'Friday • 04:00 PM - 05:30 PM' },
-                { id: 'LSE-STD-2024-031', name: 'Samuel Bell', type: 'One-To-One', time: 'Saturday • 04:00 PM - 05:30 PM' }
-            ],
-            'computer-science': [
-                { id: 'LSE-STD-2024-010', name: 'Liam Jackson', type: 'One-To-One', time: 'Monday • 01:00 PM - 02:30 PM' },
-                { id: 'LSE-STD-2024-058', name: 'Nathan Kelly', type: 'One-To-One', time: 'Monday • 01:00 PM - 02:30 PM' },
-                { id: 'LSE-STD-2024-015', name: 'Eleanor Wood', type: 'One-To-Many', time: 'Tuesday • 03:00 PM - 04:30 PM' },
-                { id: 'LSE-STD-2024-052', name: 'Gabriel Butler', type: 'One-To-Many', time: 'Tuesday • 03:00 PM - 04:30 PM' },
-                { id: 'LSE-STD-2024-062', name: 'Caleb Foster', type: 'One-To-Many', time: 'Tuesday • 03:00 PM - 04:30 PM' },
-                { id: 'LSE-STD-2024-024', name: 'Edward Jenkins', type: 'One-To-One', time: 'Wednesday • 01:00 PM - 02:30 PM' },
-                { id: 'LSE-STD-2024-030', name: 'Jessica Perry', type: 'One-To-Many', time: 'Thursday • 03:00 PM - 04:30 PM' },
-                { id: 'LSE-STD-2024-057', name: 'Maya Bailey', type: 'One-To-Many', time: 'Thursday • 03:00 PM - 04:30 PM' },
-                { id: 'LSE-STD-2024-064', name: 'Isaac Henderson', type: 'One-To-Many', time: 'Thursday • 03:00 PM - 04:30 PM' },
-                { id: 'LSE-STD-2024-043', name: 'Isabelle Brooks', type: 'One-To-One', time: 'Friday • 01:00 PM - 02:30 PM' },
-                { id: 'LSE-STD-2024-066', name: 'Dylan Powell', type: 'One-To-One', time: 'Friday • 01:00 PM - 02:30 PM' },
-                { id: 'LSE-STD-2024-063', name: 'Lola Patterson', type: 'One-To-One', time: 'Saturday • 01:00 PM - 02:30 PM' },
-                { id: 'LSE-STD-2024-034', name: 'Toby Coleman', type: 'One-To-Many', time: 'Saturday • 03:00 PM - 04:30 PM' },
-                { id: 'LSE-STD-2024-061', name: 'Zara Simmons', type: 'One-To-Many', time: 'Saturday • 03:00 PM - 04:30 PM' },
-                { id: 'LSE-STD-2024-065', name: 'Heidi Reynolds', type: 'One-To-Many', time: 'Saturday • 03:00 PM - 04:30 PM' }
+            'year6-iseb': [
+                { id: 'LSE-STD-2024-003', name: 'Benjamin Moore', type: 'One-To-One', time: 'Wednesday • 06:00 PM - 07:00 PM' },
+                { id: 'LSE-STD-2024-008', name: 'Chloe Harris', type: 'One-To-Many', time: 'Wednesday • 06:00 PM - 07:00 PM' },
+                { id: 'LSE-STD-2024-013', name: 'Alexander King', type: 'One-To-Many', time: 'Wednesday • 06:00 PM - 07:00 PM' },
+                { id: 'LSE-STD-2024-017', name: 'Zoe Lee', type: 'One-To-One', time: 'Wednesday • 06:00 PM - 07:00 PM' },
+                { id: 'LSE-STD-2024-021', name: 'Daniel Adams', type: 'One-To-Many', time: 'Wednesday • 06:00 PM - 07:00 PM' },
+                { id: 'LSE-STD-2024-026', name: 'Hannah Baker', type: 'One-To-Many', time: 'Wednesday • 06:00 PM - 07:00 PM' },
+                { id: 'LSE-STD-2024-031', name: 'Samuel Bell', type: 'One-To-One', time: 'Wednesday • 06:00 PM - 07:00 PM' },
+                { id: 'LSE-STD-2024-036', name: 'Lily Ward', type: 'One-To-Many', time: 'Wednesday • 06:00 PM - 07:00 PM' },
+                { id: 'LSE-STD-2024-040', name: 'Max Bennett', type: 'One-To-Many', time: 'Wednesday • 06:00 PM - 07:00 PM' },
+                { id: 'LSE-STD-2024-045', name: 'Phoebe Gray', type: 'One-To-One', time: 'Wednesday • 06:00 PM - 07:00 PM' },
+                { id: 'LSE-STD-2024-049', name: 'Logan Price', type: 'One-To-Many', time: 'Wednesday • 06:00 PM - 07:00 PM' },
+                { id: 'LSE-STD-2024-054', name: 'Sienna Russell', type: 'One-To-One', time: 'Wednesday • 06:00 PM - 07:00 PM' }
             ]
         };
 
@@ -1414,7 +1387,6 @@
 
             const allStudentsInCourse = studentDatasets[course];
 
-            // Filter all students who have class on the selected Day of the Week
             const dayStudents = allStudentsInCourse.filter(s => {
                 const parts = s.time.split("•");
                 const dayPart = parts[0].trim();
@@ -1426,7 +1398,6 @@
                 return;
             }
 
-            // Extract all unique time slots for this specific day
             const uniqueSlots = [...new Set(dayStudents.map(s => {
                 const parts = s.time.split("•");
                 return parts[1] ? parts[1].trim() : s.time;
@@ -1474,7 +1445,6 @@
 
             content.style.display = "block";
 
-            // Filter students by Course, Day of Week, and Selected Time Slot (includes BOTH One-To-One and One-To-Many)
             const baseList = studentDatasets[course].filter(s => {
                 const parts = s.time.split("•");
                 const dayPart = parts[0].trim();
@@ -1482,13 +1452,11 @@
                 return (dayPart.toLowerCase() === selectedDay.toLowerCase()) && (timePart === selectedSlot);
             });
 
-            // Update badge counts for this exact session
             const otoCount = baseList.filter(s => s.type.toLowerCase() === 'one-to-one').length;
             const otmCount = baseList.filter(s => s.type.toLowerCase() === 'one-to-many').length;
             document.getElementById('badge-oto').textContent = otoCount;
             document.getElementById('badge-otm').textContent = otmCount;
 
-            // Highlight active filter pill
             document.getElementById('filter-btn-oto').classList.toggle('active', currentTypeFilter.toLowerCase() === 'one-to-one');
             document.getElementById('filter-btn-otm').classList.toggle('active', currentTypeFilter.toLowerCase() === 'one-to-many');
 
@@ -1508,7 +1476,7 @@
             const formattedDate = getFormattedCurrentDate();
 
             if (filteredList.length === 0) {
-                tbody.innerHTML = `<tr><td colspan="5" style="text-align:center; padding:32px 20px; color:#94a3b8;">
+                tbody.innerHTML = `<tr><td colspan="4" style="text-align:center; padding:32px 20px; color:#94a3b8;">
                     <i class="feather-search" style="font-size:20px; display:block; margin-bottom:8px;"></i>
                     No students match the current filters or search query.
                 </td></tr>`;
@@ -1540,9 +1508,6 @@
                             </span>
                         </div>
                     </td>
-                    <td>
-                        <span class="time-badge"><i class="feather-clock"></i> ${student.time}</span>
-                    </td>
                     <td class="row-date">${formattedDate}</td>
                     <td style="text-align:center;">
                         <span class="attendance-status ${isPresent ? 'attendance-yes' : 'attendance-no'}" onclick="toggleAttendance(this, '${student.id}')">
@@ -1552,7 +1517,7 @@
                     <td style="text-align:center;">
                         <div class="attendance-action-group">
                             <button type="button" class="attendance-view-btn" onclick="viewAttendance(this)">
-                                <i class="feather-eye"></i> View
+                                View
                             </button>
                         </div>
                     </td>

@@ -1233,24 +1233,23 @@ const studentData = {
         name: "Oliver Smith",
         id: "LSE-STD-2024-001",
         subjects: [
-            "Mathematics",
-            "Physics",
-            "Chemistry",
-            "Computer Science"
+            "Year 5 English — Core English Skills + Reading Comprehension",
+            "Year 6 Reading Comprehension",
+            "Year 6 ISEB & Grammar School Multiple-Choice Preparation"
         ]
     },
     student002: {
         name: "Arun",
         subjects: [
-            "Mathematics",
-            "Physics"
+            "Year 5 English — Core English Skills + Reading Comprehension",
+            "Year 6 Reading Comprehension"
         ]
     },
     student003: {
         name: "Rahul",
         subjects: [
-            "Chemistry",
-            "Computer Science"
+            "Year 6 Reading Comprehension",
+            "Year 6 ISEB & Grammar School Multiple-Choice Preparation"
         ]
     }
 };
@@ -1260,30 +1259,23 @@ const currentStudent = studentData[currentStudentId];
 const homeworkData = [
     {
         id: 1,
-        subject: "Mathematics",
-        teacher: "Ruben",
-        task: "Complete Chapter 5 numerical problems and solve integration exercises.",
+        subject: "Year 5 English — Core English Skills + Reading Comprehension",
+        teacher: "Lily",
+        task: "Complete Chapter 4 Reading Comprehension passage and vocabulary exercise.",
         studentId: "student001"
     },
     {
         id: 2,
-        subject: "Physics",
-        teacher: "Ruben",
-        task: "Revise Newton's Laws and complete kinematics problem set 3.",
+        subject: "Year 6 Reading Comprehension",
+        teacher: "Lily",
+        task: "Analyze the classical literature extract and answer questions 1-8.",
         studentId: "student001"
     },
     {
         id: 3,
-        subject: "Chemistry",
-        teacher: "Ruben",
-        task: "Review Periodic Table trends and balance chemical equations sheet.",
-        studentId: "student001"
-    },
-    {
-        id: 4,
-        subject: "Computer Science",
-        teacher: "Ruben",
-        task: "Implement binary search algorithm and review time complexity.",
+        subject: "Year 6 ISEB & Grammar School Multiple-Choice Preparation",
+        teacher: "Lily",
+        task: "Solve ISEB timed multiple-choice practice paper set 2.",
         studentId: "student001"
     }
 ];
@@ -1292,12 +1284,12 @@ const resourceData = [
     {
         id: 1,
         studentId: "student001",
-        subject: "Mathematics",
-        teacher: "Ruben",
+        subject: "Year 5 English — Core English Skills + Reading Comprehension",
+        teacher: "Lily",
         date: "2026-08-13",
         files: [
             {
-                name: "Mathematics_Ch5_Notes.pdf",
+                name: "Year5_English_CoreSkills_Notes.pdf",
                 file: "assets/notes/Physics_Ch5_Notes.pdf",
                 type: "PDF",
                 uploadedAt: "2026-08-13T09:30:00"
@@ -1307,12 +1299,12 @@ const resourceData = [
     {
         id: 2,
         studentId: "student001",
-        subject: "Physics",
-        teacher: "Ruben",
+        subject: "Year 6 Reading Comprehension",
+        teacher: "Lily",
         date: "2026-08-13",
         files: [
             {
-                name: "Physics_Ch5_Notes.pdf",
+                name: "Year6_Reading_Analysis_Guide.pdf",
                 file: "assets/notes/Physics_Ch5_Notes.pdf",
                 type: "PDF",
                 uploadedAt: "2026-08-13T10:00:00"
@@ -1322,29 +1314,15 @@ const resourceData = [
     {
         id: 3,
         studentId: "student001",
-        subject: "Chemistry",
-        teacher: "Ruben",
+        subject: "Year 6 ISEB & Grammar School Multiple-Choice Preparation",
+        teacher: "Lily",
         date: "2026-08-12",
         files: [
             {
-                name: "Chemistry_Ch5_Notes.pdf",
+                name: "ISEB_Multiple_Choice_Practice.pdf",
                 file: "assets/notes/Physics_Ch5_Notes.pdf",
                 type: "PDF",
                 uploadedAt: "2026-08-12T09:00:00"
-            }
-        ]
-    },
-    {
-        id: 4,
-        studentId: "student001",
-        subject: "Computer Science",
-        teacher: "Ruben",
-        date: "2026-08-11",
-        files: [
-            {
-                file: "assets/notes/HTML_CSS_Notes.pdf",
-                type: "PDF",
-                uploadedAt: "2026-08-11T09:00:00"
             }
         ]
     }

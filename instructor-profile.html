@@ -100,7 +100,6 @@
             line-height: 1 !important;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
-            display: inline-block !important;
         }
 
         i[class^="fa-"],
@@ -116,7 +115,6 @@
             font-family: "Font Awesome 5 Pro", "Font Awesome 5 Free", "FontAwesome" !important;
             font-style: normal !important;
             font-weight: normal !important;
-            display: inline-block !important;
         }
 
         /* Centered Section Title Icons */
@@ -142,6 +140,7 @@
             text-align: center !important;
             margin: 0 !important;
             padding: 0 !important;
+            flex-shrink: 0 !important;
         }
 
         .teacher-details-title-left h5 {
@@ -226,7 +225,6 @@
         .teacher-meta-item i,
         .student-badge-id i,
         .profile-info-icon i,
-        .teacher-details-title-left i,
         .student-details-title-left i,
         .subject-badge-icon i,
         .subject-time i,
@@ -237,26 +235,36 @@
             font-variant: normal !important;
             text-transform: none !important;
             line-height: 1 !important;
-            display: inline-block !important;
             -webkit-font-smoothing: antialiased !important;
             -moz-osx-font-smoothing: grayscale !important;
+            vertical-align: middle !important;
         }
 
-        /* Teacher Profile Styling */
+        .profile-info-icon,
+        .subject-icon-box {
+            display: inline-flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            line-height: 1 !important;
+            vertical-align: middle !important;
+            flex-shrink: 0 !important;
+        }
+
+        /* Teacher Profile Styling - Exact Student Profile Typography */
         .teacher-profile-hero,
         .teacher-details-card,
         .teacher-profile-hero *,
         .teacher-details-card * {
             box-sizing: border-box;
-            font-family: var(--font-primary), "Euclid Circular A", "Euclid Circular", sans-serif !important;
+            font-family: var(--font-primary) !important;
         }
 
         .teacher-profile-hero {
             background: linear-gradient(135deg, #f8f9ff 0%, #f1edff 100%);
             border: 1px solid #e5e0ff;
             border-radius: 12px;
-            padding: 24px 26px;
-            margin-bottom: 24px;
+            padding: 26px 28px;
+            margin-bottom: 25px;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -267,19 +275,20 @@
         .teacher-profile-user {
             display: flex;
             align-items: center;
-            gap: 18px;
+            gap: 20px;
             flex: 1 1 auto;
             min-width: 0;
         }
 
         .teacher-avatar-badge {
-            width: 68px;
-            height: 68px;
-            border-radius: 14px;
+            width: 70px;
+            height: 70px;
+            border-radius: 16px;
             background: linear-gradient(135deg, #6c4df6, #9b7cff);
             color: #ffffff;
             font-size: 24px;
             font-weight: 700;
+            font-family: var(--font-primary) !important;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -292,10 +301,10 @@
             position: absolute;
             bottom: -2px;
             right: -2px;
-            width: 15px;
-            height: 15px;
+            width: 16px;
+            height: 16px;
             border-radius: 50%;
-            background: #2f57ef;
+            background: #16c763;
             border: 2.5px solid #ffffff;
         }
 
@@ -305,30 +314,32 @@
         }
 
         .teacher-user-info h3 {
-            margin: 0 0 4px;
-            font-size: 26px !important;
+            margin: 0 0 6px;
+            font-size: 24px !important;
             font-weight: 700 !important;
             font-family: var(--font-primary) !important;
             color: #192335 !important;
         }
 
-        /* Clean, Borderless & Screen-Friendly Meta Items */
         .teacher-meta-badges {
             display: flex;
             align-items: center;
             flex-wrap: wrap;
-            row-gap: 4px;
-            column-gap: 8px;
+            gap: 8px;
         }
 
         .teacher-meta-item {
             display: inline-flex;
             align-items: center;
             gap: 5px;
-            color: #5541b8;
-            font-size: 15px !important;
+            background: #ffffff;
+            border: 1px solid #e0dbff;
+            color: #6c4df6;
+            font-size: 14px !important;
             font-weight: 500 !important;
             font-family: var(--font-primary) !important;
+            padding: 4px 10px;
+            border-radius: 6px;
             line-height: 1.4;
         }
 
@@ -338,15 +349,13 @@
         }
 
         .teacher-meta-badges .meta-divider {
-            color: #c4bbf5;
-            font-weight: 600;
-            user-select: none;
+            display: none;
         }
 
         .teacher-hero-stats {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 14px;
             flex-shrink: 0;
         }
 
@@ -354,9 +363,9 @@
             background: #ffffff;
             border: 1px solid #e8e8e8;
             border-radius: 10px;
-            padding: 10px 16px;
+            padding: 12px 18px;
             text-align: center;
-            min-width: 95px;
+            min-width: 105px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
         }
 
@@ -369,8 +378,8 @@
         }
 
         .hero-stat-label {
-            font-size: 17px !important;
-            color: #475569 !important;
+            font-size: 13px !important;
+            color: #64748b !important;
             font-weight: 500 !important;
             font-family: var(--font-primary) !important;
             margin-top: 2px;
@@ -380,43 +389,43 @@
         /* Profile Cards */
         .teacher-details-card {
             margin-top: 24px;
-            padding: 24px 26px;
+            padding: 26px 28px;
             border-radius: 12px;
             background: #ffffff;
             border: 1px solid #e8e8e8;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.04);
         }
 
         .teacher-details-title {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            margin-bottom: 20px;
-            padding-bottom: 14px;
+            margin-bottom: 22px;
+            padding-bottom: 16px;
             border-bottom: 1px solid #eeeeee;
         }
 
         .teacher-details-title-left {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
         }
 
         .teacher-details-title-left i {
-            width: 36px;
-            height: 36px;
+            width: 38px;
+            height: 38px;
             display: flex;
             align-items: center;
             justify-content: center;
-            border-radius: 8px;
+            border-radius: 10px;
             background: #f3f0ff;
             color: #6c4df6;
-            font-size: 16px;
+            font-size: 18px;
         }
 
         .teacher-details-title-left h5 {
             margin: 0;
-            font-size: 20px !important;
+            font-size: 18px !important;
             font-weight: 700 !important;
             font-family: var(--font-primary) !important;
             color: #192335 !important;
@@ -426,17 +435,17 @@
         .profile-info-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 14px;
+            gap: 16px;
         }
 
         .profile-info-item {
             background: #fbfbfe;
             border: 1px solid #f0edf8;
-            border-radius: 8px;
-            padding: 12px 16px;
+            border-radius: 9px;
+            padding: 14px 18px;
             display: flex;
             align-items: flex-start;
-            gap: 12px;
+            gap: 14px;
             transition: all 0.2s ease;
         }
 
@@ -447,15 +456,15 @@
         }
 
         .profile-info-icon {
-            width: 34px;
-            height: 34px;
+            width: 36px;
+            height: 36px;
             border-radius: 8px;
             background: #f3f0ff;
             color: #6c4df6;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 15px;
+            font-size: 16px;
             flex-shrink: 0;
         }
 
@@ -465,28 +474,39 @@
         }
 
         .profile-info-label {
-            font-size: 16px !important;
-            font-weight: 400 !important;
+            font-size: 13.5px !important;
+            font-weight: 600 !important;
             text-transform: uppercase !important;
             letter-spacing: 0.05em !important;
-            color: black;
-            margin-bottom: 2px;
+            color: #64748b !important;
+            font-family: var(--font-primary) !important;
+            margin-bottom: 3px;
         }
 
         .profile-info-val {
-            font-size: 17px !important;
-            font-weight: 400 !important;
-            color: gray;
+            font-size: 15.5px !important;
+            font-weight: 500 !important;
+            color: #192335 !important;
             word-break: break-word;
-            line-height: 1.5 !important;
+            font-family: var(--font-primary) !important;
         }
 
-        .profile-info-val p {
-            font-size: 18px !important;
-            font-weight: 400 !important;
-            color: #475569 !important;
-            line-height: 1.65 !important;
-            margin-bottom: 12px;
+        #profile-bio-container {
+            font-family: var(--font-primary) !important;
+        }
+
+        #profile-bio-container p {
+            font-size: 15.5px !important;
+            font-weight: 500 !important;
+            color: #192335 !important;
+            font-family: var(--font-primary) !important;
+            line-height: 1.6 !important;
+            margin-bottom: 14px;
+            word-break: break-word;
+        }
+
+        #profile-bio-container p:last-child {
+            margin-bottom: 0;
         }
 
         .profile-info-full {
@@ -505,28 +525,31 @@
             border-spacing: 0;
             overflow: hidden;
             border: 1px solid #e6e6e6;
-            border-radius: 8px;
+            border-radius: 10px;
+            font-family: var(--font-primary) !important;
         }
 
         .subject-table thead th {
-            padding: 13px 18px;
-            background: #f8fafc;
+            padding: 16px 20px;
+            background: #f6f7fb;
             color: #192335 !important;
-            font-size: 16px !important;
+            font-size: 15px !important;
             font-weight: 600 !important;
-            letter-spacing: 0.02em;
+            letter-spacing: 0.01em !important;
             text-align: left;
             border-bottom: 1px solid #e6e6e6;
             white-space: nowrap;
+            font-family: var(--font-primary) !important;
         }
 
         .subject-table tbody td {
-            padding: 13px 18px;
-            color: #475569 !important;
-            font-size: 17px !important;
+            padding: 16px 20px;
+            color: #4b5563 !important;
+            font-size: 15px !important;
             font-weight: 400 !important;
-            border-bottom: 1px solid #f1f5f9;
+            border-bottom: 1px solid #eeeeee;
             vertical-align: middle;
+            font-family: var(--font-primary) !important;
         }
 
         .subject-table tbody tr:last-child td {
@@ -544,42 +567,49 @@
         }
 
         .subject-icon-box {
-            width: 34px;
-            height: 34px;
+            width: 36px;
+            height: 36px;
+            min-width: 36px;
             border-radius: 8px;
             background: #f3f0ff;
             color: #6c4df6;
-            display: flex;
+            display: inline-flex;
             align-items: center;
             justify-content: center;
-            flex-shrink: 0;
-            font-size: 15px;
+            font-size: 16px;
+            line-height: 1;
         }
 
         .subject-name {
-            font-weight: 400 !important;
+            font-weight: 600 !important;
             color: #192335 !important;
-            font-size: 17px !important;
+            font-size: 15.5px !important;
+            font-family: var(--font-primary) !important;
         }
 
         .student-count-badge {
             display: inline-flex;
             align-items: center;
             gap: 6px;
-            padding: 5px 12px;
-            border-radius: 6px;
-            background: #f3f0ff;
+            color: #475569 !important;
+            font-weight: 500 !important;
+            font-size: 15px !important;
+            font-family: var(--font-primary) !important;
+            background: transparent !important;
+            border: none !important;
+            padding: 0 !important;
+        }
+
+        .student-count-badge i {
             color: #6c4df6 !important;
-            font-weight: 600 !important;
-            font-size: 16px !important;
-            border: 1px solid #e0dbff;
+            font-size: 15px !important;
         }
 
         @media (max-width: 767px) {
             .teacher-profile-hero {
                 flex-direction: column;
                 align-items: flex-start;
-                padding: 18px 16px;
+                padding: 20px 16px;
             }
 
             .teacher-profile-user {
@@ -591,9 +621,9 @@
             }
 
             .teacher-meta-badges {
-                flex-direction: column;
+                flex-wrap: wrap;
                 align-items: flex-start;
-                gap: 4px;
+                gap: 8px;
             }
 
             .teacher-hero-stats {
@@ -603,12 +633,12 @@
 
             .hero-stat-box {
                 flex: 1;
-                padding: 8px 6px;
+                padding: 10px 8px;
                 min-width: unset;
             }
 
             .teacher-details-card {
-                padding: 18px 16px;
+                padding: 20px 16px;
             }
 
             .profile-info-grid {
@@ -618,15 +648,11 @@
             .profile-info-full {
                 grid-column: span 1;
             }
-        }
 
-        .teacher-details-card,
-        .teacher-profile-hero {
-            font-size: 17px !important;
-        }
-
-        .teacher-details-card p {
-            font-size: 18px !important;
+            .subject-table thead th,
+            .subject-table tbody td {
+                padding: 12px 14px;
+            }
         }
     </style>
 </head>
@@ -716,7 +742,8 @@
                                 class="feather-x"></i></button>
                     </div>
                 </div>
-                <p class="description">London Star Education provides high-quality online tuition and educational support.</p>
+                <p class="description">London Star Education provides high-quality online tuition and educational
+                    support.</p>
                 <ul class="navbar-top-left rbt-information-list justify-content-start">
                     <li>
                         <a href="mailto:info@londonstaredu.com"><i class="feather-mail"></i>info@londonstaredu.com</a>
@@ -780,7 +807,7 @@
                 <div class="col-lg-12">
                     <div class="row g-5">
 
-                          <!-- Sticky Sidebar -->
+                        <!-- Sticky Sidebar -->
                         <div class="col-lg-3">
                             <div class="rbt-default-sidebar sticky-top rbt-shadow-box rbt-gradient-border">
                                 <div class="inner">
@@ -788,25 +815,26 @@
                                         <div class="rbt-default-sidebar-wrapper">
 
                                             <div class="section-title mb--20">
-                                                <h6 class="rbt-title-style-2" id="sidebar-welcome-text">Welcome, Ruben</h6>
+                                                <h6 class="rbt-title-style-2" id="sidebar-welcome-text">Welcome, Lily
+                                                </h6>
                                             </div>
 
                                             <nav class="mainmenu-nav">
                                                 <ul class="dashboard-mainmenu rbt-default-sidebar-list">
-                                                    <li >
+                                                    <li>
                                                         <a href="instructor-profile.html">
                                                             <i class="feather-user"></i>
                                                             <span>My Profile</span>
                                                         </a>
                                                     </li>
-                                                    <li  >
-                                                        <a  href="students-list.html">
+                                                    <li>
+                                                        <a href="students-list.html">
                                                             <i class="feather-monitor"></i>
                                                             <span>Students List</span>
                                                         </a>
                                                     </li>
-                                                      <li >
-                                                        <a  href="class-schedule.html">
+                                                    <li>
+                                                        <a href="class-schedule.html">
                                                             <i class="feather-calendar"></i>
                                                             <span>Class Schedule</span>
                                                         </a>
@@ -818,12 +846,12 @@
                                                             <span>Class Link</span>
                                                         </a>
                                                     </li>
-                                                 <li>
-    <a href="tutor-attendance.html">
-        <i class="feather-check-circle"></i>
-        <span>Attendance</span>
-    </a>
-</li>
+                                                    <li>
+                                                        <a href="tutor-attendance.html">
+                                                            <i class="feather-check-circle"></i>
+                                                            <span>Attendance</span>
+                                                        </a>
+                                                    </li>
                                                     <li>
                                                         <a href="tutor-homework.html">
                                                             <i class="feather-file-text"></i>
@@ -869,24 +897,29 @@
                                     <div class="teacher-profile-hero">
                                         <div class="teacher-profile-user">
                                             <div class="teacher-avatar-badge">
-                                                <span id="hero-avatar-initial">R</span>
+                                                <span id="hero-avatar-initial">L</span>
                                                 <span class="status-dot" title="Active Educator"></span>
                                             </div>
                                             <div class="teacher-user-info">
-                                                <h3 id="hero-teacher-name">Ruben</h3>
-                                                
+                                                <h3 id="hero-teacher-name">Lily</h3>
+
                                                 <!-- Clean Subtitle Meta Without Heavy Box Borders -->
                                                 <div class="teacher-meta-badges">
                                                     <span class="teacher-meta-item">
-                                                        <i class="feather-hash"></i> <span id="hero-tutor-id">LSE-TUT-2001-008</span>
+                                                        <i class="feather-hash"></i> <span
+                                                            id="hero-tutor-id">LSE-TUT-2001-008</span>
                                                     </span>
                                                     <span class="meta-divider">•</span>
                                                     <span class="teacher-meta-item">
-                                                        <i class="feather-award"></i> <span id="hero-tutor-designation">Computer Systems Engineer</span>
+                                                        <i class="feather-award"></i> <span
+                                                            id="hero-tutor-designation">Oxford English Literature
+                                                            Specialist &amp; Head English Tutor</span>
                                                     </span>
                                                     <span class="meta-divider">•</span>
                                                     <span class="teacher-meta-item">
-                                                        <i class="feather-calendar"></i> <span id="hero-tutor-exp">Tutoring Since 2001 (20+ Years Exp)</span>
+                                                        <i class="feather-calendar"></i> <span
+                                                            id="hero-tutor-exp">Tutoring Since 2012 (10+ Years
+                                                            Exp)</span>
                                                     </span>
                                                 </div>
                                             </div>
@@ -894,11 +927,11 @@
 
                                         <div class="teacher-hero-stats">
                                             <div class="hero-stat-box">
-                                                <div class="hero-stat-value">4</div>
+                                                <div class="hero-stat-value">3</div>
                                                 <div class="hero-stat-label">Handled Subjects</div>
                                             </div>
                                             <div class="hero-stat-box">
-                                                <div class="hero-stat-value">57</div>
+                                                <div class="hero-stat-value">42</div>
                                                 <div class="hero-stat-label">Active Students</div>
                                             </div>
                                         </div>
@@ -917,8 +950,8 @@
                                             <table class="subject-table">
                                                 <thead>
                                                     <tr>
-                                                        <th style="width: 50%;">Course Name</th>
-                                                        <th style="width: 50%;">Assigned Students</th>
+                                                        <th style="width: 60%;">Course Name</th>
+                                                        <th style="width: 40%;">Assigned Students</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
@@ -928,7 +961,8 @@
                                                                 <div class="subject-icon-box">
                                                                     <i class="feather-book"></i>
                                                                 </div>
-                                                                <span class="subject-name">Mathematics</span>
+                                                                <span class="subject-name">Year 5 English — Core English
+                                                                    Skills + Reading Comprehension</span>
                                                             </div>
                                                         </td>
                                                         <td>
@@ -942,9 +976,10 @@
                                                         <td>
                                                             <div class="subject-badge-icon">
                                                                 <div class="subject-icon-box">
-                                                                    <i class="feather-zap"></i>
+                                                                    <i class="feather-book-open"></i>
                                                                 </div>
-                                                                <span class="subject-name">Physics</span>
+                                                                <span class="subject-name">Year 6 Reading
+                                                                    Comprehension</span>
                                                             </div>
                                                         </td>
                                                         <td>
@@ -958,31 +993,16 @@
                                                         <td>
                                                             <div class="subject-badge-icon">
                                                                 <div class="subject-icon-box">
-                                                                    <i class="feather-activity"></i>
+                                                                    <i class="feather-award"></i>
                                                                 </div>
-                                                                <span class="subject-name">Chemistry</span>
+                                                                <span class="subject-name">Year 6 ISEB &amp; Grammar
+                                                                    School Multiple-Choice Preparation</span>
                                                             </div>
                                                         </td>
                                                         <td>
                                                             <span class="student-count-badge">
                                                                 <i class="feather-users"></i>
                                                                 <span>12 Students</span>
-                                                            </span>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <div class="subject-badge-icon">
-                                                                <div class="subject-icon-box">
-                                                                    <i class="feather-code"></i>
-                                                                </div>
-                                                                <span class="subject-name">Computer Science</span>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <span class="student-count-badge">
-                                                                <i class="feather-users"></i>
-                                                                <span>15 Students</span>
                                                             </span>
                                                         </td>
                                                     </tr>
@@ -1012,7 +1032,7 @@
                                                 </div>
                                                 <div class="profile-info-content">
                                                     <div class="profile-info-label">Full Name</div>
-                                                    <div class="profile-info-val" id="profile-fullname">Ruben</div>
+                                                    <div class="profile-info-val" id="profile-fullname">Lily</div>
                                                 </div>
                                             </div>
 
@@ -1022,7 +1042,8 @@
                                                 </div>
                                                 <div class="profile-info-content">
                                                     <div class="profile-info-label">Profession / Background</div>
-                                                    <div class="profile-info-val" id="profile-designation">Computer Systems Engineer</div>
+                                                    <div class="profile-info-val" id="profile-designation">Oxford
+                                                        English Literature Graduate &amp; Lead Tutor</div>
                                                 </div>
                                             </div>
 
@@ -1032,7 +1053,8 @@
                                                 </div>
                                                 <div class="profile-info-content">
                                                     <div class="profile-info-label">Email Address</div>
-                                                    <div class="profile-info-val" id="profile-email">ruben@londonstaredu.com</div>
+                                                    <div class="profile-info-val" id="profile-email">
+                                                        lily@londonstaredu.com</div>
                                                 </div>
                                             </div>
 
@@ -1042,7 +1064,8 @@
                                                 </div>
                                                 <div class="profile-info-content">
                                                     <div class="profile-info-label">Phone Number</div>
-                                                    <div class="profile-info-val" id="profile-phone">+44 7900 889900</div>
+                                                    <div class="profile-info-val" id="profile-phone">+44 7900 889900
+                                                    </div>
                                                 </div>
                                             </div>
 
@@ -1052,7 +1075,8 @@
                                                 </div>
                                                 <div class="profile-info-content">
                                                     <div class="profile-info-label">Role &amp; Specialization</div>
-                                                    <div class="profile-info-val" id="profile-skill">Senior STEM Educator &amp; Computer Systems Engineer</div>
+                                                    <div class="profile-info-val" id="profile-skill">Senior English
+                                                        Educator &amp; Oxford English Literature Graduate</div>
                                                 </div>
                                             </div>
 
@@ -1077,14 +1101,14 @@
                                             </div>
                                         </div>
 
-                                        <div class="profile-info-val" id="profile-bio-container" style="line-height: 1.8;">
-                                            <p style="margin-bottom: 14px; font-weight: 400; color: #374151; font-size: 18px;">
-                                                With over two decades of dedicated experience in education and a robust
-                                                professional background in engineering, I offer a unique and
-                                                comprehensive tutoring experience. Since 2001, I have been committed to
-                                                helping students excel across a wide range of academic levels, from Year
-                                                7 through to A-Levels, specialising in Mathematics, Physics, Chemistry,
-                                                Biology, and Computer Science.
+                                        <div class="profile-info-val" id="profile-bio-container">
+                                            <p>
+                                                Ever popular teacher Lily is an Oxford English Literature graduate with
+                                                a particular focus on comprehension, 10+, 11+, 13+ and interview prep.
+                                                She specializes in Year 5 English (Core English Skills + Reading
+                                                Comprehension), Year 6 Reading Comprehension, and Year 6 ISEB &amp;
+                                                Grammar School Multiple-Choice Preparation, with an excellent track
+                                                record of helping students achieve top school offers.
                                             </p>
                                         </div>
                                     </div>
@@ -1188,11 +1212,13 @@
                             <h5 class="ft-title">Get Contact</h5>
                             <ul class="ft-link">
                                 <li><span>Phone:</span> <a href="#">(406) 555-0120</a></li>
-                                <li><span>E-mail:</span> <a href="mailto:info@londonstaredu.com">info@londonstaredu.com</a></li>
+                                <li><span>E-mail:</span> <a
+                                        href="mailto:info@londonstaredu.com">info@londonstaredu.com</a></li>
                             </ul>
                             <div class="newsletter-form mt--20">
                                 <h6 class="w-600">Location</h6>
-                                <p class="description">2000+ Our students are subscribe Around the World.<br> Don’t be shy introduce yourself!</p>
+                                <p class="description">2000+ Our students are subscribe Around the World.<br> Don’t be
+                                    shy introduce yourself!</p>
                             </div>
                         </div>
                     </div>
@@ -1210,7 +1236,8 @@
                         </p>
                     </div>
                     <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-12 col-12">
-                        <ul class="copyright-link rbt-link-hover justify-content-center justify-content-lg-end mt_sm--10 mt_md--10">
+                        <ul
+                            class="copyright-link rbt-link-hover justify-content-center justify-content-lg-end mt_sm--10 mt_md--10">
                             <li><a href="#">Terms of service</a></li>
                             <li><a href="privacy-policy.html">Privacy policy</a></li>
                         </ul>
@@ -1278,7 +1305,7 @@
 
             if (savedProfile) {
                 // Construct Full Name
-                const firstName = savedProfile.firstName || "Ruben";
+                const firstName = savedProfile.firstName || "Lily";
                 const lastName = savedProfile.lastName ? ` ${savedProfile.lastName}` : "";
                 const fullName = `${firstName}${lastName}`;
 
@@ -1341,8 +1368,8 @@
                 if (bioContainer && savedProfile.bio) {
                     const paragraphs = savedProfile.bio.split("\n\n").filter(p => p.trim() !== "");
                     if (paragraphs.length > 0) {
-                        bioContainer.innerHTML = paragraphs.map(p => 
-                            `<p style="margin-bottom: 14px; font-weight: 400; color: #374151; font-size: 18px;">${p.replace(/\n/g, '<br>')}</p>`
+                        bioContainer.innerHTML = paragraphs.map(p =>
+                            `<p>${p.replace(/\n/g, '<br>')}</p>`
                         ).join("");
                     }
                 }

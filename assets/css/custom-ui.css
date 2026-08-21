@@ -77,7 +77,7 @@ figcaption {
 }
 
 /* --------------------------------------------------------------------------
-   2. ICON FONT PROTECTION & UNIVERSAL VERTICAL ALIGNMENT (ISSUE #3)
+   2. MASTER ICON ALIGNMENT & VERTICAL CENTERING SYSTEM
    -------------------------------------------------------------------------- */
 i[class^="feather-"],
 i[class*=" feather-"],
@@ -99,6 +99,8 @@ span[class*=" feather-"],
     align-items: center !important;
     justify-content: center !important;
     vertical-align: middle !important;
+    box-sizing: border-box !important;
+    flex-shrink: 0 !important;
 }
 
 i[class^="fa-"],
@@ -114,6 +116,8 @@ i[class*=" fa-"],
     justify-content: center !important;
     vertical-align: middle !important;
     line-height: 1 !important;
+    box-sizing: border-box !important;
+    flex-shrink: 0 !important;
 }
 
 i[class^="bi-"],
@@ -127,9 +131,62 @@ i[class*=" bi-"],
     justify-content: center !important;
     vertical-align: middle !important;
     line-height: 1 !important;
+    box-sizing: border-box !important;
+    flex-shrink: 0 !important;
 }
 
-/* Universal Icon-to-Text Alignment across all elements */
+/* Universal Icon-to-Text Alignment across all elements & components */
+.rbt-btn,
+.btn,
+.rbt-btn-link,
+.rbt-switch-btn,
+.btn-gradient,
+.btn-white,
+.btn-border,
+.rbt-round-btn,
+.rbt-badge,
+.rbt-badge-sub,
+.icon-box,
+.contact-item,
+.feature-sin,
+.rbt-meta li,
+.teacher-details-title-left,
+.profile-info-icon,
+.summary-points li,
+.rbt-user-tab a,
+.dashboard-mainmenu li a,
+.rbt-default-sidebar-list li a,
+.login-dropdown-btn,
+.login-dropdown-menu a,
+.rating-box,
+.course-badge-pill,
+.fee-pill,
+.type-pill,
+.time-pill,
+.student-badge-id,
+.student-badge-grade,
+.student-badge-curriculum,
+.status-badge,
+.weekly-badge,
+.assigned-date-label,
+.assigned-date-box,
+.btn-action,
+.copy-btn,
+.join-btn,
+.cal-nav-btn,
+.filter-btn,
+.type-filter-btn,
+.contact-button,
+.social-icon li a,
+.rbt-footer .rbt-information-list li,
+.rbt-information-list li,
+.rbt-link-hover,
+.rbt-back-to-top {
+    display: inline-flex !important;
+    align-items: center !important;
+}
+
+/* Ensure all icon glyphs are centered with zero baseline displacement */
 .rbt-btn i,
 .btn i,
 .rbt-badge i,
@@ -143,12 +200,100 @@ i[class*=" bi-"],
 .summary-points li i,
 .rbt-user-tab a i,
 .dashboard-mainmenu li a i,
-.rbt-default-sidebar-list li a i {
+.rbt-default-sidebar-list li a i,
+.login-dropdown-btn i,
+.login-dropdown-menu a i,
+.hamberger-button i,
+.close-button i,
+.rating-box i,
+.course-badge-pill i,
+.fee-pill i,
+.type-pill i,
+.time-pill i,
+.student-badge-id i,
+.student-badge-grade i,
+.student-badge-curriculum i,
+.status-badge i,
+.weekly-badge i,
+.weekly-header-icon i,
+.homework-page-header-icon i,
+.resource-subject-icon i,
+.resource-file-icon i,
+.meeting-icon i,
+.classlink-hero-icon i,
+.card-header-icon i,
+.stat-icon i,
+.subject-card-icon i,
+.latest-icon i,
+.modal-user-icon i,
+.assigned-date-label i,
+.btn-action i,
+.copy-btn i,
+.join-btn i,
+.contact-button i,
+.social-icon li a i,
+.social-icon li a svg,
+.social-icon-x,
+.rbt-footer .rbt-information-list li i,
+.rbt-information-list li i,
+.rbt-link-hover i,
+.rbt-back-to-top i,
+.rbt-btn .btn-icon i,
+.rbt-btn .icon-after i,
+.rbt-btn-link i {
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
     vertical-align: middle !important;
     line-height: 1 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    text-align: center !important;
+    flex-shrink: 0 !important;
+}
+
+/* Button & Link specific horizontal icon spacing */
+.rbt-btn,
+.rbt-switch-btn,
+.btn-gradient {
+    gap: 8px !important;
+}
+
+.rbt-btn-link {
+    gap: 6px !important;
+}
+
+.login-dropdown-btn {
+    gap: 6px !important;
+}
+
+.login-dropdown-menu a {
+    gap: 10px !important;
+}
+
+.dashboard-mainmenu li a,
+.rbt-default-sidebar-list li a {
+    gap: 12px !important;
+}
+
+.rbt-meta li {
+    gap: 6px !important;
+}
+
+.rbt-information-list li {
+    gap: 10px !important;
+}
+
+.course-badge-pill,
+.fee-pill,
+.type-pill,
+.time-pill,
+.student-badge-id,
+.student-badge-grade,
+.student-badge-curriculum,
+.status-badge,
+.weekly-badge {
+    gap: 5px !important;
 }
 
 /* --------------------------------------------------------------------------
@@ -243,31 +388,28 @@ h6, .h6 {
 html,
 body {
     margin: 0 !important;
-}
-
-body {
-    padding-top: 80px !important;
+    padding: 0 !important;
 }
 
 header.rbt-header,
 .rbt-header,
 .rbt-header.rbt-header-9 {
-    position: fixed !important;
+    position: -webkit-sticky !important;
+    position: sticky !important;
     top: 0 !important;
     left: 0 !important;
     right: 0 !important;
     width: 100% !important;
-    height: 80px !important;
-    min-height: 80px !important;
-    max-height: 80px !important;
     z-index: 10000 !important;
     background-color: #ffffff !important;
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08) !important;
+    box-shadow: 0 2px 14px rgba(0, 0, 0, 0.06) !important;
     transform: none !important;
     visibility: visible !important;
     opacity: 1 !important;
     margin: 0 !important;
     padding: 0 !important;
+    border: none !important;
+    transition: box-shadow 0.3s ease !important;
 }
 
 .rbt-header .rbt-header-wrapper,
@@ -281,6 +423,7 @@ header.rbt-header,
     min-height: 80px !important;
     max-height: 80px !important;
     background-color: #ffffff !important;
+    border-bottom: 1px solid #eef2f6 !important;
     box-shadow: none !important;
     margin: 0 !important;
     padding: 0 !important;
@@ -490,54 +633,267 @@ header.rbt-header,
     }
 }
 
-/* Desktop Header (>= 992px) - Includes Laptops, Desktops, & Mobile "Desktop Site" Mode */
-@media only screen and (min-width: 992px) {
-    .rbt-header .rbt-main-navigation {
-        display: block !important;
-        flex: 1 1 auto !important;
-        min-width: 0 !important;
-    }
-    .rbt-header .mobile-menu-bar {
-        display: none !important;
-    }
-    .rbt-header .header-right .rbt-btn-wrapper {
-        display: inline-flex !important;
-        align-items: center !important;
-        gap: 10px !important;
-    }
+/* ==========================================================================
+   MASTER UNIFIED HEADER SYSTEM (IDENTICAL & ROCK-SOLID ACROSS ALL PAGES)
+   ========================================================================== */
+header.rbt-header,
+.rbt-header,
+.rbt-header.rbt-header-9 {
+    width: 100% !important;
+    position: -webkit-sticky !important;
+    position: sticky !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    background: #ffffff !important;
+    z-index: 10000 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    box-shadow: 0 2px 14px rgba(0, 0, 0, 0.06) !important;
+    box-sizing: border-box !important;
 }
 
-@media only screen and (min-width: 992px) and (max-width: 1199.98px) {
-    .rbt-header .rbt-main-navigation .mainmenu-nav {
-        display: flex !important;
-        justify-content: center !important;
-    }
-    .rbt-header .rbt-main-navigation .mainmenu > li > a,
-    .rbt-header .rbt-main-navigation a {
-        font-size: 14px !important;
-        padding: 0 7px !important;
-        height: 70px !important;
-        line-height: 70px !important;
-    }
-    .rbt-header .header-right .rbt-btn,
-    .rbt-header .header-right a.rbt-btn,
-    .rbt-header .header-right button.rbt-btn {
-        padding: 8px 14px !important;
-        font-size: 13.5px !important;
-    }
+.rbt-header .rbt-sticky-placeholder {
+    display: none !important;
 }
 
-@media only screen and (min-width: 1200px) {
-    .rbt-header .rbt-main-navigation .mainmenu > li > a,
-    .rbt-header .rbt-main-navigation a {
-        font-size: 16px !important;
-        padding: 0 11px !important;
-        height: 80px !important;
-        line-height: 80px !important;
-    }
+.rbt-header .rbt-header-wrapper,
+.rbt-header-wrapper.header-not-transparent,
+.rbt-header-wrapper.header-sticky {
+    background-color: #ffffff !important;
+    border-bottom: 1px solid #eef2f6 !important;
+    height: 80px !important;
+    min-height: 80px !important;
+    max-height: 80px !important;
+    display: flex !important;
+    align-items: center !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    position: relative !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    box-shadow: none !important;
 }
 
-/* Mobile & Tablet Header (< 992px): Navigation moves inside hamburger, Login & Join stay outside beside hamburger */
+.rbt-header .container {
+    width: 100% !important;
+    max-width: 1360px !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    box-sizing: border-box !important;
+}
+
+.rbt-header .mainbar-row {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    height: 80px !important;
+    min-height: 80px !important;
+    max-height: 80px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+.rbt-header .header-left,
+.rbt-header .header-info,
+.rbt-header .logo {
+    display: flex !important;
+    align-items: center !important;
+    flex-shrink: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    height: 80px !important;
+}
+
+.rbt-header .logo a {
+    display: flex !important;
+    align-items: center !important;
+    height: 80px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.rbt-header .logo img {
+    max-height: 48px !important;
+    height: 48px !important;
+    width: auto !important;
+    display: block !important;
+    object-fit: contain !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Master Navigation Links - Fixed Exact Spacing, Height & Typography */
+.rbt-header .rbt-main-navigation {
+    display: block !important;
+    flex: 1 1 auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.rbt-header .rbt-main-navigation .mainmenu-nav {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+}
+
+.rbt-header .rbt-main-navigation .mainmenu {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    list-style: none !important;
+    gap: 0 !important;
+}
+
+.rbt-header .rbt-main-navigation .mainmenu > li {
+    display: flex !important;
+    align-items: center !important;
+    flex-shrink: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    position: relative !important;
+    list-style: none !important;
+}
+
+.rbt-header .rbt-main-navigation .mainmenu > li > a,
+.rbt-header .rbt-main-navigation a {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    height: 80px !important;
+    line-height: 80px !important;
+    padding: 0 13px !important;
+    margin: 0 !important;
+    font-family: var(--font-primary), 'Plus Jakarta Sans', sans-serif !important;
+    font-size: 16.5px !important;
+    font-weight: 500 !important;
+    color: #192335 !important;
+    white-space: nowrap !important;
+    text-decoration: none !important;
+    transition: color 0.2s ease !important;
+    box-sizing: border-box !important;
+}
+
+.rbt-header .rbt-main-navigation .mainmenu > li > a:hover,
+.rbt-header .rbt-main-navigation .mainmenu > li > a.active {
+    color: var(--color-primary, #2f57ef) !important;
+}
+
+/* Master Header Right Area (Buttons & Dropdown) */
+.rbt-header .header-right {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    flex-shrink: 0 !important;
+    gap: 12px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    height: 80px !important;
+}
+
+.rbt-header .rbt-btn-wrapper {
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.rbt-header .login-dropdown {
+    position: relative !important;
+    display: inline-block !important;
+}
+
+.rbt-header .rbt-btn.rbt-switch-btn,
+.rbt-header .rbt-btn-sm,
+.rbt-header a.rbt-btn,
+.rbt-header button.rbt-btn {
+    height: 44px !important;
+    line-height: 44px !important;
+    padding: 0 20px !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    border-radius: 6px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    white-space: nowrap !important;
+    box-sizing: border-box !important;
+    margin: 0 !important;
+}
+
+.rbt-header .login-dropdown-btn {
+    height: 44px !important;
+    line-height: 44px !important;
+    padding: 0 18px !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+}
+
+.rbt-header .login-dropdown-menu {
+    position: absolute !important;
+    top: calc(100% + 8px) !important;
+    right: 0 !important;
+    min-width: 185px !important;
+    background: #ffffff !important;
+    border-radius: 8px !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12) !important;
+    border: 1px solid #eef2f6 !important;
+    padding: 6px 0 !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transform: translateY(6px) !important;
+    transition: all 0.2s ease !important;
+    z-index: 1000 !important;
+}
+
+.rbt-header .login-dropdown:hover .login-dropdown-menu,
+.rbt-header .login-dropdown.active .login-dropdown-menu {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) !important;
+}
+
+.rbt-header .login-dropdown-menu a {
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    padding: 10px 18px !important;
+    font-size: 15.5px !important;
+    font-weight: 500 !important;
+    color: #192335 !important;
+    text-decoration: none !important;
+    transition: all 0.2s ease !important;
+    line-height: 1.4 !important;
+    box-sizing: border-box !important;
+}
+
+.rbt-header .login-dropdown-menu a:hover {
+    background: #f8fafc !important;
+    color: var(--color-primary, #2f57ef) !important;
+}
+
+/* Mobile & Tablet Header (< 992px) */
 @media only screen and (max-width: 991.98px) {
     .rbt-header .rbt-main-navigation {
         display: none !important;
@@ -548,205 +904,39 @@ header.rbt-header,
         align-items: center !important;
         justify-content: space-between !important;
         gap: 8px !important;
+        height: 70px !important;
     }
-    .rbt-header .header-left {
-        flex-shrink: 1 !important;
-        min-width: 0 !important;
-    }
-    .rbt-header .header-left .logo a img {
-        max-height: 46px !important;
-        width: auto !important;
-        object-fit: contain !important;
-    }
-    .rbt-header .header-right {
-        display: flex !important;
-        flex-direction: row !important;
-        align-items: center !important;
-        justify-content: flex-end !important;
-        gap: 8px !important;
-        flex-shrink: 0 !important;
-    }
-    .rbt-header .header-right .rbt-btn-wrapper {
-        display: inline-flex !important;
-        align-items: center !important;
-        gap: 8px !important;
-        margin: 0 !important;
-    }
-    .rbt-header .mobile-menu-bar {
-        display: inline-flex !important;
-        align-items: center !important;
-        margin: 0 !important;
-        flex-shrink: 0 !important;
-    }
-    .rbt-header .mobile-menu-bar .hamberger {
-        display: flex !important;
-        align-items: center !important;
-    }
-    .rbt-header .mobile-menu-bar .hamberger-button {
-        display: inline-flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-    }
-}
-
-/* Tablet adjustments (768px to 991px) */
-@media only screen and (min-width: 768px) and (max-width: 991.98px) {
-    .rbt-header .header-right .rbt-btn,
-    .rbt-header .header-right a.rbt-btn,
-    .rbt-header .header-right button.rbt-btn {
-        padding: 9px 16px !important;
-        font-size: 14px !important;
-    }
-}
-
-/* Mobile screens (<= 767.98px) */
-@media only screen and (max-width: 767.98px) {
-    body {
-        padding-top: 70px !important;
-    }
-    header.rbt-header,
-    .rbt-header,
-    .rbt-header.rbt-header-9,
     .rbt-header .rbt-header-wrapper,
     .rbt-header-wrapper.header-sticky {
         height: 70px !important;
         min-height: 70px !important;
-        max-height: 70px !important;
     }
-    .rbt-header .mainbar-row,
+    .rbt-header .logo a,
     .rbt-header .header-left,
     .rbt-header .header-right {
         height: 70px !important;
-        min-height: 70px !important;
-        max-height: 70px !important;
-    }
-    .rbt-header .mainbar-row {
-        gap: 6px !important;
-    }
-    .rbt-header .header-right {
-        gap: 6px !important;
-    }
-    .rbt-header .header-right .rbt-btn-wrapper {
-        gap: 6px !important;
-    }
-    .rbt-header .header-right .rbt-btn,
-    .rbt-header .header-right a.rbt-btn,
-    .rbt-header .header-right button.rbt-btn {
-        width: auto !important;
-        margin-bottom: 0 !important;
-        padding: 8px 12px !important;
-        font-size: 13.5px !important;
-        height: auto !important;
-        line-height: 1.2 !important;
-        border-radius: 8px !important;
-    }
-    .rbt-header .header-right .hamberger-button {
-        width: 38px !important;
-        height: 38px !important;
-        padding: 0 !important;
-        line-height: 38px !important;
     }
     .rbt-header .header-left .logo a img {
         max-height: 42px !important;
     }
-}
-
-/* Extra Small screens (<= 425px down to 320px) */
-@media only screen and (max-width: 425px) {
-    .rbt-header .mainbar-row {
-        gap: 4px !important;
-    }
-    .rbt-header .header-left .logo a img {
-        max-height: 36px !important;
-        max-width: 100px !important;
-    }
-    .rbt-header .header-right {
-        gap: 4px !important;
-    }
-    .rbt-header .header-right .rbt-btn-wrapper {
-        gap: 4px !important;
-    }
     .rbt-header .header-right .rbt-btn,
     .rbt-header .header-right a.rbt-btn,
     .rbt-header .header-right button.rbt-btn {
-        padding: 6px 9px !important;
-        font-size: 12.5px !important;
-        letter-spacing: 0 !important;
+        height: 38px !important;
+        line-height: 38px !important;
+        padding: 0 12px !important;
+        font-size: 13.5px !important;
     }
-    .rbt-header .header-right .hamberger-button {
-        width: 34px !important;
-        height: 34px !important;
-        font-size: 15px !important;
-    }
-    .rbt-header .header-right .login-dropdown-btn i {
-        font-size: 11px !important;
-        margin-left: 2px !important;
+    .rbt-header .mobile-menu-bar {
+        display: inline-flex !important;
+        align-items: center !important;
     }
 }
 
-@media only screen and (max-width: 345px) {
-    .rbt-header .header-left .logo a img {
-        max-height: 32px !important;
-        max-width: 80px !important;
+@media only screen and (min-width: 992px) {
+    .rbt-header .mobile-menu-bar {
+        display: none !important;
     }
-    .rbt-header .header-right .rbt-btn,
-    .rbt-header .header-right a.rbt-btn,
-    .rbt-header .header-right button.rbt-btn {
-        padding: 5px 7px !important;
-        font-size: 11px !important;
-    }
-    .rbt-header .header-right .hamberger-button {
-        width: 30px !important;
-        height: 30px !important;
-    }
-}
-
-/* Login Dropdown System */
-.login-dropdown {
-    position: relative !important;
-    display: inline-block !important;
-}
-
-.login-dropdown-menu {
-    position: absolute !important;
-    top: calc(100% + 8px) !important;
-    right: 0 !important;
-    left: auto !important;
-    min-width: 190px !important;
-    background: #ffffff !important;
-    border: 1px solid rgba(0, 0, 0, 0.08) !important;
-    border-radius: 10px !important;
-    padding: 8px !important;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15) !important;
-    opacity: 0 !important;
-    visibility: hidden !important;
-    transform: translateY(8px) !important;
-    transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease !important;
-    z-index: 99999 !important;
-}
-
-.login-dropdown.active .login-dropdown-menu {
-    opacity: 1 !important;
-    visibility: visible !important;
-    transform: translateY(0) !important;
-}
-
-.login-dropdown-menu a {
-    display: flex !important;
-    align-items: center !important;
-    gap: 10px !important;
-    padding: 10px 12px !important;
-    color: #192335 !important;
-    font-size: 14.5px !important;
-    font-weight: 500 !important;
-    text-decoration: none !important;
-    border-radius: 6px !important;
-    transition: background 0.2s ease, color 0.2s ease !important;
-}
-
-.login-dropdown-menu a:hover {
-    background: #f0edff !important;
-    color: #2f57ef !important;
 }
 
 /* Mobile & Tablet Drawer Menu Refinement */
@@ -1048,11 +1238,11 @@ a[href="login-register.html"].rbt-btn,
 }
 
 /* --------------------------------------------------------------------------
-   7. UNIFIED FOOTER SYSTEM (IDENTICAL ACROSS ALL 26 PAGES)
-   - Same Width (1200px max-width container)
-   - Same Padding & Spacing (70px top, 40px bottom)
-   - Same Font Sizes (18px titles, 15.5px links & description, 14.5px copyright)
-   - Same Social Icons & Hover Transitions
+   7. UNIFIED FOOTER SYSTEM (IDENTICAL ACROSS ALL PAGES)
+   - Expanded Container (1360px max-width to eliminate excessive side gaps)
+   - Slightly Darker Text for high contrast and readability (#1e293b, #0f172a, #334155)
+   - Increased Font Sizes (20px titles, 16.5px links & description, 15.5px copyright)
+   - Same Social Icons, Spacing, Transitions & Hover Colors
    -------------------------------------------------------------------------- */
 footer.rbt-footer,
 .rbt-footer,
@@ -1065,11 +1255,11 @@ footer.rbt-footer,
 
 .rbt-footer .container {
     width: 100% !important;
-    max-width: 1200px !important;
+    max-width: 1360px !important;
     margin-left: auto !important;
     margin-right: auto !important;
-    padding-left: 15px !important;
-    padding-right: 15px !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
 }
 
 .rbt-footer .footer-top {
@@ -1086,16 +1276,16 @@ footer.rbt-footer,
 }
 
 .rbt-footer .footer-widget .logo img {
-    max-height: 46px !important;
+    max-height: 48px !important;
     width: auto !important;
     display: block !important;
 }
 
 .rbt-footer .footer-widget p.description,
 .rbt-footer .footer-widget .description {
-    font-size: 15.5px !important;
-    line-height: 1.65 !important;
-    color: #475569 !important;
+    font-size: 16.5px !important;
+    line-height: 1.7 !important;
+    color: #1e293b !important;
     font-weight: 400 !important;
     margin-top: 18px !important;
     margin-bottom: 20px !important;
@@ -1103,9 +1293,9 @@ footer.rbt-footer,
 
 .rbt-footer .footer-widget h5.ft-title,
 .rbt-footer .footer-widget .ft-title {
-    font-size: 18px !important;
+    font-size: 20px !important;
     font-weight: 700 !important;
-    color: #192335 !important;
+    color: #0f172a !important;
     margin-bottom: 22px !important;
     letter-spacing: -0.01em !important;
     line-height: 1.3 !important;
@@ -1119,15 +1309,15 @@ footer.rbt-footer,
 
 .rbt-footer .footer-widget .ft-link li {
     margin-bottom: 10px !important;
-    line-height: 1.6 !important;
+    line-height: 1.65 !important;
 }
 
 .rbt-footer .footer-widget .ft-link li a,
 .rbt-footer .footer-widget .ft-link li span {
-    font-size: 15.5px !important;
+    font-size: 16.5px !important;
     font-weight: 400 !important;
-    color: #475569 !important;
-    line-height: 1.6 !important;
+    color: #1e293b !important;
+    line-height: 1.65 !important;
     text-decoration: none !important;
     transition: color 0.25s ease, transform 0.25s ease !important;
     display: inline-block !important;
@@ -1139,22 +1329,22 @@ footer.rbt-footer,
 }
 
 .rbt-footer .newsletter-form h6 {
-    font-size: 16px !important;
-    font-weight: 600 !important;
-    color: #192335 !important;
+    font-size: 17.5px !important;
+    font-weight: 700 !important;
+    color: #0f172a !important;
     margin-bottom: 6px !important;
     margin-top: 15px !important;
 }
 
 .rbt-footer .newsletter-form p.description {
-    font-size: 15px !important;
-    color: #475569 !important;
-    line-height: 1.6 !important;
+    font-size: 16px !important;
+    color: #1e293b !important;
+    line-height: 1.65 !important;
     margin-top: 0 !important;
     margin-bottom: 0 !important;
 }
 
-/* Footer Social Icons - Perfect Size & Alignment */
+/* Footer Social Icons - Sized & Aligned */
 .rbt-footer .social-icon {
     display: flex !important;
     align-items: center !important;
@@ -1170,18 +1360,18 @@ footer.rbt-footer,
 }
 
 .rbt-footer .social-icon li a {
-    width: 38px !important;
-    height: 38px !important;
-    line-height: 38px !important;
+    width: 40px !important;
+    height: 40px !important;
+    line-height: 40px !important;
     border-radius: 50% !important;
     background: #f8fafc !important;
-    color: #475569 !important;
+    color: #1e293b !important;
     border: 1px solid #e2e8f0 !important;
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
     transition: all 0.25s ease !important;
-    font-size: 15px !important;
+    font-size: 16px !important;
     text-decoration: none !important;
 }
 
@@ -1207,10 +1397,10 @@ footer.rbt-footer,
 
 .rbt-separator-mid .container {
     width: 100% !important;
-    max-width: 1200px !important;
+    max-width: 1360px !important;
     margin: 0 auto !important;
-    padding-left: 15px !important;
-    padding-right: 15px !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
 }
 
 .rbt-separator-mid hr,
@@ -1223,57 +1413,88 @@ footer.rbt-footer,
 
 /* Copyright Area */
 .copyright-area,
-.copyright-area.copyright-style-1 {
-    padding: 20px 0 !important;
+.copyright-area.copyright-style-1,
+.copyright-area.ptb--20 {
+    padding: 16px 0 !important;
     background-color: #ffffff !important;
     width: 100% !important;
+    margin: 0 !important;
+    border-top: none !important;
 }
 
 .copyright-area .container {
     width: 100% !important;
-    max-width: 1200px !important;
+    max-width: 1360px !important;
     margin: 0 auto !important;
-    padding-left: 15px !important;
-    padding-right: 15px !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+}
+
+.copyright-area .row {
+    align-items: center !important;
+    margin: 0 !important;
 }
 
 .copyright-area p,
-.copyright-area p a,
-.copyright-link li a,
-.copyright-link a,
-.rbt-link-hover a,
-.footer-style-1 .copyright-area a {
-    font-size: 14.5px !important;
+.copyright-area p.rbt-link-hover {
+    font-size: 15px !important;
     font-weight: 400 !important;
-    color: #64748b !important;
-    line-height: 1.6 !important;
+    color: #475569 !important;
+    line-height: 1.5 !important;
+    margin: 0 !important;
     margin-bottom: 0 !important;
+    padding: 0 !important;
+    display: block !important;
+}
+
+.copyright-area p a,
+.copyright-area a {
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    color: #1e293b !important;
     text-decoration: none !important;
     transition: color 0.25s ease !important;
-    white-space: nowrap !important;
-    word-break: keep-all !important;
-    display: inline-block !important;
-    position: relative !important;
-    vertical-align: baseline !important;
-}
-
-.copyright-area .col-xxl-7,
-.copyright-area .col-xl-7,
-.copyright-area .col-lg-7 {
-    line-height: 1.8 !important;
-}
-
-.copyright-area p a,
-.copyright-link li a,
-.copyright-link a {
-    font-weight: 500 !important;
-    color: #475569 !important;
+    display: inline !important;
 }
 
 .copyright-area p a:hover,
-.copyright-link li a:hover,
-.copyright-link a:hover,
+.copyright-area a:hover,
 .rbt-link-hover a:hover {
+    color: var(--color-primary, #2f57ef) !important;
+    text-decoration: underline !important;
+}
+
+.copyright-area ul,
+.copyright-area .copyright-link,
+ul.copyright-link {
+    display: flex !important;
+    align-items: center !important;
+    list-style: none !important;
+    margin: 0 !important;
+    margin-bottom: 0 !important;
+    padding: 0 !important;
+    gap: 16px !important;
+}
+
+.copyright-area .copyright-link li,
+ul.copyright-link li {
+    margin: 0 !important;
+    margin-bottom: 0 !important;
+    padding: 0 !important;
+    line-height: 1.5 !important;
+}
+
+.copyright-area .copyright-link li a,
+ul.copyright-link li a {
+    font-size: 15px !important;
+    font-weight: 500 !important;
+    color: #475569 !important;
+    text-decoration: none !important;
+    transition: color 0.25s ease !important;
+}
+
+.copyright-area .copyright-link li a:hover,
+ul.copyright-link li a:hover {
     color: var(--color-primary, #2f57ef) !important;
     text-decoration: underline !important;
 }
@@ -1281,39 +1502,50 @@ footer.rbt-footer,
 /* --------------------------------------------------------------------------
    8. BOOK-ONLINE GAP FIX BETWEEN IMAGE AND PARAGRAPH (ISSUE #6 FIX)
    -------------------------------------------------------------------------- */
+.book-online-section .book-online-left,
 .book-online-left {
     display: flex !important;
     flex-direction: column !important;
+    justify-content: flex-start !important;
 }
 
+.book-online-section .book-online-media,
 .book-online-media {
-    margin-bottom: 16px !important; /* Reduced unnecessary gap */
+    margin-bottom: 18px !important; /* Small, clean gap below image */
 }
 
+.book-online-section .book-online-media img,
 .book-online-media img {
     margin-bottom: 0 !important;
     display: block !important;
-    border-radius: 14px !important;
+    border-radius: 10px !important;
     width: 100% !important;
     object-fit: cover !important;
 }
 
+.book-online-section .book-online-summary,
 .book-online-summary {
+    flex-grow: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
     margin-top: 0 !important;
     padding-top: 0 !important;
 }
 
+.book-online-section .summary-title,
 .book-online-summary .summary-title {
     margin-top: 0 !important;
-    margin-bottom: 10px !important; /* Tight, visually balanced spacing */
-    font-size: 24px !important;
+    margin-bottom: 12px !important;
+    font-size: 26px !important;
     font-weight: 700 !important;
 }
 
+.book-online-section .summary-text,
 .book-online-summary .summary-text {
     margin-top: 0 !important;
-    margin-bottom: 16px !important; /* Tight, visually balanced spacing */
-    line-height: 1.6 !important;
+    margin-bottom: 20px !important;
+    line-height: 1.7 !important;
 }
 
 /* --------------------------------------------------------------------------
@@ -2024,3 +2256,332 @@ main {
         border-radius: 12px !important;
     }
 }
+
+/* --------------------------------------------------------------------------
+   COUNTER NUMBERS & PLUS SIGN (+) PRECISION ALIGNMENT & RESPONSIVENESS
+   -------------------------------------------------------------------------- */
+.rbt-counterup .inner .content .counter,
+.rbt-counterup .counter {
+    display: inline-flex !important;
+    flex-direction: row !important;
+    align-items: flex-start !important;
+    justify-content: center !important;
+    flex-wrap: nowrap !important;
+    white-space: nowrap !important;
+    position: relative !important;
+    padding: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    margin-bottom: 9px !important;
+    line-height: 1 !important;
+    font-weight: 700 !important;
+    font-size: 44px !important;
+    color: var(--color-heading, #192335) !important;
+    letter-spacing: -0.01em !important;
+    overflow: visible !important;
+}
+
+/* Style-2 Counter Container (Newsletter / Blue Banner Section) */
+.rbt-counterup.style-2 .inner .content .counter,
+.rbt-counterup.style-2 .counter {
+    font-size: 48px !important;
+    margin-bottom: 0 !important;
+    color: #ffffff !important;
+}
+
+.rbt-counterup.text-color-white .inner .content .counter,
+.rbt-counterup .counter.color-white {
+    color: #ffffff !important;
+}
+
+/* Odometer Inner Digits & Animation Alignment with Overflow Protection */
+.rbt-counterup .inner .content .counter .odometer,
+.rbt-counterup .counter .odometer {
+    display: inline-flex !important;
+    align-items: baseline !important;
+    vertical-align: top !important;
+    line-height: 1 !important;
+    font-family: inherit !important;
+    font-size: inherit !important;
+    font-weight: inherit !important;
+    color: inherit !important;
+    white-space: nowrap !important;
+    overflow: visible !important;
+    padding-right: 1px !important;
+}
+
+.rbt-counterup .counter .odometer.odometer-auto-theme,
+.rbt-counterup .counter .odometer.odometer-theme-default {
+    line-height: 1 !important;
+    vertical-align: top !important;
+    overflow: visible !important;
+}
+
+.rbt-counterup .counter .odometer .odometer-inside {
+    display: inline-flex !important;
+    align-items: baseline !important;
+    vertical-align: top !important;
+    white-space: nowrap !important;
+    overflow: visible !important;
+}
+
+.rbt-counterup .counter .odometer .odometer-digit {
+    display: inline-block !important;
+    vertical-align: top !important;
+    line-height: 1 !important;
+    position: relative !important;
+    padding: 0 1px !important;
+}
+
+.rbt-counterup .counter .odometer .odometer-digit .odometer-digit-spacer {
+    display: inline-block !important;
+    vertical-align: top !important;
+    visibility: hidden !important;
+    padding: 0 1px !important;
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-weight: 700 !important;
+}
+
+.rbt-counterup .counter .odometer .odometer-digit .odometer-digit-inner {
+    text-align: center !important;
+    display: block !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: -2px !important;
+    right: -2px !important;
+    bottom: 0 !important;
+    width: calc(100% + 4px) !important;
+    overflow: hidden !important;
+}
+
+.rbt-counterup .counter .odometer .odometer-digit .odometer-value {
+    text-align: center !important;
+    display: block !important;
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-weight: 700 !important;
+    padding: 0 1px !important;
+}
+
+.rbt-counterup .counter .odometer .odometer-formatting-mark {
+    display: inline-block !important;
+    vertical-align: baseline !important;
+    line-height: 1 !important;
+    margin: 0 1.5px !important;
+}
+
+/* The Plus (+) Symbol - Prominent, Bold, Upper-Right Positioned */
+.rbt-counterup .inner .content .counter::after,
+.rbt-counterup .counter::after {
+    content: "+" !important;
+    display: inline-block !important;
+    position: static !important;
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-size: 0.8em !important;
+    font-weight: 700 !important;
+    line-height: 1 !important;
+    margin-left: 2px !important;
+    margin-top: 0 !important;
+    align-self: flex-start !important;
+    vertical-align: top !important;
+    color: inherit !important;
+    white-space: nowrap !important;
+    pointer-events: none !important;
+    transform: translateY(0.02em) !important;
+}
+
+/* Special Variations */
+.rbt-counterup .inner .content .counter.without-icon::after,
+.rbt-counterup .counter.without-icon::after {
+    display: none !important;
+    content: "" !important;
+}
+
+.rbt-counterup .inner .content .counter.witdollar-icon::after,
+.rbt-counterup .counter.witdollar-icon::after {
+    content: "$" !important;
+}
+
+/* Subtitles & Titles Styling Preservation */
+.rbt-counterup .inner .content .subtitle {
+    display: block !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    color: #475569 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    margin-top: 4px !important;
+}
+
+.rbt-counterup.style-2 .inner .content .subtitle {
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+}
+
+.rbt-counterup.style-2.text-color-white .inner .content .title {
+    font-size: 20px !important;
+    font-weight: 600 !important;
+    margin-top: 12px !important;
+    margin-bottom: 6px !important;
+    color: #ffffff !important;
+}
+
+.rbt-counterup.style-2.text-color-white .inner .content .subtitle {
+    color: rgba(255, 255, 255, 0.9) !important;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 991px) {
+    .rbt-counterup .inner .content .counter,
+    .rbt-counterup .counter {
+        font-size: 38px !important;
+    }
+    .rbt-counterup.style-2 .inner .content .counter,
+    .rbt-counterup.style-2 .counter {
+        font-size: 40px !important;
+    }
+}
+
+@media (max-width: 767px) {
+    .rbt-counterup .inner .content .counter,
+    .rbt-counterup .counter {
+        font-size: 32px !important;
+    }
+    .rbt-counterup.style-2 .inner .content .counter,
+    .rbt-counterup.style-2 .counter {
+        font-size: 34px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .rbt-counterup .inner .content .counter,
+    .rbt-counterup .counter {
+        font-size: 28px !important;
+    }
+    .rbt-counterup.style-2 .inner .content .counter,
+    .rbt-counterup.style-2 .counter {
+        font-size: 28px !important;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   4. GLOBAL COMPONENT ICON ALIGNMENT & FLOATING WIDGETS
+   -------------------------------------------------------------------------- */
+/* Floating Contact Widget Icons & Centering */
+.floating-contact {
+    position: fixed !important;
+    right: 24px !important;
+    bottom: 95px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 14px !important;
+    z-index: 9998 !important;
+}
+
+.floating-contact .contact-item {
+    position: relative !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+}
+
+.floating-contact .contact-button {
+    width: 48px !important;
+    height: 48px !important;
+    border-radius: 12px !important;
+    background: #ffffff !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08) !important;
+    transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+    text-decoration: none !important;
+}
+
+.floating-contact .contact-button:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12) !important;
+}
+
+.floating-contact .call-button {
+    border: 2px solid #8e24aa !important;
+    color: #8e24aa !important;
+    font-size: 20px !important;
+}
+
+.floating-contact .whatsapp-button {
+    border: 2px solid #00c853 !important;
+    color: #00c853 !important;
+    font-size: 24px !important;
+}
+
+.floating-contact .call-button i,
+.floating-contact .whatsapp-button i {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    line-height: 1 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    text-align: center !important;
+}
+
+.floating-contact .contact-label {
+    position: absolute !important;
+    right: 58px !important;
+    background: #192335 !important;
+    color: #ffffff !important;
+    padding: 6px 12px !important;
+    border-radius: 6px !important;
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    white-space: nowrap !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    transition: opacity 0.2s ease, transform 0.2s ease !important;
+    transform: translateX(10px) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+}
+
+.floating-contact .contact-label::after {
+    content: '' !important;
+    position: absolute !important;
+    right: -5px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    border-width: 5px 0 5px 5px !important;
+    border-style: solid !important;
+    border-color: transparent transparent transparent #192335 !important;
+}
+
+.floating-contact .contact-item:hover .contact-label,
+.floating-contact .contact-item.show-label .contact-label {
+    opacity: 1 !important;
+    transform: translateX(0) !important;
+}
+
+@media (max-width: 767px) {
+    .floating-contact {
+        right: 16px !important;
+        bottom: 80px !important;
+        gap: 10px !important;
+    }
+
+    .floating-contact .contact-button {
+        width: 42px !important;
+        height: 42px !important;
+        border-radius: 10px !important;
+    }
+
+    .floating-contact .call-button {
+        font-size: 18px !important;
+    }
+
+    .floating-contact .whatsapp-button {
+        font-size: 20px !important;
+    }
+}
+
+
+

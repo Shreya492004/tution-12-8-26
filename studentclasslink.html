@@ -2,327 +2,98 @@
 <html lang="en">
 
 <head>
-
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Class Link - London Star Education</title>
+    <meta name="robots" content="noindex, follow">
+    <meta name="description" content="Online Tuition Platform">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>My Classes - London Star Education</title>
-
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.png">
 
     <!-- CSS -->
-
-    <link rel="stylesheet"
-        href="assets/css/vendor/bootstrap.min.css">
-
-    <link rel="stylesheet"
-        href="assets/css/vendor/slick.css">
-
-    <link rel="stylesheet"
-        href="assets/css/vendor/slick-theme.css">
-
-    <link rel="stylesheet"
-        href="assets/css/plugins/sal.css">
-
-    <link rel="stylesheet"
-        href="assets/css/plugins/feather.css">
-
-    <link rel="stylesheet"
-        href="assets/css/plugins/fontawesome.min.css">
-
-    <link rel="stylesheet"
-        href="assets/css/plugins/euclid-circulara.css">
-
-    <link rel="stylesheet"
-        href="assets/css/plugins/swiper.css">
-
-    <link rel="stylesheet"
-        href="assets/css/plugins/magnify.css">
-
-    <link rel="stylesheet"
-        href="assets/css/plugins/odometer.css">
-
-    <link rel="stylesheet"
-        href="assets/css/plugins/animation.css">
-
-    <link rel="stylesheet"
-        href="assets/css/plugins/bootstrap-select.min.css">
-
-    <link rel="stylesheet"
-        href="assets/css/plugins/jquery-ui.css">
-
-    <link rel="stylesheet"
-        href="assets/css/plugins/magnigy-popup.min.css">
-
-    <link rel="stylesheet"
-        href="assets/css/plugins/plyr.css">
-
-    <link rel="stylesheet"
-        href="assets/css/style.css">
-    <link rel="stylesheet"
-        href="assets/css/custom-ui.css">
-
-
-    <!-- CUSTOM CSS -->
+    <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/vendor/slick.css">
+    <link rel="stylesheet" href="assets/css/vendor/slick-theme.css">
+    <link rel="stylesheet" href="assets/css/plugins/sal.css">
+    <link rel="stylesheet" href="assets/css/plugins/feather.css">
+    <link rel="stylesheet" href="assets/css/plugins/fontawesome.min.css">
+    <link rel="stylesheet" href="assets/css/plugins/euclid-circulara.css">
+    <link rel="stylesheet" href="assets/css/plugins/swiper.css">
+    <link rel="stylesheet" href="assets/css/plugins/magnify.css">
+    <link rel="stylesheet" href="assets/css/plugins/odometer.css">
+    <link rel="stylesheet" href="assets/css/plugins/animation.css">
+    <link rel="stylesheet" href="assets/css/plugins/bootstrap-select.min.css">
+    <link rel="stylesheet" href="assets/css/plugins/jquery-ui.css">
+    <link rel="stylesheet" href="assets/css/plugins/magnigy-popup.min.css">
+    <link rel="stylesheet" href="assets/css/plugins/plyr.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/custom-ui.css">
 
     <style>
-        /* =========================================================
-            BANNER STYLING & COMPACT RESPONSIVE SCALING
-        ========================================================= */
-        .slider-area.rbt-banner-10 {
-            margin-top: 0 !important;
-            padding-top: 0 !important;
-            background-size: cover !important;
-            background-position: center center !important;
-            background-repeat: no-repeat !important;
-            display: flex !important;
-            align-items: center !important;
-            justify-content: center !important;
-            position: relative;
+        .classlink-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+            transition: all 0.25s ease;
         }
-
-        .slider-area.rbt-banner-10.height-400 {
-            height: 160px !important;
-            min-height: 160px !important;
+        .classlink-card:hover {
+            box-shadow: 0 8px 24px rgba(47, 87, 239, 0.08);
+            border-color: #cbd5e1;
         }
-
-        .slider-area.rbt-banner-10 .inner {
-            position: relative;
-            z-index: 5;
+        .classlink-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 16px;
+            flex-wrap: wrap;
+            gap: 10px;
         }
-
-        /* Mobile Height Adjustments */
-        @media (max-width: 768px) {
-            .slider-area.rbt-banner-10.height-400 {
-                height: 160px !important;
-                min-height: 160px !important;
-                padding: 10px 0 !important;
-            }
-
-            .slider-area.rbt-banner-10 .title.display-one {
-                font-size: 26px !important;
-                line-height: 1.2 !important;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .slider-area.rbt-banner-10.height-400 {
-                height: 160px !important;
-                min-height: 160px !important;
-            }
-
-            .slider-area.rbt-banner-10 .title.display-one {
-                font-size: 22px !important;
-            }
-        }
-
-        /* Icon Font Protection - Ensure feather and fontawesome icons always render */
-        i[class^="feather-"],
-        i[class*=" feather-"],
-        span[class^="feather-"],
-        span[class*=" feather-"],
-        .feather,
-        [class^="feather-"],
-        [class*=" feather-"] {
-            font-family: 'feather', 'Feather' !important;
-            speak: none;
-            font-style: normal !important;
-            font-weight: normal !important;
-            font-variant: normal !important;
-            text-transform: none !important;
-            line-height: 1 !important;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-            display: inline-block !important;
-        }
-
-        /* Font Awesome managed in style.css */
-
-        /* Header Navigation (Increased Size, Clean Medium Weight, 100% Zoom Safe) */
-        @media only screen and (min-width: 1200px) {
-            .rbt-header .mainbar-row {
-                display: flex !important;
-                flex-wrap: nowrap !important;
-                align-items: center !important;
-                justify-content: space-between !important;
-            }
-
-            .rbt-header .rbt-main-navigation {
-                display: block !important;
-                flex: 1 1 auto !important;
-                min-width: 0 !important;
-            }
-
-            .rbt-header .rbt-main-navigation .mainmenu-nav {
-                display: flex !important;
-                justify-content: center !important;
-                width: auto !important;
-            }
-
-            .rbt-header .rbt-main-navigation .mainmenu {
-                display: flex !important;
-                flex-wrap: nowrap !important;
-                align-items: center !important;
-                justify-content: center !important;
-                margin: 0 !important;
-                padding: 0 !important;
-                list-style: none !important;
-            }
-
-            .rbt-header .rbt-main-navigation .mainmenu > li {
-                flex-shrink: 0 !important;
-                margin: 0 !important;
-                padding: 0 !important;
-                position: relative !important;
-            }
-
-            .rbt-header .rbt-main-navigation .mainmenu > li > a,
-            .rbt-header .rbt-main-navigation a {
-                font-size: 16.5px !important;
-                font-weight: 500 !important;
-                color: #192335 !important;
-                white-space: nowrap !important;
-                padding: 0 12px !important;
-                display: flex !important;
-                align-items: center !important;
-                height: 80px !important;
-                line-height: 80px !important;
-                transition: all 0.3s ease !important;
-                text-decoration: none !important;
-            }
-
-            .rbt-header .rbt-main-navigation .mainmenu > li > a:hover,
-            .rbt-header .rbt-main-navigation a:hover {
-                color: #2f57ef !important;
-            }
-        }
-
-        @media only screen and (min-width: 1200px) and (max-width: 1440px) {
-            .rbt-header .rbt-main-navigation .mainmenu > li > a,
-            .rbt-header .rbt-main-navigation a {
-                font-size: 16.5px !important;
-                padding: 0 8px !important;
-            }
-        }
-
-        /* Dashboard Sidebar Navigation - Restored Original Clean & Beautiful Styling */
-        .rbt-default-sidebar-wrapper {
-            position: relative;
-        }
-
-        .rbt-default-sidebar-wrapper .mainmenu-nav,
-        .rbt-dashboard-sidebar .mainmenu-nav {
-            display: block !important;
-            width: 100% !important;
-        }
-
-        .dashboard-mainmenu,
-        .rbt-default-sidebar-list {
+        .classlink-title {
+            font-size: 20px !important;
+            font-weight: 700 !important;
+            color: #192335 !important;
             margin: 0 !important;
-            padding: 0 !important;
-            list-style: none !important;
-            display: block !important;
-            width: 100% !important;
         }
-
-        .dashboard-mainmenu li,
-        .rbt-default-sidebar-list li {
-            margin-bottom: 4px !important;
-            display: block !important;
-            width: 100% !important;
-        }
-
-        .dashboard-mainmenu li a,
-        .rbt-default-sidebar-list li a,
-        .rbt-default-sidebar-wrapper .dashboard-mainmenu li a,
-        .rbt-default-sidebar-wrapper .rbt-default-sidebar-list li a {
-            display: flex !important;
-            align-items: center !important;
-            justify-content: flex-start !important;
-            font-size: 15px !important;
-            font-weight: 500 !important;
-            font-family: var(--font-primary) !important;
-            line-height: 20px !important;
-            color: #2b354f !important;
-            padding: 10px 14px !important;
-            border-radius: 8px !important;
-            transition: all 0.2s ease !important;
-            text-decoration: none !important;
-            width: 100% !important;
-            height: auto !important;
-            background: transparent !important;
-        }
-
-        .dashboard-mainmenu li a span,
-        .rbt-default-sidebar-list li a span,
-        .rbt-default-sidebar-wrapper .dashboard-mainmenu li a span,
-        .rbt-default-sidebar-wrapper .rbt-default-sidebar-list li a span {
-            font-size: 15px !important;
-            font-weight: 500 !important;
-            font-family: var(--font-primary) !important;
-            color: inherit !important;
-            white-space: normal !important;
-        }
-
-        .dashboard-mainmenu li a i,
-        .rbt-default-sidebar-list li a i,
-        .rbt-default-sidebar-wrapper .dashboard-mainmenu li a i,
-        .rbt-default-sidebar-wrapper .rbt-default-sidebar-list li a i {
-            font-size: 17px !important;
-            margin-right: 12px !important;
-            color: #7e879b !important;
-            transition: all 0.2s ease !important;
-            width: 20px !important;
-            text-align: center !important;
-            flex-shrink: 0 !important;
-        }
-
-        .dashboard-mainmenu li.active a,
-        .dashboard-mainmenu li a.active,
-        .rbt-default-sidebar-list li.active a,
-        .rbt-default-sidebar-list li a.active {
-            background: #f0edff !important;
-            color: var(--color-primary, #2f57ef) !important;
-        }
-
-        .dashboard-mainmenu li.active a span,
-        .dashboard-mainmenu li a.active span,
-        .rbt-default-sidebar-list li.active a span,
-        .rbt-default-sidebar-list li a.active span {
+        .classlink-badge {
+            font-size: 13px !important;
             font-weight: 600 !important;
-            color: var(--color-primary, #2f57ef) !important;
+            padding: 4px 12px;
+            border-radius: 20px;
+            background: #eef2ff;
+            color: #2f57ef;
         }
-
-        .dashboard-mainmenu li.active a i,
-        .dashboard-mainmenu li a.active i,
-        .rbt-default-sidebar-list li.active a i,
-        .rbt-default-sidebar-list li a.active i {
-            color: var(--color-primary, #2f57ef) !important;
+        .classlink-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 12px;
+            margin-bottom: 20px;
         }
-
-        .dashboard-mainmenu li a:hover,
-        .rbt-default-sidebar-list li a:hover {
-            background: #f6f7fb !important;
-            color: var(--color-primary, #2f57ef) !important;
+        .classlink-detail-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 15px;
+            color: #475569;
         }
-
-        .dashboard-mainmenu li a:hover i,
-        .rbt-default-sidebar-list li a:hover i {
-            color: var(--color-primary, #2f57ef) !important;
+        .classlink-detail-item i {
+            color: #2f57ef;
+            font-size: 16px;
         }
-
-        .class-link-page,
-        .class-link-page *,
-        .class-card,
-        .class-card * {
-            font-family: var(--font-primary, "Euclid Circular A", "Plus Jakarta Sans", "Inter", sans-serif) !important;
+        .classlink-action {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 12px;
         }
-
+        
         /* =========================================
-           CLASS CARDS (SYNCHRONIZED FONTS)
+            CLASS CARDS (SYNCHRONIZED FONTS)
         ========================================= */
-
         .class-card {
             border: 1px solid #e5e7eb;
             border-radius: 14px;
@@ -514,9 +285,8 @@
         }
 
         /* =========================================
-           BUTTONS
+            BUTTONS
         ========================================= */
-
         .join-btn,
         .awaiting-btn {
             margin-top: auto;
@@ -552,10 +322,6 @@
             opacity: 1 !important;
         }
 
-        /* =========================================
-           DASHBOARD ALIGNMENT
-        ========================================= */
-
         .attendance-dashboard-row {
             display: flex;
             align-items: flex-start;
@@ -568,18 +334,13 @@
         .attendance-content {
             width: 75%;
         }
-
     </style>
-
 </head>
 
-
-<body>
+<body class="rbt-header-sticky">
 
     <!-- Start Header Area -->
     <header class="rbt-header rbt-header-9">
-        <div class="rbt-sticky-placeholder"></div>
-
         <div class="rbt-header-wrapper header-not-transparent header-sticky">
             <div class="container">
                 <div class="mainbar-row rbt-navigation-end align-items-center">
@@ -587,7 +348,7 @@
                         <div class="header-info">
                             <div class="logo">
                                 <a href="index.html">
-                                    <img src="assets/images/logo/logo.png" alt="London Star Education Logo">
+                                    <img src="assets/images/logo/logo.png" alt="Education Logo Images">
                                 </a>
                             </div>
                         </div>
@@ -596,27 +357,13 @@
                     <div class="rbt-main-navigation d-none d-xl-block">
                         <nav class="mainmenu-nav">
                             <ul class="mainmenu">
-                                <li>
-                                    <a href="index.html">Home</a>
-                                </li>
-                                <li>
-                                    <a href="about-us.html">About</a>
-                                </li>
-                                <li>
-                                    <a href="our-team.html">Our Team</a>
-                                </li>
-                                <li>
-                                    <a href="our-tuition.html">Our Tuition</a>
-                                </li>
-                                <li>
-                                    <a href="holiday-camps.html">Holiday Camps</a>
-                                </li>
-                                <li>
-                                    <a href="plans-and-pricing.html">Plans &amp; Pricing</a>
-                                </li>
-                                <li>
-                                    <a href="book-online.html">Book Online</a>
-                                </li>
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="about-us.html">About</a></li>
+                                <li><a href="our-team.html">Our Team</a></li>
+                                <li><a href="our-tuition.html">Our Tuition</a></li>
+                                <li><a href="holiday-camps.html">Holiday Camps</a></li>
+                                <li><a href="plans-and-pricing.html">Plans &amp; Pricing</a></li>
+                                <li><a href="book-online.html">Book Online</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -624,28 +371,19 @@
                     <div class="header-right">
                         <div class="rbt-btn-wrapper d-flex align-items-center gap-2">
                             <div class="login-dropdown">
-                                <button type="button"
-                                    class="rbt-btn rbt-switch-btn btn-gradient btn-sm hover-transform-none login-dropdown-btn">
+                                <button type="button" class="rbt-btn rbt-switch-btn btn-gradient btn-sm hover-transform-none login-dropdown-btn">
                                     <span data-text="Login">Login</span>
                                     <i class="feather-chevron-down"></i>
                                 </button>
                                 <div class="login-dropdown-menu">
-                                    <a href="instructor-profile.html">
-                                        <i class="feather-user"></i>
-                                        <span>Tutor Login</span>
-                                    </a>
-                                    <a href="student-profile.html">
-                                        <i class="feather-book-open"></i>
-                                        <span>Student Login</span>
-                                    </a>
+                                    <a href="instructor-profile.html"><i class="feather-user"></i> <span>Tutor Login</span></a>
+                                    <a href="student-profile.html"><i class="feather-book-open"></i> <span>Student Login</span></a>
                                 </div>
                             </div>
-                            <a class="rbt-btn rbt-switch-btn btn-gradient btn-sm hover-transform-none"
-                                href="login-register.html">
+                            <a class="rbt-btn rbt-switch-btn btn-gradient btn-sm hover-transform-none" href="login-register.html">
                                 <span data-text="Join Now">Join Now</span>
                             </a>
                         </div>
-                        <!-- Start Mobile-Menu-Bar -->
                         <div class="mobile-menu-bar d-block d-xl-none">
                             <div class="hamberger">
                                 <button class="hamberger-button rbt-round-btn" aria-label="Open Menu">
@@ -653,545 +391,229 @@
                                 </button>
                             </div>
                         </div>
-                        <!-- Start Mobile-Menu-Bar -->
                     </div>
                 </div>
             </div>
         </div>
     </header>
-    <!-- Mobile Menu Section -->
-    <div class="popup-mobile-menu">
-        <div class="inner-wrapper">
-            <div class="inner-top">
-                <div class="content">
-                    <div class="logo">
-                        <a href="index.html">
-                            <img src="assets/images/logo/logo.png" alt="London Star Education Logo">
-                        </a>
-                    </div>
-                    <div class="rbt-btn-close">
-                        <button class="close-button rbt-round-btn" aria-label="Close menu"><i class="feather-x"></i></button>
-                    </div>
-                </div>
-                <p class="description">London Star Education provides high-quality online tuition and educational support.</p>
-                <ul class="navbar-top-left rbt-information-list justify-content-start">
-                    <li>
-                        <a href="mailto:info@londonstaredu.com"><i class="feather-mail"></i>info@londonstaredu.com</a>
-                    </li>
-                    <li>
-                        <a href="tel:3025550107"><i class="feather-phone"></i>(302) 555-0107</a>
-                    </li>
-                </ul>
-            </div>
 
-            <nav class="mainmenu-nav">
-                <ul class="mainmenu">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about-us.html">About</a></li>
-                    <li><a href="our-team.html">Our Team</a></li>
-                    <li><a href="our-tuition.html">Our Tuition</a></li>
-                    <li><a href="holiday-camps.html">Holiday Camps</a></li>
-                    <li><a href="plans-and-pricing.html">Plans &amp; Pricing</a></li>
-                    <li><a href="book-online.html">Book Online</a></li>
-                </ul>
-            </nav>
-
-            <div class="mobile-menu-bottom">
-                <div class="social-share-wrapper">
-                    <span class="rbt-short-title d-block">Find With Us</span>
-                    <ul class="social-icon social-default transparent-with-border justify-content-start mt--20">
-                        <li>
-                            <a href="https://www.facebook.com/" aria-label="Facebook">
-                                <i class="feather-facebook"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.twitter.com" aria-label="X (Twitter)">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" viewBox="0 0 24 24" class="social-icon-x" style="vertical-align: -2px;"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.instagram.com/" aria-label="Instagram">
-                                <i class="feather-instagram"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.linkedin.com/" aria-label="LinkedIn">
-                                <i class="feather-linkedin"></i>
-                            </a>
-                        </li>
-                    </ul>
+    <!-- Page Banner -->
+    <div class="slider-area rbt-banner-10 height-400 bg_image bg_image--11" data-black-overlay="5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="inner text-center">
+                        <h1 class="title display-one text-white">Class Link</h1>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- End Side Vav -->
-    <a class="close_side_menu" href="javascript:void(0);"></a>
 
+    <!-- Dashboard / Classes Area -->
+    <div class="rbt-dashboard-area rbt-section-gap">
+        <div class="container">
+            <div class="row attendance-dashboard-row g-5">
 
+                <!-- Sticky Sidebar -->
+                <div class="col-lg-3 attendance-sidebar">
+                    <div class="rbt-default-sidebar sticky-top rbt-shadow-box rbt-gradient-border">
+                        <div class="inner">
+                            <div class="content-item-content">
+                                <div class="rbt-default-sidebar-wrapper">
 
-<!-- =========================================================
-     BANNER
-========================================================= -->
+                                    <div class="section-title mb--20">
+                                        <h6 class="rbt-title-style-2">Welcome, Oliver Smith</h6>
+                                    </div>
 
-<div class="slider-area rbt-banner-10 height-400 bg_image bg_image--11"
-    data-black-overlay="5">
+                                    <nav class="mainmenu-nav">
+                                        <ul class="dashboard-mainmenu rbt-default-sidebar-list">
+                                            <li>
+                                                <a href="student-profile.html">
+                                                    <i class="feather-user"></i>
+                                                    <span>My Profile</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="student-course.html">
+                                                    <i class="feather-monitor"></i>
+                                                    <span>My Courses</span>
+                                                </a>
+                                            </li>
+                                            <li class="active">
+                                                <a class="active" href="studentclasslink.html">
+                                                    <i class="feather-link"></i>
+                                                    <span>Class Link</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="student-profile-attendance.html">
+                                                    <i class="feather-calendar"></i>
+                                                    <span>Attendance</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="student-homework-task.html">
+                                                    <i class="feather-file-text"></i>
+                                                    <span>Homework &amp; Notes</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </nav>
 
-    <div class="container">
+                                    <div class="section-title mt--40 mb--20">
+                                        <h6 class="rbt-title-style-2">User</h6>
+                                    </div>
 
-        <div class="row">
+                                    <nav class="mainmenu-nav">
+                                        <ul class="dashboard-mainmenu rbt-default-sidebar-list">
+                                            <li>
+                                                <a href="student-edit.html">
+                                                    <i class="feather-settings"></i>
+                                                    <span>Edit Profile</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="index.html">
+                                                    <i class="feather-log-out"></i>
+                                                    <span>Logout</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </nav>
 
-            <div class="col-lg-12">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-                <div class="inner text-center">
+                <!-- RIGHT CONTENT -->
+                <div class="col-lg-9 attendance-content">
+                    <div class="row g-4">
 
-                    <h1 class="title display-one text-white">Class Link</h1>
+                        <!-- 1. YEAR 5 ENGLISH -->
+                        <div class="col-md-6 mb-4">
+                            <div class="card class-card math-card student-course-card h-100 is-live" data-course="year5-english">
+                                <div class="card-body p-4">
+                                    <div class="d-flex justify-content-between align-items-start class-card-header">
+                                        <div>
+                                            <h4 class="subject" style="font-size: 16px;">Year 5 English — Core English Skills + Reading Comprehension</h4>
+                                            <div class="status-badge-container mt-1">
+                                                <span class="live-badge"><span class="pulse-dot"></span> Class Live</span>
+                                            </div>
+                                        </div>
+                                        <div class="subject-icon">
+                                            <i class="feather-book"></i>
+                                        </div>
+                                    </div>
 
+                                    <div class="class-details">
+                                        <p><i class="feather-user"></i> Lily</p>
+                                        <p><i class="feather-clock"></i> Mon: 5:00–6:00 pm <br> Wed: 6:00–7:00 pm <br> Sat: 9:00–10:00 am <br> Sun: 10:00–11:00 am</p>
+                                    </div>
+
+                                    <div class="link-box-container">
+                                        <div class="class-link-box">
+                                            <span class="link-url-text" title="https://zoom.us/j/91000000001"><i class="feather-link"></i> https://zoom.us/j/91000000001</span>
+                                            <button type="button" class="copy-link-btn" onclick="copyClassLink('https://zoom.us/j/91000000001', this)">
+                                                <i class="feather-copy"></i> Copy Link
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <div class="action-btn-container">
+                                        <button class="btn join-btn rbt-btn rbt-switch-btn btn-gradient btn-sm hover-transform-none w-100" onclick="joinClass('https://zoom.us/j/91000000001')">
+                                            <i class="feather-log-in me-2"></i> Join Now
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 2. YEAR 6 READING COMPREHENSION -->
+                        <div class="col-md-6 mb-4">
+                            <div class="card class-card literature-card student-course-card h-100 is-live" data-course="year6-reading">
+                                <div class="card-body p-4">
+                                    <div class="d-flex justify-content-between align-items-start class-card-header">
+                                        <div>
+                                            <h4 class="subject" style="font-size: 16px;">Year 6 Reading Comprehension</h4>
+                                            <div class="status-badge-container mt-1">
+                                                <span class="live-badge"><span class="pulse-dot"></span> Class Live</span>
+                                            </div>
+                                        </div>
+                                        <div class="subject-icon literature-icon">
+                                            <i class="feather-book-open"></i>
+                                        </div>
+                                    </div>
+
+                                    <div class="class-details">
+                                        <p><i class="feather-user"></i> Lily</p>
+                                        <p><i class="feather-clock"></i> Mon: 6:00–7:00 pm <br> Mon: 7:00–8:00 pm <br> Wed: 5:00–6:00 pm <br> Sun: 9:00–10:00 am</p>
+                                    </div>
+
+                                    <div class="link-box-container">
+                                        <div class="class-link-box">
+                                            <span class="link-url-text" title="https://zoom.us/j/91000000002"><i class="feather-link"></i> https://zoom.us/j/91000000002</span>
+                                            <button type="button" class="copy-link-btn" onclick="copyClassLink('https://zoom.us/j/91000000002', this)">
+                                                <i class="feather-copy"></i> Copy Link
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <div class="action-btn-container">
+                                        <button class="btn join-btn rbt-btn rbt-switch-btn btn-gradient btn-sm hover-transform-none w-100" onclick="joinClass('https://zoom.us/j/91000000002')">
+                                            <i class="feather-log-in me-2"></i> Join Now
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 3. YEAR 6 ISEB PREPARATION -->
+                        <div class="col-md-6 mb-4">
+                            <div class="card class-card math-card student-course-card h-100" data-course="year6-iseb">
+                                <div class="card-body p-4">
+                                    <div class="d-flex justify-content-between align-items-start class-card-header">
+                                        <div>
+                                            <h4 class="subject" style="font-size: 16px;">Year 6 ISEB &amp; Grammar School Preparation</h4>
+                                            <div class="status-badge-container mt-1">
+                                                <span class="awaiting-badge"><i class="feather-clock"></i> Awaiting Link</span>
+                                            </div>
+                                        </div>
+                                        <div class="subject-icon">
+                                            <i class="feather-award"></i>
+                                        </div>
+                                    </div>
+
+                                    <div class="class-details">
+                                        <p><i class="feather-user"></i> Lily</p>
+                                        <p><i class="feather-clock"></i> Wed: 6:00–7:00 pm</p>
+                                    </div>
+
+                                    <div class="link-box-container">
+                                        <div class="class-link-box awaiting">
+                                            <span><i class="feather-info me-1"></i> Awaiting tutor to enable link</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="action-btn-container">
+                                        <button class="btn awaiting-btn w-100" disabled>
+                                            <i class="feather-clock me-2"></i> Join Now
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
 
             </div>
-
         </div>
-
     </div>
 
-</div>
-
-
-<!-- =========================================================
-     DASHBOARD
-========================================================= -->
-
-<div class="rbt-dashboard-area rbt-section-gap">
-
-    <div class="container">
-
-        <!-- CORRECTED ROW -->
-
-        <div class="row attendance-dashboard-row g-5">
-
-
-            <!-- =================================================
-                 SIDEBAR
-            ================================================== -->
-
-            <div class="col-lg-3 attendance-sidebar">
-
-                <div class="rbt-default-sidebar sticky-top rbt-shadow-box rbt-gradient-border">
-
-                    <div class="inner">
-
-                        <div class="content-item-content">
-
-                            <div class="rbt-default-sidebar-wrapper">
-
-
-                                <div class="section-title mb--20">
-                                    <h6 class="rbt-title-style-2">
-                                        Welcome, Oliver Smith
-                                    </h6>
-                                </div>
-
-                                <nav class="mainmenu-nav">
-                                    <ul class="dashboard-mainmenu rbt-default-sidebar-list">
-                                        <li>
-                                            <a href="student-profile.html">
-                                                <i class="feather-user"></i>
-                                                <span>My Profile</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="student-course.html">
-                                                <i class="feather-monitor"></i>
-                                                <span>My Courses</span>
-                                            </a>
-                                        </li>
-                                        <li class="active">
-                                            <a class="active" href="studentclasslink.html">
-                                                <i class="feather-link"></i>
-                                                <span>Class Link</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="student-profile-attendance.html">
-                                                <i class="feather-calendar"></i>
-                                                <span>Attendance</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="student-homework-task.html">
-                                                <i class="feather-file-text"></i>
-                                                <span>Homework &amp; Notes</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </nav>
-
-                                <div class="section-title mt--40 mb--20">
-                                    <h6 class="rbt-title-style-2">
-                                        User
-                                    </h6>
-                                </div>
-
-                                <nav class="mainmenu-nav">
-                                    <ul class="dashboard-mainmenu rbt-default-sidebar-list">
-                                        <li>
-                                            <a href="student-edit.html">
-                                                <i class="feather-settings"></i>
-                                                <span>Edit Profile</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="index.html">
-                                                <i class="feather-log-out"></i>
-                                                <span>Logout</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </nav>
-
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- =================================================
-                 RIGHT CONTENT
-================================================== -->
-
-            <div class="col-lg-9 attendance-content">
-
-                <div class="row g-4">
-
-
-                    <!-- =========================================
-                         1. MATHEMATICS
-                    ========================================== -->
-
-                    <div class="col-md-6">
-
-                        <div class="card class-card math-card student-course-card h-100" data-course="mathematics">
-
-                            <div class="card-body p-4">
-
-                                <div class="d-flex justify-content-between align-items-start class-card-header">
-
-                                    <div>
-
-                                        <h4 class="subject">
-                                            Mathematics
-                                        </h4>
-
-                                        <div class="status-badge-container mt-1">
-                                            <span class="awaiting-badge"><i class="feather-clock"></i> Awaiting Link</span>
-                                        </div>
-
-                                    </div>
-
-
-                                    <div class="subject-icon">
-
-                                        <i class="feather-book"></i>
-
-                                    </div>
-
-                                </div>
-
-
-                                <div class="class-details">
-
-                                    <p>
-
-                                        <i class="feather-user"></i>
-
-                                        Ruben
-
-                                    </p>
-
-
-                                    <p>
-
-                                        <i class="feather-clock"></i>
-
-                                        Mon - 10:00 AM - 11:30 AM <br> Wed - 10:00 AM - 11:30 AM
-
-                                    </p>
-
-                                </div>
-
-                                <!-- Class Link & Copy Box -->
-                                <div class="link-box-container">
-                                    <div class="class-link-box awaiting">
-                                        <span><i class="feather-info me-1"></i> Awaiting tutor to enable link</span>
-                                    </div>
-                                </div>
-
-                                <!-- Action Button -->
-                                <div class="action-btn-container">
-                                    <button class="btn awaiting-btn w-100" disabled>
-                                        <i class="feather-clock me-2"></i> Join Now
-                                    </button>
-                                </div>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-                    <!-- =========================================
-                         2. PHYSICS
-                    ========================================== -->
-
-                    <div class="col-md-6">
-
-                        <div class="card class-card literature-card student-course-card h-100" data-course="physics">
-
-                            <div class="card-body p-4">
-
-                                <div class="d-flex justify-content-between align-items-start class-card-header">
-
-                                    <div>
-
-                                        <h4 class="subject">
-                                            Physics
-                                        </h4>
-
-                                        <div class="status-badge-container mt-1">
-                                            <span class="awaiting-badge"><i class="feather-clock"></i> Awaiting Link</span>
-                                        </div>
-
-                                    </div>
-
-
-                                    <div class="subject-icon literature-icon">
-
-                                        <i class="feather-zap"></i>
-
-                                    </div>
-
-                                </div>
-
-
-                                <div class="class-details">
-
-                                    <p>
-
-                                        <i class="feather-user"></i>
-
-                                        Ruben
-
-                                    </p>
-
-
-                                    <p>
-
-                                        <i class="feather-clock"></i>
-
-                                        Tue - 02:00 PM - 03:30 PM <br> Thu - 02:00 PM - 03:30 PM
-
-                                    </p>
-
-                                </div>
-
-                                <!-- Class Link & Copy Box -->
-                                <div class="link-box-container">
-                                    <div class="class-link-box awaiting">
-                                        <span><i class="feather-info me-1"></i> Awaiting tutor to enable link</span>
-                                    </div>
-                                </div>
-
-                                <!-- Action Button -->
-                                <div class="action-btn-container">
-                                    <button class="btn awaiting-btn w-100" disabled>
-                                        <i class="feather-clock me-2"></i> Join Now
-                                    </button>
-                                </div>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-                    <!-- =========================================
-                         3. CHEMISTRY
-                    ========================================== -->
-
-                    <div class="col-md-6">
-
-                        <div class="card class-card math-card student-course-card h-100" data-course="chemistry">
-
-                            <div class="card-body p-4">
-
-                                <div class="d-flex justify-content-between align-items-start class-card-header">
-
-                                    <div>
-
-                                        <h4 class="subject">
-                                            Chemistry
-                                        </h4>
-
-                                        <div class="status-badge-container mt-1">
-                                            <span class="awaiting-badge"><i class="feather-clock"></i> Awaiting Link</span>
-                                        </div>
-
-                                    </div>
-
-
-                                    <div class="subject-icon">
-
-                                        <i class="feather-activity"></i>
-
-                                    </div>
-
-                                </div>
-
-
-                                <div class="class-details">
-
-                                    <p>
-
-                                        <i class="feather-user"></i>
-
-                                        Ruben
-
-                                    </p>
-
-
-                                    <p>
-
-                                        <i class="feather-clock"></i>
-
-                                        Mon - 04:00 PM - 05:30 PM <br> Fri - 04:00 PM - 05:30 PM
-
-                                    </p>
-
-                                </div>
-
-                                <!-- Class Link & Copy Box -->
-                                <div class="link-box-container">
-                                    <div class="class-link-box awaiting">
-                                        <span><i class="feather-info me-1"></i> Awaiting tutor to enable link</span>
-                                    </div>
-                                </div>
-
-                                <!-- Action Button -->
-                                <div class="action-btn-container">
-                                    <button class="btn awaiting-btn w-100" disabled>
-                                        <i class="feather-clock me-2"></i> Join Now
-                                    </button>
-                                </div>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-                    <!-- =========================================
-                         4. COMPUTER SCIENCE
-                    ========================================== -->
-
-                    <div class="col-md-6">
-
-                        <div class="card class-card literature-card student-course-card h-100" data-course="computer-science">
-
-                            <div class="card-body p-4">
-
-                                <div class="d-flex justify-content-between align-items-start class-card-header">
-
-                                    <div>
-
-                                        <h4 class="subject">
-                                            Computer Science
-                                        </h4>
-
-                                        <div class="status-badge-container mt-1">
-                                            <span class="awaiting-badge"><i class="feather-clock"></i> Awaiting Link</span>
-                                        </div>
-
-                                    </div>
-
-
-                                    <div class="subject-icon literature-icon">
-
-                                        <i class="feather-code"></i>
-
-                                    </div>
-
-                                </div>
-
-
-                                <div class="class-details">
-
-                                    <p>
-
-                                        <i class="feather-user"></i>
-
-                                        Ruben
-
-                                    </p>
-
-
-                                    <p>
-
-                                        <i class="feather-clock"></i>
-
-                                        Saturday - 01:00 PM - 02:30 PM
-
-                                    </p>
-
-                                </div>
-
-                                <!-- Class Link & Copy Box -->
-                                <div class="link-box-container">
-                                    <div class="class-link-box awaiting">
-                                        <span><i class="feather-info me-1"></i> Awaiting tutor to enable link</span>
-                                    </div>
-                                </div>
-
-                                <!-- Action Button -->
-                                <div class="action-btn-container">
-                                    <button class="btn awaiting-btn w-100" disabled>
-                                        <i class="feather-clock me-2"></i> Join Now
-                                    </button>
-                                </div>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-                </div>
-
-            </div>
-
-
-        </div>
-
-    </div>
-
-</div>
-
-
-<!-- =========================================================
-     FOOTER
-========================================================= -->
-
-            <!-- Start Footer Area -->
+    <!-- Start Footer Area -->
     <footer class="rbt-footer footer-style-1 bg-color-white overflow-hidden">
         <div class="footer-top">
             <div class="container">
@@ -1204,26 +626,13 @@
                                 </a>
                             </div>
 
-                            <p class="description mt--20">We are always seeking talented and motivated individuals to
-                                join our team.</p>
+                            <p class="description mt--20">We are always seeking talented and motivated individuals to join our team.</p>
 
                             <ul class="social-icon social-default justify-content-start">
-                                <li><a href="https://www.facebook.com/">
-                                        <i class="feather-facebook"></i>
-                                    </a>
-                                </li>
-                                <li><a href="https://www.twitter.com" aria-label="X (Twitter)">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" viewBox="0 0 24 24" class="social-icon-x" style="vertical-align: -2px;"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-                                    </a>
-                                </li>
-                                <li><a href="https://www.instagram.com/">
-                                        <i class="feather-instagram"></i>
-                                    </a>
-                                </li>
-                                <li><a href="https://www.linkdin.com/">
-                                        <i class="feather-linkedin"></i>
-                                    </a>
-                                </li>
+                                <li><a href="https://www.facebook.com/"><i class="feather-facebook"></i></a></li>
+                                <li><a href="https://www.twitter.com" aria-label="X (Twitter)"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" viewBox="0 0 24 24" class="social-icon-x" style="vertical-align: -2px;"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a></li>
+                                <li><a href="https://www.instagram.com/"><i class="feather-instagram"></i></a></li>
+                                <li><a href="https://www.linkedin.com/"><i class="feather-linkedin"></i></a></li>
                             </ul>
                         </div>
                     </div>
@@ -1232,21 +641,11 @@
                         <div class="footer-widget">
                             <h5 class="ft-title">Useful Links</h5>
                             <ul class="ft-link">
-                                <li>
-                                    <a href="our-team.html">Our Team</a>
-                                </li>
-                                <li>
-                                    <a href="our-tuition.html">Our Tuition</a>
-                                </li>
-                                <li>
-                                    <a href="holiday-camps.html">Holiday Camps</a>
-                                </li>
-                                <li>
-                                    <a href="plans-and-pricing.html">Plans &amp; Pricing</a>
-                                </li>
-                                <li>
-                                    <a href="book-online.html">Book Online</a>
-                                </li>
+                                <li><a href="our-team.html">Our Team</a></li>
+                                <li><a href="our-tuition.html">Our Tuition</a></li>
+                                <li><a href="holiday-camps.html">Holiday Camps</a></li>
+                                <li><a href="plans-and-pricing.html">Plans &amp; Pricing</a></li>
+                                <li><a href="book-online.html">Book Online</a></li>
                             </ul>
                         </div>
                     </div>
@@ -1255,24 +654,12 @@
                         <div class="footer-widget">
                             <h5 class="ft-title">Popular Programs</h5>
                             <ul class="ft-link">
-                                <li>
-                                    <a href="our-tuition.html">Primary Tuition</a>
-                                </li>
-                                <li>
-                                    <a href="our-tuition.html">Secondary Tuition</a>
-                                </li>
-                                <li>
-                                    <a href="our-tuition.html">GCSE Tuition</a>
-                                </li>
-                                <li>
-                                    <a href="our-tuition.html">IGCSE Tuition</a>
-                                </li>
-                                <li>
-                                    <a href="our-tuition.html">A-Level Tuition</a>
-                                </li>
-                                <li>
-                                    <a href="holiday-camps.html">Holiday Camps</a>
-                                </li>
+                                <li><a href="our-tuition.html">Primary Tuition</a></li>
+                                <li><a href="our-tuition.html">Secondary Tuition</a></li>
+                                <li><a href="our-tuition.html">GCSE Tuition</a></li>
+                                <li><a href="our-tuition.html">IGCSE Tuition</a></li>
+                                <li><a href="our-tuition.html">A-Level Tuition</a></li>
+                                <li><a href="holiday-camps.html">Holiday Camps</a></li>
                             </ul>
                         </div>
                     </div>
@@ -1287,8 +674,7 @@
 
                             <div class="newsletter-form mt--20">
                                 <h6 class="w-600">Location</h6>
-                                <p class="description">2000+ Our students are subscribe Around the World.<br> Don’t be
-                                    shy introduce yourself!</p>
+                                <p class="description">2000+ Our students are subscribe Around the World.<br> Don’t be shy introduce yourself!</p>
                             </div>
                         </div>
                     </div>
@@ -1301,11 +687,11 @@
             </div>
         </div>
         <!-- Start Copyright Area -->
-        <div class="copyright-area copyright-style-1 ptb--20">
+        <div class="copyright-area copyright-style-1 ptb--10">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-xxl-7 col-xl-7 col-lg-7 col-md-12 col-12">
-                        <p class="rbt-link-hover text-center text-lg-start">
+                        <p class="rbt-link-hover text-center text-lg-start m-0">
                             Copyright © 2026 by
                             <a href="index.html">London Star Education Ltd.</a>
                             All Rights Reserved. Designed by
@@ -1313,7 +699,7 @@
                         </p>
                     </div>
                     <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-12 col-12">
-                        <ul class="copyright-link rbt-link-hover justify-content-center justify-content-lg-end mt_sm--10 mt_md--10">
+                        <ul class="copyright-link rbt-link-hover justify-content-center justify-content-lg-end mt_sm--10 mt_md--10 m-0">
                             <li><a href="#">Terms of service</a></li>
                             <li><a href="privacy-policy.html">Privacy policy</a></li>
                         </ul>
@@ -1325,7 +711,7 @@
     </footer>
     <!-- End Footer Area -->
 
-        <div class="rbt-progress-parent">
+    <div class="rbt-progress-parent">
         <svg class="rbt-back-circle svg-inner" width="100%" height="100%" viewBox="-1 -1 102 102">
             <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
         </svg>
@@ -1333,320 +719,147 @@
 
     <!-- Floating Contact Buttons -->
     <div class="floating-contact">
-        <!-- Call -->
         <div class="contact-item call-item">
-            <div class="contact-label call-label">
-                Talk To Our Experts
-            </div>
+            <div class="contact-label call-label">Talk To Our Experts</div>
             <a href="tel:+919876543210" class="contact-button call-button" aria-label="Call us">
                 <i class="fa fa-phone"></i>
             </a>
         </div>
 
-        <!-- WhatsApp -->
         <div class="contact-item whatsapp-item">
-            <div class="contact-label whatsapp-label">
-                Message Us
-            </div>
-            <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer"
-                class="contact-button whatsapp-button" aria-label="Chat with us on WhatsApp">
+            <div class="contact-label whatsapp-label">Message Us</div>
+            <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer" class="contact-button whatsapp-button" aria-label="Chat with us on WhatsApp">
                 <i class="fab fa-whatsapp"></i>
             </a>
         </div>
     </div>
 
-
-<!-- =========================================================
-     JAVASCRIPT
-========================================================= -->
-
-<script src="assets/js/vendor/jquery.js"></script>
-
-<script src="assets/js/vendor/bootstrap.min.js"></script>
-
-<script src="assets/js/vendor/bootstrap-select.min.js"></script>
-
-<script src="assets/js/vendor/backtotop.js"></script>
+    <!-- JS Scripts -->
+    <script src="assets/js/vendor/jquery.js"></script>
+    <script src="assets/js/vendor/bootstrap.min.js"></script>
+    <script src="assets/js/vendor/bootstrap-select.min.js"></script>
+    <script src="assets/js/vendor/backtotop.js"></script>
     <script src="assets/js/main.js"></script>
 
-
-<!-- JOIN CLASS -->
-
-<script>
-    function joinClass(meetingLink) {
-        if (meetingLink && meetingLink !== "#") {
-            window.open(meetingLink, "_blank");
-        }
-    }
-
-    function copyClassLink(url, btn) {
-        if (!url) return;
-        if (navigator.clipboard && window.isSecureContext) {
-            navigator.clipboard.writeText(url).then(function() {
-                showCopiedFeedback(btn);
-            }).catch(function() {
-                fallbackCopy(url, btn);
-            });
-        } else {
-            fallbackCopy(url, btn);
-        }
-    }
-
-    function fallbackCopy(url, btn) {
-        var textArea = document.createElement("textarea");
-        textArea.value = url;
-        textArea.style.position = "fixed";
-        textArea.style.left = "-999999px";
-        textArea.style.top = "-999999px";
-        document.body.appendChild(textArea);
-        textArea.focus();
-        textArea.select();
-        try {
-            document.execCommand('copy');
-            showCopiedFeedback(btn);
-        } catch (err) {}
-        textArea.remove();
-    }
-
-    function showCopiedFeedback(btn) {
-        if (!btn) return;
-        var originalHtml = btn.innerHTML;
-        btn.innerHTML = '<i class="feather-check"></i> Copied!';
-        btn.classList.add('copied');
-        setTimeout(function() {
-            btn.innerHTML = originalHtml;
-            btn.classList.remove('copied');
-        }, 2000);
-    }
-
-    function syncStudentClasses() {
-        var POOL_KEY = "lse_class_link_pool";
-        var pool = [];
-        try {
-            var raw = localStorage.getItem(POOL_KEY);
-            if (raw) pool = JSON.parse(raw);
-        } catch (e) {}
-
-        var courseCards = document.querySelectorAll('.student-course-card');
-        courseCards.forEach(function(card) {
-            var courseKey = card.getAttribute('data-course');
-            var assignedLink = pool.find(function(l) {
-                return l.status === "in-use" && l.course === courseKey;
-            });
-
-            var isLive = false;
-            var linkUrl = "";
-
-            if (assignedLink && assignedLink.url) {
-                isLive = true;
-                linkUrl = assignedLink.url;
-            } else if (!pool.length && (courseKey === "mathematics" || courseKey === "physics")) {
-                // Default active for first 2 courses (Mathematics & Physics) if no pool data exists yet
-                isLive = true;
-                linkUrl = courseKey === "mathematics" ? "https://zoom.us/j/91000000001" : "https://zoom.us/j/91000000002";
+    <script>
+        function joinClass(meetingLink) {
+            if (meetingLink && meetingLink !== "#") {
+                window.open(meetingLink, "_blank");
             }
+        }
 
-            var badgeContainer = card.querySelector('.status-badge-container');
-            var linkBoxContainer = card.querySelector('.link-box-container');
-            var actionContainer = card.querySelector('.action-btn-container');
-
-            if (isLive && linkUrl) {
-                card.classList.add('is-live');
-                if (badgeContainer) {
-                    badgeContainer.innerHTML = '<span class="live-badge"><span class="pulse-dot"></span> Class Live</span>';
-                }
-                if (linkBoxContainer) {
-                    linkBoxContainer.innerHTML = '<div class="class-link-box">' +
-                        '<span class="link-url-text" title="' + linkUrl + '"><i class="feather-link"></i> ' + linkUrl + '</span>' +
-                        '<button type="button" class="copy-link-btn" onclick="copyClassLink(\'' + linkUrl + '\', this)">' +
-                            '<i class="feather-copy"></i> Copy Link' +
-                        '</button>' +
-                    '</div>';
-                }
-                if (actionContainer) {
-                    actionContainer.innerHTML = '<button class="btn join-btn rbt-btn rbt-switch-btn btn-gradient btn-sm hover-transform-none w-100" onclick="joinClass(\'' + linkUrl + '\')">' +
-                        '<i class="feather-log-in me-2"></i> Join Now' +
-                    '</button>';
-                }
+        function copyClassLink(url, btn) {
+            if (!url) return;
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(url).then(function() {
+                    showCopiedFeedback(btn);
+                }).catch(function() {
+                    fallbackCopy(url, btn);
+                });
             } else {
-                card.classList.remove('is-live');
-                if (badgeContainer) {
-                    badgeContainer.innerHTML = '<span class="awaiting-badge"><i class="feather-clock"></i> Awaiting Link</span>';
-                }
-                if (linkBoxContainer) {
-                    linkBoxContainer.innerHTML = '<div class="class-link-box awaiting">' +
-                        '<span><i class="feather-info me-1"></i> Awaiting tutor to enable link</span>' +
-                    '</div>';
-                }
-                if (actionContainer) {
-                    actionContainer.innerHTML = '<button class="btn awaiting-btn w-100" disabled>' +
-                        '<i class="feather-clock me-2"></i> Join Now' +
-                    '</button>';
-                }
+                fallbackCopy(url, btn);
             }
-        });
-    }
+        }
 
-    document.addEventListener("DOMContentLoaded", function() {
-        syncStudentClasses();
-        window.addEventListener("storage", syncStudentClasses);
-        setInterval(syncStudentClasses, 2000);
-    });
-</script>
+        function fallbackCopy(url, btn) {
+            var textArea = document.createElement("textarea");
+            textArea.value = url;
+            textArea.style.position = "fixed";
+            textArea.style.left = "-999999px";
+            textArea.style.top = "-999999px";
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+            try {
+                document.execCommand('copy');
+                showCopiedFeedback(btn);
+            } catch (err) {}
+            textArea.remove();
+        }
 
+        function showCopiedFeedback(btn) {
+            if (!btn) return;
+            var originalHtml = btn.innerHTML;
+            btn.innerHTML = '<i class="feather-check"></i> Copied!';
+            btn.classList.add('copied');
+            setTimeout(function() {
+                btn.innerHTML = originalHtml;
+                btn.classList.remove('copied');
+            }, 2000);
+        }
 
-<!-- LOGIN DROPDOWN -->
+        function syncStudentClasses() {
+            var POOL_KEY = "lse_class_link_pool";
+            var pool = [];
+            try {
+                var raw = localStorage.getItem(POOL_KEY);
+                if (raw) pool = JSON.parse(raw);
+            } catch (e) {}
 
-<script>
-
-    document.addEventListener("DOMContentLoaded", function () {
-
-        const dropdown =
-            document.querySelector(".login-dropdown");
-
-        const button =
-            document.querySelector(".login-dropdown-btn");
-
-        if (!dropdown || !button) return;
-
-        button.addEventListener("click", function (event) {
-
-            event.stopPropagation();
-
-            dropdown.classList.toggle("active");
-
-        });
-
-
-        document.addEventListener("click", function (event) {
-
-            if (!dropdown.contains(event.target)) {
-
-                dropdown.classList.remove("active");
-
-            }
-
-        });
-
-    });
-
-</script>
-
-
-<!-- FLOATING CONTACT -->
-
-<script>
-
-    document.addEventListener("DOMContentLoaded", function () {
-
-        const contactItems =
-            document.querySelectorAll(".contact-item");
-
-
-        contactItems.forEach(function (item) {
-
-            const button =
-                item.querySelector(".contact-button");
-
-            if (!button) return;
-
-
-            button.addEventListener("click", function () {
-
-                if (window.innerWidth <= 767) {
-
-                    contactItems.forEach(function (otherItem) {
-
-                        if (otherItem !== item) {
-
-                            otherItem.classList.remove("show-label");
-
-                        }
-
-                    });
-
-
-                    item.classList.toggle("show-label");
-
-                }
-
-            });
-
-        });
-
-
-        document.addEventListener("click", function (event) {
-
-            if (!event.target.closest(".floating-contact")) {
-
-                contactItems.forEach(function (item) {
-
-                    item.classList.remove("show-label");
-
+            var courseCards = document.querySelectorAll('.student-course-card');
+            courseCards.forEach(function(card) {
+                var courseKey = card.getAttribute('data-course');
+                var assignedLink = pool.find(function(l) {
+                    return l.status === "in-use" && l.course === courseKey;
                 });
 
-            }
+                var isLive = false;
+                var linkUrl = "";
 
-        });
-
-    });
-
-</script>
-
-
-
-    <!-- Login Dropdown Script -->
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const dropdown = document.querySelector(".login-dropdown");
-            const button = document.querySelector(".login-dropdown-btn");
-            if (!dropdown || !button) return;
-
-            button.addEventListener("click", function (e) {
-                e.stopPropagation();
-                dropdown.classList.toggle("active");
-            });
-
-            document.addEventListener("click", function (e) {
-                if (!dropdown.contains(e.target)) {
-                    dropdown.classList.remove("active");
+                if (assignedLink && assignedLink.url) {
+                    isLive = true;
+                    linkUrl = assignedLink.url;
+                } else if (courseKey === "year5-english" || courseKey === "year6-reading") {
+                    // FORCE active preview for Year 5 English and Year 6 Reading regardless of local storage pool status
+                    isLive = true;
+                    linkUrl = courseKey === "year5-english" ? "https://zoom.us/j/91000000001" : "https://zoom.us/j/91000000002";
                 }
-            });
-        });
-    </script>
 
-    <!-- Floating Contact Hover / Mobile Toggle Script -->
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const contactItems = document.querySelectorAll(".floating-contact .contact-item");
-            contactItems.forEach(function (item) {
-                const button = item.querySelector(".contact-button");
-                if (!button) return;
+                var badgeContainer = card.querySelector('.status-badge-container');
+                var linkBoxContainer = card.querySelector('.link-box-container');
+                var actionContainer = card.querySelector('.action-btn-container');
 
-                item.addEventListener("mouseenter", function () {
-                    item.classList.add("show-label");
-                });
-                item.addEventListener("mouseleave", function () {
-                    item.classList.remove("show-label");
-                });
-
-                button.addEventListener("touchstart", function (e) {
-                    if (!item.classList.contains("show-label")) {
-                        contactItems.forEach(function (other) {
-                            other.classList.remove("show-label");
-                        });
-                        item.classList.add("show-label");
+                if (isLive && linkUrl) {
+                    card.classList.add('is-live');
+                    if (badgeContainer) {
+                        badgeContainer.innerHTML = '<span class="live-badge"><span class="pulse-dot"></span> Class Live</span>';
                     }
-                }, { passive: true });
-            });
-
-            document.addEventListener("click", function (event) {
-                if (!event.target.closest(".floating-contact")) {
-                    contactItems.forEach(function (item) {
-                        item.classList.remove("show-label");
-                    });
+                    if (linkBoxContainer) {
+                        linkBoxContainer.innerHTML = '<div class="class-link-box">' +
+                            '<span class="link-url-text" title="' + linkUrl + '"><i class="feather-link"></i> ' + linkUrl + '</span>' +
+                            '<button type="button" class="copy-link-btn" onclick="copyClassLink(\'' + linkUrl + '\', this)">' +
+                                '<i class="feather-copy"></i> Copy Link' +
+                            '</button>' +
+                        '</div>';
+                    }
+                    if (actionContainer) {
+                        actionContainer.innerHTML = '<button class="btn join-btn rbt-btn rbt-switch-btn btn-gradient btn-sm hover-transform-none w-100" onclick="joinClass(\'' + linkUrl + '\')">' +
+                            '<i class="feather-log-in me-2"></i> Join Now' +
+                        '</button>';
+                    }
+                } else {
+                    card.classList.remove('is-live');
+                    if (badgeContainer) {
+                        badgeContainer.innerHTML = '<span class="awaiting-badge"><i class="feather-clock"></i> Awaiting Link</span>';
+                    }
+                    if (linkBoxContainer) {
+                        linkBoxContainer.innerHTML = '<div class="class-link-box awaiting">' +
+                            '<span><i class="feather-info me-1"></i> Awaiting tutor to enable link</span>' +
+                        '</div>';
+                    }
+                    if (actionContainer) {
+                        actionContainer.innerHTML = '<button class="btn awaiting-btn w-100" disabled>' +
+                            '<i class="feather-clock me-2"></i> Join Now' +
+                        '</button>';
+                    }
                 }
             });
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            syncStudentClasses();
+            window.addEventListener("storage", syncStudentClasses);
+            setInterval(syncStudentClasses, 2000);
         });
     </script>
 </body>

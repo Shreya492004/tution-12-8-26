@@ -55,26 +55,38 @@
         .content {
             .counter {
                 font-weight: 700;
-                font-size: 50px;
-                line-height: 56px;
-                margin-bottom: 0;
-                position: relative;
-                display: inline-block;
-                padding: 0 24px;
-                margin-left: -20px;
+                font-size: 44px;
+                line-height: 1;
                 margin-bottom: 9px;
+                position: relative;
+                display: inline-flex;
+                flex-direction: row;
+                align-items: flex-start;
+                justify-content: center;
+                flex-wrap: nowrap;
+                white-space: nowrap;
+                padding: 0;
+                margin-left: 0;
+                overflow: visible;
 
                 @media #{$sm-layout} {
-                    font-size: 40px;
+                    font-size: 32px;
                     line-height: 1;
                 }
 
                 &::after {
-                    position: absolute;
                     content: "+";
-                    right: 0;
-                    // width: 20px;
-                    font-size: 42px;
+                    display: inline-block;
+                    position: static;
+                    font-size: 0.8em;
+                    font-weight: 700;
+                    line-height: 1;
+                    margin-left: 2px;
+                    align-self: flex-start;
+                    vertical-align: top;
+                    color: inherit;
+                    white-space: nowrap;
+                    transform: translateY(0.02em);
                 }
 
                 &.witdollar-icon {
@@ -87,6 +99,7 @@
                     margin-left: 0;
                     &::after {
                         display: none;
+                        content: "";
                     }
                 }
             }
