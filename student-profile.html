@@ -116,7 +116,7 @@
             display: inline-block !important;
         }
 
-        /* Header Navigation (Increased Size, Clean Medium Weight, 100% Zoom Safe) */
+        /* Header Navigation */
         @media only screen and (min-width: 1200px) {
             .rbt-header .mainbar-row {
                 display: flex !important;
@@ -340,21 +340,32 @@
             display: flex;
             align-items: center;
             flex-wrap: wrap;
-            gap: 8px;
+            gap: 6px;
         }
 
         .student-badge-id {
             display: inline-flex;
             align-items: center;
             gap: 5px;
-            background: #ffffff;
-            border: 1px solid #e0dbff;
-            color: #6c4df6;
-            font-size: 16px !important;
+            background: transparent;
+            border: none;
+            color: #4b5563;
+            font-size: 15px !important;
             font-weight: 500 !important;
             font-family: var(--font-primary) !important;
-            padding: 5px 12px;
-            border-radius: 6px;
+            padding: 0;
+        }
+
+        .student-badge-id i {
+            color: #6c4df6;
+            font-size: 15px;
+        }
+
+        .student-meta-badges .meta-divider {
+            color: #cbd5e1;
+            font-size: 14px;
+            margin: 0 4px;
+            display: inline-block;
         }
 
         .student-hero-stats {
@@ -630,6 +641,7 @@
             font-weight: 500;
             font-size: 14px;
             line-height: 1.6;
+            white-space: nowrap; /* Prevents am/pm from wrapping onto a new line */
             font-family: var(--font-primary), "Euclid Circular A", "Euclid Circular", sans-serif;
         }
 
@@ -918,6 +930,7 @@
                                                     <span class="student-badge-id">
                                                         <i class="feather-hash"></i> <span id="val-badge-studentid">LSE-STD-2024-001</span>
                                                     </span>
+                                                    <span class="meta-divider">•</span>
                                                     <span class="student-badge-id">
                                                         <i class="feather-calendar"></i> <span id="val-badge-enrolleddate">Enrolled Jan 2024</span>
                                                     </span>
@@ -937,12 +950,8 @@
                                     <div class="student-details-card mt-0">
                                         <div class="student-details-title">
                                             <div class="student-details-title-left">
-                                                <i class="feather-user"></i>
                                                 <h5>Personal &amp; Academic Details</h5>
                                             </div>
-                                            <a href="student-edit.html" class="rbt-btn btn-xs btn-border-gradient radius-round">
-                                                <i class="feather-edit-2 me-1"></i> Edit Profile
-                                            </a>
                                         </div>
 
                                         <div class="profile-info-grid">
@@ -1078,7 +1087,7 @@
                                                         </td>
                                                         <td>
                                                             <span class="subject-time">
-                                                                <i class="feather-clock"></i> Mon: 5:00–6:00 pm<br>
+                                                                Mon: 5:00–6:00 pm<br>
                                                                 Wed: 6:00–7:00 pm<br>
                                                                 Sat: 9:00–10:00 am<br>
                                                                 Sun: 10:00–11:00 am
@@ -1102,7 +1111,7 @@
                                                         </td>
                                                         <td>
                                                             <span class="subject-time">
-                                                                <i class="feather-clock"></i> Mon: 6:00–7:00 pm<br>
+                                                                Mon: 6:00–7:00 pm<br>
                                                                 Mon: 7:00–8:00 pm<br>
                                                                 Wed: 5:00–6:00 pm<br>
                                                                 Sun: 9:00–10:00 am
@@ -1126,7 +1135,7 @@
                                                         </td>
                                                         <td>
                                                             <span class="subject-time">
-                                                                <i class="feather-clock"></i> Wed: 6:00–7:00 pm
+                                                                 Wed: 6:00–7:00 pm
                                                             </span>
                                                         </td>
                                                     </tr>

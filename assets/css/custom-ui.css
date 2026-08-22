@@ -2583,5 +2583,673 @@ main {
     }
 }
 
+/* ==========================================================================
+   MASTER DASHBOARD SIDEBAR NAVIGATION SYSTEM (STUDENT & TUTOR LOGINS)
+   Enforces 100% pixel-perfect consistency across all dashboard pages.
+   ========================================================================== */
+
+.rbt-default-sidebar {
+    position: relative !important;
+    width: 100% !important;
+    background: #ffffff !important;
+    border-radius: 12px !important;
+    padding: 24px !important;
+    border: 1px solid #eeeeee !important;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05) !important;
+    box-sizing: border-box !important;
+}
+
+.rbt-default-sidebar.sticky-top {
+    position: sticky !important;
+    top: 100px !important;
+    z-index: 10 !important;
+}
+
+.rbt-default-sidebar-wrapper {
+    position: relative !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+.rbt-default-sidebar-wrapper .section-title {
+    margin-bottom: 14px !important;
+}
+
+.rbt-default-sidebar-wrapper .section-title.mt--40 {
+    margin-top: 24px !important;
+    margin-bottom: 14px !important;
+}
+
+.rbt-default-sidebar-wrapper .rbt-title-style-2 {
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    color: #8c94a3 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.05em !important;
+    font-family: var(--font-primary) !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    line-height: 1.4 !important;
+}
+
+.rbt-default-sidebar-wrapper .mainmenu-nav,
+.rbt-dashboard-sidebar .mainmenu-nav {
+    display: block !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.dashboard-mainmenu,
+.rbt-default-sidebar-list {
+    margin: 0 !important;
+    padding: 0 !important;
+    list-style: none !important;
+    display: block !important;
+    width: 100% !important;
+}
+
+.dashboard-mainmenu li,
+.rbt-default-sidebar-list li {
+    margin-bottom: 4px !important;
+    display: block !important;
+    width: 100% !important;
+}
+
+.dashboard-mainmenu li a,
+.rbt-default-sidebar-list li a,
+.rbt-default-sidebar-wrapper .dashboard-mainmenu li a,
+.rbt-default-sidebar-wrapper .rbt-default-sidebar-list li a {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    font-size: 15px !important;
+    font-weight: 500 !important;
+    font-family: var(--font-primary) !important;
+    line-height: 20px !important;
+    color: #2b354f !important;
+    padding: 10px 14px !important;
+    border-radius: 8px !important;
+    transition: all 0.2s ease !important;
+    text-decoration: none !important;
+    width: 100% !important;
+    height: 42px !important;
+    min-height: 42px !important;
+    box-sizing: border-box !important;
+    background: transparent !important;
+}
+
+.dashboard-mainmenu li a span,
+.rbt-default-sidebar-list li a span,
+.rbt-default-sidebar-wrapper .dashboard-mainmenu li a span,
+.rbt-default-sidebar-wrapper .rbt-default-sidebar-list li a span {
+    font-size: 15px !important;
+    font-weight: 500 !important;
+    font-family: var(--font-primary) !important;
+    color: inherit !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+}
+
+.dashboard-mainmenu li a i,
+.rbt-default-sidebar-list li a i,
+.rbt-default-sidebar-wrapper .dashboard-mainmenu li a i,
+.rbt-default-sidebar-wrapper .rbt-default-sidebar-list li a i {
+    font-size: 17px !important;
+    margin-right: 12px !important;
+    color: #7e879b !important;
+    transition: all 0.2s ease !important;
+    width: 20px !important;
+    height: 20px !important;
+    text-align: center !important;
+    flex-shrink: 0 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    line-height: 1 !important;
+}
+
+/* Active State Styling */
+.dashboard-mainmenu li.active a,
+.dashboard-mainmenu li a.active,
+.rbt-default-sidebar-list li.active a,
+.rbt-default-sidebar-list li a.active {
+    background: #f0edff !important;
+    color: var(--color-primary, #2f57ef) !important;
+}
+
+.dashboard-mainmenu li.active a span,
+.dashboard-mainmenu li a.active span,
+.rbt-default-sidebar-list li.active a span,
+.rbt-default-sidebar-list li a.active span {
+    font-weight: 600 !important;
+    color: var(--color-primary, #2f57ef) !important;
+}
+
+.dashboard-mainmenu li.active a i,
+.dashboard-mainmenu li a.active i,
+.rbt-default-sidebar-list li.active a i,
+.rbt-default-sidebar-list li a.active i {
+    color: var(--color-primary, #2f57ef) !important;
+}
+
+/* Hover State Styling */
+.dashboard-mainmenu li a:hover,
+.rbt-default-sidebar-list li a:hover {
+    background: #f6f7fb !important;
+    color: var(--color-primary, #2f57ef) !important;
+}
+
+.dashboard-mainmenu li a:hover i,
+.rbt-default-sidebar-list li a:hover i {
+    color: var(--color-primary, #2f57ef) !important;
+}
+
+/* ==========================================================================
+   MASTER MOBILE HEADER & COMPREHENSIVE RESPONSIVE SYSTEM
+   Target Screen Widths: 320px, 360px, 375px, 390px, 414px to 991px.
+   ========================================================================== */
+
+/* 1 & 5. Fixed/Sticky Mobile Header & Header Right Controls */
+@media only screen and (max-width: 991.98px) {
+    header,
+    header.rbt-header,
+    .rbt-header,
+    .rbt-header .rbt-header-wrapper,
+    .rbt-header-wrapper.header-sticky {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        width: 100% !important;
+        z-index: 9999 !important;
+        background: #ffffff !important;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08) !important;
+        height: 66px !important;
+        min-height: 66px !important;
+        max-height: 66px !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    body {
+        padding-top: 66px !important;
+        margin-top: 0 !important;
+    }
+
+    .rbt-header .container {
+        padding-left: 12px !important;
+        padding-right: 12px !important;
+        max-width: 100% !important;
+    }
+
+    .rbt-header .mainbar-row {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        gap: 6px !important;
+        height: 66px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    .rbt-header .header-left {
+        display: flex !important;
+        align-items: center !important;
+        flex-shrink: 1 !important;
+        min-width: 0 !important;
+        height: 66px !important;
+    }
+
+    .rbt-header .header-left .logo a {
+        display: flex !important;
+        align-items: center !important;
+    }
+
+    .rbt-header .header-left .logo a img {
+        max-height: 36px !important;
+        width: auto !important;
+        max-width: 125px !important;
+        object-fit: contain !important;
+    }
+
+    .rbt-header .header-right {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: flex-end !important;
+        flex-shrink: 0 !important;
+        gap: 6px !important;
+        height: 66px !important;
+        margin-left: auto !important;
+        box-sizing: border-box !important;
+    }
+
+    .rbt-header .header-right .rbt-btn-wrapper {
+        display: flex !important;
+        align-items: center !important;
+        gap: 6px !important;
+        flex-shrink: 1 !important;
+    }
+
+    /* Keep Join Now button visible and styled consistently on all mobile screens */
+    .rbt-header .header-right .rbt-btn-wrapper > a.rbt-btn {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+    .rbt-header .header-right .rbt-btn,
+    .rbt-header .header-right a.rbt-btn,
+    .rbt-header .header-right button.rbt-btn {
+        height: 36px !important;
+        line-height: 36px !important;
+        padding: 0 10px !important;
+        font-size: 12.5px !important;
+        white-space: nowrap !important;
+        box-sizing: border-box !important;
+    }
+
+    .rbt-header .mobile-menu-bar {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        flex-shrink: 0 !important;
+        margin-left: 2px !important;
+    }
+
+    .rbt-header .mobile-menu-bar .hamberger {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+    .rbt-header .mobile-menu-bar .hamberger-button {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 38px !important;
+        height: 38px !important;
+        min-width: 38px !important;
+        border-radius: 8px !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        background: #f0edff !important;
+        color: #6c4df6 !important;
+        border: 1px solid #dcd5ff !important;
+        cursor: pointer !important;
+        flex-shrink: 0 !important;
+        box-shadow: 0 2px 6px rgba(108, 77, 246, 0.1) !important;
+        transition: all 0.2s ease !important;
+    }
+
+    .rbt-header .mobile-menu-bar .hamberger-button:hover,
+    .rbt-header .mobile-menu-bar .hamberger-button:focus {
+        background: #6c4df6 !important;
+        color: #ffffff !important;
+        border-color: #6c4df6 !important;
+    }
+
+    .rbt-header .mobile-menu-bar .hamberger-button i {
+        font-size: 18px !important;
+        line-height: 1 !important;
+        color: inherit !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+}
+
+/* 2. Remove "R" Box Beside Name on Mobile */
+@media only screen and (max-width: 767.98px) {
+    .teacher-avatar-badge,
+    .student-avatar-badge,
+    .rbt-avatar-badge,
+    #hero-avatar-initial,
+    #profile-avatar-initials {
+        display: none !important;
+    }
+}
+
+/* 3. Remove Edit Button beside Personal & Professional Details */
+.teacher-details-title .rbt-btn,
+.student-details-title .rbt-btn {
+    display: none !important;
+}
+
+/* 4. Align WhatsApp, Phone & Arrow Icons in Perfect Straight Vertical Column */
+.floating-contact {
+    position: fixed !important;
+    right: 24px !important;
+    bottom: 92px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-end !important;
+    gap: 14px !important;
+    z-index: 10000 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.rbt-progress-parent {
+    position: fixed !important;
+    right: 24px !important;
+    bottom: 30px !important;
+    width: 48px !important;
+    height: 48px !important;
+    min-width: 48px !important;
+    min-height: 48px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+    border-radius: 12px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    z-index: 9999 !important;
+}
+
+.rbt-progress-parent::after {
+    left: 0 !important;
+    top: 0 !important;
+    width: 48px !important;
+    height: 48px !important;
+    line-height: 48px !important;
+    text-align: center !important;
+}
+
+@media only screen and (max-width: 767.98px) {
+    .floating-contact {
+        right: 16px !important;
+        bottom: 92px !important;
+    }
+
+    .rbt-progress-parent {
+        right: 16px !important;
+        bottom: 30px !important;
+    }
+}
+
+/* ==========================================================================
+   MOBILE MENU DRAWER & SOCIAL ICON ALIGNMENT SYSTEM
+   Ensures 100% geometric centering for social icons, close button, info list,
+   and nav menu items across 320px, 360px, 375px, 390px, 414px widths.
+   ========================================================================== */
+
+/* 1. Nav Menu Item Links and Icons */
+.popup-mobile-menu .mainmenu-nav .mainmenu li a {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 14px !important;
+    padding: 11px 16px !important;
+    font-size: 15px !important;
+    font-weight: 500 !important;
+    line-height: 1.4 !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+.popup-mobile-menu .mainmenu-nav .mainmenu li a i,
+.popup-mobile-menu .mainmenu-nav .mainmenu li a svg,
+.popup-mobile-menu .mainmenu-nav .mainmenu li a img {
+    font-size: 18px !important;
+    width: 24px !important;
+    height: 24px !important;
+    min-width: 24px !important;
+    min-height: 24px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-shrink: 0 !important;
+    margin: 0 !important;
+    vertical-align: middle !important;
+    text-align: center !important;
+}
+
+/* 2. Top Info List (Mail, Phone) */
+.popup-mobile-menu .rbt-information-list li a {
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+    padding: 6px 0 !important;
+    font-size: 14px !important;
+}
+
+.popup-mobile-menu .rbt-information-list li a i,
+.popup-mobile-menu .rbt-information-list li a svg {
+    font-size: 16px !important;
+    width: 22px !important;
+    height: 22px !important;
+    min-width: 22px !important;
+    min-height: 22px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-shrink: 0 !important;
+    margin: 0 !important;
+    vertical-align: middle !important;
+    text-align: center !important;
+}
+
+/* 3. Close Button Icon Centering */
+.popup-mobile-menu .close-button,
+.popup-mobile-menu .rbt-btn-close button {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 !important;
+}
+
+.popup-mobile-menu .close-button i,
+.popup-mobile-menu .close-button svg {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin: 0 auto !important;
+    line-height: 1 !important;
+}
+
+/* 4. Social Icons ("FIND WITH US") Geometric Centering Fix */
+.popup-mobile-menu .social-share-wrapper .social-icon,
+.social-icon.social-default {
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+    padding: 0 !important;
+    margin-top: 14px !important;
+}
+
+.popup-mobile-menu .social-icon li,
+.social-icon.social-default li {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.popup-mobile-menu .social-icon li a,
+.social-icon.social-default li a {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 40px !important;
+    height: 40px !important;
+    min-width: 40px !important;
+    min-height: 40px !important;
+    border-radius: 50% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    text-align: center !important;
+    box-sizing: border-box !important;
+}
+
+.popup-mobile-menu .social-icon li a i,
+.social-icon.social-default li a i {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 15px !important;
+    line-height: 1 !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+}
+
+.popup-mobile-menu .social-icon li a svg,
+.social-icon.social-default li a svg,
+svg.social-icon-x {
+    width: 15px !important;
+    height: 15px !important;
+    min-width: 15px !important;
+    min-height: 15px !important;
+    max-width: 15px !important;
+    max-height: 15px !important;
+    display: inline-block !important;
+    vertical-align: middle !important;
+    margin: 0 auto !important;
+    fill: currentColor !important;
+}
+
+/* Ultra Small Mobile Screens (320px - 414px) Header Optimization */
+@media only screen and (max-width: 414px) {
+    .rbt-header .container {
+        padding-left: 6px !important;
+        padding-right: 6px !important;
+    }
+
+    .rbt-header .header-left .logo a img {
+        max-height: 30px !important;
+        max-width: 105px !important;
+    }
+
+    .rbt-header .header-right {
+        gap: 3px !important;
+    }
+
+    .rbt-header .header-right .rbt-btn-wrapper {
+        gap: 3px !important;
+    }
+
+    .rbt-header .header-right .rbt-btn,
+    .rbt-header .header-right a.rbt-btn,
+    .rbt-header .header-right button.rbt-btn {
+        height: 32px !important;
+        line-height: 32px !important;
+        padding: 0 6px !important;
+        font-size: 11px !important;
+    }
+
+    .rbt-header .mobile-menu-bar .hamberger-button {
+        width: 34px !important;
+        height: 34px !important;
+        min-width: 34px !important;
+    }
+}
+
+/* ==========================================================================
+   MOBILE INDEX SPACING OPTIMIZATION
+   1. Removes excessive top whitespace between fixed header and first banner.
+   2. Reduces vertical gap between consecutive cards to a compact 16px.
+   Target Screen Widths: 320px, 360px, 375px, 390px, 414px to 991px.
+   ========================================================================== */
+
+@media only screen and (max-width: 991.98px) {
+    /* 1. Mobile Top Whitespace Reduction & Gap Elimination */
+    body,
+    body.rbt-header-sticky {
+        padding-top: 66px !important;
+        margin-top: 0 !important;
+    }
+
+    /* Collapse all JS/theme sticky placeholders completely */
+    .rbt-sticky-placeholder,
+    div.rbt-sticky-placeholder,
+    .header-sticky-placeholder,
+    .sticky-placeholder,
+    .rbt-header-top,
+    .rbt-header-top-news {
+        display: none !important;
+        height: 0 !important;
+        min-height: 0 !important;
+        max-height: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        border: none !important;
+        visibility: hidden !important;
+    }
+
+    /* Force all banner/slider containers on mobile to sit flush below fixed header */
+    .rbt-banner-area.rbt-banner-1,
+    .rbt-banner-area,
+    .rbt-banner-1,
+    .slider-area.rbt-banner-10,
+    .slider-area,
+    .rbt-breadcrumb-default,
+    .rbt-page-banner,
+    .bg_image,
+    main,
+    #main-wrapper,
+    div[class*="banner"],
+    div[class*="slider"] {
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+    }
+
+    .slider-area.bg_image,
+    .rbt-banner-area.bg_image,
+    .bg_image {
+        background-position: center top !important;
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+    }
+
+    .rbt-banner-area .content,
+    .rbt-banner-area .inner,
+    .slider-area .inner {
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+    }
+
+    .rbt-banner-area .rbt-new-badge,
+    .rbt-banner-1 .rbt-new-badge {
+        margin-top: 0 !important;
+        margin-bottom: 10px !important;
+    }
+}
+
+@media only screen and (max-width: 767.98px) {
+    /* 2. Compact Vertical Gap Between Cards on Mobile */
+    .rbt-categories-area .row.g-5,
+    .rbt-section-gap .row.g-5,
+    .rbt-dashboard-area .row.g-5,
+    .row.g-5 {
+        --bs-gutter-y: 1rem !important;
+        row-gap: 16px !important;
+    }
+
+    .rbt-categories-area .row.g-5 > [class*="col-"],
+    .rbt-section-gap .row.g-5 > [class*="col-"],
+    .row.g-5 > [class*="col-"] {
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+    }
+
+    .rbt-cat-box,
+    .rbt-card,
+    .rbt-cat-box-1 {
+        margin-bottom: 0 !important;
+    }
+
+    .rbt-section-gap,
+    .rbt-section-gapTop,
+    .rbt-section-gapBottom {
+        padding-top: 36px !important;
+        padding-bottom: 36px !important;
+    }
+}
+
 
 

@@ -666,11 +666,65 @@
                                 <span data-text="Join Now">Join Now</span>
                             </a>
                         </div>
+                        <!-- Start Mobile-Menu-Bar -->
+                        <div class="mobile-menu-bar d-block d-xl-none">
+                            <div class="hamberger">
+                                <button class="hamberger-button rbt-round-btn" aria-label="Open Menu">
+                                    <i class="feather-menu"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <!-- Start Mobile-Menu-Bar -->
                     </div>
                 </div>
             </div>
         </div>
     </header>
+    <!-- Mobile Menu Section -->
+    <div class="popup-mobile-menu">
+        <div class="inner-wrapper">
+            <div class="inner-top">
+                <div class="content">
+                    <div class="logo">
+                        <a href="index.html">
+                            <img src="assets/images/logo/logo.png" alt="Education Logo Images">
+                        </a>
+                    </div>
+                    <div class="rbt-btn-close">
+                        <button class="close-button rbt-round-btn" aria-label="Close Menu"><i class="feather-x"></i></button>
+                    </div>
+                </div>
+                <p class="description">London Star Education provides high-quality online tuition and educational support.</p>
+                <ul class="navbar-top-left rbt-information-list justify-content-start">
+                    <li>
+                        <a href="mailto:info@londonstaredu.com"><i class="feather-mail"></i>info@londonstaredu.com</a>
+                    </li>
+                </ul>
+            </div>
+            <nav class="mainmenu-nav">
+                <ul class="mainmenu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about-us.html">About</a></li>
+                    <li><a href="our-team.html">Our Team</a></li>
+                    <li><a href="our-tuition.html">Our Tuition</a></li>
+                    <li><a href="holiday-camps.html">Holiday Camps</a></li>
+                    <li><a href="plans-and-pricing.html">Plans &amp; Pricing</a></li>
+                    <li><a href="book-online.html">Book Online</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu-bottom">
+                <div class="social-share-wrapper">
+                    <span class="rbt-short-title d-block">Find With Us</span>
+                    <ul class="social-icon social-default transparent-with-border justify-content-start mt--20">
+                        <li><a href="https://www.facebook.com/" aria-label="Facebook"><i class="feather-facebook"></i></a></li>
+                        <li><a href="https://www.twitter.com" aria-label="X (Twitter)"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" viewBox="0 0 24 24" class="social-icon-x" style="vertical-align: -2px;"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a></li>
+                        <li><a href="https://www.instagram.com/" aria-label="Instagram"><i class="feather-instagram"></i></a></li>
+                        <li><a href="https://www.linkedin.com/" aria-label="LinkedIn"><i class="feather-linkedin"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Banner Area -->
     <div class="slider-area rbt-banner-10 height-400 bg_image bg_image--11" data-black-overlay="5">
@@ -700,7 +754,7 @@
                                         <div class="rbt-default-sidebar-wrapper">
 
                                             <div class="section-title mb--20">
-                                                <h6 class="rbt-title-style-2" id="sidebar-welcome-text">Welcome, Lily</h6>
+                                                <h6 class="rbt-title-style-2" id="sidebar-welcome-text">Welcome, Teacher Lily</h6>
                                             </div>
 
                                             <nav class="mainmenu-nav">
@@ -713,13 +767,13 @@
                                                     </li>
                                                     <li class="active">
                                                         <a class="active" href="students-list.html">
-                                                            <i class="feather-monitor"></i>
+                                                            <i class="feather-users"></i>
                                                             <span>Students List</span>
                                                         </a>
                                                     </li>
                                                     <li>
                                                         <a href="class-schedule.html">
-                                                            <i class="feather-calendar"></i>
+                                                            <i class="feather-clock"></i>
                                                             <span>Class Schedule</span>
                                                         </a>
                                                     </li>
@@ -731,7 +785,7 @@
                                                     </li>
                                                     <li>
                                                         <a href="tutor-attendance.html">
-                                                            <i class="feather-check-circle"></i>
+                                                            <i class="feather-calendar"></i>
                                                             <span>Attendance</span>
                                                         </a>
                                                     </li>
@@ -1327,7 +1381,7 @@
                     </td>
                     <td style="text-align: center;">
                         <button type="button" class="action-view-btn" onclick="openDetailModal('${student.id}')">
-                            <i class="feather-eye"></i> View
+                            View
                         </button>
                     </td>
                 `;

@@ -33,9 +33,6 @@
 
     <!-- Teacher Profile Professional Styles -->
     <style>
-        /* =========================================================
-            BANNER STYLING & COMPACT RESPONSIVE SCALING
-        ========================================================= */
         .slider-area.rbt-banner-10 {
             margin-top: 0 !important;
             padding-top: 0 !important;
@@ -58,7 +55,6 @@
             z-index: 5;
         }
 
-        /* Mobile Height Adjustments */
         @media (max-width: 768px) {
             .slider-area.rbt-banner-10.height-400 {
                 height: 160px !important;
@@ -100,24 +96,20 @@
             line-height: 1 !important;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
+            display: inline-block !important;
         }
 
         i[class^="fa-"],
         i[class*=" fa-"],
         [class^="fa-"],
         [class*=" fa-"],
-        .fa,
-        .fas,
-        .far,
-        .fal,
-        .fad,
-        .fab {
+        .fa, .fas, .far, .fal, .fad, .fab {
             font-family: "Font Awesome 5 Pro", "Font Awesome 5 Free", "FontAwesome" !important;
             font-style: normal !important;
             font-weight: normal !important;
+            display: inline-block !important;
         }
 
-        /* Centered Section Title Icons */
         .teacher-details-title-left {
             display: flex !important;
             align-items: center !important;
@@ -129,7 +121,7 @@
             width: 38px !important;
             height: 38px !important;
             min-width: 38px !important;
-            border-radius: 8px !important;
+            border-radius: 10px !important;
             background: #f3f0ff !important;
             color: #6c4df6 !important;
             font-size: 18px !important;
@@ -149,9 +141,6 @@
             font-weight: 700 !important;
             font-family: var(--font-primary) !important;
             color: #192335 !important;
-            line-height: 1.2 !important;
-            display: flex !important;
-            align-items: center !important;
         }
 
         /* Header Navigation */
@@ -185,47 +174,144 @@
                 list-style: none !important;
             }
 
-            .rbt-header .rbt-main-navigation .mainmenu>li {
+            .rbt-header .rbt-main-navigation .mainmenu > li {
                 flex-shrink: 0 !important;
                 margin: 0 !important;
                 padding: 0 !important;
                 position: relative !important;
             }
 
-            .rbt-header .rbt-main-navigation .mainmenu>li>a {
-                padding: 0 12px !important;
+            .rbt-header .rbt-main-navigation .mainmenu > li > a,
+            .rbt-header .rbt-main-navigation a {
                 font-size: 16.5px !important;
                 font-weight: 500 !important;
-                font-family: var(--font-primary), "Euclid Circular A", "Euclid Circular", sans-serif !important;
                 color: #192335 !important;
-                display: inline-flex !important;
+                white-space: nowrap !important;
+                padding: 0 12px !important;
+                display: flex !important;
                 align-items: center !important;
                 height: 80px !important;
                 line-height: 80px !important;
-                white-space: nowrap !important;
-                text-transform: none !important;
-                letter-spacing: 0 !important;
-                transition: color 0.3s ease !important;
+                transition: all 0.3s ease !important;
                 text-decoration: none !important;
             }
 
-            .rbt-header .rbt-main-navigation .mainmenu>li>a:hover,
-            .rbt-header .rbt-main-navigation .mainmenu>li>a.active {
-                color: var(--color-primary, #2f57ef) !important;
+            .rbt-header .rbt-main-navigation .mainmenu > li > a:hover,
+            .rbt-header .rbt-main-navigation a:hover {
+                color: #2f57ef !important;
             }
         }
 
-        @media only screen and (min-width: 1200px) and (max-width: 1440px) {
-            .rbt-header .rbt-main-navigation .mainmenu>li>a {
-                font-size: 16.5px !important;
-                padding: 0 8px !important;
-            }
+        /* Dashboard Sidebar Navigation */
+        .rbt-default-sidebar-wrapper {
+            position: relative;
+        }
+
+        .rbt-default-sidebar-wrapper .mainmenu-nav,
+        .rbt-dashboard-sidebar .mainmenu-nav {
+            display: block !important;
+            width: 100% !important;
+        }
+
+        .dashboard-mainmenu,
+        .rbt-default-sidebar-list {
+            margin: 0 !important;
+            padding: 0 !important;
+            list-style: none !important;
+            display: block !important;
+            width: 100% !important;
+        }
+
+        .dashboard-mainmenu li,
+        .rbt-default-sidebar-list li {
+            margin-bottom: 4px !important;
+            display: block !important;
+            width: 100% !important;
+        }
+
+        .dashboard-mainmenu li a,
+        .rbt-default-sidebar-list li a,
+        .rbt-default-sidebar-wrapper .dashboard-mainmenu li a,
+        .rbt-default-sidebar-wrapper .rbt-default-sidebar-list li a {
+            display: flex !important;
+            align-items: center !important;
+            justify-content: flex-start !important;
+            font-size: 15px !important;
+            font-weight: 500 !important;
+            font-family: var(--font-primary) !important;
+            line-height: 20px !important;
+            color: #2b354f !important;
+            padding: 10px 14px !important;
+            border-radius: 8px !important;
+            transition: all 0.2s ease !important;
+            text-decoration: none !important;
+            width: 100% !important;
+            height: auto !important;
+            background: transparent !important;
+        }
+
+        .dashboard-mainmenu li a span,
+        .rbt-default-sidebar-list li a span,
+        .rbt-default-sidebar-wrapper .dashboard-mainmenu li a span,
+        .rbt-default-sidebar-wrapper .rbt-default-sidebar-list li a span {
+            font-size: 15px !important;
+            font-weight: 500 !important;
+            font-family: var(--font-primary) !important;
+            color: inherit !important;
+            white-space: normal !important;
+        }
+
+        .dashboard-mainmenu li a i,
+        .rbt-default-sidebar-list li a i,
+        .rbt-default-sidebar-wrapper .dashboard-mainmenu li a i,
+        .rbt-default-sidebar-wrapper .rbt-default-sidebar-list li a i {
+            font-size: 17px !important;
+            margin-right: 12px !important;
+            color: #7e879b !important;
+            transition: all 0.2s ease !important;
+            width: 20px !important;
+            text-align: center !important;
+            flex-shrink: 0 !important;
+        }
+
+        .dashboard-mainmenu li.active a,
+        .dashboard-mainmenu li a.active,
+        .rbt-default-sidebar-list li.active a,
+        .rbt-default-sidebar-list li a.active {
+            background: #f0edff !important;
+            color: var(--color-primary, #2f57ef) !important;
+        }
+
+        .dashboard-mainmenu li.active a span,
+        .dashboard-mainmenu li a.active span,
+        .rbt-default-sidebar-list li.active a span,
+        .rbt-default-sidebar-list li a.active span {
+            font-weight: 600 !important;
+            color: var(--color-primary, #2f57ef) !important;
+        }
+
+        .dashboard-mainmenu li.active a i,
+        .dashboard-mainmenu li a.active i,
+        .rbt-default-sidebar-list li.active a i,
+        .rbt-default-sidebar-list li a.active i {
+            color: var(--color-primary, #2f57ef) !important;
+        }
+
+        .dashboard-mainmenu li a:hover,
+        .rbt-default-sidebar-list li a:hover {
+            background: #f6f7fb !important;
+            color: var(--color-primary, #2f57ef) !important;
+        }
+
+        .dashboard-mainmenu li a:hover i,
+        .rbt-default-sidebar-list li a:hover i {
+            color: var(--color-primary, #2f57ef) !important;
         }
 
         .teacher-meta-item i,
         .student-badge-id i,
         .profile-info-icon i,
-        .student-details-title-left i,
+        .teacher-details-title-left i,
         .subject-badge-icon i,
         .subject-time i,
         .student-count-badge i {
@@ -250,15 +336,7 @@
             flex-shrink: 0 !important;
         }
 
-        /* Teacher Profile Styling - Exact Student Profile Typography */
-        .teacher-profile-hero,
-        .teacher-details-card,
-        .teacher-profile-hero *,
-        .teacher-details-card * {
-            box-sizing: border-box;
-            font-family: var(--font-primary) !important;
-        }
-
+        /* Teacher Profile Hero Header */
         .teacher-profile-hero {
             background: linear-gradient(135deg, #f8f9ff 0%, #f1edff 100%);
             border: 1px solid #e5e0ff;
@@ -315,7 +393,7 @@
 
         .teacher-user-info h3 {
             margin: 0 0 6px;
-            font-size: 24px !important;
+            font-size: 26px !important;
             font-weight: 700 !important;
             font-family: var(--font-primary) !important;
             color: #192335 !important;
@@ -325,31 +403,33 @@
             display: flex;
             align-items: center;
             flex-wrap: wrap;
-            gap: 8px;
+            gap: 6px;
         }
 
+        /* Borderless Single-Line Meta Items */
         .teacher-meta-item {
             display: inline-flex;
             align-items: center;
             gap: 5px;
-            background: #ffffff;
-            border: 1px solid #e0dbff;
-            color: #6c4df6;
-            font-size: 14px !important;
+            background: transparent;
+            border: none;
+            color: #4b5563;
+            font-size: 15px !important;
             font-weight: 500 !important;
             font-family: var(--font-primary) !important;
-            padding: 4px 10px;
-            border-radius: 6px;
-            line-height: 1.4;
+            padding: 0;
         }
 
         .teacher-meta-item i {
             color: #6c4df6;
-            font-size: 14px;
+            font-size: 15px;
         }
 
         .teacher-meta-badges .meta-divider {
-            display: none;
+            color: #cbd5e1;
+            font-size: 14px;
+            margin: 0 4px;
+            display: inline-block;
         }
 
         .teacher-hero-stats {
@@ -378,12 +458,11 @@
         }
 
         .hero-stat-label {
-            font-size: 13px !important;
-            color: #64748b !important;
+            font-size: 16px !important;
+            color: #374151 !important;
             font-weight: 500 !important;
             font-family: var(--font-primary) !important;
             margin-top: 2px;
-            white-space: nowrap;
         }
 
         /* Profile Cards */
@@ -405,27 +484,9 @@
             border-bottom: 1px solid #eeeeee;
         }
 
-        .teacher-details-title-left {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .teacher-details-title-left i {
-            width: 38px;
-            height: 38px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 10px;
-            background: #f3f0ff;
-            color: #6c4df6;
-            font-size: 18px;
-        }
-
         .teacher-details-title-left h5 {
             margin: 0;
-            font-size: 18px !important;
+            font-size: 20px !important;
             font-weight: 700 !important;
             font-family: var(--font-primary) !important;
             color: #192335 !important;
@@ -474,35 +535,35 @@
         }
 
         .profile-info-label {
-            font-size: 13.5px !important;
+            font-size: 15px !important;
             font-weight: 600 !important;
             text-transform: uppercase !important;
             letter-spacing: 0.05em !important;
-            color: #64748b !important;
+            color: #374151 !important;
             font-family: var(--font-primary) !important;
-            margin-bottom: 3px;
+            margin-bottom: 4px;
         }
 
         .profile-info-val {
-            font-size: 15.5px !important;
-            font-weight: 500 !important;
+            font-size: 18px !important;
+            font-weight: 400 !important;
             color: #192335 !important;
             word-break: break-word;
             font-family: var(--font-primary) !important;
         }
 
-        #profile-bio-container {
-            font-family: var(--font-primary) !important;
-        }
-
+        #profile-bio-container,
         #profile-bio-container p {
-            font-size: 15.5px !important;
-            font-weight: 500 !important;
+            font-size: 18px !important;
+            font-weight: 400 !important;
             color: #192335 !important;
             font-family: var(--font-primary) !important;
             line-height: 1.6 !important;
-            margin-bottom: 14px;
             word-break: break-word;
+        }
+
+        #profile-bio-container p {
+            margin-bottom: 14px;
         }
 
         #profile-bio-container p:last-child {
@@ -526,30 +587,30 @@
             overflow: hidden;
             border: 1px solid #e6e6e6;
             border-radius: 10px;
-            font-family: var(--font-primary) !important;
+            font-family: var(--font-primary), "Euclid Circular", sans-serif;
         }
 
         .subject-table thead th {
             padding: 16px 20px;
             background: #f6f7fb;
-            color: #192335 !important;
-            font-size: 15px !important;
-            font-weight: 600 !important;
-            letter-spacing: 0.01em !important;
+            color: #192335;
+            font-size: 16px;
+            font-weight: 500;
+            letter-spacing: 0.01em;
             text-align: left;
             border-bottom: 1px solid #e6e6e6;
             white-space: nowrap;
-            font-family: var(--font-primary) !important;
+            font-family: var(--font-primary), "Euclid Circular", sans-serif;
         }
 
         .subject-table tbody td {
             padding: 16px 20px;
-            color: #4b5563 !important;
-            font-size: 15px !important;
-            font-weight: 400 !important;
+            color: #4b5563;
+            font-size: 16px;
+            font-weight: 400;
             border-bottom: 1px solid #eeeeee;
             vertical-align: middle;
-            font-family: var(--font-primary) !important;
+            font-family: var(--font-primary), "Euclid Circular", sans-serif;
         }
 
         .subject-table tbody tr:last-child td {
@@ -581,28 +642,28 @@
         }
 
         .subject-name {
-            font-weight: 600 !important;
-            color: #192335 !important;
-            font-size: 15.5px !important;
-            font-family: var(--font-primary) !important;
+            font-weight: 500;
+            color: #192335;
+            font-size: 17px;
+            font-family: var(--font-primary), "Euclid Circular", sans-serif;
         }
 
         .student-count-badge {
             display: inline-flex;
             align-items: center;
-            gap: 6px;
-            color: #475569 !important;
-            font-weight: 500 !important;
-            font-size: 15px !important;
-            font-family: var(--font-primary) !important;
-            background: transparent !important;
-            border: none !important;
-            padding: 0 !important;
+            gap: 8px;
+            font-weight: 500;
+            color: #333333;
+            font-size: 16px;
+            font-family: var(--font-primary), "Euclid Circular", sans-serif;
+            background: transparent;
+            border: none;
+            padding: 0;
         }
 
         .student-count-badge i {
-            color: #6c4df6 !important;
-            font-size: 15px !important;
+            color: #6c4df6;
+            font-size: 16px;
         }
 
         @media (max-width: 767px) {
@@ -617,13 +678,13 @@
             }
 
             .teacher-meta-badges .meta-divider {
-                display: none;
+                display: inline-block;
             }
 
             .teacher-meta-badges {
                 flex-wrap: wrap;
-                align-items: flex-start;
-                gap: 8px;
+                align-items: center;
+                gap: 6px;
             }
 
             .teacher-hero-stats {
@@ -815,31 +876,29 @@
                                         <div class="rbt-default-sidebar-wrapper">
 
                                             <div class="section-title mb--20">
-                                                <h6 class="rbt-title-style-2" id="sidebar-welcome-text">Welcome, Lily
-                                                </h6>
+                                                <h6 class="rbt-title-style-2" id="sidebar-welcome-text">Welcome, Teacher Lily</h6>
                                             </div>
 
                                             <nav class="mainmenu-nav">
                                                 <ul class="dashboard-mainmenu rbt-default-sidebar-list">
-                                                    <li>
-                                                        <a href="instructor-profile.html">
+                                                    <li class="active">
+                                                        <a class="active" href="instructor-profile.html">
                                                             <i class="feather-user"></i>
                                                             <span>My Profile</span>
                                                         </a>
                                                     </li>
                                                     <li>
                                                         <a href="students-list.html">
-                                                            <i class="feather-monitor"></i>
+                                                            <i class="feather-users"></i>
                                                             <span>Students List</span>
                                                         </a>
                                                     </li>
                                                     <li>
                                                         <a href="class-schedule.html">
-                                                            <i class="feather-calendar"></i>
+                                                            <i class="feather-clock"></i>
                                                             <span>Class Schedule</span>
                                                         </a>
                                                     </li>
-
                                                     <li>
                                                         <a href="classlink.html">
                                                             <i class="feather-link"></i>
@@ -848,7 +907,7 @@
                                                     </li>
                                                     <li>
                                                         <a href="tutor-attendance.html">
-                                                            <i class="feather-check-circle"></i>
+                                                            <i class="feather-calendar"></i>
                                                             <span>Attendance</span>
                                                         </a>
                                                     </li>
@@ -903,7 +962,7 @@
                                             <div class="teacher-user-info">
                                                 <h3 id="hero-teacher-name">Lily</h3>
 
-                                                <!-- Clean Subtitle Meta Without Heavy Box Borders -->
+                                                <!-- Clean Subtitle Meta in Single Line Without Borders -->
                                                 <div class="teacher-meta-badges">
                                                     <span class="teacher-meta-item">
                                                         <i class="feather-hash"></i> <span
@@ -1019,10 +1078,6 @@
                                                 <i class="feather-user"></i>
                                                 <h5>Personal &amp; Professional Details</h5>
                                             </div>
-                                            <a href="tuitor-edit.html"
-                                                class="rbt-btn btn-xs btn-border-gradient radius-round">
-                                                <i class="feather-edit-2 me-1"></i> Edit Profile
-                                            </a>
                                         </div>
 
                                         <div class="profile-info-grid">
@@ -1146,36 +1201,22 @@
                                 join our team.</p>
 
                             <ul class="social-icon social-default justify-content-start">
-                                <li><a href="https://www.facebook.com/"><svg xmlns="http://www.w3.org/2000/svg"
-                                            width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z">
-                                            </path>
-                                        </svg></a></li>
+                                <li><a href="https://www.facebook.com/" aria-label="Facebook">
+                                        <i class="feather-facebook"></i>
+                                    </a>
+                                </li>
                                 <li><a href="https://www.twitter.com" aria-label="X (Twitter)">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15"
-                                            fill="currentColor" viewBox="0 0 24 24" class="social-icon-x"
-                                            style="vertical-align: -2px;">
-                                            <path
-                                                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-                                        </svg>
-                                    </a></li>
-                                <li><a href="https://www.instagram.com/"><svg xmlns="http://www.w3.org/2000/svg"
-                                            width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                                        </svg></a></li>
-                                <li><a href="https://www.linkedin.com/"><svg xmlns="http://www.w3.org/2000/svg"
-                                            width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                            <path
-                                                d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
-                                            </path>
-                                            <rect x="2" y="9" width="4" height="12"></rect>
-                                            <circle cx="4" cy="4" r="2"></circle>
-                                        </svg></a></li>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" viewBox="0 0 24 24" class="social-icon-x" style="vertical-align: -2px;"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                                    </a>
+                                </li>
+                                <li><a href="https://www.instagram.com/" aria-label="Instagram">
+                                        <i class="feather-instagram"></i>
+                                    </a>
+                                </li>
+                                <li><a href="https://www.linkedin.com/" aria-label="LinkedIn">
+                                        <i class="feather-linkedin"></i>
+                                    </a>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -1300,16 +1341,13 @@
     <!-- Dynamic Profile Loading Script -->
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            // Retrieve Saved Profile from localStorage
             const savedProfile = JSON.parse(localStorage.getItem("lse_tutor_profile"));
 
             if (savedProfile) {
-                // Construct Full Name
                 const firstName = savedProfile.firstName || "Lily";
                 const lastName = savedProfile.lastName ? ` ${savedProfile.lastName}` : "";
                 const fullName = `${firstName}${lastName}`;
 
-                // Update Hero Header Meta Details
                 const heroNameEl = document.getElementById("hero-teacher-name");
                 if (heroNameEl) heroNameEl.textContent = fullName;
 
@@ -1333,13 +1371,11 @@
                     heroExpEl.textContent = savedProfile.tutorExp;
                 }
 
-                // Update Sidebar Welcome Message
                 const sidebarWelcomeEl = document.getElementById("sidebar-welcome-text");
                 if (sidebarWelcomeEl) {
                     sidebarWelcomeEl.textContent = `Welcome, ${firstName}`;
                 }
 
-                // Update Personal Details Card
                 const profileFullNameEl = document.getElementById("profile-fullname");
                 if (profileFullNameEl) profileFullNameEl.textContent = fullName;
 
@@ -1363,7 +1399,6 @@
                     profileSkillEl.textContent = savedProfile.skill;
                 }
 
-                // Update Bio Paragraphs
                 const bioContainer = document.getElementById("profile-bio-container");
                 if (bioContainer && savedProfile.bio) {
                     const paragraphs = savedProfile.bio.split("\n\n").filter(p => p.trim() !== "");
@@ -1375,7 +1410,6 @@
                 }
             }
 
-            // Mobile Floating Contact Toggle
             const contactItems = document.querySelectorAll(".contact-item");
             contactItems.forEach(function (item) {
                 const button = item.querySelector(".contact-button");
@@ -1401,7 +1435,6 @@
                 }
             });
 
-            // Login Dropdown
             const dropdown = document.querySelector(".login-dropdown");
             const button = document.querySelector(".login-dropdown-btn");
             if (dropdown && button) {
