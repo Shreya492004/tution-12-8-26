@@ -2753,6 +2753,8 @@ main {
 
 /* 1 & 5. Fixed/Sticky Mobile Header & Header Right Controls */
 @media only screen and (max-width: 991.98px) {
+    header,
+    header.rbt-header,
     .rbt-header,
     .rbt-header .rbt-header-wrapper,
     .rbt-header-wrapper.header-sticky {
@@ -2766,10 +2768,14 @@ main {
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08) !important;
         height: 66px !important;
         min-height: 66px !important;
+        max-height: 66px !important;
+        margin: 0 !important;
+        padding: 0 !important;
     }
 
     body {
         padding-top: 66px !important;
+        margin-top: 0 !important;
     }
 
     .rbt-header .container {
@@ -3140,6 +3146,108 @@ svg.social-icon-x {
         width: 34px !important;
         height: 34px !important;
         min-width: 34px !important;
+    }
+}
+
+/* ==========================================================================
+   MOBILE INDEX SPACING OPTIMIZATION
+   1. Removes excessive top whitespace between fixed header and first banner.
+   2. Reduces vertical gap between consecutive cards to a compact 16px.
+   Target Screen Widths: 320px, 360px, 375px, 390px, 414px to 991px.
+   ========================================================================== */
+
+@media only screen and (max-width: 991.98px) {
+    /* 1. Mobile Top Whitespace Reduction & Gap Elimination */
+    body,
+    body.rbt-header-sticky {
+        padding-top: 66px !important;
+        margin-top: 0 !important;
+    }
+
+    /* Collapse all JS/theme sticky placeholders completely */
+    .rbt-sticky-placeholder,
+    div.rbt-sticky-placeholder,
+    .header-sticky-placeholder,
+    .sticky-placeholder,
+    .rbt-header-top,
+    .rbt-header-top-news {
+        display: none !important;
+        height: 0 !important;
+        min-height: 0 !important;
+        max-height: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        border: none !important;
+        visibility: hidden !important;
+    }
+
+    /* Force all banner/slider containers on mobile to sit flush below fixed header */
+    .rbt-banner-area.rbt-banner-1,
+    .rbt-banner-area,
+    .rbt-banner-1,
+    .slider-area.rbt-banner-10,
+    .slider-area,
+    .rbt-breadcrumb-default,
+    .rbt-page-banner,
+    .bg_image,
+    main,
+    #main-wrapper,
+    div[class*="banner"],
+    div[class*="slider"] {
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+    }
+
+    .slider-area.bg_image,
+    .rbt-banner-area.bg_image,
+    .bg_image {
+        background-position: center top !important;
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+    }
+
+    .rbt-banner-area .content,
+    .rbt-banner-area .inner,
+    .slider-area .inner {
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+    }
+
+    .rbt-banner-area .rbt-new-badge,
+    .rbt-banner-1 .rbt-new-badge {
+        margin-top: 0 !important;
+        margin-bottom: 10px !important;
+    }
+}
+
+@media only screen and (max-width: 767.98px) {
+    /* 2. Compact Vertical Gap Between Cards on Mobile */
+    .rbt-categories-area .row.g-5,
+    .rbt-section-gap .row.g-5,
+    .rbt-dashboard-area .row.g-5,
+    .row.g-5 {
+        --bs-gutter-y: 1rem !important;
+        row-gap: 16px !important;
+    }
+
+    .rbt-categories-area .row.g-5 > [class*="col-"],
+    .rbt-section-gap .row.g-5 > [class*="col-"],
+    .row.g-5 > [class*="col-"] {
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+    }
+
+    .rbt-cat-box,
+    .rbt-card,
+    .rbt-cat-box-1 {
+        margin-bottom: 0 !important;
+    }
+
+    .rbt-section-gap,
+    .rbt-section-gapTop,
+    .rbt-section-gapBottom {
+        padding-top: 36px !important;
+        padding-bottom: 36px !important;
     }
 }
 
