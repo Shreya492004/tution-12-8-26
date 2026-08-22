@@ -473,16 +473,20 @@
             font-weight: 600 !important;
         }
 
+        .type-pill.one-to-one-class,
         .type-pill.one-to-one {
-            background: #ede9fe !important;
-            color: #6d28d9 !important;
-            border: 1px solid #ddd6fe !important;
+            background: #f0edff !important;
+            color: #6c4df6 !important;
+            border: 1px solid #dcd5ff !important;
+            font-weight: 600 !important;
         }
 
+        .type-pill.group-class,
         .type-pill.one-to-many {
             background: #e0f2fe !important;
             color: #0369a1 !important;
             border: 1px solid #bae6fd !important;
+            font-weight: 600 !important;
         }
 
         .time-pill {
@@ -608,34 +612,7 @@
                     <li>
                         <a href="mailto:info@londonstaredu.com"><i class="feather-mail"></i>info@londonstaredu.com</a>
                     </li>
-                    <li>
-                        <a href="tel:3025550107"><i class="feather-phone"></i>(302) 555-0107</a>
-                    </li>
                 </ul>
-            </div>
-
-            <nav class="mainmenu-nav">
-                <ul class="mainmenu">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about-us.html">About</a></li>
-                    <li><a href="our-team.html">Our Team</a></li>
-                    <li><a href="our-tuition.html">Our Tuition</a></li>
-                    <li><a href="holiday-camps.html">Holiday Camps</a></li>
-                    <li><a href="plans-and-pricing.html">Plans &amp; Pricing</a></li>
-                    <li><a href="book-online.html">Book Online</a></li>
-                </ul>
-            </nav>
-
-            <div class="mobile-menu-bottom">
-                <div class="social-share-wrapper">
-                    <span class="rbt-short-title d-block">Find With Us</span>
-                    <ul class="social-icon social-default transparent-with-border justify-content-start mt--20">
-                        <li><a href="https://www.facebook.com/" aria-label="Facebook"><i class="feather-facebook"></i></a></li>
-                        <li><a href="https://www.twitter.com" aria-label="X (Twitter)"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" viewBox="0 0 24 24" class="social-icon-x" style="vertical-align: -2px;"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a></li>
-                        <li><a href="https://www.instagram.com/" aria-label="Instagram"><i class="feather-instagram"></i></a></li>
-                        <li><a href="https://www.linkedin.com/" aria-label="LinkedIn"><i class="feather-linkedin"></i></a></li>
-                    </ul>
-                </div>
             </div>
         </div>
     </div>
@@ -742,13 +719,37 @@
                                         <h4 class="rbt-title-style-3">My Courses</h4>
                                     </div>
 
+                                    <!-- Filter Dropdowns Bar -->
+                                    <div class="course-filter-wrapper">
+                                        <div class="course-filter-row">
+                                            <div class="course-filter-item">
+                                                <label class="course-filter-label" for="courseFilterSelect">Filter By Course</label>
+                                                <select id="courseFilterSelect" class="course-filter-select">
+                                                    <option value="all">All Courses</option>
+                                                    <option value="year5-english">Year 5 English</option>
+                                                    <option value="year6-reading">Year 6 Reading</option>
+                                                    <option value="year6-iseb">Year 6 ISEB Preparation</option>
+                                                    <option value="1on1-tuition">1-on-1 Private Tuition</option>
+                                                </select>
+                                            </div>
+                                            <div class="course-filter-item">
+                                                <label class="course-filter-label" for="classTypeFilterSelect">Filter By Class Type</label>
+                                                <select id="classTypeFilterSelect" class="course-filter-select">
+                                                    <option value="all">All Class Types</option>
+                                                    <option value="one-to-one">One-to-One Class</option>
+                                                    <option value="group">Group Class</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+
                                     <div class="tab-content">
                                         <div class="tab-pane fade active show" id="publish-4" role="tabpanel">
 
                                             <div class="row g-5" id="studentCoursesGrid">
 
-                                                <!-- COURSE 1: Year 5 English -->
-                                                <div class="col-lg-6 col-md-6 col-12 student-course-card-col" data-course="year5-english" data-type="scheduled">
+                                                <!-- COURSE 1: Year 5 English (Group Class: 16 Students) -->
+                                                <div class="col-lg-6 col-md-6 col-12 student-course-card-col" data-course="year5-english" data-class-type="group" data-students="16">
                                                     <div class="rbt-card variation-01 rbt-hover">
                                                         <div class="rbt-card-img">
                                                             <img src="assets/images/course/classic-lms-01.jpg" alt="Year 5 English">
@@ -759,10 +760,18 @@
 
                                                             <div class="course-fee-box">
                                                                 <div class="course-fee-row">
+                                                                    <span class="course-row-label">Class Type</span>
+                                                                    <div class="course-row-right">
+                                                                        <span class="course-badge-pill type-pill group-class class-type-badge">
+                                                                            <i class="feather-users"></i> Group Class
+                                                                        </span>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="course-fee-row">
                                                                     <span class="course-row-label">Teacher</span>
                                                                     <div class="course-row-right">
                                                                         <span class="course-badge-pill fee-pill"><i class="feather-user"></i> Lily</span>
-                                                                        <span class="course-badge-pill type-pill scheduled">Scheduled Class</span>
                                                                     </div>
                                                                 </div>
 
@@ -785,8 +794,8 @@
                                                     </div>
                                                 </div>
 
-                                                <!-- COURSE 2: Year 6 Reading Comprehension -->
-                                                <div class="col-lg-6 col-md-6 col-12 student-course-card-col" data-course="year6-reading" data-type="scheduled">
+                                                <!-- COURSE 2: Year 6 Reading Comprehension (Group Class: 14 Students) -->
+                                                <div class="col-lg-6 col-md-6 col-12 student-course-card-col" data-course="year6-reading" data-class-type="group" data-students="14">
                                                     <div class="rbt-card variation-01 rbt-hover">
                                                         <div class="rbt-card-img">
                                                             <img src="assets/images/course/course-01.jpg" alt="Year 6 Reading Comprehension">
@@ -797,10 +806,18 @@
 
                                                             <div class="course-fee-box">
                                                                 <div class="course-fee-row">
+                                                                    <span class="course-row-label">Class Type</span>
+                                                                    <div class="course-row-right">
+                                                                        <span class="course-badge-pill type-pill group-class class-type-badge">
+                                                                            <i class="feather-users"></i> Group Class
+                                                                        </span>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="course-fee-row">
                                                                     <span class="course-row-label">Teacher</span>
                                                                     <div class="course-row-right">
                                                                         <span class="course-badge-pill fee-pill"><i class="feather-user"></i> Lily</span>
-                                                                        <span class="course-badge-pill type-pill scheduled">Scheduled Class</span>
                                                                     </div>
                                                                 </div>
 
@@ -823,8 +840,8 @@
                                                     </div>
                                                 </div>
 
-                                                <!-- COURSE 3: Year 6 ISEB Preparation -->
-                                                <div class="col-lg-6 col-md-6 col-12 student-course-card-col" data-course="year6-iseb" data-type="scheduled">
+                                                <!-- COURSE 3: Year 6 ISEB Preparation (Group Class: 12 Students) -->
+                                                <div class="col-lg-6 col-md-6 col-12 student-course-card-col" data-course="year6-iseb" data-class-type="group" data-students="12">
                                                     <div class="rbt-card variation-01 rbt-hover">
                                                         <div class="rbt-card-img">
                                                             <img src="assets/images/course/course-online-02.jpg" alt="Year 6 ISEB Preparation">
@@ -835,10 +852,18 @@
 
                                                             <div class="course-fee-box">
                                                                 <div class="course-fee-row">
+                                                                    <span class="course-row-label">Class Type</span>
+                                                                    <div class="course-row-right">
+                                                                        <span class="course-badge-pill type-pill group-class class-type-badge">
+                                                                            <i class="feather-users"></i> Group Class
+                                                                        </span>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="course-fee-row">
                                                                     <span class="course-row-label">Teacher</span>
                                                                     <div class="course-row-right">
                                                                         <span class="course-badge-pill fee-pill"><i class="feather-user"></i> Lily</span>
-                                                                        <span class="course-badge-pill type-pill scheduled">Scheduled Class</span>
                                                                     </div>
                                                                 </div>
 
@@ -848,6 +873,47 @@
                                                                         <span class="course-badge-pill time-pill">
                                                                             <i class="feather-clock"></i>
                                                                             <span>Wed: 6:00–7:00 pm</span>
+                                                                        </span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- COURSE 4: 1-on-1 Private Tuition (One-to-One Class: 1 Student) -->
+                                                <div class="col-lg-6 col-md-6 col-12 student-course-card-col" data-course="1on1-tuition" data-class-type="one-to-one" data-students="1">
+                                                    <div class="rbt-card variation-01 rbt-hover">
+                                                        <div class="rbt-card-img">
+                                                            <img src="assets/images/course/course-online-03.jpg" alt="1-on-1 Private Tuition">
+                                                        </div>
+
+                                                        <div class="rbt-card-body">
+                                                            <h4 class="rbt-card-title" style="font-size: 17px;">1-on-1 English &amp; Maths Personal Tuition</h4>
+
+                                                            <div class="course-fee-box">
+                                                                <div class="course-fee-row">
+                                                                    <span class="course-row-label">Class Type</span>
+                                                                    <div class="course-row-right">
+                                                                        <span class="course-badge-pill type-pill one-to-one-class class-type-badge">
+                                                                            <i class="feather-user"></i> One-to-One Class
+                                                                        </span>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="course-fee-row">
+                                                                    <span class="course-row-label">Teacher</span>
+                                                                    <div class="course-row-right">
+                                                                        <span class="course-badge-pill fee-pill"><i class="feather-user"></i> Sarah</span>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="course-time-row">
+                                                                    <span class="course-row-label">Class Time</span>
+                                                                    <div class="course-row-right">
+                                                                        <span class="course-badge-pill time-pill">
+                                                                            <i class="feather-clock"></i>
+                                                                            <span>Tue: 4:00–5:00 pm</span>
                                                                         </span>
                                                                     </div>
                                                                 </div>
@@ -1064,7 +1130,7 @@
     <script src="assets/js/vendor/plyr.js"></script>
     <script src="assets/js/main.js"></script>
 
-    <!-- Global Handlers -->
+    <!-- Global Handlers & Dynamic Class Arrangement Logic -->
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             // Floating Contact Handler
@@ -1109,7 +1175,31 @@
                 });
             }
 
-            // Course Filter Logic
+            // Dynamic Class Type & Student Arrangement Processor
+            function updateCourseClassTypes() {
+                const cards = document.querySelectorAll('.student-course-card-col');
+
+                cards.forEach(function(card) {
+                    const explicitType = card.getAttribute('data-class-type');
+                    const explicitStudents = card.getAttribute('data-students');
+                    const studentCount = explicitStudents ? parseInt(explicitStudents, 10) : (explicitType === 'one-to-one' ? 1 : 2);
+                    
+                    const badge = card.querySelector('.class-type-badge');
+                    if (badge) {
+                        if (studentCount === 1 || explicitType === 'one-to-one') {
+                            card.setAttribute('data-class-type', 'one-to-one');
+                            badge.className = 'course-badge-pill type-pill one-to-one-class class-type-badge';
+                            badge.innerHTML = '<i class="feather-user"></i> One-to-One Class';
+                        } else {
+                            card.setAttribute('data-class-type', 'group');
+                            badge.className = 'course-badge-pill type-pill group-class class-type-badge';
+                            badge.innerHTML = '<i class="feather-users"></i> Group Class';
+                        }
+                    }
+                });
+            }
+
+            // Course & Class Type Filter Logic
             const courseSelect = document.getElementById('courseFilterSelect');
             const typeSelect = document.getElementById('classTypeFilterSelect');
             const cards = document.querySelectorAll('.student-course-card-col');
@@ -1122,7 +1212,7 @@
 
                 cards.forEach(function (card) {
                     const cardCourse = card.getAttribute('data-course');
-                    const cardType = card.getAttribute('data-type');
+                    const cardType = card.getAttribute('data-class-type');
 
                     const matchCourse = (selectedCourse === 'all' || cardCourse === selectedCourse);
                     const matchType = (selectedType === 'all' || cardType === selectedType);
@@ -1139,6 +1229,9 @@
                     noFound.style.display = (visibleCount === 0) ? 'block' : 'none';
                 }
             }
+
+            // Initialize dynamic badges and filter listeners
+            updateCourseClassTypes();
 
             if (courseSelect) {
                 courseSelect.addEventListener('change', filterCourses);

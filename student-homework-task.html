@@ -84,7 +84,7 @@
             }
         }
 
-        /* Icon Font Protection - Ensure feather and fontawesome icons always render */
+        /* Icon Font Protection - Ensure feather and fontawesome icons always render with perfect alignment */
         i[class^="feather-"],
         i[class*=" feather-"],
         span[class^="feather-"],
@@ -101,7 +101,12 @@
             line-height: 1 !important;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
-            display: inline-block !important;
+            display: inline-flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            vertical-align: middle !important;
+            box-sizing: border-box !important;
+            flex-shrink: 0 !important;
         }
 
         i[class^="fa-"],
@@ -112,7 +117,13 @@
             font-family: "Font Awesome 5 Pro", "Font Awesome 5 Free", "FontAwesome" !important;
             font-style: normal !important;
             font-weight: normal !important;
-            display: inline-block !important;
+            display: inline-flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            vertical-align: middle !important;
+            line-height: 1 !important;
+            box-sizing: border-box !important;
+            flex-shrink: 0 !important;
         }
 
         /* Header Navigation */
@@ -166,6 +177,7 @@
                 line-height: 80px !important;
                 transition: all 0.3s ease !important;
                 text-decoration: none !important;
+                font-family: var(--font-primary) !important;
             }
 
             .rbt-header .rbt-main-navigation .mainmenu > li > a:hover,
@@ -244,6 +256,9 @@
             width: 20px !important;
             text-align: center !important;
             flex-shrink: 0 !important;
+            display: inline-flex !important;
+            align-items: center !important;
+            justify-content: center !important;
         }
 
         .dashboard-mainmenu li.active a,
@@ -282,70 +297,79 @@
 
         .homework-page,
         .homework-page * {
-            font-family: var(--font-primary, "Euclid Circular A", "Plus Jakarta Sans", "Inter", sans-serif) !important;
+            font-family: var(--font-primary) !important;
         }
 
-        /* Homework Page */
+        /* Homework Page Container - Exact Match with student-profile-attendance.html */
         .homework-page {
             background: #ffffff;
-            border-radius: 12px;
-            padding: 30px;
+            border-radius: 10px;
+            padding: 25px;
             border: 1px solid #eeeeee;
             box-shadow: 0 5px 20px rgba(0,0,0,0.05);
         }
 
-        /* Page Header */
+        /* Page Header - Exact Match with Attendance Page Header */
         .homework-page-header {
             display: flex;
-            align-items: flex-start;
+            align-items: center;
             gap: 18px;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
         }
 
         .homework-page-header-icon {
-            width: 56px;
-            height: 56px;
+            width: 50px;
+            height: 50px;
             flex-shrink: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 14px;
+            display: inline-flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            border-radius: 12px;
             background: linear-gradient(135deg, #6c4df6, #9b7cff);
             color: #ffffff;
-            font-size: 24px;
+            font-size: 22px;
             box-shadow: 0 6px 16px rgba(108,77,246,0.25);
+        }
+
+        .homework-page-header-icon i {
+            font-size: 22px !important;
+            line-height: 1 !important;
+            display: inline-flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            color: #ffffff !important;
         }
 
         .homework-page-header h3 {
             margin: 0 0 6px;
-            font-size: 26px;
-            font-weight: 700;
-            color: #000000 !important;
+            font-size: 26px !important;
+            font-weight: 700 !important;
+            color: #192335 !important;
+            font-family: var(--font-primary) !important;
         }
 
         .homework-page-header p {
             margin: 0;
-            color: #374151;
-            font-size: 17px;
-            line-height: 1.6;
+            color: #64748b !important;
+            font-size: 15.5px !important;
+            line-height: 1.6 !important;
+            font-family: var(--font-primary) !important;
         }
 
-        /* Subject Grid */
+        /* Subject Grid - Separate Row for Each Subject */
         .resources-subject-grid {
             display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 24px;
+            grid-template-columns: 1fr !important;
+            gap: 20px;
             width: 100%;
         }
 
-        /* Subject Card */
+        /* Subject Card - Full Width Row with Alternating Background Colors */
         .resource-subject {
             position: relative;
             width: 100%;
-            padding: 24px;
-            background: #ffffff;
-            border: 1px solid #e8e8e8;
-            border-radius: 12px;
+            padding: 20px;
+            border-radius: 10px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.04);
             overflow: hidden;
             transition: all 0.25s ease;
@@ -355,48 +379,87 @@
             display: none !important;
         }
 
-        .resource-subject:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(108,77,246,0.10);
+        /* Card 1, 3, 5... (Color A: Clean White) */
+        .resource-subject:nth-child(odd) {
+            background: #ffffff;
+            border: 1px solid #e9e9e9;
         }
 
-        /* Subject Title */
+        .resource-subject:nth-child(odd):hover {
+            border-color: #cfc6ff;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(108,77,246,0.08);
+        }
+
+        /* Card 2, 4, 6... (Color B: Soft Lavender Tint) */
+        .resource-subject:nth-child(even) {
+            background: #f8f6ff;
+            border: 1px solid #ebe5ff;
+        }
+
+        .resource-subject:nth-child(even):hover {
+            border-color: #bfb3ff;
+            background: #f4efff;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(108,77,246,0.12);
+        }
+
+        /* Inner Content Containers for Even Cards */
+        .resource-subject:nth-child(even) .homework-task-text,
+        .resource-subject:nth-child(even) .homework-task-empty,
+        .resource-subject:nth-child(even) .homework-files-empty {
+            background: #ffffff !important;
+            border-color: #e5e0ff !important;
+        }
+
+        .resource-subject:nth-child(even) .resource-file {
+            background: #ffffff !important;
+            border-color: #e5e0ff !important;
+        }
+
+        /* Subject Title - Exact Match with Attendance Subject Heading (17px, 600 weight, normal Title Case) */
         .resource-subject-title {
             display: flex;
             align-items: center;
             gap: 12px;
-            margin-bottom: 16px;
-            padding-bottom: 14px;
-            border-bottom: 1px solid #eeeeee;
+            margin-bottom: 14px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #f0f0f0;
         }
 
         .resource-subject-title i {
-            width: 42px;
-            height: 42px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            width: 40px;
+            height: 40px;
+            min-width: 40px;
+            display: inline-flex !important;
+            align-items: center !important;
+            justify-content: center !important;
             border-radius: 8px;
             background: rgba(108,77,246,0.10);
             color: #6c4df6;
-            font-size: 20px;
-            flex-shrink: 0;
+            font-size: 16px !important;
+            flex-shrink: 0 !important;
+            line-height: 1 !important;
         }
 
         .resource-subject-title h5 {
             margin: 0;
-            color: #000000 !important;
-            font-size: 22px !important;
-            font-weight: 700 !important;
+            color: #192335 !important;
+            font-size: 17px !important;
+            font-weight: 600 !important;
+            text-transform: none !important;
+            letter-spacing: normal !important;
+            line-height: 1.4 !important;
+            font-family: var(--font-primary) !important;
         }
 
-        /* Meta */
+        /* Meta Text - Exact Match with Attendance Sub-labels (14px, 500 weight, #64748b) */
         .resource-meta {
             display: flex;
             align-items: center;
             flex-wrap: wrap;
-            gap: 18px;
-            margin-bottom: 18px;
+            gap: 16px;
+            margin-bottom: 16px;
         }
 
         .resource-teacher,
@@ -404,20 +467,27 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            font-size: 17px !important;
+            font-size: 14px !important;
             font-weight: 500 !important;
-            color: #374151 !important;
+            color: #64748b !important;
+            line-height: 1.4 !important;
+            font-family: var(--font-primary) !important;
         }
 
         .resource-teacher i,
         .resource-date i {
-            color: #6c4df6;
-            font-size: 18px !important;
+            color: #6c4df6 !important;
+            font-size: 15px !important;
+            line-height: 1 !important;
+            display: inline-flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            flex-shrink: 0 !important;
         }
 
-        /* Task */
+        /* Task Block & Section Titles - Exact Match with Attendance Section Titles (18px, 700 weight) */
         .homework-task-block {
-            margin-bottom: 20px;
+            margin-bottom: 18px;
         }
 
         .homework-task-label {
@@ -426,33 +496,43 @@
             gap: 8px;
             font-size: 18px !important;
             font-weight: 700 !important;
-            color: #000000 !important;
-            margin-bottom: 10px;
+            color: #192335 !important;
+            margin-bottom: 8px;
+            line-height: 1.4 !important;
+            font-family: var(--font-primary) !important;
         }
 
         .homework-task-label i {
-            color: #000000 !important;
-            font-size: 19px !important;
+            color: #192335 !important;
+            font-size: 16px !important;
+            line-height: 1 !important;
+            display: inline-flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            flex-shrink: 0 !important;
         }
 
         .homework-task-text {
             background: #f8f9fc;
             border: 1px solid #eef0f7 !important;
             border-radius: 8px;
-            padding: 14px 16px;
-            color: #333333 !important;
-            font-size: 17px !important;
-            line-height: 1.7 !important;
+            padding: 12px 14px;
+            color: #192335 !important;
+            font-size: 15.5px !important;
+            font-weight: 400 !important;
+            line-height: 1.6 !important;
+            font-family: var(--font-primary) !important;
         }
 
         .homework-task-empty {
             background: #f8f9fc;
             border: 1px dashed #dddddd !important;
             border-radius: 8px;
-            padding: 14px 16px;
-            color: #777777 !important;
-            font-size: 16px !important;
+            padding: 12px 14px;
+            color: #888888 !important;
+            font-size: 14px !important;
             font-style: italic;
+            font-family: var(--font-primary) !important;
         }
 
         /* File Label */
@@ -462,38 +542,46 @@
             gap: 8px;
             font-size: 18px !important;
             font-weight: 700 !important;
-            color: #000000 !important;
-            margin-bottom: 10px;
+            color: #192335 !important;
+            margin-bottom: 8px;
+            line-height: 1.4 !important;
+            font-family: var(--font-primary) !important;
         }
 
         .homework-files-label i {
-            color: #000000 !important;
-            font-size: 18px !important;
+            color: #192335 !important;
+            font-size: 16px !important;
+            line-height: 1 !important;
+            display: inline-flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            flex-shrink: 0 !important;
         }
 
         .homework-files-empty {
             background: #f8f9fc;
             border: 1px dashed #dddddd;
             border-radius: 8px;
-            padding: 14px 16px;
-            color: #777777 !important;
-            font-size: 16px !important;
+            padding: 12px 14px;
+            color: #888888 !important;
+            font-size: 14px !important;
             font-style: italic;
+            font-family: var(--font-primary) !important;
         }
 
-        /* File */
+        /* File Item - Typography Matching Attendance List Items */
         .resource-file {
             display: flex;
             align-items: center;
             justify-content: space-between;
             gap: 14px;
             width: 100%;
-            min-height: 64px;
-            padding: 12px 14px;
+            min-height: 58px;
+            padding: 10px 14px;
             background: #ffffff;
             border: 1px solid #e8e8e8;
             border-radius: 8px;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             transition: all 0.2s ease;
         }
 
@@ -502,8 +590,8 @@
         }
 
         .resource-file:hover {
-            border-color: #d6d0ff;
-            box-shadow: 0 4px 12px rgba(108,77,246,0.10);
+            border-color: #cfc6ff;
+            box-shadow: 0 4px 12px rgba(108,77,246,0.08);
         }
 
         .resource-file-info {
@@ -515,19 +603,23 @@
         }
 
         .resource-file-icon {
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
+            width: 38px;
+            height: 38px;
+            display: inline-flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            flex-shrink: 0 !important;
             background: rgba(108,77,246,0.10);
             border-radius: 8px;
             color: #6c4df6;
         }
 
         .resource-file-icon i {
-            font-size: 20px;
+            font-size: 18px !important;
+            line-height: 1 !important;
+            display: inline-flex !important;
+            align-items: center !important;
+            justify-content: center !important;
         }
 
         .resource-file-details {
@@ -539,23 +631,25 @@
 
         .resource-file-name {
             display: block;
-            color: #1e293b !important;
-            font-size: 17px !important;
+            color: #192335 !important;
+            font-size: 15px !important;
             font-weight: 600 !important;
             line-height: 1.4;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
+            font-family: var(--font-primary) !important;
         }
 
         .resource-file-type {
             display: block;
-            margin-top: 3px;
+            margin-top: 2px;
             color: #6c4df6 !important;
-            font-size: 14px !important;
+            font-size: 12px !important;
             font-weight: 600 !important;
             text-transform: uppercase;
             letter-spacing: 0.5px;
+            font-family: var(--font-primary) !important;
         }
 
         /* Action Buttons */
@@ -567,10 +661,10 @@
         }
 
         .resource-view-btn {
-            width: 36px !important;
-            height: 36px !important;
-            min-width: 36px !important;
-            min-height: 36px !important;
+            width: 34px !important;
+            height: 34px !important;
+            min-width: 34px !important;
+            min-height: 34px !important;
             padding: 0 !important;
             margin: 0 !important;
             border: none !important;
@@ -580,7 +674,7 @@
             justify-content: center !important;
             background: linear-gradient(135deg, #6c4df6, #9b7cff) !important;
             color: #ffffff !important;
-            font-size: 18px !important;
+            font-size: 16px !important;
             line-height: 1 !important;
             cursor: pointer;
             box-shadow: 0 4px 12px rgba(108,77,246,0.18);
@@ -589,8 +683,12 @@
 
         .resource-view-btn i {
             color: #ffffff !important;
-            font-size: 18px !important;
+            font-size: 16px !important;
+            line-height: 1 !important;
             margin: 0 !important;
+            display: inline-flex !important;
+            align-items: center !important;
+            justify-content: center !important;
         }
 
         .resource-view-btn span {
@@ -603,21 +701,32 @@
         }
 
         .resource-download-btn {
-            height: 36px;
-            padding: 0 14px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
+            height: 34px;
+            padding: 0 12px;
+            display: inline-flex !important;
+            align-items: center !important;
+            justify-content: center !important;
             gap: 6px;
             border-radius: 8px;
             background: #ffffff;
             color: #374151;
             border: 1px solid #dcdfe6;
-            font-size: 16px !important;
+            font-size: 13.5px !important;
             font-weight: 600 !important;
             cursor: pointer;
             text-decoration: none;
             transition: all 0.25s ease;
+            white-space: nowrap;
+            font-family: var(--font-primary) !important;
+        }
+
+        .resource-download-btn i {
+            font-size: 14px !important;
+            line-height: 1 !important;
+            display: inline-flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            flex-shrink: 0 !important;
         }
 
         .resource-download-btn:hover {
@@ -630,20 +739,23 @@
         .resources-empty {
             grid-column: 1 / -1;
             width: 100%;
-            padding: 40px 15px;
+            padding: 30px 15px;
             text-align: center;
             background: #fafafa;
             border: 1px solid #eeeeee;
             border-radius: 8px;
-            color: #000000;
-            font-size: 17px;
+            color: #64748b;
+            font-size: 15.5px;
+            font-family: var(--font-primary) !important;
         }
 
         .resources-empty i {
-            display: block;
+            display: inline-flex !important;
+            align-items: center !important;
+            justify-content: center !important;
             margin-bottom: 8px;
             color: #6c4df6;
-            font-size: 30px;
+            font-size: 26px !important;
         }
 
         /* Modal */
@@ -688,12 +800,13 @@
         }
 
         .notes-modal-title {
-            font-size: 18px;
+            font-size: 17px;
             font-weight: 700;
-            color: #000000 !important;
+            color: #192335 !important;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
+            font-family: var(--font-primary) !important;
         }
 
         .notes-modal-close {
@@ -704,11 +817,16 @@
             background: #f5f5f5;
             color: #333333;
             cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            display: inline-flex !important;
+            align-items: center !important;
+            justify-content: center !important;
             font-size: 18px;
             transition: 0.2s ease;
+        }
+
+        .notes-modal-close i {
+            font-size: 18px !important;
+            line-height: 1 !important;
         }
 
         .notes-modal-close:hover {
@@ -739,8 +857,9 @@
             gap: 10px;
             background: #f5f5f5;
             color: #888888;
-            font-size: 17px;
+            font-size: 15.5px;
             z-index: 2;
+            font-family: var(--font-primary) !important;
         }
 
         .notes-modal-loading.hidden {
@@ -762,35 +881,29 @@
             }
         }
 
-        /* Responsive */
-        @media (max-width: 991px) {
-            .resources-subject-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
+        /* Responsive Breakpoints - Exactly Matching student-profile-attendance.html */
         @media (max-width: 767px) {
             .homework-page {
-                padding: 20px 15px;
+                padding: 18px 14px;
             }
 
             .homework-page-header h3 {
-                font-size: 22px;
+                font-size: 20px !important;
             }
 
             .homework-page-header-icon {
-                width: 46px;
-                height: 46px;
-                font-size: 20px;
+                width: 44px;
+                height: 44px;
+                font-size: 18px;
                 border-radius: 10px;
             }
 
             .resource-subject {
-                padding: 18px;
+                padding: 16px;
             }
 
             .resource-file {
-                align-items: flex-start;
+                align-items: center;
             }
 
             .resource-actions {
@@ -807,18 +920,20 @@
             }
         }
 
-        @media (max-width: 480px) {
+        @media (max-width: 576px) {
             .resource-file {
                 flex-direction: column;
                 align-items: stretch;
+                gap: 10px;
             }
 
             .resource-actions {
                 width: 100%;
+                justify-content: flex-end;
             }
 
             .resource-view-btn {
-                flex: 0 0 36px;
+                flex: 0 0 34px;
             }
 
             .resource-meta {

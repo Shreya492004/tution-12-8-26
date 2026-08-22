@@ -35,7 +35,7 @@
 
     <style>
         /* =========================================================
-           BANNER STYLING & COMPACT RESPONSIVE SCALING
+            BANNER STYLING & COMPACT RESPONSIVE SCALING
         ========================================================= */
         .slider-area.rbt-banner-10 {
             margin-top: 0 !important;
@@ -206,7 +206,7 @@
         }
 
         .hw-dashboard .hw-course-student-box {
-            flex: 0 0 170px;
+            flex: 0 0 220px;
             display: flex;
             align-items: center;
             gap: 12px;
@@ -215,6 +215,7 @@
             border-radius: 10px;
             background: #fbfbfe;
             min-height: 56px;
+            white-space: nowrap;
         }
 
         .hw-dashboard .hw-course-student-icon {
@@ -227,11 +228,12 @@
             display: flex;
             flex-direction: column;
             line-height: 1.2;
+            overflow: hidden;
         }
 
         .hw-dashboard .hw-course-student-title {
             color: #64748b !important;
-            font-size: 14px !important;
+            font-size: 13px !important;
             font-weight: 600 !important;
             text-transform: uppercase !important;
             margin-bottom: 2px !important;
@@ -239,11 +241,15 @@
         }
 
         .hw-dashboard .hw-course-student-content strong {
-            font-size: 18px !important;
+            font-size: 15px !important;
             font-weight: 600 !important;
             color: #192335 !important;
             display: block;
             line-height: 1.2;
+        }
+
+        .hw-dashboard .hw-course-student-box.has-selection #hwCourseStudentCount {
+            color: #6c4df6 !important;
         }
 
         /* PILL / SEGMENTED BUTTONS */
@@ -465,10 +471,6 @@
                 align-items: stretch;
                 gap: 12px;
             }
-
-            .hw-dashboard .hw-course-student-box {
-                width: 100%;
-            }
         }
     </style>
 </head>
@@ -633,7 +635,7 @@
                                     <div class="content-item-content">
                                         <div class="rbt-default-sidebar-wrapper">
                                             <div class="section-title mb--20">
-                                                <h6 class="rbt-title-style-2">Welcome, Lily</h6>
+                                                <h6 class="rbt-title-style-2" id="sidebar-welcome-text">Welcome, Teacher Lily</h6>
                                             </div>
                                             <nav class="mainmenu-nav">
                                                 <ul class="dashboard-mainmenu rbt-default-sidebar-list">
@@ -645,13 +647,13 @@
                                                     </li>
                                                     <li>
                                                         <a href="students-list.html">
-                                                            <i class="feather-monitor"></i>
+                                                            <i class="feather-users"></i>
                                                             <span>Students List</span>
                                                         </a>
                                                     </li>
                                                     <li>
                                                         <a href="class-schedule.html">
-                                                            <i class="feather-calendar"></i>
+                                                            <i class="feather-clock"></i>
                                                             <span>Class Schedule</span>
                                                         </a>
                                                     </li>
@@ -682,11 +684,18 @@
 
                                             <nav class="mainmenu-nav">
                                                 <ul class="dashboard-mainmenu rbt-default-sidebar-list">
-                                                    <li><a href="tuitor-edit.html"><i
-                                                                class="feather-settings"></i><span>Edit
-                                                                Profile</span></a></li>
-                                                    <li><a href="index.html"><i
-                                                                class="feather-log-out"></i><span>Logout</span></a></li>
+                                                    <li>
+                                                        <a href="tuitor-edit.html">
+                                                            <i class="feather-settings"></i>
+                                                            <span>Edit Profile</span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="index.html">
+                                                            <i class="feather-log-out"></i>
+                                                            <span>Logout</span>
+                                                        </a>
+                                                    </li>
                                                 </ul>
                                             </nav>
                                         </div>
@@ -719,19 +728,14 @@
                                     <div class="hw-block">
                                         <div class="hw-course-row">
                                             <div class="hw-course-select-wrap">
-                                                <label class="hw-label" for="hwCourse">Select a Course</label>
+                                                <label class="hw-label" for="hwCourse">Select a Course / Subject</label>
                                                 <select class="hw-select" id="hwCourse">
-                                                    <option value="" disabled selected>-- Choose a course --</option>
-                                                    <option
-                                                        value="Year 5 English — Core English Skills + Reading Comprehension"
-                                                        data-students="16">Year 5 English — Core English Skills +
-                                                        Reading Comprehension</option>
-                                                    <option value="Year 6 Reading Comprehension" data-students="14">Year
-                                                        6 Reading Comprehension</option>
-                                                    <option
-                                                        value="Year 6 ISEB &amp; Grammar School Multiple-Choice Preparation"
-                                                        data-students="12">Year 6 ISEB &amp; Grammar School
-                                                        Multiple-Choice Preparation</option>
+                                                    <option value="" disabled selected>-- Select a course --</option>
+                                                    <option value="Year 5 English — Core English Skills + Reading Comprehension" data-students="16">Year 5 English — Core English Skills + Reading Comprehension</option>
+                                                    <option value="Year 6 Reading Comprehension" data-students="14">Year 6 Reading Comprehension</option>
+                                                    <option value="Year 6 ISEB &amp; Grammar School Multiple-Choice Preparation" data-students="12">Year 6 ISEB &amp; Grammar School Multiple-Choice Preparation</option>
+                                                    <option value="Mathematics — Primary &amp; Key Stage 2" data-students="8">Mathematics — Primary &amp; Key Stage 2</option>
+                                                    <option value="Science — Key Stage 3" data-students="6">Science — Key Stage 3</option>
                                                 </select>
                                             </div>
 
@@ -740,15 +744,15 @@
                                                     <i class="bi bi-people"></i>
                                                 </div>
                                                 <div class="hw-course-student-content">
-                                                    <span class="hw-course-student-title">Students</span>
-                                                    <strong id="hwCourseStudentCount">0</strong>
+                                                    <span class="hw-course-student-title">Total Students</span>
+                                                    <strong id="hwCourseStudentCount">Select a course</strong>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
 
                                     <!-- =====================================
-                                         HOMEWORK SECTION
+                                        HOMEWORK SECTION
                                     ====================================== -->
                                     <div id="homeworkSection">
                                         <div class="hw-block">
@@ -800,7 +804,7 @@
                                     </div>
 
                                     <!-- =====================================
-                                         SEND BUTTON
+                                        SEND BUTTON
                                     ====================================== -->
                                     <div class="hw-send-row">
                                         <button type="button" class="hw-primary-btn" id="sendUpdateBtn">
@@ -1071,11 +1075,29 @@
 
     <!-- Dashboard Logic Script -->
     <script>
-        if (window.jQuery && typeof jQuery.fn.selectpicker !== 'undefined') {
-            jQuery('#hwCourse').selectpicker('destroy');
-        }
-
         document.addEventListener("DOMContentLoaded", function () {
+            const hwCourse = document.getElementById("hwCourse");
+            const hwCourseStudentCount = document.getElementById("hwCourseStudentCount");
+            const hwCourseStudentBox = document.getElementById("hwCourseStudentBox");
+
+            function updateStudentCount() {
+                if (!hwCourse || !hwCourseStudentCount) return;
+                const selectedOption = hwCourse.options[hwCourse.selectedIndex];
+                if (!hwCourse.value || hwCourse.selectedIndex === 0) {
+                    hwCourseStudentCount.textContent = "Select a course";
+                    if (hwCourseStudentBox) hwCourseStudentBox.classList.remove("has-selection");
+                } else {
+                    const count = selectedOption.getAttribute('data-students') || 0;
+                    hwCourseStudentCount.textContent = count + (count == 1 ? " Student" : " Students");
+                    if (hwCourseStudentBox) hwCourseStudentBox.classList.add("has-selection");
+                }
+            }
+
+            if (hwCourse) {
+                hwCourse.addEventListener("change", updateStudentCount);
+                updateStudentCount();
+            }
+
             const homeworkSection = document.getElementById("homeworkSection");
             if (!homeworkSection) return;
 
@@ -1160,11 +1182,8 @@
             }
 
             /* DISTRIBUTE BUTTON ACTION */
-            const hwCourse = document.getElementById("hwCourse");
             const sendUpdateBtn = document.getElementById("sendUpdateBtn");
             const hwSuccess = document.getElementById("hwSuccess");
-            const hwCourseStudentCount = document.getElementById("hwCourseStudentCount");
-            const hwCourseStudentBox = document.getElementById("hwCourseStudentBox");
 
             if (sendUpdateBtn && hwCourse && hwSuccess) {
                 sendUpdateBtn.addEventListener("click", function () {
@@ -1177,11 +1196,7 @@
                     const sendHomework = homeworkTextFilled || homeworkDocFilled;
 
                     if (!sendHomework) {
-                        if (textAssignment && textAssignment.classList.contains("active")) {
-                            alert("Please type the homework instructions before sending.");
-                        } else {
-                            alert("Please upload a homework document before sending.");
-                        }
+                        alert("Please provide content (text or file) before sending.");
                         return;
                     }
 
@@ -1190,13 +1205,27 @@
                         return;
                     }
 
+                    // Save submission to localStorage for students
+                    const subjectName = hwCourse.value;
+                    const taskText = document.getElementById("homeworkText").value.trim();
+                    
+                    const existingPosts = JSON.parse(localStorage.getItem("teacherHomeworkPosts") || "[]");
+                    existingPosts.push({
+                        id: Date.now(),
+                        studentId: "student001",
+                        subject: subjectName,
+                        teacher: "Lily",
+                        task: taskText || "Refer to uploaded document.",
+                        uploadedAt: new Date().toISOString()
+                    });
+                    localStorage.setItem("teacherHomeworkPosts", JSON.stringify(existingPosts));
+
                     hwSuccess.textContent = "Homework distributed to students successfully!";
                     hwSuccess.classList.add("show");
 
                     /* RESET FORM */
                     hwCourse.value = "";
-                    if (hwCourseStudentCount) hwCourseStudentCount.textContent = "0";
-                    if (hwCourseStudentBox) hwCourseStudentBox.classList.remove("has-selection");
+                    updateStudentCount();
 
                     const homeworkTextElem = document.getElementById("homeworkText");
                     if (homeworkTextElem) homeworkTextElem.value = "";
